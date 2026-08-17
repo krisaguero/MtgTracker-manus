@@ -1,0 +1,48 @@
+name: Weekly Scryfall Data Refresh & Valuations
+
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Runs every Monday at 04:00 UTC
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Scryfall Metadata Refresh
+        run: pnpm refresh:data
+
+      - name: Verify Type Check & Production Build
+        run: |
+          pnpm check
+          pnpm build
+
+      - name: Commit and Push Updated Database
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git status
+          git add client/src/data/commanderDecklistsData.ts client/src/data/commanderDecklists.ts client/src/data/scryfallRefreshSnapshot.json || true
+          git diff --staged --quiet || git commit -m "chore: automated weekly Scryfall valuation & decklist refresh [skip ci]"
+          git push origin main

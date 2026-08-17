@@ -1,0 +1,17 @@
+{
+  "name": "MTG Sets Tracker",
+  "short_name": "MTG Tracker",
+  "description": "A chronological Magic: The Gathering set and Commander discovery hub.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f8f8",
+  "theme_color": "#3d2a8f",
+  "icons": [
+    {
+      "src": "/mtg-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

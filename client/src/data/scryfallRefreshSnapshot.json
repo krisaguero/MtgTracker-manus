@@ -1,0 +1,1593 @@
+{
+  "refreshedAt": "2026-08-15T23:31:56.861Z",
+  "source": "https://api.scryfall.com",
+  "deckCodes": [
+    "eoc"
+  ],
+  "sets": [
+    {
+      "code": "eoc",
+      "name": "Edge of Eternities Commander",
+      "set_type": "commander",
+      "released_at": "2025-08-01",
+      "card_count": 191
+    }
+  ],
+  "products": [
+    {
+      "id": "42e0aa15-639a-4e88-9bd8-ce5e7c7d7649",
+      "set_code": "eoc",
+      "name": "Adarkar Wastes",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/147/adarkar-wastes?utm_source=api"
+    },
+    {
+      "id": "66f135b4-8cb3-4a4e-86ae-81a3cf4b7259",
+      "set_code": "eoc",
+      "name": "Aftermath Analyst",
+      "released_at": "2025-08-01",
+      "usd": "0.69",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/91/aftermath-analyst?utm_source=api"
+    },
+    {
+      "id": "10ff4bac-1f93-4dd3-987a-523a6f733a1e",
+      "set_code": "eoc",
+      "name": "Alibou, Ancient Witness",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/113/alibou-ancient-witness?utm_source=api"
+    },
+    {
+      "id": "d9a7b0f6-97f9-4937-865c-e25c142c3ed7",
+      "set_code": "eoc",
+      "name": "Ancient Den",
+      "released_at": "2025-08-01",
+      "usd": "1.04",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/148/ancient-den?utm_source=api"
+    },
+    {
+      "id": "4ad8d899-5901-4fc8-b4f0-adcc0d97fc6e",
+      "set_code": "eoc",
+      "name": "Angel of the Ruins",
+      "released_at": "2025-08-01",
+      "usd": "0.16",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/63/angel-of-the-ruins?utm_source=api"
+    },
+    {
+      "id": "3d994115-378d-4685-a5dc-e448831da434",
+      "set_code": "eoc",
+      "name": "Arcane Signet",
+      "released_at": "2025-08-01",
+      "usd": "0.55",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/53/arcane-signet?utm_source=api"
+    },
+    {
+      "id": "b0d56d62-498c-4dcd-9345-14f6c02e0e7f",
+      "set_code": "eoc",
+      "name": "Astral Cornucopia",
+      "released_at": "2025-08-01",
+      "usd": "0.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/131/astral-cornucopia?utm_source=api"
+    },
+    {
+      "id": "c09f0e1b-c13b-4e53-ab0e-c8b8a6151d82",
+      "set_code": "eoc",
+      "name": "Augur of Autumn",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/92/augur-of-autumn?utm_source=api"
+    },
+    {
+      "id": "2c723fc9-d5c9-4126-a9a6-f80c247a4b6b",
+      "set_code": "eoc",
+      "name": "Baloth Prime",
+      "released_at": "2025-08-01",
+      "usd": "0.32",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/13/baloth-prime?utm_source=api"
+    },
+    {
+      "id": "9ea5a4f4-14d0-4da4-9cd0-0b3188307302",
+      "set_code": "eoc",
+      "name": "Baloth Prime",
+      "released_at": "2025-08-01",
+      "usd": "0.69",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/33/baloth-prime?utm_source=api"
+    },
+    {
+      "id": "6ef04c87-8d34-49af-8b79-72e460daf71c",
+      "set_code": "eoc",
+      "name": "Battlefield Forge",
+      "released_at": "2025-08-01",
+      "usd": "0.60",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/58/battlefield-forge?utm_source=api"
+    },
+    {
+      "id": "ccac70d4-6e04-4802-8bb8-021368a40e14",
+      "set_code": "eoc",
+      "name": "Beast Within",
+      "released_at": "2025-08-01",
+      "usd": "0.63",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/93/beast-within?utm_source=api"
+    },
+    {
+      "id": "65b3df37-8dea-4486-8904-55372b93c66f",
+      "set_code": "eoc",
+      "name": "Binding the Old Gods",
+      "released_at": "2025-08-01",
+      "usd": "0.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/52/binding-the-old-gods?utm_source=api"
+    },
+    {
+      "id": "fbeeb7d0-cda8-414b-82d3-a83f1883bdd2",
+      "set_code": "eoc",
+      "name": "Blasphemous Act",
+      "released_at": "2025-08-01",
+      "usd": "0.87",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/86/blasphemous-act?utm_source=api"
+    },
+    {
+      "id": "b0c6fb5e-07e2-4d22-be19-60592f00584a",
+      "set_code": "eoc",
+      "name": "Bojuka Bog",
+      "released_at": "2025-08-01",
+      "usd": "1.13",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/149/bojuka-bog?utm_source=api"
+    },
+    {
+      "id": "f96223d0-04c4-40c2-87a9-0c6bc74adddb",
+      "set_code": "eoc",
+      "name": "Braids, Arisen Nightmare",
+      "released_at": "2025-08-01",
+      "usd": "4.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/82/braids-arisen-nightmare?utm_source=api"
+    },
+    {
+      "id": "7ab1a074-9d92-4125-9200-84cd035f8f53",
+      "set_code": "eoc",
+      "name": "Buried Ruin",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/150/buried-ruin?utm_source=api"
+    },
+    {
+      "id": "c54ddd4e-f668-4ec8-b123-59afa977eba4",
+      "set_code": "eoc",
+      "name": "Cabaretti Courtyard",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/151/cabaretti-courtyard?utm_source=api"
+    },
+    {
+      "id": "5d89a57c-d982-4d1d-beca-14f156b8c3e7",
+      "set_code": "eoc",
+      "name": "Canyon Slough",
+      "released_at": "2025-08-01",
+      "usd": "0.21",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/152/canyon-slough?utm_source=api"
+    },
+    {
+      "id": "3aa15173-06c7-4d25-97c8-523d23eaf973",
+      "set_code": "eoc",
+      "name": "Cascade Bluffs",
+      "released_at": "2025-08-01",
+      "usd": "0.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/153/cascade-bluffs?utm_source=api"
+    },
+    {
+      "id": "cf8712ba-574b-4e53-9c7e-0a1465116320",
+      "set_code": "eoc",
+      "name": "Centaur Vinecrasher",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/94/centaur-vinecrasher?utm_source=api"
+    },
+    {
+      "id": "df294fe7-884d-4fd0-9554-dfba132471cd",
+      "set_code": "eoc",
+      "name": "Chain Reaction",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/87/chain-reaction?utm_source=api"
+    },
+    {
+      "id": "d4372203-b930-4e6e-a351-e5b4581eb72b",
+      "set_code": "eoc",
+      "name": "Chaos Warp",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/49/chaos-warp?utm_source=api"
+    },
+    {
+      "id": "04e02176-16ee-4676-8b33-cedebdb18cbc",
+      "set_code": "eoc",
+      "name": "Chrome Host Seedshark",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/68/chrome-host-seedshark?utm_source=api"
+    },
+    {
+      "id": "7865ae5f-cfd9-4913-bcf5-aadbd6824e65",
+      "set_code": "eoc",
+      "name": "Cinder Glade",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/154/cinder-glade?utm_source=api"
+    },
+    {
+      "id": "f795f6fd-eac9-4c6d-90f5-bc475c8d69ac",
+      "set_code": "eoc",
+      "name": "Clifftop Retreat",
+      "released_at": "2025-08-01",
+      "usd": "0.35",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/155/clifftop-retreat?utm_source=api"
+    },
+    {
+      "id": "b851ab76-e40e-4232-b120-0bc1905ef0b4",
+      "set_code": "eoc",
+      "name": "Cloud Key",
+      "released_at": "2025-08-01",
+      "usd": "2.41",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/54/cloud-key?utm_source=api"
+    },
+    {
+      "id": "85eb4b03-305b-45a4-82e5-5fcd586cc744",
+      "set_code": "eoc",
+      "name": "Command Tower",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/59/command-tower?utm_source=api"
+    },
+    {
+      "id": "00d9dd37-aad3-46bd-ac9b-140974c8dcaa",
+      "set_code": "eoc",
+      "name": "Coretapper",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/132/coretapper?utm_source=api"
+    },
+    {
+      "id": "312fab72-52f7-4b65-a493-6d4359e292b1",
+      "set_code": "eoc",
+      "name": "Crystalline Crawler",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/133/crystalline-crawler?utm_source=api"
+    },
+    {
+      "id": "7ee610ee-7711-4a6b-b441-d6c73e6ef2b4",
+      "set_code": "eoc",
+      "name": "Cultivate",
+      "released_at": "2025-08-01",
+      "usd": "0.42",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/95/cultivate?utm_source=api"
+    },
+    {
+      "id": "19bf6b74-b236-42eb-8c88-d715cece6357",
+      "set_code": "eoc",
+      "name": "Cyberdrive Awakener",
+      "released_at": "2025-08-01",
+      "usd": "1.88",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/69/cyberdrive-awakener?utm_source=api"
+    },
+    {
+      "id": "72474b66-1dda-409d-8703-b026c1777081",
+      "set_code": "eoc",
+      "name": "Dakmor Salvage",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/156/dakmor-salvage?utm_source=api"
+    },
+    {
+      "id": "a07dd78e-8348-41ad-b6dd-f8a709e051fe",
+      "set_code": "eoc",
+      "name": "Darksteel Reactor",
+      "released_at": "2025-08-01",
+      "usd": "0.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/134/darksteel-reactor?utm_source=api"
+    },
+    {
+      "id": "6fb36f7b-6d31-413d-8392-ae4f8ca3c0c4",
+      "set_code": "eoc",
+      "name": "Deepglow Skate",
+      "released_at": "2025-08-01",
+      "usd": "0.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/70/deepglow-skate?utm_source=api"
+    },
+    {
+      "id": "972f3582-ad7c-4fe9-af29-90fa695a623f",
+      "set_code": "eoc",
+      "name": "Depthshaker Titan",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/9/depthshaker-titan?utm_source=api"
+    },
+    {
+      "id": "4b379771-e16f-4ca4-b656-9f66a8128970",
+      "set_code": "eoc",
+      "name": "Depthshaker Titan",
+      "released_at": "2025-08-01",
+      "usd": "0.50",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/29/depthshaker-titan?utm_source=api"
+    },
+    {
+      "id": "27554761-8d6e-4de4-8ce3-f31b2c03708c",
+      "set_code": "eoc",
+      "name": "Dispatch",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/64/dispatch?utm_source=api"
+    },
+    {
+      "id": "1b6abe5b-9bd3-43a0-b1bb-e6ebb64b443c",
+      "set_code": "eoc",
+      "name": "Empowered Autogenerator",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/135/empowered-autogenerator?utm_source=api"
+    },
+    {
+      "id": "c977d89a-bfd1-4e98-9d95-3e41c53dd188",
+      "set_code": "eoc",
+      "name": "Emry, Lurker of the Loch",
+      "released_at": "2025-08-01",
+      "usd": "0.61",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/71/emry-lurker-of-the-loch?utm_source=api"
+    },
+    {
+      "id": "fbfcbfed-74c7-4b1e-897c-44f25e45a4a5",
+      "set_code": "eoc",
+      "name": "Enthusiastic Mechanaut",
+      "released_at": "2025-08-01",
+      "usd": "0.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/114/enthusiastic-mechanaut?utm_source=api"
+    },
+    {
+      "id": "889cdc42-fae3-4dda-9cf0-697730ef00e3",
+      "set_code": "eoc",
+      "name": "Escape to the Wilds",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/115/escape-to-the-wilds?utm_source=api"
+    },
+    {
+      "id": "a0335da5-d754-480d-89d9-be6b8ca33fda",
+      "set_code": "eoc",
+      "name": "Escape Tunnel",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/157/escape-tunnel?utm_source=api"
+    },
+    {
+      "id": "1b4e70c6-8f74-4b0b-9ad7-33fce05c401b",
+      "set_code": "eoc",
+      "name": "Etched Oracle",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/136/etched-oracle?utm_source=api"
+    },
+    {
+      "id": "b0556f20-1ea8-4ab5-9a09-dec9959f017b",
+      "set_code": "eoc",
+      "name": "Etherium Sculptor",
+      "released_at": "2025-08-01",
+      "usd": "0.87",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/72/etherium-sculptor?utm_source=api"
+    },
+    {
+      "id": "25b57aaf-04fa-463d-8516-40fccd24d6ed",
+      "set_code": "eoc",
+      "name": "Eumidian Hatchery",
+      "released_at": "2025-08-01",
+      "usd": "0.34",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/20/eumidian-hatchery?utm_source=api"
+    },
+    {
+      "id": "00281944-a9d3-4294-8f63-34ad09e4c627",
+      "set_code": "eoc",
+      "name": "Eumidian Hatchery",
+      "released_at": "2025-08-01",
+      "usd": "0.82",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/40/eumidian-hatchery?utm_source=api"
+    },
+    {
+      "id": "3ee18d18-0167-4caa-adad-9d4435689c80",
+      "set_code": "eoc",
+      "name": "Eumidian Wastewaker",
+      "released_at": "2025-08-01",
+      "usd": "0.17",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/8/eumidian-wastewaker?utm_source=api"
+    },
+    {
+      "id": "813ce895-959c-46b1-82c8-48b73a681dbb",
+      "set_code": "eoc",
+      "name": "Eumidian Wastewaker",
+      "released_at": "2025-08-01",
+      "usd": "0.34",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/28/eumidian-wastewaker?utm_source=api"
+    },
+    {
+      "id": "8b9001a4-953c-4a32-b51a-c6bec7e74f9e",
+      "set_code": "eoc",
+      "name": "Evendo Brushrazer",
+      "released_at": "2025-08-01",
+      "usd": "0.20",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/10/evendo-brushrazer?utm_source=api"
+    },
+    {
+      "id": "e7a4a1da-664d-4675-8ddd-df5fc1b962bc",
+      "set_code": "eoc",
+      "name": "Evendo Brushrazer",
+      "released_at": "2025-08-01",
+      "usd": "0.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/30/evendo-brushrazer?utm_source=api"
+    },
+    {
+      "id": "e4ed0052-d6dd-4f69-8313-10863baefac9",
+      "set_code": "eoc",
+      "name": "Everflowing Chalice",
+      "released_at": "2025-08-01",
+      "usd": "0.35",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/137/everflowing-chalice?utm_source=api"
+    },
+    {
+      "id": "31181bd2-3a1f-4cb9-ba30-637ac479133a",
+      "set_code": "eoc",
+      "name": "Evolving Wilds",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/158/evolving-wilds?utm_source=api"
+    },
+    {
+      "id": "e86174cd-0291-4fca-8e22-2d2b6f921460",
+      "set_code": "eoc",
+      "name": "Exotic Orchard",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/159/exotic-orchard?utm_source=api"
+    },
+    {
+      "id": "8b817b17-27cf-4f6b-baf2-4c4dbb3e71d1",
+      "set_code": "eoc",
+      "name": "Experimental Augury",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/73/experimental-augury?utm_source=api"
+    },
+    {
+      "id": "61596da3-2a0e-47d9-b707-8db4cce2479d",
+      "set_code": "eoc",
+      "name": "Exploration Broodship",
+      "released_at": "2025-08-01",
+      "usd": "3.72",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/14/exploration-broodship?utm_source=api"
+    },
+    {
+      "id": "3410f9c6-ac11-4e7f-aefd-69fba43e1315",
+      "set_code": "eoc",
+      "name": "Exploration Broodship",
+      "released_at": "2025-08-01",
+      "usd": "4.96",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/34/exploration-broodship?utm_source=api"
+    },
+    {
+      "id": "6a21ecc8-f6fd-4670-91d8-94b9ce94c2fe",
+      "set_code": "eoc",
+      "name": "Fabled Passage",
+      "released_at": "2025-08-01",
+      "usd": "1.56",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/60/fabled-passage?utm_source=api"
+    },
+    {
+      "id": "95e0760a-d285-493b-88cd-7556d9b10007",
+      "set_code": "eoc",
+      "name": "Farseek",
+      "released_at": "2025-08-01",
+      "usd": "0.78",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/50/farseek?utm_source=api"
+    },
+    {
+      "id": "d312f4ca-909a-47df-91dc-dfb63838b5f5",
+      "set_code": "eoc",
+      "name": "Festering Thicket",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/21/festering-thicket?utm_source=api"
+    },
+    {
+      "id": "da778e94-0d73-4be4-abcc-7d0ae418927c",
+      "set_code": "eoc",
+      "name": "Festering Thicket",
+      "released_at": "2025-08-01",
+      "usd": "0.74",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/41/festering-thicket?utm_source=api"
+    },
+    {
+      "id": "b2222cae-2b12-4163-ab1b-7d315877ee8d",
+      "set_code": "eoc",
+      "name": "Formless Genesis",
+      "released_at": "2025-08-01",
+      "usd": "0.23",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/96/formless-genesis?utm_source=api"
+    },
+    {
+      "id": "976f6850-e646-4b51-a103-25240658672d",
+      "set_code": "eoc",
+      "name": "Fumigate",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/65/fumigate?utm_source=api"
+    },
+    {
+      "id": "30749eac-542a-40ff-95ee-27dde538915c",
+      "set_code": "eoc",
+      "name": "Gavel of the Righteous",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/55/gavel-of-the-righteous?utm_source=api"
+    },
+    {
+      "id": "97cf4cd8-9cb5-482e-92ca-da657b410e48",
+      "set_code": "eoc",
+      "name": "Gaze of Granite",
+      "released_at": "2025-08-01",
+      "usd": "0.21",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/116/gaze-of-granite?utm_source=api"
+    },
+    {
+      "id": "a1fc8d86-b118-46e3-92a5-8cbf2ca282f7",
+      "set_code": "eoc",
+      "name": "Glacial Fortress",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/160/glacial-fortress?utm_source=api"
+    },
+    {
+      "id": "c6ab42e4-4c87-4fc1-b7a9-1c0ff7d791fb",
+      "set_code": "eoc",
+      "name": "Glittering Massif",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/22/glittering-massif?utm_source=api"
+    },
+    {
+      "id": "cf9b8d08-93f4-479c-875a-b6f7766c59d8",
+      "set_code": "eoc",
+      "name": "Glittering Massif",
+      "released_at": "2025-08-01",
+      "usd": "0.45",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/42/glittering-massif?utm_source=api"
+    },
+    {
+      "id": "142b0860-8a82-4830-a4ff-2bbfc102437e",
+      "set_code": "eoc",
+      "name": "God-Eternal Bontu",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/83/god-eternal-bontu?utm_source=api"
+    },
+    {
+      "id": "18724f37-d50b-4b00-bd47-c5bc6e62697a",
+      "set_code": "eoc",
+      "name": "Golem Foundry",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/138/golem-foundry?utm_source=api"
+    },
+    {
+      "id": "74c5bb44-d72c-4c1a-a38f-86b4a8f49ae1",
+      "set_code": "eoc",
+      "name": "Great Furnace",
+      "released_at": "2025-08-01",
+      "usd": "2.36",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/161/great-furnace?utm_source=api"
+    },
+    {
+      "id": "30444f88-5a7e-46bc-ab0c-17e62fae2457",
+      "set_code": "eoc",
+      "name": "Groundskeeper",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/97/groundskeeper?utm_source=api"
+    },
+    {
+      "id": "900de725-741b-4b25-8e40-78ed7575a83f",
+      "set_code": "eoc",
+      "name": "Hammer of Purphoros",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/88/hammer-of-purphoros?utm_source=api"
+    },
+    {
+      "id": "c6c7f310-df4d-45ba-bee9-c508c4e734b9",
+      "set_code": "eoc",
+      "name": "Hangarback Walker",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/139/hangarback-walker?utm_source=api"
+    },
+    {
+      "id": "3e76be46-cf81-4fef-bc5b-f87666cb0413",
+      "set_code": "eoc",
+      "name": "Harrow",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/98/harrow?utm_source=api"
+    },
+    {
+      "id": "6b913e79-a9f6-44d4-bb37-c4f6f66b8151",
+      "set_code": "eoc",
+      "name": "Hearthhull, the Worldseed",
+      "released_at": "2025-08-01",
+      "usd": "2.52",
+      "usd_foil": "0.41",
+      "scryfall_uri": "https://scryfall.com/card/eoc/1/hearthhull-the-worldseed?utm_source=api"
+    },
+    {
+      "id": "a5873a4d-ab6e-4dd2-9380-5eaa367a8396",
+      "set_code": "eoc",
+      "name": "Horizon Explorer",
+      "released_at": "2025-08-01",
+      "usd": "2.49",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/15/horizon-explorer?utm_source=api"
+    },
+    {
+      "id": "3ed072ea-437b-472c-8a37-712654aef264",
+      "set_code": "eoc",
+      "name": "Horizon Explorer",
+      "released_at": "2025-08-01",
+      "usd": "3.79",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/35/horizon-explorer?utm_source=api"
+    },
+    {
+      "id": "060b7e5f-5b40-4efc-9fad-4cebf40b654b",
+      "set_code": "eoc",
+      "name": "Infernal Grasp",
+      "released_at": "2025-08-01",
+      "usd": "0.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/84/infernal-grasp?utm_source=api"
+    },
+    {
+      "id": "b826de8b-ed21-4e2b-b99a-e860c1cb876b",
+      "set_code": "eoc",
+      "name": "Insight Engine",
+      "released_at": "2025-08-01",
+      "usd": "1.13",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/6/insight-engine?utm_source=api"
+    },
+    {
+      "id": "e1849b92-feac-4e41-84f1-728a566446da",
+      "set_code": "eoc",
+      "name": "Insight Engine",
+      "released_at": "2025-08-01",
+      "usd": "3.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/26/insight-engine?utm_source=api"
+    },
+    {
+      "id": "46900ec7-eb18-45c4-8e90-a48b665cfdee",
+      "set_code": "eoc",
+      "name": "Inspirit, Flagship Vessel",
+      "released_at": "2025-08-01",
+      "usd": "1.09",
+      "usd_foil": "0.37",
+      "scryfall_uri": "https://scryfall.com/card/eoc/2/inspirit-flagship-vessel?utm_source=api"
+    },
+    {
+      "id": "3cbc4f0a-6735-461c-ae7a-3c2ce342c4da",
+      "set_code": "eoc",
+      "name": "Irrigated Farmland",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/162/irrigated-farmland?utm_source=api"
+    },
+    {
+      "id": "776f490a-2f75-4c18-8164-56bd65bb09c6",
+      "set_code": "eoc",
+      "name": "Jhoira, Weatherlight Captain",
+      "released_at": "2025-08-01",
+      "usd": "0.47",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/118/jhoira-weatherlight-captain?utm_source=api"
+    },
+    {
+      "id": "5006eae5-3b77-45ab-a907-f5094b2eaf1f",
+      "set_code": "eoc",
+      "name": "Juri, Master of the Revue",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/119/juri-master-of-the-revue?utm_source=api"
+    },
+    {
+      "id": "99cd996f-be74-4dbb-9460-6d650cedfca6",
+      "set_code": "eoc",
+      "name": "Kappa Cannoneer",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/74/kappa-cannoneer?utm_source=api"
+    },
+    {
+      "id": "22017ec2-3552-4865-af76-dba042b141f5",
+      "set_code": "eoc",
+      "name": "Karn's Bastion",
+      "released_at": "2025-08-01",
+      "usd": "2.79",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/163/karns-bastion?utm_source=api"
+    },
+    {
+      "id": "67198b97-bac2-480f-aea8-12841e8884de",
+      "set_code": "eoc",
+      "name": "Karplusan Forest",
+      "released_at": "2025-08-01",
+      "usd": "0.48",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/164/karplusan-forest?utm_source=api"
+    },
+    {
+      "id": "307a859e-eb80-4af6-b731-92e4767b5100",
+      "set_code": "eoc",
+      "name": "Kilo, Apogee Mind",
+      "released_at": "2025-08-01",
+      "usd": "1.22",
+      "usd_foil": "0.49",
+      "scryfall_uri": "https://scryfall.com/card/eoc/3/kilo-apogee-mind?utm_source=api"
+    },
+    {
+      "id": "607c1793-8e5a-4ebf-87c6-7f9c99bbd29a",
+      "set_code": "eoc",
+      "name": "Korvold, Fae-Cursed King",
+      "released_at": "2025-08-01",
+      "usd": "0.45",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/120/korvold-fae-cursed-king?utm_source=api"
+    },
+    {
+      "id": "d9f0d724-3b77-4cf6-a745-a04aca743312",
+      "set_code": "eoc",
+      "name": "Llanowar Wastes",
+      "released_at": "2025-08-01",
+      "usd": "0.54",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/165/llanowar-wastes?utm_source=api"
+    },
+    {
+      "id": "066de4d6-3fa4-44e0-ab02-8d97b603015a",
+      "set_code": "eoc",
+      "name": "Loamcrafter Faun",
+      "released_at": "2025-08-01",
+      "usd": "0.23",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/99/loamcrafter-faun?utm_source=api"
+    },
+    {
+      "id": "42f8591e-df30-49ec-962c-a75d32e6d9f5",
+      "set_code": "eoc",
+      "name": "Lonely Sandbar",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/166/lonely-sandbar?utm_source=api"
+    },
+    {
+      "id": "7bc56147-9920-401d-8e4e-93d497e8b67a",
+      "set_code": "eoc",
+      "name": "Long-Range Sensor",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/11/long-range-sensor?utm_source=api"
+    },
+    {
+      "id": "fd45c938-6c03-4d27-bff6-e454377748df",
+      "set_code": "eoc",
+      "name": "Long-Range Sensor",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/31/long-range-sensor?utm_source=api"
+    },
+    {
+      "id": "ca968493-8348-4b15-ab36-bcca9dbcc28a",
+      "set_code": "eoc",
+      "name": "Lux Artillery",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/140/lux-artillery?utm_source=api"
+    },
+    {
+      "id": "d477db7e-d964-45b2-95ee-d6a382dd2aa9",
+      "set_code": "eoc",
+      "name": "Lux Cannon",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/141/lux-cannon?utm_source=api"
+    },
+    {
+      "id": "d4087ba6-8227-4ec3-a989-0833ad6c8788",
+      "set_code": "eoc",
+      "name": "Maestros Theater",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/167/maestros-theater?utm_source=api"
+    },
+    {
+      "id": "674f3a8a-4552-4289-b92a-06ce158f115c",
+      "set_code": "eoc",
+      "name": "Mayhem Devil",
+      "released_at": "2025-08-01",
+      "usd": "0.64",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/121/mayhem-devil?utm_source=api"
+    },
+    {
+      "id": "1522122b-e4bf-4dba-b22c-efa18bc6c33b",
+      "set_code": "eoc",
+      "name": "Mazirek, Kraul Death Priest",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/122/mazirek-kraul-death-priest?utm_source=api"
+    },
+    {
+      "id": "ccce91e9-58f4-4358-a696-5c439ea19fc9",
+      "set_code": "eoc",
+      "name": "Mindless Automaton",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/142/mindless-automaton?utm_source=api"
+    },
+    {
+      "id": "4481eab8-9e7d-4db8-b1f2-fdf5ee1919a2",
+      "set_code": "eoc",
+      "name": "Moraug, Fury of Akoum",
+      "released_at": "2025-08-01",
+      "usd": "2.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/89/moraug-fury-of-akoum?utm_source=api"
+    },
+    {
+      "id": "3094800e-9994-47c3-9ebc-536bf5de13cd",
+      "set_code": "eoc",
+      "name": "Mountain Valley",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/61/mountain-valley?utm_source=api"
+    },
+    {
+      "id": "ad617991-21c0-47c6-bc84-6e7c33edf7ee",
+      "set_code": "eoc",
+      "name": "Moxite Refinery",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/17/moxite-refinery?utm_source=api"
+    },
+    {
+      "id": "eae2f9c7-8a72-4b9b-a8ea-c531d0ef168f",
+      "set_code": "eoc",
+      "name": "Moxite Refinery",
+      "released_at": "2025-08-01",
+      "usd": "0.39",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/37/moxite-refinery?utm_source=api"
+    },
+    {
+      "id": "c37a0136-1c40-4cd1-8787-a25c377c1741",
+      "set_code": "eoc",
+      "name": "Multani, Yavimaya's Avatar",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/100/multani-yavimayas-avatar?utm_source=api"
+    },
+    {
+      "id": "a0e2098f-1d94-491a-a7e9-a45a9f69e3a8",
+      "set_code": "eoc",
+      "name": "Myriad Landscape",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/169/myriad-landscape?utm_source=api"
+    },
+    {
+      "id": "9fd41ad5-6b36-482e-8305-bbc709668470",
+      "set_code": "eoc",
+      "name": "Mystic Monastery",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/170/mystic-monastery?utm_source=api"
+    },
+    {
+      "id": "5b42a79a-1f08-4e15-b40e-c993307ae066",
+      "set_code": "eoc",
+      "name": "Nature's Lore",
+      "released_at": "2025-08-01",
+      "usd": "3.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/101/natures-lore?utm_source=api"
+    },
+    {
+      "id": "67bdba19-c74a-462d-9e51-4fd7f0a6a2c3",
+      "set_code": "eoc",
+      "name": "Night's Whisper",
+      "released_at": "2025-08-01",
+      "usd": "0.36",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/85/nights-whisper?utm_source=api"
+    },
+    {
+      "id": "777552e5-cc2d-460f-b26f-977c6ebcfc6b",
+      "set_code": "eoc",
+      "name": "Omnath, Locus of Rage",
+      "released_at": "2025-08-01",
+      "usd": "0.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/123/omnath-locus-of-rage?utm_source=api"
+    },
+    {
+      "id": "ab19808f-a5b8-4dfd-800e-2064cd6538c8",
+      "set_code": "eoc",
+      "name": "Oracle of Mul Daya",
+      "released_at": "2025-08-01",
+      "usd": "2.99",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/102/oracle-of-mul-daya?utm_source=api"
+    },
+    {
+      "id": "daaa7b7e-76fc-47a0-a58d-1169be1aa335",
+      "set_code": "eoc",
+      "name": "Organic Extinction",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/66/organic-extinction?utm_source=api"
+    },
+    {
+      "id": "1e06d6be-c2a3-4c73-a916-89674c0ddfed",
+      "set_code": "eoc",
+      "name": "Patrolling Peacemaker",
+      "released_at": "2025-08-01",
+      "usd": "0.77",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/5/patrolling-peacemaker?utm_source=api"
+    },
+    {
+      "id": "34429a6d-2d62-4b4d-9b6e-2006a07837a8",
+      "set_code": "eoc",
+      "name": "Patrolling Peacemaker",
+      "released_at": "2025-08-01",
+      "usd": "2.11",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/25/patrolling-peacemaker?utm_source=api"
+    },
+    {
+      "id": "e4beb84e-9eb9-48a2-932a-91fbbf218b5b",
+      "set_code": "eoc",
+      "name": "Pentad Prism",
+      "released_at": "2025-08-01",
+      "usd": "0.21",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/56/pentad-prism?utm_source=api"
+    },
+    {
+      "id": "99add821-568b-4931-8525-a673e6cc8f65",
+      "set_code": "eoc",
+      "name": "Pest Infestation",
+      "released_at": "2025-08-01",
+      "usd": "0.63",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/103/pest-infestation?utm_source=api"
+    },
+    {
+      "id": "a564c2e8-f49f-4ed7-850f-7c8bc92e4926",
+      "set_code": "eoc",
+      "name": "Phyrexian Metamorph",
+      "released_at": "2025-08-01",
+      "usd": "2.49",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/75/phyrexian-metamorph?utm_source=api"
+    },
+    {
+      "id": "8695796f-b6ed-46db-b1b8-07ed0cc5a5e5",
+      "set_code": "eoc",
+      "name": "Planetary Annihilation",
+      "released_at": "2025-08-01",
+      "usd": "0.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/12/planetary-annihilation?utm_source=api"
+    },
+    {
+      "id": "65a07be7-1967-4db6-8868-94e2dde10ad5",
+      "set_code": "eoc",
+      "name": "Planetary Annihilation",
+      "released_at": "2025-08-01",
+      "usd": "0.32",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/32/planetary-annihilation?utm_source=api"
+    },
+    {
+      "id": "12e1fecc-c9e4-401f-ac24-11822276c911",
+      "set_code": "eoc",
+      "name": "Pull from Tomorrow",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/76/pull-from-tomorrow?utm_source=api"
+    },
+    {
+      "id": "1e355b88-a73d-430b-95eb-8ba646f2e406",
+      "set_code": "eoc",
+      "name": "Putrefy",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/124/putrefy?utm_source=api"
+    },
+    {
+      "id": "1595f80a-b566-49ce-a64f-4289443b1b8d",
+      "set_code": "eoc",
+      "name": "Radiant Summit",
+      "released_at": "2025-08-01",
+      "usd": "0.53",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/23/radiant-summit?utm_source=api"
+    },
+    {
+      "id": "b8e7e906-2bac-4399-84c9-bc3f2647baba",
+      "set_code": "eoc",
+      "name": "Radiant Summit",
+      "released_at": "2025-08-01",
+      "usd": "1.98",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/43/radiant-summit?utm_source=api"
+    },
+    {
+      "id": "64b67170-1602-4050-80c0-ade2a6cac211",
+      "set_code": "eoc",
+      "name": "Rakdos Charm",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/125/rakdos-charm?utm_source=api"
+    },
+    {
+      "id": "84aa18de-6acc-46cc-8e28-3046790a6751",
+      "set_code": "eoc",
+      "name": "Rampaging Baloths",
+      "released_at": "2025-08-01",
+      "usd": "0.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/104/rampaging-baloths?utm_source=api"
+    },
+    {
+      "id": "0bbd24cd-48f7-40d7-9741-f30108f04b84",
+      "set_code": "eoc",
+      "name": "Razortide Bridge",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/171/razortide-bridge?utm_source=api"
+    },
+    {
+      "id": "78743ab3-0289-4799-b139-a37964532b92",
+      "set_code": "eoc",
+      "name": "Resourceful Defense",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/67/resourceful-defense?utm_source=api"
+    },
+    {
+      "id": "8e724c6d-3922-406f-b9e6-e478e1039416",
+      "set_code": "eoc",
+      "name": "Ripples of Potential",
+      "released_at": "2025-08-01",
+      "usd": "3.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/77/ripples-of-potential?utm_source=api"
+    },
+    {
+      "id": "3dc4e8b8-6ee6-49aa-895a-2e35af6d1dbb",
+      "set_code": "eoc",
+      "name": "Riveteers Overlook",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/172/riveteers-overlook?utm_source=api"
+    },
+    {
+      "id": "2aa1f7c6-f888-4384-9626-f106571e164c",
+      "set_code": "eoc",
+      "name": "Rocky Tar Pit",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/173/rocky-tar-pit?utm_source=api"
+    },
+    {
+      "id": "2c446dbb-b883-47e9-aab3-ac921ff218f8",
+      "set_code": "eoc",
+      "name": "Roiling Regrowth",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/105/roiling-regrowth?utm_source=api"
+    },
+    {
+      "id": "81d91591-8d44-40cc-9941-c455f9722958",
+      "set_code": "eoc",
+      "name": "Rugged Prairie",
+      "released_at": "2025-08-01",
+      "usd": "0.32",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/174/rugged-prairie?utm_source=api"
+    },
+    {
+      "id": "da54e458-1d4f-45f0-a225-99eb9c4049fb",
+      "set_code": "eoc",
+      "name": "Rustvale Bridge",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/175/rustvale-bridge?utm_source=api"
+    },
+    {
+      "id": "8bbbe65d-7162-42fb-94ee-d835d6c3f02a",
+      "set_code": "eoc",
+      "name": "Satyr Wayfinder",
+      "released_at": "2025-08-01",
+      "usd": "0.21",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/106/satyr-wayfinder?utm_source=api"
+    },
+    {
+      "id": "8fc25982-8668-43c4-93db-84e716e8783d",
+      "set_code": "eoc",
+      "name": "Scouring Swarm",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/16/scouring-swarm?utm_source=api"
+    },
+    {
+      "id": "1a9318ca-2974-4d3f-8951-205ba3f9c64a",
+      "set_code": "eoc",
+      "name": "Scouring Swarm",
+      "released_at": "2025-08-01",
+      "usd": "0.31",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/36/scouring-swarm?utm_source=api"
+    },
+    {
+      "id": "57a194b3-2899-4dee-977a-c77df0b94dfe",
+      "set_code": "eoc",
+      "name": "Seat of the Synod",
+      "released_at": "2025-08-01",
+      "usd": "0.83",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/176/seat-of-the-synod?utm_source=api"
+    },
+    {
+      "id": "aaa5bee9-3f6a-45b0-a282-6b23222e948f",
+      "set_code": "eoc",
+      "name": "Secluded Steppe",
+      "released_at": "2025-08-01",
+      "usd": "0.35",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/177/secluded-steppe?utm_source=api"
+    },
+    {
+      "id": "af373c1c-aeb8-48d9-9cea-dfd6d6c2ee87",
+      "set_code": "eoc",
+      "name": "Sheltered Thicket",
+      "released_at": "2025-08-01",
+      "usd": "0.16",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/178/sheltered-thicket?utm_source=api"
+    },
+    {
+      "id": "72bba14a-c813-49c8-bf73-f41e1bdc1099",
+      "set_code": "eoc",
+      "name": "Shivan Reef",
+      "released_at": "2025-08-01",
+      "usd": "0.34",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/179/shivan-reef?utm_source=api"
+    },
+    {
+      "id": "8f14540a-479f-4a3c-8e5b-f482caf48451",
+      "set_code": "eoc",
+      "name": "Silverbluff Bridge",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/180/silverbluff-bridge?utm_source=api"
+    },
+    {
+      "id": "03f8c846-d80c-49a4-a562-e817cd0c6096",
+      "set_code": "eoc",
+      "name": "Skycloud Expanse",
+      "released_at": "2025-08-01",
+      "usd": "0.21",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/181/skycloud-expanse?utm_source=api"
+    },
+    {
+      "id": "860c0808-3ec1-4182-bf83-783720a02780",
+      "set_code": "eoc",
+      "name": "Skyshroud Claim",
+      "released_at": "2025-08-01",
+      "usd": "0.90",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/107/skyshroud-claim?utm_source=api"
+    },
+    {
+      "id": "ea5c3d9e-13e7-492d-80b8-d6dd42895f33",
+      "set_code": "eoc",
+      "name": "Smoldering Marsh",
+      "released_at": "2025-08-01",
+      "usd": "0.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/182/smoldering-marsh?utm_source=api"
+    },
+    {
+      "id": "03c45b66-ddc7-43f8-95d0-fe2ad743b3a4",
+      "set_code": "eoc",
+      "name": "Solar Array",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/18/solar-array?utm_source=api"
+    },
+    {
+      "id": "0e14344e-f8cf-4266-804f-207783814306",
+      "set_code": "eoc",
+      "name": "Solar Array",
+      "released_at": "2025-08-01",
+      "usd": "0.34",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/38/solar-array?utm_source=api"
+    },
+    {
+      "id": "ee6e5a35-fe21-4dee-b0ef-a8f2841511ad",
+      "set_code": "eoc",
+      "name": "Sol Ring",
+      "released_at": "2025-08-01",
+      "usd": "1.77",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/57/sol-ring?utm_source=api"
+    },
+    {
+      "id": "f4907e7b-d6d5-4e9b-968f-bce34ae4a577",
+      "set_code": "eoc",
+      "name": "Soul-Guide Lantern",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/143/soul-guide-lantern?utm_source=api"
+    },
+    {
+      "id": "5a80f7e1-1d79-4302-a603-73eb060b97a6",
+      "set_code": "eoc",
+      "name": "Soul of Windgrace",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/126/soul-of-windgrace?utm_source=api"
+    },
+    {
+      "id": "35e9ec06-a848-4230-84a2-19cb8034e0f0",
+      "set_code": "eoc",
+      "name": "Spire of Industry",
+      "released_at": "2025-08-01",
+      "usd": "0.24",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/183/spire-of-industry?utm_source=api"
+    },
+    {
+      "id": "63c7f172-0aec-4629-967c-37253aed0f0d",
+      "set_code": "eoc",
+      "name": "Splendid Reclamation",
+      "released_at": "2025-08-01",
+      "usd": "0.38",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/108/splendid-reclamation?utm_source=api"
+    },
+    {
+      "id": "6520f5dc-ead8-40c5-af1c-411fea2ba268",
+      "set_code": "eoc",
+      "name": "Springbloom Druid",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/51/springbloom-druid?utm_source=api"
+    },
+    {
+      "id": "f5555845-0424-4cb6-b373-57a722444a4a",
+      "set_code": "eoc",
+      "name": "Sprouting Goblin",
+      "released_at": "2025-08-01",
+      "usd": "0.25",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/90/sprouting-goblin?utm_source=api"
+    },
+    {
+      "id": "7601fbf2-916f-44b2-837a-201fd8304613",
+      "set_code": "eoc",
+      "name": "Steel Overseer",
+      "released_at": "2025-08-01",
+      "usd": "0.37",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/144/steel-overseer?utm_source=api"
+    },
+    {
+      "id": "258b1cc2-ce3c-4219-808c-812548a7dd12",
+      "set_code": "eoc",
+      "name": "Sulfur Falls",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/184/sulfur-falls?utm_source=api"
+    },
+    {
+      "id": "eedb9df2-20d3-4cfd-8aed-336edc37d5a9",
+      "set_code": "eoc",
+      "name": "Sulfurous Springs",
+      "released_at": "2025-08-01",
+      "usd": "1.23",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/185/sulfurous-springs?utm_source=api"
+    },
+    {
+      "id": "686c005b-39c8-4c6c-bf5a-462774f1d6d9",
+      "set_code": "eoc",
+      "name": "Surge Conductor",
+      "released_at": "2025-08-01",
+      "usd": "0.39",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/19/surge-conductor?utm_source=api"
+    },
+    {
+      "id": "9256ac07-aa4d-4f65-8e74-85ec5959dee9",
+      "set_code": "eoc",
+      "name": "Surge Conductor",
+      "released_at": "2025-08-01",
+      "usd": "1.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/39/surge-conductor?utm_source=api"
+    },
+    {
+      "id": "83d0b761-d694-4232-9f40-5bd8c82a05f1",
+      "set_code": "eoc",
+      "name": "Swan Song",
+      "released_at": "2025-08-01",
+      "usd": "9.94",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/46/swan-song?utm_source=api"
+    },
+    {
+      "id": "0e7ff4dc-af63-4342-9a44-d059e62bd14c",
+      "set_code": "eoc",
+      "name": "Swords to Plowshares",
+      "released_at": "2025-08-01",
+      "usd": "1.47",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/45/swords-to-plowshares?utm_source=api"
+    },
+    {
+      "id": "89b61123-b10f-4bcf-b5f9-1f302f9b22d1",
+      "set_code": "eoc",
+      "name": "Szarel, Genesis Shepherd",
+      "released_at": "2025-08-01",
+      "usd": "0.52",
+      "usd_foil": "0.39",
+      "scryfall_uri": "https://scryfall.com/card/eoc/4/szarel-genesis-shepherd?utm_source=api"
+    },
+    {
+      "id": "e408c673-4a1f-45db-827a-75c501e1b3d6",
+      "set_code": "eoc",
+      "name": "Tear Asunder",
+      "released_at": "2025-08-01",
+      "usd": "0.28",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/109/tear-asunder?utm_source=api"
+    },
+    {
+      "id": "2d389264-e2d2-4589-9636-faa11fe46710",
+      "set_code": "eoc",
+      "name": "Tekuthal, Inquiry Dominus",
+      "released_at": "2025-08-01",
+      "usd": "1.49",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/78/tekuthal-inquiry-dominus?utm_source=api"
+    },
+    {
+      "id": "dd139d4d-3a40-4015-93de-c838c64156c6",
+      "set_code": "eoc",
+      "name": "Temple of Enlightenment",
+      "released_at": "2025-08-01",
+      "usd": "0.17",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/186/temple-of-enlightenment?utm_source=api"
+    },
+    {
+      "id": "a4ee2565-a630-4c7b-93c2-8baba3d3441e",
+      "set_code": "eoc",
+      "name": "Temple of Epiphany",
+      "released_at": "2025-08-01",
+      "usd": "0.20",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/187/temple-of-epiphany?utm_source=api"
+    },
+    {
+      "id": "5d954542-6e10-42ab-a91f-be911b2f71d6",
+      "set_code": "eoc",
+      "name": "Temple of Triumph",
+      "released_at": "2025-08-01",
+      "usd": "0.20",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/188/temple-of-triumph?utm_source=api"
+    },
+    {
+      "id": "7102269a-e0d1-42a0-aa9d-fdd53b5aaebe",
+      "set_code": "eoc",
+      "name": "Terramorphic Expanse",
+      "released_at": "2025-08-01",
+      "usd": "0.26",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/62/terramorphic-expanse?utm_source=api"
+    },
+    {
+      "id": "29ad5bb3-927d-41d0-a000-3826ea117e52",
+      "set_code": "eoc",
+      "name": "Tezzeret's Gambit",
+      "released_at": "2025-08-01",
+      "usd": "0.27",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/47/tezzerets-gambit?utm_source=api"
+    },
+    {
+      "id": "40489e28-878d-44a2-847f-07beef1aa0f8",
+      "set_code": "eoc",
+      "name": "The Gitrog Monster",
+      "released_at": "2025-08-01",
+      "usd": "0.55",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/117/the-gitrog-monster?utm_source=api"
+    },
+    {
+      "id": "0a6f0408-6758-495f-9d6c-7686a1542fbd",
+      "set_code": "eoc",
+      "name": "The Mycosynth Gardens",
+      "released_at": "2025-08-01",
+      "usd": "0.41",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/168/the-mycosynth-gardens?utm_source=api"
+    },
+    {
+      "id": "446ccc7a-fc2d-4e81-b782-31137119db00",
+      "set_code": "eoc",
+      "name": "Thirst for Knowledge",
+      "released_at": "2025-08-01",
+      "usd": "0.20",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/48/thirst-for-knowledge?utm_source=api"
+    },
+    {
+      "id": "18a6ea89-417c-4ee0-a410-8a0067b92967",
+      "set_code": "eoc",
+      "name": "Thought Monitor",
+      "released_at": "2025-08-01",
+      "usd": "0.33",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/79/thought-monitor?utm_source=api"
+    },
+    {
+      "id": "699d1222-f150-46aa-9004-87b45f07eb42",
+      "set_code": "eoc",
+      "name": "Threefold Thunderhulk",
+      "released_at": "2025-08-01",
+      "usd": "0.30",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/145/threefold-thunderhulk?utm_source=api"
+    },
+    {
+      "id": "f10db847-6598-49a5-8f10-67afd5187d32",
+      "set_code": "eoc",
+      "name": "Thrummingbird",
+      "released_at": "2025-08-01",
+      "usd": "0.29",
+      "usd_foil": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/80/thrummingbird?utm_source=api"
+    }
+  ]
+}
