@@ -1,0 +1,38 @@
+name: MTG Data Pipeline & Price Ingestion
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Every Monday at 6:00 UTC
+  workflow_dispatch:
+
+jobs:
+  ingest-and-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install duckdb requests pandas
+
+      - name: Run MTGJSON & Price Ingestion Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python pipeline/ingest.py
+
+      - name: Commit and Push Updated Parquet / SQLite Snapshots
+        run: |
+          git config --global user.name 'MTG Pipeline Bot'
+          git config --global user.email 'bot@mtgtracker.local'
+          git add data/*.parquet data/*.db || true
+          git commit -m "chore(pipeline): automated weekly MTGJSON & price history refresh [skip ci]" || echo "No changes to commit"
+          git push || echo "No push required"
