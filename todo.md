@@ -3,7 +3,7 @@
 - [ ] Verify ManaBox CSV / text export structure (quantity, name, set, collector number).
 - [x] Build a headless daily GitHub market-movers job that ingests MTG price sources, calculates normalized fluctuation signals, and commits a dated machine-readable snapshot.
 - [x] Add a scheduled GitHub workflow for the daily market-movers job with a manual-dispatch path, safe idempotent output handling, and documented API source configuration.
-- [ ] Validate representative Commander precon decklist and card-detail routes end to end, then repair any route or Scryfall-resolution failures.
+- [x] Validate representative Commander precon decklist and card-detail routes end to end, then repair any route or Scryfall-resolution failures.
 - [x] Reconcile homepage recent-set indexing so each set surfaces every related Commander product with a direct decklist or archive route.
 - [ ] Add tests for set-to-precon indexing, slug route generation, and daily market snapshot validation.
 - [ ] Build local collection storage and parser supporting ManaBox exports.
@@ -91,7 +91,7 @@
 
 - [ ] Document credential rotation requirements for any keys previously committed to project history.
 
-- [ ] Add a test that asserts publishable source files contain no hardcoded bearer tokens or cloud access keys.
+- [x] Add a test that asserts publishable source files contain no hardcoded bearer tokens or cloud access keys.
 
 - [ ] Confirm production email dispatch after secure server-side Resend wiring is complete.
 
@@ -129,7 +129,7 @@
 
 - [ ] Review and remove obsolete release notes that mention simulated email dispatch.
 
-- [ ] Add a lightweight CI secret scan to the public repository workflow.
+- [x] Add a lightweight CI secret scan to the public repository workflow.
 
 - [ ] Confirm the current app continues to use the managed hosting deployment as the production source of truth.
 
@@ -149,4 +149,4 @@
 
 - [ ] Remove this temporary cleanup checklist after the release process is complete.
 
-- [ ] Resolve the remaining primary-artwork blank panel on card-detail pages while alternate-printing thumbnails load successfully.
+- [x] Resolve the remaining primary-artwork blank panel on card-detail pages while alternate-printing thumbnails load successfully.

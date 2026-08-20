@@ -4,7 +4,6 @@ import { ArrowLeft, ExternalLink, ShieldCheck, ShoppingBag, Sparkles, TrendingUp
 import { commanderDecklistsData } from '@/data/commanderDecklistsData';
 import { loadOwnedPrecons } from '@/lib/preconInventory';
 import { loadOwnedCollection, saveOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
-import { CardImageZoom } from '@/components/CardImageZoom';
 
 interface PrintingVersion {
   id: string;
@@ -220,19 +219,25 @@ export default function CardDetail() {
       <main className="mx-auto max-w-7xl w-full px-4 py-8 sm:px-8 flex-1 space-y-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card Image */}
-          <div className={`border-2 p-6 flex flex-col items-center justify-center bg-card ${cardData.isBrandNewCard ? 'border-amber-500/80 shadow-[0_0_20px_rgba(245,158,11,0.15)]' : 'border-border'}`}>
+          <div className={`self-start border-2 p-6 flex flex-col items-center justify-center bg-card ${cardData.isBrandNewCard ? 'border-amber-500/80 shadow-[0_0_20px_rgba(245,158,11,0.15)]' : 'border-border'}`}>
             {cardData.isBrandNewCard && (
               <div className="w-full mb-4 border border-amber-500 bg-amber-500/10 text-amber-500 px-3 py-1.5 font-mono text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5" /> Set Debut / New Mechanic Card
               </div>
             )}
             <div className="aspect-[5/7] w-full max-w-sm overflow-hidden bg-muted border-2 border-border shadow-lg">
-              <CardImageZoom
-                src={activeImage}
-                fallbackSrc={cardData.imageUrl}
-                alt={cardData.name}
-                className="min-h-[500px]"
-              />
+              {activeImage ? (
+                <img
+                  src={activeImage}
+                  alt={cardData.name}
+                  className="block h-full min-h-[500px] w-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <div className="flex h-full min-h-[500px] items-center justify-center p-4 text-center text-xs text-muted-foreground">Artwork unavailable</div>
+              )}
             </div>
             <div className="mt-5 w-full space-y-2">
               <button
@@ -337,7 +342,7 @@ export default function CardDetail() {
                         }`}
                       >
                         <div className="aspect-[5/7] w-full bg-muted border border-border overflow-hidden mb-2">
-                          <img src={p.imageUrl} alt={p.setName} className="h-full w-full object-cover pointer-events-none" />
+                          <img src={p.imageUrl} alt={p.setName} className="h-full w-full object-cover pointer-events-none" loading="lazy" decoding="async" />
                         </div>
                         <div>
                           <p className="font-bold text-xs truncate" title={p.setName}>{p.setName}</p>
