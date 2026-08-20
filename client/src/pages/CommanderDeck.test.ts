@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import { slugify } from "@/hooks/useCommanderDeck";
 
 describe("CommanderDeck live market valuation calculation", () => {
   it("sums individual card prices correctly across commander and main deck quantities", () => {
@@ -34,5 +35,10 @@ describe("CommanderDeck live market valuation calculation", () => {
     expect(valuationHook).toBeGreaterThan(-1);
     expect(valuationHook).toBeLessThan(loadingReturn);
     expect(valuationHook).toBeLessThan(errorReturn);
+  });
+
+  it("generates stable route-safe slugs for Commander product names", () => {
+    expect(slugify("World Shaper")).toBe("world-shaper");
+    expect(slugify("Alesha, Who Smiles at Death")).toBe("alesha-who-smiles-at-death");
   });
 });

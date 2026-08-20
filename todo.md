@@ -1,25 +1,25 @@
 # ManaBox Collection Integration Roadmap
 
-- [ ] Verify ManaBox CSV / text export structure (quantity, name, set, collector number).
+- [x] Verify ManaBox CSV / text export structure (quantity, name, set, collector number).
 - [x] Build a headless daily GitHub market-movers job that ingests MTG price sources, calculates normalized fluctuation signals, and commits a dated machine-readable snapshot.
 - [x] Add a scheduled GitHub workflow for the daily market-movers job with a manual-dispatch path, safe idempotent output handling, and documented API source configuration.
 - [x] Validate representative Commander precon decklist and card-detail routes end to end, then repair any route or Scryfall-resolution failures.
 - [x] Reconcile homepage recent-set indexing so each set surfaces every related Commander product with a direct decklist or archive route.
-- [ ] Add tests for set-to-precon indexing, slug route generation, and daily market snapshot validation.
-- [ ] Build local collection storage and parser supporting ManaBox exports.
-- [ ] Build owned-card matching logic for set cards and Commander decklists.
-- [ ] Build deck completion guidance UI showing owned percentage and missing cards.
+- [x] Add tests for set-to-precon indexing, slug route generation, and daily market snapshot validation.
+- [x] Build local collection storage and parser supporting ManaBox exports.
+- [x] Build owned-card matching logic for set cards and Commander decklists.
+- [x] Build deck completion guidance UI showing owned percentage and missing cards.
 - [x] Verify build health, responsiveness, and save checkpoint.
 - [ ] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
-- [ ] Add missing-card shopping list and retailer batch export formats.
+- [x] Add missing-card shopping list and retailer batch export formats.
 - [ ] Add collection equity totals across sets.
-- [ ] Add Commander deck recommendations ranked by owned-card coverage percentage.
+- [x] Add Commander deck recommendations ranked by owned-card coverage percentage.
 - [ ] Add historical collection-value line chart and snapshot persistence to CollectionOverview.
-- [ ] Add CSV and plain-text download buttons to the missing card shopping list.
-- [ ] Add exclude-basic-lands toggle to missing-card shopping list and all export formats.
-- [ ] Show estimated missing-card acquisition cost on Commander completion summaries.
-- [ ] Add hover/focus tooltip with individual missing-card prices to completion cost tile.
-- [ ] Add summary-card toggle to exclude basic lands from estimated completion cost and tooltip.
+- [x] Add CSV and plain-text download buttons to the missing card shopping list.
+- [x] Add exclude-basic-lands toggle to missing-card shopping list and all export formats.
+- [x] Show estimated missing-card acquisition cost on Commander completion summaries.
+- [x] Add hover/focus tooltip with individual missing-card prices to completion cost tile.
+- [x] Add summary-card toggle to exclude basic lands from estimated completion cost and tooltip.
 - [ ] Expand historical Commander precons by a few years.
 - [ ] Improve filtering and display tag styling without hovering/obscuring cards.
 - [ ] Utilize full page width and provide mobile-friendly image zoom.
@@ -150,3 +150,5 @@
 - [ ] Remove this temporary cleanup checklist after the release process is complete.
 
 - [x] Resolve the remaining primary-artwork blank panel on card-detail pages while alternate-printing thumbnails load successfully.
+
+- [ ] Replace the collection-equity placeholder valuation with real card pricing, grouped set totals, and price-based historical snapshots.
