@@ -1,10 +1,15 @@
 # ManaBox Collection Integration Roadmap
 
 - [ ] Verify ManaBox CSV / text export structure (quantity, name, set, collector number).
+- [x] Build a headless daily GitHub market-movers job that ingests MTG price sources, calculates normalized fluctuation signals, and commits a dated machine-readable snapshot.
+- [x] Add a scheduled GitHub workflow for the daily market-movers job with a manual-dispatch path, safe idempotent output handling, and documented API source configuration.
+- [ ] Validate representative Commander precon decklist and card-detail routes end to end, then repair any route or Scryfall-resolution failures.
+- [x] Reconcile homepage recent-set indexing so each set surfaces every related Commander product with a direct decklist or archive route.
+- [ ] Add tests for set-to-precon indexing, slug route generation, and daily market snapshot validation.
 - [ ] Build local collection storage and parser supporting ManaBox exports.
 - [ ] Build owned-card matching logic for set cards and Commander decklists.
 - [ ] Build deck completion guidance UI showing owned percentage and missing cards.
-- [ ] Verify build health, responsiveness, and save checkpoint.
+- [x] Verify build health, responsiveness, and save checkpoint.
 - [ ] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
 - [ ] Add missing-card shopping list and retailer batch export formats.
 - [ ] Add collection equity totals across sets.
@@ -104,7 +109,7 @@
 
 - [ ] Re-run the full MTG decklist and market intelligence test suite after the history cleanup.
 
-- [ ] Add a maintainer note explaining that `.project-config.json` remains local-only and is intentionally excluded from public repositories.
+- [x] Add a maintainer note explaining that `.project-config.json` remains local-only and is intentionally excluded from public repositories.
 
 - [ ] Preserve the remote pre-cleanup branch for rollback until user confirms deletion.
 
@@ -143,3 +148,5 @@
 - [ ] Record the sanitized publication result in the next project checkpoint.
 
 - [ ] Remove this temporary cleanup checklist after the release process is complete.
+
+- [ ] Resolve the remaining primary-artwork blank panel on card-detail pages while alternate-printing thumbnails load successfully.

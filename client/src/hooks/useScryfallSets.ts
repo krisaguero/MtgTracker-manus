@@ -1,6 +1,5 @@
-// Design philosophy: hard-edged MTG editorial interface with indigo wayfinding, paper-like surfaces, and compact catalog signals.
 import { useEffect, useState } from 'react';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklistsData, type RawDeckCard } from '@/data/commanderDecklistsData';
 import { productAssetFor } from '@/data/preconProductAssets';
 
 export interface ScryfallSet {
@@ -30,6 +29,8 @@ export interface PreconDeck {
   hasDecklist?: boolean;
   synopsis?: string;
   approxValue?: number;
+  commanderCards?: RawDeckCard[];
+  mainCards?: RawDeckCard[];
 }
 
 function normalizedName(value: string) {
@@ -45,6 +46,39 @@ function localDeckFor(setCode: string, productName: string) {
   });
 }
 
+export function commanderProductCodesForParent(parentSetCode: string, allSets: ScryfallSet[]): string[] {
+  const normalizedParentCode = parentSetCode.toLowerCase();
+  const childCommanderCodes = allSets
+    .filter((set) => set.set_type === 'commander' && set.parent_set_code?.toLowerCase() === normalizedParentCode)
+    .map((set) => set.code.toLowerCase());
+  return Array.from(new Set([normalizedParentCode, ...childCommanderCodes]));
+}
+
+export function localDecksForParentSet(parentSetCode: string, allSets: ScryfallSet[]) {
+  const productSetCodes = new Set(commanderProductCodesForParent(parentSetCode, allSets));
+  return commanderDecklistsData.filter((deck) => productSetCodes.has(deck.set_code.toLowerCase()));
+}
+
+function mapLocalDeck(deck: (typeof commanderDecklistsData)[number]): PreconDeck {
+  const productAsset = productAssetFor(deck.name);
+  return {
+    id: `${deck.set_code}-${deck.name}`,
+    name: deck.name,
+    set_code: deck.set_code,
+    colors: [],
+    card_count: 100,
+    image_uris: undefined,
+    productImageUrl: productAsset?.imageUrl,
+    productImageSourceUrl: productAsset?.sourceUrl,
+    productImageSourceLabel: productAsset?.sourceLabel,
+    hasDecklist: true,
+    synopsis: deck.synopsis,
+    approxValue: deck.approxValue,
+    commanderCards: deck.commander,
+    mainCards: deck.cards,
+  };
+}
+
 export function useScryfallSets() {
   const [sets, setSets] = useState<ScryfallSet[]>([]);
   const [precons, setPrecons] = useState<Map<string, PreconDeck[]>>(new Map());
@@ -54,7 +88,7 @@ export function useScryfallSets() {
   useEffect(() => {
     let cancelled = false;
 
-    const fetchData = async () => {
+    async function loadSets() {
       try {
         setLoading(true);
         setError(null);
@@ -63,7 +97,8 @@ export function useScryfallSets() {
         if (!setsResponse.ok) throw new Error('Failed to fetch sets');
         const setsData = await setsResponse.json();
 
-        const mainSets = (setsData.data as ScryfallSet[])
+        const allSets = setsData.data as ScryfallSet[];
+        const mainSets = allSets
           .filter((set) => set.set_type === 'expansion' || set.set_type === 'core' || set.set_type === 'masters')
           .filter((set) => set.released_at)
           .sort((a, b) => new Date(b.released_at).getTime() - new Date(a.released_at).getTime())
@@ -71,78 +106,87 @@ export function useScryfallSets() {
 
         if (cancelled) return;
         setSets(mainSets);
-        setLoading(false);
 
         const preconMap = new Map<string, PreconDeck[]>();
-        // Preload local decklists that match this set code
+        // Attach Commander child products (for example, EOC → EOE) to their parent release.
         for (const set of mainSets) {
-          try {
-            const localDecks = commanderDecklistsData.filter((d) => d.set_code.toLowerCase() === set.code.toLowerCase());
-            if (localDecks.length > 0) {
-              const mappedDecks: PreconDeck[] = localDecks.map((deck) => {
-                const productAsset = productAssetFor(deck.name);
-                return {
-                  id: `${set.code}-${deck.name}`,
-                  name: deck.name,
-                  set_code: set.code,
-                  colors: [],
-                  card_count: 100,
-                  image_uris: undefined,
-                  productImageUrl: productAsset?.imageUrl,
-                  productImageSourceUrl: productAsset?.sourceUrl,
-                  productImageSourceLabel: productAsset?.sourceLabel,
-                  hasDecklist: true,
-                  synopsis: deck.synopsis,
-                  approxValue: deck.approxValue,
-                };
-              });
-              preconMap.set(set.code, mappedDecks);
-              continue;
-            }
+          const localDecks = localDecksForParentSet(set.code, allSets);
+          if (localDecks.length > 0) {
+            preconMap.set(set.code, localDecks.map(mapLocalDeck));
+          }
+        }
 
-            const query = `is:deck set:${set.code.toLowerCase()}`;
-            const response = await fetch(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&unique=prints`);
-            if (!response.ok) continue;
-            const data = await response.json();
-            const preconDecks = (data.data as Array<Record<string, any>>)
-              .filter((card) => card.type_line && (card.type_line.includes('Deck') || card.name.includes('Commander') || card.name.includes('Precon')))
-              .map((card) => {
-                const localDeck = localDeckFor(set.code, card.name);
+        if (!cancelled) {
+          setPrecons(new Map(preconMap));
+          setLoading(false);
+        }
+
+        // Query only unresolved sets after local Commander joins are visible.
+        for (const set of mainSets) {
+          if (preconMap.has(set.code)) continue;
+          try {
+
+            const productSetCodes = commanderProductCodesForParent(set.code, allSets);
+            const resultGroups = await Promise.all(productSetCodes.map(async (productSetCode) => {
+              const query = `is:deck set:${productSetCode}`;
+              const response = await fetch(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&unique=prints`);
+              if (!response.ok) return [] as Array<{ card: Record<string, any>; productSetCode: string }>;
+              const data = await response.json();
+              return (data.data as Array<Record<string, any>>).map((card) => ({ card, productSetCode }));
+            }));
+            const seenProducts = new Set<string>();
+            const preconDecks = resultGroups
+              .reduce<Array<{ card: Record<string, any>; productSetCode: string }>>((allCards, group) => allCards.concat(group), [])
+              .filter(({ card }) => card.type_line && (card.type_line.includes('Deck') || card.name.includes('Commander') || card.name.includes('Precon')))
+              .map(({ card, productSetCode }) => {
+                const localDeck = localDeckFor(productSetCode, card.name);
                 const productAsset = productAssetFor(card.name as string);
                 return {
                   id: card.id as string,
                   name: card.name as string,
-                  set_code: set.code,
-                  colors: (card.color_identity || []) as string[],
-                  card_count: (card.card_count || 100) as number,
-                  image_uris: card.image_uris || {},
+                  set_code: productSetCode,
+                  colors: card.color_identity || card.colors || [],
+                  card_count: card.card_count || 100,
+                  image_uris: card.image_uris,
                   productImageUrl: productAsset?.imageUrl,
                   productImageSourceUrl: productAsset?.sourceUrl,
                   productImageSourceLabel: productAsset?.sourceLabel,
-                  scryfall_uri: card.scryfall_uri as string | undefined,
+                  scryfall_uri: card.scryfall_uri,
                   hasDecklist: Boolean(localDeck),
-                  synopsis: localDeck?.synopsis,
-                  approxValue: localDeck?.approxValue,
-                } satisfies PreconDeck;
+                  synopsis: localDeck?.synopsis || card.flavor_text || 'Commander precon release product.',
+                  approxValue: localDeck?.approxValue || 45,
+                  commanderCards: localDeck?.commander,
+                  mainCards: localDeck?.cards,
+                };
+              })
+              .filter((deck) => {
+                const productKey = `${deck.set_code}:${normalizedName(deck.name)}`;
+                if (seenProducts.has(productKey)) return false;
+                seenProducts.add(productKey);
+                return true;
               });
 
-            if (!cancelled && preconDecks.length > 0) preconMap.set(set.code, preconDecks);
+            if (preconDecks.length > 0) {
+              preconMap.set(set.code, preconDecks);
+            }
           } catch {
-            // One set failing should not block the rest of the timeline.
+            // skip set precon fetch error
           }
-
-          await new Promise((resolve) => setTimeout(resolve, 75));
         }
 
-        if (!cancelled) setPrecons(preconMap);
+        if (!cancelled) {
+          setPrecons(new Map(preconMap));
+        }
       } catch (err) {
-        if (cancelled) return;
-        setError(err instanceof Error ? err.message : 'Unknown error');
-        setLoading(false);
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Failed to load sets');
+          setLoading(false);
+        }
       }
-    };
+    }
 
-    void fetchData();
+    loadSets();
+
     return () => {
       cancelled = true;
     };

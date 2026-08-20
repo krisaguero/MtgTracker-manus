@@ -88,25 +88,37 @@ async function getCollection(refs: Array<RawCard | RawCommander>, signal: AbortS
       let pageCount = 0;
       try {
         while (nextUrl && pageCount < 6) {
-          const response: SearchResponse = await getJson<SearchResponse>(nextUrl, signal);
-          exactCards.push(...(response.data ?? []));
-          nextUrl = response.has_more ? response.next_page : undefined;
-          pageCount += 1;
+          if (signal.aborted) break;
+          const searchRes = await fetch(nextUrl, { signal });
+          if (!searchRes.ok) break;
+          const searchData = await searchRes.json() as SearchResponse;
+          const items = searchData.data ?? [];
+          for (const card of items) {
+            const k = `${card.set}:${card.collector_number}`.toLowerCase();
+            if (!collectedKeys.has(k)) {
+              exactCards.push(card);
+              collectedKeys.add(k);
+            }
+          }
+          nextUrl = searchData.has_more ? searchData.next_page : undefined;
+          pageCount++;
         }
       } catch (err) {
-        console.warn(`Set search fallback warning for set ${setCode}:`, err);
+        // ignore search fallback failure
       }
     }
   }
 
-  const presentNames = new Set(exactCards.map((c) => c.name.toLowerCase()));
-  const stillMissing = entries.filter((ref) => !presentNames.has(ref.name.toLowerCase()));
-  
-  if (stillMissing.length > 0 && stillMissing.length <= 30) {
-    for (const ref of stillMissing) {
+  // Final fallback: fetch named cards individually for any still missing
+  const stillMissingNames = Array.from(new Set(refs.map((r) => r.name.toLowerCase())));
+  const collectedNameSet = new Set(exactCards.map((c) => c.name.toLowerCase()));
+  const uncollectedNames = stillMissingNames.filter((n) => !collectedNameSet.has(n));
+
+  if (uncollectedNames.length > 0 && uncollectedNames.length <= 25) {
+    for (const name of uncollectedNames) {
       if (signal.aborted) break;
       try {
-        const res = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(ref.name)}`, { signal });
+        const res = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`, { signal });
         if (res.ok) {
           const cardData = await res.json() as ScryfallCard;
           if (cardData && cardData.name) exactCards.push(cardData);
@@ -155,9 +167,23 @@ function resolveEntry(ref: RawCard | RawCommander, cards: ScryfallCard[], zone: 
 function findDeck(decks: RawCommanderDeck[], setCode: string, deckSlug: string) {
   const normalizedSet = setCode.toLowerCase();
   const normalizedSlug = decodeURIComponent(deckSlug).toLowerCase();
-  return decks.find((deck) =>
+
+  // Tier 1: exact set code and exact slug match
+  let matched = decks.find((deck) =>
     deck.set_code.toLowerCase() === normalizedSet && slugify(deck.name) === normalizedSlug,
-  ) ?? null;
+  );
+  if (matched) return matched;
+
+  // Tier 2: slug match regardless of set code (handles set code aliases like m3c vs mar etc)
+  matched = decks.find((deck) => slugify(deck.name) === normalizedSlug);
+  if (matched) return matched;
+
+  // Tier 3: partial name inclusion
+  matched = decks.find((deck) => {
+    const deckSlugName = slugify(deck.name);
+    return deckSlugName.includes(normalizedSlug) || normalizedSlug.includes(deckSlugName);
+  });
+  return matched ?? null;
 }
 
 export function useCommanderDeck(setCode?: string, deckSlug?: string) {

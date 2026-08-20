@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 describe("CommanderDeck live market valuation calculation", () => {
@@ -21,5 +23,16 @@ describe("CommanderDeck live market valuation calculation", () => {
 
     expect(sum).toBe(31.0);
     expect(pricedCount).toBe(5);
+  });
+
+  it("declares the live valuation hook before loading and error returns", () => {
+    const source = readFileSync(resolve(process.cwd(), "client/src/pages/CommanderDeck.tsx"), "utf8");
+    const valuationHook = source.indexOf("const liveMarketValue = useMemo");
+    const loadingReturn = source.indexOf("if (loading)");
+    const errorReturn = source.indexOf("if (error || !data)");
+
+    expect(valuationHook).toBeGreaterThan(-1);
+    expect(valuationHook).toBeLessThan(loadingReturn);
+    expect(valuationHook).toBeLessThan(errorReturn);
   });
 });

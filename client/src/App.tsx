@@ -11,6 +11,7 @@ import CommanderLibrary from "@/pages/CommanderLibrary";
 import CommanderPreconLibrary from "@/pages/CommanderPreconLibrary";
 import Collection from "@/pages/Collection";
 import MarketReport from '@/pages/MarketReport';
+import LatestMarketReport from '@/pages/LatestMarketReport';
 import { DailyMovers } from '@/pages/DailyMovers';
 import { MarketWatchArticle } from '@/pages/MarketWatchArticle';
 import { FeaturedSignalMatrixArticle } from '@/pages/FeaturedSignalMatrixArticle';
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/precons"} component={CommanderPreconLibrary} />
       <Route path={"/collection"} component={Collection} />
       <Route path="/market-report" component={MarketReport} />
+      <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/movers" component={DailyMovers} />
       <Route path="/market-watch-article" component={MarketWatchArticle} />
       <Route path="/signal-matrix-article" component={FeaturedSignalMatrixArticle} />

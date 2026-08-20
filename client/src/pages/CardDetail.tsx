@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, ShieldCheck, ShoppingBag, Sparkles, TrendingUp
 import { commanderDecklistsData } from '@/data/commanderDecklistsData';
 import { loadOwnedPrecons } from '@/lib/preconInventory';
 import { loadOwnedCollection, saveOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
+import { CardImageZoom } from '@/components/CardImageZoom';
 
 interface PrintingVersion {
   id: string;
@@ -43,7 +44,7 @@ export default function CardDetail() {
     typeLine: 'Instant',
     manaCost: '{R}',
     oracleText: 'Lightning Bolt deals 3 damage to any target.',
-    imageUrl: `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cardNameParam || 'Lightning Bolt')}&format=image&version=normal`,
+    imageUrl: '',
     price: 2.50,
     moverCategory: 'High Value Spikes',
     percentageChange: 18.5,
@@ -102,7 +103,9 @@ export default function CardDetail() {
           }
 
           if (versions.length > 0) {
-            setSelectedPrinting(versions[0]);
+            const preferredPrinting = versions.find((version) => version.imageUrl) || versions[0];
+            const directPrimaryImage = primaryCard.image_uris?.normal || primaryCard.card_faces?.[0]?.image_uris?.normal || preferredPrinting.imageUrl;
+            setSelectedPrinting(preferredPrinting);
             setCardData((prev) => ({
               ...prev,
               name: cardNameParam,
@@ -112,8 +115,8 @@ export default function CardDetail() {
               typeLine,
               manaCost: primaryCard.mana_cost || primaryCard.card_faces?.[0]?.mana_cost || '{1}',
               oracleText: oracle,
-              imageUrl: versions[0].imageUrl || prev.imageUrl,
-              price: versions[0].priceUsd || prev.price,
+              imageUrl: directPrimaryImage || prev.imageUrl,
+              price: preferredPrinting.priceUsd || prev.price,
               isBrandNewCard: isBrandNew,
               mechanicDescription: mechanicDesc,
             }));
@@ -224,13 +227,11 @@ export default function CardDetail() {
               </div>
             )}
             <div className="aspect-[5/7] w-full max-w-sm overflow-hidden bg-muted border-2 border-border shadow-lg">
-              <img
+              <CardImageZoom
                 src={activeImage}
+                fallbackSrc={cardData.imageUrl}
                 alt={cardData.name}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cardNameParam)}&format=image&version=normal`;
-                }}
+                className="min-h-[500px]"
               />
             </div>
             <div className="mt-5 w-full space-y-2">
