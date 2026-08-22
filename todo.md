@@ -1,0 +1,187 @@
+# ManaBox Collection Integration Roadmap
+
+- [x] Verify ManaBox CSV / text export structure (quantity, name, set, collector number).
+- [x] Build a headless daily GitHub market-movers job that ingests MTG price sources, calculates normalized fluctuation signals, and commits a dated machine-readable snapshot.
+- [x] Add a scheduled GitHub workflow for the daily market-movers job with a manual-dispatch path, safe idempotent output handling, and documented API source configuration.
+- [x] Validate representative Commander precon decklist and card-detail routes end to end, then repair any route or Scryfall-resolution failures.
+- [x] Reconcile homepage recent-set indexing so each set surfaces every related Commander product with a direct decklist or archive route.
+- [x] Add tests for set-to-precon indexing, slug route generation, and daily market snapshot validation.
+- [x] Build local collection storage and parser supporting ManaBox exports.
+- [x] Build owned-card matching logic for set cards and Commander decklists.
+- [x] Build deck completion guidance UI showing owned percentage and missing cards.
+- [x] Verify build health, responsiveness, and save checkpoint.
+- [ ] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
+- [x] Add missing-card shopping list and retailer batch export formats.
+- [ ] Add collection equity totals across sets.
+- [x] Add Commander deck recommendations ranked by owned-card coverage percentage.
+- [ ] Add historical collection-value line chart and snapshot persistence to CollectionOverview.
+- [x] Add CSV and plain-text download buttons to the missing card shopping list.
+- [x] Add exclude-basic-lands toggle to missing-card shopping list and all export formats.
+- [x] Show estimated missing-card acquisition cost on Commander completion summaries.
+- [x] Add hover/focus tooltip with individual missing-card prices to completion cost tile.
+- [x] Add summary-card toggle to exclude basic lands from estimated completion cost and tooltip.
+- [ ] Expand historical Commander precons by a few years.
+- [ ] Improve filtering and display tag styling without hovering/obscuring cards.
+- [ ] Utilize full page width and provide mobile-friendly image zoom.
+- [ ] Add iOS PWA installation reminder banner.
+- [ ] Compact the global home header and the Commander/set catalog headers to increase above-the-fold content density.
+- [ ] Verify desktop and mobile header height, build health, and save a checkpoint.
+- [ ] Add a sticky set-page anchor bar for overview, precons, market signals, and card filters.
+- [ ] Verify anchor navigation on desktop and mobile, then save a checkpoint.
+- [ ] Reduce the sticky anchor bar to a minimal utility strip with tighter controls.
+- [ ] Verify the reduced nav height and save a checkpoint.
+- [ ] Refine the mobile home hero composition from the supplied screenshot, especially CTA width, branding row, and live-index copy.
+- [ ] Verify screenshot-driven mobile and desktop layouts, then save a checkpoint.
+- [ ] Remove home hero wording and leave only the logo mark on mobile and desktop.
+- [ ] Set the mobile home hero viewport to 70vh and verify responsive behavior.
+- [ ] Review the full mobile UI flow for hierarchy, spacing, and interaction issues across home, Commander archive, set detail, and catalog routes.
+- [ ] Refine mobile layouts and verify the revised experience before saving a checkpoint.
+- [ ] Add a mobile-only collapsible hero toggle with local persistence and accessible state.
+- [ ] Verify expanded/collapsed mobile states, desktop behavior, build health, and save a checkpoint.
+- [ ] Make recent sets the main homepage content and move collection import/analytics to an internal route.
+- [ ] Preserve internal navigation to collection tools and Commander discovery while simplifying mobile hierarchy.
+- [ ] Verify homepage, collection route, archive route, responsive behavior, and save a checkpoint.
+- [ ] Add locally persisted set favorites with bookmark controls and a homepage saved-only filter.
+- [ ] Verify favorite add/remove/filter behavior on mobile and desktop, then save a checkpoint.
+- [ ] Build the daily market intelligence report workspace with price-spike momentum, precon-vs-singles break-even math, user-owned coverage adjustments, and source-linked release articles.
+- [ ] Implement local storage price alerts and format filters (Commander vs. Standard) on the market report.
+- [ ] Add MTGO and Archidekt deck export formats with copy and download controls.
+- [ ] Configure weekly market-digest automation and document email-delivery setup.
+- [ ] Verify build health, alerts, filters, and exports, then save a checkpoint.
+- [ ] Add a local weekly digest delivery log with send status, recipient, subject, refresh, and clear controls.
+- [ ] Verify delivery logging and save a checkpoint.
+- [ ] Add search, status, and date-window filters to the weekly digest delivery log.
+- [ ] Verify filtered dispatch history on responsive layouts and save a checkpoint.
+- [ ] Build the Daily Movers & Sentiment Hub with 10 categories of 25 movers each (spikes, penny risers/buyouts, Commander picks, rule-change watchers, Reddit speculations) and a daily market sentiment deep-dive analyzer.
+- [ ] Wire the Movers route into navigation and verify build health.
+- [ ] Build daily Top 5 mover posts with movement explanations and weekly prediction performance roundups (moved, stalled, reversed).
+- [ ] Integrate localStorage price-alert toggles and threshold status into each DailyPost Top 5 mover card.
+- [ ] Verify alert toggles on desktop/mobile and save a checkpoint.
+- [ ] Add 10-20 week volatility and top-1000 market context badges to all Commander precon deck pages.
+- [ ] Add Scryfall card art image thumbnails and visual styling to the Daily Movers page.
+- [ ] Build Arena-friendly precon deck variants with legal filtering, substitution tracking, and Arena format export.
+- [ ] Rename Arena variants to Arena-Morph with strategy-preserving functional counterpart substitutions and export header metadata.
+- [ ] Add an Arena-Morph wildcard cost calculator tracking common, uncommon, rare, and mythic wildcards required for substitution cards.
+- [ ] Verify wildcard calculator, build health, and save a checkpoint.
+- [ ] Build Dupe-Decks: a Groq-assisted 60-card 1v1 duel deck builder that imports libraries/inventory, detects duplicate coverage, and generates themed deck suggestions.
+- [ ] Add a secure Groq API-key input with local persistence and custom theme generation to Dupe-Decks.
+- [ ] Verify Dupe-Decks workspace route, Groq custom generation, build health, and save a checkpoint.
+- [x] Build a reusable sortable/filterable frontend table for daily movers and old-school spikes, integrate both views, and verify responsiveness.
+- [x] Implement real MTGJSON and price-history snapshot ingestion into DuckDB with Parquet views for old-school spikes and land watchlists.
+- [x] Connect compiled Parquet market views to public tRPC API procedures, wire Daily Movers to live rows, add fallback behavior, and cover the endpoints with Vitest.
+- [x] Add accessible responsive loading skeleton rows to the Parquet-backed market table and verify loading-to-data transitions.
+- [x] Add dedicated card-name search inputs above the daily movers and old-school market tables, with accessible filtering and responsive verification.
+- [x] Add persistent market card watchlist stars and a dedicated Watchlist tab that integrates with table search, sorting, and filters.
+- [x] Add compact accessible price-trend sparklines to daily movers and old-school spike table rows, with loading/watchlist/mobile verification.
+- [x] Add real multi-point recent price history arrays to market API rows and render graceful sparkline fallbacks.
+- [x] Add regression tests for multi-point trend rendering and insufficient-history fallback.
+- [x] Add upward-trend filter toggles above daily movers and old-school tables using ordered sparkline history, with regression and responsive verification.
+- [x] Audit and correct Commander precon mappings across sets, adding all four Marvel Commander decks and verifying authoritative product counts.
+- [x] Refine set detail precon resolution so parent-set fallback does not duplicate decks across child sets.
+- [x] Add regression test verifying Marvel and other sets resolve their correct, non-duplicated Commander precon count.
+- [x] Calculate and display the total estimated market value for Marvel Commander decks based on individual card prices, with coverage indicators and verification.
+- [x] Surface live aggregated valuations on set-detail precon cards and add end-to-end rendering test coverage.
+- [x] Add remembered file-upload support for dual deck inventories in Dupe-Decks with persistent local storage.
+- [x] Populate and validate all 10 Daily Movers subcategories with 25 authentic market rows each and clear source labeling.
+- [ ] Rewrite publishable Git history to remove exposed AWS and Resend credentials, scan the cleaned snapshot, and push it to krisaguero/MtgTracker-manus.
+
+- [ ] Restore and verify the weekly Resend digest through a server-side endpoint so no client bundle contains an email API credential.
+
+- [ ] Reconcile the sanitized GitHub publication with the managed WebDev checkpoint workflow before the next release.
+
+- [ ] Document credential rotation requirements for any keys previously committed to project history.
+
+- [x] Add a test that asserts publishable source files contain no hardcoded bearer tokens or cloud access keys.
+
+- [ ] Confirm production email dispatch after secure server-side Resend wiring is complete.
+
+- [ ] Keep the existing backup branch `backup/remote-main-before-latest` until the sanitized main branch is verified.
+
+- [ ] Add a release checklist covering tests, build, secret scan, GitHub push, and deployment confirmation.
+
+- [ ] Review changelog accuracy after the sanitized publication and include the credential-removal note.
+
+- [ ] Verify Vercel/managed production status after the cleaned GitHub push.
+
+- [ ] Consider adding repository secret scanning configuration and a pre-push hook for future prevention.
+
+- [ ] Confirm all scheduled GitHub Actions reference repository secrets rather than inline credentials.
+
+- [ ] Re-run the full MTG decklist and market intelligence test suite after the history cleanup.
+
+- [x] Add a maintainer note explaining that `.project-config.json` remains local-only and is intentionally excluded from public repositories.
+
+- [ ] Preserve the remote pre-cleanup branch for rollback until user confirms deletion.
+
+- [ ] Create a release tag after the cleaned main branch passes all checks.
+
+- [ ] Verify GitHub default-branch protections remain enabled after the force-with-lease publication.
+
+- [ ] Confirm no generated build output or local environment file is included in the sanitized snapshot.
+
+- [ ] Add a future task to replace client-side Resend dispatch with authenticated tRPC/server action.
+
+- [ ] Validate the public repository clone can install dependencies and build without Manus-only metadata.
+
+- [ ] Deliver the cleaned repository URL and commit SHA to the user.
+
+- [ ] Document that any exposed credentials must be rotated at their provider even after Git history rewrite.
+
+- [ ] Review and remove obsolete release notes that mention simulated email dispatch.
+
+- [x] Add a lightweight CI secret scan to the public repository workflow.
+
+- [ ] Confirm the current app continues to use the managed hosting deployment as the production source of truth.
+
+- [ ] Keep changelog entries dated and aligned with published release commits.
+
+- [ ] Re-check the archive backup branch after main is repointed.
+
+- [ ] Verify no GitHub push-protection unblock links were used for the sanitized publication.
+
+- [ ] Add a contributor guideline prohibiting API keys in client code.
+
+- [ ] Review source maps and bundle output for accidental credential leakage before future releases.
+
+- [ ] Confirm the final public repository contains decklist repair documentation and audit_report.md.
+
+- [ ] Record the sanitized publication result in the next project checkpoint.
+
+- [ ] Remove this temporary cleanup checklist after the release process is complete.
+
+- [x] Resolve the remaining primary-artwork blank panel on card-detail pages while alternate-printing thumbnails load successfully.
+
+- [x] Replace the collection-equity placeholder valuation with real card pricing, grouped set totals, and price-based historical snapshots.
+
+- [x] Fix Collections page loading states and broken collection/set imagery, including resilient fallback behavior.
+- [x] Audit and repair set detail and set catalog loading/image rendering on desktop and mobile.
+- [x] Add regression tests for collection and set-page loading and image URL fallback behavior.
+- [x] Verify repaired Collections and set pages, save a checkpoint, and publish the fix.
+
+- [x] Review collection equity UI for stale or unavailable price/index states after loading.
+- [x] Fix SetDetail conditional-hook crash when a valid set catalog resolves after loading
+
+- [x] Audit all routes, modules, loading states, image sources, and market-value data lineage across desktop and mobile viewports.
+- [x] Build reusable page and card skeleton frameworks for collection, set, precon, and market modules.
+- [x] Replace stale precon and Commander market values with reliable price-index resolution and real-time snapshot aggregation.
+- [x] Add regression tests for module skeletons and market price provenance, then verify responsive desktop/mobile rendering.
+- [x] Save checkpoint, publish to production, and push updated code to GitHub repositories.
+- [x] Audit remaining app routes and modules end-to-end, including Commander deck, card detail, set detail, archive, movers/article routes, and navigation states, for loading, imagery, and market-price lineage on mobile and desktop.
+- [ ] Save a new checkpoint after the market-index and skeleton changes, publish that exact state, and push updated commits to the configured GitHub repositories.
+- [ ] Document the final deployment target, published version, and GitHub commit SHA after synchronization.
+- [x] Register the existing Dupe-Decks page at `/dupe-decks` before the dynamic set route captures it as a missing set.
+- [x] Audit navigation interactions end-to-end on mobile and desktop, including hamburger open/close, in-app links, back paths, and dynamic route transitions; document the verified states.
+- [x] Verify loading, error, empty, imagery, and market-price provenance states for Commander deck, card detail, set detail, archive, Market Report, Daily Movers, article routes, and Dupe-Decks; record exact evidence before final checkpoint.
+- [x] Fix reported mobile hamburger menu regression; reproduce the tap behavior, inspect responsive visibility and stacking, repair the interaction, and verify open/close navigation states.
+- [x] Add a subtle dimmed/blurred backdrop behind the open mobile hamburger menu while keeping the navigation panel and menu controls crisp and accessible; verify phone/tablet behavior.
+- [x] Add an explicit "Home" navigation link to the top header and mobile slide-in menu so users can easily return to the chronological set hub.
+- [x] Audit and rebuild Commander product valuation so each listed deck aggregates prices across its full card list with transparent coverage and a deck-by-deck valuation matrix.
+- [x] Fix the card-detail primary image so full-resolution Scryfall artwork is shown without accidental cropping, while preserving the current formatting and responsive layout.
+- [x] Connect market movers and article posts directly to card/set pages with article source links.
+- [x] Add a non-overlay hot-watch border treatment (fire-glow border without obscuring card art) to cards and sets flagged as hot market watches.
+- [x] Rebuild Commander precon card pricing baselines to provide transparent individual card totals versus sealed MSRP and help users decide whether to buy singles or the precon.
+- [x] Update the Commander library integrity regression to accept the official MTGJSON product order while retaining the exact Marvel four-deck membership assertion.
+
+- [x] Fix duplicate React keys for repeated basic lands in the Commander archive/decklist card collections.
+- [x] Make Scryfall rate-limit/CORS failures non-fatal on decklist routes and preserve the local official decklist/value view when remote card enrichment is unavailable.
+- [x] Re-run browser route audit and update the final release checklist after the runtime fixes.
