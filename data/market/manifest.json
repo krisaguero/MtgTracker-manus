@@ -1,0 +1,9 @@
+{
+  "dataset": "mtg_top_250_movers",
+  "asOf": "2026-08-25",
+  "rowCount": 250,
+  "source": "User-provided CSV attachment",
+  "importer": "scripts/import_market_movers_csv.py",
+  "generatedModule": "client/src/data/marketMoversCsv.ts",
+  "notes": "Rows with missing prior prices are normalized using the current price and available change signal; unquoted commas in card names are handled by the importer."
+}

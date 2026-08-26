@@ -1,17 +1,16 @@
-import { COOKIE_NAME, ONE_YEAR_MS, OAUTH_STATE_COOKIE, decodeOAuthState } from "@shared/const";
+import { COOKIE_NAME, ONE_YEAR_MS, OAUTH_STATE_COOKIE, decodeOAuthState } from "../../shared/const.js";
 import { parse as parseCookieHeader } from "cookie";
-import type { Express, Request, Response } from "express";
-import * as db from "../db";
-import { getSessionCookieOptions } from "./cookies";
-import { sdk } from "./sdk";
+import * as db from "../db.js";
+import { getSessionCookieOptions } from "./cookies.js";
+import { sdk } from "./sdk.js";
 
-function getQueryParam(req: Request, key: string): string | undefined {
+function getQueryParam(req: any, key: string): string | undefined {
   const value = req.query[key];
   return typeof value === "string" ? value : undefined;
 }
 
-export function registerOAuthRoutes(app: Express) {
-  app.get("/api/oauth/callback", async (req: Request, res: Response) => {
+export function registerOAuthRoutes(app: any) {
+  app.get("/api/oauth/callback", async (req: any, res: any) => {
     const code = getQueryParam(req, "code");
     const state = getQueryParam(req, "state");
 
