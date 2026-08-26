@@ -1,4 +1,4 @@
-import { createApiApp } from "../../server/_core/apiApp";
+import { createApiApp } from "../../server/_core/apiApp.js";
 
 /**
  * Explicit tRPC catch-all. Keeping this under api/trpc makes the deployed

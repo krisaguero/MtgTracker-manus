@@ -1,4 +1,4 @@
-import { publicProcedure, router } from "../_core/trpc";
+import { publicProcedure, router } from "../_core/trpc.js";
 import fs from "fs";
 import path from "path";
 import parquetjs from "parquetjs-lite";
