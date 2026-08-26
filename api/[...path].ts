@@ -1,4 +1,4 @@
-import { createApiApp } from "../server/_core/index";
+import { createApiApp } from "../server/_core/apiApp";
 
 /**
  * Vercel catch-all function for `/api/*` requests.
