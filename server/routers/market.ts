@@ -2,7 +2,7 @@ import { publicProcedure, router } from "../_core/trpc.js";
 import fs from "fs";
 import path from "path";
 import parquetjs from "parquetjs-lite";
-import type { MarketEndpointResponse, MarketRow } from "@shared/market";
+import type { MarketEndpointResponse, MarketRow } from "../../shared/market.js";
 
 const { ParquetReader } = parquetjs;
 const PARQUET_DIR = path.resolve(process.cwd(), "data", "parquet");
