@@ -7,6 +7,7 @@ import { MarketCardGridSkeleton } from '@/components/MarketCardSkeleton';
 import { MarketCardItem } from '@/components/MarketCardItem';
 import { MOVER_CATEGORIES, getMarketSentimentDeepDive, type MoverCard } from '@/lib/dailyMoversEngine';
 import { loadCanonicalSnapshots, type CanonicalCardSnapshot } from '@/lib/canonicalMarketEngine';
+import { csvMarketMovers, csvMarketMoversAsOf } from '@/data/marketMoversCsv';
 import { NavigationSearch } from '@/components/NavigationSearch';
 import { trpc } from '@/lib/trpc';
 import type { MarketRow } from '@shared/market';
@@ -47,9 +48,29 @@ export function DailyMovers() {
   const [watchlist, setWatchlist] = useState<MarketWatchlistEntry[]>(() => loadMarketWatchlist());
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
 
-  // Load canonical snapshots (local 250-card signal matrix + top 500 snapshot)
+  // The attached 2026-08-25 CSV is the primary reproducible feed. The existing
+  // canonical snapshot remains the fallback for environments that omit the CSV.
   const localMovers = useMemo<MoverCard[]>(() => {
-    const snaps = loadCanonicalSnapshots();
+    if (csvMarketMovers.length > 0) {
+      return csvMarketMovers.map((mover) => ({
+        id: `csv-${mover.rank}-${mover.name}`,
+        name: mover.name,
+        setCode: mover.setCode,
+        setName: mover.setName,
+        rarity: 'rare',
+        currentUsd: mover.currentUsd,
+        previousUsd: mover.previousUsd,
+        changeUsd: mover.changeUsd,
+        percentChange: mover.percentChange,
+        recentPrices: [mover.previousUsd, mover.currentUsd],
+        category: mover.category,
+        signalSource: 'CSV Market Movers',
+        thesis: `${mover.signalSource} · Imported rank #${mover.rank} from the ${csvMarketMoversAsOf} snapshot.`,
+        isCatalyst: mover.direction === 'up' && mover.percentChange >= 10,
+      }));
+    }
+
+    const snaps: CanonicalCardSnapshot[] = loadCanonicalSnapshots();
     return snaps.map((s) => ({
       id: s.id,
       name: s.name,
@@ -201,8 +222,8 @@ export function DailyMovers() {
         {/* Page Title & Feed Mode Toggles */}
         <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-border pb-6">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <Zap className="h-4 w-4" /> Real-Time Scryfall &amp; DuckDB Parquet Feed
+              <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              <Zap className="h-4 w-4" /> Imported Market Snapshot · {csvMarketMoversAsOf}
             </div>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Daily Market Movers &amp; Buyouts</h1>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -233,12 +254,12 @@ export function DailyMovers() {
               </button>
             </div>
 
-            <button
+              <button
               type="button"
               onClick={handleExportTop500Txt}
               className="inline-flex items-center gap-2 border-2 border-primary bg-primary text-primary-foreground px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow hover:opacity-90"
             >
-              Export Top 500 (TXT)
+              Export Current Feed (TXT)
             </button>
           </div>
         </div>
@@ -365,7 +386,7 @@ export function DailyMovers() {
                     isActive ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-muted-foreground hover:border-primary hover:text-primary'
                   }`}
                 >
-                  {cat.label} {cat.id !== 'all' && `(25)`}
+                  {cat.label} {cat.id !== 'all' && `(${activeMoversList.filter((mover) => mover.category === cat.id).length})`}
                 </button>
               );
             })}
@@ -380,7 +401,7 @@ export function DailyMovers() {
             </div>
           )}
 
-          {isLoadingMovers ? (
+          {isLoadingMovers && activeMoversList.length === 0 ? (
             <MarketCardGridSkeleton count={6} />
           ) : (
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

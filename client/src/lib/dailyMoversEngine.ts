@@ -12,7 +12,7 @@ export interface MoverCard {
   percentChange: number;
   recentPrices: number[];
   category: string;
-  signalSource: 'Scryfall Snapshot' | 'Reddit /r/mtgfinance' | 'RC Rule Watch' | 'Buyout Tracker' | 'Commander Recs' | 'MTGGoldfish Price Feed' | 'Card Kingdom Retail' | 'TCGplayer Market API' | 'MTGJSON Aggregate';
+  signalSource: 'Scryfall Snapshot' | 'Reddit /r/mtgfinance' | 'RC Rule Watch' | 'Buyout Tracker' | 'Commander Recs' | 'MTGGoldfish Price Feed' | 'Card Kingdom Retail' | 'TCGplayer Market API' | 'MTGJSON Aggregate' | 'CSV Market Movers';
   thesis: string;
   cardKingdomUsd?: number;
   tcgplayerMarketUsd?: number;
@@ -32,6 +32,7 @@ export interface MarketSentimentDeepDive {
 
 export const MOVER_CATEGORIES = [
   { id: 'all', label: 'All Categories' },
+  { id: 'imported-top-250', label: 'Imported Top 250' },
   { id: 'high-spikes', label: '1. High Value Spikes' },
   { id: 'penny-risers', label: '2. Penny Risers & Buyout Targets' },
   { id: 'commander-picks', label: '3. Commander Format Staples' },
