@@ -71,6 +71,24 @@ describe("MarketMoversTable filtering and loading state", () => {
     expect(markup).toContain("3+ observations");
   });
 
+  it("sorts numeric movers and applies rarity plus minimum-move filters", () => {
+    const mythic = { ...sampleMover, id: "sample-mythic", name: "Aether Flux", rarity: "mythic" as const, currentUsd: 80, percentChange: 12 };
+    const common = { ...sampleMover, id: "sample-common", name: "Common Card", rarity: "common" as const, currentUsd: 3, percentChange: 4 };
+    const rows = filterMarketMovers([sampleMover, mythic, common], {
+      cardNameQuery: "",
+      searchQuery: "",
+      upwardTrendOnly: false,
+      categoryFilter: "all",
+      sourceFilter: "all",
+      rarityFilter: "mythic",
+      minimumMove: "10",
+      sortKey: "currentUsd",
+      sortDirection: "desc",
+    });
+
+    expect(rows.map((row) => row.name)).toEqual(["Aether Flux"]);
+  });
+
   it("renders an accessible price trend sparkline for populated rows", () => {
     const markup = renderToStaticMarkup(
       <MarketMoversTable

@@ -315,26 +315,26 @@ export function MarketMoversTable({
           <tbody aria-live="polite">
             {isLoading ? Array.from({ length: loadingRowCount }, (_, index) => (
               <tr key={`market-table-skeleton-${index}`} data-testid="market-table-skeleton-row" className="border-b border-border/80">
-                <td className="px-4 py-4"><span className="block h-8 w-8 animate-pulse bg-muted" aria-hidden="true" /></td>
+                <td className="px-4 py-4"><span className="block h-8 w-8 market-mover-skeleton" aria-hidden="true" /></td>
                 <td className="px-4 py-4">
                   <div className="flex items-center gap-2">
-                    <span className="h-4 w-7 animate-pulse bg-muted" aria-hidden="true" />
-                    <span className="h-4 w-40 animate-pulse bg-muted" aria-hidden="true" />
+                    <span className="h-4 w-7 market-mover-skeleton" aria-hidden="true" />
+                    <span className="h-4 w-40 market-mover-skeleton" aria-hidden="true" />
                   </div>
-                  <span className="mt-2 block h-3 w-56 animate-pulse bg-muted" aria-hidden="true" />
+                  <span className="mt-2 block h-3 w-56 market-mover-skeleton" aria-hidden="true" />
                 </td>
                 {Array.from({ length: showCategory ? 9 : 8 }, (_, cellIndex) => (
                   <td key={`market-table-skeleton-cell-${index}-${cellIndex}`} className="px-4 py-4">
-                    <span className={`block h-3 animate-pulse bg-muted ${cellIndex % 3 === 0 ? 'w-16' : cellIndex % 3 === 1 ? 'w-20' : 'w-12'}`} aria-hidden="true" />
+                    <span className={`block h-3 market-mover-skeleton ${cellIndex % 3 === 0 ? 'w-16' : cellIndex % 3 === 1 ? 'w-20' : 'w-12'}`} aria-hidden="true" />
                   </td>
                 ))}
-                <td className="px-4 py-4"><span className="block h-8 w-24 animate-pulse bg-muted" aria-hidden="true" /></td>
+                <td className="px-4 py-4"><span className="block h-8 w-24 market-mover-skeleton" aria-hidden="true" /></td>
               </tr>
             )) : filteredRows.map((mover) => {
               const isPositive = mover.percentChange >= 0;
               const oldSchool = isOldSchoolMover(mover);
               return (
-                <tr key={`${mover.id}-${mover.name}`} className="border-b border-border/80 transition-colors hover:bg-primary/5">
+                <tr key={`${mover.id}-${mover.name}`} className="market-mover-row-enter border-b border-border/80 transition-colors hover:bg-primary/5">
                   <td className="px-4 py-3">
                     <button
                       type="button"

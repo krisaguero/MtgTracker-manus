@@ -175,3 +175,54 @@
     }
   }
 }
+
+/* Market movers visual system: hard-edged surfaces, restrained indigo motion, and accessible loading feedback. */
+@keyframes market-mover-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes market-mover-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.market-mover-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in oklch, var(--muted) 88%, var(--background));
+}
+
+.market-mover-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--background) 45%, transparent), transparent);
+  animation: market-mover-shimmer 1.4s var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)) infinite;
+}
+
+.market-mover-enter {
+  opacity: 0;
+  animation: market-mover-enter 280ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)) forwards;
+  animation-delay: calc(var(--market-mover-index, 0) * 38ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-mover-skeleton::after,
+  .market-mover-enter {
+    animation: none;
+  }
+  .market-mover-enter {
+    opacity: 1;
+  }
+}
+.market-mover-row-enter {
+  animation: market-mover-enter 220ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-mover-row-enter {
+    animation: none;
+  }
+}

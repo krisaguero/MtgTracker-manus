@@ -1,5 +1,5 @@
 /* Design reminder: hard-edged market intelligence workspace; features 10 categories of 25 movers each, penny buyout watches, Reddit sentiment metrics, and deep-dive sentiment analysis. */
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { Link } from 'wouter';
 import { ArrowUpRight, ExternalLink, Flame, Search, ShieldAlert, Sparkles, Star, TrendingDown, TrendingUp, Zap } from 'lucide-react';
 import { MarketMoversTable } from '@/components/MarketMoversTable';
@@ -43,6 +43,8 @@ export function DailyMovers() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedSetCode, setSelectedSetCode] = useState<string>('all');
   const [priceRange, setPriceRange] = useState<string>('all');
+  const [rarityFilter, setRarityFilter] = useState<string>('all');
+  const [trendFilter, setTrendFilter] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('pct-desc');
   const [searchFilter, setSearchFilter] = useState<string>('');
   const [watchlist, setWatchlist] = useState<MarketWatchlistEntry[]>(() => loadMarketWatchlist());
@@ -141,6 +143,14 @@ export function DailyMovers() {
       });
     }
 
+    if (rarityFilter !== 'all') {
+      result = result.filter((m) => m.rarity.toLowerCase() === rarityFilter);
+    }
+
+    if (trendFilter !== 'all') {
+      result = result.filter((m) => trendFilter === 'rising' ? m.percentChange > 0 : trendFilter === 'falling' ? m.percentChange < 0 : m.percentChange === 0);
+    }
+
     if (searchFilter.trim()) {
       const q = searchFilter.trim().toLowerCase();
       result = result.filter((m) => m.name.toLowerCase().includes(q) || m.setCode.toLowerCase().includes(q) || m.thesis.toLowerCase().includes(q));
@@ -153,7 +163,7 @@ export function DailyMovers() {
       if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
       return 0;
     });
-  }, [activeMoversList, activeFeed, activeCategory, selectedSetCode, priceRange, searchFilter, sortBy, watchlist]);
+  }, [activeMoversList, activeFeed, activeCategory, selectedSetCode, priceRange, rarityFilter, trendFilter, searchFilter, sortBy, watchlist]);
 
   const activeFeedMovers = filteredMovers;
   const visibleWatchlist = activeMoversList.filter((m) => isMarketCardWatched(m, watchlist));
@@ -355,6 +365,29 @@ export function DailyMovers() {
                 </select>
               </div>
 
+              {/* Rarity Filter */}
+              <div className="flex items-center gap-1.5">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Rarity:</span>
+                <select value={rarityFilter} onChange={(e) => setRarityFilter(e.target.value)} aria-label="Filter by Rarity" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary">
+                  <option value="all">Any Rarity</option>
+                  <option value="mythic">Mythic</option>
+                  <option value="rare">Rare</option>
+                  <option value="uncommon">Uncommon</option>
+                  <option value="common">Common</option>
+                </select>
+              </div>
+
+              {/* Trend Filter */}
+              <div className="flex items-center gap-1.5">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Trend:</span>
+                <select value={trendFilter} onChange={(e) => setTrendFilter(e.target.value)} aria-label="Filter by Price Trend" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary">
+                  <option value="all">Any Trend</option>
+                  <option value="rising">Rising</option>
+                  <option value="falling">Falling</option>
+                  <option value="flat">Flat</option>
+                </select>
+              </div>
+
               {/* Sort By */}
               <div className="flex items-center gap-1.5">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Sort:</span>
@@ -404,8 +437,9 @@ export function DailyMovers() {
           {isLoadingMovers && activeMoversList.length === 0 ? (
             <MarketCardGridSkeleton count={6} />
           ) : (
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {activeFeedMovers.map((mover) => (
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+              {activeFeedMovers.map((mover, index) => (
+                <div key={mover.id} className="market-mover-enter" style={{ '--market-mover-index': index } as CSSProperties}>
                 <MarketCardItem
                   key={mover.id}
                   mover={mover}
@@ -413,6 +447,7 @@ export function DailyMovers() {
                   onSelect={(m) => setSelectedCard(m)}
                   onToggleWatchlist={(m) => handleToggleWatchlist(m)}
                 />
+                </div>
               ))}
             </div>
           )}
@@ -423,6 +458,9 @@ export function DailyMovers() {
               data={activeFeedMovers}
               title={activeFeed === 'watchlist' ? 'Watchlist Movers Table' : 'Daily Movers Table'}
               description="Comprehensive sorted view of market movers, percentage spikes, and live outlet valuations across curated Magic: The Gathering categories."
+              isLoading={isLoadingMovers}
+              watchlist={watchlist}
+              onToggleWatchlist={handleToggleWatchlist}
             />
           </div>
         </section>
