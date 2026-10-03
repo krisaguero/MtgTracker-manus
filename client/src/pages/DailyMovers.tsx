@@ -223,6 +223,12 @@ export function DailyMovers() {
             >
               <Sparkles className="h-3.5 w-3.5" /> Featured Article
             </Link>
+            <Link
+              href="/market-articles"
+              className="inline-flex items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary whitespace-nowrap"
+            >
+              Editorial Deep Dives
+            </Link>
           </div>
         </div>
       </header>

@@ -19,6 +19,8 @@ import MarketMoverArticle from '@/pages/MarketMoverArticle';
 import CostcoDealArticle from '@/pages/CostcoDealArticle';
 import { DupeDecks } from '@/pages/DupeDecks';
 import CardDetail from '@/pages/CardDetail';
+import EditorialMarketArticles from '@/pages/EditorialMarketArticles';
+import EditorialMarketArticle from '@/pages/EditorialMarketArticle';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -33,6 +35,8 @@ function Router() {
       <Route path="/dupe-decks" component={DupeDecks} />
       <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/movers" component={DailyMovers} />
+      <Route path="/market-articles" component={EditorialMarketArticles} />
+      <Route path="/market-category/:slug" component={EditorialMarketArticle} />
       <Route path="/market-watch-article" component={MarketWatchArticle} />
       <Route path="/signal-matrix-article" component={FeaturedSignalMatrixArticle} />
       <Route path="/market-mover/:moverSlug" component={MarketMoverArticle} />
