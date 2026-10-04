@@ -18,6 +18,8 @@ export interface MoverCard {
   tcgplayerMarketUsd?: number;
   mtgGoldfishUsd?: number;
   isCatalyst?: boolean;
+  pricingDate?: string;
+  pricingReportHref?: string;
 }
 
 export interface MarketSentimentDeepDive {

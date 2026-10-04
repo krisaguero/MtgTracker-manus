@@ -91,6 +91,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
           </div>
           <h3 className="font-bold text-sm leading-snug group-hover/card:text-primary transition-colors line-clamp-1" title={mover.name}>{mover.name}</h3>
           <p className="mt-1 font-mono text-[11px] text-muted-foreground line-clamp-2">{mover.thesis}</p>
+          {mover.pricingDate && <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">Pricing date: {mover.pricingDate}</p>}
         </div>
 
         <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
@@ -113,6 +114,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
           <Link href={marketMoverArticleHref(cleanName)} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-500 hover:underline">
             <Flame className="h-3 w-3" /> Mover post
           </Link>
+          {mover.pricingReportHref && <><span className="text-muted-foreground">·</span><Link href={mover.pricingReportHref} onClick={(e) => e.stopPropagation()} className="font-mono text-[10px] font-bold uppercase text-primary hover:underline">Dated report</Link></>}
         </div>
       </div>
     </div>

@@ -1,0 +1,79 @@
+import { CalendarDays, ExternalLink, FileText, TrendingDown, TrendingUp } from 'lucide-react';
+import { Link, useParams } from 'wouter';
+import {
+  formatPricingDate,
+  importedCardHref,
+  importedReportHref,
+  importedSetHref,
+  importedMarketReports,
+  type ImportedMarketReport,
+} from '@/data/marketReportArchive';
+
+function ReportCard({ report }: { report: ImportedMarketReport }) {
+  const positive = report.movers.filter((mover) => mover.changePercent > 0).length;
+  return (
+    <Link href={importedReportHref(report.dateKey)} className="group block border-2 border-border bg-card p-6 transition-colors hover:border-primary">
+      <div className="flex items-start justify-between gap-4">
+        <span className="inline-flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-widest text-primary">
+          <CalendarDays className="h-4 w-4" /> {formatPricingDate(report.dateKey)}
+        </span>
+        <FileText className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+      </div>
+      <h2 className="mt-6 text-2xl font-bold tracking-tight group-hover:text-primary">{report.title}</h2>
+      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{report.body[0] || report.status}</p>
+      <div className="mt-6 flex flex-wrap gap-3 border-t border-border pt-4 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+        <span>{report.movers.length} dated movers</span><span>·</span><span>{positive} positive</span><span>·</span><span>Read article →</span>
+      </div>
+    </Link>
+  );
+}
+
+export default function MarketReportArchive() {
+  const { dateKey } = useParams<{ dateKey?: string }>();
+  if (dateKey) {
+    const report = importedMarketReports.find((item) => item.dateKey === dateKey);
+    if (!report) return <div className="min-h-screen bg-background p-8 text-foreground"><Link href="/market-reports" className="font-mono text-xs uppercase text-primary hover:underline">← Report archive</Link><h1 className="mt-8 text-3xl font-bold">Report not found</h1></div>;
+    return <MarketReportArticle report={report} />;
+  }
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b-2 border-border bg-card">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-8">
+          <Link href="/movers" className="font-mono text-xs uppercase tracking-widest text-primary hover:underline">← Daily movers</Link>
+          <p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">Historical market intelligence</p>
+          <h1 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">Dated market reports</h1>
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">Every article imported from the MTG Market Intelligence Dashboard, with its mover selections and pricing dates kept attached to the original report date.</p>
+        </div>
+      </header>
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-8">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-2 border-primary/30 bg-primary/5 p-5">
+          <div><p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Archive coverage</p><p className="mt-1 text-sm text-muted-foreground">{importedMarketReports.length} dated articles · 65 dashboard movers · pricing dates preserved as UTC report dates</p></div>
+          <Link href="/market-articles" className="border-2 border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase hover:border-primary">Category deep dives</Link>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">{importedMarketReports.map((report) => <ReportCard key={report.dateKey} report={report} />)}</div>
+      </main>
+    </div>
+  );
+}
+
+function MarketReportArticle({ report }: { report: ImportedMarketReport }) {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b-2 border-border bg-card">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-8">
+          <Link href="/market-reports" className="font-mono text-xs uppercase tracking-widest text-primary hover:underline">← Dated report archive</Link>
+          <div className="mt-8 flex flex-wrap items-end justify-between gap-4"><div><p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">Published {formatPricingDate(report.dateKey)}</p><h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight sm:text-5xl">{report.title}</h1></div><span className="border border-border bg-background px-3 py-2 font-mono text-xs uppercase text-muted-foreground">{report.movers.length} movers</span></div>
+        </div>
+      </header>
+      <main className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <article className="border-2 border-border bg-card p-6 sm:p-10">
+          <div className="border-b border-border pb-6"><p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Pricing date: {formatPricingDate(report.dateKey)}</p><p className="mt-3 text-sm leading-relaxed text-muted-foreground"><strong className="text-foreground">Data window:</strong> {report.dataWindow}</p><p className="mt-1 text-sm leading-relaxed text-muted-foreground"><strong className="text-foreground">Market status:</strong> {report.status}</p></div>
+          <div className="mt-8 space-y-5 text-base leading-8 text-muted-foreground">{report.body.map((paragraph, index) => <p key={`${report.dateKey}-${index}`}>{paragraph}</p>)}</div>
+        </article>
+        <aside className="space-y-5">
+          <div className="border-2 border-border bg-card p-5"><p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Dated mover tape</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">These prices and percentage moves belong to the {formatPricingDate(report.dateKey)} report, not a live quote.</p><div className="mt-5 space-y-3">{report.movers.map((mover) => { const positive = mover.changePercent >= 0; const setHref = importedSetHref(mover.setCode); return <div key={`${mover.name}-${mover.setCode}`} className="border-t border-border pt-3"><div className="flex items-start justify-between gap-3"><div><Link href={importedCardHref(mover.name)} className="font-bold hover:text-primary">{mover.name}</Link><div className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{mover.setCode} · {mover.category}</div></div><span className={`inline-flex items-center gap-1 font-mono text-xs font-bold ${positive ? 'text-emerald-500' : 'text-destructive'}`}>{positive ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}{mover.moveLabel}</span></div><div className="mt-2 flex items-center justify-between font-mono text-xs"><span>{mover.priceLabel}</span><span className="text-muted-foreground">As of {formatPricingDate(mover.pricingDate)}</span></div><div className="mt-2 flex gap-3 font-mono text-[10px] font-bold uppercase"><Link href={importedCardHref(mover.name)} className="text-primary hover:underline">Card profile</Link>{setHref && <Link href={setHref} className="text-primary hover:underline">Set page</Link>}<a href={`https://scryfall.com/search?q=${encodeURIComponent(`!"${mover.name}"`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary">Scryfall <ExternalLink className="h-3 w-3" /></a></div></div> })}</div></div>
+        </aside>
+      </main>
+    </div>
+  );
+}

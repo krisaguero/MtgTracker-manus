@@ -12,6 +12,7 @@ import { NavigationSearch } from '@/components/NavigationSearch';
 import { trpc } from '@/lib/trpc';
 import type { MarketRow } from '@shared/market';
 import { getMarketWatchKey, isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
+import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
 
 function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] {
   return rows.map((row, index) => {
@@ -110,7 +111,10 @@ export function DailyMovers() {
     return localMovers;
   }, [serverRows, activeCategory, localMovers]);
 
-  const activeMoversList = liveMovers;
+  const activeMoversList = useMemo(() => liveMovers.map((mover) => {
+    const imported = findImportedMover(mover.name, mover.setCode);
+    return imported ? { ...mover, pricingDate: imported.pricingDate, pricingReportHref: importedReportHref(imported.pricingDate) } : mover;
+  }), [liveMovers]);
 
   const availableSets = useMemo(() => {
     const set = new Set<string>();
@@ -248,6 +252,9 @@ export function DailyMovers() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
+            <Link href="/market-reports" className="inline-flex items-center gap-2 border-2 border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary">
+              Dated Reports Archive
+            </Link>
             <div className="inline-flex border-2 border-border bg-card p-1">
               <button
                 type="button"
