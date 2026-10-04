@@ -13,6 +13,7 @@ import Collection from "@/pages/Collection";
 import MarketReport from '@/pages/MarketReport';
 import LatestMarketReport from '@/pages/LatestMarketReport';
 import MarketReportArchive from '@/pages/MarketReportArchive';
+import MarketSignalAudit from '@/pages/MarketSignalAudit';
 import { DailyMovers } from '@/pages/DailyMovers';
 import { MarketWatchArticle } from '@/pages/MarketWatchArticle';
 import { FeaturedSignalMatrixArticle } from '@/pages/FeaturedSignalMatrixArticle';
@@ -37,6 +38,7 @@ function Router() {
       <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/market-reports" component={MarketReportArchive} />
       <Route path="/market-report/:dateKey" component={MarketReportArchive} />
+      <Route path="/market-signal-audit" component={MarketSignalAudit} />
       <Route path="/movers" component={DailyMovers} />
       <Route path="/market-articles" component={EditorialMarketArticles} />
       <Route path="/market-category/:slug" component={EditorialMarketArticle} />

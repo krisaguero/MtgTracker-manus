@@ -255,6 +255,9 @@ export function DailyMovers() {
             <Link href="/market-reports" className="inline-flex items-center gap-2 border-2 border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary">
               Dated Reports Archive
             </Link>
+            <Link href="/market-signal-audit" className="inline-flex items-center gap-2 border-2 border-primary bg-primary/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
+              Signal Audit
+            </Link>
             <div className="inline-flex border-2 border-border bg-card p-1">
               <button
                 type="button"
