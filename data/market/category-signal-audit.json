@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T02:05:56.232Z",
+  "generatedAt": "2026-10-05T00:07:27.899Z",
   "pricingDate": "2026-10-03",
   "snapshotCount": 39,
   "configuredCategories": [
@@ -162,6 +162,256 @@
       "negativeSignals": 2
     }
   ],
+  "reprintSquashesTrend": [
+    {
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "prices": [
+        {
+          "date": "2026-08-20",
+          "price": 3.04,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-08-27",
+          "price": 2.99,
+          "dailyPct": -1.64
+        },
+        {
+          "date": "2026-08-28",
+          "price": 2.99,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-08-29",
+          "price": 2.99,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-08-30",
+          "price": 2.99,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-08-31",
+          "price": 2.72,
+          "dailyPct": -9.03
+        },
+        {
+          "date": "2026-09-01",
+          "price": 2.72,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-02",
+          "price": 3.16,
+          "dailyPct": 16.18
+        },
+        {
+          "date": "2026-09-03",
+          "price": 3.23,
+          "dailyPct": 2.22
+        },
+        {
+          "date": "2026-09-04",
+          "price": 3.38,
+          "dailyPct": 4.64
+        },
+        {
+          "date": "2026-09-05",
+          "price": 3.3,
+          "dailyPct": -2.37
+        },
+        {
+          "date": "2026-09-06",
+          "price": 3.37,
+          "dailyPct": 2.12
+        },
+        {
+          "date": "2026-09-07",
+          "price": 3.26,
+          "dailyPct": -3.26
+        },
+        {
+          "date": "2026-09-08",
+          "price": 3.26,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-09",
+          "price": 4.09,
+          "dailyPct": 25.46
+        },
+        {
+          "date": "2026-09-10",
+          "price": 4.34,
+          "dailyPct": 6.11
+        },
+        {
+          "date": "2026-09-11",
+          "price": 4.01,
+          "dailyPct": -7.6
+        },
+        {
+          "date": "2026-09-12",
+          "price": 3.77,
+          "dailyPct": -5.99
+        },
+        {
+          "date": "2026-09-13",
+          "price": 3.59,
+          "dailyPct": -4.77
+        },
+        {
+          "date": "2026-09-14",
+          "price": 2.57,
+          "dailyPct": -28.41
+        },
+        {
+          "date": "2026-09-15",
+          "price": 2.57,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-16",
+          "price": 2.57,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-17",
+          "price": 3.12,
+          "dailyPct": 21.4
+        },
+        {
+          "date": "2026-09-18",
+          "price": 3.26,
+          "dailyPct": 4.49
+        },
+        {
+          "date": "2026-09-19",
+          "price": 3.26,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-20",
+          "price": 3.12,
+          "dailyPct": -4.29
+        },
+        {
+          "date": "2026-09-21",
+          "price": 3.04,
+          "dailyPct": -2.56
+        },
+        {
+          "date": "2026-09-22",
+          "price": 3.04,
+          "dailyPct": 0
+        },
+        {
+          "date": "2026-09-23",
+          "price": 3.35,
+          "dailyPct": 10.2
+        },
+        {
+          "date": "2026-09-24",
+          "price": 3.23,
+          "dailyPct": -3.58
+        },
+        {
+          "date": "2026-09-25",
+          "price": 3.08,
+          "dailyPct": -4.64
+        },
+        {
+          "date": "2026-09-26",
+          "price": 2.81,
+          "dailyPct": -8.77
+        },
+        {
+          "date": "2026-09-27",
+          "price": 2.88,
+          "dailyPct": 2.49
+        },
+        {
+          "date": "2026-09-28",
+          "price": 3.08,
+          "dailyPct": 6.94
+        },
+        {
+          "date": "2026-09-29",
+          "price": 3.38,
+          "dailyPct": 9.74
+        },
+        {
+          "date": "2026-09-30",
+          "price": 3.55,
+          "dailyPct": 5.03
+        },
+        {
+          "date": "2026-10-01",
+          "price": 3.61,
+          "dailyPct": 1.69
+        },
+        {
+          "date": "2026-10-02",
+          "price": 3.36,
+          "dailyPct": -6.93
+        },
+        {
+          "date": "2026-10-03",
+          "price": 3.36,
+          "dailyPct": 0
+        }
+      ],
+      "observations": 39,
+      "firstDate": "2026-08-20",
+      "lastDate": "2026-10-03",
+      "firstPrice": 3.04,
+      "lastPrice": 3.36,
+      "totalPctChange": 10.53,
+      "peakPrice": 4.34,
+      "troughPrice": 2.57,
+      "maxDailyGain": 25.46,
+      "maxDailyDrop": -28.41,
+      "recentPrices": [
+        {
+          "date": "2026-09-27",
+          "price": 2.88,
+          "dailyPct": 2.49
+        },
+        {
+          "date": "2026-09-28",
+          "price": 3.08,
+          "dailyPct": 6.94
+        },
+        {
+          "date": "2026-09-29",
+          "price": 3.38,
+          "dailyPct": 9.74
+        },
+        {
+          "date": "2026-09-30",
+          "price": 3.55,
+          "dailyPct": 5.03
+        },
+        {
+          "date": "2026-10-01",
+          "price": 3.61,
+          "dailyPct": 1.69
+        },
+        {
+          "date": "2026-10-02",
+          "price": 3.36,
+          "dailyPct": -6.93
+        },
+        {
+          "date": "2026-10-03",
+          "price": 3.36,
+          "dailyPct": 0
+        }
+      ]
+    }
+  ],
   "topGainers": [
     {
       "id": "40470d4d-f834-59ae-9af3-de01926a221a",
@@ -309,6 +559,7 @@
   "findings": [
     "The latest feed is dated 2026-10-03 and contains 9 signals across 6 observed categories; seven-day momentum is used when the latest file is flat.",
     "reprint-squashes is the strongest latest category by average observed change (16.67%).",
+    "Counterspell is the only card currently driving Reprint Squashes: 39 observations, $3.04 to $3.36 (10.53%), with a maximum daily drop of -28.41%.",
     "Counterspell is the strongest seven-day gainer at 16.67%. Verify liquidity before treating it as a trend.",
     "Idol of Oblivion is the sharpest seven-day decliner at -1.54%, making reprint or demand exhaustion a risk to investigate.",
     "All observed daily categories are represented in the configured site tabs."

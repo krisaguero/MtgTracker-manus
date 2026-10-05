@@ -57,11 +57,29 @@ const categoryMomentum = latestCategories.map((category) => {
   const changes = rows.map((signal) => Number(signal.sevenDayPctChange ?? signal.pctDelta ?? signal.percentChange));
   return { category, cards: rows.length, averagePctChange: Number((changes.reduce((sum, value) => sum + value, 0) / Math.max(changes.length, 1)).toFixed(2)), positiveSignals: changes.filter((value) => value > 0).length, negativeSignals: changes.filter((value) => value < 0).length };
 }).sort((a, b) => b.averagePctChange - a.averagePctChange);
+const reprintHistory = new Map();
+for (const snapshot of snapshots) {
+  for (const signal of snapshot.signals.filter((item) => item.category === 'reprint-squashes')) {
+    const key = signal.key ?? signal.id;
+    const history = reprintHistory.get(key) ?? { name: signal.name, setCode: signal.setCode, prices: [] };
+    history.prices.push({ date: snapshot.date, price: Number(signal.currentUsd), dailyPct: Number(signal.percentChange ?? 0) });
+    reprintHistory.set(key, history);
+  }
+}
+const reprintSquashesTrend = [...reprintHistory.values()].map((item) => {
+  const first = item.prices[0];
+  const last = item.prices.at(-1);
+  const peak = Math.max(...item.prices.map((point) => point.price));
+  const trough = Math.min(...item.prices.map((point) => point.price));
+  const dailyMoves = item.prices.slice(1).map((point, index) => Number((((point.price - item.prices[index].price) / Math.max(item.prices[index].price, 0.01)) * 100).toFixed(2)));
+  return { ...item, observations: item.prices.length, firstDate: first?.date ?? null, lastDate: last?.date ?? null, firstPrice: first?.price ?? null, lastPrice: last?.price ?? null, totalPctChange: first && first.price ? Number((((last.price - first.price) / first.price) * 100).toFixed(2)) : null, peakPrice: peak, troughPrice: trough, maxDailyGain: dailyMoves.length ? Math.max(...dailyMoves) : 0, maxDailyDrop: dailyMoves.length ? Math.min(...dailyMoves) : 0, recentPrices: item.prices.slice(-7) };
+});
 
 const moverPrompt = `Act as an MTG market analyst. Using only the attached site snapshot, explain the strongest market signals without treating a single low-liquidity print as proof of durable demand. Prioritize: (1) category momentum, (2) cards with repeat observations, (3) price direction and absolute move, (4) reprint or variant risk, and (5) what evidence would invalidate the thesis. Cite the pricing date ${latest?.date ?? 'unknown'} and distinguish observed data from speculation.`;
 const findings = [
   `The latest feed is dated ${latest?.date ?? 'unknown'} and contains ${latestSignals.length} signals across ${latestCategories.length} observed categories; seven-day momentum is used when the latest file is flat.`,
   categoryMomentum[0] ? `${categoryMomentum[0].category} is the strongest latest category by average observed change (${categoryMomentum[0].averagePctChange}%).` : 'No category momentum could be calculated.',
+  reprintSquashesTrend[0] ? `${reprintSquashesTrend[0].name} is the only card currently driving Reprint Squashes: ${reprintSquashesTrend[0].observations} observations, $${reprintSquashesTrend[0].firstPrice.toFixed(2)} to $${reprintSquashesTrend[0].lastPrice.toFixed(2)} (${reprintSquashesTrend[0].totalPctChange}%), with a maximum daily drop of ${reprintSquashesTrend[0].maxDailyDrop}%.` : 'No card-level Reprint Squashes history was found.',
   topGainers[0] ? `${topGainers[0].name} is the strongest seven-day gainer at ${Number(topGainers[0].sevenDayPctChange ?? topGainers[0].pctDelta ?? topGainers[0].percentChange).toFixed(2)}%. Verify liquidity before treating it as a trend.` : 'No positive seven-day signal was found.',
   topDecliners[0] ? `${topDecliners[0].name} is the sharpest seven-day decliner at ${Number(topDecliners[0].sevenDayPctChange ?? topDecliners[0].pctDelta ?? topDecliners[0].percentChange).toFixed(2)}%, making reprint or demand exhaustion a risk to investigate.` : 'No negative seven-day signal was found.',
   unconfiguredObservedCategories.length ? `The data feed contains categories not represented in the configured site tabs: ${unconfiguredObservedCategories.join(', ')}.` : 'All observed daily categories are represented in the configured site tabs.',
@@ -77,6 +95,7 @@ const audit = {
   latestDailyCategories: latestCategories,
   unconfiguredObservedCategories,
   categoryMomentum,
+  reprintSquashesTrend,
   topGainers,
   topDecliners,
   findings,
