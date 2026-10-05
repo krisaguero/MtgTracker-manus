@@ -9,6 +9,7 @@ import CommanderDeck from "./pages/CommanderDeck";
 import PreconCatalog from "@/pages/PreconCatalog";
 import CommanderLibrary from "@/pages/CommanderLibrary";
 import CommanderPreconLibrary from "@/pages/CommanderPreconLibrary";
+import CommanderMarketIndex from "@/pages/CommanderMarketIndex";
 import Collection from "@/pages/Collection";
 import MarketReport from '@/pages/MarketReport';
 import LatestMarketReport from '@/pages/LatestMarketReport';
@@ -32,6 +33,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/commander"} component={CommanderLibrary} />
       <Route path={"/precons"} component={CommanderPreconLibrary} />
+      <Route path={"/commander-market"} component={CommanderMarketIndex} />
       <Route path={"/collection"} component={Collection} />
       <Route path="/market-report" component={MarketReport} />
       <Route path="/dupe-decks" component={DupeDecks} />

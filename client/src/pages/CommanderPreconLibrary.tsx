@@ -136,6 +136,9 @@ export default function CommanderPreconLibrary() {
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
               Explore chronologically sequenced Commander preconfigured decks with boxed product artwork, primary commanders, live market valuations, street MSRP, and automatic baseline inventory matching against your collection.
             </p>
+            <Link href="/commander-market" className="inline-flex items-center gap-2 border-2 border-amber-500 bg-amber-500 px-4 py-2 font-mono text-xs font-black uppercase tracking-wider text-black transition-transform hover:-translate-y-0.5">
+              <Sparkles className="h-4 w-4" /> Open Commander demand index →
+            </Link>
           </div>
         </div>
 
