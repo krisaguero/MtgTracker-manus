@@ -1,9 +1,9 @@
 /* Design reminder: hard-edged Dupe-Decks workspace; 60-card 1v1 duel deck builder powered by duplicate inventory matching and Groq-assisted theming. */
 import { useState, useMemo, useRef } from 'react';
 import { Link } from 'wouter';
-import { ArrowLeft, CheckCircle2, Copy, Download, FileUp, Key, Layers, Loader2, ShieldAlert, Sparkles, Upload, Wand2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Copy, Download, FileUp, Key, Layers, Loader2, ShieldAlert, Sparkles, Upload, Wand2, Dice5 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { DUPE_DECK_THEMES, generateCustomGroqDeck, generateDupeDeck, loadGroqApiKey, parseInventoryText, saveGroqApiKey, type InventoryCard, type DupeDeckResult } from '@/lib/dupeDecksEngine';
+import { DUPE_DECK_THEMES, GROQ_RECIPE_OPTIONS, buildGroqDeckPrompt, generateCustomGroqDeck, generateDupeDeck, loadGroqApiKey, parseInventoryText, saveGroqApiKey, type InventoryCard, type DupeDeckResult, type GroqDeckRecipe } from '@/lib/dupeDecksEngine';
 import { loadSavedInventory, saveSavedInventory } from '@/lib/dupeDecksStorage';
 
 export function DupeDecks() {
@@ -34,6 +34,13 @@ export function DupeDecks() {
   const [customPrompt, setCustomPrompt] = useState<string>('Izzet Prowess Spellslinger 1v1 duel deck');
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [generationError, setGenerationError] = useState<string | null>(null);
+  const [recipe, setRecipe] = useState<GroqDeckRecipe>({
+    theme: 'A haunted seaside treasure hunt with friendly ghosts and pirates',
+    gameplan: GROQ_RECIPE_OPTIONS.gameplan[0],
+    complexity: GROQ_RECIPE_OPTIONS.complexity[0],
+    budget: GROQ_RECIPE_OPTIONS.budget[0],
+    flavor: GROQ_RECIPE_OPTIONS.flavor[1],
+  });
 
   function handleBuildDeck(themeId: string) {
     setSelectedTheme(themeId);
@@ -105,7 +112,8 @@ export function DupeDecks() {
     try {
       const parsedInventory = parseInventoryText(inventoryInput);
       setInventory(parsedInventory);
-      const result = await generateCustomGroqDeck(customPrompt, parsedInventory, apiKey.trim());
+      const prompt = buildGroqDeckPrompt(recipe, customPrompt);
+      const result = await generateCustomGroqDeck(prompt, parsedInventory, apiKey.trim());
       setDeck(result);
       setSelectedTheme('custom');
     } catch (err: any) {
@@ -195,7 +203,10 @@ export function DupeDecks() {
               <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">Stored locally in your browser storage only.</p>
 
               <div className="mt-6 border-t border-border pt-5">
-                <label className="block font-mono text-xs font-bold uppercase tracking-wider text-primary">Custom AI Prompt / Theme</label>
+                <div className="flex items-center justify-between gap-3">
+                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-primary">Custom AI Prompt / Theme</label>
+                  <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase text-muted-foreground"><Dice5 className="h-3.5 w-3.5" /> Recipe mode</span>
+                </div>
                 <input
                   type="text"
                   value={customPrompt}
@@ -204,6 +215,13 @@ export function DupeDecks() {
                   aria-label="Custom AI Prompt or Theme"
                   className="mt-2 w-full border border-border bg-background p-2.5 font-mono text-xs text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                 />
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Game plan<select value={recipe.gameplan} onChange={(e) => setRecipe((current) => ({ ...current, gameplan: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.gameplan.map((option) => <option key={option}>{option}</option>)}</select></label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Complexity<select value={recipe.complexity} onChange={(e) => setRecipe((current) => ({ ...current, complexity: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.complexity.map((option) => <option key={option}>{option}</option>)}</select></label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Budget lens<select value={recipe.budget} onChange={(e) => setRecipe((current) => ({ ...current, budget: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.budget.map((option) => <option key={option}>{option}</option>)}</select></label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Story flavor<select value={recipe.flavor} onChange={(e) => setRecipe((current) => ({ ...current, flavor: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.flavor.map((option) => <option key={option}>{option}</option>)}</select></label>
+                </div>
+                <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-relaxed text-muted-foreground">The builder combines these choices into a tighter prompt: simple curve, 60 cards, 1v1 rules, four-copy limits, and a first-three-turn plan.</p>
                 <Button
                   onClick={handleGenerateCustom}
                   disabled={isGenerating}

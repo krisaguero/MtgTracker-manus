@@ -27,13 +27,39 @@ export interface DupeDeckResult {
   groqPowered: boolean;
 }
 
+export interface GroqDeckRecipe {
+  theme: string;
+  gameplan: string;
+  complexity: string;
+  budget: string;
+  flavor: string;
+}
+
 export const DUPE_DECK_THEMES = [
   { id: 'artifact-aggro', name: 'Artifact Aggro & Thopters', colors: ['W', 'R'], archetype: 'Aggro', desc: 'Fast artifacts, metalcraft payoffs, and aggressive token swarms.' },
   { id: 'graveyard-reanimator', name: 'Golgari Graveyard Dredge', colors: ['B', 'G'], archetype: 'Midrange', desc: 'Self-mill, reanimation targets, and recursive value creatures.' },
   { id: 'counter-burn-tempo', name: 'Izzet Spellslinger & Burn', colors: ['U', 'R'], archetype: 'Tempo', desc: 'Instant-speed interaction, prowess threats, and lethal burn spells.' },
   { id: 'lifegain-midrange', name: 'Orzhov Lifegain & Drain', colors: ['W', 'B'], archetype: 'Midrange', desc: 'Consistent life gain triggers, blood artist drains, and resilient threats.' },
   { id: 'ramp-stompy', name: 'Simic Ramp & Sea Monsters', colors: ['G', 'U'], archetype: 'Combo', desc: 'Mana dorks, extra card draw, and devastating top-end finishers.' },
+  { id: 'knights-and-dragons', name: 'Crown & Claw: Knights vs. Dragons', colors: ['W', 'R'], archetype: 'Midrange', desc: 'A storybook duel: brave knights, equipment, and one enormous dragon finisher.' },
+  { id: 'treasure-heist', name: 'The Treasure Heist', colors: ['U', 'R'], archetype: 'Tempo', desc: 'Pirates, clues, and a fast getaway powered by a pile of shiny artifacts.' },
+  { id: 'rats-in-the-walls', name: 'Rats in the Walls', colors: ['B'], archetype: 'Aggro', desc: 'Tiny swarms, discard pressure, and an unsettling number of rats.' },
+  { id: 'web-of-the-wild', name: 'Web of the Wild', colors: ['B', 'G'], archetype: 'Midrange', desc: 'Spiders, reach, deathtouch, and a forest that fights back.' },
+  { id: 'campfire-heroes', name: 'Campfire Heroes', colors: ['W', 'G'], archetype: 'Aggro', desc: 'A clean, beginner-friendly creature deck with teamwork and combat tricks.' },
+  { id: 'graveyard-shift', name: 'Graveyard Shift', colors: ['U', 'B'], archetype: 'Control', desc: 'Zombies, self-mill, and a slow overnight shift from dead to dangerous.' },
+  { id: 'storybook-enchantments', name: 'Once Upon a Time', colors: ['G', 'W'], archetype: 'Midrange', desc: 'A fairy-tale enchantment deck with heroic creatures and happy endings.' },
 ];
+
+export const GROQ_RECIPE_OPTIONS = {
+  gameplan: ['Make a fast attack', 'Trade resources and win late', 'Play at instant speed', 'Build a wide token board', 'Ramp into one giant finisher'],
+  complexity: ['Very simple: repeatable cards and obvious plays', 'Clean but clever: a few synergies', 'Spicy: surprising lines without being complicated'],
+  budget: ['Use my inventory first and keep missing cards cheap', 'Mostly common and uncommon replacements', 'No budget ceiling: prioritize the theme'],
+  flavor: ['Saturday-morning adventure', 'Gothic campfire story', 'High fantasy tournament', 'Pirate comedy', 'Kaiju disaster movie', 'Cozy woodland mystery'],
+} as const;
+
+export function buildGroqDeckPrompt(recipe: GroqDeckRecipe, customNotes = ''): string {
+  return `Build a simple 60-card Magic: The Gathering 1v1 duel deck. Theme: ${recipe.theme}. Game plan: ${recipe.gameplan}. Complexity: ${recipe.complexity}. Budget rule: ${recipe.budget}. Flavor: ${recipe.flavor}. ${customNotes ? `Extra notes: ${customNotes}.` : ''} Use a clean mana curve, a coherent two-color or mono-color identity, no Commander cards or 100-card singleton rules, and no more than four copies of a non-basic card unless the card is a basic land. Prefer cards that are easy for a newer player to understand. Return exactly 60 cards and include a short explanation of the deck's first three turns.`;
+}
 
 export function loadGroqApiKey(): string {
   try {
