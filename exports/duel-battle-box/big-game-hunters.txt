@@ -1,0 +1,36 @@
+// Big Game Hunters — 60-card casual 1v1 duel deck
+1 Atarka Beastbreaker
+1 Glade Watcher
+1 Den Protector
+1 Ainok Artillerist
+1 Colossodon Yearling
+1 Aerie Bowmasters
+1 Conifer Strider
+1 Rattleclaw Mystic
+1 Crater Elemental
+1 Hardened Berserker
+1 Sabertooth Outrider
+1 Summit Prowler
+1 Sprinting Warbrute
+1 Screamreach Brawler
+1 Kolaghan Stormsinger
+1 Lightning Berserker
+2 Harbinger of the Hunt
+1 Savage Ventmaw
+2 Foe-Razer Regent
+1 Sheltered Aerie
+1 Roast
+1 Tail Slash
+1 Twin Bolt
+1 Kindled Fury
+1 Press the Advantage
+1 Shape the Sands
+1 Volcanic Rush
+1 Pinion Feast
+1 Sight of the Scalelords
+1 Vial of Dragonfire
+1 Lose Calm
+1 Sunbringer's Touch
+1 Revealing Wind
+13 Forest
+12 Mountain

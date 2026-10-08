@@ -168,6 +168,9 @@ export function DupeDecks() {
             <Link href="/movers" className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary">
               Daily Movers
             </Link>
+            <Link href="/duel-battle-box" className="border border-primary bg-primary/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
+              Four-Deck Battle Box
+            </Link>
           </div>
         </div>
       </header>

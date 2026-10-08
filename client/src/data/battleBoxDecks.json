@@ -1,0 +1,634 @@
+[
+  {
+    "name": "Growing Pains",
+    "colors": "Green/white",
+    "theme": "+1/+1 counters and growing creatures",
+    "startingMatchup": "Disposable Assets",
+    "groups": [
+      {
+        "label": "Creatures",
+        "expected": 22,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Servant of the Scale"
+          },
+          {
+            "quantity": 4,
+            "name": "Avatar of the Resolute"
+          },
+          {
+            "quantity": 1,
+            "name": "Den Protector"
+          },
+          {
+            "quantity": 1,
+            "name": "Guardian Shield-Bearer"
+          },
+          {
+            "quantity": 1,
+            "name": "Lightwalker"
+          },
+          {
+            "quantity": 2,
+            "name": "Hidden Dragonslayer"
+          },
+          {
+            "quantity": 2,
+            "name": "Herald of Anafenza"
+          },
+          {
+            "quantity": 1,
+            "name": "Dromoka Captain"
+          },
+          {
+            "quantity": 1,
+            "name": "Sandcrafter Mage"
+          },
+          {
+            "quantity": 1,
+            "name": "Tuskguard Captain"
+          },
+          {
+            "quantity": 1,
+            "name": "Abzan Falconer"
+          },
+          {
+            "quantity": 1,
+            "name": "Abzan Battle Priest"
+          },
+          {
+            "quantity": 1,
+            "name": "Longshot Squad"
+          },
+          {
+            "quantity": 1,
+            "name": "Salt Road Ambushers"
+          },
+          {
+            "quantity": 1,
+            "name": "Enduring Scalelord"
+          },
+          {
+            "quantity": 1,
+            "name": "Arashin Sovereign"
+          }
+        ]
+      },
+      {
+        "label": "Other spells",
+        "expected": 14,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Gleam of Authority"
+          },
+          {
+            "quantity": 1,
+            "name": "Incremental Growth"
+          },
+          {
+            "quantity": 1,
+            "name": "Sunbringer's Touch"
+          },
+          {
+            "quantity": 1,
+            "name": "Inspiring Call"
+          },
+          {
+            "quantity": 1,
+            "name": "Feat of Resistance"
+          },
+          {
+            "quantity": 1,
+            "name": "Epic Confrontation"
+          },
+          {
+            "quantity": 1,
+            "name": "Dromoka's Command"
+          },
+          {
+            "quantity": 1,
+            "name": "Pacifism"
+          },
+          {
+            "quantity": 1,
+            "name": "Suspension Field"
+          },
+          {
+            "quantity": 1,
+            "name": "Tread Upon"
+          },
+          {
+            "quantity": 1,
+            "name": "Dromoka Monument"
+          },
+          {
+            "quantity": 1,
+            "name": "Naturalize"
+          },
+          {
+            "quantity": 1,
+            "name": "Glaring Aegis"
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 13,
+            "name": "Forest"
+          },
+          {
+            "quantity": 11,
+            "name": "Plains"
+          }
+        ]
+      }
+    ],
+    "substitutions": [
+      "Replace one Avatar of the Resolute with one Dromoka Warrior."
+    ]
+  },
+  {
+    "name": "Disposable Assets",
+    "colors": "Blue/black",
+    "theme": "Exploit, sacrifice, and creature recursion",
+    "startingMatchup": "Growing Pains",
+    "groups": [
+      {
+        "label": "Creatures",
+        "expected": 20,
+        "cards": [
+          {
+            "quantity": 1,
+            "name": "Shambling Goblin"
+          },
+          {
+            "quantity": 1,
+            "name": "Palace Familiar"
+          },
+          {
+            "quantity": 1,
+            "name": "Hand of Silumgar"
+          },
+          {
+            "quantity": 1,
+            "name": "Dutiful Attendant"
+          },
+          {
+            "quantity": 1,
+            "name": "Minister of Pain"
+          },
+          {
+            "quantity": 1,
+            "name": "Gurmag Drowner"
+          },
+          {
+            "quantity": 1,
+            "name": "Youthful Scholar"
+          },
+          {
+            "quantity": 2,
+            "name": "Vulturous Aven"
+          },
+          {
+            "quantity": 2,
+            "name": "Silumgar Butcher"
+          },
+          {
+            "quantity": 1,
+            "name": "Rakshasa Gravecaller"
+          },
+          {
+            "quantity": 2,
+            "name": "Profaner of the Dead"
+          },
+          {
+            "quantity": 2,
+            "name": "Necromaster Dragon"
+          },
+          {
+            "quantity": 1,
+            "name": "Icefall Regent"
+          },
+          {
+            "quantity": 1,
+            "name": "Necropolis Fiend"
+          },
+          {
+            "quantity": 1,
+            "name": "Silumgar Spell-Eater"
+          },
+          {
+            "quantity": 1,
+            "name": "Wandering Tombshell"
+          }
+        ]
+      },
+      {
+        "label": "Other spells",
+        "expected": 16,
+        "cards": [
+          {
+            "quantity": 3,
+            "name": "Mirror Mockery"
+          },
+          {
+            "quantity": 2,
+            "name": "Death Wind"
+          },
+          {
+            "quantity": 2,
+            "name": "Foul Renewal"
+          },
+          {
+            "quantity": 1,
+            "name": "Silumgar's Command"
+          },
+          {
+            "quantity": 1,
+            "name": "Gravepurge"
+          },
+          {
+            "quantity": 1,
+            "name": "Dutiful Return"
+          },
+          {
+            "quantity": 1,
+            "name": "Negate"
+          },
+          {
+            "quantity": 1,
+            "name": "Despise"
+          },
+          {
+            "quantity": 1,
+            "name": "Mystic Meditation"
+          },
+          {
+            "quantity": 1,
+            "name": "Weave Fate"
+          },
+          {
+            "quantity": 1,
+            "name": "Encase in Ice"
+          },
+          {
+            "quantity": 1,
+            "name": "Taigam's Scheming"
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 13,
+            "name": "Swamp"
+          },
+          {
+            "quantity": 11,
+            "name": "Island"
+          }
+        ]
+      }
+    ],
+    "substitutions": [
+      "Replace one Mirror Mockery with one Reckless Imp."
+    ]
+  },
+  {
+    "name": "Big Game Hunters",
+    "colors": "Red/green",
+    "theme": "Large creatures, combat tricks, and dragons",
+    "startingMatchup": "Spell-Fu",
+    "groups": [
+      {
+        "label": "Creatures",
+        "expected": 21,
+        "cards": [
+          {
+            "quantity": 1,
+            "name": "Atarka Beastbreaker"
+          },
+          {
+            "quantity": 1,
+            "name": "Glade Watcher"
+          },
+          {
+            "quantity": 1,
+            "name": "Den Protector"
+          },
+          {
+            "quantity": 1,
+            "name": "Ainok Artillerist"
+          },
+          {
+            "quantity": 1,
+            "name": "Colossodon Yearling"
+          },
+          {
+            "quantity": 1,
+            "name": "Aerie Bowmasters"
+          },
+          {
+            "quantity": 1,
+            "name": "Conifer Strider"
+          },
+          {
+            "quantity": 1,
+            "name": "Rattleclaw Mystic"
+          },
+          {
+            "quantity": 1,
+            "name": "Crater Elemental"
+          },
+          {
+            "quantity": 1,
+            "name": "Hardened Berserker"
+          },
+          {
+            "quantity": 1,
+            "name": "Sabertooth Outrider"
+          },
+          {
+            "quantity": 1,
+            "name": "Summit Prowler"
+          },
+          {
+            "quantity": 1,
+            "name": "Sprinting Warbrute"
+          },
+          {
+            "quantity": 1,
+            "name": "Screamreach Brawler"
+          },
+          {
+            "quantity": 1,
+            "name": "Kolaghan Stormsinger"
+          },
+          {
+            "quantity": 1,
+            "name": "Lightning Berserker"
+          },
+          {
+            "quantity": 2,
+            "name": "Harbinger of the Hunt"
+          },
+          {
+            "quantity": 1,
+            "name": "Savage Ventmaw"
+          },
+          {
+            "quantity": 2,
+            "name": "Foe-Razer Regent"
+          }
+        ]
+      },
+      {
+        "label": "Other spells",
+        "expected": 14,
+        "cards": [
+          {
+            "quantity": 1,
+            "name": "Sheltered Aerie"
+          },
+          {
+            "quantity": 1,
+            "name": "Roast"
+          },
+          {
+            "quantity": 1,
+            "name": "Tail Slash"
+          },
+          {
+            "quantity": 1,
+            "name": "Twin Bolt"
+          },
+          {
+            "quantity": 1,
+            "name": "Kindled Fury"
+          },
+          {
+            "quantity": 1,
+            "name": "Press the Advantage"
+          },
+          {
+            "quantity": 1,
+            "name": "Shape the Sands"
+          },
+          {
+            "quantity": 1,
+            "name": "Volcanic Rush"
+          },
+          {
+            "quantity": 1,
+            "name": "Pinion Feast"
+          },
+          {
+            "quantity": 1,
+            "name": "Sight of the Scalelords"
+          },
+          {
+            "quantity": 1,
+            "name": "Vial of Dragonfire"
+          },
+          {
+            "quantity": 1,
+            "name": "Lose Calm"
+          },
+          {
+            "quantity": 1,
+            "name": "Sunbringer's Touch"
+          },
+          {
+            "quantity": 1,
+            "name": "Revealing Wind"
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 25,
+        "cards": [
+          {
+            "quantity": 13,
+            "name": "Forest"
+          },
+          {
+            "quantity": 12,
+            "name": "Mountain"
+          }
+        ]
+      }
+    ],
+    "substitutions": [
+      "Replace one Foe-Razer Regent with one Kolaghan Aspirant."
+    ]
+  },
+  {
+    "name": "Spell-Fu",
+    "colors": "Blue/red/white",
+    "theme": "Noncreature spells, prowess, and rebound",
+    "startingMatchup": "Big Game Hunters",
+    "groups": [
+      {
+        "label": "Creatures",
+        "expected": 12,
+        "cards": [
+          {
+            "quantity": 1,
+            "name": "Jeskai Elder"
+          },
+          {
+            "quantity": 1,
+            "name": "Elusive Spellfist"
+          },
+          {
+            "quantity": 1,
+            "name": "Seeker of the Way"
+          },
+          {
+            "quantity": 1,
+            "name": "Zephyr Scribe"
+          },
+          {
+            "quantity": 1,
+            "name": "Territorial Roc"
+          },
+          {
+            "quantity": 1,
+            "name": "Misthoof Kirin"
+          },
+          {
+            "quantity": 1,
+            "name": "Hidden Dragonslayer"
+          },
+          {
+            "quantity": 3,
+            "name": "Efreet Weaponmaster"
+          },
+          {
+            "quantity": 1,
+            "name": "Sage of the Inward Eye"
+          },
+          {
+            "quantity": 1,
+            "name": "Warden of the Eye"
+          }
+        ]
+      },
+      {
+        "label": "Other spells",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Myth Realized"
+          },
+          {
+            "quantity": 2,
+            "name": "Jeskai Charm"
+          },
+          {
+            "quantity": 1,
+            "name": "Artful Maneuver"
+          },
+          {
+            "quantity": 1,
+            "name": "Ojutai's Breath"
+          },
+          {
+            "quantity": 1,
+            "name": "Taigam's Strike"
+          },
+          {
+            "quantity": 1,
+            "name": "Sight Beyond Sight"
+          },
+          {
+            "quantity": 1,
+            "name": "Ojutai's Summons"
+          },
+          {
+            "quantity": 1,
+            "name": "Quiet Contemplation"
+          },
+          {
+            "quantity": 1,
+            "name": "Glint"
+          },
+          {
+            "quantity": 1,
+            "name": "Kill Shot"
+          },
+          {
+            "quantity": 2,
+            "name": "Radiant Purge"
+          },
+          {
+            "quantity": 1,
+            "name": "Fate Forgotten"
+          },
+          {
+            "quantity": 1,
+            "name": "Ojutai's Command"
+          },
+          {
+            "quantity": 1,
+            "name": "Flying Crane Technique"
+          },
+          {
+            "quantity": 2,
+            "name": "Howl of the Horde"
+          },
+          {
+            "quantity": 1,
+            "name": "Mindswipe"
+          },
+          {
+            "quantity": 1,
+            "name": "Jeskai Banner"
+          },
+          {
+            "quantity": 2,
+            "name": "Dragonlord's Prerogative"
+          },
+          {
+            "quantity": 1,
+            "name": "Blessed Reincarnation"
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 9,
+            "name": "Island"
+          },
+          {
+            "quantity": 8,
+            "name": "Plains"
+          },
+          {
+            "quantity": 5,
+            "name": "Mountain"
+          },
+          {
+            "quantity": 2,
+            "name": "Wind-Scarred Crag"
+          }
+        ]
+      }
+    ],
+    "substitutions": [
+      "Replace one Dragonlord's Prerogative with one Dromoka Dunecaster."
+    ]
+  }
+]

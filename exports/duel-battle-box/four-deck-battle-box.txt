@@ -1,0 +1,136 @@
+// Growing Pains — 60-card casual 1v1 duel deck
+2 Servant of the Scale
+4 Avatar of the Resolute
+1 Den Protector
+1 Guardian Shield-Bearer
+1 Lightwalker
+2 Hidden Dragonslayer
+2 Herald of Anafenza
+1 Dromoka Captain
+1 Sandcrafter Mage
+1 Tuskguard Captain
+1 Abzan Falconer
+1 Abzan Battle Priest
+1 Longshot Squad
+1 Salt Road Ambushers
+1 Enduring Scalelord
+1 Arashin Sovereign
+2 Gleam of Authority
+1 Incremental Growth
+1 Sunbringer's Touch
+1 Inspiring Call
+1 Feat of Resistance
+1 Epic Confrontation
+1 Dromoka's Command
+1 Pacifism
+1 Suspension Field
+1 Tread Upon
+1 Dromoka Monument
+1 Naturalize
+1 Glaring Aegis
+13 Forest
+11 Plains
+
+// Disposable Assets — 60-card casual 1v1 duel deck
+1 Shambling Goblin
+1 Palace Familiar
+1 Hand of Silumgar
+1 Dutiful Attendant
+1 Minister of Pain
+1 Gurmag Drowner
+1 Youthful Scholar
+2 Vulturous Aven
+2 Silumgar Butcher
+1 Rakshasa Gravecaller
+2 Profaner of the Dead
+2 Necromaster Dragon
+1 Icefall Regent
+1 Necropolis Fiend
+1 Silumgar Spell-Eater
+1 Wandering Tombshell
+3 Mirror Mockery
+2 Death Wind
+2 Foul Renewal
+1 Silumgar's Command
+1 Gravepurge
+1 Dutiful Return
+1 Negate
+1 Despise
+1 Mystic Meditation
+1 Weave Fate
+1 Encase in Ice
+1 Taigam's Scheming
+13 Swamp
+11 Island
+
+// Big Game Hunters — 60-card casual 1v1 duel deck
+1 Atarka Beastbreaker
+1 Glade Watcher
+1 Den Protector
+1 Ainok Artillerist
+1 Colossodon Yearling
+1 Aerie Bowmasters
+1 Conifer Strider
+1 Rattleclaw Mystic
+1 Crater Elemental
+1 Hardened Berserker
+1 Sabertooth Outrider
+1 Summit Prowler
+1 Sprinting Warbrute
+1 Screamreach Brawler
+1 Kolaghan Stormsinger
+1 Lightning Berserker
+2 Harbinger of the Hunt
+1 Savage Ventmaw
+2 Foe-Razer Regent
+1 Sheltered Aerie
+1 Roast
+1 Tail Slash
+1 Twin Bolt
+1 Kindled Fury
+1 Press the Advantage
+1 Shape the Sands
+1 Volcanic Rush
+1 Pinion Feast
+1 Sight of the Scalelords
+1 Vial of Dragonfire
+1 Lose Calm
+1 Sunbringer's Touch
+1 Revealing Wind
+13 Forest
+12 Mountain
+
+// Spell-Fu — 60-card casual 1v1 duel deck
+1 Jeskai Elder
+1 Elusive Spellfist
+1 Seeker of the Way
+1 Zephyr Scribe
+1 Territorial Roc
+1 Misthoof Kirin
+1 Hidden Dragonslayer
+3 Efreet Weaponmaster
+1 Sage of the Inward Eye
+1 Warden of the Eye
+2 Myth Realized
+2 Jeskai Charm
+1 Artful Maneuver
+1 Ojutai's Breath
+1 Taigam's Strike
+1 Sight Beyond Sight
+1 Ojutai's Summons
+1 Quiet Contemplation
+1 Glint
+1 Kill Shot
+2 Radiant Purge
+1 Fate Forgotten
+1 Ojutai's Command
+1 Flying Crane Technique
+2 Howl of the Horde
+1 Mindswipe
+1 Jeskai Banner
+2 Dragonlord's Prerogative
+1 Blessed Reincarnation
+9 Island
+8 Plains
+5 Mountain
+2 Wind-Scarred Crag

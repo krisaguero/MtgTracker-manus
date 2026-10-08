@@ -21,6 +21,7 @@ import { FeaturedSignalMatrixArticle } from '@/pages/FeaturedSignalMatrixArticle
 import MarketMoverArticle from '@/pages/MarketMoverArticle';
 import CostcoDealArticle from '@/pages/CostcoDealArticle';
 import { DupeDecks } from '@/pages/DupeDecks';
+import DuelBattleBoxArticle from '@/pages/DuelBattleBoxArticle';
 import CardDetail from '@/pages/CardDetail';
 import EditorialMarketArticles from '@/pages/EditorialMarketArticles';
 import EditorialMarketArticle from '@/pages/EditorialMarketArticle';
@@ -37,6 +38,7 @@ function Router() {
       <Route path={"/collection"} component={Collection} />
       <Route path="/market-report" component={MarketReport} />
       <Route path="/dupe-decks" component={DupeDecks} />
+      <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
       <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/market-reports" component={MarketReportArchive} />
       <Route path="/market-report/:dateKey" component={MarketReportArchive} />

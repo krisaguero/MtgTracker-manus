@@ -1,0 +1,34 @@
+// Spell-Fu — 60-card casual 1v1 duel deck
+1 Jeskai Elder
+1 Elusive Spellfist
+1 Seeker of the Way
+1 Zephyr Scribe
+1 Territorial Roc
+1 Misthoof Kirin
+1 Hidden Dragonslayer
+3 Efreet Weaponmaster
+1 Sage of the Inward Eye
+1 Warden of the Eye
+2 Myth Realized
+2 Jeskai Charm
+1 Artful Maneuver
+1 Ojutai's Breath
+1 Taigam's Strike
+1 Sight Beyond Sight
+1 Ojutai's Summons
+1 Quiet Contemplation
+1 Glint
+1 Kill Shot
+2 Radiant Purge
+1 Fate Forgotten
+1 Ojutai's Command
+1 Flying Crane Technique
+2 Howl of the Horde
+1 Mindswipe
+1 Jeskai Banner
+2 Dragonlord's Prerogative
+1 Blessed Reincarnation
+9 Island
+8 Plains
+5 Mountain
+2 Wind-Scarred Crag

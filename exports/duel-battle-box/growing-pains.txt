@@ -1,0 +1,32 @@
+// Growing Pains — 60-card casual 1v1 duel deck
+2 Servant of the Scale
+4 Avatar of the Resolute
+1 Den Protector
+1 Guardian Shield-Bearer
+1 Lightwalker
+2 Hidden Dragonslayer
+2 Herald of Anafenza
+1 Dromoka Captain
+1 Sandcrafter Mage
+1 Tuskguard Captain
+1 Abzan Falconer
+1 Abzan Battle Priest
+1 Longshot Squad
+1 Salt Road Ambushers
+1 Enduring Scalelord
+1 Arashin Sovereign
+2 Gleam of Authority
+1 Incremental Growth
+1 Sunbringer's Touch
+1 Inspiring Call
+1 Feat of Resistance
+1 Epic Confrontation
+1 Dromoka's Command
+1 Pacifism
+1 Suspension Field
+1 Tread Upon
+1 Dromoka Monument
+1 Naturalize
+1 Glaring Aegis
+13 Forest
+11 Plains
