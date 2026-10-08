@@ -336,8 +336,9 @@ export default function CommanderPreconLibrary() {
 
             const asset = productAssetFor(deck.name);
             const marketValue = resolveDeckMarketValue(deck);
-            const boxArtUrl = asset?.imageUrl || `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(deck.commander[0]?.name || deck.name)}&format=image&version=normal`;
-            const commanderArtUrl = deck.commander[0]?.name ? `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(deck.commander[0].name)}&format=image&version=art_crop` : boxArtUrl;
+            const primaryCommander = deck.commander[0]?.name || deck.name;
+            const boxArtUrl = asset?.imageUrl || `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(primaryCommander)}&format=image&version=normal`;
+            const commanderArtUrl = deck.commander[0]?.name ? `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(deck.commander[0].name)}&format=image&version=art_crop` : boxArtUrl;
 
             return (
               <div
@@ -346,7 +347,7 @@ export default function CommanderPreconLibrary() {
               >
                 <div>
                   {/* Creative Art Visual Header */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-background border-b-2 border-border">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-background border-b-2 border-border sm:aspect-[4/5]">
                     {/* Background Art Blur Layer */}
                     <div
                       className="absolute inset-0 bg-cover bg-center filter blur-md opacity-30 transform scale-110 group-hover:scale-125 transition-transform duration-500"

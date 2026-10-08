@@ -164,18 +164,18 @@ function FilterChip({ children, active, onClick, tone = 'indigo' }: { children: 
 
 function CommanderArchiveCard({ set, hasLocalDecklist, onOpen }: { set: CommanderArchiveSet; hasLocalDecklist: boolean; onOpen: () => void }) {
   return <article className="border-2 border-border bg-card p-5 transition-colors hover:border-primary sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{formatDate(set.released_at)} · {set.code.toUpperCase()}</p><h3 className="mt-2 text-2xl font-bold tracking-tight">{set.name}</h3><p className="mt-2 text-sm text-muted-foreground">{set.card_count} cards in the Scryfall index</p></div><div className="flex flex-wrap justify-end gap-2 text-[10px] font-bold uppercase tracking-wider"><span className="border border-border bg-background px-2 py-1">{classifySet(set)}</span>{hasLocalDecklist && <span className="border border-amber-600/50 bg-amber-500/10 px-2 py-1 text-amber-800">Local decklists</span>}</div></div><div className="mt-5 grid gap-3 sm:grid-cols-2">{        set.products.length > 0 ? set.products.map((product) => {
-          const primaryCommanderArtUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(product.name)}&format=image&version=art_crop`;
+          const primaryCommanderArtUrl = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(product.name)}&format=image&version=art_crop`;
           return (
             <div key={product.id} className="flex min-w-0 gap-3 border-2 border-border bg-background p-4">
               <div className="flex gap-2 shrink-0">
-                <div className="h-28 w-20 overflow-hidden bg-muted border border-border flex items-center justify-center" title="Boxed Product / Deck Art">
+                <div className="h-36 w-24 overflow-hidden bg-muted border border-border flex items-center justify-center" title="Portrait product / deck art">
                   {product.imageUrl ? (
-                    <img src={product.imageUrl} alt={`${product.name} box packaging`} className="h-full w-full object-contain" loading="lazy" />
+                    <img src={product.imageUrl} alt={`${product.name} product artwork`} className="h-full w-full object-contain" loading="lazy" onError={(event) => { event.currentTarget.src = primaryCommanderArtUrl; }} />
                   ) : (
                     <span className="text-[10px] text-muted-foreground text-center p-1 font-mono">Box Art</span>
                   )}
                 </div>
-                <div className="h-28 w-20 overflow-hidden bg-muted border border-border flex items-center justify-center" title="Primary Commander Art">
+                <div className="h-36 w-24 overflow-hidden bg-muted border border-border flex items-center justify-center" title="Primary Commander Art">
                   <img
                     src={primaryCommanderArtUrl}
                     alt={`${product.name} Primary Commander`}

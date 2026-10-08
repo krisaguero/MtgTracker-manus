@@ -1,4 +1,5 @@
-// Design philosophy: keep product imagery editorial and shelf-accurate; use boxed product art first and fall back only when no verified product asset exists.
+// Product imagery is intentionally resolved from live Scryfall commander/card art unless a verified, deployed product asset is added here.
+// The previous local /manus-storage references were not present in the production bundle and could resolve to the SPA HTML shell.
 
 export interface PreconProductAsset {
   imageUrl: string;
@@ -6,24 +7,7 @@ export interface PreconProductAsset {
   sourceLabel: string;
 }
 
-const productAssets: Array<{ matches: string[]; asset: PreconProductAsset }> = [
-  {
-    matches: ['world shaper'],
-    asset: {
-      imageUrl: '/manus-storage/world-shaper_57fdac11.png',
-      sourceUrl: 'https://magic.wizards.com/en/news/announcements/edge-of-eternities-commander-decklists',
-      sourceLabel: 'Wizards product/decklist reference',
-    },
-  },
-  {
-    matches: ['counter intelligence'],
-    asset: {
-      imageUrl: '/manus-storage/counter-intelligence_09d89973.jpg',
-      sourceUrl: 'https://magic.wizards.com/en/news/announcements/edge-of-eternities-commander-decklists',
-      sourceLabel: 'Wizards product/decklist reference',
-    },
-  },
-];
+const productAssets: Array<{ matches: string[]; asset: PreconProductAsset }> = [];
 
 function normalize(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();

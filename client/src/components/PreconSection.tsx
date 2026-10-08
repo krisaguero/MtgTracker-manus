@@ -49,7 +49,7 @@ function PreconCard({
 
   const cardMarkup = (
     <>
-      <div className="relative flex h-48 w-full items-center justify-center overflow-hidden bg-muted/40 p-4" title={precon.productImageSourceLabel || 'Commander product or commander artwork'}>
+      <div className="relative aspect-[3/4] w-full items-center justify-center overflow-hidden bg-muted/40 p-4 sm:aspect-[4/5]" title={precon.productImageSourceLabel || 'Commander product or commander artwork'}>
         {imageLoading && <div className="absolute inset-4 animate-pulse bg-muted-foreground/10" aria-hidden="true" />}
         {imageUrl ? (
           <img
