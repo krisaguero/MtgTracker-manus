@@ -145,7 +145,7 @@ export default function CommanderPreconLibrary() {
         </div>
       </header>
 
-      <main className="w-full px-4 py-8 sm:px-6 lg:px-8 2xl:px-12 space-y-8">
+      <main className="w-full px-2 py-6 sm:px-4 sm:py-8 lg:px-6 2xl:px-8 space-y-8">
         {/* Hero Banner with Creative Art Styling */}
         <div className="relative border-2 border-border bg-card overflow-hidden p-6 sm:p-10">
           <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -349,7 +349,7 @@ export default function CommanderPreconLibrary() {
                 <div>
                   {/* Standardized full-card Commander frame */}
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-background border-b-2 border-border sm:aspect-[4/5]">
-                    <div className="relative z-10 h-full w-full p-4 flex items-center justify-center">
+                    <div className="relative z-10 h-full w-full p-2 sm:p-3 flex items-center justify-center">
                       <CommanderCardFrame cardName={primaryCommander} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander full card frame`} />
                     </div>
 

@@ -89,7 +89,7 @@ export default function CommanderLibrary() {
         </div>
       </header>
 
-      <main className="w-full px-4 py-4 sm:px-6 sm:py-10 lg:px-8 2xl:px-12">
+      <main className="w-full px-2 py-4 sm:px-4 sm:py-8 lg:px-6 2xl:px-8">
         {loading && <CatalogSkeleton kind="timeline" label="Loading historical Commander releases" />}
         {error && <div className="border-2 border-destructive/50 bg-destructive/10 p-6"><h2 className="font-bold text-destructive">Commander archive unavailable</h2><p className="mt-2 text-sm text-destructive/80">{error}</p></div>}
 

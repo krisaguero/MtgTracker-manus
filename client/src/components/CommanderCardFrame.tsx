@@ -24,6 +24,5 @@ export function CommanderCardFrame({
       alt={alt}
       className="h-full w-full object-contain"
     />
-    <span className="pointer-events-none absolute bottom-2 left-2 border border-white/50 bg-black/75 px-1.5 py-0.5 font-mono text-[8px] font-black uppercase tracking-wider text-white">Full card frame</span>
   </div>;
 }
