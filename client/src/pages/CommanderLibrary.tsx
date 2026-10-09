@@ -5,6 +5,7 @@ import { Link, useLocation } from 'wouter';
 import { commanderDecklistsData } from '@/data/commanderDecklistsData';
 import { classifySet, useCommanderLibrary, type CommanderArchiveSet } from '@/hooks/useCommanderLibrary';
 import { CatalogSkeleton } from '@/components/CatalogSkeleton';
+import { InternalPageNav } from '@/components/InternalPageNav';
 
 type FamilyFilter = 'all' | 'set' | 'universes' | 'starter';
 type CoverageFilter = 'all' | 'with-products' | 'with-local';
@@ -65,7 +66,8 @@ export default function CommanderLibrary() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-sm">
+      <InternalPageNav active="/commander" />
+      <header className="border-b border-border bg-background">
         <div className="w-full px-4 py-3 sm:px-6 lg:px-8 2xl:px-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Back to timeline</Link>

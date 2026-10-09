@@ -25,6 +25,7 @@ import DuelBattleBoxArticle from '@/pages/DuelBattleBoxArticle';
 import CardDetail from '@/pages/CardDetail';
 import EditorialMarketArticles from '@/pages/EditorialMarketArticles';
 import EditorialMarketArticle from '@/pages/EditorialMarketArticle';
+import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -41,6 +42,7 @@ function Router() {
       <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
       <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/market-reports" component={MarketReportArchive} />
+      <Route path="/market-today" component={TodayMarketBrief} />
       <Route path="/market-report/:dateKey" component={MarketReportArchive} />
       <Route path="/market-signal-audit" component={MarketSignalAudit} />
       <Route path="/movers" component={DailyMovers} />

@@ -7,6 +7,7 @@ import { loadOwnedPrecons, toggleOwnedPrecon, type OwnedPreconEntry } from '@/li
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { productAssetFor } from '@/data/preconProductAssets';
 import { CardImageZoom } from '@/components/CardImageZoom';
+import { InternalPageNav } from '@/components/InternalPageNav';
 import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -131,8 +132,9 @@ export default function CommanderPreconLibrary() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <InternalPageNav active="/precons" />
       {/* Top Header */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-50">
+      <header className="border-b border-border bg-background">
         <div className="w-full px-4 py-3 sm:px-6 lg:px-8 2xl:px-12 flex items-center justify-between">
           <Button variant="ghost" size="sm" onClick={() => navigate('/')} className="gap-2 font-mono text-xs uppercase">
             <ArrowLeft className="w-4 h-4" /> Back to Sets

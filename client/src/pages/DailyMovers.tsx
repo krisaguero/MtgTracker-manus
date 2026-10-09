@@ -13,6 +13,7 @@ import { trpc } from '@/lib/trpc';
 import type { MarketRow } from '@shared/market';
 import { getMarketWatchKey, isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
 import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
+import TodayMarketBrief from '@/pages/TodayMarketBrief';
 
 function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] {
   return rows.map((row, index) => {
@@ -329,6 +330,11 @@ export function DailyMovers() {
               </ul>
             </div>
           </div>
+        </section>
+
+        {/* Dated editorial signal layer from the October 7 market brief. */}
+        <section className="mt-8 border-2 border-border bg-card p-5 sm:p-7" aria-label="Today's market highlights">
+          <TodayMarketBrief embedded />
         </section>
 
         {/* Filter and Category Bar */}
