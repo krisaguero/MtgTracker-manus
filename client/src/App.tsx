@@ -26,6 +26,7 @@ import CardDetail from '@/pages/CardDetail';
 import EditorialMarketArticles from '@/pages/EditorialMarketArticles';
 import EditorialMarketArticle from '@/pages/EditorialMarketArticle';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
+import SpoilerCalendar from '@/pages/SpoilerCalendar';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/latest-market-report" component={LatestMarketReport} />
       <Route path="/market-reports" component={MarketReportArchive} />
       <Route path="/market-today" component={TodayMarketBrief} />
+      <Route path="/spoiler-calendar" component={SpoilerCalendar} />
       <Route path="/market-report/:dateKey" component={MarketReportArchive} />
       <Route path="/market-signal-audit" component={MarketSignalAudit} />
       <Route path="/movers" component={DailyMovers} />

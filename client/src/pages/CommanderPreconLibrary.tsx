@@ -6,8 +6,8 @@ import { slugify } from '@/hooks/useCommanderDeck';
 import { loadOwnedPrecons, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { productAssetFor } from '@/data/preconProductAssets';
-import { CardImageZoom } from '@/components/CardImageZoom';
 import { InternalPageNav } from '@/components/InternalPageNav';
+import { CommanderCardFrame } from '@/components/CommanderCardFrame';
 import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -339,8 +339,7 @@ export default function CommanderPreconLibrary() {
             const asset = productAssetFor(deck.name);
             const marketValue = resolveDeckMarketValue(deck);
             const primaryCommander = deck.commander[0]?.name || deck.name;
-            const boxArtUrl = asset?.imageUrl || `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(primaryCommander)}&format=image&version=normal`;
-            const commanderArtUrl = deck.commander[0]?.name ? `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(deck.commander[0].name)}&format=image&version=art_crop` : boxArtUrl;
+            const fallbackCardUrl = asset?.imageUrl;
 
             return (
               <div
@@ -348,23 +347,10 @@ export default function CommanderPreconLibrary() {
                 className="border-2 border-border bg-card flex flex-col justify-between group hover:border-primary transition-all duration-200 relative shadow-sm"
               >
                 <div>
-                  {/* Creative Art Visual Header */}
+                  {/* Standardized full-card Commander frame */}
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-background border-b-2 border-border sm:aspect-[4/5]">
-                    {/* Background Art Blur Layer */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center filter blur-md opacity-30 transform scale-110 group-hover:scale-125 transition-transform duration-500"
-                      style={{ backgroundImage: `url(${commanderArtUrl})` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
-
-                    {/* Boxed Product Image Container */}
                     <div className="relative z-10 h-full w-full p-4 flex items-center justify-center">
-                      <CardImageZoom
-                        src={boxArtUrl}
-                        fallbackSrc={commanderArtUrl}
-                        alt={`${deck.name} boxed Commander product`}
-                        className="h-full w-full max-h-full max-w-full object-contain filter drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
-                      />
+                      <CommanderCardFrame cardName={primaryCommander} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander full card frame`} />
                     </div>
 
                     {/* Top Badges */}

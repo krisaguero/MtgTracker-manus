@@ -6,6 +6,7 @@ const links = [
   { href: '/precons', label: 'Precons' },
   { href: '/commander-market', label: 'Demand index' },
   { href: '/movers', label: 'Market movers' },
+  { href: '/spoiler-calendar', label: 'Spoiler calendar' },
   { href: '/collection', label: 'Collection' },
 ];
 
