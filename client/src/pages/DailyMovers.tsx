@@ -259,6 +259,9 @@ export function DailyMovers() {
             <Link href="/market-signal-audit" className="inline-flex items-center gap-2 border-2 border-primary bg-primary/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
               Signal Audit
             </Link>
+            <Link href="/market-movers-manus-report" className="inline-flex items-center gap-2 border-2 border-amber-600/50 bg-amber-500/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-amber-700 hover:bg-amber-500 hover:text-black">
+              Imported mover desks
+            </Link>
             <div className="inline-flex border-2 border-border bg-card p-1">
               <button
                 type="button"

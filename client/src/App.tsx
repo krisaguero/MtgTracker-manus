@@ -27,6 +27,8 @@ import EditorialMarketArticles from '@/pages/EditorialMarketArticles';
 import EditorialMarketArticle from '@/pages/EditorialMarketArticle';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import SpoilerCalendar from '@/pages/SpoilerCalendar';
+import MarketMoverReportArticle from '@/pages/MarketMoverReportArticle';
+import MarketMoverDashboards from '@/pages/MarketMoverDashboards';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -47,6 +49,8 @@ function Router() {
       <Route path="/spoiler-calendar" component={SpoilerCalendar} />
       <Route path="/market-report/:dateKey" component={MarketReportArchive} />
       <Route path="/market-signal-audit" component={MarketSignalAudit} />
+      <Route path="/market-movers-manus-report" component={MarketMoverReportArticle} />
+      <Route path="/movers/:dashboard" component={MarketMoverDashboards} />
       <Route path="/movers" component={DailyMovers} />
       <Route path="/market-articles" component={EditorialMarketArticles} />
       <Route path="/market-category/:slug" component={EditorialMarketArticle} />
