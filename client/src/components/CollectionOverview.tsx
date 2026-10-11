@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { getValuationHistory, recordValuationSnapshot, type ValuationSnapshot } from '@/lib/collectionHistory';
-import { getDeckCoverageRecommendations, getCollectionValuationAndBreakdown, type DeckCoverageRecommendation, type SetEquityBreakdown } from '@/lib/collectionAnalytics';
+import { getDeckCoverageRecommendations, getCollectionValuationAndBreakdown, type DeckCoverageRecommendation, type CollectionValuation } from '@/lib/collectionAnalytics';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Wallet, Sparkles, Upload, Layers, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
@@ -15,11 +15,12 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
   const [collection, setCollection] = useState<OwnedCard[]>([]);
   const [history, setHistory] = useState<ValuationSnapshot[]>([]);
   const [recommendations, setRecommendations] = useState<DeckCoverageRecommendation[]>([]);
-  const [valuationData, setValuationData] = useState<{ totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string }>({
+  const [valuationData, setValuationData] = useState<CollectionValuation>({
     totalEquityUsd: 0,
     setBreakdowns: [],
     pricedCardCount: 0,
     unpricedCardCount: 0,
+    coveragePercent: 0,
     snapshotDate: '',
   });
   const [showSetBreakdown, setShowSetBreakdown] = useState(false);
@@ -77,7 +78,7 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Real Market Equity</p>
               <p className="mt-2 text-3xl font-extrabold text-primary">${currentValuation.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <span className="text-sm font-normal text-muted-foreground">USD</span></p>
               <p className="mt-1 text-xs text-muted-foreground">
-                {valuationData.pricedCardCount} priced ({valuationData.unpricedCardCount} fallback) • {valuationData.snapshotDate}
+                {valuationData.pricedCardCount} priced ({valuationData.coveragePercent}% of cards) • {valuationData.unpricedCardCount} unpriced and excluded • {valuationData.snapshotDate}
               </p>
             </div>
 
@@ -117,7 +118,10 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
                     {valuationData.setBreakdowns.map((setRow) => (
                       <tr key={setRow.setCode} className="border-b border-border/40 hover:bg-muted/40">
                         <td className="py-2.5 font-bold">{setRow.setCode} — <span className="font-normal text-muted-foreground">{setRow.setName}</span></td>
-                        <td className="py-2.5 text-right">{setRow.cardCount}</td>
+                        <td className="py-2.5 text-right">
+                          {setRow.cardCount}
+                          {setRow.unpricedCardCount > 0 && <span className="block text-[10px] font-normal text-muted-foreground">{setRow.unpricedCardCount} unpriced</span>}
+                        </td>
                         <td className="py-2.5 text-right font-bold text-primary">${setRow.totalValueUsd.toFixed(2)}</td>
                       </tr>
                     ))}

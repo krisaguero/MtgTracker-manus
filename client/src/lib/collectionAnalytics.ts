@@ -1,4 +1,5 @@
-import { loadOwnedCollection } from './manaboxParser';
+import { loadOwnedCollection, type OwnedCard } from './manaboxParser';
+import { resolveCardPrice } from './marketPriceIndex';
 import { commanderDecklists } from '@/data/commanderDecklists';
 import dailySnapshot from '@/data/dailyMarketSnapshot.json';
 
@@ -102,8 +103,24 @@ export interface SetEquityBreakdown {
   setName: string;
   setCode: string;
   cardCount: number;
+  /** Sum of real indexed prices only; unpriced cards contribute nothing. */
   totalValueUsd: number;
+  pricedCardCount: number;
+  unpricedCardCount: number;
 }
+
+export interface CollectionValuation {
+  /** Sum of real indexed prices only; unpriced cards are excluded, never estimated. */
+  totalEquityUsd: number;
+  setBreakdowns: SetEquityBreakdown[];
+  pricedCardCount: number;
+  unpricedCardCount: number;
+  /** Share of owned copies that have a real price, 0-100. */
+  coveragePercent: number;
+  snapshotDate: string;
+}
+
+export type CardPriceLookup = (name: string, setCode?: string) => number | null;
 
 /**
  * Builds a price map from the daily market snapshot and decklists.
@@ -135,57 +152,90 @@ export function getCardPriceMap(): Map<string, number> {
 }
 
 /**
- * Calculates total collection valuation and equity grouped by set using real snapshot prices.
+ * Pure valuation: totals equity per set from real prices only.
+ * Cards without a price are counted as unpriced and add $0 (no invented defaults).
  */
-export function getCollectionValuationAndBreakdown(): { totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string } {
-  const collection = loadOwnedCollection();
-  const priceMap = getCardPriceMap();
-
+export function computeCollectionValuation(
+  collection: OwnedCard[],
+  lookupPrice: CardPriceLookup,
+  setNames: Map<string, string> = new Map(),
+  snapshotDate = '',
+): CollectionValuation {
   let totalEquityUsd = 0;
   let pricedCardCount = 0;
   let unpricedCardCount = 0;
 
-  const setMap = new Map<string, { setName: string; cardCount: number; totalValueUsd: number }>();
+  const setMap = new Map<string, { setName: string; cardCount: number; totalValueUsd: number; pricedCardCount: number; unpricedCardCount: number }>();
 
-  for (const item of collection as any[]) {
-    const nameLower = item.name.toLowerCase();
-    const unitPrice = priceMap.get(nameLower) ?? (isBasicLandName(item.name) ? 0.15 : 1.50);
-    const hasRealPrice = priceMap.has(nameLower);
+  for (const item of collection) {
+    const quantity = Number.isFinite(item.quantity) ? Math.max(0, item.quantity) : 0;
+    if (!item.name || quantity === 0) continue;
 
-    if (hasRealPrice) {
-      pricedCardCount += item.quantity;
+    const unitPrice = lookupPrice(item.name, item.setCode);
+    const priced = typeof unitPrice === 'number' && Number.isFinite(unitPrice) && unitPrice > 0;
+
+    const setCodeKey = (item.setCode || 'unknown').toUpperCase();
+    const fallbackName = setCodeKey === 'UNKNOWN' ? 'Unassigned Set' : setCodeKey;
+    const row = setMap.get(setCodeKey) ?? {
+      setName: setNames.get(setCodeKey) ?? fallbackName,
+      cardCount: 0,
+      totalValueUsd: 0,
+      pricedCardCount: 0,
+      unpricedCardCount: 0,
+    };
+
+    row.cardCount += quantity;
+    if (priced) {
+      const lineTotal = (unitPrice as number) * quantity;
+      totalEquityUsd += lineTotal;
+      row.totalValueUsd += lineTotal;
+      row.pricedCardCount += quantity;
+      pricedCardCount += quantity;
     } else {
-      unpricedCardCount += item.quantity;
+      row.unpricedCardCount += quantity;
+      unpricedCardCount += quantity;
     }
-
-    const lineTotal = unitPrice * item.quantity;
-    totalEquityUsd += lineTotal;
-
-    const setCodeKey = (item.setCode || item.set || 'unknown').toUpperCase();
-    const setNameKey = item.setName || (setCodeKey === 'UNKNOWN' ? 'Unassigned Set' : setCodeKey);
-
-    const existing = setMap.get(setCodeKey) || { setName: setNameKey, cardCount: 0, totalValueUsd: 0 };
-    existing.cardCount += item.quantity;
-    existing.totalValueUsd += lineTotal;
-    setMap.set(setCodeKey, existing);
+    setMap.set(setCodeKey, row);
   }
 
-  const setBreakdowns: SetEquityBreakdown[] = Array.from(setMap.entries()).map(([setCode, data]) => ({
-    setCode,
-    setName: data.setName,
-    cardCount: data.cardCount,
-    totalValueUsd: Number(data.totalValueUsd.toFixed(2)),
-  })).sort((a, b) => b.totalValueUsd - a.totalValueUsd);
+  const setBreakdowns: SetEquityBreakdown[] = Array.from(setMap.entries())
+    .map(([setCode, data]) => ({
+      setCode,
+      setName: data.setName,
+      cardCount: data.cardCount,
+      totalValueUsd: Number(data.totalValueUsd.toFixed(2)),
+      pricedCardCount: data.pricedCardCount,
+      unpricedCardCount: data.unpricedCardCount,
+    }))
+    .sort((a, b) => b.totalValueUsd - a.totalValueUsd || b.cardCount - a.cardCount);
 
-  const snapshotDate = (dailySnapshot as any)?.generatedAt || (dailySnapshot as any)?.date || 'Daily Market Snapshot';
-
+  const totalCopies = pricedCardCount + unpricedCardCount;
   return {
     totalEquityUsd: Number(totalEquityUsd.toFixed(2)),
     setBreakdowns,
     pricedCardCount,
     unpricedCardCount,
+    coveragePercent: totalCopies ? Math.round((pricedCardCount / totalCopies) * 100) : 0,
     snapshotDate,
   };
+}
+
+/**
+ * Calculates total collection valuation and equity grouped by set using real indexed prices
+ * (set-exact match first, then name match, then prices embedded in indexed Commander decklists).
+ */
+export function getCollectionValuationAndBreakdown(): CollectionValuation {
+  const decklistPrices = getCardPriceMap();
+  const lookup: CardPriceLookup = (name, setCode) =>
+    resolveCardPrice(name, setCode)?.usd ?? decklistPrices.get(name.toLowerCase()) ?? null;
+
+  const setNames = new Map<string, string>();
+  for (const deck of commanderDecklists) {
+    if (deck.set_code && deck.set_name) setNames.set(deck.set_code.toUpperCase(), deck.set_name);
+  }
+
+  const snapshotDate = (dailySnapshot as any)?.generatedAt || (dailySnapshot as any)?.date || 'Daily Market Snapshot';
+  return computeCollectionValuation(loadOwnedCollection(), lookup, setNames, snapshotDate);
 }
 
 export function getDeckCoverageRecommendations(): DeckCoverageRecommendation[] {

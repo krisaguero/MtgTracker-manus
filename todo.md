@@ -12,9 +12,9 @@
 - [x] Verify build health, responsiveness, and save checkpoint.
 - [x] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
 - [x] Add missing-card shopping list and retailer batch export formats.
-- [ ] Add collection equity totals across sets.
+- [x] Add collection equity totals across sets (real prices only; unpriced cards are counted and excluded, not estimated).
 - [x] Add Commander deck recommendations ranked by owned-card coverage percentage.
-- [ ] Add historical collection-value line chart and snapshot persistence to CollectionOverview.
+- [x] Add historical collection-value line chart and snapshot persistence to CollectionOverview.
 - [x] Add CSV and plain-text download buttons to the missing card shopping list.
 - [x] Add exclude-basic-lands toggle to missing-card shopping list and all export formats.
 - [x] Show estimated missing-card acquisition cost on Commander completion summaries.
