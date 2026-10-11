@@ -45,7 +45,7 @@
 - [ ] Verify favorite add/remove/filter behavior on mobile and desktop, then save a checkpoint.
 - [ ] Build the daily market intelligence report workspace with price-spike momentum, precon-vs-singles break-even math, user-owned coverage adjustments, and source-linked release articles.
 - [ ] Implement local storage price alerts and format filters (Commander vs. Standard) on the market report.
-- [ ] Add MTGO and Archidekt deck export formats with copy and download controls.
+- [x] Add MTGO and Archidekt deck export formats with copy and download controls.
 - [ ] Configure weekly market-digest automation and document email-delivery setup.
 - [ ] Verify build health, alerts, filters, and exports, then save a checkpoint.
 - [ ] Add a local weekly digest delivery log with send status, recipient, subject, refresh, and clear controls.

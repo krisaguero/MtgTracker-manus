@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'wouter';
-import { AlertCircle, ArrowLeft, Check, Clipboard, Sparkles } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Check, Clipboard, Download, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCommanderDeck, type DecklistEntry } from '@/hooks/useCommanderDeck';
 import type { ScryfallCard } from '@/hooks/useSetDetail';
-import { formatArenaDecklist, formatArchidektDecklist, formatMoxfieldDecklist, formatMtgoDecklist } from '@/lib/decklistExport';
+import { decklistExportFilename, formatArenaDecklist, formatArchidektDecklist, formatMoxfieldDecklist, formatMtgoDecklist } from '@/lib/decklistExport';
+import { downloadTextFile } from '@/lib/collectionAnalytics';
 import { ManaBoxImportModal } from '@/components/ManaBoxImportModal';
 import { DeckCompletionCard } from '@/components/DeckCompletionCard';
 import { ShoppingListModal } from '@/components/ShoppingListModal';
@@ -118,17 +119,19 @@ export default function CommanderDeck() {
   const exportCommander = data.commander.map((e) => ({ name: e.card.name, quantity: e.quantity }));
   const exportDeck = data.deck.map((e) => ({ name: e.card.name, quantity: e.quantity }));
 
+  const buildExportText = () => {
+    if (exportFormat === 'moxfield') return formatMoxfieldDecklist(exportCommander, exportDeck);
+    if (exportFormat === 'arena') return arenaMode ? formatArenaVariantDecklist(exportCommander, exportDeck) : formatArenaDecklist(exportCommander, exportDeck);
+    if (exportFormat === 'mtgo') return formatMtgoDecklist(exportCommander, exportDeck);
+    return formatArchidektDecklist(exportCommander, exportDeck);
+  };
+
+  const handleDownloadExport = () => {
+    downloadTextFile(decklistExportFilename(data.name, exportFormat), buildExportText(), 'text/plain');
+  };
+
   const handleCopyExport = async () => {
-    let output = '';
-    if (exportFormat === 'moxfield') {
-      output = formatMoxfieldDecklist(exportCommander, exportDeck);
-    } else if (exportFormat === 'arena') {
-      output = arenaMode ? formatArenaVariantDecklist(exportCommander, exportDeck) : formatArenaDecklist(exportCommander, exportDeck);
-    } else if (exportFormat === 'mtgo') {
-      output = formatMtgoDecklist(exportCommander, exportDeck);
-    } else if (exportFormat === 'archidekt') {
-      output = formatArchidektDecklist(exportCommander, exportDeck);
-    }
+    const output = buildExportText();
 
     try {
       await navigator.clipboard.writeText(output);
@@ -301,6 +304,11 @@ export default function CommanderDeck() {
               <Button onClick={handleCopyExport} className="gap-2 font-mono text-xs uppercase font-bold">
                 {copiedFormat === exportFormat ? <Check className="h-4 w-4" /> : <Clipboard className="h-4 w-4" />}
                 {copiedFormat === exportFormat ? 'Copied to Clipboard!' : `Copy ${exportFormat.toUpperCase()} Export`}
+              </Button>
+
+              <Button onClick={handleDownloadExport} variant="outline" className="gap-2 font-mono text-xs uppercase font-bold">
+                <Download className="h-4 w-4" />
+                Download .txt
               </Button>
             </div>
           </div>
