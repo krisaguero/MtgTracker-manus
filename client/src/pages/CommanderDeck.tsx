@@ -9,6 +9,7 @@ import { ManaBoxImportModal } from '@/components/ManaBoxImportModal';
 import { DeckCompletionCard } from '@/components/DeckCompletionCard';
 import { ShoppingListModal } from '@/components/ShoppingListModal';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
+import { buildOwnedMap } from '@/lib/cardOwnership';
 import { getPreconMarketContext, type PreconMarketHighlight } from '@/lib/preconMarketContext';
 import { formatArenaVariantDecklist, calculateArenaMorphWildcardCosts } from '@/lib/arenaLegality';
 import { PreconStrategyPrimer } from '@/components/PreconStrategyPrimer';
@@ -57,6 +58,8 @@ export default function CommanderDeck() {
   const [isShoppingListOpen, setIsShoppingListOpen] = useState(false);
   const [collectionVersion, setCollectionVersion] = useState(0);
   const [arenaMode, setArenaMode] = useState(false);
+
+  const ownedMap = useMemo(() => buildOwnedMap(loadOwnedCollection()), [collectionVersion]);
 
   const liveMarketValue = useMemo(() => {
     if (!data) return { total: null as number | null, ownedTotal: null as number | null };
@@ -345,7 +348,7 @@ export default function CommanderDeck() {
             </div>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {group.cards.map((entry: { card: ScryfallCard; quantity: number }, index: number) => (
-                <DeckCardRow key={`${group.label}-${entry.card.id}-${entry.card.set}-${entry.card.collector_number}-${index}`} entry={{ ...entry, zone: 'deck' }} refreshKey={collectionVersion} arenaMode={arenaMode} />
+                <DeckCardRow key={`${group.label}-${entry.card.id}-${entry.card.set}-${entry.card.collector_number}-${index}`} entry={{ ...entry, zone: 'deck' }} refreshKey={collectionVersion} arenaMode={arenaMode} ownedMap={ownedMap} />
               ))}
             </div>
           </section>
@@ -356,7 +359,7 @@ export default function CommanderDeck() {
             <h2 className="text-xl font-bold">Additional commander cards</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {data.commander.slice(1).map((entry: DecklistEntry, index: number) => (
-                <DeckCardRow key={`additional-commander-${entry.card.id}-${entry.card.set}-${entry.card.collector_number}-${index}`} entry={entry} refreshKey={collectionVersion} arenaMode={arenaMode} />
+                <DeckCardRow key={`additional-commander-${entry.card.id}-${entry.card.set}-${entry.card.collector_number}-${index}`} entry={entry} refreshKey={collectionVersion} arenaMode={arenaMode} ownedMap={ownedMap} />
               ))}
             </div>
           </section>

@@ -10,7 +10,7 @@
 - [x] Build owned-card matching logic for set cards and Commander decklists.
 - [x] Build deck completion guidance UI showing owned percentage and missing cards.
 - [x] Verify build health, responsiveness, and save checkpoint.
-- [ ] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
+- [x] Highlight owned Commander decklist cards with green checkmarks and make missing cards stand out.
 - [x] Add missing-card shopping list and retailer batch export formats.
 - [ ] Add collection equity totals across sets.
 - [x] Add Commander deck recommendations ranked by owned-card coverage percentage.
