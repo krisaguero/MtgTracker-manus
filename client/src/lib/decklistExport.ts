@@ -44,3 +44,15 @@ export function formatArchidektDecklist(commander: ExportCardEntry[], deck: Expo
     ...commander.map(formatEntry),
   ].join('\n');
 }
+
+export type DecklistExportFormat = 'arena' | 'moxfield' | 'mtgo' | 'archidekt';
+
+/** Builds a safe download filename like "my-deck-moxfield.txt". */
+export function decklistExportFilename(deckName: string, format: DecklistExportFormat) {
+  const slug = deckName
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60);
+  return `${slug || 'commander-deck'}-${format}.txt`;
+}
