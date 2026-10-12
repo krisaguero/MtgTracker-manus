@@ -24,7 +24,7 @@ export function PreconStickyHeader({ deckName, approxValue, ownedApproxValue }: 
   if (!showSticky) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 border-b-2 border-primary bg-card/95 backdrop-blur-md px-4 py-3 shadow-lg transition-all animate-in fade-in slide-in-from-top duration-200">
+    <div className="fixed top-[var(--site-nav-height)] left-0 right-0 z-40 border-b-2 border-primary bg-card/95 backdrop-blur-md px-4 py-3 shadow-lg transition-all animate-in fade-in slide-in-from-top duration-200">
       <div className="container flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 min-w-0">
           <Layers3 className="h-5 w-5 text-primary shrink-0" />

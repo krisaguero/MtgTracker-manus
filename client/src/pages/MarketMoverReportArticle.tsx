@@ -1,13 +1,11 @@
 import { ArrowLeft, ArrowRight, ExternalLink, Layers3, ShieldAlert, Sparkles, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
-import { InternalPageNav } from '@/components/InternalPageNav';
 import { manusMoverBaskets, manusMoverDashboards, manusMoverReport } from '@/data/marketMoverManusReport';
 
 const deskIcons = [<TrendingUp className="h-5 w-5" />, <Sparkles className="h-5 w-5" />, <ShieldAlert className="h-5 w-5" />, <Layers3 className="h-5 w-5" />];
 
 export default function MarketMoverReportArticle() {
   return <div className="min-h-screen bg-background text-foreground">
-    <InternalPageNav active="/movers" />
     <header className="border-b-2 border-border bg-card">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-8 sm:py-12">
         <Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Back to market movers</Link>

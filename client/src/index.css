@@ -53,6 +53,8 @@
   --chart-4: oklch(0.35 0.16 280);
   --chart-5: oklch(0.3 0.17 280);
   --radius: 0rem;
+  /* Height of the global SiteNav bar (h-14 + 1px border); page-level sticky headers pin below it. */
+  --site-nav-height: calc(3.5rem + 1px);
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.2 0.01 280);
   --card: oklch(0.99 0 0);

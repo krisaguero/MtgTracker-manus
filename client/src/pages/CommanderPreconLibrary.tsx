@@ -6,7 +6,6 @@ import { slugify } from '@/hooks/useCommanderDeck';
 import { loadOwnedPrecons, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { productAssetFor } from '@/data/preconProductAssets';
-import { InternalPageNav } from '@/components/InternalPageNav';
 import { CommanderCardFrame } from '@/components/CommanderCardFrame';
 import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 import { Button } from '@/components/ui/button';
@@ -132,7 +131,6 @@ export default function CommanderPreconLibrary() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <InternalPageNav active="/precons" />
       {/* Top Header */}
       <header className="border-b border-border bg-background">
         <div className="w-full px-4 py-3 sm:px-6 lg:px-8 2xl:px-12 flex items-center justify-between">

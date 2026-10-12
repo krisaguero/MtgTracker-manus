@@ -124,7 +124,7 @@ export default function SetDetail() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-50">
+      <header className="border-b border-border sticky top-[var(--site-nav-height)] bg-background/95 backdrop-blur-sm z-50">
         <div className="w-full px-4 py-3 sm:px-6 lg:px-8 2xl:px-12 flex items-center justify-between">
           <Button variant="ghost" size="sm" onClick={() => navigate('/')} className="gap-2 font-mono text-xs uppercase">
             <ArrowLeft className="w-4 h-4" /> Back to Sets

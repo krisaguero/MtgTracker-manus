@@ -1,6 +1,5 @@
 import { ArrowLeft, AlertTriangle, ArrowUpRight, CalendarClock, CircleDollarSign, ExternalLink, ShieldAlert, Sparkles, TrendingUp } from 'lucide-react';
 import { Link, useParams } from 'wouter';
-import { InternalPageNav } from '@/components/InternalPageNav';
 import { MarketCardPreview } from '@/components/MarketCardPreview';
 import { manusMoverDashboards, manusMoverReport, type ManusMoverDashboard, type ManusMoverTone } from '@/data/marketMoverManusReport';
 
@@ -47,7 +46,6 @@ export default function MarketMoverDashboards() {
   const dashboard = manusMoverDashboards.find((item) => item.slug === slug) ?? manusMoverDashboards[0];
   const tone = toneStyles[dashboard.tone];
   return <div className="min-h-screen bg-background text-foreground">
-    <InternalPageNav active="/movers" />
     <header className="border-b-2 border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8">
         <div className="flex flex-wrap items-center justify-between gap-3">

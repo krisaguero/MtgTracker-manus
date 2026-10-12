@@ -30,6 +30,7 @@ import SpoilerCalendar from '@/pages/SpoilerCalendar';
 import MarketMoverReportArticle from '@/pages/MarketMoverReportArticle';
 import MarketMoverDashboards from '@/pages/MarketMoverDashboards';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
+import { SiteNav } from "@/components/SiteNav";
 import { Toaster } from "@/components/ui/sonner";
 
 function Router() {
@@ -74,6 +75,7 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
+          <SiteNav />
           <Router />
           <PwaInstallBanner />
         </TooltipProvider>
