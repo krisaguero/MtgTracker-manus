@@ -34,11 +34,14 @@ jobs:
       - name: Run Daily Market Movers
         run: node scripts/daily-market-movers.mjs
 
+      - name: Build Daily Market Watch Research Feed
+        run: pnpm market:research-feed
+
       - name: Commit and Push Updated Market Artifacts
         run: |
           git config --global user.name 'MTG Morning Bot'
           git config --global user.email 'bot@mtgtracker.local'
-          git add client/src/data/dailyMarketSnapshot.json data/market/daily data/market/daily-movers-history.json
+          git add client/src/data/dailyMarketSnapshot.json client/src/data/marketResearchFeed.json data/market/daily data/market/daily-movers-history.json data/market/research
           if git diff --cached --quiet; then
             echo "No generated market artifacts changed."
             exit 0

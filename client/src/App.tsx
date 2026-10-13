@@ -29,6 +29,7 @@ import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import SpoilerCalendar from '@/pages/SpoilerCalendar';
 import MarketMoverReportArticle from '@/pages/MarketMoverReportArticle';
 import MarketMoverDashboards from '@/pages/MarketMoverDashboards';
+import MarketResearchFeed from '@/pages/MarketResearchFeed';
 import { PwaInstallBanner } from "@/components/PwaInstallBanner";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/market-articles" component={EditorialMarketArticles} />
       <Route path="/market-category/:slug" component={EditorialMarketArticle} />
       <Route path="/market-watch-article" component={MarketWatchArticle} />
+      <Route path="/market-watch" component={MarketResearchFeed} />
       <Route path="/signal-matrix-article" component={FeaturedSignalMatrixArticle} />
       <Route path="/market-mover/:moverSlug" component={MarketMoverArticle} />
       <Route path="/costco-deal-article" component={CostcoDealArticle} />

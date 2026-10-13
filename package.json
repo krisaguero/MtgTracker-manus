@@ -10,6 +10,7 @@
     "check": "tsc --noEmit",
     "refresh:data": "node scripts/update-prices.mjs",
     "audit:market": "node scripts/audit-market-categories.mjs",
+    "market:research-feed": "node scripts/build-market-research-feed.mjs",
     "format": "prettier --write .",
     "test": "vitest run",
     "db:push": "drizzle-kit generate && drizzle-kit migrate"

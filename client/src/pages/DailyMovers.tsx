@@ -234,6 +234,12 @@ export function DailyMovers() {
             >
               Editorial Deep Dives
             </Link>
+            <Link
+              href="/market-watch"
+              className="inline-flex items-center gap-1.5 border-2 border-amber-500 bg-amber-500/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-amber-700 hover:border-amber-600 whitespace-nowrap"
+            >
+              Market Watch Feed
+            </Link>
           </div>
         </div>
       </header>

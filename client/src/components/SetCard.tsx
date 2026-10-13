@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import type { PreconDeck, ScryfallSet } from '@/hooks/useScryfallSets';
 import { slugify } from '@/hooks/useCommanderDeck';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
+import { CommanderCardFrame } from '@/components/CommanderCardFrame';
 
 interface SetCardProps {
   set: ScryfallSet;
@@ -134,29 +135,37 @@ function PreconCard({ precon }: { precon: PreconDeck }) {
   const commanderNamesText = precon.commanderCards?.map((c) => c.name).join(' & ') || 'Commander Deck';
 
   return (
-    <div className="border border-border bg-background p-3 transition-colors hover:border-primary">
-      <div className="flex items-start gap-3">
-        <div className="relative flex aspect-[4/3] w-20 shrink-0 items-center justify-center overflow-hidden border border-border bg-muted">
-          {imageLoading && <div className="absolute inset-0 animate-pulse bg-muted-foreground/10" aria-hidden="true" />}
-          {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt={`${precon.name} product or commander artwork`}
-              className="relative h-full w-full object-cover"
-              loading="lazy"
-              onLoad={() => setImageLoading(false)}
-              onError={() => {
-                if (fallbackImage && imageUrl !== fallbackImage) {
-                  setImageUrl(fallbackImage);
-                  setImageLoading(true);
-                } else {
-                  setImageUrl(undefined);
-                  setImageLoading(false);
-                }
-              }}
+    <div className="border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
+      <div className="flex items-start gap-4">
+        <div className="w-28 shrink-0 sm:w-32">
+          {precon.commanderCards?.[0]?.name ? (
+            <CommanderCardFrame
+              cardName={precon.commanderCards[0].name}
+              alt={`${precon.commanderCards[0].name}, commander for ${precon.name}`}
+              fallbackSrc={imageUrl || fallbackImage}
             />
+          ) : imageUrl ? (
+            <div className="relative flex aspect-[63/88] items-center justify-center overflow-hidden border-2 border-border bg-[#171a24] p-1 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">
+              {imageLoading && <div className="absolute inset-0 animate-pulse bg-muted-foreground/10" aria-hidden="true" />}
+              <img
+                src={imageUrl}
+                alt={`${precon.name} product artwork`}
+                className="relative h-full w-full object-contain"
+                loading="lazy"
+                onLoad={() => setImageLoading(false)}
+                onError={() => {
+                  if (fallbackImage && imageUrl !== fallbackImage) {
+                    setImageUrl(fallbackImage);
+                    setImageLoading(true);
+                  } else {
+                    setImageUrl(undefined);
+                    setImageLoading(false);
+                  }
+                }}
+              />
+            </div>
           ) : (
-            <div className="p-1 text-center text-[10px] text-muted-foreground">{precon.name}</div>
+            <div className="flex aspect-[63/88] items-center justify-center border-2 border-border bg-muted p-2 text-center text-[10px] text-muted-foreground">{precon.name}</div>
           )}
         </div>
         <div className="min-w-0 flex-1">
