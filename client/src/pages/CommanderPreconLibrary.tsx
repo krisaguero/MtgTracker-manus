@@ -12,6 +12,7 @@ import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { formatRadarDate, preconReleaseRadar } from '@/data/preconReleaseRadar';
+import { preconIsPreorder, preconMarketplaceLinks } from '@/lib/preconMarketplaceLinks';
 
 interface PreconLibraryItem extends RawCommanderDeck {
   slug: string;
@@ -386,6 +387,12 @@ export default function CommanderPreconLibrary() {
 
                     <p className="font-mono text-xs text-muted-foreground line-clamp-2 leading-relaxed">{deck.synopsis}</p>
 
+                    {preconIsPreorder(deck.release_date) && (
+                      <div className="border border-amber-500 bg-amber-500/10 px-2 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-700">
+                        Preorder watch · releases {deck.release_date}
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-2 gap-2 pt-2 border-t border-border font-mono text-xs">
                       <div>
                         <span className="text-muted-foreground uppercase block text-[10px]">Street MSRP</span>
@@ -433,6 +440,21 @@ export default function CommanderPreconLibrary() {
                   >
                     <Check className="h-3.5 w-3.5" /> {isManuallyOwned ? 'In Inventory' : 'Mark Owned'}
                   </button>
+                  <div className="col-span-2 grid grid-cols-2 gap-2 border-t border-border pt-3 sm:grid-cols-4">
+                    {preconMarketplaceLinks(deck.name, deck.release_date).map((marketplace) => (
+                      <a
+                        key={marketplace.marketplace}
+                        href={marketplace.href}
+                        target="_blank"
+                        rel={marketplace.isAffiliate ? 'sponsored noopener noreferrer' : 'noopener noreferrer'}
+                        title={marketplace.disclosure || marketplace.label}
+                        className="inline-flex min-h-8 items-center justify-center gap-1 border border-border bg-background px-2 py-1 text-center font-mono text-[10px] font-bold uppercase tracking-tight hover:border-primary hover:text-primary"
+                      >
+                        <ShoppingBag className="h-3 w-3" />
+                        {marketplace.marketplace === 'cardkingdom' ? 'CK' : marketplace.marketplace === 'tcgplayer' ? 'TCG' : marketplace.marketplace === 'ebay' ? 'eBay' : 'Amazon'}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

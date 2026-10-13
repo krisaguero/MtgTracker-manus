@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseManaBoxImport } from './manaboxParser';
+import { mergeOwnedCollection, parseManaBoxImport } from './manaboxParser';
 
 describe('parseManaBoxImport', () => {
   it('parses ManaBox-style CSV exports with quantity, set, and collector number', () => {
@@ -22,5 +22,14 @@ describe('parseManaBoxImport', () => {
       { name: 'Sol Ring', quantity: 4 },
       { name: 'Alesha, Who Smiles at Death', quantity: 1 },
     ]);
+  });
+
+  it('does not double-count an exact-printing re-import', () => {
+    const existing = [{ name: 'Sol Ring', quantity: 2, setCode: 'cmr', collectorNumber: '351' }];
+    const incoming = [{ name: 'Sol Ring', quantity: 2, setCode: 'cmr', collectorNumber: '351' }];
+    const result = mergeOwnedCollection(existing, incoming);
+    expect(result.cards[0]?.quantity).toBe(2);
+    expect(result.report.duplicateEntries).toHaveLength(1);
+    expect(result.report.mergedQuantity).toBe(0);
   });
 });

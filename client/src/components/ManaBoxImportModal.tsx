@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { loadOwnedCollection, saveOwnedCollection, clearOwnedCollection, parseManaBoxImport, type OwnedCard } from '@/lib/manaboxParser';
+import { loadOwnedCollection, saveOwnedCollection, clearOwnedCollection, mergeOwnedCollection, parseManaBoxImport, type OwnedCard } from '@/lib/manaboxParser';
 import { Upload, CheckCircle2, Trash2, FileText, X } from 'lucide-react';
+import { useAuth } from '@/_core/hooks/useAuth';
+import { trpc } from '@/lib/trpc';
 
 interface ManaBoxImportModalProps {
   isOpen: boolean;
@@ -12,6 +14,8 @@ interface ManaBoxImportModalProps {
 }
 
 export function ManaBoxImportModal({ isOpen, onClose, onCollectionUpdated }: ManaBoxImportModalProps) {
+  const { user } = useAuth();
+  const recordImport = trpc.account.recordImport.useMutation();
   const [collection, setCollection] = useState<OwnedCard[]>([]);
   const [inputText, setInputText] = useState('');
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -33,25 +37,21 @@ export function ManaBoxImportModal({ isOpen, onClose, onCollectionUpdated }: Man
       setStatusMessage('No valid cards found in import text.');
       return;
     }
-    // Merge or replace? Let's merge with existing collection
-    const map = new Map<string, OwnedCard>();
-    for (const c of collection) {
-      map.set(c.name.toLowerCase(), { ...c });
-    }
-    for (const c of parsed) {
-      const key = c.name.toLowerCase();
-      const existing = map.get(key);
-      if (existing) {
-        existing.quantity += c.quantity;
-      } else {
-        map.set(key, { ...c });
-      }
-    }
-    const merged = Array.from(map.values());
+    const { cards: merged, report } = mergeOwnedCollection(collection, parsed);
     saveOwnedCollection(merged);
     setCollection(merged);
+    if (user) {
+      const sourceHash = Array.from(inputText).reduce((hash, char) => ((hash << 5) - hash + char.charCodeAt(0)) | 0, 0).toString(16);
+      void recordImport.mutateAsync({ sourceHash: `${sourceHash}-${parsed.length}`, incomingEntries: report.incomingEntries, duplicateEntries: report.duplicateEntries.length, unresolvedPrintings: report.unresolvedPrintingEntries });
+    }
     setInputText('');
-    setStatusMessage(`Successfully imported/updated ${parsed.length} card entries (${merged.length} total unique cards in private storage).`);
+    const duplicateNote = report.duplicateEntries.length > 0
+      ? ` ${report.duplicateEntries.length} exact-printing duplicates were refreshed without double-counting.`
+      : '';
+    const unresolvedNote = report.unresolvedPrintingEntries > 0
+      ? ` ${report.unresolvedPrintingEntries} entries need set/collector data for precise market matching.`
+      : '';
+    setStatusMessage(`Imported ${report.addedEntries} new printings and refreshed ${report.duplicateEntries.length} existing entries.${duplicateNote}${unresolvedNote}`);
     onCollectionUpdated?.();
   };
 

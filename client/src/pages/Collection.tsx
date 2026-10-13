@@ -7,8 +7,11 @@ import { ManaBoxImportModal } from '@/components/ManaBoxImportModal';
 import { NextBestPurchases } from '@/components/NextBestPurchases';
 import { fetchExternalDeckList } from '@/lib/deckImportHelper';
 import { CollectionWorkspaceSkeleton } from '@/components/PageSkeletons';
+import { useAuth } from '@/_core/hooks/useAuth';
+import { startLogin } from '@/const';
 
 export default function Collection() {
+  const { user, loading: authLoading, logout } = useAuth();
   const [isManaBoxOpen, setIsManaBoxOpen] = useState(false);
   const [collectionVersion, setCollectionVersion] = useState(0);
   const [isHydrating, setIsHydrating] = useState(true);
@@ -47,9 +50,18 @@ export default function Collection() {
           <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground">
             <ArrowLeft className="h-4 w-4" /> Back to recent sets
           </Link>
-          <nav className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]" aria-label="Collection workspace navigation">
+          <nav className="flex flex-wrap items-center justify-end gap-2 text-xs font-bold uppercase tracking-[0.14em]" aria-label="Collection workspace navigation">
             <Link href="/collection" className="border border-primary bg-primary px-3 py-2 text-primary-foreground">Collection</Link>
             <Link href="/commander" className="border border-border bg-card px-3 py-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">Commander archive</Link>
+            {user ? (
+              <button type="button" onClick={() => void logout()} className="border border-border bg-card px-3 py-2 text-muted-foreground transition-colors hover:border-destructive hover:text-destructive" title={user.email || user.name || 'Signed-in account'}>
+                {user.name || user.email || 'Account'} · Sign out
+              </button>
+            ) : (
+              <button type="button" disabled={authLoading} onClick={() => startLogin()} className="border border-primary bg-primary px-3 py-2 text-primary-foreground transition-colors hover:opacity-90">
+                {authLoading ? 'Checking account…' : 'Sign in to save'}
+              </button>
+            )}
           </nav>
         </div>
       </header>
@@ -64,7 +76,7 @@ export default function Collection() {
         </section>
 
         <div className="mt-6 flex flex-wrap gap-2 border-y border-border py-3 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
-          <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-2"><Layers3 className="h-4 w-4 text-primary" /> Local-only collection data</span>
+          <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-2"><Layers3 className="h-4 w-4 text-primary" /> Browser workspace · exact-printing safe imports</span>
           <button type="button" onClick={() => setIsManaBoxOpen(true)} className="border border-primary bg-primary px-3 py-2 text-primary-foreground transition-colors hover:bg-primary/90">Import ManaBox</button>
           <Link href="/commander" className="border border-border bg-card px-3 py-2 transition-colors hover:border-primary hover:text-primary">Browse Commander archive</Link>
         </div>

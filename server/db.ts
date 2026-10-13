@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema.js";
+import { collectionImportAudits, InsertUser, savedDecks, users } from "../drizzle/schema.js";
 import { ENV } from './_core/env.js';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -87,6 +87,34 @@ export async function getUserByOpenId(openId: string) {
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
 
   return result.length > 0 ? result[0] : undefined;
+}
+
+export async function listSavedDecks(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(savedDecks).where(eq(savedDecks.userId, userId)).orderBy(desc(savedDecks.updatedAt));
+}
+
+export async function upsertSavedDeck(input: typeof savedDecks.$inferInsert) {
+  const db = await getDb();
+  if (!db) throw new Error('Database is not configured');
+  await db.insert(savedDecks).values(input).onDuplicateKeyUpdate({
+    set: { name: input.name, source: input.source, deckJson: input.deckJson, updatedAt: new Date() },
+  });
+}
+
+export async function deleteSavedDeck(userId: number, deckKey: string) {
+  const db = await getDb();
+  if (!db) throw new Error('Database is not configured');
+  await db.delete(savedDecks).where(and(eq(savedDecks.userId, userId), eq(savedDecks.deckKey, deckKey)));
+}
+
+export async function recordCollectionImportAudit(input: typeof collectionImportAudits.$inferInsert) {
+  const db = await getDb();
+  if (!db) return;
+  await db.insert(collectionImportAudits).values(input).onDuplicateKeyUpdate({
+    set: { sourceName: input.sourceName, incomingEntries: input.incomingEntries, duplicateEntries: input.duplicateEntries, unresolvedPrintings: input.unresolvedPrintings, importedAt: new Date() },
+  });
 }
 
 // TODO: add feature queries here as your schema grows.

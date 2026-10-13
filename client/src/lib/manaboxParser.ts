@@ -1,13 +1,37 @@
-// Design philosophy: hard-edged private collection parser supporting ManaBox CSV exports (Name, Quantity, Set, Collector Number).
+// Design philosophy: hard-edged private collection parser supporting ManaBox CSV exports with exact-printing identity and duplicate-import reporting.
 
 export interface OwnedCard {
   name: string;
   quantity: number;
   setCode?: string;
   collectorNumber?: string;
+  finish?: string;
+  condition?: string;
+  language?: string;
 }
 
-const STORAGE_KEY = 'mtg_tracker_manabox_collection_v1';
+export interface CollectionImportReport {
+  incomingEntries: number;
+  uniqueIncomingEntries: number;
+  duplicateEntries: Array<{ identity: string; name: string; incomingQuantity: number; existingQuantity: number }>;
+  addedEntries: number;
+  mergedQuantity: number;
+  unresolvedPrintingEntries: number;
+}
+
+const STORAGE_KEY = 'mtg_tracker_manabox_collection_v2';
+const LEGACY_STORAGE_KEY = 'mtg_tracker_manabox_collection_v1';
+
+function clean(value?: string) {
+  const normalized = value?.trim();
+  return normalized || undefined;
+}
+
+export function collectionIdentity(card: Pick<OwnedCard, 'name' | 'setCode' | 'collectorNumber' | 'finish' | 'language'>): string {
+  return [card.name, card.setCode || '', card.collectorNumber || '', card.finish || 'normal', card.language || 'en']
+    .map((value) => value.trim().toLowerCase())
+    .join('::');
+}
 
 export function saveOwnedCollection(cards: OwnedCard[]): void {
   try {
@@ -19,7 +43,7 @@ export function saveOwnedCollection(cards: OwnedCard[]): void {
 
 export function loadOwnedCollection(): OwnedCard[] {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed)) return parsed;
@@ -32,9 +56,45 @@ export function loadOwnedCollection(): OwnedCard[] {
 export function clearOwnedCollection(): void {
   try {
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
   } catch (err) {
     console.warn('Failed to clear collection', err);
   }
+}
+
+/** Merge an import without inflating quantities when the same export is uploaded again. */
+export function mergeOwnedCollection(existing: OwnedCard[], incoming: OwnedCard[]): { cards: OwnedCard[]; report: CollectionImportReport } {
+  const map = new Map<string, OwnedCard>();
+  for (const card of existing) map.set(collectionIdentity(card), { ...card });
+  const duplicateEntries: CollectionImportReport['duplicateEntries'] = [];
+  let mergedQuantity = 0;
+  let addedEntries = 0;
+  for (const card of incoming) {
+    const identity = collectionIdentity(card);
+    const current = map.get(identity);
+    if (current) {
+      duplicateEntries.push({ identity, name: card.name, incomingQuantity: card.quantity, existingQuantity: current.quantity });
+      // Treat an exact-printing re-import as a snapshot refresh: keep the larger quantity.
+      const nextQuantity = Math.max(current.quantity, card.quantity);
+      mergedQuantity += Math.max(0, nextQuantity - current.quantity);
+      map.set(identity, { ...current, quantity: nextQuantity, condition: card.condition || current.condition, language: card.language || current.language, finish: card.finish || current.finish });
+    } else {
+      map.set(identity, { ...card });
+      addedEntries += 1;
+      mergedQuantity += card.quantity;
+    }
+  }
+  return {
+    cards: Array.from(map.values()),
+    report: {
+      incomingEntries: incoming.length,
+      uniqueIncomingEntries: new Set(incoming.map(collectionIdentity)).size,
+      duplicateEntries,
+      addedEntries,
+      mergedQuantity,
+      unresolvedPrintingEntries: incoming.filter((card) => !card.setCode || !card.collectorNumber).length,
+    },
+  };
 }
 
 /**
@@ -51,91 +111,54 @@ export function parseManaBoxImport(content: string): OwnedCard[] {
   const isCsv = firstLine.includes('name') || firstLine.includes('quantity') || firstLine.includes('set') || firstLine.includes(',');
 
   if (isCsv) {
-    // Basic CSV parser handling quoted fields
     const parseCsvLine = (line: string): string[] => {
       const result: string[] = [];
       let current = '';
       let inQuotes = false;
       for (let i = 0; i < line.length; i++) {
         const char = line[i];
-        if (char === '"') {
-          inQuotes = !inQuotes;
-        } else if (char === ',' && !inQuotes) {
-          result.push(current.trim());
-          current = '';
-        } else {
-          current += char;
-        }
+        if (char === '"') inQuotes = !inQuotes;
+        else if (char === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
+        else current += char;
       }
       result.push(current.trim());
       return result;
     };
 
     const headers = parseCsvLine(lines[0]!).map((h) => h.toLowerCase().replace(/[^a-z0-9]/g, ''));
-    const nameIdx = headers.findIndex((h) => h === 'name' || h === 'cardname');
-    const qtyIdx = headers.findIndex((h) => h === 'quantity' || h === 'qty' || h === 'count');
-    const setIdx = headers.findIndex((h) => h === 'set' || h === 'setcode');
-    const collectorIdx = headers.findIndex((h) => h === 'collectornumber' || h === 'number' || h === 'collector');
-
+    const indexOf = (...names: string[]) => headers.findIndex((header) => names.includes(header));
+    const nameIdx = indexOf('name', 'cardname');
+    const qtyIdx = indexOf('quantity', 'qty', 'count');
+    const setIdx = indexOf('set', 'setcode');
+    const collectorIdx = indexOf('collectornumber', 'number', 'collector');
+    const finishIdx = indexOf('finish', 'foil', 'treatment');
+    const conditionIdx = indexOf('condition', 'cardcondition');
+    const languageIdx = indexOf('language', 'lang');
     const startRow = nameIdx !== -1 || qtyIdx !== -1 ? 1 : 0;
 
     for (let i = startRow; i < lines.length; i++) {
       const cols = parseCsvLine(lines[i]!);
       if (cols.length === 0) continue;
-
-      let name = '';
-      let quantity = 1;
-      let setCode = '';
-      let collectorNumber = '';
-
-      if (nameIdx !== -1 && cols[nameIdx]) {
-        name = cols[nameIdx]!.replace(/^["']|["']$/g, '');
-      } else {
-        name = cols[0]!.replace(/^["']|["']$/g, '');
-      }
-
-      if (qtyIdx !== -1 && cols[qtyIdx]) {
-        const parsedQty = parseInt(cols[qtyIdx]!, 10);
-        if (!isNaN(parsedQty) && parsedQty > 0) quantity = parsedQty;
-      }
-
-      if (setIdx !== -1 && cols[setIdx]) {
-        setCode = cols[setIdx]!.replace(/^["']|["']$/g, '');
-      }
-
-      if (collectorIdx !== -1 && cols[collectorIdx]) {
-        collectorNumber = cols[collectorIdx]!.replace(/^["']|["']$/g, '');
-      }
-
-      if (name) {
-        cards.push({ name, quantity, setCode: setCode || undefined, collectorNumber: collectorNumber || undefined });
-      }
+      const value = (idx: number) => idx !== -1 ? clean(cols[idx]?.replace(/^['"]|['"]$/g, '')) : undefined;
+      const name = value(nameIdx) || clean(cols[0]?.replace(/^['"]|['"]$/g, ''));
+      if (!name) continue;
+      const parsedQty = Number.parseInt(value(qtyIdx) || '1', 10);
+      cards.push({ name, quantity: Number.isFinite(parsedQty) && parsedQty > 0 ? parsedQty : 1, setCode: value(setIdx), collectorNumber: value(collectorIdx), finish: value(finishIdx), condition: value(conditionIdx), language: value(languageIdx) });
     }
   } else {
-    // Plain text format: "1x Card Name" or "4 Card Name" or just "Card Name"
     for (const line of lines) {
       const match = line.match(/^(\d+)x?\s+(.+)$/);
-      if (match) {
-        const qty = parseInt(match[1]!, 10);
-        const name = match[2]!.trim();
-        cards.push({ name, quantity: isNaN(qty) ? 1 : qty });
-      } else if (line) {
-        cards.push({ name: line, quantity: 1 });
-      }
+      if (match) cards.push({ name: match[2]!.trim(), quantity: Number.parseInt(match[1]!, 10) || 1 });
+      else cards.push({ name: line, quantity: 1 });
     }
   }
 
-  // Aggregate duplicates by name
   const map = new Map<string, OwnedCard>();
   for (const card of cards) {
-    const key = card.name.toLowerCase();
+    const key = collectionIdentity(card);
     const existing = map.get(key);
-    if (existing) {
-      existing.quantity += card.quantity;
-    } else {
-      map.set(key, { ...card });
-    }
+    if (existing) existing.quantity += card.quantity;
+    else map.set(key, { ...card });
   }
-
   return Array.from(map.values());
 }

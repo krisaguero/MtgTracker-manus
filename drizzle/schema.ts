@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, uniqueIndex } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -25,4 +25,27 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export const savedDecks = mysqlTable("saved_decks", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  deckKey: varchar("deckKey", { length: 160 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  source: varchar("source", { length: 64 }).notNull().default("commander-precon"),
+  deckJson: text("deckJson").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({ savedDeckUserKey: uniqueIndex("saved_decks_user_key").on(table.userId, table.deckKey) }));
+
+export const collectionImportAudits = mysqlTable("collection_import_audits", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  sourceHash: varchar("sourceHash", { length: 128 }).notNull(),
+  sourceName: varchar("sourceName", { length: 255 }),
+  incomingEntries: int("incomingEntries").notNull(),
+  duplicateEntries: int("duplicateEntries").notNull().default(0),
+  unresolvedPrintings: int("unresolvedPrintings").notNull().default(0),
+  importedAt: timestamp("importedAt").defaultNow().notNull(),
+}, (table) => ({ collectionImportUserHash: uniqueIndex("collection_import_user_hash").on(table.userId, table.sourceHash) }));
+
+export type SavedDeck = typeof savedDecks.$inferSelect;
+export type CollectionImportAudit = typeof collectionImportAudits.$inferSelect;

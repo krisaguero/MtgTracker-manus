@@ -18,6 +18,10 @@ import { PreconStickyHeader } from '@/components/PreconStickyHeader';
 import { ValuationComparisonSection } from '@/components/ValuationComparisonSection';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
 import { DeckCardRow } from '@/components/DeckCardRow';
+import { preconIsPreorder, preconMarketplaceLinks } from '@/lib/preconMarketplaceLinks';
+import { useAuth } from '@/_core/hooks/useAuth';
+import { startLogin } from '@/const';
+import { trpc } from '@/lib/trpc';
 
 const GROUPS = [
   { label: 'Creatures', test: (card: ScryfallCard) => card.type_line.includes('Creature') },
@@ -57,6 +61,10 @@ export default function CommanderDeck() {
   const [isShoppingListOpen, setIsShoppingListOpen] = useState(false);
   const [collectionVersion, setCollectionVersion] = useState(0);
   const [arenaMode, setArenaMode] = useState(false);
+  const { user } = useAuth();
+  const savedDecksQuery = trpc.account.savedDecks.useQuery(undefined, { enabled: Boolean(user) });
+  const saveDeckMutation = trpc.account.saveDeck.useMutation({ onSuccess: () => savedDecksQuery.refetch() });
+  const deleteDeckMutation = trpc.account.deleteDeck.useMutation({ onSuccess: () => savedDecksQuery.refetch() });
 
   const liveMarketValue = useMemo(() => {
     if (!data) return { total: null as number | null, ownedTotal: null as number | null };
@@ -117,6 +125,13 @@ export default function CommanderDeck() {
 
   const exportCommander = data.commander.map((e) => ({ name: e.card.name, quantity: e.quantity }));
   const exportDeck = data.deck.map((e) => ({ name: e.card.name, quantity: e.quantity }));
+  const savedDeckKey = `${data.setCode}:${deckSlug || data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  const isSavedDeck = Boolean(savedDecksQuery.data?.some((saved) => saved.deckKey === savedDeckKey));
+  const handleSavedDeck = async () => {
+    if (!user) { startLogin(); return; }
+    if (isSavedDeck) await deleteDeckMutation.mutateAsync({ deckKey: savedDeckKey });
+    else await saveDeckMutation.mutateAsync({ deckKey: savedDeckKey, name: data.name, deckJson: JSON.stringify({ commander: exportCommander, main: exportDeck }) });
+  };
 
   const handleCopyExport = async () => {
     let output = '';
@@ -157,6 +172,7 @@ export default function CommanderDeck() {
               </div>
               <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{data.name}</h1>
               {data.setName && <p className="mt-1 text-base text-muted-foreground">{data.setName}</p>}
+              {preconIsPreorder(data.releaseDate) && <p className="mt-3 inline-block border border-amber-500 bg-amber-500/10 px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-700">Preorder watch · releases {data.releaseDate}</p>}
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -166,6 +182,14 @@ export default function CommanderDeck() {
               <Button variant="outline" size="sm" onClick={() => setIsShoppingListOpen(true)} className="gap-2 font-mono text-xs uppercase">
                 Missing Singles Shopping List
               </Button>
+              <Button variant="outline" size="sm" onClick={() => void handleSavedDeck()} disabled={saveDeckMutation.isPending || deleteDeckMutation.isPending} className="gap-2 font-mono text-xs uppercase">
+                {isSavedDeck ? 'Remove saved deck' : user ? 'Save deck to account' : 'Sign in to save'}
+              </Button>
+              {preconMarketplaceLinks(data.name, data.releaseDate).slice(0, 3).map((marketplace) => (
+                <a key={marketplace.marketplace} href={marketplace.href} target="_blank" rel={marketplace.isAffiliate ? 'sponsored noopener noreferrer' : 'noopener noreferrer'} className="border border-border bg-background px-2.5 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary hover:text-primary" title={marketplace.disclosure || marketplace.label}>
+                  {marketplace.marketplace === 'tcgplayer' ? 'TCGplayer' : marketplace.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>

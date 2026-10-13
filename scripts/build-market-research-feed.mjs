@@ -7,6 +7,8 @@ const snapshotFile = resolve(root, 'client/src/data/dailyMarketSnapshot.json');
 const historyFile = resolve(root, 'data/market/daily-movers-history.json');
 const feedFile = resolve(root, 'client/src/data/marketResearchFeed.json');
 const archiveDirectory = resolve(root, 'data/market/research');
+const predictionLedgerFile = resolve(root, 'data/market/prediction-ledger.json');
+const clientPredictionLedgerFile = resolve(root, 'client/src/data/marketPredictionLedger.json');
 const dateArg = process.argv.find((arg) => arg.startsWith('--date='))?.split('=')[1];
 const generatedDate = dateArg || new Date().toISOString().slice(0, 10);
 
@@ -69,6 +71,14 @@ function cardFromSignal(signal, rank) {
     verifiedAt: signal.lastUpdated,
   };
 }
+function predictionFor(card, dateKey) {
+  const momentum = Number(card.percentChange || 0);
+  const expectedDirection = momentum >= 5 ? 'UP' : momentum <= -5 ? 'DOWN' : 'FLAT_OR_UNCERTAIN';
+  const projectedPctRange = expectedDirection === 'UP' ? [0, 10] : expectedDirection === 'DOWN' ? [-10, 0] : [-5, 5];
+  const due = new Date(`${dateKey}T12:00:00Z`);
+  due.setUTCDate(due.getUTCDate() + 14);
+  return { horizonDays: 14, expectedDirection, projectedPctRange, model: 'rule-based momentum screen; not a verified AI forecast', confidence: card.confidence, openedAt: dateKey, evaluationDate: due.toISOString().slice(0, 10) };
+}
 function topicMatches(signal, topic) {
   const category = String(signal.category || '').toLowerCase();
   if (topic.slug === 'precon-sealed-economics' || topic.slug === 'commander-demand') return signal.format === 'Commander' || category.includes('commander');
@@ -87,6 +97,7 @@ function buildPost({ dateKey, topic, snapshot, history, isBiweekly }) {
   const signals = [...(snapshot.signals || [])].filter((signal) => topicMatches(signal, topic));
   const ranked = signals.sort((a, b) => Math.abs(b.percentChange) - Math.abs(a.percentChange) || b.currentUsd - a.currentUsd).slice(0, isBiweekly ? 10 : 8);
   const cards = ranked.map((signal, index) => cardFromSignal(signal, index + 1));
+  for (const card of cards) card.prediction = predictionFor(card, dateKey);
   const recent = (history.snapshots || []).slice(-21).length;
   const title = isBiweekly ? `Biweekly Top 10 Watchlist · ${dateKey}` : `${topic.label} · ${dateKey}`;
   return {
@@ -112,15 +123,42 @@ function buildPost({ dateKey, topic, snapshot, history, isBiweekly }) {
   };
 }
 
-const [snapshot, history, previousFeed] = await Promise.all([
+const [snapshot, history, previousFeed, predictionLedger] = await Promise.all([
   readJson(snapshotFile, { signalCount: 0, signals: [], sources: [], methodology: '' }),
   readJson(historyFile, { snapshots: [] }),
   readJson(feedFile, { schemaVersion: 1, generatedAt: null, posts: [] }),
+  readJson(predictionLedgerFile, { schemaVersion: 1, records: [] }),
 ]);
 const { date, weekday } = dateParts(generatedDate);
 const topic = TOPIC_BY_WEEKDAY[weekday];
 const isBiweekly = weekday === 5 && isoWeek(date) % 2 === 0;
 const post = buildPost({ dateKey: generatedDate, topic, snapshot, history, isBiweekly });
+const priorRecords = Array.isArray(predictionLedger.records) ? predictionLedger.records : [];
+const activeKeys = new Set(priorRecords.map((record) => `${record.dateKey}:${record.setCode}:${record.collectorNumber || record.name}`));
+const newRecords = post.cards.map((card) => ({
+  id: `${post.id}:${card.rank}:${card.setCode}:${card.collectorNumber || card.name}`,
+  dateKey: generatedDate,
+  postId: post.id,
+  prompt: `Assess ${card.name} (${card.setCode.toUpperCase()} ${card.collectorNumber || 'printing unresolved'}) for a 14-day market direction and precon/third-party demand risk.`,
+  name: card.name,
+  setCode: card.setCode,
+  collectorNumber: card.collectorNumber,
+  entryUsd: card.currentUsd,
+  action: card.action,
+  thesis: card.thesis,
+  prediction: card.prediction,
+  outcome: null,
+})).filter((record) => !activeKeys.has(`${record.dateKey}:${record.setCode}:${record.collectorNumber || record.name}`));
+const refreshedRecords = priorRecords.map((record) => {
+  if (record.outcome || !record.prediction?.evaluationDate || record.prediction.evaluationDate > generatedDate) return record;
+  const latest = (snapshot.signals || []).find((signal) => signal.setCode === record.setCode && (signal.collectorNumber || null) === (record.collectorNumber || null) && signal.name === record.name);
+  if (!latest || typeof record.entryUsd !== 'number' || typeof latest.currentUsd !== 'number') return { ...record, outcome: { status: 'UNRESOLVED', evaluatedAt: generatedDate, reason: 'No exact-printing price in the current snapshot.' } };
+  const change = ((latest.currentUsd - record.entryUsd) / Math.max(record.entryUsd, 0.01)) * 100;
+  const direction = change > 2 ? 'UP' : change < -2 ? 'DOWN' : 'FLAT';
+  const expected = record.prediction.expectedDirection;
+  return { ...record, outcome: { status: expected === 'FLAT_OR_UNCERTAIN' ? 'OBSERVED' : 'EVALUATED', correct: expected === direction, evaluatedAt: generatedDate, actualChangePct: Number(change.toFixed(2)), actualDirection: direction } };
+});
+const nextLedger = { schemaVersion: 1, updatedAt: new Date().toISOString(), records: [...newRecords, ...refreshedRecords].slice(0, 2500) };
 const existingPosts = Array.isArray(previousFeed.posts) ? previousFeed.posts : [];
 const posts = [post, ...existingPosts.filter((entry) => entry.id !== post.id)].sort((a, b) => b.dateKey.localeCompare(a.dateKey) || b.id.localeCompare(a.id)).slice(0, 90);
 const feed = { schemaVersion: 1, generatedAt: new Date().toISOString(), schedule: { daily: '08:00 UTC', topicExpansion: 'weekday rotation', biweeklyTop10: 'every other Friday' }, posts };
@@ -131,5 +169,7 @@ await Promise.all([
 await Promise.all([
   writeFile(feedFile, `${JSON.stringify(feed, null, 2)}\n`, 'utf8'),
   writeFile(resolve(archiveDirectory, `${generatedDate}.json`), `${JSON.stringify(post, null, 2)}\n`, 'utf8'),
+  writeFile(predictionLedgerFile, `${JSON.stringify(nextLedger, null, 2)}\n`, 'utf8'),
+  writeFile(clientPredictionLedgerFile, `${JSON.stringify(nextLedger, null, 2)}\n`, 'utf8'),
 ]);
 console.log(`Market research feed complete: ${post.title} (${post.cards.length} cards${isBiweekly ? ', biweekly Top 10' : ''}).`);
