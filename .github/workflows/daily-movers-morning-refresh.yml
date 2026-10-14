@@ -34,6 +34,13 @@ jobs:
       - name: Run Daily Market Movers
         run: node scripts/daily-market-movers.mjs
 
+      - name: Build five-category MTG finance feed
+        run: >-
+          python3 scripts/mtg-finance/build_tracker_movers_feed.py
+          --snapshot client/src/data/dailyMarketSnapshot.json
+          --history data/market/daily-movers-history.json
+          --output client/public/mtg-movers.json
+
       - name: Build Daily Market Watch Research Feed
         run: pnpm market:research-feed
 
@@ -41,7 +48,7 @@ jobs:
         run: |
           git config --global user.name 'MTG Morning Bot'
           git config --global user.email 'bot@mtgtracker.local'
-          git add client/src/data/dailyMarketSnapshot.json client/src/data/marketResearchFeed.json client/src/data/marketPredictionLedger.json data/market/daily data/market/daily-movers-history.json data/market/research data/market/prediction-ledger.json
+          git add client/src/data/dailyMarketSnapshot.json client/src/data/marketResearchFeed.json client/src/data/marketPredictionLedger.json data/market/daily data/market/daily-movers-history.json data/market/research data/market/prediction-ledger.json client/public/mtg-movers.json
           if git diff --cached --quiet; then
             echo "No generated market artifacts changed."
             exit 0

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "generatedAt": "2026-10-13T15:45:12.623Z",
+  "marketScope": "Curated market-signal matrix and tracked Commander deck printings; not the complete MTG singles universe.",
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "sourceUrl": "https://mtgjson.com/downloads/all-files/",
+  "historyDaysAvailable": 30,
+  "signalCount": 9,
+  "thresholds": {
+    "limitPerCategory": 10,
+    "minimumPriceUsdForPercentageCategories": 1.0,
+    "minimumAbsoluteMoveUsd": 1.0,
+    "budgetCurrentPriceMaxUsd": 10.0,
+    "budgetMinimumRiseUsd": 0.25,
+    "budgetMinimumRisePercent": 10.0
+  },
+  "categories": [
+    {
+      "id": "percentage_gainers",
+      "label": "Percentage gainers",
+      "criteria": "Positive percentage change; previous and current price at least $1.00.",
+      "items": [
+        {
+          "rank": 1,
+          "id": "40470d4d-f834-59ae-9af3-de01926a221a",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "setName": "MH2",
+          "collectorNumber": "267",
+          "rarity": "uncommon",
+          "format": "Market",
+          "marketCategory": "reprint-squashes",
+          "currentUsd": 3.29,
+          "previousUsd": 2.94,
+          "changeUsd": 0.35,
+          "percentChange": 11.9,
+          "sourceCount": 2,
+          "tcgplayerMarketUsd": 3.29,
+          "cardKingdomUsd": 4.49,
+          "imageUrl": "https://api.scryfall.com/cards/named?exact=Counterspell&format=image&version=normal",
+          "scryfallSearchUrl": "https://scryfall.com/search?q=!%22Counterspell%22%20set:mh2%20cn:267",
+          "reason": "Market signal matrix; rose 11.9% since the prior saved observation across 2 available price sources.",
+          "lastUpdated": "2026-10-13T15:45:12.623Z"
+        },
+        {
+          "rank": 2,
+          "id": "0e19e45f-7b5d-52bf-948c-9a86cb8be6dd",
+          "name": "Idol of Oblivion",
+          "setCode": "plst",
+          "setName": "PLST",
+          "collectorNumber": "BLC-277",
+          "rarity": "rare",
+          "format": "Market",
+          "marketCategory": "commander-picks",
+          "currentUsd": 2.81,
+          "previousUsd": 2.64,
+          "changeUsd": 0.17,
+          "percentChange": 6.44,
+          "sourceCount": 2,
+          "tcgplayerMarketUsd": 2.81,
+          "cardKingdomUsd": 2.75,
+          "imageUrl": "https://api.scryfall.com/cards/named?exact=Idol%20of%20Oblivion&format=image&version=normal",
+          "scryfallSearchUrl": "https://scryfall.com/search?q=!%22Idol%20of%20Oblivion%22%20set:plst%20cn:BLC-277",
+          "reason": "Market signal matrix; rose 6.4% since the prior saved observation across 2 available price sources.",
+          "lastUpdated": "2026-10-13T15:45:12.623Z"
+        }
+      ]
+    },
+    {
+      "id": "percentage_decliners",
+      "label": "Percentage decliners",
+      "criteria": "Negative percentage change; previous and current price at least $1.00.",
+      "items": [
+        {
+          "rank": 1,
+          "id": "0a573387-0cbb-55f0-8b82-f300660b58eb",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "setName": "ELD",
+          "collectorNumber": "161",
+          "rarity": "mythic",
+          "format": "Market",
+          "marketCategory": "commander-picks",
+          "currentUsd": 63.28,
+          "previousUsd": 63.43,
+          "changeUsd": -0.15,
+          "percentChange": -0.24,
+          "sourceCount": 2,
+          "tcgplayerMarketUsd": 63.28,
+          "cardKingdomUsd": 89.99,
+          "imageUrl": "https://api.scryfall.com/cards/named?exact=The%20Great%20Henge&format=image&version=normal",
+          "scryfallSearchUrl": "https://scryfall.com/search?q=!%22The%20Great%20Henge%22%20set:eld%20cn:161",
+          "reason": "Market signal matrix; fell 0.2% since the prior saved observation across 2 available price sources.",
+          "lastUpdated": "2026-10-13T15:45:12.623Z"
+        }
+      ]
+    },
+    {
+      "id": "dollar_gainers",
+      "label": "Dollar gainers",
+      "criteria": "Positive absolute price change of at least $1.00.",
+      "items": []
+    },
+    {
+      "id": "dollar_decliners",
+      "label": "Dollar decliners",
+      "criteria": "Negative absolute price change of at least $1.00.",
+      "items": []
+    },
+    {
+      "id": "budget_breakouts",
+      "label": "Budget breakouts",
+      "criteria": "Current price $1.00–$10.00; rise at least $0.25 and 10.00%.",
+      "items": [
+        {
+          "rank": 1,
+          "id": "40470d4d-f834-59ae-9af3-de01926a221a",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "setName": "MH2",
+          "collectorNumber": "267",
+          "rarity": "uncommon",
+          "format": "Market",
+          "marketCategory": "reprint-squashes",
+          "currentUsd": 3.29,
+          "previousUsd": 2.94,
+          "changeUsd": 0.35,
+          "percentChange": 11.9,
+          "sourceCount": 2,
+          "tcgplayerMarketUsd": 3.29,
+          "cardKingdomUsd": 4.49,
+          "imageUrl": "https://api.scryfall.com/cards/named?exact=Counterspell&format=image&version=normal",
+          "scryfallSearchUrl": "https://scryfall.com/search?q=!%22Counterspell%22%20set:mh2%20cn:267",
+          "reason": "Market signal matrix; rose 11.9% since the prior saved observation across 2 available price sources.",
+          "lastUpdated": "2026-10-13T15:45:12.623Z"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "setCode": "hoc",
+      "name": "Anduril, Narsil Reforged (Borderless)",
+      "message": "Card not found in MTGJSON set payload"
+    },
+    {
+      "setCode": "ltc",
+      "name": "Gimli of the Glittering Caves (Extended Art)",
+      "message": "Card not found in MTGJSON set payload"
+    }
+  ],
+  "disclaimer": "Aggregated daily market-price estimates and snapshot-derived changes are not guaranteed transaction prices or financial advice. No sales-volume or liquidity data is provided."
+}

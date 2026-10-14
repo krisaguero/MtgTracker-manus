@@ -14,6 +14,7 @@ import type { MarketRow } from '@shared/market';
 import { getMarketWatchKey, isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
 import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
+import { MtgMoversFeed } from '@/components/MtgMoversFeed';
 
 function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] {
   return rows.map((row, index) => {
@@ -299,6 +300,8 @@ export function DailyMovers() {
             </button>
           </div>
         </div>
+
+        <MtgMoversFeed />
 
         {/* Daily Sentiment Deep-Dive Panel */}
         <section className="mt-8 border-2 border-primary/30 bg-primary/5 p-6 sm:p-8" aria-labelledby="sentiment-heading">
