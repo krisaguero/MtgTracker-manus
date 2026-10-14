@@ -13,7 +13,7 @@ export function CommanderCardFrame({
 }: {
   cardName: string;
   alt: string;
-  fallbackSrc?: string;
+  fallbackSrc?: string | string[];
   compact?: boolean;
 }) {
   const src = namedCardImage(cardName);

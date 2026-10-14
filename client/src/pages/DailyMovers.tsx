@@ -15,6 +15,14 @@ import { getMarketWatchKey, isMarketCardWatched, loadMarketWatchlist, toggleMark
 import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import { MtgMoversFeed } from '@/components/MtgMoversFeed';
+import { getMarketDataFreshness } from '@/data/marketDataFreshness';
+
+const freshnessDateFormatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' });
+
+function formatSnapshotDate(value: string) {
+  const date = new Date(`${value}T00:00:00Z`);
+  return Number.isNaN(date.getTime()) ? 'date unavailable' : freshnessDateFormatter.format(date);
+}
 
 function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] {
   return rows.map((row, index) => {
@@ -42,6 +50,7 @@ function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] 
 }
 
 export function DailyMovers() {
+  const freshness = getMarketDataFreshness();
   const [activeFeed, setActiveFeed] = useState<'live' | 'watchlist'>('live');
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedSetCode, setSelectedSetCode] = useState<string>('all');
@@ -337,6 +346,23 @@ export function DailyMovers() {
           </div>
         </div>
 
+        <section className="mt-6 border-2 border-primary/40 bg-primary/5 p-4 sm:p-5" aria-labelledby="mover-data-freshness-heading">
+          <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">Market-data dates &amp; coverage</p>
+          <h2 id="mover-data-freshness-heading" className="mt-2 text-lg font-black">Two separate snapshots—not one live feed</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="border border-border bg-card p-3">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Imported movers CSV · historical</p>
+              <p className="mt-1 font-mono text-sm font-black">{formatSnapshotDate(freshness.importedCsv.asOf)} · {freshness.importedCsv.rowCount} rows</p>
+              <p className="mt-1 text-xs text-muted-foreground">Static imported prices; not current quotes.</p>
+            </div>
+            <div className="border border-border bg-card p-3">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Daily price-signal sample</p>
+              <p className="mt-1 font-mono text-sm font-black">{formatSnapshotDate(freshness.dailySignals.asOf)} · {freshness.dailySignals.pricedPrintingCount} priced printings</p>
+              <p className="mt-1 text-xs text-muted-foreground">{freshness.dailySignals.trackedCount} tracked signals · {freshness.dailySignals.sources.join(', ')}</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs leading-5 text-muted-foreground">The small daily sample does not refresh or validate the older 250-row CSV. Each section is a dated source snapshot; neither is a live vendor quote or coverage of the full singles market.</p>
+        </section>
         <MtgMoversFeed />
 
         {/* Daily Sentiment Deep-Dive Panel */}

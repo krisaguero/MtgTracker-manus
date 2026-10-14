@@ -13,6 +13,7 @@ describe('CardImageZoom', () => {
     expect(markup).toContain('loading="lazy"');
     expect(markup).toContain('src="https://cards.example.test/card.jpg"');
     expect(markup).toContain('referrerPolicy="no-referrer"');
+    expect(markup).toContain('decoding="async"');
   });
 
   it('supports eager loading for an explicitly prioritized hero image', () => {
@@ -29,5 +30,14 @@ describe('CardImageZoom', () => {
     );
 
     expect(markup).toContain('src="https://cards.example.test/fallback.jpg"');
+  });
+
+  it('starts with the primary source and exposes a local visual placeholder when sources are exhausted', () => {
+    const markup = renderToStaticMarkup(
+      <CardImageZoom src="https://cards.example.test/primary.jpg" fallbackSrc={['https://cards.example.test/fallback-1.jpg', 'https://cards.example.test/fallback-2.jpg']} alt="Example Card" />,
+    );
+
+    expect(markup).toContain('src="https://cards.example.test/primary.jpg"');
+    expect(markup).toContain('loading="lazy"');
   });
 });

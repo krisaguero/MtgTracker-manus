@@ -30,7 +30,7 @@ export default function LatestMarketReport() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Top Header / Navigation */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-50">
+      <header className="border-b border-border bg-background/95 backdrop-blur-sm">
         <div className="container py-3 flex items-center justify-between">
           <Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs uppercase hover:text-primary transition-colors">
             <ArrowLeft className="h-4 w-4" /> Back to Daily Movers

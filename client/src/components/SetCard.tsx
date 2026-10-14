@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ArrowUpRight, Bookmark, ExternalLink, Layers3, Sparkles, ChevronDown, ChevronUp, Calendar, CreditCard, ListOrdered, CheckCircle2 } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
@@ -18,7 +18,8 @@ interface SetCardProps {
 
 export function SetCard({ set, precons, knownValue = 0, valuedDecks = 0, isFavorite = false, onToggleFavorite }: SetCardProps) {
   const [, navigate] = useLocation();
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const ownedCollection = useMemo(() => loadOwnedCollection(), []);
   const formattedDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(`${set.released_at}T00:00:00`));
   const scryfallUrl = `https://scryfall.com/sets/${set.code.toLowerCase()}`;
   const valueCoverage = precons.length > 0 ? Math.round((valuedDecks / precons.length) * 100) : 0;
@@ -68,8 +69,8 @@ export function SetCard({ set, precons, knownValue = 0, valuedDecks = 0, isFavor
           </div>
           {knownValue > 0 && (
             <div className="text-right">
-              <span className="font-mono text-[10px] text-muted-foreground uppercase">Precon Value: </span>
-              <span className="font-mono text-xs font-bold text-emerald-500">${knownValue}</span>
+              <span className="font-mono text-[10px] text-muted-foreground uppercase">Indexed Card-list Equity: </span>
+              <span className="font-mono text-xs font-bold text-emerald-500">${knownValue.toFixed(2)}</span>
             </div>
           )}
         </div>
@@ -81,6 +82,7 @@ export function SetCard({ set, precons, knownValue = 0, valuedDecks = 0, isFavor
           type="button"
           onClick={() => setIsExpanded((exp) => !exp)}
           aria-expanded={isExpanded}
+          aria-controls={`set-precons-${set.code}`}
           className="flex w-full items-center justify-between px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
         >
           <span className="flex items-center gap-2 font-bold">
@@ -92,11 +94,11 @@ export function SetCard({ set, precons, knownValue = 0, valuedDecks = 0, isFavor
           </span>
         </button>
 
-        <div className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 overflow-hidden'}`}>
-          <div className="min-h-0 overflow-hidden">
+        <div id={`set-precons-${set.code}`} hidden={!isExpanded}>
+          {isExpanded && <div className="min-h-0 overflow-hidden">
             <div className="p-4 pt-0 space-y-3">
               {precons.length > 0 ? (
-                precons.map((precon) => <PreconCard key={precon.name} precon={precon} />)
+                precons.map((precon) => <PreconCard key={precon.name} precon={precon} ownedCollection={ownedCollection} />)
               ) : (
                 <div className="border border-dashed border-border bg-background p-4 text-center">
                   <p className="text-xs font-medium text-muted-foreground">No precons indexed directly for {set.name}.</p>
@@ -106,19 +108,18 @@ export function SetCard({ set, precons, knownValue = 0, valuedDecks = 0, isFavor
                 </div>
               )}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
   );
 }
 
-function PreconCard({ precon }: { precon: PreconDeck }) {
-  const collection = loadOwnedCollection();
+function PreconCard({ precon, ownedCollection }: { precon: PreconDeck; ownedCollection: ReturnType<typeof loadOwnedCollection> }) {
   const allRefCards = [...(precon.commanderCards || []), ...(precon.mainCards || [])];
   const deckCardNames = allRefCards.map((c) => c.name.toLowerCase());
   const ownedCount = deckCardNames.reduce((acc, name) => {
-    const found = collection.find((item) => item.name.toLowerCase() === name);
+    const found = ownedCollection.find((item) => item.name.toLowerCase() === name);
     return acc + (found ? Math.min(found.quantity, 1) : 0);
   }, 0);
   const totalCards = precon.card_count || allRefCards.length || 100;
@@ -128,45 +129,18 @@ function PreconCard({ precon }: { precon: PreconDeck }) {
     ? `/deck/${precon.set_code.toLowerCase()}/${slugify(precon.name)}`
     : `/precon/${precon.set_code.toLowerCase()}/${slugify(precon.name)}`;
 
-  const productImage = precon.productImageUrl || precon.image_uris?.normal;
-  const fallbackImage = precon.productImageUrl ? precon.image_uris?.normal : undefined;
-  const [imageUrl, setImageUrl] = useState(productImage);
-  const [imageLoading, setImageLoading] = useState(Boolean(productImage));
+  const fallbackImages = [precon.productImageUrl, precon.image_uris?.normal].filter((url): url is string => Boolean(url));
   const commanderNamesText = precon.commanderCards?.map((c) => c.name).join(' & ') || 'Commander Deck';
 
   return (
     <div className="border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
       <div className="flex items-start gap-4">
-        <div className="w-28 shrink-0 sm:w-32">
-          {precon.commanderCards?.[0]?.name ? (
-            <CommanderCardFrame
-              cardName={precon.commanderCards[0].name}
-              alt={`${precon.commanderCards[0].name}, commander for ${precon.name}`}
-              fallbackSrc={imageUrl || fallbackImage}
-            />
-          ) : imageUrl ? (
-            <div className="relative flex aspect-[63/88] items-center justify-center overflow-hidden border-2 border-border bg-[#171a24] p-1 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">
-              {imageLoading && <div className="absolute inset-0 animate-pulse bg-muted-foreground/10" aria-hidden="true" />}
-              <img
-                src={imageUrl}
-                alt={`${precon.name} product artwork`}
-                className="relative h-full w-full object-contain"
-                loading="lazy"
-                onLoad={() => setImageLoading(false)}
-                onError={() => {
-                  if (fallbackImage && imageUrl !== fallbackImage) {
-                    setImageUrl(fallbackImage);
-                    setImageLoading(true);
-                  } else {
-                    setImageUrl(undefined);
-                    setImageLoading(false);
-                  }
-                }}
-              />
-            </div>
-          ) : (
-            <div className="flex aspect-[63/88] items-center justify-center border-2 border-border bg-muted p-2 text-center text-[10px] text-muted-foreground">{precon.name}</div>
-          )}
+        <div className="w-36 shrink-0 sm:w-40 lg:w-44">
+          <CommanderCardFrame
+            cardName={precon.commanderCards?.[0]?.name || precon.name}
+            alt={`${precon.name} Commander artwork`}
+            fallbackSrc={fallbackImages}
+          />
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-2">

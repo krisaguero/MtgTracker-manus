@@ -4,7 +4,7 @@ export function DecklistSkeleton() {
   return (
     <div className="min-h-screen bg-background text-foreground animate-pulse">
       {/* Header Skeleton */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-50">
+      <header className="border-b border-border bg-background/95 backdrop-blur-sm">
         <div className="w-full px-4 py-3 sm:px-6 lg:px-8 2xl:px-12 flex items-center justify-between">
           <Skeleton className="h-8 w-32 bg-muted rounded-none" />
           <div className="flex gap-2">

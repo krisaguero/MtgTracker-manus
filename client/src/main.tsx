@@ -7,6 +7,9 @@ import App from "./App";
 import { trpc } from "@/lib/trpc";
 import { startLogin } from "./const";
 import "./index.css";
+import { loadUmamiAnalytics } from "@/lib/analytics";
+
+loadUmamiAnalytics(import.meta.env.VITE_ANALYTICS_ENDPOINT, import.meta.env.VITE_ANALYTICS_WEBSITE_ID, document);
 
 const queryClient = new QueryClient();
 

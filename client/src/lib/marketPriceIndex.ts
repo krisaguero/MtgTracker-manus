@@ -43,7 +43,9 @@ const refreshProducts = ((scryfallSnapshot as any)?.products || []) as SnapshotP
 const commanderPrices = ((commanderCardPriceSnapshot as any)?.records || []) as CommanderPriceRecord[];
 const dailyUpdatedAt = (dailySnapshot as any)?.generatedAt || '';
 const refreshUpdatedAt = (scryfallSnapshot as any)?.refreshedAt || '';
-const commanderUpdatedAt = (commanderCardPriceSnapshot as any)?.generatedAt || (commanderCardPriceSnapshot as any)?.priceDate || '';
+export const commanderPriceSnapshotAsOf = (commanderCardPriceSnapshot as any)?.priceDate || '';
+export const commanderPriceSnapshotSource = (commanderCardPriceSnapshot as any)?.source || 'Card-price index';
+const commanderUpdatedAt = (commanderCardPriceSnapshot as any)?.generatedAt || commanderPriceSnapshotAsOf;
 
 function normalized(value: string) {
   return value.trim().toLowerCase();

@@ -124,7 +124,7 @@ function MoversFeedContent({ feed }: { feed: MoversFeed }) {
           <span>{feed.signalCount} priced printings tracked</span>
           <a href={feed.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">Source: MTGJSON <ExternalLink className="h-3 w-3" aria-hidden="true" /></a>
         </div>
-        <p className="mt-3 text-xs leading-5 text-muted-foreground">Overview only: {categoryMatches} category matches across {visiblePrintingCount} unique displayed printings. Threshold groups can overlap, so a printing may appear in more than one category; this is not another live feed.</p>
+        <p className="mt-3 text-xs leading-5 text-muted-foreground">Coverage: {feed.signalCount} priced printings are tracked, and {visiblePrintingCount} unique printings currently meet the displayed mover thresholds ({categoryMatches} category matches). Threshold groups can overlap, so a printing may appear in more than one category. This limited daily snapshot is separate from the historical imported CSV, not another live feed.</p>
         {feed.status === 'warming_up' && (
           <p className="mt-4 border border-amber-600/30 bg-amber-500/10 p-3 text-xs leading-5 text-amber-800 dark:text-amber-200" role="status">
             The feed needs at least two distinct daily observations before it can label price changes as movers.
