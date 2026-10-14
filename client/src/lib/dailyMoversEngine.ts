@@ -34,7 +34,7 @@ export interface MarketSentimentDeepDive {
 
 export const MOVER_CATEGORIES = [
   { id: 'all', label: 'All Categories' },
-  { id: 'imported-top-250', label: 'Imported Top 250' },
+  { id: 'imported-top-250', label: 'Imported Top 250 bucket' },
   { id: 'high-spikes', label: '1. High Value Spikes' },
   { id: 'penny-risers', label: '2. Penny Risers & Buyout Targets' },
   { id: 'commander-picks', label: '3. Commander Format Staples' },

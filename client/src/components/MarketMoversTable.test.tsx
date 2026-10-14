@@ -133,6 +133,19 @@ describe("MarketMoversTable filtering and loading state", () => {
     expect(markup).toContain("Remove Demonic Tutor from watchlist");
   });
 
+  it("renders a stacked mobile card path with card, current price, and change first", () => {
+    const markup = renderToStaticMarkup(
+      <MarketMoversTable data={[sampleMover]} title="Daily Movers Table" description="Mobile card test" />,
+    );
+
+    expect(markup).toContain('aria-label="Daily Movers Table mobile cards"');
+    expect(markup).toContain('class="grid gap-3 p-3 sm:p-4 md:hidden"');
+    expect(markup).toContain("Demonic Tutor");
+    expect(markup).toContain("Current");
+    expect(markup).toContain("Change");
+    expect(markup).not.toContain("scroll horizontally on mobile");
+  });
+
   it("renders accessible skeleton rows while market data is loading", () => {
     const markup = renderToStaticMarkup(
       <MarketMoversTable

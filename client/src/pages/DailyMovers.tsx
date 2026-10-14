@@ -1,7 +1,7 @@
 /* Design reminder: hard-edged market intelligence workspace; features 10 categories of 25 movers each, penny buyout watches, Reddit sentiment metrics, and deep-dive sentiment analysis. */
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, ExternalLink, Flame, Search, ShieldAlert, Sparkles, Star, TrendingDown, TrendingUp, Zap } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Filter, Flame, Search, ShieldAlert, Sparkles, Star, TrendingDown, TrendingUp, Zap } from 'lucide-react';
 import { MarketMoversTable } from '@/components/MarketMoversTable';
 import { MarketCardGridSkeleton } from '@/components/MarketCardSkeleton';
 import { MarketCardItem } from '@/components/MarketCardItem';
@@ -52,6 +52,19 @@ export function DailyMovers() {
   const [searchFilter, setSearchFilter] = useState<string>('');
   const [watchlist, setWatchlist] = useState<MarketWatchlistEntry[]>(() => loadMarketWatchlist());
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
+  const [desktopViewport, setDesktopViewport] = useState(false);
+  const [advancedFiltersOpen, setAdvancedFiltersOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const syncViewport = () => {
+      setDesktopViewport(media.matches);
+      setAdvancedFiltersOpen(media.matches);
+    };
+    syncViewport();
+    media.addEventListener('change', syncViewport);
+    return () => media.removeEventListener('change', syncViewport);
+  }, []);
 
   // The attached 2026-08-25 CSV is the primary reproducible feed. The existing
   // canonical snapshot remains the fallback for environments that omit the CSV.
@@ -117,6 +130,8 @@ export function DailyMovers() {
     const imported = findImportedMover(mover.name, mover.setCode);
     return imported ? { ...mover, pricingDate: imported.pricingDate, pricingReportHref: importedReportHref(imported.pricingDate) } : mover;
   }), [liveMovers]);
+  const importedTop250Rows = activeMoversList.filter((mover) => mover.category === 'imported-top-250').length;
+  const signalCategoryCount = MOVER_CATEGORIES.filter((category) => category.id !== 'all' && category.id !== 'imported-top-250').length;
 
   const availableSets = useMemo(() => {
     const set = new Set<string>();
@@ -173,16 +188,26 @@ export function DailyMovers() {
 
   const activeFeedMovers = filteredMovers;
   const visibleWatchlist = activeMoversList.filter((m) => isMarketCardWatched(m, watchlist));
+  const activeFilterLabels = [
+    searchFilter && `Search: ${searchFilter}`,
+    activeCategory !== 'all' && `Category: ${MOVER_CATEGORIES.find((category) => category.id === activeCategory)?.label || activeCategory}`,
+    selectedSetCode !== 'all' && `Set: ${selectedSetCode}`,
+    priceRange !== 'all' && `Price: ${priceRange}`,
+    rarityFilter !== 'all' && `Rarity: ${rarityFilter}`,
+    trendFilter !== 'all' && `Trend: ${trendFilter}`,
+  ].filter((label): label is string => Boolean(label));
 
   function handleToggleWatchlist(mover: MoverCard) {
     const updated = toggleMarketWatchlist(mover);
     setWatchlist(updated);
   }
 
-  function handleExportTop500Txt() {
+  function handleExportSnapshotTxt() {
     const lines = [
       '====================================================================',
-      ' MTG TOP 500 MARKET MOVERS & SIGNAL MATRIX EXPORT',
+      ' MTG MARKET MOVERS IMPORTED SNAPSHOT EXPORT',
+      ` Data as of: ${csvMarketMoversAsOf}`,
+      ` Rows: ${activeMoversList.length}`,
       ` Generated: ${new Date().toISOString()}`,
       '====================================================================',
       '',
@@ -196,7 +221,7 @@ export function DailyMovers() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'mtg-top-500-movers.txt';
+    a.download = `mtg-market-movers-${csvMarketMoversAsOf}.txt`;
     a.click();
   }
 
@@ -215,61 +240,72 @@ export function DailyMovers() {
             </span>
           </div>
 
-          <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="flex w-full flex-wrap items-center gap-2 md:w-auto">
             <NavigationSearch />
+            <details className="relative ml-auto sm:hidden">
+              <summary className="cursor-pointer border border-primary bg-primary px-3 py-2 font-mono text-[10px] font-bold uppercase text-primary-foreground">Explore</summary>
+              <div className="absolute right-0 top-full z-30 mt-2 grid min-w-56 gap-2 border border-border bg-card p-3 shadow-lg">
+                <Link href="/costco-deal-article" className="border border-border px-3 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary">Costco TMNT deal</Link>
+                <Link href="/signal-matrix-article" className="border border-border px-3 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary">Featured article</Link>
+                <Link href="/market-articles" className="border border-border px-3 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary">Editorial deep dives</Link>
+                <Link href="/market-watch" className="border border-border px-3 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary">Market watch feed</Link>
+              </div>
+            </details>
+            <div className="hidden flex-wrap items-center gap-2 sm:flex">
             <Link
               href="/costco-deal-article"
-              className="inline-flex items-center gap-1.5 border-2 border-amber-500 bg-amber-500 text-black px-3 py-1.5 font-mono text-xs font-bold uppercase shadow hover:opacity-90 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 border border-primary bg-primary text-primary-foreground px-3 py-1.5 font-mono text-xs font-bold uppercase shadow hover:opacity-90 whitespace-nowrap"
             >
               <Sparkles className="h-3.5 w-3.5" /> Costco TMNT Deal ($49.97)
             </Link>
             <Link
               href="/signal-matrix-article"
-              className="inline-flex items-center gap-1.5 border-2 border-primary bg-primary px-3 py-1.5 font-mono text-xs font-bold uppercase text-primary-foreground shadow hover:opacity-90 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 border border-primary bg-primary px-3 py-1.5 font-mono text-xs font-bold uppercase text-primary-foreground shadow hover:opacity-90 whitespace-nowrap"
             >
               <Sparkles className="h-3.5 w-3.5" /> Featured Article
             </Link>
             <Link
               href="/market-articles"
-              className="inline-flex items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary whitespace-nowrap"
             >
               Editorial Deep Dives
             </Link>
             <Link
               href="/market-watch"
-              className="inline-flex items-center gap-1.5 border-2 border-amber-500 bg-amber-500/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-amber-700 hover:border-amber-600 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 border border-primary bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground whitespace-nowrap"
             >
               Market Watch Feed
             </Link>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Container */}
-      <main className="flex-1 mx-auto max-w-7xl w-full px-4 py-8 sm:px-8">
+      <main className="flex-1 mx-auto max-w-7xl w-full px-4 py-6 sm:px-8 sm:py-8">
         {/* Page Title & Feed Mode Toggles */}
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-border pb-6">
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
           <div>
-              <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <Zap className="h-4 w-4" /> Imported Market Snapshot · {csvMarketMoversAsOf}
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              <Zap className="h-4 w-4" /> Imported market snapshot · Data as of {csvMarketMoversAsOf}
             </div>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Daily Market Movers &amp; Buyouts</h1>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Tracking high-value spikes, penny risers, Reddit speculation threads, and old-school reserve list shifts across 10 specialized categories.
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">
+              This imported file contains {activeMoversList.length} market rows, with {signalCategoryCount} signal categories available. Counts are rows; each imported row has one primary category. The separate “Imported Top 250 bucket” contains {importedTop250Rows} of {activeMoversList.length} rows, not the full snapshot. Watchlist counts are saved rows found in this file. Prices are historical to the date above, not live quotes.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="/market-reports" className="inline-flex items-center gap-2 border-2 border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary">
+            <Link href="/market-reports" className="inline-flex items-center gap-2 border border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary">
               Dated Reports Archive
             </Link>
-            <Link href="/market-signal-audit" className="inline-flex items-center gap-2 border-2 border-primary bg-primary/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
+            <Link href="/market-signal-audit" className="inline-flex items-center gap-2 border border-primary bg-primary/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
               Signal Audit
             </Link>
-            <Link href="/market-movers-manus-report" className="inline-flex items-center gap-2 border-2 border-amber-600/50 bg-amber-500/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-amber-700 hover:bg-amber-500 hover:text-black">
+            <Link href="/market-movers-manus-report" className="inline-flex items-center gap-2 border border-primary bg-background px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
               Imported mover desks
             </Link>
-            <div className="inline-flex border-2 border-border bg-card p-1">
+            <div className="inline-flex border border-border bg-card p-1">
               <button
                 type="button"
                 onClick={() => setActiveFeed('live')}
@@ -277,26 +313,26 @@ export function DailyMovers() {
                   activeFeed === 'live' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                Live Feed ({activeMoversList.length})
+                Imported snapshot ({activeMoversList.length} rows)
               </button>
               <button
                 type="button"
                 onClick={() => setActiveFeed('watchlist')}
                 className={`px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5 ${
-                  activeFeed === 'watchlist' ? 'bg-amber-500 text-black font-extrabold' : 'text-muted-foreground hover:text-foreground'
+                  activeFeed === 'watchlist' ? 'bg-primary text-primary-foreground font-extrabold' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 <Star className="h-3.5 w-3.5" fill={activeFeed === 'watchlist' ? 'currentColor' : 'none'} />
-                Watchlist ({visibleWatchlist.length})
+                Watchlist ({visibleWatchlist.length} rows)
               </button>
             </div>
 
               <button
               type="button"
-              onClick={handleExportTop500Txt}
-              className="inline-flex items-center gap-2 border-2 border-primary bg-primary text-primary-foreground px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow hover:opacity-90"
+              onClick={handleExportSnapshotTxt}
+              className="hidden items-center gap-2 border border-primary bg-primary text-primary-foreground px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow hover:opacity-90 sm:inline-flex"
             >
-              Export Current Feed (TXT)
+              Export Snapshot (TXT)
             </button>
           </div>
         </div>
@@ -304,17 +340,17 @@ export function DailyMovers() {
         <MtgMoversFeed />
 
         {/* Daily Sentiment Deep-Dive Panel */}
-        <section className="mt-8 border-2 border-primary/30 bg-primary/5 p-6 sm:p-8" aria-labelledby="sentiment-heading">
+        <section className="mt-6 border border-border bg-card p-4 sm:p-6" aria-labelledby="sentiment-heading">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-5">
             <div>
-              <span className="border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider text-primary">
-                Daily Sentiment Deep Dive · {sentiment.analyzedAt}
+              <span className="border border-border bg-background px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider text-foreground">
+                Sentiment research · analyzed {sentiment.analyzedAt}
               </span>
               <h2 id="sentiment-heading" className="mt-3 text-2xl font-bold tracking-tight">{sentiment.headline}</h2>
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <div className="border border-border bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider">
-                Sentiment: <span className="text-emerald-600 dark:text-emerald-400">{sentiment.overallSentiment}</span>
+                Sentiment: <span className="text-foreground">{sentiment.overallSentiment}</span>
               </div>
               <div className="border border-border bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider">
                 Reddit Activity: <span className="text-primary">{sentiment.redditActivityIndex}/100</span>
@@ -330,7 +366,7 @@ export function DailyMovers() {
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Market Synthesis</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{sentiment.summary}</p>
             </div>
-            <div className="border-l-2 border-primary/30 pl-4 sm:pl-6">
+            <div className="border-l border-border pl-4 sm:pl-6">
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Key Speculation Drivers</p>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
                 {sentiment.keyDrivers.map((driver, idx) => (
@@ -345,103 +381,45 @@ export function DailyMovers() {
         </section>
 
         {/* Dated editorial signal layer from the October 7 market brief. */}
-        <section className="mt-8 border-2 border-border bg-card p-5 sm:p-7" aria-label="Today's market highlights">
+        <section className="mt-6 border border-border bg-card p-4 sm:p-6" aria-label="Historical market brief">
           <TodayMarketBrief embedded />
         </section>
 
         {/* Filter and Category Bar */}
-        <section className="mt-8 border-2 border-border bg-card p-4 sm:p-6 shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto flex-1">
-              {/* Search Filter */}
-              <div className="relative flex-1 min-w-[220px]">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-                <input
-                  type="text"
-                  value={searchFilter}
-                  onChange={(e) => setSearchFilter(e.target.value)}
-                  placeholder="Filter movers by card name, set..."
-                  className="w-full bg-background border border-border pl-9 pr-3 py-2 font-mono text-xs uppercase focus:border-primary focus:outline-none"
-                  aria-label="Filter movers by card name or set"
-                />
-              </div>
-
-              {/* Set Code Filter */}
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Set:</span>
-                <select
-                  value={selectedSetCode}
-                  onChange={(e) => setSelectedSetCode(e.target.value)}
-                  aria-label="Filter by Set"
-                  className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"
-                >
-                  <option value="all">All Sets</option>
-                  {availableSets.map((setCode) => (
-                    <option key={setCode} value={setCode}>{setCode}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Price Range Filter */}
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Price:</span>
-                <select
-                  value={priceRange}
-                  onChange={(e) => setPriceRange(e.target.value)}
-                  aria-label="Filter by Price Range"
-                  className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"
-                >
-                  <option value="all">Any Price</option>
-                  <option value="under-5">&lt; $5.00</option>
-                  <option value="5-25">$5.00 - $25.00</option>
-                  <option value="25-100">$25.00 - $100.00</option>
-                  <option value="over-100">&gt; $100.00</option>
-                </select>
-              </div>
-
-              {/* Rarity Filter */}
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Rarity:</span>
-                <select value={rarityFilter} onChange={(e) => setRarityFilter(e.target.value)} aria-label="Filter by Rarity" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary">
-                  <option value="all">Any Rarity</option>
-                  <option value="mythic">Mythic</option>
-                  <option value="rare">Rare</option>
-                  <option value="uncommon">Uncommon</option>
-                  <option value="common">Common</option>
-                </select>
-              </div>
-
-              {/* Trend Filter */}
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Trend:</span>
-                <select value={trendFilter} onChange={(e) => setTrendFilter(e.target.value)} aria-label="Filter by Price Trend" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary">
-                  <option value="all">Any Trend</option>
-                  <option value="rising">Rising</option>
-                  <option value="falling">Falling</option>
-                  <option value="flat">Flat</option>
-                </select>
-              </div>
-
-              {/* Sort By */}
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Sort:</span>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  aria-label="Sort Daily Movers"
-                  className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"
-                >
-                  <option value="pct-desc">Highest Spike (%)</option>
-                  <option value="price-desc">Highest Price ($)</option>
-                  <option value="price-asc">Lowest Price ($)</option>
-                  <option value="name-asc">Card Name (A-Z)</option>
-                </select>
-              </div>
+        <section className="mt-6 border border-border bg-card p-4 shadow-sm sm:p-6">
+          <div className="w-full">
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+              <input type="text" value={searchFilter} onChange={(e) => setSearchFilter(e.target.value)} placeholder="Filter movers by card name, set..." className="w-full bg-background border border-border pl-9 pr-3 py-2 font-mono text-xs uppercase focus:border-primary focus:outline-none" aria-label="Filter movers by card name or set" />
             </div>
+            <details className="mt-3 border border-border md:border-0" open={desktopViewport || advancedFiltersOpen} onToggle={(event) => { if (!desktopViewport) setAdvancedFiltersOpen(event.currentTarget.open); }}>
+              <summary className="flex cursor-pointer items-center justify-between gap-3 bg-muted/30 px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-wider text-foreground md:hidden">
+                <span className="inline-flex items-center gap-2"><Filter className="h-3.5 w-3.5 text-primary" /> Advanced filters{activeFilterLabels.length > 0 ? ` · ${activeFilterLabels.length} active` : ''}</span><span aria-hidden="true">⌄</span>
+              </summary>
+              <div className="flex flex-wrap items-center gap-3 p-3 md:p-0">
+                <label className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Set:
+                  <select value={selectedSetCode} onChange={(e) => setSelectedSetCode(e.target.value)} aria-label="Filter by Set" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"><option value="all">All Sets</option>{availableSets.map((setCode) => <option key={setCode} value={setCode}>{setCode}</option>)}</select>
+                </label>
+                <label className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Price:
+                  <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)} aria-label="Filter by Price Range" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"><option value="all">Any Price</option><option value="under-5">&lt; $5.00</option><option value="5-25">$5.00 - $25.00</option><option value="25-100">$25.00 - $100.00</option><option value="over-100">&gt; $100.00</option></select>
+                </label>
+                <label className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Rarity:
+                  <select value={rarityFilter} onChange={(e) => setRarityFilter(e.target.value)} aria-label="Filter by Rarity" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"><option value="all">Any Rarity</option><option value="mythic">Mythic</option><option value="rare">Rare</option><option value="uncommon">Uncommon</option><option value="common">Common</option></select>
+                </label>
+                <label className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Trend:
+                  <select value={trendFilter} onChange={(e) => setTrendFilter(e.target.value)} aria-label="Filter by Price Trend" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"><option value="all">Any Trend</option><option value="rising">Rising</option><option value="falling">Falling</option><option value="flat">Flat</option></select>
+                </label>
+                <label className="flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Sort:
+                  <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} aria-label="Sort Daily Movers" className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"><option value="pct-desc">Highest Spike (%)</option><option value="price-desc">Highest Price ($)</option><option value="price-asc">Lowest Price ($)</option><option value="name-asc">Card Name (A-Z)</option></select>
+                </label>
+                <button type="button" onClick={handleExportSnapshotTxt} className="inline-flex items-center gap-2 border border-primary bg-primary px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-primary-foreground hover:opacity-90 sm:hidden">Export snapshot (TXT)</button>
+              </div>
+            </details>
+            {activeFilterLabels.length > 0 && <div className="mt-3 flex flex-wrap items-center gap-2" aria-label="Active filters"><span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Active filters</span>{activeFilterLabels.map((label) => <span key={label} className="border border-border bg-background px-2 py-1 font-mono text-[10px] uppercase">{label}</span>)}<button type="button" onClick={() => { setSearchFilter(''); setActiveCategory('all'); setSelectedSetCode('all'); setPriceRange('all'); setRarityFilter('all'); setTrendFilter('all'); }} className="border border-primary bg-primary px-2 py-1 font-mono text-[10px] font-bold uppercase text-primary-foreground">Reset</button></div>}
           </div>
 
           {/* Category Tabs */}
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {MOVER_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -464,14 +442,14 @@ export function DailyMovers() {
             <div className="mt-8 border-2 border-dashed border-amber-500/40 bg-amber-500/5 p-8 text-center">
               <Star className="mx-auto h-6 w-6 text-amber-600 dark:text-amber-300" aria-hidden="true" />
               <p className="mt-3 font-semibold">Your watchlist is empty.</p>
-              <p className="mt-1 text-sm text-muted-foreground">Switch to Live feed and star cards in either table to keep them here.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Switch to the imported snapshot and star cards in either table to keep them here.</p>
             </div>
           )}
 
           {isLoadingMovers && activeMoversList.length === 0 ? (
             <MarketCardGridSkeleton count={6} />
           ) : (
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
               {activeFeedMovers.map((mover, index) => (
                 <div key={mover.id} className="market-mover-enter" style={{ '--market-mover-index': index } as CSSProperties}>
                 <MarketCardItem
@@ -487,11 +465,11 @@ export function DailyMovers() {
           )}
 
           {/* Detailed Table View */}
-          <div className="mt-12 space-y-8">
+          <div className="mt-6 space-y-6">
             <MarketMoversTable
               data={activeFeedMovers}
               title={activeFeed === 'watchlist' ? 'Watchlist Movers Table' : 'Daily Movers Table'}
-              description="Comprehensive sorted view of market movers, percentage spikes, and live outlet valuations across curated Magic: The Gathering categories."
+              description={`Sorted rows from the imported snapshot dated ${csvMarketMoversAsOf}. Counts are imported rows; prices are historical references rather than live vendor quotes.`}
               isLoading={isLoadingMovers}
               watchlist={watchlist}
               onToggleWatchlist={handleToggleWatchlist}

@@ -17,7 +17,7 @@ export const todayMarketBrief = {
   title: 'Spoilers, supply pressure, and a fragile rotation into Commander staples',
   status: 'Signal-first brief: confirmed daily movers are constructive, but low-liquidity and reprint risk make this a selective market rather than a broad repricing day.',
   marketRead: 'The tape is being pulled by spoiler and precon attention, collector treatments, and old-print scarcity. The strongest moves are real tracker signals, but several are thinly traded variants where percentage change can outrun underlying depth.',
-  policyWatch: 'The next Banned & Restricted announcement is scheduled for October 12, 2026. Keep ban-watch names separate from confirmed price evidence.',
+  policyWatch: 'Historical policy watch: the October 12, 2026 Banned & Restricted date referenced in this October 7 brief has passed. This snapshot does not confirm the announcement outcome; check the official list before treating any policy catalyst as current.',
   supplyWatch: 'Festival in a Box: Atlanta 2026 and Mystery Booster Commander Edition keep reprint and supply expectations in the foreground.',
   confirmedBullish: [
     { name: 'Sonic Screwdriver', setCode: 'who', setName: 'Universes Beyond: Doctor Who', priceLabel: '$2.63 vs $1.03', changePercent: 155.3, thesis: 'Commander, casual, and collector demand.', liquidityNote: 'Low-price card; thin inventory can exaggerate the move.', kind: 'confirmed-bullish' },

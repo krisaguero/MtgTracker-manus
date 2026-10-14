@@ -16,7 +16,9 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
 
-  const isPositive = mover.percentChange >= 0;
+  const isPositive = mover.percentChange > 0;
+  const isNegative = mover.percentChange < 0;
+  const changeTone = isPositive ? 'text-emerald-600 dark:text-emerald-400' : isNegative ? 'text-destructive' : 'text-muted-foreground';
   const cleanName = mover.name.replace(/\s*\([^)]*\)/g, '').trim();
   const scryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&set=${encodeURIComponent(mover.setCode.toLowerCase())}&format=image&version=normal`;
   const isWatched = isMarketCardWatched(mover, watchlist);
@@ -24,7 +26,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
   return (
     <div 
       onClick={() => onSelect(mover)}
-      className={`flex flex-col border-2 bg-card p-5 transition-colors hover:border-primary cursor-pointer group/card ${isPositive ? 'border-amber-500/60' : 'border-border'}`}
+      className="group/card flex cursor-pointer flex-col border border-border bg-card p-4 transition-colors hover:border-primary sm:p-5"
     >
       {/* Category & Catalyst / Watchlist Badge Header - Completely Outside Image */}
       <div className="flex items-center justify-between mb-3 gap-2">
@@ -84,25 +86,25 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
         <div>
           <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground uppercase mb-1">
             <span>{mover.setCode.toUpperCase()} · {mover.rarity}</span>
-            <span className={`font-bold flex items-center gap-0.5 ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
-              {isPositive ? <TrendingUp className="h-3 w-3 inline" /> : <TrendingDown className="h-3 w-3 inline" />}
-              {isPositive ? `+${mover.percentChange}%` : `${mover.percentChange}%`}
+            <span className={`flex items-center gap-0.5 font-bold ${changeTone}`}>
+              {isPositive ? <TrendingUp className="h-3 w-3 inline" /> : isNegative ? <TrendingDown className="h-3 w-3 inline" /> : null}
+              {mover.percentChange > 0 ? `+${mover.percentChange}%` : `${mover.percentChange}%`}
             </span>
           </div>
           <h3 className="font-bold text-sm leading-snug group-hover/card:text-primary transition-colors line-clamp-1" title={mover.name}>{mover.name}</h3>
           <p className="mt-1 font-mono text-[11px] text-muted-foreground line-clamp-2">{mover.thesis}</p>
-          {mover.pricingDate && <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">Pricing date: {mover.pricingDate}</p>}
+          {mover.pricingDate && <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">Related report date: {mover.pricingDate}</p>}
         </div>
 
         <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
           <div>
             <span className="font-mono text-[10px] text-muted-foreground uppercase block">Current USD</span>
-            <span className="font-mono text-base font-extrabold text-primary">${mover.currentUsd.toFixed(2)}</span>
+            <span className="font-mono text-base font-extrabold text-foreground">${mover.currentUsd.toFixed(2)}</span>
           </div>
           <div className="text-right">
             <span className="font-mono text-[10px] text-muted-foreground uppercase block">Change</span>
-            <span className={`font-mono text-xs font-bold ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
-              {isPositive ? `+$${mover.changeUsd.toFixed(2)}` : `-$${Math.abs(mover.changeUsd).toFixed(2)}`}
+            <span className={`font-mono text-xs font-bold ${changeTone}`}>
+              {mover.changeUsd > 0 ? `+$${mover.changeUsd.toFixed(2)}` : mover.changeUsd < 0 ? `-$${Math.abs(mover.changeUsd).toFixed(2)}` : '$0.00'}
             </span>
           </div>
         </div>
@@ -111,7 +113,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
             Card profile <ExternalLink className="h-3 w-3" />
           </Link>
           <span className="text-muted-foreground">·</span>
-          <Link href={marketMoverArticleHref(cleanName)} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-500 hover:underline">
+          <Link href={marketMoverArticleHref(cleanName)} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-primary hover:underline">
             <Flame className="h-3 w-3" /> Mover post
           </Link>
           {mover.pricingReportHref && <><span className="text-muted-foreground">·</span><Link href={mover.pricingReportHref} onClick={(e) => e.stopPropagation()} className="font-mono text-[10px] font-bold uppercase text-primary hover:underline">Dated report</Link></>}

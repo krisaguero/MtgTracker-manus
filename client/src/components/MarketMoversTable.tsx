@@ -1,5 +1,5 @@
 /* Design reminder: hard-edged market intelligence table; dense editorial data view with square controls, clear positive/negative signals, and responsive horizontal scrolling. */
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowDown, ArrowUp, ArrowUpDown, ExternalLink, Filter, Search, Star, X } from 'lucide-react';
 import type { MoverCard } from '@/lib/dailyMoversEngine';
 import { isMarketCardWatched, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
@@ -27,7 +27,7 @@ function formatUsd(value: number) {
 }
 
 function percentLabel(value: number) {
-  return `${value >= 0 ? '+' : ''}${value.toFixed(1)}%`;
+  return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`;
 }
 
 function PriceTrendSparkline({ mover }: { mover: MoverCard }) {
@@ -56,8 +56,10 @@ function PriceTrendSparkline({ mover }: { mover: MoverCard }) {
     : height - padding - ((value - min) / (max - min)) * (height - padding * 2);
   const xFor = (index: number) => padding + (index / (history.length - 1)) * (width - padding * 2);
   const points = history.map((value, index) => `${xFor(index)},${yFor(value)}`).join(' ');
-  const isPositive = history[history.length - 1] >= history[0];
-  const stroke = isPositive ? '#059669' : '#dc2626';
+  const trend = history[history.length - 1] - history[0];
+  const isPositive = trend > 0;
+  const isNegative = trend < 0;
+  const stroke = isPositive ? '#059669' : isNegative ? '#dc2626' : '#64748b';
   const first = history[0] ?? mover.previousUsd;
   const last = history[history.length - 1] ?? mover.currentUsd;
 
@@ -68,8 +70,8 @@ function PriceTrendSparkline({ mover }: { mover: MoverCard }) {
         <polyline points={points} fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
         <circle cx={xFor(history.length - 1)} cy={yFor(last)} r="2.5" fill={stroke} />
       </svg>
-      <span className={`font-mono text-[9px] font-bold uppercase tracking-wider ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`} aria-hidden="true">
-        {isPositive ? 'Rising' : 'Falling'} · {percentLabel(mover.percentChange)}
+      <span className={`font-mono text-[9px] font-bold uppercase tracking-wider ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : isNegative ? 'text-destructive' : 'text-muted-foreground'}`} aria-hidden="true">
+        {isPositive ? 'Rising' : isNegative ? 'Falling' : 'Flat'} · {percentLabel(mover.percentChange)}
       </span>
     </div>
   );
@@ -143,6 +145,19 @@ export function MarketMoversTable({
   const [minimumMove, setMinimumMove] = useState('0');
   const [sortKey, setSortKey] = useState<SortKey>('percentChange');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
+  const [desktopViewport, setDesktopViewport] = useState(false);
+  const [advancedFiltersOpen, setAdvancedFiltersOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const syncViewport = () => {
+      setDesktopViewport(media.matches);
+      setAdvancedFiltersOpen(media.matches);
+    };
+    syncViewport();
+    media.addEventListener('change', syncViewport);
+    return () => media.removeEventListener('change', syncViewport);
+  }, []);
 
   const categories = useMemo(() => Array.from(new Set(data.map((item) => item.category))).sort(), [data]);
   const sources = useMemo(() => Array.from(new Set(data.map((item) => item.signalSource))).sort(), [data]);
@@ -179,14 +194,23 @@ export function MarketMoversTable({
   }
 
   const hasFilters = Boolean(cardNameQuery || searchQuery || upwardTrendOnly || categoryFilter !== 'all' || sourceFilter !== 'all' || rarityFilter !== 'all' || minimumMove !== '0');
+  const activeFilterLabels = [
+    cardNameQuery && `Card: ${cardNameQuery}`,
+    searchQuery && `Search: ${searchQuery}`,
+    upwardTrendOnly && 'Upward trend only',
+    categoryFilter !== 'all' && `Category: ${categoryFilter.replace(/-/g, ' ')}`,
+    sourceFilter !== 'all' && `Source: ${sourceFilter}`,
+    rarityFilter !== 'all' && `Rarity: ${rarityFilter}`,
+    minimumMove !== '0' && `Move ≥ ${minimumMove}%`,
+  ].filter((label): label is string => Boolean(label));
   const upwardTrendCount = useMemo(() => data.filter(hasUpwardPriceTrend).length, [data]);
-  const headingBorder = accent === 'amber' ? 'border-amber-500/40' : 'border-primary/40';
+  const headingBorder = accent === 'amber' ? 'border-amber-500/40' : 'border-border';
   const labelColor = accent === 'amber' ? 'text-amber-700 dark:text-amber-300' : 'text-primary';
   const buttonActive = accent === 'amber' ? 'border-amber-500 bg-amber-500 text-black' : 'border-primary bg-primary text-primary-foreground';
 
   return (
-    <section className={`border-2 ${headingBorder} bg-card`} aria-labelledby={`${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-heading`} aria-busy={isLoading}>
-      <div className="border-b border-border p-5 sm:p-6">
+    <section className={`border ${headingBorder} bg-card`} aria-labelledby={`${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-heading`} aria-busy={isLoading}>
+      <div className="border-b border-border bg-muted/20 p-4 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className={`font-mono text-[11px] font-bold uppercase tracking-[0.2em] ${labelColor}`}>Market data table</p>
@@ -199,7 +223,17 @@ export function MarketMoversTable({
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
+        <details
+          className="mt-5 border border-border md:border-0"
+          open={desktopViewport || advancedFiltersOpen}
+          onToggle={(event) => { if (!desktopViewport) setAdvancedFiltersOpen(event.currentTarget.open); }}
+        >
+          <summary className="flex cursor-pointer items-center justify-between gap-3 bg-muted/30 px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-wider text-foreground md:hidden">
+            <span className="inline-flex items-center gap-2"><Filter className="h-3.5 w-3.5 text-primary" /> Advanced filters{hasFilters ? ` · ${activeFilterLabels.length} active` : ''}</span>
+            <span aria-hidden="true">⌄</span>
+          </summary>
+          <div className="p-3 md:p-0">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
           <label className="flex h-10 items-center gap-2 border border-border bg-background px-3 focus-within:border-primary lg:col-span-2">
             <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
             <input
@@ -260,8 +294,14 @@ export function MarketMoversTable({
               <option value="100">100%</option>
             </select>
           </label>
-          {hasFilters && <button type="button" onClick={resetFilters} className={`border px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wider ${buttonActive}`}>Reset filters</button>}
         </div>
+          </div>
+        </details>
+        {hasFilters && <div className="mt-3 flex flex-wrap items-center gap-2" aria-label="Active filters">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Active filters</span>
+          {activeFilterLabels.map((label) => <span key={label} className="border border-border bg-background px-2 py-1 font-mono text-[10px] uppercase text-foreground">{label}</span>)}
+          <button type="button" onClick={resetFilters} className={`border px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider ${buttonActive}`}>Reset</button>
+        </div>}
       </div>
 
       <div className="border-y border-border bg-background/70 p-4 sm:p-5" role="search" aria-label={`Quick card search for ${title}`}>
@@ -285,7 +325,33 @@ export function MarketMoversTable({
         </div>
       </div>
 
-      <div className="overflow-x-auto">
+      <ul className="grid gap-3 p-3 sm:p-4 md:hidden" aria-label={`${title} mobile cards`} aria-live="polite">
+        {!isLoading && filteredRows.map((mover) => {
+          const isPositive = mover.percentChange > 0;
+          const moveColor = isPositive ? 'text-emerald-600 dark:text-emerald-400' : mover.percentChange < 0 ? 'text-destructive' : 'text-muted-foreground';
+          const watched = isMarketCardWatched(mover, watchlist);
+          return <li key={`mobile-${mover.id}-${mover.name}`} className="border border-border bg-background p-3">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h3 className="break-words font-bold leading-snug">{mover.name}</h3>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{mover.setName} · {mover.setCode}</p>
+              </div>
+              <button type="button" onClick={() => onToggleWatchlist?.(mover)} disabled={!onToggleWatchlist} aria-pressed={watched} aria-label={`${watched ? 'Remove' : 'Add'} ${mover.name} ${watched ? 'from' : 'to'} watchlist`} className={`inline-flex h-8 w-8 shrink-0 items-center justify-center border ${watched ? 'border-amber-500 bg-amber-500/15 text-amber-700' : 'border-border text-muted-foreground'}`}>
+                <Star className="h-4 w-4" fill={watched ? 'currentColor' : 'none'} aria-hidden="true" />
+              </button>
+            </div>
+            <dl className="mt-3 grid grid-cols-2 gap-3 border-y border-border py-2.5 font-mono">
+              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Current</dt><dd className="mt-0.5 text-base font-extrabold text-foreground">{formatUsd(mover.currentUsd)}</dd></div>
+              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Change</dt><dd className={`mt-0.5 text-sm font-extrabold ${moveColor}`}>{percentLabel(mover.percentChange)} <span className="text-[10px]">({mover.changeUsd >= 0 ? '+' : '−'}{formatUsd(Math.abs(mover.changeUsd))})</span></dd></div>
+            </dl>
+            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[10px] uppercase text-muted-foreground">
+              <span>Previous {formatUsd(mover.previousUsd)}</span><span>{mover.rarity}</span>{showCategory && <span>{mover.category.replace(/-/g, ' ')}</span>}
+            </div>
+          </li>;
+        })}
+      </ul>
+
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full min-w-[980px] border-collapse text-left" aria-label={title}>
           <thead className="bg-background">
             <tr className="border-b border-border">
@@ -331,7 +397,8 @@ export function MarketMoversTable({
                 <td className="px-4 py-4"><span className="block h-8 w-24 market-mover-skeleton" aria-hidden="true" /></td>
               </tr>
             )) : filteredRows.map((mover) => {
-              const isPositive = mover.percentChange >= 0;
+              const isPositive = mover.percentChange > 0;
+              const isNegative = mover.percentChange < 0;
               const oldSchool = isOldSchoolMover(mover);
               return (
                 <tr key={`${mover.id}-${mover.name}`} className="market-mover-row-enter border-b border-border/80 transition-colors hover:bg-primary/5">
@@ -350,16 +417,16 @@ export function MarketMoversTable({
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
-                      {oldSchool && <span className="border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">OS</span>}
+                      {oldSchool && <span className="border border-border bg-muted px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-muted-foreground">OS</span>}
                       <span className="font-bold text-sm">{mover.name}</span>
                     </div>
                     <p className="mt-1 max-w-[280px] truncate text-[11px] text-muted-foreground">{mover.thesis}</p>
                   </td>
                   <td className="px-4 py-3 font-mono text-xs font-bold uppercase">{mover.setCode}</td>
-                  <td className="px-4 py-3 font-mono text-sm font-bold text-primary">{formatUsd(mover.currentUsd)}</td>
+                  <td className="px-4 py-3 font-mono text-sm font-bold text-foreground">{formatUsd(mover.currentUsd)}</td>
                   <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{formatUsd(mover.previousUsd)}</td>
-                  <td className={`px-4 py-3 font-mono text-xs font-bold ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>{isPositive ? '+' : ''}{formatUsd(mover.changeUsd)}</td>
-                  <td className={`px-4 py-3 font-mono text-sm font-extrabold ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>{percentLabel(mover.percentChange)}</td>
+                  <td className={`px-4 py-3 font-mono text-xs font-bold ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : isNegative ? 'text-destructive' : 'text-muted-foreground'}`}>{mover.changeUsd > 0 ? '+' : ''}{formatUsd(mover.changeUsd)}</td>
+                  <td className={`px-4 py-3 font-mono text-sm font-extrabold ${isPositive ? 'text-emerald-600 dark:text-emerald-400' : isNegative ? 'text-destructive' : 'text-muted-foreground'}`}>{percentLabel(mover.percentChange)}</td>
                   <td className="px-4 py-3 font-mono text-[10px] font-bold uppercase text-muted-foreground">{mover.rarity}</td>
                   {showCategory && <td className="px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{mover.category.replace(/-/g, ' ')}</td>}
                   <td className="px-4 py-3 text-xs text-muted-foreground">{mover.signalSource}</td>
@@ -379,7 +446,7 @@ export function MarketMoversTable({
       {!isLoading && filteredRows.length === 0 && <div className="border-t border-border p-10 text-center text-sm text-muted-foreground">{emptyMessage}</div>}
       {isLoading && <div className="border-t border-border px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground" role="status">Loading Parquet market data…</div>}
       <div className="border-t border-border px-5 py-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground sm:px-6">
-        Sort any column · filter by source, rarity, category, or absolute move · scroll horizontally on mobile
+        Sort any column · filter by source, rarity, category, or absolute move · mobile uses stacked mover cards
       </div>
     </section>
   );
