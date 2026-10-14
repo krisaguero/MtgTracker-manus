@@ -26,13 +26,14 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(navigation).toContain("event.key === 'Escape'");
   });
 
-  it("exposes the complete local precon index in a separate on-demand homepage view", () => {
+  it("exposes the single-source local decklist archive in a separate on-demand homepage view", () => {
     const home = read("client/src/pages/Home.tsx");
     expect(home).toContain("type CatalogView = 'sets' | 'precons'");
     expect(home).toContain(
       "buildHomePreconIndex(localDecklists ?? [], precons, sets)"
     );
-    expect(home).toContain("All Commander precons");
+    expect(home).toContain("All local Commander decklists");
+    expect(home).toContain("Scryfall-only product listings are intentionally excluded");
     expect(home).toContain("Card artwork loads as you scroll.");
     expect(home).toContain("currentPreconsPage.items.map");
     expect(home).toContain("currentSetsPage.items.map");

@@ -33,29 +33,8 @@ export interface PreconDeck {
   mainCards?: RawDeckCard[];
 }
 
-function normalizedName(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-}
-
 function scryfallNamedImage(name: string) {
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
-}
-
-function localDeckFor(setCode: string, productName: string, decklists: RawCommanderDeck[]) {
-  const normalizedProduct = normalizedName(productName);
-  return decklists.find((deck) => {
-    if (deck.set_code.toLowerCase() !== setCode.toLowerCase()) return false;
-    const normalizedDeck = normalizedName(deck.name);
-    return normalizedDeck === normalizedProduct || normalizedProduct.includes(normalizedDeck) || normalizedDeck.includes(normalizedProduct);
-  });
-}
-
-function matchesLocalDeckName(productName: string, decklists: RawCommanderDeck[]) {
-  const normalizedProduct = normalizedName(productName);
-  return decklists.some((deck) => {
-    const normalizedDeck = normalizedName(deck.name);
-    return normalizedDeck === normalizedProduct || normalizedProduct.includes(normalizedDeck) || normalizedDeck.includes(normalizedProduct);
-  });
 }
 
 export function commanderProductCodesForParent(parentSetCode: string, allSets: ScryfallSet[]): string[] {
@@ -91,30 +70,22 @@ function mapLocalDeck(deck: RawCommanderDeck): PreconDeck {
   };
 }
 
-function mergeLocalDecklistsIntoPrecons(
-  preconMap: Map<string, PreconDeck[]>,
-  allSets: ScryfallSet[],
-  decklists: RawCommanderDeck[],
-): Map<string, PreconDeck[]> {
-  if (decklists.length === 0 || allSets.length === 0) return preconMap;
+function buildLocalPreconIndex(allSets: ScryfallSet[], decklists: RawCommanderDeck[]): Map<string, PreconDeck[]> {
+  if (decklists.length === 0 || allSets.length === 0) return new Map();
 
-  const mainSets = allSets
+  const recentMainSets = allSets
     .filter((set) => set.set_type === 'expansion' || set.set_type === 'core' || set.set_type === 'masters')
     .filter((set) => set.released_at)
     .sort((a, b) => new Date(b.released_at).getTime() - new Date(a.released_at).getTime())
     .slice(0, 60);
-  const merged = new Map(preconMap);
+  const index = new Map<string, PreconDeck[]>();
 
-  for (const set of mainSets) {
+  for (const set of recentMainSets) {
     const localDecks = localDecksForParentSet(set.code, allSets, decklists);
-    if (localDecks.length === 0) continue;
-
-    const existingProducts = merged.get(set.code) || [];
-    const unmatchedLiveProducts = existingProducts.filter((product) => !matchesLocalDeckName(product.name, localDecks));
-    merged.set(set.code, [...localDecks.map(mapLocalDeck), ...unmatchedLiveProducts]);
+    if (localDecks.length > 0) index.set(set.code, localDecks.map(mapLocalDeck));
   }
 
-  return merged;
+  return index;
 }
 
 export function useScryfallSets() {
@@ -125,9 +96,7 @@ export function useScryfallSets() {
   const [localDecklistError, setLocalDecklistError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [enrichingPrecons, setEnrichingPrecons] = useState(false);
   const localDecklistsRef = useRef<RawCommanderDeck[] | null>(null);
-  const preconsRef = useRef<Map<string, PreconDeck[]>>(new Map());
   const loadingLocalArchiveRef = useRef(false);
   const mountedRef = useRef(true);
 
@@ -156,9 +125,8 @@ export function useScryfallSets() {
 
   useEffect(() => {
     if (localDecklists === null || allSets.length === 0) return;
-    const merged = mergeLocalDecklistsIntoPrecons(preconsRef.current, allSets, localDecklists);
-    preconsRef.current = merged;
-    setPrecons(merged);
+    // The archive is the single homepage source for precon counts and values; do not crawl each set's Scryfall cards.
+    setPrecons(buildLocalPreconIndex(allSets, localDecklists));
   }, [allSets, localDecklists]);
 
   useEffect(() => {
@@ -170,17 +138,16 @@ export function useScryfallSets() {
         setLoading(true);
         setError(null);
 
-        // Keep the initial catalog request bounded, but do not abort deferred product enrichment.
-        const initialController = new AbortController();
-        const initialTimeout = window.setTimeout(() => initialController.abort(), 12000);
+        const timeout = window.setTimeout(() => controller.abort(), 12000);
         let setsResponse: Response;
         try {
-          setsResponse = await fetch('https://api.scryfall.com/sets', { signal: initialController.signal });
+          setsResponse = await fetch('https://api.scryfall.com/sets', { signal: controller.signal });
         } finally {
-          window.clearTimeout(initialTimeout);
+          window.clearTimeout(timeout);
         }
         if (!setsResponse.ok) throw new Error('Failed to fetch sets');
         const setsData = await setsResponse.json();
+        if (!Array.isArray(setsData.data)) throw new Error('Invalid Scryfall set catalog response');
 
         const allSets = setsData.data as ScryfallSet[];
         const mainSets = allSets
@@ -193,93 +160,8 @@ export function useScryfallSets() {
         setAllSets(allSets);
         setSets(mainSets);
         setLoading(false);
-
-        // Do not import the full local archive while rendering the ordinary recent-set view.
-        const decklists = localDecklistsRef.current ?? [];
-        const publishPrecons = (nextPrecons: Map<string, PreconDeck[]>) => {
-          const merged = mergeLocalDecklistsIntoPrecons(nextPrecons, allSets, localDecklistsRef.current ?? []);
-          preconsRef.current = merged;
-          setPrecons(merged);
-        };
-
-        const preconMap = new Map<string, PreconDeck[]>();
-        // Attach local Commander products when the archive was requested before the sets response completed.
-        for (const set of mainSets) {
-          const localDecks = localDecksForParentSet(set.code, allSets, decklists);
-          if (localDecks.length > 0) {
-            preconMap.set(set.code, localDecks.map(mapLocalDeck));
-          }
-        }
-
-        publishPrecons(preconMap);
-        setEnrichingPrecons(true);
-
-        // Keep the homepage responsive while resolving non-local products in parallel.
-        const unresolvedSets = mainSets.filter((set) => !preconMap.has(set.code));
-        let nextSetIndex = 0;
-        const enrichNextSet = async () => {
-          while (!cancelled) {
-            const set = unresolvedSets[nextSetIndex++];
-            if (!set) return;
-            try {
-              const productSetCodes = commanderProductCodesForParent(set.code, allSets);
-              const resultGroups = await Promise.all(productSetCodes.map(async (productSetCode) => {
-                const query = `is:deck set:${productSetCode}`;
-                const response = await fetch(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&unique=prints`, { signal: controller.signal });
-                if (!response.ok) return [] as Array<{ card: Record<string, any>; productSetCode: string }>;
-                const data = await response.json();
-                return (data.data as Array<Record<string, any>>).map((card) => ({ card, productSetCode }));
-              }));
-              const seenProducts = new Set<string>();
-              const preconDecks = resultGroups
-                .reduce<Array<{ card: Record<string, any>; productSetCode: string }>>((allCards, group) => allCards.concat(group), [])
-                .filter(({ card }) => card.type_line && (card.type_line.includes('Deck') || card.name.includes('Commander') || card.name.includes('Precon')))
-                .map(({ card, productSetCode }) => {
-                  const localDeck = localDeckFor(productSetCode, card.name, decklists);
-                  const productAsset = productAssetFor(card.name as string);
-                  return {
-                    id: card.id as string,
-                    name: card.name as string,
-                    set_code: productSetCode,
-                    colors: card.color_identity || card.colors || [],
-                    card_count: card.card_count || 100,
-                    image_uris: card.image_uris || { normal: scryfallNamedImage(localDeck?.commander?.[0]?.name || card.name) },
-                    productImageUrl: productAsset?.imageUrl,
-                    productImageSourceUrl: productAsset?.sourceUrl,
-                    productImageSourceLabel: productAsset?.sourceLabel,
-                    scryfall_uri: card.scryfall_uri,
-                    hasDecklist: Boolean(localDeck),
-                    synopsis: localDeck?.synopsis || card.flavor_text || 'Commander precon release product.',
-                    approxValue: localDeck?.approxValue,
-                    commanderCards: localDeck?.commander,
-                    mainCards: localDeck?.cards,
-                  };
-                })
-                .filter((deck) => {
-                  const productKey = `${deck.set_code}:${normalizedName(deck.name)}`;
-                  if (seenProducts.has(productKey)) return false;
-                  seenProducts.add(productKey);
-                  return true;
-                });
-
-              if (preconDecks.length > 0) {
-                preconMap.set(set.code, preconDecks);
-                if (!cancelled) publishPrecons(preconMap);
-              }
-            } catch {
-              // Keep any available local and previously resolved products when one set fails.
-            }
-          }
-        };
-        await Promise.all(Array.from({ length: Math.min(4, unresolvedSets.length) }, () => enrichNextSet()));
-
-        if (!cancelled) {
-          setEnrichingPrecons(false);
-          publishPrecons(preconMap);
-        }
       } catch (err) {
         if (!cancelled) {
-          setEnrichingPrecons(false);
           const timedOut = err instanceof DOMException && err.name === 'AbortError';
           setError(timedOut ? 'The Scryfall set catalog took too long to respond. Please retry.' : err instanceof Error ? err.message : 'Failed to load sets');
           setLoading(false);
@@ -287,7 +169,7 @@ export function useScryfallSets() {
       }
     }
 
-    loadSets();
+    void loadSets();
 
     return () => {
       cancelled = true;
@@ -295,5 +177,5 @@ export function useScryfallSets() {
     };
   }, []);
 
-  return { sets, precons, localDecklists, localDecklistError, loadLocalDecklists, loading, enrichingPrecons, error };
+  return { sets, precons, localDecklists, localDecklistError, loadLocalDecklists, loading, error };
 }

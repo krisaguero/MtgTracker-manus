@@ -72,7 +72,7 @@ function readStoredStringList(key: string): string[] {
 }
 
 export default function Home() {
-  const { sets, precons, localDecklists, localDecklistError, loadLocalDecklists, loading, enrichingPrecons, error } = useScryfallSets();
+  const { sets, precons, localDecklists, localDecklistError, loadLocalDecklists, loading, error } = useScryfallSets();
   const [catalogView, setCatalogView] = useState<CatalogView>('sets');
   const [query, setQuery] = useState('');
   const [setType, setSetType] = useState<SetTypeFilter>('all');
@@ -220,7 +220,7 @@ export default function Home() {
           </div>
           <div role="tablist" aria-label="Homepage catalog" className="inline-flex border-2 border-border bg-card p-1">
             <button type="button" role="tab" aria-selected={catalogView === 'sets'} aria-controls="sets-catalog" onClick={() => { setCatalogView('sets'); setSetsPage(1); }} className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === 'sets' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>Sets</button>
-            <button type="button" role="tab" aria-selected={catalogView === 'precons'} aria-controls="precon-catalog" onClick={() => { setCatalogView('precons'); setPreconsPage(1); }} className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === 'precons' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>All precons{localDecklists !== null && !loading && !enrichingPrecons && !error ? <span className="ml-1 opacity-80">{indexedPrecons.length}</span> : null}</button>
+            <button type="button" role="tab" aria-selected={catalogView === 'precons'} aria-controls="precon-catalog" onClick={() => { setCatalogView('precons'); setPreconsPage(1); }} className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === 'precons' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>All precons{localDecklists !== null ? <span className="ml-1 opacity-80">{indexedPrecons.length}</span> : null}</button>
           </div>
         </div>
 
@@ -238,7 +238,7 @@ export default function Home() {
                   filteredPrecons.length,
                   indexedPrecons.length,
                   localDecklists.length,
-                  error ? 'unavailable' : loading || enrichingPrecons ? 'loading' : 'complete',
+                  error ? 'unavailable' : loading ? 'loading' : 'available',
                 )}
           </p>
         </div>
@@ -246,7 +246,7 @@ export default function Home() {
         {catalogView === 'precons' ? (
           <section id="precon-catalog" role="tabpanel" aria-label="All indexed Commander precons">
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
-              <div><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Complete indexed archive</p><h2 className="mt-1 text-2xl font-black tracking-tight">All Commander precons</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Every local decklist is listed here, including older releases outside the recent-set timeline. Live Scryfall-only catalog products are included when available, but are counted separately from decklists and excluded from card-list equity. Card artwork loads as you scroll.</p></div>
+              <div><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Local decklist archive</p><h2 className="mt-1 text-2xl font-black tracking-tight">All local Commander decklists</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">This view uses the local Commander decklist archive as its single product source, so the count and card-list equity share the same scope. Scryfall-only product listings are intentionally excluded. Card artwork loads as you scroll.</p></div>
               <a href="/precons" className="font-mono text-xs font-black uppercase tracking-wider text-primary hover:underline">Open full precon library →</a>
             </div>
             <p aria-label="Precon archive valuation summary" aria-live="polite" className="mb-5 border-l-4 border-primary bg-primary/5 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
@@ -278,7 +278,7 @@ export default function Home() {
             {!loading && !error && <div className="space-y-6">
               <div className="border-2 border-border bg-card p-4 shadow-sm sm:p-6">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                  <div><h2 className="text-lg font-black uppercase tracking-tight">Chronological set &amp; precon hub</h2><p className="mt-1 text-sm text-muted-foreground">Browse the 60 most recent main-set releases. Use <strong className="text-foreground">All precons</strong> above for the complete Commander archive.</p></div>
+                  <div><h2 className="text-lg font-black uppercase tracking-tight">Chronological set &amp; precon hub</h2><p className="mt-1 text-sm text-muted-foreground">Browse the 60 most recent main-set releases. Use <strong className="text-foreground">All precons</strong> above for the local Commander decklist archive.</p></div>
                   <div className="flex flex-wrap items-center gap-3">
                     <select aria-label="Filter sets by type" value={setType} onChange={(event) => { setSetType(event.target.value as SetTypeFilter); setSetsPage(1); }} className="border border-border bg-background px-3 py-2 font-mono text-xs font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary">
                       {Object.entries(SET_TYPE_LABELS).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
