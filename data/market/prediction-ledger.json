@@ -1,7 +1,57 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T22:35:08.341Z",
+  "updatedAt": "2026-10-14T13:28:16.619Z",
   "records": [
+    {
+      "id": "2026-10-14-commander-demand:1:eld:161",
+      "dateKey": "2026-10-14",
+      "postId": "2026-10-14-commander-demand",
+      "prompt": "Assess The Great Henge (ELD 161) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "entryUsd": 63.28,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-14",
+        "evaluationDate": "2026-10-28"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-14-commander-demand:2:plst:BLC-277",
+      "dateKey": "2026-10-14",
+      "postId": "2026-10-14-commander-demand",
+      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "collectorNumber": "BLC-277",
+      "entryUsd": 2.81,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-14",
+        "evaluationDate": "2026-10-28"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-13-bulk-collection-triage:1:m15:25",
       "dateKey": "2026-10-13",
