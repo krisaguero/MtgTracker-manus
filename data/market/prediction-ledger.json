@@ -1,7 +1,182 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T13:28:16.619Z",
+  "updatedAt": "2026-10-15T13:12:23.618Z",
   "records": [
+    {
+      "id": "2026-10-15-constructed-format-watch:1:all:28",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Force of Will (ALL 28) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Force of Will",
+      "setCode": "all",
+      "collectorNumber": "28",
+      "entryUsd": 66.8,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:2:eld:161",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess The Great Henge (ELD 161) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "entryUsd": 63.28,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:3:ppdsk:202p",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Tyvar, the Pummeler (PPDSK 202p) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "collectorNumber": "202p",
+      "entryUsd": 7.26,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:4:ppblb:49p",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Eluge, the Shoreless Sea (PPBLB 49p) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Eluge, the Shoreless Sea",
+      "setCode": "ppblb",
+      "collectorNumber": "49p",
+      "entryUsd": 5.23,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:5:mh2:267",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Counterspell (MH2 267) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "entryUsd": 3.29,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:6:plst:BLC-277",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "collectorNumber": "BLC-277",
+      "entryUsd": 2.81,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-15-constructed-format-watch:7:plst:E01-54",
+      "dateKey": "2026-10-15",
+      "postId": "2026-10-15-constructed-format-watch",
+      "prompt": "Assess Lightning Bolt (PLST E01-54) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "collectorNumber": "E01-54",
+      "entryUsd": 1.08,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-14-commander-demand:1:eld:161",
       "dateKey": "2026-10-14",

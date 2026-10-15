@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "ready",
-  "generatedAt": "2026-10-14T13:28:13.863Z",
+  "generatedAt": "2026-10-15T13:12:20.318Z",
   "marketScope": "Curated market-signal matrix and tracked Commander deck printings; not the complete MTG singles universe.",
   "sources": [
     "MTGJSON set data",

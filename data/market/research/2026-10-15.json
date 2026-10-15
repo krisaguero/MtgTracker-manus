@@ -1,0 +1,229 @@
+{
+  "id": "2026-10-15-constructed-format-watch",
+  "dateKey": "2026-10-15",
+  "slug": "constructed-format-watch",
+  "title": "Constructed Format Watch · 2026-10-15",
+  "label": "Constructed Format Watch",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "generatedAt": "2026-10-15T08:00:00.000Z",
+  "summary": "Constructed Format Watch · 2026-10-15. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is Force of Will (ALL) at $66.80 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Constructed Format Watch · 2026-10-15. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is Force of Will (ALL) at $66.80 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [
+    {
+      "rank": 1,
+      "name": "Force of Will",
+      "setCode": "all",
+      "setName": "ALL",
+      "collectorNumber": "28",
+      "currentUsd": 66.8,
+      "previousUsd": 66.8,
+      "percentChange": 0,
+      "category": "foil-multipliers",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "setName": "ELD",
+      "collectorNumber": "161",
+      "currentUsd": 63.28,
+      "previousUsd": 63.28,
+      "percentChange": 0,
+      "category": "commander-picks",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "setName": "PPDSK",
+      "collectorNumber": "202p",
+      "currentUsd": 7.26,
+      "previousUsd": 7.26,
+      "percentChange": 0,
+      "category": "high-spikes",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Eluge, the Shoreless Sea",
+      "setCode": "ppblb",
+      "setName": "PPBLB",
+      "collectorNumber": "49p",
+      "currentUsd": 5.23,
+      "previousUsd": 5.23,
+      "percentChange": 0,
+      "category": "high-spikes",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "setName": "MH2",
+      "collectorNumber": "267",
+      "currentUsd": 3.29,
+      "previousUsd": 3.29,
+      "percentChange": 0,
+      "category": "reprint-squashes",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "setName": "PLST",
+      "collectorNumber": "BLC-277",
+      "currentUsd": 2.81,
+      "previousUsd": 2.81,
+      "percentChange": 0,
+      "category": "commander-picks",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "setName": "PLST",
+      "collectorNumber": "E01-54",
+      "currentUsd": 1.08,
+      "previousUsd": 1.08,
+      "percentChange": 0,
+      "category": "pauper-gems",
+      "sourceCount": 2,
+      "confidence": "Unverified",
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+      "verifiedAt": "2026-10-15T13:12:20.318Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-15",
+        "evaluationDate": "2026-10-29"
+      }
+    }
+  ],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}

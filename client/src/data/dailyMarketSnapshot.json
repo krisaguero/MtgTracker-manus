@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T13:28:13.863Z",
+  "generatedAt": "2026-10-15T13:12:20.318Z",
   "sources": [
     "MTGJSON set data",
     "MTGJSON paper price data",
@@ -30,7 +30,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "0a573387-0cbb-55f0-8b82-f300660b58eb",
@@ -53,7 +53,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "07ee5912-3b6c-5b8c-aed8-f57a3648cebf",
@@ -76,7 +76,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "62c0a79e-5ad3-5061-a8b7-c5733149b66f",
@@ -99,7 +99,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "40470d4d-f834-59ae-9af3-de01926a221a",
@@ -122,7 +122,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "0e19e45f-7b5d-52bf-948c-9a86cb8be6dd",
@@ -145,7 +145,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "d80c98f8-3748-5ab9-8aba-4e04bd450c76",
@@ -168,7 +168,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "d0d8e204-7951-522c-80b9-a39c995bbc8a",
@@ -191,7 +191,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     },
     {
       "id": "2d6e2203-ecef-51c4-be99-66465c56ecee",
@@ -214,7 +214,7 @@
       "reason": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-14T13:28:13.863Z"
+      "lastUpdated": "2026-10-15T13:12:20.318Z"
     }
   ],
   "warnings": [
