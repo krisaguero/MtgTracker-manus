@@ -1,6 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import type { RawCommanderDeck, RawDeckCard } from '@/data/commanderDecklistsData';
-import { productAssetFor } from '@/data/preconProductAssets';
+import { useCallback, useEffect, useRef, useState } from "react";
+import type {
+  RawCommanderDeck,
+  RawDeckCard,
+} from "@/data/commanderDecklistsData";
+import { loadLocalCommanderArchive } from "@/data/localCommanderArchive";
+import { productAssetFor } from "@/data/preconProductAssets";
 
 export interface ScryfallSet {
   id: string;
@@ -37,17 +41,32 @@ function scryfallNamedImage(name: string) {
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
 }
 
-export function commanderProductCodesForParent(parentSetCode: string, allSets: ScryfallSet[]): string[] {
+export function commanderProductCodesForParent(
+  parentSetCode: string,
+  allSets: ScryfallSet[]
+): string[] {
   const normalizedParentCode = parentSetCode.toLowerCase();
   const childCommanderCodes = allSets
-    .filter((set) => set.set_type === 'commander' && set.parent_set_code?.toLowerCase() === normalizedParentCode)
-    .map((set) => set.code.toLowerCase());
+    .filter(
+      set =>
+        set.set_type === "commander" &&
+        set.parent_set_code?.toLowerCase() === normalizedParentCode
+    )
+    .map(set => set.code.toLowerCase());
   return Array.from(new Set([normalizedParentCode, ...childCommanderCodes]));
 }
 
-export function localDecksForParentSet(parentSetCode: string, allSets: ScryfallSet[], decklists: RawCommanderDeck[]) {
-  const productSetCodes = new Set(commanderProductCodesForParent(parentSetCode, allSets));
-  return decklists.filter((deck) => productSetCodes.has(deck.set_code.toLowerCase()));
+export function localDecksForParentSet(
+  parentSetCode: string,
+  allSets: ScryfallSet[],
+  decklists: RawCommanderDeck[]
+) {
+  const productSetCodes = new Set(
+    commanderProductCodesForParent(parentSetCode, allSets)
+  );
+  return decklists.filter(deck =>
+    productSetCodes.has(deck.set_code.toLowerCase())
+  );
 }
 
 function mapLocalDeck(deck: RawCommanderDeck): PreconDeck {
@@ -58,7 +77,9 @@ function mapLocalDeck(deck: RawCommanderDeck): PreconDeck {
     set_code: deck.set_code,
     colors: [],
     card_count: 100,
-    image_uris: { normal: scryfallNamedImage(deck.commander[0]?.name || deck.name) },
+    image_uris: {
+      normal: scryfallNamedImage(deck.commander[0]?.name || deck.name),
+    },
     productImageUrl: productAsset?.imageUrl,
     productImageSourceUrl: productAsset?.sourceUrl,
     productImageSourceLabel: productAsset?.sourceLabel,
@@ -70,19 +91,31 @@ function mapLocalDeck(deck: RawCommanderDeck): PreconDeck {
   };
 }
 
-function buildLocalPreconIndex(allSets: ScryfallSet[], decklists: RawCommanderDeck[]): Map<string, PreconDeck[]> {
+function buildLocalPreconIndex(
+  allSets: ScryfallSet[],
+  decklists: RawCommanderDeck[]
+): Map<string, PreconDeck[]> {
   if (decklists.length === 0 || allSets.length === 0) return new Map();
 
   const recentMainSets = allSets
-    .filter((set) => set.set_type === 'expansion' || set.set_type === 'core' || set.set_type === 'masters')
-    .filter((set) => set.released_at)
-    .sort((a, b) => new Date(b.released_at).getTime() - new Date(a.released_at).getTime())
+    .filter(
+      set =>
+        set.set_type === "expansion" ||
+        set.set_type === "core" ||
+        set.set_type === "masters"
+    )
+    .filter(set => set.released_at)
+    .sort(
+      (a, b) =>
+        new Date(b.released_at).getTime() - new Date(a.released_at).getTime()
+    )
     .slice(0, 60);
   const index = new Map<string, PreconDeck[]>();
 
   for (const set of recentMainSets) {
     const localDecks = localDecksForParentSet(set.code, allSets, decklists);
-    if (localDecks.length > 0) index.set(set.code, localDecks.map(mapLocalDeck));
+    if (localDecks.length > 0)
+      index.set(set.code, localDecks.map(mapLocalDeck));
   }
 
   return index;
@@ -92,34 +125,43 @@ export function useScryfallSets() {
   const [sets, setSets] = useState<ScryfallSet[]>([]);
   const [allSets, setAllSets] = useState<ScryfallSet[]>([]);
   const [precons, setPrecons] = useState<Map<string, PreconDeck[]>>(new Map());
-  const [localDecklists, setLocalDecklists] = useState<RawCommanderDeck[] | null>(null);
-  const [localDecklistError, setLocalDecklistError] = useState<string | null>(null);
+  const [localDecklists, setLocalDecklists] = useState<
+    RawCommanderDeck[] | null
+  >(null);
+  const [localDecklistsLoading, setLocalDecklistsLoading] = useState(false);
+  const [localDecklistError, setLocalDecklistError] = useState<string | null>(
+    null
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const localDecklistsRef = useRef<RawCommanderDeck[] | null>(null);
-  const loadingLocalArchiveRef = useRef(false);
   const mountedRef = useRef(true);
 
   useEffect(() => {
     mountedRef.current = true;
-    return () => { mountedRef.current = false; };
+    return () => {
+      mountedRef.current = false;
+    };
   }, []);
 
   const loadLocalDecklists = useCallback(async () => {
-    if (localDecklistsRef.current !== null || loadingLocalArchiveRef.current) return;
-    loadingLocalArchiveRef.current = true;
+    if (localDecklistsRef.current !== null) return;
+    setLocalDecklistsLoading(true);
     setLocalDecklistError(null);
 
     try {
-      // The archive's multi-megabyte module is fetched only when the user opens precons or requests value sorting.
-      const decklistModule = await import('@/data/commanderDecklistsData');
+      // One shared in-flight request serves set dropdowns, the archive view, and value sorting.
+      const decklists = await loadLocalCommanderArchive();
       if (!mountedRef.current) return;
-      localDecklistsRef.current = decklistModule.commanderDecklistsData;
-      setLocalDecklists(decklistModule.commanderDecklistsData);
+      localDecklistsRef.current = decklists;
+      setLocalDecklists(decklists);
     } catch {
-      if (mountedRef.current) setLocalDecklistError('The Commander decklist archive could not be loaded.');
+      if (mountedRef.current)
+        setLocalDecklistError(
+          "The Commander decklist archive could not be loaded."
+        );
     } finally {
-      loadingLocalArchiveRef.current = false;
+      if (mountedRef.current) setLocalDecklistsLoading(false);
     }
   }, []);
 
@@ -141,19 +183,31 @@ export function useScryfallSets() {
         const timeout = window.setTimeout(() => controller.abort(), 12000);
         let setsResponse: Response;
         try {
-          setsResponse = await fetch('https://api.scryfall.com/sets', { signal: controller.signal });
+          setsResponse = await fetch("https://api.scryfall.com/sets", {
+            signal: controller.signal,
+          });
         } finally {
           window.clearTimeout(timeout);
         }
-        if (!setsResponse.ok) throw new Error('Failed to fetch sets');
+        if (!setsResponse.ok) throw new Error("Failed to fetch sets");
         const setsData = await setsResponse.json();
-        if (!Array.isArray(setsData.data)) throw new Error('Invalid Scryfall set catalog response');
+        if (!Array.isArray(setsData.data))
+          throw new Error("Invalid Scryfall set catalog response");
 
         const allSets = setsData.data as ScryfallSet[];
         const mainSets = allSets
-          .filter((set) => set.set_type === 'expansion' || set.set_type === 'core' || set.set_type === 'masters')
-          .filter((set) => set.released_at)
-          .sort((a, b) => new Date(b.released_at).getTime() - new Date(a.released_at).getTime())
+          .filter(
+            set =>
+              set.set_type === "expansion" ||
+              set.set_type === "core" ||
+              set.set_type === "masters"
+          )
+          .filter(set => set.released_at)
+          .sort(
+            (a, b) =>
+              new Date(b.released_at).getTime() -
+              new Date(a.released_at).getTime()
+          )
           .slice(0, 60);
 
         if (cancelled) return;
@@ -162,8 +216,15 @@ export function useScryfallSets() {
         setLoading(false);
       } catch (err) {
         if (!cancelled) {
-          const timedOut = err instanceof DOMException && err.name === 'AbortError';
-          setError(timedOut ? 'The Scryfall set catalog took too long to respond. Please retry.' : err instanceof Error ? err.message : 'Failed to load sets');
+          const timedOut =
+            err instanceof DOMException && err.name === "AbortError";
+          setError(
+            timedOut
+              ? "The Scryfall set catalog took too long to respond. Please retry."
+              : err instanceof Error
+                ? err.message
+                : "Failed to load sets"
+          );
           setLoading(false);
         }
       }
@@ -177,5 +238,14 @@ export function useScryfallSets() {
     };
   }, []);
 
-  return { sets, precons, localDecklists, localDecklistError, loadLocalDecklists, loading, error };
+  return {
+    sets,
+    precons,
+    localDecklists,
+    localDecklistsLoading,
+    localDecklistError,
+    loadLocalDecklists,
+    loading,
+    error,
+  };
 }

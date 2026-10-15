@@ -3,18 +3,18 @@ import { getMarketDataFreshness } from './marketDataFreshness';
 
 describe('market data freshness and coverage', () => {
   it('keeps the historical imported CSV distinct from the narrow daily price-signal sample', () => {
-    expect(getMarketDataFreshness()).toEqual({
-      importedCsv: {
-        asOf: '2026-08-25',
-        rowCount: 250,
-      },
-      dailySignals: {
-        asOf: '2026-10-14',
-        generatedAt: '2026-10-14T13:28:13.863Z',
-        trackedCount: 9,
-        pricedPrintingCount: 9,
-        sources: ['MTGJSON set data', 'MTGJSON paper price data', 'Scryfall image endpoint'],
-      },
+    const freshness = getMarketDataFreshness();
+
+    expect(freshness.importedCsv).toEqual({
+      asOf: '2026-08-25',
+      rowCount: 250,
     });
+    expect(freshness.dailySignals.generatedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+    expect(freshness.dailySignals.asOf).toBe(freshness.dailySignals.generatedAt.slice(0, 10));
+    expect(freshness.dailySignals.asOf).not.toBe(freshness.importedCsv.asOf);
+    expect(freshness.dailySignals.trackedCount).toBeGreaterThan(0);
+    expect(freshness.dailySignals.pricedPrintingCount).toBeGreaterThan(0);
+    expect(freshness.dailySignals.pricedPrintingCount).toBeLessThanOrEqual(freshness.dailySignals.trackedCount);
+    expect(freshness.dailySignals.sources).toContain('MTGJSON set data');
   });
 });

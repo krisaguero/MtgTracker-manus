@@ -1,7 +1,10 @@
 import dailySnapshot from '@/data/dailyMarketSnapshot.json';
 import scryfallSnapshot from '@/data/scryfallRefreshSnapshot.json';
 import commanderCardPriceSnapshot from '@/data/commanderCardPriceSnapshot.json';
-import type { RawCommanderDeck, RawDeckCard } from '@/data/commanderDecklistsData';
+import type {
+  RawCommanderDeck,
+  RawDeckCard,
+} from '@/data/commanderDecklistsData';
 
 export type PriceMatch = 'exact-set' | 'name-fallback';
 
@@ -14,7 +17,8 @@ export interface ResolvedCardPrice {
   sourceCount?: number;
   tcgplayerUsd?: number;
   cardKingdomUsd?: number;
-  cardmarketUsd?: number;
+  cardmarketPrice?: number;
+  cardmarketCurrency?: string;
 }
 
 export interface DeckMarketValue {
@@ -26,8 +30,24 @@ export interface DeckMarketValue {
   source: string;
 }
 
-type SnapshotProduct = { id?: string; set_code?: string; name?: string; usd?: string | number | null; scryfall_uri?: string; refreshedAt?: string };
-type DailySignal = { id?: string; key?: string; name?: string; setCode?: string; currentUsd?: number; lastUpdated?: string; source?: string; sourceCount?: number };
+type SnapshotProduct = {
+  id?: string;
+  set_code?: string;
+  name?: string;
+  usd?: string | number | null;
+  scryfall_uri?: string;
+  refreshedAt?: string;
+};
+type DailySignal = {
+  id?: string;
+  key?: string;
+  name?: string;
+  setCode?: string;
+  currentUsd?: number;
+  lastUpdated?: string;
+  source?: string;
+  sourceCount?: number;
+};
 type CommanderPriceRecord = {
   id?: string;
   name?: string;
@@ -35,17 +55,30 @@ type CommanderPriceRecord = {
   usd?: number | null;
   source?: string;
   updated_at?: string | null;
-  prices?: { tcgplayer?: number | null; cardkingdom?: number | null; cardmarket?: number | null };
+  prices?: {
+    tcgplayer?: number | null;
+    tcgplayerCurrency?: string | null;
+    cardkingdom?: number | null;
+    cardkingdomCurrency?: string | null;
+    cardmarket?: number | null;
+    cardmarketCurrency?: string | null;
+  };
 };
 
 const dailySignals = ((dailySnapshot as any)?.signals || []) as DailySignal[];
-const refreshProducts = ((scryfallSnapshot as any)?.products || []) as SnapshotProduct[];
-const commanderPrices = ((commanderCardPriceSnapshot as any)?.records || []) as CommanderPriceRecord[];
+const refreshProducts = ((scryfallSnapshot as any)?.products ||
+  []) as SnapshotProduct[];
+const commanderPrices = ((commanderCardPriceSnapshot as any)?.records ||
+  []) as CommanderPriceRecord[];
 const dailyUpdatedAt = (dailySnapshot as any)?.generatedAt || '';
 const refreshUpdatedAt = (scryfallSnapshot as any)?.refreshedAt || '';
-export const commanderPriceSnapshotAsOf = (commanderCardPriceSnapshot as any)?.priceDate || '';
-export const commanderPriceSnapshotSource = (commanderCardPriceSnapshot as any)?.source || 'Card-price index';
-const commanderUpdatedAt = (commanderCardPriceSnapshot as any)?.generatedAt || commanderPriceSnapshotAsOf;
+export const commanderPriceSnapshotAsOf =
+  (commanderCardPriceSnapshot as any)?.priceDate || '';
+export const commanderPriceSnapshotSource =
+  (commanderCardPriceSnapshot as any)?.source || 'Card-price index';
+const commanderUpdatedAt =
+  (commanderCardPriceSnapshot as any)?.generatedAt ||
+  commanderPriceSnapshotAsOf;
 
 function normalized(value: string) {
   return value.trim().toLowerCase();
@@ -58,6 +91,7 @@ function numericPrice(value: unknown) {
 
 const exactIndex = new Map<string, ResolvedCardPrice>();
 const nameIndex = new Map<string, ResolvedCardPrice>();
+const unpricedExactKeys = new Set<string>();
 
 for (const signal of dailySignals) {
   const price = numericPrice(signal.currentUsd);
@@ -73,7 +107,8 @@ for (const signal of dailySignals) {
   const name = normalized(signal.name);
   const setCode = normalized(signal.setCode || '');
   if (setCode) exactIndex.set(`${setCode}::${name}`, record);
-  if (!nameIndex.has(name) || nameIndex.get(name)!.updatedAt < record.updatedAt) nameIndex.set(name, record);
+  if (!nameIndex.has(name) || nameIndex.get(name)!.updatedAt < record.updatedAt)
+    nameIndex.set(name, record);
 }
 
 for (const product of refreshProducts) {
@@ -88,13 +123,24 @@ for (const product of refreshProducts) {
   };
   const name = normalized(product.name);
   const setCode = normalized(product.set_code || '');
-  if (setCode && !exactIndex.has(`${setCode}::${name}`)) exactIndex.set(`${setCode}::${name}`, record);
+  if (setCode && !exactIndex.has(`${setCode}::${name}`))
+    exactIndex.set(`${setCode}::${name}`, record);
   if (!nameIndex.has(name)) nameIndex.set(name, record);
 }
 
 for (const product of commanderPrices) {
   const price = numericPrice(product.usd);
-  if (!product.name || price === null) continue;
+  if (!product.name) continue;
+  const name = normalized(product.name);
+  const setCode = normalized(product.set_code || '');
+  const exactKey = setCode ? `${setCode}::${name}` : '';
+  if (price === null) {
+    if (exactKey) {
+      exactIndex.delete(exactKey);
+      unpricedExactKeys.add(exactKey);
+    }
+    continue;
+  }
   const record: ResolvedCardPrice = {
     usd: price,
     match: 'exact-set',
@@ -103,23 +149,32 @@ for (const product of commanderPrices) {
     sourceId: product.id,
     tcgplayerUsd: numericPrice(product.prices?.tcgplayer) ?? undefined,
     cardKingdomUsd: numericPrice(product.prices?.cardkingdom) ?? undefined,
-    cardmarketUsd: numericPrice(product.prices?.cardmarket) ?? undefined,
+    cardmarketPrice: numericPrice(product.prices?.cardmarket) ?? undefined,
+    cardmarketCurrency: product.prices?.cardmarketCurrency || 'EUR',
   };
-  const name = normalized(product.name);
-  const setCode = normalized(product.set_code || '');
-  if (setCode) exactIndex.set(`${setCode}::${name}`, record);
+  if (exactKey) {
+    exactIndex.set(exactKey, record);
+    unpricedExactKeys.delete(exactKey);
+  }
   nameIndex.set(name, record);
 }
 
-export function resolveCardPrice(name: string, setCode?: string): ResolvedCardPrice | null {
+export function resolveCardPrice(
+  name: string,
+  setCode?: string
+): ResolvedCardPrice | null {
   const normalizedName = normalized(name);
-  const exact = setCode ? exactIndex.get(`${normalized(setCode)}::${normalizedName}`) : undefined;
+  const exactKey = setCode ? `${normalized(setCode)}::${normalizedName}` : '';
+  const exact = exactKey ? exactIndex.get(exactKey) : undefined;
   if (exact) return exact;
+  if (exactKey && unpricedExactKeys.has(exactKey)) return null;
   const fallback = nameIndex.get(normalizedName);
   return fallback ? { ...fallback, match: 'name-fallback' } : null;
 }
 
-export function resolveDeckMarketValue(deck: RawCommanderDeck): DeckMarketValue {
+export function resolveDeckMarketValue(
+  deck: RawCommanderDeck
+): DeckMarketValue {
   const entries = [...deck.commander, ...deck.cards];
   let totalUsd = 0;
   let pricedCards = 0;
@@ -129,7 +184,10 @@ export function resolveDeckMarketValue(deck: RawCommanderDeck): DeckMarketValue 
 
   for (const card of entries) {
     const quantity = Math.max(1, Number(card.count || 1));
-    const resolved = resolveCardPrice(card.name, card.set_code || deck.set_code);
+    const resolved = resolveCardPrice(
+      card.name,
+      card.set_code || deck.set_code
+    );
     if (!resolved) {
       unpricedCards += quantity;
       continue;
@@ -145,12 +203,21 @@ export function resolveDeckMarketValue(deck: RawCommanderDeck): DeckMarketValue 
     totalUsd: Number(totalUsd.toFixed(2)),
     pricedCards,
     unpricedCards,
-    coveragePercent: totalCards ? Math.round((pricedCards / totalCards) * 100) : 0,
-    updatedAt: updatedAt || dailyUpdatedAt || refreshUpdatedAt || 'Price index unavailable',
+    coveragePercent: totalCards
+      ? Math.round((pricedCards / totalCards) * 100)
+      : 0,
+    updatedAt:
+      updatedAt ||
+      dailyUpdatedAt ||
+      refreshUpdatedAt ||
+      'Price index unavailable',
     source: Array.from(sources).join(' + ') || 'Price index unavailable',
   };
 }
 
 export function resolveCardListPrices(cards: RawDeckCard[], setCode: string) {
-  return cards.map((card) => ({ card, price: resolveCardPrice(card.name, card.set_code || setCode) }));
+  return cards.map(card => ({
+    card,
+    price: resolveCardPrice(card.name, card.set_code || setCode),
+  }));
 }
