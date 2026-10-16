@@ -63,7 +63,14 @@ export function buildGroqDeckPrompt(recipe: GroqDeckRecipe, customNotes = ''): s
 
 export function loadGroqApiKey(): string {
   try {
-    return window.localStorage.getItem('mtg-groq-api-key') || '';
+    const sessionKey = window.sessionStorage.getItem('mtg-groq-api-key');
+    if (sessionKey) return sessionKey;
+    const legacyKey = window.localStorage.getItem('mtg-groq-api-key') || '';
+    if (legacyKey) {
+      window.sessionStorage.setItem('mtg-groq-api-key', legacyKey);
+      window.localStorage.removeItem('mtg-groq-api-key');
+    }
+    return legacyKey;
   } catch {
     return '';
   }
@@ -71,7 +78,10 @@ export function loadGroqApiKey(): string {
 
 export function saveGroqApiKey(key: string) {
   try {
-    window.localStorage.setItem('mtg-groq-api-key', key.trim());
+    const trimmed = key.trim();
+    if (trimmed) window.sessionStorage.setItem('mtg-groq-api-key', trimmed);
+    else window.sessionStorage.removeItem('mtg-groq-api-key');
+    window.localStorage.removeItem('mtg-groq-api-key');
   } catch {
     // ignore
   }

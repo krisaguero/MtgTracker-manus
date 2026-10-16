@@ -15,6 +15,19 @@ describe('parseManaBoxImport', () => {
     ]);
   });
 
+  it('recognizes Deckbox printing headers and keeps proxy rows separate from paper copies', () => {
+    const deckbox = parseManaBoxImport('Count,Name,Edition,Edition Code,Card Number,Foil,Language,Scryfall ID\n2,Lightning Bolt,Magic 2010,M10,146,No,English,print-id-1');
+    expect(deckbox).toEqual([{ name: 'Lightning Bolt', quantity: 2, setCode: 'M10', collectorNumber: '146', finish: 'normal', language: 'en', scryfallId: 'print-id-1' }]);
+
+    const manabox = parseManaBoxImport('Name,Quantity,Set code,Collector number,Foil,Language,Scryfall ID,Proxy\nLightning Bolt,2,M10,146,normal,en,print-id-1,false\nLightning Bolt,1,M10,146,normal,en,print-id-1,true');
+    expect(manabox).toEqual([
+      { name: 'Lightning Bolt', quantity: 2, setCode: 'M10', collectorNumber: '146', finish: 'normal', language: 'en', scryfallId: 'print-id-1' },
+      { name: 'Lightning Bolt', quantity: 1, setCode: 'M10', collectorNumber: '146', finish: 'normal', language: 'en', scryfallId: 'print-id-1', proxy: true },
+    ]);
+    expect(mergeOwnedCollection(deckbox, manabox).cards).toHaveLength(2);
+    expect(mergeOwnedCollection(deckbox, manabox).cards.map((card) => card.quantity)).toEqual([2, 1]);
+  });
+
   it('aggregates duplicate text-list entries while preserving usable quantities', () => {
     const cards = parseManaBoxImport('1x Sol Ring\n3 Sol Ring\n1 Alesha, Who Smiles at Death');
 

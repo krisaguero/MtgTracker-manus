@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AlertCircle,
+  ArrowRight,
   Bookmark,
   ChevronDown,
   ChevronUp,
   Search,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 import { SetCard } from "@/components/SetCard";
 import { HomePreconCard } from "@/components/HomePreconCard";
@@ -560,6 +563,50 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        <section className="mb-8 overflow-hidden border-2 border-primary/60 bg-card shadow-sm" aria-labelledby="featured-battle-box-heading">
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)]">
+            <div className="bg-primary/5 p-5 sm:p-7">
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Featured shared build</p>
+                <span className="border border-primary/40 bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">Static · 9 decks · no sign-in</span>
+              </div>
+              <h2 id="featured-battle-box-heading" className="mt-3 max-w-3xl text-2xl font-black tracking-tight sm:text-4xl">2026 Retro Battle Box</h2>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">Nine ready-to-play, non-Commander 60-card lists—one shared build for every visitor, including Mono-White Lifegain &amp; Sunbond Heroic. Browse the decklists without an account or a personal collection.</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground"><strong className="text-foreground">Site creator &amp; curator: Kris Aguero.</strong> The public lists are static site content, not tied to a visitor’s sign-in or inventory.</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <a href="/battle-box#deck-library" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Explore all nine decks <ArrowRight className="h-4 w-4" /></a>
+                <a href="/battle-box-method" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Build record</a>
+                <a href="/battle-box#community-builds" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Start a local draft</a>
+              </div>
+            </div>
+            <aside className="space-y-4 border-t border-border p-5 sm:p-7 lg:border-l lg:border-t-0" aria-label="Battle Box privacy and credit policy">
+              <div>
+                <h3 className="flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-widest text-primary"><ShieldCheck className="h-4 w-4" /> Personal data stays local</h3>
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">Inventory imports, owned/proxy status, and order queues are browser-local tools. They never change or get embedded in the shared decklists.</p>
+              </div>
+              <div className="border-t border-border pt-4">
+                <h3 className="flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-widest text-primary"><Users className="h-4 w-4" /> Credit stays attached</h3>
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">User-submitted builds may be featured or remixed only with visible author/source credit; remixes preserve the original author’s credit. Shared review and publishing are future work—drafts remain private in this browser or in an exported file for now.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="mb-8 overflow-hidden border-2 border-border bg-card shadow-sm" aria-labelledby="featured-brawl-box-heading">
+          <div className="bg-primary/5 p-5 sm:p-7">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Precon-themed decks · custom Commander previews</p>
+              <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">Self-built · not tuned</span>
+            </div>
+            <h2 id="featured-brawl-box-heading" className="mt-3 max-w-3xl text-2xl font-black tracking-tight sm:text-4xl">Brawlternatives</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">Precon-themed, 60-card Commander-preview decks as a casual alternative to official Brawl. Dr. Madison Li leads the shelf, followed by Araumi of the Dead Tide. This custom house concept is not official Magic Brawl; the shared nine-deck Retro Battle Box remains non-Commander.</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a href="/brawl-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open Brawlternatives <ArrowRight className="h-4 w-4" /></a>
+              <a href="/battle-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>
+            </div>
+          </div>
+        </section>
 
         <section className="mb-7" aria-label="Start by player goal">
           <div className="mb-3 flex flex-wrap items-end justify-between gap-2">

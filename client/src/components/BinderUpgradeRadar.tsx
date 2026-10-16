@@ -20,6 +20,22 @@ export interface BinderUpgradeRadarItem {
   sourceUrl?: string;
 }
 
+export function getBinderUpgradeRadarHeadline(cardCount: number, matchCount: number) {
+  if (cardCount === 0) return 'Explore Commander upgrade ideas.';
+  if (matchCount === 0) return 'No researched picks found in this binder yet.';
+  return `Your collection has ${matchCount} researched upgrade${matchCount === 1 ? '' : 's'} in it.`;
+}
+
+export function getBinderUpgradeRadarDescription(cardCount: number, matchCount: number) {
+  if (cardCount === 0) {
+    return 'Browse source-linked, theme-first picks across Commander guides, or import a ManaBox list to see which are already in your binder. Budget notes reflect source wording, not current prices.';
+  }
+  if (matchCount === 0) {
+    return 'Browse source-linked, theme-first picks across Commander guides. No guide picks matched the imported card names; verify your binder before buying. Budget notes reflect source wording, not current prices.';
+  }
+  return 'Find source-linked, theme-first ideas across the Commander guides. Start with cards you already own, or browse budget-labeled picks—without treating an old budget note as a current price.';
+}
+
 function deckSlug(value: string) {
   return value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -70,12 +86,12 @@ export function BinderUpgradeRadar({ cards, onOpenImportModal }: { cards: OwnedC
   const visibleItems = filteredItems.slice(0, visibleLimit);
 
   return (
-    <section className="my-8 border-2 border-primary/35 bg-gradient-to-br from-primary/5 via-card to-emerald-500/5 p-4 sm:p-7" aria-labelledby="binder-upgrade-radar-title">
+    <section id="binder-upgrade-radar" className="my-8 border-2 border-primary/35 bg-gradient-to-br from-primary/5 via-card to-emerald-500/5 p-4 sm:p-7" aria-labelledby="binder-upgrade-radar-title">
       <div className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.19em] text-primary"><Sparkles className="h-3.5 w-3.5" /> Binder Upgrade Radar · browser-local</p>
-          <h2 id="binder-upgrade-radar-title" className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Your collection already has a few upgrades in it.</h2>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">Find source-linked, theme-first ideas across the Commander guides. Start with cards you already own, or browse budget-labeled picks—without treating an old budget note as a current price.</p>
+          <h2 id="binder-upgrade-radar-title" className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{getBinderUpgradeRadarHeadline(cards.length, ownedItems.length)}</h2>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground">{getBinderUpgradeRadarDescription(cards.length, ownedItems.length)}</p>
         </div>
         <div className="grid min-w-[12rem] grid-cols-2 gap-2 font-mono text-[10px] uppercase">
           <div className="border border-emerald-600/30 bg-emerald-600/5 p-3"><span className="text-muted-foreground">Binder matches</span><strong className="mt-1 block text-xl text-emerald-800">{ownedItems.length}</strong><span className="text-muted-foreground">guide picks · {matchingGuideCount} decks</span></div>

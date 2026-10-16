@@ -1,15 +1,18 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'wouter';
-import { Sparkles, ShoppingBag, ArrowRight, Check } from 'lucide-react';
+import { Sparkles, ShoppingBag, ArrowRight, Check, Upload } from 'lucide-react';
 import { commanderDecklists } from '@/data/commanderDecklists';
-import { loadOwnedCollection } from '@/lib/manaboxParser';
+import type { OwnedCard } from '@/lib/manaboxParser';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
 
-export function NextBestPurchases() {
-  const collection = loadOwnedCollection();
+export function NextBestPurchases({ collection, onOpenImportModal }: { collection: OwnedCard[]; onOpenImportModal: () => void }) {
   const [copiedSuccess, setCopiedSuccess] = useState(false);
 
   const closestDeckData = useMemo(() => {
+    if (collection.length === 0) {
+      return { deck: null, coverage: 0, missing: [] as Array<{ name: string; price: number | null; type: string }> };
+    }
+
     const ownedMap = new Map<string, number>();
     for (const c of collection) {
       ownedMap.set(c.name.toLowerCase(), c.quantity);
@@ -55,6 +58,30 @@ export function NextBestPurchases() {
       missing: missingList.slice(0, 5),
     };
   }, [collection]);
+
+  if (collection.length === 0) {
+    return (
+      <section className="my-10 border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-5 shadow-md" aria-labelledby="next-best-purchases-empty-title">
+        <div className="border-b-2 border-border pb-4">
+          <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <Sparkles className="h-4 w-4" /> Purchase ideas · personalize after import
+          </div>
+          <h2 id="next-best-purchases-empty-title" className="mt-2 text-2xl font-extrabold tracking-tight">Start with your collection.</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            No collection imported yet. Import a ManaBox list to see deck matches and missing-card ideas based on cards you own, or browse all researched Commander picks without importing.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <button type="button" onClick={onOpenImportModal} className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground hover:opacity-90">
+            <Upload className="h-4 w-4" /> Import ManaBox
+          </button>
+          <Link href="#binder-upgrade-radar" className="inline-flex min-h-10 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-foreground hover:border-primary">
+            Browse all researched picks <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   if (!closestDeckData.deck) {
     return null;

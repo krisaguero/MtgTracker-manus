@@ -1,0 +1,1040 @@
+{
+  "source": "User-supplied decklist text; ownership/proxy annotations intentionally excluded.",
+  "cardDataSource": "Scryfall card collection API; checked 2026-10-16.",
+  "officialBrawlWarning": "Brawlternatives is a personal, precon-themed custom 60-card Commander-preview alternative to Brawl, not official Magic Brawl. Both commanders are marked not legal in Brawl and legal in Commander by Scryfall.",
+  "cardIdentityAudit": {
+    "Abattoir Ghoul": [
+      "B"
+    ],
+    "Aether Inspector": [
+      "W"
+    ],
+    "Aether Swooper": [
+      "U"
+    ],
+    "Aether Theorist": [
+      "U"
+    ],
+    "Aethersquall Ancient": [
+      "U"
+    ],
+    "Aetherstorm Roc": [
+      "W"
+    ],
+    "Aethertide Whale": [
+      "U"
+    ],
+    "Aetherworks Marvel": [],
+    "Approach of the Second Sun": [
+      "W"
+    ],
+    "Aqueous Form": [
+      "U"
+    ],
+    "Araumi of the Dead Tide": [
+      "B",
+      "U"
+    ],
+    "Arcane Signet": [],
+    "As Foretold": [
+      "U"
+    ],
+    "Azorius Chancery": [
+      "U",
+      "W"
+    ],
+    "Brago, King Eternal": [
+      "U",
+      "W"
+    ],
+    "Brainstorm": [
+      "U"
+    ],
+    "Carrion Feeder": [
+      "B"
+    ],
+    "Command Tower": [],
+    "Compulsive Research": [
+      "U"
+    ],
+    "Confiscation Coup": [
+      "U"
+    ],
+    "Consul's Shieldguard": [
+      "W"
+    ],
+    "Counterspell": [
+      "U"
+    ],
+    "Decoction Module": [],
+    "Deep Analysis": [
+      "U"
+    ],
+    "Dimir Aqueduct": [
+      "B",
+      "U"
+    ],
+    "Diregraf Ghoul": [
+      "B"
+    ],
+    "Dissipate": [
+      "U"
+    ],
+    "Doom Blade": [
+      "B"
+    ],
+    "Dr. Madison Li": [
+      "R",
+      "U",
+      "W"
+    ],
+    "Dread Return": [
+      "B"
+    ],
+    "Electrostatic Pummeler": [],
+    "Evolving Wilds": [],
+    "Fact or Fiction": [
+      "U"
+    ],
+    "Fleshbag Marauder": [
+      "B"
+    ],
+    "Ghoulraiser": [
+      "B"
+    ],
+    "Ghoultree": [
+      "G"
+    ],
+    "Glassblower's Puzzleknot": [
+      "U"
+    ],
+    "Go for the Throat": [
+      "B"
+    ],
+    "Gonti's Aether Heart": [],
+    "Grave Titan": [
+      "B"
+    ],
+    "Gray Merchant of Asphodel": [
+      "B"
+    ],
+    "Hindering Light": [
+      "U",
+      "W"
+    ],
+    "Ichor Wellspring": [],
+    "Impulse": [
+      "U"
+    ],
+    "Island": [
+      "U"
+    ],
+    "Knight of the White Orchid": [
+      "W"
+    ],
+    "Lavinia of the Tenth": [
+      "U",
+      "W"
+    ],
+    "Lightning Greaves": [],
+    "Mana Leak": [
+      "U"
+    ],
+    "Marble Diamond": [
+      "W"
+    ],
+    "Meandering River": [
+      "U",
+      "W"
+    ],
+    "Mind Stone": [],
+    "Mulldrifter": [
+      "U"
+    ],
+    "Mycosynth Wellspring": [],
+    "Negate": [
+      "U"
+    ],
+    "Opt": [
+      "U"
+    ],
+    "Panharmonicon": [],
+    "Perpetual Timepiece": [],
+    "Phyrexian Ghoul": [
+      "B"
+    ],
+    "Plains": [
+      "W"
+    ],
+    "Render Silent": [
+      "U",
+      "W"
+    ],
+    "Rhystic Study": [
+      "U"
+    ],
+    "Sanctum Gargoyle": [
+      "W"
+    ],
+    "Shielded Aether Thief": [
+      "U"
+    ],
+    "Shriekmaw": [
+      "B"
+    ],
+    "Sifter of Skulls": [
+      "B"
+    ],
+    "Sky Diamond": [
+      "U"
+    ],
+    "Slaughter the Strong": [
+      "W"
+    ],
+    "Sol Ring": [],
+    "Solemn Simulacrum": [],
+    "Sphinx of Uthuun": [
+      "U"
+    ],
+    "Spine of Ish Sah": [],
+    "Steel of the Godhead": [
+      "U",
+      "W"
+    ],
+    "Stitcher's Supplier": [
+      "B"
+    ],
+    "Sun Titan": [
+      "W"
+    ],
+    "Swamp": [
+      "B"
+    ],
+    "Swords to Plowshares": [
+      "W"
+    ],
+    "Terramorphic Expanse": [],
+    "Terror": [
+      "B"
+    ],
+    "Thought Vessel": [],
+    "Victimize": [
+      "B"
+    ],
+    "Viscera Seer": [
+      "B"
+    ],
+    "Whispersilk Cloak": [],
+    "Mountain": [
+      "R"
+    ]
+  },
+  "decks": [
+    {
+      "rank": 1,
+      "commander": "Dr. Madison Li",
+      "commanderColorIdentity": [
+        "R",
+        "U",
+        "W"
+      ],
+      "commanderColorIdentityLabel": "Jeskai (WUR)",
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 65,
+      "visibleTotal": 64,
+      "offColorCards": [],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "Dr. Madison Li",
+              "quantity": 1,
+              "colorIdentity": [
+                "R",
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "ENERGY GENERATORS & PAYOFFS",
+          "cards": [
+            {
+              "name": "Aetherworks Marvel",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Gonti's Aether Heart",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Confiscation Coup",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Electrostatic Pummeler",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aethersquall Ancient",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aethertide Whale",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aetherstorm Roc",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aether Theorist",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aether Swooper",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aether Inspector",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Consul's Shieldguard",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Decoction Module",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Glassblower's Puzzleknot",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Shielded Aether Thief",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "ETB FLICKER & ARTIFACT RECURSION",
+          "cards": [
+            {
+              "name": "Brago, King Eternal",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sun Titan",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Solemn Simulacrum",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Panharmonicon",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Ichor Wellspring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mycosynth Wellspring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Spine of Ish Sah",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Lavinia of the Tenth",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Knight of the White Orchid",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sanctum Gargoyle",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "CONTROL, PROTECTION & WIN-CONS",
+          "cards": [
+            {
+              "name": "Swords to Plowshares",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Rhystic Study",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Render Silent",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Hindering Light",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "MANA ROCKS & RAMP",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Thought Vessel",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sky Diamond",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Marble Diamond",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "MANA BASE",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Evolving Wilds",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Terramorphic Expanse",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Azorius Chancery",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Meandering River",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Island",
+              "quantity": 9,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Plains",
+              "quantity": 9,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mountain",
+              "quantity": 3,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "id": "dr-madison-li",
+      "title": "Dr. Madison Li · Fallout energy & artifacts",
+      "subtitle": "Energy-fueled artifacts, ETB value, recursion, and control.",
+      "sourceStatedCuts": 5,
+      "sourceCountNote": "The original supplied visible list contains 64 card copies, while its prose says 65 and five cuts. This revised custom build has 60 main-deck cards including the commander and a 7-card sideboard; it adds three Mountains for red sources, for 67 copies across both zones. The original count discrepancy remains unresolved.",
+      "sourceIssues": [
+        "The source comment says Panharmonicon “doubles all Energy ETBs.” Panharmonicon only repeats qualifying triggered abilities caused by an artifact or creature entering; it does not double Dr. Madison Li’s artifact-cast trigger."
+      ],
+      "sideboardGroups": [
+        {
+          "label": "OPTIONAL FLEX PICKS",
+          "cards": [
+            {
+              "name": "As Foretold",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sphinx of Uthuun",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Approach of the Second Sun",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Slaughter the Strong",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Steel of the Godhead",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Whispersilk Cloak",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Aqueous Form",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "sideboardNote": "Seven supplied cards are kept as optional swaps: a secondary win condition, combat-focused pieces, a situational sweeper, and higher-cost or less directly energy-focused value spells. This is a personal flex package, not an official Brawl sideboard rule."
+    },
+    {
+      "rank": 2,
+      "commander": "Araumi of the Dead Tide",
+      "commanderColorIdentity": [
+        "B",
+        "U"
+      ],
+      "commanderColorIdentityLabel": "Dimir (UB)",
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 60,
+      "offColorCards": [
+        "Ghoultree"
+      ],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "Araumi of the Dead Tide",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "GRAVEYARD FILLERS & SELF-MILL",
+          "cards": [
+            {
+              "name": "Stitcher's Supplier",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Perpetual Timepiece",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sifter of Skulls",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Brainstorm",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Impulse",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Fact or Fiction",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Compulsive Research",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Deep Analysis",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "ENCORE PAYOFFS & ETB BOMB CREATURES",
+          "cards": [
+            {
+              "name": "Gray Merchant of Asphodel",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Grave Titan",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Fleshbag Marauder",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mulldrifter",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Shriekmaw",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Abattoir Ghoul",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Phyrexian Ghoul",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Ghoultree",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Diregraf Ghoul",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Ghoulraiser",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Viscera Seer",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Carrion Feeder",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "CONTROL, REANIMATION & INTERACTION",
+          "cards": [
+            {
+              "name": "Victimize",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dread Return",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Counterspell",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mana Leak",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Negate",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dissipate",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Doom Blade",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Go for the Throat",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Terror",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Opt",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Panharmonicon",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Lightning Greaves",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "MANA BASE",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dimir Aqueduct",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Evolving Wilds",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Terramorphic Expanse",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Swamp",
+              "quantity": 10,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Island",
+              "quantity": 10,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "id": "araumi-of-the-dead-tide",
+      "title": "Araumi of the Dead Tide · graveyard & encore",
+      "subtitle": "A self-mill and encore Commander preview with a half-built, non-tuned feel.",
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "The visible card rows sum to 60, including the commander.",
+      "sourceIssues": [
+        "Ghoultree has green color identity, outside Araumi’s blue-black identity. It remains in the displayed supplied list and is flagged rather than silently removed.",
+        "The source comment says Panharmonicon “doubles all Encore ETB triggers.” It repeats qualifying ETB triggered abilities from artifact or creature entry; it does not double the Encore ability itself."
+      ]
+    }
+  ]
+}

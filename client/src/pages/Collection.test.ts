@@ -22,4 +22,15 @@ describe('Collection page resilience', () => {
     expect(source).toContain('hidden w-full text-left font-mono text-xs sm:table');
     expect(source).toContain('Total equity');
   });
+
+  it('gates personalized purchase recommendations on a local collection and offers import or all-picks browsing', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/components/NextBestPurchases.tsx'), 'utf8');
+    expect(source).toContain('if (collection.length === 0)');
+    expect(source).toContain('No collection imported yet.');
+    expect(source).toContain('Import ManaBox');
+    expect(source).toContain('Browse all researched picks');
+    expect(source).toContain('href="#binder-upgrade-radar"');
+    expect(source).toContain('Buy All Recommended (TCGplayer)');
+    expect(readFileSync(resolve(process.cwd(), 'client/src/components/BinderUpgradeRadar.tsx'), 'utf8')).toContain('id="binder-upgrade-radar"');
+  });
 });

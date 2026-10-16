@@ -3,6 +3,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, useLocation } from 'wouter';
 import ErrorBoundary from './components/ErrorBoundary';
 import { InternalPageNav } from './components/InternalPageNav';
+import { SiteFooter } from './components/SiteFooter';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { PwaInstallBanner } from '@/components/PwaInstallBanner';
 import { Toaster } from '@/components/ui/sonner';
@@ -27,6 +28,10 @@ const MarketMoverArticle = lazy(() => import('@/pages/MarketMoverArticle'));
 const CostcoDealArticle = lazy(() => import('@/pages/CostcoDealArticle'));
 const DupeDecks = lazy(() => import('@/pages/DupeDecks').then((module) => ({ default: module.DupeDecks })));
 const DuelBattleBoxArticle = lazy(() => import('@/pages/DuelBattleBoxArticle'));
+const RetroBattleBox = lazy(() => import('@/pages/RetroBattleBox'));
+const BrawlBox = lazy(() => import('@/pages/BrawlBox'));
+const BattleBoxMethodArticle = lazy(() => import('@/pages/BattleBoxMethodArticle'));
+const BattleBoxProxyPrintArticle = lazy(() => import('@/pages/BattleBoxProxyPrintArticle'));
 const CardDetail = lazy(() => import('@/pages/CardDetail'));
 const EditorialMarketArticles = lazy(() => import('@/pages/EditorialMarketArticles'));
 const EditorialMarketArticle = lazy(() => import('@/pages/EditorialMarketArticle'));
@@ -56,6 +61,10 @@ function Router() {
         <Route path="/market-report" component={MarketReport} />
         <Route path="/dupe-decks" component={DupeDecks} />
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
+        <Route path="/battle-box" component={RetroBattleBox} />
+        <Route path="/brawl-box" component={BrawlBox} />
+        <Route path="/battle-box-method" component={BattleBoxMethodArticle} />
+        <Route path="/battle-box-proxy-print" component={BattleBoxProxyPrintArticle} />
         <Route path="/latest-market-report" component={LatestMarketReport} />
         <Route path="/market-reports" component={MarketReportArchive} />
         <Route path="/market-today" component={TodayMarketBrief} />
@@ -114,6 +123,7 @@ function App() {
           <InternalPageNav />
           <RouteScrollReset />
           <Router />
+          <SiteFooter />
           <PwaInstallBanner />
         </TooltipProvider>
       </ThemeProvider>

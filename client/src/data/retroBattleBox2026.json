@@ -1,0 +1,1167 @@
+[
+  {
+    "id": "goblin-cavalcade",
+    "name": "Goblin Cavalcade",
+    "subtitle": "Mono-red swarm",
+    "colorLabel": "Mono-red",
+    "colors": [
+      "R"
+    ],
+    "archetype": "Swarm aggro",
+    "era": "Cross-era goblin rush",
+    "summary": "Flood the board with cheap attackers, then turn every small swing into a clock.",
+    "engines": [
+      {
+        "card": "Cavalcade of Calamity",
+        "reason": "Rewards the deck for attacking wide with low-power creatures."
+      },
+      {
+        "card": "Fanatical Firebrand",
+        "reason": "A one-mana attacker that can convert into reach when combat stalls."
+      },
+      {
+        "card": "Frenzied Goblin",
+        "reason": "Makes blocks awkward and helps the swarm keep moving."
+      }
+    ],
+    "warnings": [
+      "Shambling Goblin is black, so the supplied list is not color-pure mono-red."
+    ],
+    "sourceTitle": "GOBLIN CAVALCADE (Mono-Red Swarm)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 38,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Fanatical Firebrand",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Goblin Instigator",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Goblin Instigator",
+            "proxy": true
+          },
+          {
+            "quantity": 4,
+            "name": "Raging Goblin",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Shambling Goblin",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Frenzied Goblin",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Goblin Trailblazer",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Cavalcade of Calamity",
+            "proxy": true
+          },
+          {
+            "quantity": 4,
+            "name": "Shock",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Volcanic Hammer",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Goblin Glory Chaser",
+            "proxy": false
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 22,
+        "cards": [
+          {
+            "quantity": 22,
+            "name": "Mountain",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kavu-beastmaster",
+    "name": "Kavu Beastmaster",
+    "subtitle": "RG midrange · Invasion / Planeshift",
+    "colorLabel": "Red / green",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "archetype": "Creature midrange",
+    "era": "Invasion / Planeshift callback",
+    "summary": "Trade early resources, ramp, and let oversized Kavu bodies take over combat.",
+    "engines": [
+      {
+        "card": "Flametongue Kavu",
+        "reason": "Turns a body into immediate creature interaction."
+      },
+      {
+        "card": "Kavu Howler",
+        "reason": "Provides a late-game refill inside a creature-heavy shell."
+      },
+      {
+        "card": "Rampant Growth",
+        "reason": "Smooths the two-color curve and advances the midrange plan."
+      }
+    ],
+    "warnings": [],
+    "sourceTitle": "KAVU BEASTMASTER (RG Midrange - Invasion/Planeshift)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Flametongue Kavu",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Kavu Howler",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Kavu Chameleon",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Kavu Climber",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Caldera Kavu",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Horned Kavu",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Penumbra Kavu",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Pouncing Kavu",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Assault // Battery",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Rampant Growth",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Incinerate",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Harrow",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Shivan Oasis",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Shivan Oasis",
+            "proxy": true
+          },
+          {
+            "quantity": 10,
+            "name": "Forest",
+            "proxy": false
+          },
+          {
+            "quantity": 10,
+            "name": "Mountain",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "oldschool-zombie-tribal",
+    "name": "Oldschool Zombie Tribal",
+    "subtitle": "Mono-black attrition",
+    "colorLabel": "Mono-black",
+    "colors": [
+      "B"
+    ],
+    "archetype": "Tribal attrition",
+    "era": "Old-frame mood; mixed card eras",
+    "summary": "Trade bodies, recur the graveyard, and make every creature exchange cost the opponent.",
+    "engines": [
+      {
+        "card": "Undead Warchief",
+        "reason": "A tribal lord that accelerates the zombie clock."
+      },
+      {
+        "card": "Ghoulraiser",
+        "reason": "Turns a creature into another zombie from the graveyard."
+      },
+      {
+        "card": "Gravecrawler",
+        "reason": "A recursive body when another Zombie stays on board."
+      }
+    ],
+    "warnings": [
+      "“Oldschool” is the project’s theme name, not a claim that this list follows a formal Old School format; the list spans multiple eras."
+    ],
+    "sourceTitle": "OLDSCHOOL ZOMBIE TRIBAL (Mono-Black Attrition)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Gravecrawler",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Gravecrawler",
+            "proxy": true
+          },
+          {
+            "quantity": 1,
+            "name": "Carrion Feeder",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Diregraf Ghoul",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Ghoulraiser",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Fleshbag Marauder",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Phyrexian Ghoul",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Abattoir Ghoul",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Lord of the Accursed",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Soulless One",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Zombie Master",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Doom Blade",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Go for the Throat",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Terror",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Undead Warchief",
+            "proxy": true
+          },
+          {
+            "quantity": 2,
+            "name": "Sign in Blood",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 24,
+            "name": "Swamp",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lightning-burn",
+    "name": "Lightning Burn",
+    "subtitle": "Direct damage",
+    "colorLabel": "Mono-red",
+    "colors": [
+      "R"
+    ],
+    "archetype": "Burn / tempo",
+    "era": "Cross-era red spell suite",
+    "summary": "Point efficient damage upstairs or at blockers, then finish before the opponent stabilizes.",
+    "engines": [
+      {
+        "card": "Lightning Bolt",
+        "reason": "Efficient damage keeps both creature control and reach online."
+      },
+      {
+        "card": "Lava Spike",
+        "reason": "Converts a card directly into pressure on the opponent."
+      },
+      {
+        "card": "Monastery Swiftspear",
+        "reason": "Turns the dense low-cost spell suite into repeated combat damage."
+      }
+    ],
+    "warnings": [],
+    "sourceTitle": "LIGHTNING BURN (Direct Damage)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 38,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Lightning Bolt",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Incinerate",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Shock",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Searing Blood",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Searing Blaze",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Forked Bolt",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Firebolt",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Fireblast",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Monastery Swiftspear",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Eidolon of the Great Revel",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Volcanic Hammer",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Rift Bolt",
+            "proxy": true
+          },
+          {
+            "quantity": 4,
+            "name": "Lava Spike",
+            "proxy": true
+          },
+          {
+            "quantity": 3,
+            "name": "Monastery Swiftspear",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 22,
+        "cards": [
+          {
+            "quantity": 22,
+            "name": "Mountain",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rg-eldrazi-ramp-stompy",
+    "name": "RG Eldrazi Ramp & Stompy",
+    "subtitle": "No Elves",
+    "colorLabel": "Red / green",
+    "colors": [
+      "R",
+      "G"
+    ],
+    "archetype": "Ramp / giant threats",
+    "era": "Big-mana Eldrazi callback",
+    "summary": "Spend the early turns finding lands, then land colorless finishers that dwarf the board.",
+    "engines": [
+      {
+        "card": "Cultivate",
+        "reason": "Adds a land to the battlefield and another to hand for steady ramp."
+      },
+      {
+        "card": "Skyshroud Claim",
+        "reason": "Jumps toward the high-cost threat package."
+      },
+      {
+        "card": "Conduit of Ruin",
+        "reason": "A proxy-marked top-end bridge that helps set up a giant follow-up."
+      }
+    ],
+    "warnings": [],
+    "sourceTitle": "RG ELDRAZI RAMP & STOMPY (No Elves)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Sakura-Tribe Elder",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Farseek",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Search for Tomorrow",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Cultivate",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Kodama's Reach",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Skyshroud Claim",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Ulamog's Crusher",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "It That Betrays",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Artisan of Kozilek",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Pawn of Ulamog",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Conduit of Ruin",
+            "proxy": true
+          },
+          {
+            "quantity": 2,
+            "name": "Ulamog's Crusher",
+            "proxy": true
+          },
+          {
+            "quantity": 4,
+            "name": "Lightning Bolt",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Pyroclasm",
+            "proxy": false
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 2,
+            "name": "Karplusan Forest",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Gruul Turf",
+            "proxy": true
+          },
+          {
+            "quantity": 10,
+            "name": "Forest",
+            "proxy": false
+          },
+          {
+            "quantity": 10,
+            "name": "Mountain",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "theros-boros-soldiers",
+    "name": "Theros Boros Soldiers",
+    "subtitle": "Heroic / formation aggro",
+    "colorLabel": "Red / white label · black cards included",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "archetype": "Heroic go-wide aggro",
+    "era": "Theros-centered",
+    "summary": "Build a board, target the right creature, and turn teamwork into a decisive attack.",
+    "engines": [
+      {
+        "card": "Phalanx Leader",
+        "reason": "Turns targeting one heroic creature into a team-wide counter payoff."
+      },
+      {
+        "card": "Akroan Crusader",
+        "reason": "Makes targeted spells create extra bodies."
+      },
+      {
+        "card": "Gods Willing",
+        "reason": "Protects a key creature while supporting heroic sequencing."
+      }
+    ],
+    "warnings": [
+      "Bloodcrazed Hoplite and Alesha’s Vanguard are black cards; the supplied list is not color-pure Boros. The list is preserved as provided."
+    ],
+    "sourceTitle": "THEROS BOROS SOLDIERS (Heroic / Formation Aggro)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Akroan Crusader",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Akroan Sergeant",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Bloodcrazed Hoplite",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Battlewise Hoplite",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Gods Willing",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Court Street Denizen",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Alesha's Vanguard",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Lightning Bolt",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Phalanx Leader",
+            "proxy": true
+          },
+          {
+            "quantity": 3,
+            "name": "Akroan Hoplite",
+            "proxy": true
+          },
+          {
+            "quantity": 2,
+            "name": "Raise the Alarm",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Temple of Triumph",
+            "proxy": true
+          },
+          {
+            "quantity": 12,
+            "name": "Plains",
+            "proxy": false
+          },
+          {
+            "quantity": 8,
+            "name": "Mountain",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "azorius-control",
+    "name": "Azorius Control",
+    "subtitle": "UW countermagic & draw-go",
+    "colorLabel": "Blue / white",
+    "colors": [
+      "U",
+      "W"
+    ],
+    "archetype": "Control",
+    "era": "Cross-era control staples",
+    "summary": "Trade one-for-one, keep mana open, then win with a small number of protected finishers.",
+    "engines": [
+      {
+        "card": "Counterspell",
+        "reason": "A clean answer that rewards disciplined mana use."
+      },
+      {
+        "card": "Fact or Fiction",
+        "reason": "Refills at instant speed and creates difficult resource choices."
+      },
+      {
+        "card": "Supreme Verdict",
+        "reason": "The proxy-marked reset button for a board that gets away from control."
+      }
+    ],
+    "warnings": [],
+    "sourceTitle": "AZORIUS CONTROL (UW Countermagic & Draw-Go)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Counterspell",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Mana Leak",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Negate",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Dissipate",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Pacifism",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Brainstorm",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Opt",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Fact or Fiction",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Wrath of God",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Mahamoti Djinn",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Sphinx of Jwar Isle",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Sphinx of Magosi",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Supreme Verdict",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Azorius Chancery",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Meandering River",
+            "proxy": false
+          },
+          {
+            "quantity": 11,
+            "name": "Island",
+            "proxy": false
+          },
+          {
+            "quantity": 7,
+            "name": "Plains",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "simic-evasive-tempo-midrange",
+    "name": "Simic Evasive Tempo & Midrange",
+    "subtitle": "UG flyers & bounce",
+    "colorLabel": "Blue / green",
+    "colors": [
+      "U",
+      "G"
+    ],
+    "archetype": "Evasive tempo",
+    "era": "Cross-era Simic value",
+    "summary": "Use bounce and evasive threats to keep the opponent off balance while drawing into value.",
+    "engines": [
+      {
+        "card": "Man-o’-War",
+        "reason": "A creature plus tempo: return the opponent’s blocker and keep pressure on."
+      },
+      {
+        "card": "Coiling Oracle",
+        "reason": "Can add a land or replace itself while developing the board."
+      },
+      {
+        "card": "Peregrine Drake",
+        "reason": "Untaps lands for a tempo swing and is partly proxy-marked in the supplied list."
+      }
+    ],
+    "warnings": [],
+    "sourceTitle": "SIMIC EVASIVE TEMPO & MIDRANGE (UG Flyers & Bounce)",
+    "groups": [
+      {
+        "label": "Creatures & Spells",
+        "expected": 36,
+        "cards": [
+          {
+            "quantity": 3,
+            "name": "Coiling Oracle",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Trygon Predator",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Man-o'-War",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Peregrine Drake",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Prophet of Kruphix",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Simic Sky Swallower",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Explore",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Compulsive Research",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Deep Analysis",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Counterspell",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Peregrine Drake",
+            "proxy": true
+          },
+          {
+            "quantity": 4,
+            "name": "Urban Evolution",
+            "proxy": true
+          },
+          {
+            "quantity": 2,
+            "name": "Remand",
+            "proxy": true
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 24,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Simic Growth Chamber",
+            "proxy": false
+          },
+          {
+            "quantity": 4,
+            "name": "Woodland Stream",
+            "proxy": false
+          },
+          {
+            "quantity": 9,
+            "name": "Island",
+            "proxy": false
+          },
+          {
+            "quantity": 7,
+            "name": "Forest",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mono-white-lifegain-sunbond-heroic",
+    "name": "Mono-White Lifegain & Sunbond Heroic",
+    "subtitle": "Lifegain triggers · aura counters",
+    "colorLabel": "Mono-white",
+    "colors": [
+      "W"
+    ],
+    "archetype": "Lifegain / heroic auras",
+    "era": "M15 · BNG · JOU · THS · STH print references",
+    "summary": "Build life-gain pressure early, then use aura and heroic synergies to grow threats and close through combat.",
+    "engines": [
+      {
+        "card": "Soulmender",
+        "reason": "A one-mana life-gain source that supports the deck’s payoff creatures."
+      },
+      {
+        "card": "Ajani's Pridemate",
+        "reason": "Turns life gain into +1/+1 counters and a growing threat."
+      },
+      {
+        "card": "Sunbond",
+        "reason": "Converts repeated life gain into counters on the enchanted creature."
+      }
+    ],
+    "warnings": [
+      "The source headings say 17 creatures and 20 Auras & Spells, but the listed quantities total 19 creatures and 18 cards in that second group. Heliod's Pilgrim is a creature, so the corrected groups are 20 creatures, 17 noncreature spells, and 23 lands (60 total); no quantities or card names were changed.",
+      "The attachment gives two different Celestial Resurgence triggers. This optional overlay uses the objective-card wording (gain 5+ life or put 3+ +1/+1 counters on a creature in one turn); the later handoff prompt instead says to trigger Sunbond / Ajani's Pridemate twice."
+    ],
+    "sourceTitle": "Mono-White Lifegain & Sunbond Heroic (user-supplied list)",
+    "featuredArtwork": [
+      {
+        "name": "Soul of Theros",
+        "imageUrl": "https://files.manuscdn.com/search-media/310519663765724956/HKfj3FOtLik6y9PO5BFIf8/e57qhYJz3Bg2FSEb9EvbU8.jpg"
+      },
+      {
+        "name": "Ajani's Pridemate",
+        "imageUrl": "https://files.manuscdn.com/search-media/310519663765724956/HKfj3FOtLik6y9PO5BFIf8/8tznHh2rx8ww8NBR3KQNoJ.webp"
+      },
+      {
+        "name": "Dawnbringer Charioteers",
+        "imageUrl": "https://files.manuscdn.com/search-media/310519663765724956/HKfj3FOtLik6y9PO5BFIf8/7r3uFnbn7xaQhu2bzCeZx4.jpg"
+      }
+    ],
+    "houseRule": {
+      "bossCard": "Soul of Theros",
+      "activation": "{5}{W}{W}: Creatures you control get +2/+2 and gain first strike, vigilance, and lifelink until end of turn.",
+      "objective": "Celestial Resurgence",
+      "trigger": "Gain 5 or more life in a single turn, or put 3 or more +1/+1 counters on a creature in a single turn using Sunbond or Ajani's Pridemate.",
+      "reward": "Unlock Soul of Theros into your hand or the Command Zone, and gain 3 life.",
+      "rulesNote": "Optional user-supplied casual house-rule overlay, separate from the 60-card non-Commander deck. The activation is shown as house-rule overlay text, not as a card-text reference; the Command Zone reward is not a Commander-rules claim."
+    },
+    "groups": [
+      {
+        "label": "Creatures",
+        "expected": 20,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Soulmender",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Ajani's Pridemate",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Wall of Essence",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Phalanx Leader",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Sungrace Pegasus",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Tethmos High Priest",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Archetype of Courage",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Dawnbringer Charioteers",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Evangel of Heliod",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Paragon of New Dawns",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Silent Sentinel",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Soul of Theros",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Heliod's Pilgrim",
+            "proxy": false
+          }
+        ]
+      },
+      {
+        "label": "Auras & Spells",
+        "expected": 17,
+        "cards": [
+          {
+            "quantity": 4,
+            "name": "Sunbond",
+            "proxy": false
+          },
+          {
+            "quantity": 3,
+            "name": "Mortal's Ardor",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Divine Favor",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Oppressive Rays",
+            "proxy": false
+          },
+          {
+            "quantity": 2,
+            "name": "Excoriate",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Glimpse the Sun God",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Launch the Fleet",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Pillar of Light",
+            "proxy": false
+          },
+          {
+            "quantity": 1,
+            "name": "Solemn Offering",
+            "proxy": false
+          }
+        ]
+      },
+      {
+        "label": "Lands",
+        "expected": 23,
+        "cards": [
+          {
+            "quantity": 23,
+            "name": "Plains",
+            "proxy": false
+          }
+        ]
+      }
+    ]
+  }
+]

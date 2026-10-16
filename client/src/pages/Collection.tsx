@@ -9,6 +9,7 @@ import { CollectionWorkspaceSkeleton } from '@/components/PageSkeletons';
 import { LocalDataControls } from '@/components/LocalDataControls';
 import { CollectionPlanner } from '@/components/CollectionPlanner';
 import { BinderUpgradeRadar } from '@/components/BinderUpgradeRadar';
+import { InventoryOnboardingAssistant } from '@/components/InventoryOnboardingAssistant';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { startLogin } from '@/const';
@@ -69,12 +70,14 @@ export default function Collection() {
         {isHydrating ? (
           <CollectionWorkspaceSkeleton />
         ) : <>
-        <NextBestPurchases />
+        <NextBestPurchases collection={localCollection} onOpenImportModal={() => setIsManaBoxOpen(true)} />
 
         <CollectionOverview
           onOpenImportModal={() => setIsManaBoxOpen(true)}
           refreshKey={collectionVersion}
         />
+
+        {localCollection.length > 0 && <InventoryOnboardingAssistant cards={localCollection} />}
 
         <BinderUpgradeRadar cards={localCollection} onOpenImportModal={() => setIsManaBoxOpen(true)} />
 

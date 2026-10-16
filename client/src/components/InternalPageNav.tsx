@@ -9,6 +9,8 @@ type SiteItem =
 
 const navigation: SiteItem[] = [
   { type: 'link', href: '/', label: 'Sets' },
+  { type: 'link', href: '/battle-box', label: 'Battle Box' },
+  { type: 'link', href: '/brawl-box', label: 'Brawlternatives' },
   {
     type: 'group',
     id: 'commander',
@@ -29,6 +31,8 @@ const navigation: SiteItem[] = [
       { href: '/dupe-decks', label: 'Themed 60-card decks' },
       { href: '/limited', label: 'Sealed & draft pool' },
       { href: '/duel-battle-box', label: 'Duel battle box' },
+      { href: '/battle-box-method', label: 'Battle Box build record' },
+      { href: '/battle-box-proxy-print', label: 'Battle Box proxy-print how-to' },
     ],
   },
   {

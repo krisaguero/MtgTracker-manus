@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildBinderUpgradeRadarItems } from './BinderUpgradeRadar';
+import { buildBinderUpgradeRadarItems, getBinderUpgradeRadarDescription, getBinderUpgradeRadarHeadline } from './BinderUpgradeRadar';
 import type { CommanderPreconUpgradeGuide } from '@/data/commanderPreconUpgradeGuides';
 
 const guide: CommanderPreconUpgradeGuide = {
@@ -19,6 +19,18 @@ const guide: CommanderPreconUpgradeGuide = {
 };
 
 describe('Binder Upgrade Radar data', () => {
+  it('uses accurate headlines for empty, unmatched, and matched collections', () => {
+    expect(getBinderUpgradeRadarHeadline(0, 0)).toBe('Explore Commander upgrade ideas.');
+    expect(getBinderUpgradeRadarHeadline(4, 0)).toBe('No researched picks found in this binder yet.');
+    expect(getBinderUpgradeRadarHeadline(4, 2)).toBe('Your collection has 2 researched upgrades in it.');
+  });
+
+  it('uses empty and unmatched copy that does not imply cards are already in the binder', () => {
+    expect(getBinderUpgradeRadarDescription(0, 0)).toContain('import a ManaBox list');
+    expect(getBinderUpgradeRadarDescription(0, 0)).not.toContain('Start with cards you already own');
+    expect(getBinderUpgradeRadarDescription(4, 0)).toContain('No guide picks matched');
+  });
+
   it('matches owned cards locally while retaining guide, theme, and source context', () => {
     const items = buildBinderUpgradeRadarItems([guide], [{ name: 'Portcullis Vine', quantity: 2, setCode: 'MKM', collectorNumber: '201' }]);
     expect(items).toHaveLength(1);

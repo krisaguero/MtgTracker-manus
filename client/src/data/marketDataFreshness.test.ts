@@ -15,6 +15,6 @@ describe('market data freshness and coverage', () => {
     expect(freshness.dailySignals.trackedCount).toBeGreaterThan(0);
     expect(freshness.dailySignals.pricedPrintingCount).toBeGreaterThan(0);
     expect(freshness.dailySignals.pricedPrintingCount).toBeLessThanOrEqual(freshness.dailySignals.trackedCount);
-    expect(freshness.dailySignals.sources).toContain('MTGJSON set data');
+    expect(freshness.dailySignals.sources).toContain('TCGplayer weekly price-spike report');
   });
 });

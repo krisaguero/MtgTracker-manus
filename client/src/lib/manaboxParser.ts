@@ -8,6 +8,8 @@ export interface OwnedCard {
   finish?: string;
   condition?: string;
   language?: string;
+  scryfallId?: string;
+  proxy?: boolean;
 }
 
 export interface CollectionImportReport {
@@ -27,8 +29,26 @@ function clean(value?: string) {
   return normalized || undefined;
 }
 
-export function collectionIdentity(card: Pick<OwnedCard, 'name' | 'setCode' | 'collectorNumber' | 'finish' | 'language'>): string {
-  return [card.name, card.setCode || '', card.collectorNumber || '', card.finish || 'normal', card.language || 'en']
+function normalizeFinish(value?: string) {
+  const normalized = clean(value)?.toLowerCase();
+  if (!normalized) return undefined;
+  if (['no', 'false', 'n', 'normal', 'nonfoil', 'non-foil', 'regular'].includes(normalized)) return 'normal';
+  if (['yes', 'true', 'y', 'foil'].includes(normalized)) return 'foil';
+  return normalized;
+}
+
+function normalizeLanguage(value?: string) {
+  const normalized = clean(value)?.toLowerCase();
+  if (!normalized) return undefined;
+  const aliases: Record<string, string> = { english: 'en', eng: 'en', french: 'fr', 'français': 'fr', german: 'de', deutsch: 'de', japanese: 'ja', spanish: 'es', italian: 'it', portuguese: 'pt', korean: 'ko', russian: 'ru' };
+  return aliases[normalized] || normalized;
+}
+
+export function collectionIdentity(card: Pick<OwnedCard, 'name' | 'setCode' | 'collectorNumber' | 'finish' | 'language' | 'scryfallId' | 'proxy'>): string {
+  const printing = card.scryfallId
+    ? `scryfall:${card.scryfallId}`
+    : `name:${card.name}::${card.setCode || ''}::${card.collectorNumber || ''}`;
+  return [printing, card.finish || 'normal', card.language || 'en', card.proxy ? 'proxy' : 'owned']
     .map((value) => value.trim().toLowerCase())
     .join('::');
 }
@@ -140,11 +160,13 @@ export function parseManaBoxImport(content: string): OwnedCard[] {
     const indexOf = (...names: string[]) => headers.findIndex((header) => names.includes(header));
     const nameIdx = indexOf('name', 'cardname');
     const qtyIdx = indexOf('quantity', 'qty', 'count');
-    const setIdx = indexOf('set', 'setcode');
-    const collectorIdx = indexOf('collectornumber', 'number', 'collector');
+    const setIdx = indexOf('setcode', 'editioncode', 'set');
+    const collectorIdx = indexOf('collectornumber', 'cardnumber', 'number', 'collector');
     const finishIdx = indexOf('finish', 'foil', 'treatment');
     const conditionIdx = indexOf('condition', 'cardcondition');
     const languageIdx = indexOf('language', 'lang');
+    const proxyIdx = indexOf('proxy', 'isproxy', 'proxycard');
+    const scryfallIdIdx = indexOf('scryfallid');
     const startRow = nameIdx !== -1 || qtyIdx !== -1 ? 1 : 0;
 
     for (let i = startRow; i < lines.length; i++) {
@@ -154,7 +176,9 @@ export function parseManaBoxImport(content: string): OwnedCard[] {
       const name = value(nameIdx) || clean(cols[0]?.replace(/^['"]|['"]$/g, ''));
       if (!name) continue;
       const parsedQty = Number.parseInt(value(qtyIdx) || '1', 10);
-      cards.push({ name, quantity: Number.isFinite(parsedQty) && parsedQty > 0 ? parsedQty : 1, setCode: value(setIdx), collectorNumber: value(collectorIdx), finish: value(finishIdx), condition: value(conditionIdx), language: value(languageIdx) });
+      const proxyValue = value(proxyIdx)?.toLowerCase();
+      const proxy = proxyValue ? ['true', '1', 'yes', 'y', 'proxy'].includes(proxyValue) : false;
+      cards.push({ name, quantity: Number.isFinite(parsedQty) && parsedQty > 0 ? parsedQty : 1, setCode: value(setIdx), collectorNumber: value(collectorIdx), finish: normalizeFinish(value(finishIdx)), condition: value(conditionIdx), language: normalizeLanguage(value(languageIdx)), scryfallId: value(scryfallIdIdx), ...(proxy ? { proxy: true } : {}) });
     }
   } else {
     for (const line of lines) {

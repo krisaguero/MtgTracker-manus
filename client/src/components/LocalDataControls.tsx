@@ -66,7 +66,7 @@ export function LocalDataControls({ onWorkspaceChanged }: LocalDataControlsProps
   }
 
   function handleDeleteAll() {
-    const confirmed = window.confirm('Delete this browser’s local collection, set goals, collector wishlist and trade piles, Limited pools, Commander Passport records, saved local decks, duel inventories, saved 60-card themes, sideboards, and valuation history? This does not delete the stored Groq API key, sign-in, account records, or UI preferences.');
+    const confirmed = window.confirm('Delete this browser’s local collection, set goals, collector wishlist and trade piles, Limited pools, Commander Passport records, saved local decks, duel inventories, saved 60-card themes, sideboards, and valuation history? This does not delete the tab-scoped Groq API key, sign-in, account records, or UI preferences.');
     if (!confirmed) return;
     try {
       clearLocalWorkspace();

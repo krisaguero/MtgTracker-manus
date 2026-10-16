@@ -33,6 +33,9 @@ const shippedItems = [
 ];
 
 const localOnlyItems = [
+  'Retro 9-deck non-Commander Battle Box: data-driven visual layouts, full lists, source discrepancy checks, private inventory queue, print/CSV export, and local community-build drafts. This worktree is not deployed.',
+  'Brawlternatives prototype: precon-themed, self-built, non-tuned 60-card Commander-preview concepts—Dr. Madison Li first, then Araumi of the Dead Tide—with Scryfall identity checks and visible source-list warnings. It is a custom alternative to Brawl, not official Magic Brawl, and keeps scan-derived ownership/proxy claims out of shared data.',
+  'Optional BYOK AI generation remains disabled until the user opts in and clicks generate; the key is session-scoped and inventory card names are not included in the provider request.',
   'Versioned local-workspace backup and validated restore, plus a user-confirmed local-data clear.',
   'Browser-local Commander Passport records, saved precon snapshots, duel inventories, and valuation history without requiring sign-in.',
   'Exact-printing ManaBox preview and duplicate/ambiguous-name resolution, plus set goals, exact-variant wishlists, and duplicate/trade piles.',
@@ -44,6 +47,14 @@ const localOnlyItems = [
 ];
 
 const plannedItems = [
+  {
+    title: 'Shared Battle Box review & publishing backend',
+    detail: 'Before any user-submitted build appears to other visitors, design and explicitly authorize a dedicated shared review/publishing backend with validation, moderation, privacy rules, and an attribution workflow. Builds may be featured or remixed only with visible author/source credit, and remixes must preserve the original author’s credit. The current form only saves a private browser draft or exports JSON; it does not publish. Supabase settings and schema are unchanged for this static feature.',
+  },
+  {
+    title: 'Expand Brawlternatives',
+    detail: 'The local Brawlternatives prototype starts with two precon-themed Commander-preview concepts. Future additions should be user-supplied, retain non-tuned/half-built status, and receive count, card-name, color-identity, and legality review. This custom alternative is not official Magic Brawl; the 2026 Retro Battle Box remains a separate non-Commander 1v1 set.',
+  },
   {
     title: 'More collection import formats',
     detail: 'Add source-specific adapters for other exports (candidate sources include Moxfield, Archidekt, and Deckbox), with a mapping preview, clear parse errors, duplicate handling, and printing-level matching. These are ideas, not supported imports today.',
@@ -71,7 +82,7 @@ export default function Roadmap() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b-2 border-border bg-card">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8 sm:py-12">
-          <SectionLabel>Product roadmap · reviewed October 15, 2026</SectionLabel>
+          <SectionLabel>Product roadmap · reviewed October 16, 2026</SectionLabel>
           <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end">
             <div>
               <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-6xl">Your collection, your choice to sync.</h1>
@@ -81,7 +92,7 @@ export default function Roadmap() {
             </div>
             <div className="border-2 border-amber-500/70 bg-amber-500/5 p-3 sm:p-4">
               <p className="font-mono text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">Status boundary</p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">Production remains at commit <code className="font-mono text-foreground">d456997</code>. This roadmap and the latest local-first privacy work are not deployed. No production data has been moved.</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Production remains at commit <code className="font-mono text-foreground">75a8455</code>. This roadmap and the latest local-first privacy work are not deployed. No production data has been moved.</p>
             </div>
           </div>
           <div className="mt-7 flex flex-wrap gap-2 font-mono text-[10px] font-black uppercase tracking-wider">

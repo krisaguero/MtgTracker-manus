@@ -65,6 +65,7 @@ export function DupeDecks() {
   const fileInputRefB = useRef<HTMLInputElement>(null);
 
   const [apiKey, setApiKey] = useState<string>(() => loadGroqApiKey());
+  const [aiOptIn, setAiOptIn] = useState(false);
   const [customPrompt, setCustomPrompt] = useState<string>('Izzet Prowess Spellslinger 1v1 duel deck');
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [generationError, setGenerationError] = useState<string | null>(null);
@@ -137,6 +138,10 @@ export function DupeDecks() {
   }
 
   async function handleGenerateCustom() {
+    if (!aiOptIn) {
+      setGenerationError('AI is off by default. Enable the one-time opt-in below before requesting a Groq generation.');
+      return;
+    }
     if (!apiKey.trim()) {
       setGenerationError('Please enter a Groq API key to generate custom AI archetypes.');
       return;
@@ -233,7 +238,7 @@ export function DupeDecks() {
                 <Key className="h-4 w-4" /> Groq AI Integration
               </div>
               <h2 className="mt-2 text-xl font-bold">Configure Groq API Key</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Enter your Groq API key to enable custom AI archetype generation and smart inventory matching.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Bring your own Groq API key for optional custom deck ideas. Ordinary deck building and inventory matching stay local and do not need AI.</p>
               <input
                 type="password"
                 value={apiKey}
@@ -242,7 +247,12 @@ export function DupeDecks() {
                 aria-label="Groq API Key"
                 className="mt-4 w-full border border-border bg-background p-3 font-mono text-xs text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
               />
-              <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">Stored locally in your browser storage only.</p>
+              <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">Held in this tab’s session storage; it is not sent to the app server.</p>
+
+              <label className="mt-4 flex cursor-pointer items-start gap-2 border border-border bg-background p-3 text-xs leading-5">
+                <input type="checkbox" checked={aiOptIn} onChange={(event) => { setAiOptIn(event.target.checked); setGenerationError(null); }} className="mt-0.5 h-4 w-4 accent-primary" />
+                <span><strong>Allow an AI request in this tab.</strong> Nothing is sent until this is checked and you click Generate. The prompt, recipe choices, and inventory card count go directly from this browser to Groq; card names, the collection file, and ownership records are not included. Your key is sent only to Groq as the request credential.</span>
+              </label>
 
               <div className="mt-6 border-t border-border pt-5">
                 <div className="flex items-center justify-between gap-3">
@@ -266,11 +276,11 @@ export function DupeDecks() {
                 <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-relaxed text-muted-foreground">The builder combines these choices into a tighter prompt: simple curve, 60 cards, 1v1 rules, four-copy limits, and a first-three-turn plan.</p>
                 <Button
                   onClick={handleGenerateCustom}
-                  disabled={isGenerating}
+                  disabled={isGenerating || !aiOptIn || !apiKey.trim()}
                   className="mt-3 w-full gap-2 font-mono text-xs uppercase tracking-wider"
                 >
                   {isGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                  {isGenerating ? 'Generating via Groq AI...' : 'Generate Custom AI Deck'}
+                  {isGenerating ? 'Generating via Groq AI...' : aiOptIn ? 'Generate Custom AI Deck' : 'AI off · opt in to generate'}
                 </Button>
                 {generationError && <p className="mt-2 text-xs font-semibold text-destructive">{generationError}</p>}
               </div>
