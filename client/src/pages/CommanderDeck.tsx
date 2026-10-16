@@ -13,6 +13,7 @@ import { getPreconMarketContext, type PreconMarketHighlight } from '@/lib/precon
 import { formatArenaVariantDecklist, calculateArenaMorphWildcardCosts } from '@/lib/arenaLegality';
 import { PreconStrategyPrimer } from '@/components/PreconStrategyPrimer';
 import { MissingCardsSinglesSection } from '@/components/MissingCardsSinglesSection';
+import { PreconUpgradePaths } from '@/components/PreconUpgradePaths';
 import { DecklistSkeleton } from '@/components/DecklistSkeleton';
 import { PreconStickyHeader } from '@/components/PreconStickyHeader';
 import { ValuationComparisonSection } from '@/components/ValuationComparisonSection';
@@ -254,6 +255,13 @@ export default function CommanderDeck() {
           commanderEntries={data.commander}
           deckEntries={data.deck}
           approxValue={liveMarketValue.total ?? sealedBaseline}
+        />
+
+        <PreconUpgradePaths
+          setCode={data.setCode}
+          deckName={data.name}
+          commanderNames={data.commander.map((entry: DecklistEntry) => entry.card.name)}
+          ownedCards={loadOwnedCollection()}
         />
 
         <MissingCardsSinglesSection
