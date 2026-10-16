@@ -1,7 +1,132 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15T13:12:23.618Z",
+  "updatedAt": "2026-10-16T13:06:26.119Z",
   "records": [
+    {
+      "id": "2026-10-16-top-10:1:cmd:269",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Command Tower (CMD 269) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "entryUsd": 1.02,
+      "action": "MONITOR",
+      "thesis": "Market signal matrix; rose 18.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          0,
+          10
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Developing",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:2:mh2:267",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Counterspell (MH2 267) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "entryUsd": 3.55,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; rose 7.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          0,
+          10
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Developing",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:3:plst:E01-54",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Lightning Bolt (PLST E01-54) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "collectorNumber": "E01-54",
+      "entryUsd": 1.07,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; fell 0.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:4:plst:BLC-277",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "collectorNumber": "BLC-277",
+      "entryUsd": 2.82,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; rose 0.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:5:m15:25",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Preeminent Captain (M15 25) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "collectorNumber": "25",
+      "entryUsd": 0.74,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-15-constructed-format-watch:1:all:28",
       "dateKey": "2026-10-15",

@@ -1,12 +1,183 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T13:12:23.625Z",
+  "generatedAt": "2026-10-16T13:06:26.125Z",
   "schedule": {
     "daily": "08:00 UTC",
     "topicExpansion": "weekday rotation",
     "biweeklyTop10": "every other Friday"
   },
   "posts": [
+    {
+      "id": "2026-10-16-top-10",
+      "dateKey": "2026-10-16",
+      "slug": "biweekly-top-10",
+      "title": "Biweekly Top 10 Watchlist · 2026-10-16",
+      "label": "Biweekly Top 10",
+      "kind": "biweekly-top-10",
+      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+      "generatedAt": "2026-10-16T08:00:00.000Z",
+      "summary": "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 9 priced signals, with 4 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Command Tower (CMD) at $1.02 and +18.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "body": [
+        "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 9 priced signals, with 4 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Command Tower (CMD) at $1.02 and +18.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+      ],
+      "cards": [
+        {
+          "rank": 1,
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "setName": "CMD",
+          "collectorNumber": "269",
+          "currentUsd": 1.02,
+          "previousUsd": 0.86,
+          "percentChange": 18.6,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Market signal matrix; rose 18.6% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              0,
+              10
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Developing",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "setName": "MH2",
+          "collectorNumber": "267",
+          "currentUsd": 3.55,
+          "previousUsd": 3.29,
+          "percentChange": 7.9,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; rose 7.9% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              0,
+              10
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Developing",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Lightning Bolt",
+          "setCode": "plst",
+          "setName": "PLST",
+          "collectorNumber": "E01-54",
+          "currentUsd": 1.07,
+          "previousUsd": 1.08,
+          "percentChange": -0.93,
+          "category": "pauper-gems",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; fell 0.9% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Idol of Oblivion",
+          "setCode": "plst",
+          "setName": "PLST",
+          "collectorNumber": "BLC-277",
+          "currentUsd": 2.82,
+          "previousUsd": 2.81,
+          "percentChange": 0.36,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; rose 0.4% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "Preeminent Captain",
+          "setCode": "m15",
+          "setName": "M15",
+          "collectorNumber": "25",
+          "currentUsd": 0.74,
+          "previousUsd": 0.74,
+          "percentChange": 0,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        }
+      ],
+      "sources": [
+        "MTGJSON set data",
+        "MTGJSON paper price data",
+        "Scryfall image endpoint"
+      ],
+      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+    },
     {
       "id": "2026-10-15-constructed-format-watch",
       "dateKey": "2026-10-15",
