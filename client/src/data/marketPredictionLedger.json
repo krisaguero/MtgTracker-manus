@@ -1,74 +1,24 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-16T13:06:26.119Z",
+  "updatedAt": "2026-10-16T19:26:02.151Z",
   "records": [
     {
-      "id": "2026-10-16-top-10:1:cmd:269",
+      "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess Command Tower (CMD 269) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Command Tower",
-      "setCode": "cmd",
-      "collectorNumber": "269",
-      "entryUsd": 1.02,
-      "action": "MONITOR",
-      "thesis": "Market signal matrix; rose 18.6% since the prior saved observation across 2 available price sources.",
+      "prompt": "Assess Tivit, Seller of Secrets (SNC printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tivit, Seller of Secrets",
+      "setCode": "snc",
+      "collectorNumber": null,
+      "entryUsd": 15,
+      "action": "DO_NOT_CHASE",
+      "thesis": "TCGplayer attributes a move from a long-held $4–$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
       "prediction": {
         "horizonDays": 14,
         "expectedDirection": "UP",
         "projectedPctRange": [
           0,
           10
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Developing",
-        "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-16-top-10:2:mh2:267",
-      "dateKey": "2026-10-16",
-      "postId": "2026-10-16-top-10",
-      "prompt": "Assess Counterspell (MH2 267) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Counterspell",
-      "setCode": "mh2",
-      "collectorNumber": "267",
-      "entryUsd": 3.55,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; rose 7.9% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "UP",
-        "projectedPctRange": [
-          0,
-          10
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Developing",
-        "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-16-top-10:3:plst:E01-54",
-      "dateKey": "2026-10-16",
-      "postId": "2026-10-16-top-10",
-      "prompt": "Assess Lightning Bolt (PLST E01-54) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Lightning Bolt",
-      "setCode": "plst",
-      "collectorNumber": "E01-54",
-      "entryUsd": 1.07,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; fell 0.9% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
         ],
         "model": "rule-based momentum screen; not a verified AI forecast",
         "confidence": "Unverified",
@@ -78,25 +28,50 @@
       "outcome": null
     },
     {
-      "id": "2026-10-16-top-10:4:plst:BLC-277",
+      "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Idol of Oblivion",
-      "setCode": "plst",
-      "collectorNumber": "BLC-277",
-      "entryUsd": 2.82,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; rose 0.4% since the prior saved observation across 2 available price sources.",
+      "prompt": "Assess Ripples of Potential (EOE printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ripples of Potential",
+      "setCode": "eoe",
+      "collectorNumber": null,
+      "entryUsd": 6,
+      "action": "DO_NOT_CHASE",
+      "thesis": "TCGplayer reports a Commander: Edge of Eternities copy doubling from about $3 to $6 as planeswalker protection demand increased. Exact printing needs verification.",
       "prediction": {
         "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "expectedDirection": "UP",
         "projectedPctRange": [
-          -5,
-          5
+          0,
+          10
         ],
         "model": "rule-based momentum screen; not a verified AI forecast",
         "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess The Theorist, Jace Beleren (UNVERIFIED printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "The Theorist, Jace Beleren",
+      "setCode": "unverified",
+      "collectorNumber": null,
+      "entryUsd": 63.41,
+      "action": "DO_NOT_CHASE",
+      "thesis": "TCGplayer reports Standard adoption around Reality Fracture moving the card from about $35 to $63.41; TCGIndex reports a different current price, so exact printing and venue require reconciliation.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          0,
+          10
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Developing",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30"
       },
@@ -110,7 +85,132 @@
       "name": "Preeminent Captain",
       "setCode": "m15",
       "collectorNumber": "25",
-      "entryUsd": 0.74,
+      "entryUsd": 0.75,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; rose 2.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:6:mh2:267",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Counterspell (MH2 267) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "entryUsd": 3.84,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; fell 1.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:7:ppdsk:202p",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Tyvar, the Pummeler (PPDSK 202p) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "collectorNumber": "202p",
+      "entryUsd": 6.75,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; rose 1.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:8:cmd:269",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Command Tower (CMD 269) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "entryUsd": 1,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; fell 1.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:9:eld:161",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess The Great Henge (ELD 161) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "entryUsd": 65.55,
+      "action": "WATCH",
+      "thesis": "Market signal matrix; rose 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -5,
+          5
+        ],
+        "model": "rule-based momentum screen; not a verified AI forecast",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:10:all:28",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Force of Will (ALL 28) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Force of Will",
+      "setCode": "all",
+      "collectorNumber": "28",
+      "entryUsd": 67.01,
       "action": "WATCH",
       "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "prediction": {
@@ -128,227 +228,27 @@
       "outcome": null
     },
     {
-      "id": "2026-10-15-constructed-format-watch:1:all:28",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Force of Will (ALL 28) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Force of Will",
-      "setCode": "all",
-      "collectorNumber": "28",
-      "entryUsd": 66.8,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
+      "dateKey": "2026-10-16",
+      "postId": "2026-10-16-top-10",
+      "prompt": "Assess Abstergo Entertainment (ACR printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Abstergo Entertainment",
+      "setCode": "acr",
+      "collectorNumber": null,
+      "entryUsd": 4,
+      "action": "DO_NOT_CHASE",
+      "thesis": "TCGplayer reports a move back above $4 after earlier fringe Modern interest; Commander use is secondary until verified.",
       "prediction": {
         "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "expectedDirection": "UP",
         "projectedPctRange": [
-          -5,
-          5
+          0,
+          10
         ],
         "model": "rule-based momentum screen; not a verified AI forecast",
         "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:2:eld:161",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess The Great Henge (ELD 161) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "The Great Henge",
-      "setCode": "eld",
-      "collectorNumber": "161",
-      "entryUsd": 63.28,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:3:ppdsk:202p",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Tyvar, the Pummeler (PPDSK 202p) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Tyvar, the Pummeler",
-      "setCode": "ppdsk",
-      "collectorNumber": "202p",
-      "entryUsd": 7.26,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:4:ppblb:49p",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Eluge, the Shoreless Sea (PPBLB 49p) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Eluge, the Shoreless Sea",
-      "setCode": "ppblb",
-      "collectorNumber": "49p",
-      "entryUsd": 5.23,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:5:mh2:267",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Counterspell (MH2 267) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Counterspell",
-      "setCode": "mh2",
-      "collectorNumber": "267",
-      "entryUsd": 3.29,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:6:plst:BLC-277",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Idol of Oblivion",
-      "setCode": "plst",
-      "collectorNumber": "BLC-277",
-      "entryUsd": 2.81,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch:7:plst:E01-54",
-      "dateKey": "2026-10-15",
-      "postId": "2026-10-15-constructed-format-watch",
-      "prompt": "Assess Lightning Bolt (PLST E01-54) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Lightning Bolt",
-      "setCode": "plst",
-      "collectorNumber": "E01-54",
-      "entryUsd": 1.08,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-15",
-        "evaluationDate": "2026-10-29"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-14-commander-demand:1:eld:161",
-      "dateKey": "2026-10-14",
-      "postId": "2026-10-14-commander-demand",
-      "prompt": "Assess The Great Henge (ELD 161) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "The Great Henge",
-      "setCode": "eld",
-      "collectorNumber": "161",
-      "entryUsd": 63.28,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-14",
-        "evaluationDate": "2026-10-28"
-      },
-      "outcome": null
-    },
-    {
-      "id": "2026-10-14-commander-demand:2:plst:BLC-277",
-      "dateKey": "2026-10-14",
-      "postId": "2026-10-14-commander-demand",
-      "prompt": "Assess Idol of Oblivion (PLST BLC-277) for a 14-day market direction and precon/third-party demand risk.",
-      "name": "Idol of Oblivion",
-      "setCode": "plst",
-      "collectorNumber": "BLC-277",
-      "entryUsd": 2.81,
-      "action": "WATCH",
-      "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "prediction": {
-        "horizonDays": 14,
-        "expectedDirection": "FLAT_OR_UNCERTAIN",
-        "projectedPctRange": [
-          -5,
-          5
-        ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
-        "confidence": "Unverified",
-        "openedAt": "2026-10-14",
-        "evaluationDate": "2026-10-28"
+        "openedAt": "2026-10-16",
+        "evaluationDate": "2026-10-30"
       },
       "outcome": null
     },

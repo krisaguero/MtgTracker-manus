@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T13:06:26.125Z",
+  "generatedAt": "2026-10-16T19:26:02.159Z",
   "schedule": {
     "daily": "08:00 UTC",
     "topicExpansion": "weekday rotation",
@@ -16,29 +16,29 @@
       "kind": "biweekly-top-10",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "generatedAt": "2026-10-16T08:00:00.000Z",
-      "summary": "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 9 priced signals, with 4 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Command Tower (CMD) at $1.02 and +18.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (SNC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 9 priced signals, with 4 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Command Tower (CMD) at $1.02 and +18.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (SNC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
       "cards": [
         {
           "rank": 1,
-          "name": "Command Tower",
-          "setCode": "cmd",
-          "setName": "CMD",
-          "collectorNumber": "269",
-          "currentUsd": 1.02,
-          "previousUsd": 0.86,
-          "percentChange": 18.6,
-          "category": "penny-risers",
-          "sourceCount": 2,
-          "confidence": "Developing",
-          "action": "MONITOR",
-          "thesis": "Market signal matrix; rose 18.6% since the prior saved observation across 2 available price sources.",
+          "name": "Tivit, Seller of Secrets",
+          "setCode": "snc",
+          "setName": "Streets of New Capenna",
+          "collectorNumber": null,
+          "currentUsd": 15,
+          "previousUsd": 4.5,
+          "percentChange": 233.33,
+          "category": "commander-picks",
+          "sourceCount": 1,
+          "confidence": "Unverified",
+          "action": "DO_NOT_CHASE",
+          "thesis": "TCGplayer attributes a move from a long-held $4–$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
           "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
-          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "verifiedAt": "2026-10-16T19:20:00Z",
           "prediction": {
             "horizonDays": 14,
             "expectedDirection": "UP",
@@ -47,27 +47,27 @@
               10
             ],
             "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Developing",
+            "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
           }
         },
         {
           "rank": 2,
-          "name": "Counterspell",
-          "setCode": "mh2",
-          "setName": "MH2",
-          "collectorNumber": "267",
-          "currentUsd": 3.55,
-          "previousUsd": 3.29,
-          "percentChange": 7.9,
-          "category": "reprint-squashes",
-          "sourceCount": 2,
-          "confidence": "Developing",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; rose 7.9% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "name": "Ripples of Potential",
+          "setCode": "eoe",
+          "setName": "Commander: Edge of Eternities",
+          "collectorNumber": null,
+          "currentUsd": 6,
+          "previousUsd": 3,
+          "percentChange": 100,
+          "category": "commander-picks",
+          "sourceCount": 1,
+          "confidence": "Unverified",
+          "action": "DO_NOT_CHASE",
+          "thesis": "TCGplayer reports a Commander: Edge of Eternities copy doubling from about $3 to $6 as planeswalker protection demand increased. Exact printing needs verification.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-16T19:20:00Z",
           "prediction": {
             "horizonDays": 14,
             "expectedDirection": "UP",
@@ -76,33 +76,33 @@
               10
             ],
             "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Developing",
+            "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
           }
         },
         {
           "rank": 3,
-          "name": "Lightning Bolt",
-          "setCode": "plst",
-          "setName": "PLST",
-          "collectorNumber": "E01-54",
-          "currentUsd": 1.07,
-          "previousUsd": 1.08,
-          "percentChange": -0.93,
-          "category": "pauper-gems",
-          "sourceCount": 2,
+          "name": "Abstergo Entertainment",
+          "setCode": "acr",
+          "setName": "Assassin’s Creed",
+          "collectorNumber": null,
+          "currentUsd": 4,
+          "previousUsd": 2,
+          "percentChange": 100,
+          "category": "high-spikes",
+          "sourceCount": 1,
           "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; fell 0.9% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "action": "DO_NOT_CHASE",
+          "thesis": "TCGplayer reports a move back above $4 after earlier fringe Modern interest; Commander use is secondary until verified.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-16T19:20:00Z",
           "prediction": {
             "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "expectedDirection": "UP",
             "projectedPctRange": [
-              -5,
-              5
+              0,
+              10
             ],
             "model": "rule-based momentum screen; not a verified AI forecast",
             "confidence": "Unverified",
@@ -112,29 +112,29 @@
         },
         {
           "rank": 4,
-          "name": "Idol of Oblivion",
-          "setCode": "plst",
-          "setName": "PLST",
-          "collectorNumber": "BLC-277",
-          "currentUsd": 2.82,
-          "previousUsd": 2.81,
-          "percentChange": 0.36,
-          "category": "commander-picks",
+          "name": "The Theorist, Jace Beleren",
+          "setCode": "unverified",
+          "setName": "Reality Fracture",
+          "collectorNumber": null,
+          "currentUsd": 63.41,
+          "previousUsd": 35,
+          "percentChange": 81.17,
+          "category": "high-spikes",
           "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; rose 0.4% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "confidence": "Developing",
+          "action": "DO_NOT_CHASE",
+          "thesis": "TCGplayer reports Standard adoption around Reality Fracture moving the card from about $35 to $63.41; TCGIndex reports a different current price, so exact printing and venue require reconciliation.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-16T19:20:00Z",
           "prediction": {
             "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "expectedDirection": "UP",
             "projectedPctRange": [
-              -5,
-              5
+              0,
+              10
             ],
             "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
+            "confidence": "Developing",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
           }
@@ -145,16 +145,161 @@
           "setCode": "m15",
           "setName": "M15",
           "collectorNumber": "25",
-          "currentUsd": 0.74,
-          "previousUsd": 0.74,
-          "percentChange": 0,
+          "currentUsd": 0.75,
+          "previousUsd": 0.73,
+          "percentChange": 2.74,
           "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; rose 2.7% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 6,
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "setName": "MH2",
+          "collectorNumber": "267",
+          "currentUsd": 3.84,
+          "previousUsd": 3.89,
+          "percentChange": -1.29,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; fell 1.3% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 7,
+          "name": "Tyvar, the Pummeler",
+          "setCode": "ppdsk",
+          "setName": "PPDSK",
+          "collectorNumber": "202p",
+          "currentUsd": 6.75,
+          "previousUsd": 6.68,
+          "percentChange": 1.05,
+          "category": "high-spikes",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; rose 1.1% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 8,
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "setName": "CMD",
+          "collectorNumber": "269",
+          "currentUsd": 1,
+          "previousUsd": 1.01,
+          "percentChange": -0.99,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; fell 1.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 9,
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "setName": "ELD",
+          "collectorNumber": "161",
+          "currentUsd": 65.55,
+          "previousUsd": 65.53,
+          "percentChange": 0.03,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Market signal matrix; rose 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -5,
+              5
+            ],
+            "model": "rule-based momentum screen; not a verified AI forecast",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-16",
+            "evaluationDate": "2026-10-30"
+          }
+        },
+        {
+          "rank": 10,
+          "name": "Force of Will",
+          "setCode": "all",
+          "setName": "ALL",
+          "collectorNumber": "28",
+          "currentUsd": 67.01,
+          "previousUsd": 67.01,
+          "percentChange": 0,
+          "category": "foil-multipliers",
           "sourceCount": 2,
           "confidence": "Unverified",
           "action": "WATCH",
           "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
           "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-16T13:06:23.204Z",
+          "verifiedAt": "2026-10-08T15:24:50.940Z",
           "prediction": {
             "horizonDays": 14,
             "expectedDirection": "FLAT_OR_UNCERTAIN",
@@ -170,324 +315,13 @@
         }
       ],
       "sources": [
-        "MTGJSON set data",
-        "MTGJSON paper price data",
+        "TCGplayer weekly price-spike report",
+        "TCGIndex market report",
+        "MTGStocks weekly winners",
+        "Wizards of the Coast official announcements",
         "Scryfall image endpoint"
       ],
-      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
-      "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
-      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
-    },
-    {
-      "id": "2026-10-15-constructed-format-watch",
-      "dateKey": "2026-10-15",
-      "slug": "constructed-format-watch",
-      "title": "Constructed Format Watch · 2026-10-15",
-      "label": "Constructed Format Watch",
-      "kind": "topic-expansion",
-      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
-      "generatedAt": "2026-10-15T08:00:00.000Z",
-      "summary": "Constructed Format Watch · 2026-10-15. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is Force of Will (ALL) at $66.80 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
-      "body": [
-        "Constructed Format Watch · 2026-10-15. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is Force of Will (ALL) at $66.80 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
-        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
-        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
-      ],
-      "cards": [
-        {
-          "rank": 1,
-          "name": "Force of Will",
-          "setCode": "all",
-          "setName": "ALL",
-          "collectorNumber": "28",
-          "currentUsd": 66.8,
-          "previousUsd": 66.8,
-          "percentChange": 0,
-          "category": "foil-multipliers",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 2,
-          "name": "The Great Henge",
-          "setCode": "eld",
-          "setName": "ELD",
-          "collectorNumber": "161",
-          "currentUsd": 63.28,
-          "previousUsd": 63.28,
-          "percentChange": 0,
-          "category": "commander-picks",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 3,
-          "name": "Tyvar, the Pummeler",
-          "setCode": "ppdsk",
-          "setName": "PPDSK",
-          "collectorNumber": "202p",
-          "currentUsd": 7.26,
-          "previousUsd": 7.26,
-          "percentChange": 0,
-          "category": "high-spikes",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 4,
-          "name": "Eluge, the Shoreless Sea",
-          "setCode": "ppblb",
-          "setName": "PPBLB",
-          "collectorNumber": "49p",
-          "currentUsd": 5.23,
-          "previousUsd": 5.23,
-          "percentChange": 0,
-          "category": "high-spikes",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 5,
-          "name": "Counterspell",
-          "setCode": "mh2",
-          "setName": "MH2",
-          "collectorNumber": "267",
-          "currentUsd": 3.29,
-          "previousUsd": 3.29,
-          "percentChange": 0,
-          "category": "reprint-squashes",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 6,
-          "name": "Idol of Oblivion",
-          "setCode": "plst",
-          "setName": "PLST",
-          "collectorNumber": "BLC-277",
-          "currentUsd": 2.81,
-          "previousUsd": 2.81,
-          "percentChange": 0,
-          "category": "commander-picks",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        },
-        {
-          "rank": 7,
-          "name": "Lightning Bolt",
-          "setCode": "plst",
-          "setName": "PLST",
-          "collectorNumber": "E01-54",
-          "currentUsd": 1.08,
-          "previousUsd": 1.08,
-          "percentChange": 0,
-          "category": "pauper-gems",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-15T13:12:20.318Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-15",
-            "evaluationDate": "2026-10-29"
-          }
-        }
-      ],
-      "sources": [
-        "MTGJSON set data",
-        "MTGJSON paper price data",
-        "Scryfall image endpoint"
-      ],
-      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
-      "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
-      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
-    },
-    {
-      "id": "2026-10-14-commander-demand",
-      "dateKey": "2026-10-14",
-      "slug": "commander-demand",
-      "title": "Commander Demand Desk · 2026-10-14",
-      "label": "Commander Demand Desk",
-      "kind": "topic-expansion",
-      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
-      "generatedAt": "2026-10-14T08:00:00.000Z",
-      "summary": "Commander Demand Desk · 2026-10-14. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is The Great Henge (ELD) at $63.28 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
-      "body": [
-        "Commander Demand Desk · 2026-10-14. The generated screen contains 9 priced signals, with 0 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is The Great Henge (ELD) at $63.28 and +0.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
-        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
-        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
-      ],
-      "cards": [
-        {
-          "rank": 1,
-          "name": "The Great Henge",
-          "setCode": "eld",
-          "setName": "ELD",
-          "collectorNumber": "161",
-          "currentUsd": 63.28,
-          "previousUsd": 63.28,
-          "percentChange": 0,
-          "category": "commander-picks",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-14T13:28:13.863Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-14",
-            "evaluationDate": "2026-10-28"
-          }
-        },
-        {
-          "rank": 2,
-          "name": "Idol of Oblivion",
-          "setCode": "plst",
-          "setName": "PLST",
-          "collectorNumber": "BLC-277",
-          "currentUsd": 2.81,
-          "previousUsd": 2.81,
-          "percentChange": 0,
-          "category": "commander-picks",
-          "sourceCount": 2,
-          "confidence": "Unverified",
-          "action": "WATCH",
-          "thesis": "Market signal matrix; held flat 0.0% since the prior saved observation across 2 available price sources.",
-          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
-          "verifiedAt": "2026-10-14T13:28:13.863Z",
-          "prediction": {
-            "horizonDays": 14,
-            "expectedDirection": "FLAT_OR_UNCERTAIN",
-            "projectedPctRange": [
-              -5,
-              5
-            ],
-            "model": "rule-based momentum screen; not a verified AI forecast",
-            "confidence": "Unverified",
-            "openedAt": "2026-10-14",
-            "evaluationDate": "2026-10-28"
-          }
-        }
-      ],
-      "sources": [
-        "MTGJSON set data",
-        "MTGJSON paper price data",
-        "Scryfall image endpoint"
-      ],
-      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "methodology": "Curated daily evidence pass. Reported prices are source-specific and remain developing where venues, exact printings, completed sales, or volume are not reconciled. No percentage is inferred where the source lacks a clean baseline.",
       "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
       "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
     },

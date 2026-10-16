@@ -94,7 +94,7 @@ function paragraph(topic, dateKey, cards, snapshot, biweekly) {
   return `${topic.label} · ${dateKey}. The generated screen contains ${snapshot.signalCount} priced signals, with ${direction} positive moves in the current snapshot. ${mode} The leading screened name is ${top ? `${top.name} (${top.setCode.toUpperCase()}) at ${money(top.currentUsd)} and ${signed(top.percentChange)}` : 'no qualifying card after filtering'}. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.`;
 }
 function buildPost({ dateKey, topic, snapshot, history, isBiweekly }) {
-  const signals = [...(snapshot.signals || [])].filter((signal) => topicMatches(signal, topic));
+  const signals = [...(snapshot.signals || [])].filter((signal) => isBiweekly || topicMatches(signal, topic));
   const ranked = signals.sort((a, b) => Math.abs(b.percentChange) - Math.abs(a.percentChange) || b.currentUsd - a.currentUsd).slice(0, isBiweekly ? 10 : 8);
   const cards = ranked.map((signal, index) => cardFromSignal(signal, index + 1));
   for (const card of cards) card.prediction = predictionFor(card, dateKey);
