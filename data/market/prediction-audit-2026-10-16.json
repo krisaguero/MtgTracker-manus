@@ -1,0 +1,340 @@
+{
+  "auditDate": "2026-10-16",
+  "auditWindow": {
+    "requested": "2026-09-16 through 2026-10-16",
+    "historyAvailable": "2026-09-09 through 2026-10-08",
+    "predictionRecords": 15
+  },
+  "coverage": {
+    "records": 15,
+    "uniqueCards": 12,
+    "recordsWithPriceHistory": 11,
+    "recordsWithPostEntryPrice": 0,
+    "recordsWithRecordedOutcome": 0,
+    "validEvaluatedRecords": 0,
+    "unresolvedRecords": 15,
+    "expectedDirectionCounts": {
+      "UP": 4,
+      "FLAT_OR_UNCERTAIN": 11
+    },
+    "duplicateCards": {
+      "Command Tower": 2,
+      "Counterspell": 2,
+      "Preeminent Captain": 2
+    }
+  },
+  "accuracy": {
+    "directionalHitRate": null,
+    "rangeHitRate": null,
+    "meanAbsoluteErrorPct": null,
+    "note": "Not computable: no prediction has a post-entry price observation or recorded outcome."
+  },
+  "limitations": [
+    "The stored daily price history ends on 2026-10-08, before the earliest prediction opened on 2026-10-13.",
+    "The October 13 and October 16 prediction records are not yet due; evaluation dates are October 27 and October 30.",
+    "Several October 16 signals have unresolved exact printings and source-specific price disagreements.",
+    "Pre-entry price changes are context only and must not be counted as prediction hits."
+  ],
+  "records": [
+    {
+      "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
+      "opened": "2026-10-16",
+      "name": "Tivit, Seller of Secrets",
+      "setCode": "snc",
+      "expected": "UP",
+      "range": [
+        0,
+        10
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 15,
+      "outcome": null,
+      "pathPoints": 0,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": null,
+      "preEntryEndUsd": null,
+      "preEntryChangePct": null,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
+      "opened": "2026-10-16",
+      "name": "Ripples of Potential",
+      "setCode": "eoe",
+      "expected": "UP",
+      "range": [
+        0,
+        10
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 6,
+      "outcome": null,
+      "pathPoints": 0,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": null,
+      "preEntryEndUsd": null,
+      "preEntryChangePct": null,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
+      "opened": "2026-10-16",
+      "name": "The Theorist, Jace Beleren",
+      "setCode": "unverified",
+      "expected": "UP",
+      "range": [
+        0,
+        10
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 63.41,
+      "outcome": null,
+      "pathPoints": 0,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": null,
+      "preEntryEndUsd": null,
+      "preEntryChangePct": null,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:5:m15:25",
+      "opened": "2026-10-16",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 0.75,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 0.72,
+      "preEntryEndUsd": 0.75,
+      "preEntryChangePct": 4.17,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:6:mh2:267",
+      "opened": "2026-10-16",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 3.84,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 4.09,
+      "preEntryEndUsd": 3.84,
+      "preEntryChangePct": -6.11,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:7:ppdsk:202p",
+      "opened": "2026-10-16",
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 6.75,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 4.88,
+      "preEntryEndUsd": 6.75,
+      "preEntryChangePct": 38.32,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:8:cmd:269",
+      "opened": "2026-10-16",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 1,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 0.97,
+      "preEntryEndUsd": 1,
+      "preEntryChangePct": 3.09,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:9:eld:161",
+      "opened": "2026-10-16",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 65.55,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 62.97,
+      "preEntryEndUsd": 65.55,
+      "preEntryChangePct": 4.1,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:10:all:28",
+      "opened": "2026-10-16",
+      "name": "Force of Will",
+      "setCode": "all",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 67.01,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 64.44,
+      "preEntryEndUsd": 67.01,
+      "preEntryChangePct": 3.99,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
+      "opened": "2026-10-16",
+      "name": "Abstergo Entertainment",
+      "setCode": "acr",
+      "expected": "UP",
+      "range": [
+        0,
+        10
+      ],
+      "evaluationDate": "2026-10-30",
+      "entryUsd": 4,
+      "outcome": null,
+      "pathPoints": 0,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": null,
+      "preEntryEndUsd": null,
+      "preEntryChangePct": null,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:1:m15:25",
+      "opened": "2026-10-13",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "entryUsd": 0.75,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 0.72,
+      "preEntryEndUsd": 0.75,
+      "preEntryChangePct": 4.17,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:2:mh2:267",
+      "opened": "2026-10-13",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "entryUsd": 3.84,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 4.09,
+      "preEntryEndUsd": 3.84,
+      "preEntryChangePct": -6.11,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:3:cmd:269",
+      "opened": "2026-10-13",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "entryUsd": 1,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 0.97,
+      "preEntryEndUsd": 1,
+      "preEntryChangePct": 3.09,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:4:plst:BLC-277",
+      "opened": "2026-10-13",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "entryUsd": 2.6,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 2.28,
+      "preEntryEndUsd": 2.6,
+      "preEntryChangePct": 14.04,
+      "latestPostEntry": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:5:plst:E01-54",
+      "opened": "2026-10-13",
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "expected": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "entryUsd": 1.08,
+      "outcome": null,
+      "pathPoints": 30,
+      "postEntryPoints": 0,
+      "preEntryStartUsd": 1.09,
+      "preEntryEndUsd": 1.08,
+      "preEntryChangePct": -0.92,
+      "latestPostEntry": null
+    }
+  ]
+}
