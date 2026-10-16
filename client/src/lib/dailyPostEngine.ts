@@ -32,15 +32,15 @@ export interface PredictionRoundupItem {
 export interface WeeklyRoundup {
   weekLabel: string;
   summary: string;
-  accuracyRate: number; // percentage
+  accuracyRate: number | null; // null when no audited outcome history exists
   predictions: PredictionRoundupItem[];
 }
 
 export function getDailyMoverPost(): DailyMoverPost {
   return {
-    date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-    title: 'Daily Market Brief: Top 5 High-Velocity Movers & Buyout Watch',
-    subtitle: 'Analyzing the 5 most volatile cards in today’s Scryfall and vendor scan, breaking down the exact supply shifts and format demands driving their price action.',
+    date: 'Illustrative sample · not live',
+    title: 'Sample Market Brief: Five Illustrative Price-Movement Cases',
+    subtitle: 'This page currently uses hard-coded demonstration values. It is not a scan of today’s Scryfall data, vendor inventory, or completed transactions.',
     topMovers: [
       {
         rank: 1,
@@ -49,7 +49,7 @@ export function getDailyMoverPost(): DailyMoverPost {
         currentUsd: 48.00,
         percentChange: 42.5,
         driverCategory: 'High Value Spikes',
-        movementThesis: 'Surging demand from newly spoiled token-generating commanders in upcoming expansion sets has drained vendor inventories, driving a 42% single-day price correction upward.',
+        movementThesis: 'Hypothetical example only: a token-focused commander could increase demand for this card. No live listing, sales, or inventory evidence is connected to this sample.',
       },
       {
         rank: 2,
@@ -58,7 +58,7 @@ export function getDailyMoverPost(): DailyMoverPost {
         currentUsd: 4.50,
         percentChange: 88.0,
         driverCategory: 'Penny Risers & Buyout Targets',
-        movementThesis: 'Targeted by coordinated cart accumulation following a viral Reddit thread highlighting its interaction with new sacrifice fodder commons. Liquidity is extremely thin.',
+        movementThesis: 'Hypothetical example only: a new sacrifice interaction could draw attention. This is not evidence of a coordinated buyout or thin current inventory.',
       },
       {
         rank: 3,
@@ -67,7 +67,7 @@ export function getDailyMoverPost(): DailyMoverPost {
         currentUsd: 38.00,
         percentChange: 24.2,
         driverCategory: 'Commander Format Staples',
-        movementThesis: 'Consistent casual and competitive Commander staple absorption. Supply from original commander precons continues to dwindle relative to active player base growth.',
+        movementThesis: 'Hypothetical example only: staple demand and reprint supply can affect prices. This sample does not measure either factor.',
       },
       {
         rank: 4,
@@ -76,7 +76,7 @@ export function getDailyMoverPost(): DailyMoverPost {
         currentUsd: 11.00,
         percentChange: 31.0,
         driverCategory: 'RC Rule-Change Watchers',
-        movementThesis: 'Speculative hoarding ahead of upcoming Rules Committee bracket announcements, with players anticipating blue interaction checks in competitive pods.',
+        movementThesis: 'Hypothetical example only: format or policy discussion can influence player attention. No current event is asserted by this demonstration.',
       },
       {
         rank: 5,
@@ -85,18 +85,18 @@ export function getDailyMoverPost(): DailyMoverPost {
         currentUsd: 0.85,
         percentChange: 112.5,
         driverCategory: 'Penny Risers & Buyout Targets',
-        movementThesis: 'Penny riser breaking out of bulk bins due to graveyard-land synergy discoveries in standard and modern format brew lists.',
+        movementThesis: 'Hypothetical example only: a newly explored synergy can change interest in an inexpensive card. No current format result is being reported here.',
       },
     ],
-    marketTakeaway: 'Today’s action confirms that low-supply Commander pre-reprint windows and viral combo discoveries remain the primary catalysts for secondary market volatility. Buyers should exercise caution on penny buyouts where circulating copies are tightly held.',
+    marketTakeaway: 'This is an editorial layout sample, not evidence that any card is moving today. Before acting on a market idea, check a dated quote, recent completed sales, listing depth, reprint risk, and the exact printing.',
   };
 }
 
 export function getWeeklyPredictionRoundup(): WeeklyRoundup {
   return {
-    weekLabel: 'Week of August 10 – August 16, 2026',
-    summary: 'Evaluating last week’s 5 high-conviction market predictions against current realized price action. Our tracking model achieved an 80% directional accuracy rate across major spike and buyout calls.',
-    accuracyRate: 80,
+    weekLabel: 'Illustrative fixture · not an audited week',
+    summary: 'The predictions and prices below are hard-coded examples; they have not been reconciled against dated market records and do not represent model performance.',
+    accuracyRate: null,
     predictions: [
       {
         id: 'pred-1',

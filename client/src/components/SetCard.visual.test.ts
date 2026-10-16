@@ -3,6 +3,13 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 describe('primary set card imagery', () => {
+  it('uses the provided set symbol without eager-loading additional artwork', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/components/SetCard.tsx'), 'utf8');
+    expect(source).toContain('src={set.icon_svg_uri}');
+    expect(source).toContain('loading="lazy"');
+    expect(source).toContain('decoding="async"');
+  });
+
   it('keeps commander previews framed as portrait card images', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/components/SetCard.tsx'), 'utf8');
     const frame = readFileSync(resolve(process.cwd(), 'client/src/components/CommanderCardFrame.tsx'), 'utf8');

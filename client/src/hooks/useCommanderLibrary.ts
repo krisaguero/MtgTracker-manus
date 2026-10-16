@@ -18,6 +18,7 @@ export interface CommanderProduct {
   imageUrl?: string;
   scryfall_uri?: string;
   cardCount?: number;
+  colorIdentity?: string[];
 }
 
 interface ScryfallSetSummary {
@@ -38,6 +39,7 @@ interface ScryfallCardSearch {
     image_uris?: { normal?: string };
     scryfall_uri?: string;
     card_count?: number;
+    color_identity?: string[];
   }>;
 }
 
@@ -112,6 +114,7 @@ export function useCommanderLibrary() {
                 imageUrl: card.image_uris?.normal,
                 scryfall_uri: card.scryfall_uri,
                 cardCount: card.card_count,
+                colorIdentity: card.color_identity,
               }));
             }
           } catch (productError) {

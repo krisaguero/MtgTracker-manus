@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { collectionImportAudits, InsertUser, savedDecks, users } from "../drizzle/schema.js";
+import { InsertUser, savedDecks, users } from "../drizzle/schema.js";
 import { ENV } from './_core/env.js';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -107,14 +107,6 @@ export async function deleteSavedDeck(userId: number, deckKey: string) {
   const db = await getDb();
   if (!db) throw new Error('Database is not configured');
   await db.delete(savedDecks).where(and(eq(savedDecks.userId, userId), eq(savedDecks.deckKey, deckKey)));
-}
-
-export async function recordCollectionImportAudit(input: typeof collectionImportAudits.$inferInsert) {
-  const db = await getDb();
-  if (!db) return;
-  await db.insert(collectionImportAudits).values(input).onDuplicateKeyUpdate({
-    set: { sourceName: input.sourceName, incomingEntries: input.incomingEntries, duplicateEntries: input.duplicateEntries, unresolvedPrintings: input.unresolvedPrintings, importedAt: new Date() },
-  });
 }
 
 // TODO: add feature queries here as your schema grows.

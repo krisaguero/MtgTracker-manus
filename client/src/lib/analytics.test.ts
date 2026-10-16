@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { loadUmamiAnalytics } from './analytics';
+import { isAnalyticsOptedIn, loadUmamiAnalytics, saveAnalyticsConsent } from './analytics';
 
 function createDocumentStub() {
   const created: Array<{ defer: boolean; src: string; dataset: Record<string, string> }> = [];
@@ -30,6 +30,19 @@ function createDocumentStub() {
 }
 
 describe('optional Umami analytics', () => {
+  it('defaults to off and only enables after explicit opt-in', () => {
+    const values = new Map<string, string>();
+    const storage = {
+      getItem: (key: string) => values.get(key) ?? null,
+      setItem: (key: string, value: string) => { values.set(key, value); },
+    };
+    expect(isAnalyticsOptedIn(storage)).toBe(false);
+    saveAnalyticsConsent(true, storage);
+    expect(isAnalyticsOptedIn(storage)).toBe(true);
+    saveAnalyticsConsent(false, storage);
+    expect(isAnalyticsOptedIn(storage)).toBe(false);
+  });
+
   it('does not inject a script unless endpoint and website ID are configured', () => {
     const stub = createDocumentStub();
 

@@ -33,6 +33,17 @@ export function collectionIdentity(card: Pick<OwnedCard, 'name' | 'setCode' | 'c
     .join('::');
 }
 
+/** Find same-name printings for a name-only import without silently assigning one. */
+export function possiblePrintingMatches(existing: OwnedCard[], incoming: OwnedCard[]): Map<string, OwnedCard[]> {
+  const matches = new Map<string, OwnedCard[]>();
+  for (const card of incoming) {
+    if (card.setCode || card.collectorNumber) continue;
+    const sameName = existing.filter((candidate) => candidate.name.trim().toLowerCase() === card.name.trim().toLowerCase());
+    if (sameName.length > 0) matches.set(collectionIdentity(card), sameName);
+  }
+  return matches;
+}
+
 export function saveOwnedCollection(cards: OwnedCard[]): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));

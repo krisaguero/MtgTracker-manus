@@ -4,14 +4,20 @@ import { Link } from 'wouter';
 import { ArrowLeft, CheckCircle2, Copy, Download, FileUp, Key, Layers, Loader2, ShieldAlert, Sparkles, Upload, Wand2, Dice5 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DUPE_DECK_THEMES, GROQ_RECIPE_OPTIONS, buildGroqDeckPrompt, generateCustomGroqDeck, generateDupeDeck, loadGroqApiKey, parseInventoryText, saveGroqApiKey, type InventoryCard, type DupeDeckResult, type GroqDeckRecipe } from '@/lib/dupeDecksEngine';
-import { loadSavedInventory, saveSavedInventory } from '@/lib/dupeDecksStorage';
+import { loadSavedInventory, saveSavedInventory, loadSideboard, saveSideboard, loadSavedThemes, saveDuelTheme, type SavedDuelTheme } from '@/lib/dupeDecksStorage';
 
 export function DupeDecks() {
   const [activeDeckSlot, setActiveDeckSlot] = useState<'a' | 'b'>('a');
   const [inventoryA, setInventoryA] = useState<string>(() => loadSavedInventory('a'));
   const [inventoryB, setInventoryB] = useState<string>(() => loadSavedInventory('b'));
+  const [sideboardA, setSideboardA] = useState<string>(() => loadSideboard('a'));
+  const [sideboardB, setSideboardB] = useState<string>(() => loadSideboard('b'));
+  const [savedThemes, setSavedThemes] = useState<SavedDuelTheme[]>(() => loadSavedThemes());
+  const [themePresetName, setThemePresetName] = useState('');
+  const [themeSavedStatus, setThemeSavedStatus] = useState('');
 
   const inventoryInput = activeDeckSlot === 'a' ? inventoryA : inventoryB;
+  const sideboardInput = activeDeckSlot === 'a' ? sideboardA : sideboardB;
   const setInventoryInput = (val: string) => {
     if (activeDeckSlot === 'a') {
       setInventoryA(val);
@@ -26,6 +32,34 @@ export function DupeDecks() {
   const [inventory, setInventory] = useState<InventoryCard[]>(() => parseInventoryText(inventoryInput));
   const [deck, setDeck] = useState<DupeDeckResult>(() => generateDupeDeck(selectedTheme, inventory));
   const [copied, setCopied] = useState(false);
+
+  function handleUpdateSideboard(text: string) {
+    if (activeDeckSlot === 'a') { setSideboardA(text); saveSideboard('a', text); }
+    else { setSideboardB(text); saveSideboard('b', text); }
+  }
+
+  function handleSaveThemePreset() {
+    const theme = DUPE_DECK_THEMES.find((item) => item.id === selectedTheme);
+    const name = themePresetName.trim();
+    if (!theme || !name) {
+      setThemeSavedStatus('Choose a built-in theme and enter a name to save it. Custom AI output is available to copy or download, but is not stored as a reusable recipe.');
+      return;
+    }
+    try {
+      const saved = saveDuelTheme({ id: `theme-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, name, themeId: theme.id, slot: activeDeckSlot, savedAt: Date.now() });
+      setSavedThemes(saved); setThemePresetName(''); setThemeSavedStatus(`Saved “${name}” for Deck ${activeDeckSlot.toUpperCase()} in this browser.`);
+    } catch {
+      setThemeSavedStatus('Could not save this preset in browser storage. Export a local backup or free storage space and try again.');
+    }
+  }
+
+  function handleRestoreTheme(theme: SavedDuelTheme) {
+    setActiveDeckSlot(theme.slot); setSelectedTheme(theme.themeId);
+    const text = theme.slot === 'a' ? inventoryA : inventoryB;
+    const parsed = parseInventoryText(text);
+    setInventory(parsed); setDeck(generateDupeDeck(theme.themeId, parsed));
+    setThemeSavedStatus(`Loaded “${theme.name}” for Deck ${theme.slot.toUpperCase()}.`);
+  }
 
   const fileInputRefA = useRef<HTMLInputElement>(null);
   const fileInputRefB = useRef<HTMLInputElement>(null);
@@ -131,8 +165,13 @@ export function DupeDecks() {
     for (const card of deck.cards) {
       lines.push(`${card.quantity} ${card.name}`);
     }
+    const sideboardCards = parseInventoryText(sideboardInput);
+    if (sideboardCards.length) {
+      lines.push('', 'Sideboard');
+      for (const card of sideboardCards) lines.push(`${card.quantity} ${card.name}`);
+    }
     return lines.join('\n');
-  }, [deck]);
+  }, [deck, sideboardInput]);
 
   async function handleCopy() {
     try {
@@ -182,7 +221,7 @@ export function DupeDecks() {
           </div>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Dupe-Decks: Library &amp; Inventory Processor</h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            Import your card library or ManaBox inventory export to automatically build competitive 60-card 1v1 duel decks that maximize your existing duplicate card pool, enhanced by Groq AI.
+            Import a card pool or local inventory to build casual 60-card 1v1 theme decks, compare owned copies, plan a sideboard, and save reusable theme presets. Optional AI-generated lists should be checked before play.
           </p>
         </div>
 
@@ -299,11 +338,22 @@ export function DupeDecks() {
                 placeholder="4 Lightning Bolt&#10;4 Counterspell..."
               />
               <p className="mt-2 font-mono text-xs text-muted-foreground">Detected {inventory.length} unique inventory lines.</p>
+              <div className="mt-4 border-t border-border pt-4">
+                <label htmlFor="duel-sideboard" className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Deck {activeDeckSlot.toUpperCase()} sideboard</label>
+                <p className="mt-1 text-xs text-muted-foreground">Optional cards are kept separate from the 60-card main list and included in exports.</p>
+                <textarea id="duel-sideboard" value={sideboardInput} onChange={(event) => handleUpdateSideboard(event.target.value)} rows={4} placeholder="1 Abrade\n2 Negate" className="mt-2 w-full border border-border bg-background p-3 font-mono text-xs leading-5 text-foreground outline-none focus:border-primary" />
+              </div>
             </div>
 
             <div className="border-2 border-border bg-card p-6">
               <h2 className="text-xl font-bold">2. Prebuilt 1v1 Duel Themes</h2>
               <p className="mt-1 text-sm text-muted-foreground">Or choose a classic 60-card archetype.</p>
+              <div className="mt-4 border border-border bg-background p-3">
+                <h3 className="font-mono text-xs font-black uppercase tracking-wider text-primary">Save a theme for later</h3>
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row"><input value={themePresetName} onChange={(event) => setThemePresetName(event.target.value)} maxLength={120} placeholder="Preset name" aria-label="Saved theme preset name" className="min-h-10 flex-1 border border-border bg-card px-3 text-sm" /><Button type="button" variant="outline" className="min-h-10" onClick={handleSaveThemePreset}>Save selected theme</Button></div>
+                {themeSavedStatus && <p role="status" className="mt-2 text-xs text-muted-foreground">{themeSavedStatus}</p>}
+                {savedThemes.length > 0 && <div className="mt-3 flex flex-wrap gap-2"><span className="w-full font-mono text-[10px] font-bold uppercase text-muted-foreground">Saved presets</span>{savedThemes.map((theme) => <button key={theme.id} type="button" onClick={() => handleRestoreTheme(theme)} className="min-h-10 border border-border bg-card px-3 text-xs font-semibold hover:border-primary">{theme.name} · Deck {theme.slot.toUpperCase()}</button>)}</div>}
+              </div>
               <div className="mt-4 space-y-3">
                 {DUPE_DECK_THEMES.map((theme) => {
                   const isSelected = selectedTheme === theme.id;

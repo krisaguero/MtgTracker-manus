@@ -3,6 +3,8 @@ import { spawn, spawnSync } from 'node:child_process';
 
 const snapshotPath =
   process.argv[2] || 'client/src/data/commanderCardPriceSnapshot.json';
+const metadataPath =
+  process.argv[3] || 'client/src/data/commanderCardPriceMeta.json';
 const snapshot = JSON.parse(await readFile(snapshotPath, 'utf8'));
 const records = Array.isArray(snapshot.records) ? snapshot.records : [];
 const byUuid = new Map(
@@ -185,8 +187,17 @@ snapshot.coverage = {
 };
 snapshot.records = records;
 const tempPath = `${snapshotPath}.tmp`;
+const metadata = {
+  generatedAt: snapshot.generatedAt,
+  priceDate: snapshot.priceDate,
+  source: snapshot.source,
+  coverage: snapshot.coverage,
+};
+const metadataTempPath = `${metadataPath}.tmp`;
+await writeFile(metadataTempPath, `${JSON.stringify(metadata, null, 2)}\n`);
 await writeFile(tempPath, `${JSON.stringify(snapshot, null, 2)}\n`);
 await rename(tempPath, snapshotPath);
+await rename(metadataTempPath, metadataPath);
 
 console.log(
   `MTGJSON build: ${sourceVersion || 'version unavailable'} (${sourceBuildDate})`

@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'wouter';
 import { ArrowLeft, ExternalLink, ShieldCheck, ShoppingBag, Sparkles, TrendingUp, Users, Layers, Zap, Plus, Check } from 'lucide-react';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedPrecons } from '@/lib/preconInventory';
 import { loadOwnedCollection, saveOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { moversForCard, suppliedSignalsForCard } from '@/lib/marketMoverLinks';
@@ -187,7 +187,7 @@ export default function CardDetail() {
     const list: Array<{ name: string; setCode: string; setName: string; slug: string; isOwned: boolean; marketValue: number; pricedCards: number; totalCards: number; topValueCard?: { name: string; usd: number } }> = [];
     const queryName = cardNameParam.toLowerCase();
 
-    for (const deck of commanderDecklistsData) {
+    for (const deck of commanderDecklists) {
       const allDeckCards = [...deck.commander, ...deck.cards];
       const hasCard = allDeckCards.some((c) => c.name.toLowerCase() === queryName);
       if (hasCard) {

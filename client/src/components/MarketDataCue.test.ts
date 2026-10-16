@@ -10,10 +10,10 @@ describe("shared market-data status cue", () => {
 
   it("uses the same dated source provenance wording for all ready views", () => {
     expect(
-      marketDataCueText("ready", "MTGJSON AllPricesToday", "2026-10-15")
-    ).toBe("MTGJSON AllPricesToday snapshot as of 2026-10-15");
+      marketDataCueText("ready", "MTGJSON AllPricesToday", "2026-10-14", "2026-10-15T08:00:00.000Z")
+    ).toBe("MTGJSON AllPricesToday snapshot · quotes as of 2026-10-14 · last refreshed 2026-10-15T08:00:00.000Z");
     expect(marketDataCueText("ready")).toBe(
-      "Card-price index snapshot as of date unavailable"
+      "Card-price index snapshot · quotes as of date unavailable"
     );
   });
 

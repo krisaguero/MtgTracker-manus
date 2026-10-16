@@ -202,6 +202,7 @@ export default function Home() {
   const [marketPriceSnapshot, setMarketPriceSnapshot] = useState({
     source: "",
     asOf: "",
+    refreshedAt: "",
   });
   const catalogStateRef = useRef<HomeCatalogState>(initialCatalogState);
   const [isHeroCollapsed, setIsHeroCollapsed] = useState(() => {
@@ -341,6 +342,7 @@ export default function Home() {
         setMarketPriceSnapshot({
           source: marketPriceIndex.commanderPriceSnapshotSource,
           asOf: marketPriceIndex.commanderPriceSnapshotAsOf,
+          refreshedAt: marketPriceIndex.commanderPriceSnapshotRefreshedAt,
         });
         setPreconEquitySummaryStatus("idle");
       })
@@ -501,7 +503,7 @@ export default function Home() {
             title={
               isHeroCollapsed ? "Expand hero banner" : "Minimize hero banner"
             }
-            className="absolute bottom-3 right-3 inline-flex h-8 w-8 items-center justify-center border border-border bg-card text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:hidden"
+            className="absolute bottom-3 right-3 inline-flex h-11 w-11 items-center justify-center border border-border bg-card text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:hidden"
           >
             {isHeroCollapsed ? (
               <ChevronDown className="h-3.5 w-3.5" />
@@ -559,6 +561,29 @@ export default function Home() {
           </div>
         </div>
 
+        <section className="mb-7" aria-label="Start by player goal">
+          <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
+            <div>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Start by your goal</p>
+              <h2 className="mt-1 text-lg font-black">What are you here to do?</h2>
+            </div>
+            <p className="text-xs text-muted-foreground">Choose a play or collection workflow, or browse sets below.</p>
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { href: "/deck-workshop", title: "Build / tune Commander", detail: "Check legality, color identity, owned cards, and budget swaps." },
+              { href: "/collection", title: "Grow my collection", detail: "Import printings, set goals, wishlists, duplicates, and trade piles." },
+              { href: "/dupe-decks", title: "Make a themed 60-card deck", detail: "Build a casual duel list from paired inventories and saved themes." },
+              { href: "/limited", title: "Build a sealed / draft deck", detail: "Track a pool, choose your 40, add basics, and export." },
+            ].map((goal) => (
+              <a key={goal.href} href={goal.href} className="group min-h-24 border border-border bg-card p-3 transition-colors hover:border-primary hover:bg-primary/5">
+                <span className="font-bold group-hover:text-primary">{goal.title}</span>
+                <span className="mt-1 block text-xs leading-5 text-muted-foreground">{goal.detail}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative min-w-0 flex-1 sm:max-w-xl">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -601,6 +626,7 @@ export default function Home() {
               status={marketDataStatus}
               source={marketPriceSnapshot.source}
               asOf={marketPriceSnapshot.asOf}
+              lastRefreshedAt={marketPriceSnapshot.refreshedAt}
               className="mt-1 max-w-full break-words font-mono text-[9px] font-bold uppercase tracking-wide"
             />
           </div>
@@ -767,7 +793,7 @@ export default function Home() {
                         above for the local Commander decklist archive.
                       </p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-3">
                       <select
                         aria-label="Filter sets by type"
                         value={setType}
@@ -775,7 +801,7 @@ export default function Home() {
                           setSetType(event.target.value as SetTypeFilter);
                           setSetsPage(1);
                         }}
-                        className="border border-border bg-background px-3 py-2 font-mono text-xs font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="min-h-11 w-full min-w-0 border border-border bg-background px-3 py-2 font-mono text-xs font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary sm:w-auto"
                       >
                         {Object.entries(SET_TYPE_LABELS).map(([key, label]) => (
                           <option key={key} value={key}>
@@ -790,7 +816,7 @@ export default function Home() {
                           setSortMode(event.target.value as SortMode);
                           setSetsPage(1);
                         }}
-                        className="border border-border bg-background px-3 py-2 font-mono text-xs font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="min-h-11 w-full min-w-0 border border-border bg-background px-3 py-2 font-mono text-xs font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary sm:w-auto"
                       >
                         <option value="newest">Newest released</option>
                         <option value="oldest">Oldest released</option>
@@ -806,7 +832,7 @@ export default function Home() {
                           setSetsPage(1);
                         }}
                         aria-pressed={showFavorites}
-                        className={`inline-flex items-center gap-1.5 border px-3 py-2 font-mono text-xs font-bold uppercase transition-colors ${showFavorites ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background hover:border-primary"}`}
+                        className={`col-span-2 inline-flex min-h-11 items-center justify-center gap-1.5 border px-3 py-2 font-mono text-xs font-bold uppercase transition-colors sm:col-auto ${showFavorites ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background hover:border-primary"}`}
                       >
                         <Bookmark className="h-3.5 w-3.5" />
                         Favorites ({favoriteCodes.length})
@@ -836,7 +862,7 @@ export default function Home() {
                     </button>
                   </div>
                 ) : (
-                  <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 sm:gap-6">
                     {currentSetsPage.items.map(
                       ({
                         set,
@@ -858,6 +884,7 @@ export default function Home() {
                           marketDataStatus={marketDataStatus}
                           marketPriceSource={marketPriceSnapshot.source}
                           marketPriceAsOf={marketPriceSnapshot.asOf}
+                          marketPriceRefreshedAt={marketPriceSnapshot.refreshedAt}
                           isExpanded={expandedSetCode === set.code}
                           onToggleExpanded={expanded =>
                             setExpandedSetCode(expanded ? set.code : null)

@@ -32,6 +32,7 @@ interface SetCardProps {
   marketDataStatus: MarketDataStatus;
   marketPriceSource?: string;
   marketPriceAsOf?: string;
+  marketPriceRefreshedAt?: string;
   isExpanded: boolean;
   onToggleExpanded: (expanded: boolean) => void;
   isFavorite?: boolean;
@@ -50,6 +51,7 @@ export function SetCard({
   marketDataStatus,
   marketPriceSource = "",
   marketPriceAsOf = "",
+  marketPriceRefreshedAt = "",
   isExpanded,
   onToggleExpanded,
   isFavorite = false,
@@ -66,9 +68,20 @@ export function SetCard({
   return (
     <div className="flex flex-col border-2 border-border bg-card shadow-sm transition-all hover:border-primary">
       {/* Set Header Banner */}
-      <div className="border-b border-border bg-background p-4 sm:p-5">
+      <div className="border-b border-border bg-background p-3 sm:p-5">
         <div className="flex items-start justify-between gap-3">
-          <div>
+          <div className="flex min-w-0 items-start gap-3">
+            {set.icon_svg_uri && (
+              <img
+                src={set.icon_svg_uri}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="mt-1 h-8 w-8 shrink-0 object-contain opacity-80 dark:invert"
+              />
+            )}
+            <div className="min-w-0">
             <div className="flex items-center gap-2">
               <span className="border border-border bg-card px-2 py-0.5 font-mono text-xs uppercase text-muted-foreground">
                 {set.code}
@@ -83,6 +96,7 @@ export function SetCard({
             <p className="mt-1 text-xs text-muted-foreground">
               {formattedDate} · {set.card_count} cards
             </p>
+            </div>
           </div>
 
           <div className="flex items-center gap-1.5 shrink-0">
@@ -93,7 +107,7 @@ export function SetCard({
                 title={
                   isFavorite ? "Remove from favorites" : "Add to favorites"
                 }
-                className={`inline-flex h-8 w-8 items-center justify-center border transition-colors ${isFavorite ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:text-primary"}`}
+                className={`inline-flex h-11 w-11 items-center justify-center border transition-colors ${isFavorite ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:text-primary"}`}
               >
                 <Bookmark className="h-4 w-4 fill-current" />
               </button>
@@ -102,7 +116,7 @@ export function SetCard({
               href={scryfallUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-8 w-8 items-center justify-center border border-border bg-card text-muted-foreground transition-colors hover:text-primary"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border bg-card text-muted-foreground transition-colors hover:text-primary"
               title="View on Scryfall"
             >
               <ExternalLink className="h-4 w-4" />
@@ -115,7 +129,7 @@ export function SetCard({
             <Button
               asChild
               size="sm"
-              className="font-mono text-xs uppercase font-bold"
+              className="min-h-11 font-mono text-xs uppercase font-bold"
             >
               <Link href={`/${set.code.toLowerCase()}`}>
                 View Set Catalog ({set.card_count})
@@ -143,6 +157,7 @@ export function SetCard({
                     status={marketDataStatus}
                     source={marketPriceSource}
                     asOf={marketPriceAsOf}
+                    lastRefreshedAt={marketPriceRefreshedAt}
                     className="mt-1 break-words font-mono text-[9px]"
                   />
                 </>
@@ -151,6 +166,7 @@ export function SetCard({
                   status={marketDataStatus}
                   source={marketPriceSource}
                   asOf={marketPriceAsOf}
+                  lastRefreshedAt={marketPriceRefreshedAt}
                   className="max-w-52 break-words text-right font-mono text-[9px] font-bold uppercase"
                 />
               )}
@@ -167,7 +183,7 @@ export function SetCard({
           aria-expanded={isExpanded}
           aria-controls={`set-precons-${set.code}`}
           aria-label={`${isExpanded ? "Hide" : "Show"} Commander precons for ${set.name}`}
-          className="flex w-full items-center justify-between px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
+          className="flex min-h-11 w-full items-center justify-between px-3 py-3 text-left font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground sm:px-4"
         >
           <span className="flex items-center gap-2 font-bold">
             <Layers3 className="h-4 w-4 text-primary" />
@@ -194,7 +210,7 @@ export function SetCard({
         <div id={`set-precons-${set.code}`} hidden={!isExpanded}>
           {isExpanded && (
             <div className="min-h-0 overflow-hidden">
-              <div className="p-4 pt-0 space-y-3">
+              <div className="p-3 pt-0 space-y-3 sm:p-4 sm:pt-0">
                 {archiveStatus === "loading" || archiveStatus === "idle" ? (
                   <div
                     role="status"
@@ -331,7 +347,7 @@ function PreconCard({
               asChild
               size="sm"
               variant="default"
-              className="w-full font-mono text-[10px] uppercase font-bold h-7"
+              className="min-h-11 w-full font-mono text-[10px] uppercase font-bold"
             >
               <Link href={targetRoute}>
                 {precon.hasDecklist

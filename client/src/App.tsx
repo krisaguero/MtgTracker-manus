@@ -35,6 +35,10 @@ const SpoilerCalendar = lazy(() => import('@/pages/SpoilerCalendar'));
 const MarketMoverReportArticle = lazy(() => import('@/pages/MarketMoverReportArticle'));
 const MarketMoverDashboards = lazy(() => import('@/pages/MarketMoverDashboards'));
 const MarketResearchFeed = lazy(() => import('@/pages/MarketResearchFeed'));
+const Roadmap = lazy(() => import('@/pages/Roadmap'));
+const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
+const Limited = lazy(() => import('@/pages/Limited'));
+const MarketHub = lazy(() => import('@/pages/MarketHub'));
 
 function Router() {
   return (
@@ -45,6 +49,10 @@ function Router() {
         <Route path={'/precons'} component={CommanderPreconLibrary} />
         <Route path={'/commander-market'} component={CommanderMarketIndex} />
         <Route path={'/collection'} component={Collection} />
+        <Route path={'/deck-workshop'} component={DeckWorkshop} />
+        <Route path={'/limited'} component={Limited} />
+        <Route path={'/markets'} component={MarketHub} />
+        <Route path={'/roadmap'} component={Roadmap} />
         <Route path="/market-report" component={MarketReport} />
         <Route path="/dupe-decks" component={DupeDecks} />
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />

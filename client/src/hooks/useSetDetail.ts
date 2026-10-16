@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { productAssetFor } from '@/data/preconProductAssets';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 
 function scryfallNamedImage(name: string, version: 'normal' | 'small' = 'normal') {
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=${version}`;
@@ -142,7 +142,7 @@ export function useSetDetail(setCode?: string) {
             .filter((set) => set.set_type === 'commander' && set.parent_set_code?.toLowerCase() === code)
             .map((set) => set.code.toLowerCase()),
         ]);
-        const directDecks = commanderDecklistsData.filter((d: any) => relatedCodes.has(d.set_code.toLowerCase()));
+        const directDecks = commanderDecklists.filter((d) => relatedCodes.has(d.set_code.toLowerCase()));
         const initialPrecons: PreconDeck[] = directDecks.map((deck: any) => {
           const productAsset = productAssetFor(deck.name);
           return {

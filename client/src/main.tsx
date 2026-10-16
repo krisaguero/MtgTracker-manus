@@ -7,9 +7,17 @@ import App from "./App";
 import { trpc } from "@/lib/trpc";
 import { startLogin } from "./const";
 import "./index.css";
-import { loadUmamiAnalytics } from "@/lib/analytics";
+import { isAnalyticsOptedIn, loadUmamiAnalytics } from "@/lib/analytics";
 
-loadUmamiAnalytics(import.meta.env.VITE_ANALYTICS_ENDPOINT, import.meta.env.VITE_ANALYTICS_WEBSITE_ID, document);
+try {
+  localStorage.removeItem("manus-runtime-user-info");
+} catch {
+  // Storage can be unavailable in private or restricted browser contexts.
+}
+
+if (isAnalyticsOptedIn()) {
+  loadUmamiAnalytics(import.meta.env.VITE_ANALYTICS_ENDPOINT, import.meta.env.VITE_ANALYTICS_WEBSITE_ID, document);
+}
 
 const queryClient = new QueryClient();
 

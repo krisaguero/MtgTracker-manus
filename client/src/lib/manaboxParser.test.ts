@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { mergeOwnedCollection, parseManaBoxImport } from './manaboxParser';
+import { mergeOwnedCollection, parseManaBoxImport, possiblePrintingMatches } from './manaboxParser';
 
 describe('parseManaBoxImport', () => {
   it('parses ManaBox-style CSV exports with quantity, set, and collector number', () => {
@@ -31,5 +31,16 @@ describe('parseManaBoxImport', () => {
     expect(result.cards[0]?.quantity).toBe(2);
     expect(result.report.duplicateEntries).toHaveLength(1);
     expect(result.report.mergedQuantity).toBe(0);
+  });
+
+  it('surfaces candidates for a name-only import but never chooses a printing automatically', () => {
+    const existing = [
+      { name: 'Sol Ring', quantity: 1, setCode: 'cmr', collectorNumber: '351' },
+      { name: 'Sol Ring', quantity: 1, setCode: 'm21', collectorNumber: '254' },
+    ];
+    const ambiguous = parseManaBoxImport('1 Sol Ring');
+    expect(Array.from(possiblePrintingMatches(existing, ambiguous).values())[0]).toHaveLength(2);
+    const exact = parseManaBoxImport('Name,Quantity,Set,Collector Number\nSol Ring,1,CMR,351');
+    expect(possiblePrintingMatches(existing, exact).size).toBe(0);
   });
 });

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight, Bell, BellRing, ExternalLink, Flame, Search, ShieldAlert, TrendingUp, X, SlidersHorizontal, CheckCircle2 } from 'lucide-react';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 import { getMarketSpikes, analyzePreconSealedEconomics, getReleaseArticles, type MarketFormat, type PreconSealedAnalysis } from '@/lib/marketIntelligence';
 import { loadPriceAlerts, refreshPriceAlerts, removePriceAlert, savePriceAlert, type PriceAlert } from '@/lib/priceAlerts';
 import { buildWeeklyMarketDigest } from '@/lib/weeklyDigest';
@@ -14,7 +14,7 @@ import { MarketCardSkeleton, PreconGridSkeleton } from '@/components/PageSkeleto
 export default function MarketReport() {
   const spikes = useMemo(() => getMarketSpikes(), []);
   const articles = useMemo(() => getReleaseArticles(), []);
-  const preconAnalyses: PreconSealedAnalysis[] = useMemo(() => commanderDecklistsData.map((deck) => analyzePreconSealedEconomics(deck)), []);
+  const preconAnalyses: PreconSealedAnalysis[] = useMemo(() => commanderDecklists.map((deck) => analyzePreconSealedEconomics(deck)), []);
 
   const ownedMap = useMemo(() => {
     const col = loadOwnedCollection();

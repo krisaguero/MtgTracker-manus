@@ -36,6 +36,8 @@ export const savedDecks = mysqlTable("saved_decks", {
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 }, (table) => ({ savedDeckUserKey: uniqueIndex("saved_decks_user_key").on(table.userId, table.deckKey) }));
 
+/** Retained for compatibility with existing databases; no current route writes to this table. */
+/** Retained for compatibility with existing databases; no current route writes to this table. */
 export const collectionImportAudits = mysqlTable("collection_import_audits", {
   id: int("id").autoincrement().primaryKey(),
   userId: int("userId").notNull(),

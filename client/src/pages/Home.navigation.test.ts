@@ -6,8 +6,9 @@ const read = (path: string) =>
   readFileSync(resolve(process.cwd(), path), "utf8").replace(/\s+/g, " ");
 
 describe("site-wide navigation and homepage catalogs", () => {
-  it("provides an accessible mobile menu and organized market subpage dropdowns", () => {
+  it("provides an accessible mobile menu organized around player goals and a compact market entry", () => {
     const navigation = read("client/src/components/InternalPageNav.tsx");
+    const marketHub = read("client/src/pages/MarketHub.tsx");
     expect(navigation).toContain('aria-label="Main site navigation"');
     expect(navigation).toContain(
       "aria-label={openMobileMenu ? 'Close navigation menu' : 'Open navigation menu'}"
@@ -17,9 +18,11 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(navigation).toContain(
       "{ href: '/movers', label: 'Daily market movers' }"
     );
-    expect(navigation).toContain(
-      "{ href: '/movers/confirmed', label: 'Mover desk · confirmed' }"
-    );
+    expect(navigation).toContain("id: 'play-collect'");
+    expect(navigation).toContain("{ href: '/limited', label: 'Sealed & draft pool' }");
+    expect(navigation).toContain("{ href: '/markets', label: 'All market research & tools' }");
+    expect(marketHub).toContain("['/movers/confirmed', 'Mover desk · confirmed']");
+    expect(marketHub).toContain("['/signal-matrix-article', 'Featured signal matrix']");
     expect(navigation).toContain(
       "{ href: '/market-reports', label: 'Report archive' }"
     );
@@ -41,6 +44,9 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(home).toContain("currentSetsPage.items.map");
     expect(home).toContain('label="Commander precons"');
     expect(home).toContain('label="Recent sets"');
+    expect(home).toContain('aria-label="Start by player goal"');
+    expect(home).toContain('"Build / tune Commander"');
+    expect(home).toContain('"Build a sealed / draft deck"');
   });
 
   it("shares the lazy archive load with an expanded set and distinguishes archive loading, failure, and empty results", () => {
@@ -82,7 +88,9 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(home).toContain("marketDataStatusFromIndex(");
     expect(home).toContain("Boolean(preconEquitySummary)");
     expect(setCard).toContain("<MarketDataCue status={marketDataStatus}");
-    expect(cue).toContain("snapshot as of");
+    expect(cue).toContain("quotes as of");
+    expect(cue).toContain("last refreshed");
+    expect(home).toContain("commanderPriceSnapshotRefreshedAt");
     expect(setCard).toContain("aria-expanded={isExpanded}");
     expect(setCard).toContain("sm:text-right");
     expect(setCard).not.toContain("precon.approxValue");
@@ -92,5 +100,15 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(preconCard).toContain("min-w-0 flex-col");
     expect(preconCard).toContain("USD coverage");
     expect(preconCard).toContain("missing");
+  });
+
+  it("keeps phone set controls in two columns and delays the two-column set grid until tablet width", () => {
+    const home = read("client/src/pages/Home.tsx");
+    const setCard = read("client/src/components/SetCard.tsx");
+    expect(home).toContain("grid w-full grid-cols-2 gap-2 sm:flex");
+    expect(home).toContain("col-span-2 inline-flex min-h-11");
+    expect(home).toContain("grid gap-4 md:grid-cols-2 xl:grid-cols-3");
+    expect(setCard).toContain("h-11 w-11");
+    expect(setCard).toContain("src={set.icon_svg_uri}");
   });
 });

@@ -102,7 +102,7 @@ describe("Commander product parent-set indexing", () => {
     );
     const archiveSource = archiveLoaderSource();
     const importIndex = archiveSource.search(
-      /await import\(["']\.\/commanderDecklistsData["']\)/
+      /import\(["']\.\/commanderDecklistsData["']\)/
     );
     const setFetchIndex = source.indexOf("async function loadSets()");
     const loaderEndIndex = source.indexOf("}, []);", loaderIndex);
@@ -111,6 +111,8 @@ describe("Commander product parent-set indexing", () => {
     expect(callIndex).toBeGreaterThan(loaderIndex);
     expect(callIndex).toBeLessThan(loaderEndIndex);
     expect(importIndex).toBeGreaterThan(-1);
+    expect(archiveSource).toContain('import("./mtgjsonPreconDecks")');
+    expect(archiveSource).toContain("Promise.all");
     expect(source.slice(setFetchIndex, setFetchEndIndex)).not.toContain(
       "loadLocalCommanderArchive"
     );

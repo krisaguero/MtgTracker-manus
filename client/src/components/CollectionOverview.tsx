@@ -15,29 +15,39 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
   const [collection, setCollection] = useState<OwnedCard[]>([]);
   const [history, setHistory] = useState<ValuationSnapshot[]>([]);
   const [recommendations, setRecommendations] = useState<DeckCoverageRecommendation[]>([]);
-  const [valuationData, setValuationData] = useState<{ totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string }>({
+  const [valuationData, setValuationData] = useState<{ totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string; refreshedAt: string }>({
     totalEquityUsd: 0,
     setBreakdowns: [],
     pricedCardCount: 0,
     unpricedCardCount: 0,
     snapshotDate: '',
+    refreshedAt: '',
   });
   const [showSetBreakdown, setShowSetBreakdown] = useState(false);
+  const [valuationStatus, setValuationStatus] = useState<'loading' | 'ready' | 'error'>('loading');
 
   useEffect(() => {
+    let cancelled = false;
     const col = loadOwnedCollection();
     setCollection(col);
     setRecommendations(getDeckCoverageRecommendations());
-
-    const valResult = getCollectionValuationAndBreakdown();
-    setValuationData(valResult);
-
-    if (col.length > 0) {
-      const updatedHistory = recordValuationSnapshot(valResult.totalEquityUsd);
-      setHistory(updatedHistory);
-    } else {
+    if (col.length === 0) {
       setHistory(getValuationHistory());
+      setValuationStatus('ready');
+      return () => { cancelled = true; };
     }
+
+    setValuationStatus('loading');
+    void getCollectionValuationAndBreakdown().then((valResult) => {
+      if (cancelled) return;
+      setValuationData(valResult);
+      const updatedHistory = recordValuationSnapshot(valResult.totalEquityUsd, { pricedCardCount: valResult.pricedCardCount, unpricedCardCount: valResult.unpricedCardCount, priceAsOf: valResult.snapshotDate, refreshedAt: valResult.refreshedAt });
+      setHistory(updatedHistory);
+      setValuationStatus('ready');
+    }).catch(() => {
+      if (!cancelled) setValuationStatus('error');
+    });
+    return () => { cancelled = true; };
   }, [refreshKey]);
 
   const totalUniqueCards = collection.reduce((sum, c) => sum + c.quantity, 0);
@@ -67,21 +77,21 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
         <div className="mt-8 space-y-8">
           {/* Top Stats Grid */}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="border border-border bg-background p-5">
+            <div className="border border-border bg-background p-4 sm:p-5">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Stored Collection</p>
               <p className="mt-2 text-3xl font-extrabold">{totalUniqueCards} <span className="text-sm font-normal text-muted-foreground">cards</span></p>
               <p className="mt-1 text-xs text-muted-foreground">{collection.length} unique card entries stored locally.</p>
             </div>
 
-            <div className="border border-border bg-background p-5">
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Real Market Equity</p>
-              <p className="mt-2 text-3xl font-extrabold text-primary">${currentValuation.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <span className="text-sm font-normal text-muted-foreground">USD</span></p>
+            <div className="border border-border bg-background p-4 sm:p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Market-indexed value · USD</p>
+              <p className="mt-2 text-3xl font-extrabold text-primary">{valuationStatus === 'loading' ? 'Loading…' : valuationStatus === 'error' ? 'Unavailable' : `$${currentValuation.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} <span className="text-sm font-normal text-muted-foreground">USD</span></p>
               <p className="mt-1 text-xs text-muted-foreground">
-                {valuationData.pricedCardCount} priced ({valuationData.unpricedCardCount} fallback) • {valuationData.snapshotDate}
+                {valuationStatus === 'loading' ? 'Loading the dated public price index…' : valuationStatus === 'error' ? 'The public price index could not be loaded; no value is shown.' : `${valuationData.pricedCardCount} copies priced · ${valuationData.unpricedCardCount} unpriced, excluded · quotes as of ${valuationData.snapshotDate} · index last refreshed ${valuationData.refreshedAt}`}
               </p>
             </div>
 
-            <div className="border border-border bg-background p-5 sm:col-span-2 lg:col-span-1">
+            <div className="border border-border bg-background p-4 sm:col-span-2 sm:p-5 lg:col-span-1">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Deck Builder Readiness</p>
               <p className="mt-2 text-xl font-bold">
                 {recommendations.filter((r) => r.coveragePercentage >= 50).length} Decks Over 50% Owned
@@ -91,21 +101,45 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
           </div>
 
           {/* Set Equity Breakdown Toggle & Section */}
-          <div className="border border-border bg-background p-5">
-            <div className="flex items-center justify-between cursor-pointer" onClick={() => setShowSetBreakdown(!showSetBreakdown)}>
+          <div className="border border-border bg-background p-4 sm:p-5">
+            <button
+              type="button"
+              aria-expanded={showSetBreakdown}
+              onClick={() => setShowSetBreakdown(!showSetBreakdown)}
+              className="flex min-h-11 w-full items-center justify-between gap-3 text-left"
+            >
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Set-Level Equity Breakdown</p>
                 <h3 className="text-lg font-bold">Equity Across {valuationData.setBreakdowns.length} Sets</h3>
               </div>
-              <Button variant="outline" size="sm" className="gap-2 font-mono text-xs uppercase">
+              <span className="inline-flex min-h-11 shrink-0 items-center gap-2 border border-border px-3 font-mono text-xs uppercase">
                 {showSetBreakdown ? 'Hide Breakdown' : 'View Set Totals'}
                 {showSetBreakdown ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-              </Button>
-            </div>
+              </span>
+            </button>
 
             {showSetBreakdown && (
-              <div className="mt-4 border-t border-border pt-4 max-h-72 overflow-y-auto space-y-2">
-                <table className="w-full text-left font-mono text-xs">
+              <div className="mt-4 max-h-72 overflow-y-auto border-t border-border pt-4">
+                <div className="space-y-2 sm:hidden" role="list" aria-label="Set equity totals">
+                  {valuationData.setBreakdowns.map((setRow) => (
+                    <article key={setRow.setCode} role="listitem" className="border border-border bg-card p-3">
+                      <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Set</p>
+                      <p className="mt-1 font-bold">{setRow.setCode}</p>
+                      <p className="text-sm leading-5 text-muted-foreground">{setRow.setName}</p>
+                      <dl className="mt-3 grid grid-cols-2 gap-3 border-t border-border pt-3 font-mono text-xs">
+                        <div>
+                          <dt className="text-[10px] uppercase text-muted-foreground">Cards</dt>
+                          <dd className="mt-1">{setRow.cardCount}</dd>
+                        </div>
+                        <div>
+                          <dt className="text-[10px] uppercase text-muted-foreground">Total equity</dt>
+                          <dd className="mt-1 font-bold text-primary">${setRow.totalValueUsd.toFixed(2)}</dd>
+                        </div>
+                      </dl>
+                    </article>
+                  ))}
+                </div>
+                <table className="hidden w-full text-left font-mono text-xs sm:table">
                   <thead>
                     <tr className="border-b border-border text-muted-foreground">
                       <th className="py-2">Set Code / Name</th>
@@ -128,7 +162,7 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
           </div>
 
           {/* Historical Valuation Chart */}
-          <div className="border border-border bg-background p-6">
+          <div className="border border-border bg-background p-4 sm:p-6">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Portfolio Tracking</p>
@@ -164,7 +198,7 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
                         <path d={pathString} fill="none" stroke="currentColor" className="text-primary" strokeWidth="3" />
                         {points.map((p) => (
                           <g key={p.date}>
-                            <circle cx={p.x} cy={p.y} r="4" className="fill-background stroke-primary" strokeWidth="2" />
+                            <circle cx={p.x} cy={p.y} r="4" className="fill-background stroke-primary" strokeWidth="2"><title>{p.date}: ${p.estimatedValueUsd.toFixed(2)} · {p.pricedCardCount ?? 'unknown'} priced · {p.unpricedCardCount ?? 'unknown'} unpriced · quotes as of {p.priceAsOf || 'date unavailable'}</title></circle>
                             <text x={p.x} y="156" textAnchor="middle" className="text-[9px] fill-muted-foreground">{p.date.slice(5)}</text>
                           </g>
                         ))}
@@ -180,7 +214,7 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
                 <p className="text-xs text-muted-foreground mt-1">Visit again tomorrow or update your collection to record a new dated snapshot.</p>
               </div>
             )}
-            <p className="mt-4 text-[11px] text-muted-foreground">Note: Chart reflects private local snapshots powered by real daily market price snapshots.</p>
+            <p className="mt-4 text-[11px] text-muted-foreground">Note: This dated index covers cards with a recorded market price only. Unpriced cards are excluded rather than assigned placeholder values; the total is not an appraisal or guaranteed sale value. Older history points without priced/unpriced counts predate explicit coverage tracking and may not be comparable.</p>
           </div>
 
           {/* Deck Recommendations Ranked by Coverage */}

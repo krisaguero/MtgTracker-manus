@@ -40,6 +40,9 @@ export function createCachedArchiveLoader(
 
 /** The archive stays in its own lazy-loaded chunk and is shared across every hook instance. */
 export const loadLocalCommanderArchive = createCachedArchiveLoader(async () => {
-  const archive = await import("./commanderDecklistsData");
-  return archive.commanderDecklistsData;
+  const [archive, generatedCatalog] = await Promise.all([
+    import("./commanderDecklistsData"),
+    import("./mtgjsonPreconDecks"),
+  ]);
+  return generatedCatalog.mergeMtgjsonCommanderDecks(archive.commanderDecklistsData);
 });

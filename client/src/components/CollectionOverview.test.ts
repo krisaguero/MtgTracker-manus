@@ -6,9 +6,11 @@ describe('CollectionOverview', () => {
   it('retains collection equity, historical value, and coverage-ranked recommendation sections', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/components/CollectionOverview.tsx'), 'utf8');
 
-    expect(source).toContain('Real Market Equity');
+    expect(source).toContain('Market-indexed value · USD');
     expect(source).toContain('Historical Collection Value Over Time');
     expect(source).toContain('Commander Decks Ranked by Your Collection Match');
     expect(source).toContain('coveragePercentage');
+    expect(source).toContain('last refreshed');
+    expect(source).toContain('predate explicit coverage tracking');
   });
 });

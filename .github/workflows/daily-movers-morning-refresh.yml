@@ -31,6 +31,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Refresh shared Commander and precon card-price snapshot
+        id: commander-price-refresh
+        run: node scripts/refresh-commander-card-prices.mjs
+        continue-on-error: true
+
+      - name: Report Commander price refresh failure without blocking mover updates
+        if: steps.commander-price-refresh.outcome == 'failure'
+        run: echo "::warning::Commander/precon price snapshot refresh failed; the existing dated snapshot was retained."
+
       - name: Run Daily Market Movers
         run: node scripts/daily-market-movers.mjs
 
@@ -48,7 +57,7 @@ jobs:
         run: |
           git config --global user.name 'MTG Morning Bot'
           git config --global user.email 'bot@mtgtracker.local'
-          git add client/src/data/dailyMarketSnapshot.json client/src/data/marketResearchFeed.json client/src/data/marketPredictionLedger.json data/market/daily data/market/daily-movers-history.json data/market/research data/market/prediction-ledger.json client/public/mtg-movers.json
+          git add client/src/data/dailyMarketSnapshot.json client/src/data/commanderCardPriceSnapshot.json client/src/data/commanderCardPriceMeta.json client/src/data/marketResearchFeed.json client/src/data/marketPredictionLedger.json data/market/daily data/market/daily-movers-history.json data/market/research data/market/prediction-ledger.json client/public/mtg-movers.json
           if git diff --cached --quiet; then
             echo "No generated market artifacts changed."
             exit 0

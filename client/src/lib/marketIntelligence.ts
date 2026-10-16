@@ -1,5 +1,6 @@
 /* Design reminder: hard-edged market analytics engine; computes price momentum, sealed vs. singles break-even thresholds, collection-aware duplicate discounting, and release article connections. */
-import { commanderDecklistsData, type RawCommanderDeck, type RawDeckCard } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
+import type { RawCommanderDeck, RawDeckCard } from '@/data/commanderDecklists';
 import { loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import currentSnapshot from '@/data/scryfallRefreshSnapshot.json';
 import priceHistory from '@/data/priceHistorySnapshot.json';

@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import { ArrowLeft, ExternalLink, Flame, Sparkles, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
-import { commanderDecklistsData, type RawCommanderDeck } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
+import type { RawCommanderDeck } from '@/data/commanderDecklists';
 import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 import { edhrecCommanderHref, edhrecSnapshotDate, edhrecSourceUrl, edhrecTopCommanders } from '@/data/edhrecTopCommanders';
 import { slugify } from '@/hooks/useCommanderDeck';
@@ -19,7 +20,7 @@ function watchReason(deck: RawCommanderDeck, rank: number | null, indexedValue: 
 }
 
 function preconRows() {
-  return commanderDecklistsData.map((deck) => {
+  return commanderDecklists.map((deck) => {
     const value = resolveDeckMarketValue(deck);
     const demand = deck.commander.map((commander) => edhrecByName.get(commander.name.toLowerCase())).filter(Boolean)[0];
     return { deck, value, demand: demand ?? null, rank: demand?.rank ?? null, heat: demand ? Math.max(0, 21 - demand.rank) * 10 + value.totalUsd / 10 : value.totalUsd / 10 };

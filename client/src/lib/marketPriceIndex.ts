@@ -74,6 +74,10 @@ const dailyUpdatedAt = (dailySnapshot as any)?.generatedAt || '';
 const refreshUpdatedAt = (scryfallSnapshot as any)?.refreshedAt || '';
 export const commanderPriceSnapshotAsOf =
   (commanderCardPriceSnapshot as any)?.priceDate || '';
+export const commanderPriceSnapshotRefreshedAt =
+  (commanderCardPriceSnapshot as any)?.generatedAt || '';
+export const commanderPriceSnapshotCoverage =
+  (commanderCardPriceSnapshot as any)?.coverage || null;
 export const commanderPriceSnapshotSource =
   (commanderCardPriceSnapshot as any)?.source || 'Card-price index';
 const commanderUpdatedAt =

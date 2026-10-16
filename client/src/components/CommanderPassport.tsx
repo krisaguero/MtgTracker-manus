@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Crown, Plus, Trash2, Shield, Sparkles, ExternalLink, Check, Edit3, Save, X, Trophy } from 'lucide-react';
 import { CardImageZoom } from '@/components/CardImageZoom';
+import { COMMANDER_PASSPORT_STORAGE_KEY, LOCAL_WORKSPACE_CHANGED_EVENT, loadCommanderDeckRecords } from '@/lib/localWorkspace';
 
 export interface CommanderPassportDeck {
   id: string;
@@ -14,44 +15,8 @@ export interface CommanderPassportDeck {
   addedAt: number;
 }
 
-const STORAGE_KEY = 'mtg_tracker_commander_passport_v1';
-
-const INITIAL_COMMANDERS: CommanderPassportDeck[] = [
-  {
-    id: 'deck-1',
-    commanderName: 'Queen Marchesa',
-    deckName: 'Marchesa Long Play (Mardu Control)',
-    colors: ['W', 'B', 'R'],
-    theme: 'The Monarch, Board Wipes & Assassins',
-    status: 'Active',
-    wins: 14,
-    notes: 'Primary competitive/casual control deck utilizing the monarch and proactive removal.',
-    addedAt: Date.now() - 86400000 * 30,
-  },
-  {
-    id: 'deck-2',
-    commanderName: 'Alesha, Who Smiles at Death',
-    deckName: 'Alesha Low-to-the-Ground Reanimator',
-    colors: ['W', 'B', 'R'],
-    theme: 'Small Creature Reanimation & Attack Triggers',
-    status: 'Active',
-    wins: 19,
-    notes: 'Fast-paced Mardu aggro-reanimator bringing back utility beaters every combat.',
-    addedAt: Date.now() - 86400000 * 20,
-  },
-];
-
 export function CommanderPassport() {
-  const [decks, setDecks] = useState<CommanderPassportDeck[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
-    } catch {}
-    return INITIAL_COMMANDERS;
-  });
+  const [decks, setDecks] = useState<CommanderPassportDeck[]>(() => loadCommanderDeckRecords() as CommanderPassportDeck[]);
 
   const [isAdding, setIsAdding] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -67,9 +32,15 @@ export function CommanderPassport() {
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(decks));
+      localStorage.setItem(COMMANDER_PASSPORT_STORAGE_KEY, JSON.stringify(decks));
     } catch {}
   }, [decks]);
+
+  useEffect(() => {
+    const refreshDecks = () => setDecks(loadCommanderDeckRecords() as CommanderPassportDeck[]);
+    window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refreshDecks);
+    return () => window.removeEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refreshDecks);
+  }, []);
 
   const handleAddDeck = (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,7 +114,7 @@ export function CommanderPassport() {
   };
 
   return (
-    <section className="my-10 border-2 border-border bg-card p-6 sm:p-8">
+    <section className="my-10 border-2 border-border bg-card p-4 sm:p-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-border pb-6">
         <div>
           <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
@@ -151,7 +122,7 @@ export function CommanderPassport() {
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold mt-2 tracking-tight">Active Command Zone</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Track the legendary commanders you are currently piloting at the table (featuring Queen Marchesa and Alesha), plus any newly built decks ready for rotation.
+            Track the commanders you are currently piloting at the table and any newly built decks ready for rotation. Records are stored in this browser.
           </p>
         </div>
 
@@ -171,7 +142,7 @@ export function CommanderPassport() {
               setIsAdding(true);
             }
           }}
-          className="border-2 border-primary bg-primary text-primary-foreground px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-2"
+          className="min-h-11 border-2 border-primary bg-primary text-primary-foreground px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-2"
         >
           <Plus className="h-4 w-4" /> {isAdding ? 'Close Form' : 'Register New Commander'}
         </button>
@@ -179,7 +150,7 @@ export function CommanderPassport() {
 
       {/* Add / Edit Deck Form */}
       {isAdding && (
-        <form onSubmit={handleAddDeck} className="my-6 border-2 border-primary/40 bg-primary/5 p-6 space-y-4">
+        <form onSubmit={handleAddDeck} className="my-6 border-2 border-primary/40 bg-primary/5 p-4 space-y-4 sm:p-6">
           <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-primary">
             {editingId ? 'Edit Commander Passport Deck' : 'Add Deck to Passport'}
           </h3>
@@ -217,7 +188,7 @@ export function CommanderPassport() {
                     key={c}
                     type="button"
                     onClick={() => toggleColor(c)}
-                    className={`h-7 w-7 border font-mono text-xs font-bold ${
+                    className={`h-11 w-11 border font-mono text-xs font-bold ${
                       colors.includes(c) ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-muted-foreground'
                     }`}
                   >
@@ -282,13 +253,13 @@ export function CommanderPassport() {
                 setIsAdding(false);
                 setEditingId(null);
               }}
-              className="border border-border bg-background px-4 py-2 font-mono text-xs uppercase hover:bg-muted"
+              className="min-h-11 border border-border bg-background px-4 py-2 font-mono text-xs uppercase hover:bg-muted"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="border border-primary bg-primary text-primary-foreground px-5 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-1.5"
+              className="min-h-11 border border-primary bg-primary text-primary-foreground px-5 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-1.5"
             >
               <Save className="h-3.5 w-3.5" /> {editingId ? 'Update Passport' : 'Save to Passport'}
             </button>
@@ -302,7 +273,7 @@ export function CommanderPassport() {
           const scryfallArtUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(deck.commanderName)}&format=image&version=art_crop`;
 
           return (
-            <div key={deck.id} className="border-2 border-border bg-background flex flex-col justify-between p-5 group hover:border-primary transition-colors">
+            <div key={deck.id} className="border-2 border-border bg-background flex flex-col justify-between p-4 group hover:border-primary transition-colors sm:p-5">
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
@@ -326,7 +297,7 @@ export function CommanderPassport() {
                       type="button"
                       onClick={() => startEdit(deck)}
                       title="Edit Passport Deck"
-                      className="border border-border bg-muted p-1.5 text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+                      className="inline-flex h-11 w-11 items-center justify-center border border-border bg-muted text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
                     >
                       <Edit3 className="h-3.5 w-3.5" />
                     </button>
@@ -334,7 +305,7 @@ export function CommanderPassport() {
                       type="button"
                       onClick={() => handleDelete(deck.id)}
                       title="Delete Deck"
-                      className="border border-border bg-muted p-1.5 text-muted-foreground hover:text-red-500 hover:border-red-500 transition-colors"
+                      className="inline-flex h-11 w-11 items-center justify-center border border-border bg-muted text-muted-foreground hover:text-red-500 hover:border-red-500 transition-colors"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>
@@ -355,7 +326,7 @@ export function CommanderPassport() {
                     <button
                       type="button"
                       onClick={() => incrementWins(deck.id)}
-                      className="inline-flex items-center gap-1.5 border border-amber-500/50 bg-amber-500/10 px-2 py-0.5 text-amber-500 hover:bg-amber-500/20 font-bold"
+                      className="inline-flex min-h-11 items-center gap-1.5 border border-amber-500/50 bg-amber-500/10 px-2 text-amber-500 hover:bg-amber-500/20 font-bold"
                       title="Click to record a win (+1)"
                     >
                       <Trophy className="h-3 w-3" /> {deck.wins || 0} Wins (+1)
@@ -376,7 +347,7 @@ export function CommanderPassport() {
                   href={`https://scryfall.com/search?q=${encodeURIComponent(deck.commanderName)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-primary hover:underline"
+                  className="inline-flex min-h-11 items-center gap-1 px-2 text-primary hover:underline"
                 >
                   Scryfall Lookup <ExternalLink className="h-3 w-3" />
                 </a>

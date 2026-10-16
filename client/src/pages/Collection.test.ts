@@ -15,4 +15,11 @@ describe('Collection page resilience', () => {
     expect(source).toContain('<CommanderPassport />');
     expect(readFileSync(resolve(process.cwd(), 'client/src/components/CommanderPassport.tsx'), 'utf8')).toContain('<CardImageZoom');
   });
+
+  it('provides stacked mobile rows for set equity while keeping the desktop table', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/components/CollectionOverview.tsx'), 'utf8');
+    expect(source).toContain('role="list" aria-label="Set equity totals"');
+    expect(source).toContain('hidden w-full text-left font-mono text-xs sm:table');
+    expect(source).toContain('Total equity');
+  });
 });

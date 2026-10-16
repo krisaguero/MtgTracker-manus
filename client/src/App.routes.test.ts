@@ -24,4 +24,14 @@ describe('application route map', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     expect(source).toContain("const Home = lazy(() => import('./pages/Home'))");
   });
+
+  it('mounts the new player-goal and market hub routes before the dynamic set route', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    for (const route of ['/deck-workshop', '/limited', '/markets']) {
+      const routeIndex = source.indexOf(`path={'${route}'}`);
+      expect(routeIndex).toBeGreaterThan(-1);
+      expect(routeIndex).toBeLessThan(dynamicSetIndex);
+    }
+  });
 });

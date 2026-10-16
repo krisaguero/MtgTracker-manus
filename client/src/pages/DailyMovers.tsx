@@ -296,7 +296,7 @@ export function DailyMovers() {
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
           <div>
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <Zap className="h-4 w-4" /> Imported market snapshot · Data as of {csvMarketMoversAsOf}
+              <Zap className="h-4 w-4" /> Historical imported snapshot · Data as of {csvMarketMoversAsOf}
             </div>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Daily Market Movers &amp; Buyouts</h1>
             <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">

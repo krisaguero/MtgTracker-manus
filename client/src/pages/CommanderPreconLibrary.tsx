@@ -1,7 +1,9 @@
 import { useState, useMemo } from 'react';
 import { Link, useLocation } from 'wouter';
 import { ArrowLeft, Check, ChevronDown, ExternalLink, Filter, Search, ShieldCheck, ShoppingBag, Sparkles, Star, Users, Layers, Zap } from 'lucide-react';
-import { commanderDecklistsData, type RawCommanderDeck } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
+import type { RawCommanderDeck } from '@/data/commanderDecklists';
+import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { slugify } from '@/hooks/useCommanderDeck';
 import { loadOwnedPrecons, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
@@ -37,7 +39,7 @@ const GUILDS = [
   { name: 'Partner / Friends', code: 'PARTNER' },
 ];
 
-const EXTENDED_PRECON_LIBRARY: PreconLibraryItem[] = commanderDecklistsData.map((deck) => {
+const EXTENDED_PRECON_LIBRARY: PreconLibraryItem[] = commanderDecklists.map((deck) => {
   const slug = slugify(deck.name);
   const releaseYear = deck.release_date ? new Date(deck.release_date).getFullYear() : 2024;
   const msrp = null; // MTGJSON does not publish a sealed MSRP; never infer one from release year.
@@ -66,7 +68,7 @@ const EXTENDED_PRECON_LIBRARY: PreconLibraryItem[] = commanderDecklistsData.map(
     isPartner,
     guild,
   };
-});
+}).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
 
 export default function CommanderPreconLibrary() {
   const [, navigate] = useLocation();
@@ -158,7 +160,7 @@ export default function CommanderPreconLibrary() {
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Commander Precon Library</h1>
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Explore chronologically sequenced Commander preconfigured decks with boxed product artwork, primary commanders, live market valuations, street MSRP, and automatic baseline inventory matching against your collection.
+              Explore chronologically sequenced Commander preconfigured decks with boxed product artwork, primary commanders, indexed card values, and automatic baseline inventory matching. Sealed MSRP is shown only where a dated source is available.
             </p>
             <Link href="/commander-market" className="inline-flex items-center gap-2 border-2 border-amber-500 bg-amber-500 px-4 py-2 font-mono text-xs font-black uppercase tracking-wider text-black transition-transform hover:-translate-y-0.5">
               <Sparkles className="h-4 w-4" /> Open Commander demand index →
@@ -176,6 +178,61 @@ export default function CommanderPreconLibrary() {
               const statusClass = item.status === 'released' ? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400' : item.status === 'announced' ? 'border-primary bg-primary/10 text-primary' : 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400';
               return <article key={item.name} className="border-2 border-border bg-card p-4"><div className="flex items-start justify-between gap-3"><div><h3 className="font-bold leading-snug">{item.name}</h3><p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{item.productLine}</p></div><span className={`shrink-0 border px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider ${statusClass}`}>{item.status === 'released' ? 'Decklist live' : item.status === 'announced' ? 'Announced' : 'Verify'}</span></div><p className="mt-3 text-xs leading-relaxed text-muted-foreground">{item.detail}</p><div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-3 font-mono text-[10px] uppercase"><span className="text-foreground">{formatRadarDate(item.releaseDate)}</span><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{item.sourceLabel} ↗</a></div></article>;
             })}
+          </div>
+        </section>
+
+        <section className="border-2 border-primary/40 bg-gradient-to-br from-primary/5 via-card to-amber-500/5 p-5 sm:p-6" aria-labelledby="mtgjson-catalog-scan">
+          <div className="flex flex-col gap-4 border-b border-border pb-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Automated structured-data scan</p>
+              <h2 id="mtgjson-catalog-scan" className="mt-2 text-2xl font-black tracking-tight">New Commander products, without guessed decklists.</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">MTGJSON deck and set records are checked daily. A product joins this deck catalog only after its full Commander record matches the metadata and contains exactly 100 card copies with names, quantities, set codes, collector numbers, and MTGJSON UUIDs. Missing or incomplete records stay pending.</p>
+            </div>
+            <div className="shrink-0 border border-border bg-background p-3 font-mono text-[10px] uppercase">
+              <span className="block text-muted-foreground">MTGJSON build · {mtgjsonPreconCatalog.sourceBuildDate || 'date unavailable'}</span>
+              <strong className="mt-1 block text-foreground">Scanned {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'UTC', timeZoneName: 'short' }).format(new Date(mtgjsonPreconCatalog.scanTimestamp))}</strong>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="border border-border bg-card p-3"><span className="font-mono text-[9px] font-bold uppercase text-muted-foreground">New to baseline</span><strong className="mt-1 block text-2xl font-black">{mtgjsonPreconCatalog.statistics.newlyDiscoveredCommanderDecks}</strong></div>
+            <div className="border border-emerald-500/40 bg-emerald-500/5 p-3"><span className="font-mono text-[9px] font-bold uppercase text-emerald-700 dark:text-emerald-400">Complete lists imported</span><strong className="mt-1 block text-2xl font-black">{mtgjsonPreconCatalog.statistics.completeDecks}</strong></div>
+            <div className="border border-amber-500/40 bg-amber-500/5 p-3"><span className="font-mono text-[9px] font-bold uppercase text-amber-700 dark:text-amber-400">Pending / unverified lists</span><strong className="mt-1 block text-2xl font-black">{mtgjsonPreconCatalog.statistics.pendingDecks}</strong></div>
+            <div className="border border-border bg-card p-3"><span className="font-mono text-[9px] font-bold uppercase text-muted-foreground">Recent &amp; upcoming sets</span><strong className="mt-1 block text-2xl font-black">{mtgjsonPreconCatalog.statistics.recentAndUpcomingSets}</strong></div>
+          </div>
+          {mtgjsonPreconCatalog.decks.some((item) => item.status === 'pending') && (
+            <div className="mt-4 border-2 border-amber-500/50 bg-amber-500/5 p-4" aria-label="Pending Commander products">
+              <h3 className="font-mono text-xs font-black uppercase tracking-wider text-amber-700 dark:text-amber-400">Products awaiting a complete, verified list</h3>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                {mtgjsonPreconCatalog.decks.filter((item) => item.status === 'pending').map((item) => (
+                  <article key={`${item.code}-${item.fileName}`} className="border border-border bg-background p-3">
+                    <div className="flex items-start justify-between gap-3"><div><h4 className="font-bold">{item.name}</h4><p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{item.code} · {item.releaseDate ? formatRadarDate(item.releaseDate) : 'Release date unavailable'}</p></div><span className="border border-amber-500 px-2 py-1 font-mono text-[9px] font-black uppercase text-amber-700 dark:text-amber-300">Pending</span></div>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.reason || 'No complete deck record available yet.'}</p>
+                    <a href={item.metadataSourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-primary hover:underline">MTGJSON metadata ↗</a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+          <details className="mt-4 border-t border-border pt-4">
+            <summary className="cursor-pointer list-none font-mono text-xs font-black uppercase tracking-wider text-primary">Review {mtgjsonPreconCatalog.statistics.completeDecks} complete imported products and their source records</summary>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+              {mtgjsonPreconCatalog.decks.filter((item) => item.status === 'complete').map((item) => (
+                <article key={`${item.code}-${item.fileName}`} className="border border-border bg-card p-3">
+                  <h3 className="font-bold leading-snug">{item.name}</h3>
+                  <p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{item.code} · {item.releaseDate ? formatRadarDate(item.releaseDate) : 'Release date unavailable'} · {item.totalCardCopies} cards</p>
+                  <p className="mt-2 font-mono text-[9px] uppercase text-muted-foreground">Scanned {new Date(item.scanTimestamp).toISOString().replace('T', ' ').slice(0, 16)} UTC</p>
+                  <div className="mt-3 flex flex-wrap gap-3 border-t border-border pt-2 font-mono text-[10px] font-bold uppercase">
+                    <Link href={`/deck/${item.code.toLowerCase()}/${slugify(item.name)}`} className="text-primary hover:underline">Open decklist →</Link>
+                    <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Full MTGJSON record ↗</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </details>
+          <div className="mt-4 flex flex-wrap gap-4 border-t border-border pt-3 font-mono text-[10px] font-bold uppercase">
+            <a href={mtgjsonPreconCatalog.sources?.deckList || mtgjsonPreconCatalog.sourceUrls.deckList} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">MTGJSON DeckList index ↗</a>
+            <a href={mtgjsonPreconCatalog.sources?.setList || mtgjsonPreconCatalog.sourceUrls.setList} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">MTGJSON SetList index ↗</a>
+            <Link href="/spoiler-calendar" className="text-primary hover:underline">Open visual release &amp; verified-spoiler gallery →</Link>
           </div>
         </section>
 
@@ -259,7 +316,7 @@ export default function CommanderPreconLibrary() {
               </div>
               <h2 className="text-xl font-extrabold tracking-tight">Full Product Pricing &amp; Value Breakdown</h2>
               <p className="font-mono text-xs text-muted-foreground mt-1">
-                Aggregating current per-card market prices across {EXTENDED_PRECON_LIBRARY.length} Commander products. Sealed MSRP is shown only when a dated source exists; this catalog does not infer retail prices.
+                Aggregating indexed per-card market prices across {EXTENDED_PRECON_LIBRARY.length} Commander products. This is card equity, not sealed-product value. Sealed MSRP is unavailable unless a dated source is recorded; no retail price is inferred.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
@@ -289,7 +346,7 @@ export default function CommanderPreconLibrary() {
                   <th className="py-2.5 px-3">Commander Deck</th>
                   <th className="py-2.5 px-3">Set</th>
                   <th className="py-2.5 px-3">Indexed Equity</th>
-                  <th className="py-2.5 px-3">Street MSRP</th>
+                  <th className="py-2.5 px-3">Dated sealed MSRP</th>
                   <th className="py-2.5 px-3">Value Spread</th>
                   <th className="py-2.5 px-3">Price Coverage</th>
                   <th className="py-2.5 px-3 text-right">Action</th>
@@ -395,7 +452,7 @@ export default function CommanderPreconLibrary() {
 
                     <div className="grid grid-cols-2 gap-2 pt-2 border-t border-border font-mono text-xs">
                       <div>
-                        <span className="text-muted-foreground uppercase block text-[10px]">Street MSRP</span>
+                        <span className="text-muted-foreground uppercase block text-[10px]">Dated sealed MSRP</span>
                         <span className="font-bold">{deck.msrp === null ? 'Unavailable' : `$${deck.msrp.toFixed(2)}`}</span>
                       </div>
                       <div className="text-right">

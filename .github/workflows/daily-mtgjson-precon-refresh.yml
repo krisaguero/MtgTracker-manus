@@ -1,0 +1,61 @@
+name: Daily MTGJSON Precon Catalog Refresh
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # Daily at 15:00 UTC, after MTGJSON's usual update window
+  workflow_dispatch:
+
+concurrency:
+  group: daily-mtgjson-precon-catalog
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Refresh MTGJSON catalog and attributed spoiler previews
+        run: node scripts/refresh-mtgjson-precon-catalog.mjs
+
+      - name: Commit and push generated catalog data only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'MTG Catalog Bot'
+          git config user.email 'bot@mtgtracker.local'
+
+          git add -- \
+            client/src/data/mtgjsonPreconCatalog.json \
+            client/src/data/mtgjsonPreconDecks.json
+
+          allowed_paths=$'client/src/data/mtgjsonPreconCatalog.json\nclient/src/data/mtgjsonPreconDecks.json'
+          staged_paths="$(git diff --cached --name-only)"
+          unexpected_paths="$(comm -23 <(printf '%s\n' "$staged_paths" | sort) <(printf '%s\n' "$allowed_paths" | sort))"
+          if [[ -n "$unexpected_paths" ]]; then
+            echo 'Refusing to commit files outside the generated catalog/deck data allowlist:' >&2
+            printf '%s\n' "$unexpected_paths" >&2
+            exit 1
+          fi
+
+          if git diff --cached --quiet; then
+            echo 'No generated catalog or deck data changed.'
+            exit 0
+          fi
+
+          git diff --cached --check
+          git commit -m 'chore(data): refresh MTGJSON precon catalog'
+          git push origin HEAD:main

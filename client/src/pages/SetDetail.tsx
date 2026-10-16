@@ -7,11 +7,13 @@ import { Input } from '@/components/ui/input';
 import { CardImageZoom } from '@/components/CardImageZoom';
 import { PreconSection } from '@/components/PreconSection';
 import { Link } from 'wouter';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { SetDetailPageSkeleton } from '@/components/PageSkeletons';
 import { moversForCard, moversForSet, suppliedSignalsForSet } from '@/lib/marketMoverLinks';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
+import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
+import { VerifiedSpoilerGallery } from '@/components/VerifiedSpoilerGallery';
 
 export default function SetDetail() {
   // App.tsx registers set pages at /:setCode, so keep this matcher aligned with every SetCard link.
@@ -42,7 +44,7 @@ export default function SetDetail() {
   const resolvedSetCode = data?.setCode || setCode;
   const resolvedReleasedAt = data?.releasedAt || '2024-01-01';
   const preconCardsList = useMemo(() => {
-    const matchedDecks = commanderDecklistsData.filter((d) => d.set_code.toLowerCase() === resolvedSetCode.toLowerCase());
+    const matchedDecks = commanderDecklists.filter((d) => d.set_code.toLowerCase() === resolvedSetCode.toLowerCase());
     const list: ScryfallCard[] = [];
     const seen = new Set<string>();
     for (const deck of matchedDecks) {
@@ -100,6 +102,9 @@ export default function SetDetail() {
   }
 
   const { setCode: code, setName, releasedAt, cards, precons } = data;
+  const releaseCatalogEntry = mtgjsonPreconCatalog.setReleases.find((set) => set.code.toLowerCase() === code.toLowerCase());
+  const isUpcomingCatalogSet = Boolean(releaseCatalogEntry && releaseCatalogEntry.releaseDate > new Date().toISOString().slice(0, 10));
+  const verifiedSpoilerIds = new Set(isUpcomingCatalogSet ? releaseCatalogEntry?.spoilerCards.map((card) => card.id) || [] : []);
   const setMarketMovers = moversForSet(code);
   const hotSetMovers = setMarketMovers.filter((mover) => mover.percentChange > 0).slice(0, 6);
   const suppliedSetSignals = suppliedSignalsForSet(code);
@@ -160,6 +165,10 @@ export default function SetDetail() {
             </div>
           </div>
         </div>
+
+        {releaseCatalogEntry && isUpcomingCatalogSet && (
+          <VerifiedSpoilerGallery set={releaseCatalogEntry} />
+        )}
 
         {hotSetMovers.length > 0 && (
           <section className="border-2 border-amber-500/70 bg-amber-500/5 p-4 sm:p-5" aria-labelledby="set-hot-watch-heading">
@@ -332,6 +341,7 @@ export default function SetDetail() {
                 const ownedQty = ownedNamesMap.get(card.name.toLowerCase()) || 0;
                 const cardMovers = moversForCard(card.name, card.set);
                 const hotMover = cardMovers.find((mover) => mover.percentChange > 0);
+                const isVerifiedSpoiler = verifiedSpoilerIds.has(card.id);
                 return (
                   <Link
                     key={card.id || card.name}
@@ -339,9 +349,10 @@ export default function SetDetail() {
                     className={`border-2 bg-card p-3 flex flex-col justify-between group transition-colors cursor-pointer relative ${hotMover ? 'border-amber-500/80 shadow-[0_0_18px_rgba(245,158,11,0.12)] hover:border-amber-500' : 'border-border hover:border-primary'}`}
                   >
                     <div className="mb-2 flex min-h-5 items-start justify-between gap-2">
-                      {hotMover ? (
-                        <span className="inline-flex items-center gap-1 border border-amber-500 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-amber-500"><Flame className="h-3 w-3" /> Hot watch · +{hotMover.percentChange.toFixed(1)}%</span>
-                      ) : <span />}
+                      <div className="flex flex-wrap gap-1">
+                        {isVerifiedSpoiler && <span className="border border-amber-500 bg-amber-500 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-black">Spoiler</span>}
+                        {hotMover && <span className="inline-flex items-center gap-1 border border-amber-500 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-amber-500"><Flame className="h-3 w-3" /> Hot watch · +{hotMover.percentChange.toFixed(1)}%</span>}
+                      </div>
                       {ownedQty > 0 && (
                         <span className="bg-emerald-500 px-1.5 py-0.5 font-mono text-[9px] font-bold text-black">
                           OWNED ({ownedQty})

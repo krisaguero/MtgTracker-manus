@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { Sparkles, ShoppingBag, ArrowRight, Check } from 'lucide-react';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
 
@@ -19,7 +19,7 @@ export function NextBestPurchases() {
     let bestCoverage = -1;
     let missingList: Array<{ name: string; price: number | null; type: string }> = [];
 
-    for (const deck of commanderDecklistsData) {
+    for (const deck of commanderDecklists) {
       const allCards = [...deck.commander, ...deck.cards];
       let total = 0;
       let owned = 0;

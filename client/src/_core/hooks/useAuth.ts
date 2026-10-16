@@ -50,11 +50,15 @@ export function useAuth(options?: UseAuthOptions) {
     }
   }, [logoutMutation, utils]);
 
+  useEffect(() => {
+    // Older builds mirrored the signed-in name/email into localStorage. The
+    // session cookie and current auth query are sufficient; remove that cache.
+    try {
+      localStorage.removeItem("manus-runtime-user-info");
+    } catch {}
+  }, []);
+
   const state = useMemo(() => {
-    localStorage.setItem(
-      "manus-runtime-user-info",
-      JSON.stringify(meQuery.data)
-    );
     return {
       user: meQuery.data ?? null,
       loading: meQuery.isLoading || logoutMutation.isPending,

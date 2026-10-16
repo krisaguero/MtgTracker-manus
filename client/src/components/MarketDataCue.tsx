@@ -15,7 +15,8 @@ export function marketDataStatusFromIndex(
 export function marketDataCueText(
   status: MarketDataStatus,
   source = "",
-  asOf = ""
+  asOf = "",
+  lastRefreshedAt = ""
 ) {
   if (status === "idle")
     return "Market index not loaded · open All precons or sort by value";
@@ -23,19 +24,22 @@ export function marketDataCueText(
     return "Market index loading · dated card-price data";
   if (status === "error")
     return "Market index unavailable · archive browsing remains available";
-  return `${source || "Card-price index"} snapshot as of ${asOf || "date unavailable"}`;
+  const refreshed = lastRefreshedAt ? ` · last refreshed ${lastRefreshedAt}` : "";
+  return `${source || "Card-price index"} snapshot · quotes as of ${asOf || "date unavailable"}${refreshed}`;
 }
 
 export function MarketDataCue({
   status,
   source,
   asOf,
+  lastRefreshedAt,
   className = "",
   children,
 }: {
   status: MarketDataStatus;
   source?: string;
   asOf?: string;
+  lastRefreshedAt?: string;
   className?: string;
   children?: ReactNode;
 }) {
@@ -52,7 +56,7 @@ export function MarketDataCue({
       className={`${color} ${className}`.trim()}
     >
       {children ? <>{children} · </> : null}
-      {marketDataCueText(status, source, asOf)}
+      {marketDataCueText(status, source, asOf, lastRefreshedAt)}
     </p>
   );
 }

@@ -6,13 +6,24 @@ export interface ValuationSnapshot {
   date: string; // YYYY-MM-DD
   totalCards: number;
   estimatedValueUsd: number;
+  pricedCardCount?: number;
+  unpricedCardCount?: number;
+  priceAsOf?: string;
+  refreshedAt?: string;
 }
 
-const HISTORY_STORAGE_KEY = 'mtg_tracker_valuation_history_v1';
+export interface ValuationSnapshotCoverage {
+  pricedCardCount: number;
+  unpricedCardCount: number;
+  priceAsOf: string;
+  refreshedAt: string;
+}
+
+export const COLLECTION_HISTORY_STORAGE_KEY = 'mtg_tracker_valuation_history_v1';
 
 export function getValuationHistory(): ValuationSnapshot[] {
   try {
-    const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+    const raw = localStorage.getItem(COLLECTION_HISTORY_STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed)) return parsed;
@@ -23,7 +34,7 @@ export function getValuationHistory(): ValuationSnapshot[] {
   return [];
 }
 
-export function recordValuationSnapshot(estimatedValueUsd: number): ValuationSnapshot[] {
+export function recordValuationSnapshot(estimatedValueUsd: number, coverage?: ValuationSnapshotCoverage): ValuationSnapshot[] {
   const collection = loadOwnedCollection();
   const totalCards = collection.reduce((sum, c) => sum + c.quantity, 0);
   const today = new Date().toISOString().split('T')[0]!;
@@ -35,6 +46,7 @@ export function recordValuationSnapshot(estimatedValueUsd: number): ValuationSna
     date: today,
     totalCards,
     estimatedValueUsd: Math.round(estimatedValueUsd * 100) / 100,
+    ...(coverage || {}),
   };
 
   if (existingIdx !== -1) {
@@ -48,10 +60,14 @@ export function recordValuationSnapshot(estimatedValueUsd: number): ValuationSna
   const trimmed = history.slice(-30);
 
   try {
-    localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(trimmed));
+    localStorage.setItem(COLLECTION_HISTORY_STORAGE_KEY, JSON.stringify(trimmed));
   } catch (err) {
     console.warn('Failed to save valuation history', err);
   }
 
   return trimmed;
+}
+
+export function replaceValuationHistory(history: ValuationSnapshot[]): void {
+  localStorage.setItem(COLLECTION_HISTORY_STORAGE_KEY, JSON.stringify(history));
 }

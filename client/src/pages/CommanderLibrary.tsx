@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import { ArrowDownUp, ArrowLeft, CalendarDays, ExternalLink, Layers3, Search, Sparkles } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { commanderDecklists } from '@/data/commanderDecklists';
 import { classifySet, useCommanderLibrary, type CommanderArchiveSet } from '@/hooks/useCommanderLibrary';
 import { CatalogSkeleton } from '@/components/CatalogSkeleton';
 import { InternalPageNav } from '@/components/InternalPageNav';
@@ -11,6 +11,16 @@ import { CommanderCardFrame } from '@/components/CommanderCardFrame';
 type FamilyFilter = 'all' | 'set' | 'universes' | 'starter';
 type CoverageFilter = 'all' | 'with-products' | 'with-local';
 type SortMode = 'newest' | 'oldest' | 'cards' | 'products';
+
+export function commanderReleaseMatchesColor(
+  products: Array<{ colorIdentity?: string[] }>,
+  selectedColor: string,
+) {
+  if (selectedColor === 'all') return true;
+  return products.some((product) =>
+    product.colorIdentity?.includes(selectedColor),
+  );
+}
 
 const FAMILY_LABELS: Record<FamilyFilter, string> = {
   all: 'All families',
@@ -30,7 +40,7 @@ export default function CommanderLibrary() {
 
   const [colorFilter, setColorFilter] = useState<string>('all');
   const years = useMemo(() => Array.from(new Set(sets.map((set) => set.released_at.slice(0, 4)))), [sets]);
-  const localSetCodes = useMemo(() => new Set(commanderDecklistsData.map((deck) => deck.set_code.toLowerCase())), []);
+  const localSetCodes = useMemo(() => new Set(commanderDecklists.map((deck) => deck.set_code.toLowerCase())), []);
   const filteredSets = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return [...sets]
@@ -41,16 +51,9 @@ export default function CommanderLibrary() {
         const matchesCoverage = coverage === 'all' || (coverage === 'with-products' ? set.products.length > 0 : localSetCodes.has(set.code.toLowerCase()));
         const matchesYear = year === 'all' || set.released_at.startsWith(year);
         
-        // Color filter check against set products or decklists
-        let matchesColor = true;
-        if (colorFilter !== 'all') {
-          const matchingDecks = commanderDecklistsData.filter((d) => d.set_code.toLowerCase() === set.code.toLowerCase() || set.name.toLowerCase().includes(d.set_name.toLowerCase()));
-          if (matchingDecks.length > 0) {
-            matchesColor = matchingDecks.some((d) => d.commander.some((c) => c.name.toLowerCase().includes(colorFilter.toLowerCase()) || true));
-          } else {
-            matchesColor = true;
-          }
-        }
+        // Only include releases with a product whose verified Scryfall color
+        // identity includes the selected color. Unknown identities never pass.
+        const matchesColor = commanderReleaseMatchesColor(set.products, colorFilter);
 
         return matchesQuery && matchesFamily && matchesCoverage && matchesYear && matchesColor;
       })
@@ -60,7 +63,7 @@ export default function CommanderLibrary() {
         if (sortMode === 'products') return b.products.length - a.products.length || dateValue(b) - dateValue(a);
         return dateValue(b) - dateValue(a);
       });
-  }, [coverage, family, localSetCodes, query, sets, sortMode, year]);
+  }, [colorFilter, coverage, family, localSetCodes, query, sets, sortMode, year]);
 
   const productCount = sets.reduce((sum, set) => sum + set.products.length, 0);
   const localCount = sets.filter((set) => localSetCodes.has(set.code.toLowerCase())).length;
@@ -124,7 +127,7 @@ export default function CommanderLibrary() {
                 <FilterChip active={coverage === 'with-local'} tone="amber" onClick={() => setCoverage('with-local')}>Local decklists</FilterChip>
                 <span className="hidden h-6 w-px bg-border sm:block" aria-hidden="true" />
                 <div className="flex items-center gap-1.5 border border-border bg-card px-2 py-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mr-1">Color:</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mr-1">Identity:</span>
                   {['all', 'W', 'U', 'B', 'R', 'G'].map((c) => (
                     <button
                       key={c}
@@ -143,7 +146,7 @@ export default function CommanderLibrary() {
             </section>
 
             <section className="mt-8" aria-label="Chronological Commander release archive">
-              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count} indexed cards</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
+              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. Color identity only includes products with a verified Scryfall color-identity value; try another color or clear filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); setColorFilter('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count} indexed cards</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
             </section>
           </>
         )}

@@ -24,7 +24,6 @@ export const appRouter = router({
     savedDecks: protectedProcedure.query(({ ctx }) => db.listSavedDecks(ctx.user.id)),
     saveDeck: protectedProcedure.input(z.object({ deckKey: z.string().min(1).max(160), name: z.string().min(1).max(255), source: z.string().min(1).max(64).default('commander-precon'), deckJson: z.string().min(2).max(200000) })).mutation(({ ctx, input }) => db.upsertSavedDeck({ userId: ctx.user.id, ...input }).then(() => ({ success: true }))),
     deleteDeck: protectedProcedure.input(z.object({ deckKey: z.string().min(1).max(160) })).mutation(({ ctx, input }) => db.deleteSavedDeck(ctx.user.id, input.deckKey).then(() => ({ success: true }))),
-    recordImport: protectedProcedure.input(z.object({ sourceHash: z.string().min(8).max(128), sourceName: z.string().max(255).optional(), incomingEntries: z.number().int().nonnegative(), duplicateEntries: z.number().int().nonnegative(), unresolvedPrintings: z.number().int().nonnegative() })).mutation(({ ctx, input }) => db.recordCollectionImportAudit({ userId: ctx.user.id, ...input }).then(() => ({ success: true }))),
   }),
 });
 

@@ -1,6 +1,7 @@
 import { loadOwnedCollection } from './manaboxParser';
 import { commanderDecklists } from '@/data/commanderDecklists';
 import dailySnapshot from '@/data/dailyMarketSnapshot.json';
+import commanderPriceMeta from '@/data/commanderCardPriceMeta.json';
 
 export interface MissingCardItem {
   name: string;
@@ -119,28 +120,30 @@ export function getCardPriceMap(): Map<string, number> {
     }
   }
 
-  // 2. Load prices from commander decklists as fallback index
-  for (const deck of commanderDecklists) {
-    for (const entry of [...deck.commander, ...deck.cards] as any[]) {
-      if (entry?.name && entry?.prices?.usd) {
-        const p = Number(entry.prices.usd);
-        if (Number.isFinite(p) && p > 0 && !priceMap.has(entry.name.toLowerCase())) {
-          priceMap.set(entry.name.toLowerCase(), p);
-        }
-      }
-    }
-  }
-
   return priceMap;
 }
 
 /**
  * Calculates total collection valuation and equity grouped by set using real snapshot prices.
  */
-export function getCollectionValuationAndBreakdown(): { totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string } {
+export async function getCollectionValuationAndBreakdown(): Promise<{ totalEquityUsd: number; setBreakdowns: SetEquityBreakdown[]; pricedCardCount: number; unpricedCardCount: number; snapshotDate: string; refreshedAt: string }> {
+  const { resolveCardPrice } = await import('./marketPriceIndex');
   const collection = loadOwnedCollection();
   const priceMap = getCardPriceMap();
+  const dailySignals = (dailySnapshot as any)?.signals || [];
+  const quoteDate = [
+    (commanderPriceMeta as any)?.priceDate,
+    ...dailySignals.map((signal: any) => signal?.lastUpdated),
+    (dailySnapshot as any)?.generatedAt,
+  ].filter((value): value is string => typeof value === 'string' && value.length > 0).sort().pop() || 'date unavailable';
+  const refreshedAt = [
+    (commanderPriceMeta as any)?.generatedAt,
+    (dailySnapshot as any)?.generatedAt,
+  ].filter((value): value is string => typeof value === 'string' && value.length > 0).sort().pop() || 'timestamp unavailable';
+  return calculateCollectionValuation(collection, priceMap, quoteDate, (card) => resolveCardPrice(card.name, card.setCode || card.set)?.usd, refreshedAt);
+}
 
+export function calculateCollectionValuation(collection: Array<{ name: string; quantity: number; setCode?: string; set?: string; setName?: string }>, priceMap: Map<string, number>, snapshotDate: string, priceResolver?: (card: { name: string; setCode?: string; set?: string; setName?: string }) => number | undefined, refreshedAt = 'timestamp unavailable') {
   let totalEquityUsd = 0;
   let pricedCardCount = 0;
   let unpricedCardCount = 0;
@@ -149,8 +152,8 @@ export function getCollectionValuationAndBreakdown(): { totalEquityUsd: number; 
 
   for (const item of collection as any[]) {
     const nameLower = item.name.toLowerCase();
-    const unitPrice = priceMap.get(nameLower) ?? (isBasicLandName(item.name) ? 0.15 : 1.50);
-    const hasRealPrice = priceMap.has(nameLower);
+    const unitPrice = priceResolver ? priceResolver(item) : priceMap.get(nameLower);
+    const hasRealPrice = Number.isFinite(unitPrice) && Number(unitPrice) > 0;
 
     if (hasRealPrice) {
       pricedCardCount += item.quantity;
@@ -158,7 +161,7 @@ export function getCollectionValuationAndBreakdown(): { totalEquityUsd: number; 
       unpricedCardCount += item.quantity;
     }
 
-    const lineTotal = unitPrice * item.quantity;
+    const lineTotal = hasRealPrice ? Number(unitPrice) * item.quantity : 0;
     totalEquityUsd += lineTotal;
 
     const setCodeKey = (item.setCode || item.set || 'unknown').toUpperCase();
@@ -177,14 +180,13 @@ export function getCollectionValuationAndBreakdown(): { totalEquityUsd: number; 
     totalValueUsd: Number(data.totalValueUsd.toFixed(2)),
   })).sort((a, b) => b.totalValueUsd - a.totalValueUsd);
 
-  const snapshotDate = (dailySnapshot as any)?.generatedAt || (dailySnapshot as any)?.date || 'Daily Market Snapshot';
-
   return {
     totalEquityUsd: Number(totalEquityUsd.toFixed(2)),
     setBreakdowns,
     pricedCardCount,
     unpricedCardCount,
     snapshotDate,
+    refreshedAt,
   };
 }
 

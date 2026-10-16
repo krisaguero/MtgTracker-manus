@@ -2,15 +2,18 @@ import { describe, expect, it } from "vitest";
 import { commanderDecklists } from "./commanderDecklists";
 
 describe("Commander precon library integrity", () => {
-  it("contains exactly four precons for the Marvel set code (msc)", () => {
+  it("preserves the four base Marvel precons and includes verified Collector's Edition lists", () => {
     const marvelDecks = commanderDecklists.filter((deck) => deck.set_code.toLowerCase() === "msc");
-    expect(marvelDecks).toHaveLength(4);
-    expect(marvelDecks.map((deck) => deck.name).sort()).toEqual([
+    expect(marvelDecks.map((deck) => deck.name)).toEqual(expect.arrayContaining([
       "Avengers Assemble",
       "Doom Prevails",
       "The Fantastic Four",
       "Wakanda Forever",
-    ].sort());
+      "Avengers Assemble Collector's Edition",
+      "Doom Prevails Collector's Edition",
+      "The Fantastic Four Collector's Edition",
+      "Wakanda Forever Collector's Edition",
+    ]));
   });
 
   it("contains exactly two precons for Edge of Eternities (eoc)", () => {
