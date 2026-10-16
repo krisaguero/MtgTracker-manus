@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, Archive, Layers3 } from 'lucide-react';
 import { Link } from 'wouter';
 import { CollectionOverview } from '@/components/CollectionOverview';
@@ -8,6 +8,7 @@ import { NextBestPurchases } from '@/components/NextBestPurchases';
 import { CollectionWorkspaceSkeleton } from '@/components/PageSkeletons';
 import { LocalDataControls } from '@/components/LocalDataControls';
 import { CollectionPlanner } from '@/components/CollectionPlanner';
+import { BinderUpgradeRadar } from '@/components/BinderUpgradeRadar';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { startLogin } from '@/const';
@@ -17,6 +18,7 @@ export default function Collection() {
   const [isManaBoxOpen, setIsManaBoxOpen] = useState(false);
   const [collectionVersion, setCollectionVersion] = useState(0);
   const [isHydrating, setIsHydrating] = useState(true);
+  const localCollection = useMemo(() => loadOwnedCollection(), [collectionVersion]);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setIsHydrating(false));
@@ -74,7 +76,9 @@ export default function Collection() {
           refreshKey={collectionVersion}
         />
 
-        <CollectionPlanner cards={loadOwnedCollection()} />
+        <BinderUpgradeRadar cards={localCollection} onOpenImportModal={() => setIsManaBoxOpen(true)} />
+
+        <CollectionPlanner cards={localCollection} />
 
         <CommanderPassport />
 
