@@ -52,6 +52,26 @@ function actionFor(signal) {
   if (signal.percentChange >= 15) return 'DO_NOT_CHASE';
   return 'WATCH';
 }
+function forecastRange(momentum, direction) {
+  const magnitude = Math.abs(momentum);
+  if (direction === 'UP') {
+    if (magnitude >= 30) return [8, 24];
+    if (magnitude >= 20) return [6, 18];
+    if (magnitude >= 12) return [4, 14];
+    if (magnitude >= 8) return [2, 10];
+    return [1, 7];
+  }
+  if (direction === 'DOWN') {
+    if (magnitude >= 30) return [-24, -8];
+    if (magnitude >= 20) return [-18, -6];
+    if (magnitude >= 12) return [-14, -4];
+    if (magnitude >= 8) return [-10, -2];
+    return [-7, -1];
+  }
+  if (magnitude < 1) return [-2, 2];
+  if (magnitude < 3) return [-3, 3];
+  return [-5, 5];
+}
 function cardFromSignal(signal, rank) {
   return {
     rank,
@@ -74,10 +94,10 @@ function cardFromSignal(signal, rank) {
 function predictionFor(card, dateKey) {
   const momentum = Number(card.percentChange || 0);
   const expectedDirection = momentum >= 5 ? 'UP' : momentum <= -5 ? 'DOWN' : 'FLAT_OR_UNCERTAIN';
-  const projectedPctRange = expectedDirection === 'UP' ? [0, 10] : expectedDirection === 'DOWN' ? [-10, 0] : [-5, 5];
+  const projectedPctRange = forecastRange(momentum, expectedDirection);
   const due = new Date(`${dateKey}T12:00:00Z`);
   due.setUTCDate(due.getUTCDate() + 14);
-  return { horizonDays: 14, expectedDirection, projectedPctRange, model: 'rule-based momentum screen; not a verified AI forecast', confidence: card.confidence, openedAt: dateKey, evaluationDate: due.toISOString().slice(0, 10) };
+  return { horizonDays: 14, expectedDirection, projectedPctRange, model: 'granular-v2 momentum bands; not a verified AI forecast', rangeFormula: '14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%', confidence: card.confidence, openedAt: dateKey, evaluationDate: due.toISOString().slice(0, 10) };
 }
 function topicMatches(signal, topic) {
   const category = String(signal.category || '').toLowerCase();

@@ -1,0 +1,41 @@
+name: Weekly Prediction Accuracy Audit
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 09:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: weekly-prediction-audit
+  cancel-in-progress: false
+
+jobs:
+  audit-predictions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run prediction accuracy audit
+        run: node scripts/audit-prediction-accuracy.mjs
+
+      - name: Commit and push audit artifacts
+        run: |
+          git config user.name 'MTG Prediction Audit Bot'
+          git config user.email 'bot@mtgtracker.local'
+          git add docs/prediction-accuracy-audit-*.md data/market/prediction-audit-*.json
+          if git diff --cached --quiet; then
+            echo "No prediction audit artifacts changed."
+            exit 0
+          fi
+          git commit -m "chore(market): weekly prediction accuracy audit [skip ci]"
+          git push

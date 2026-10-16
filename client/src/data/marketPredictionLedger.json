@@ -1,40 +1,42 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-16T19:26:02.151Z",
+  "updatedAt": "2026-10-16T19:52:55.054Z",
   "records": [
     {
       "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess Tivit, Seller of Secrets (SNC printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "prompt": "Assess Tivit, Seller of Secrets (NCC 10) for a 14-day market direction and precon/third-party demand risk.",
       "name": "Tivit, Seller of Secrets",
-      "setCode": "snc",
-      "collectorNumber": null,
+      "setCode": "ncc",
+      "collectorNumber": "10",
       "entryUsd": 15,
       "action": "DO_NOT_CHASE",
-      "thesis": "TCGplayer attributes a move from a long-held $4–$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
+      "thesis": "TCGplayer attributes a move from a long-held $4\u2013$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
       "prediction": {
         "horizonDays": 14,
         "expectedDirection": "UP",
         "projectedPctRange": [
-          0,
-          10
+          8,
+          24
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
-      "outcome": null
+      "outcome": null,
+      "printingSourceUrl": "https://scryfall.com/card/ncc/10/tivit-seller-of-secrets"
     },
     {
       "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess Ripples of Potential (EOE printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "prompt": "Assess Ripples of Potential (EOC 77) for a 14-day market direction and precon/third-party demand risk.",
       "name": "Ripples of Potential",
-      "setCode": "eoe",
-      "collectorNumber": null,
+      "setCode": "eoc",
+      "collectorNumber": "77",
       "entryUsd": 6,
       "action": "DO_NOT_CHASE",
       "thesis": "TCGplayer reports a Commander: Edge of Eternities copy doubling from about $3 to $6 as planeswalker protection demand increased. Exact printing needs verification.",
@@ -42,24 +44,26 @@
         "horizonDays": 14,
         "expectedDirection": "UP",
         "projectedPctRange": [
-          0,
-          10
+          8,
+          24
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
-      "outcome": null
+      "outcome": null,
+      "printingSourceUrl": "https://scryfall.com/card/eoc/77/ripples-of-potential"
     },
     {
       "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess The Theorist, Jace Beleren (UNVERIFIED printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "prompt": "Assess The Theorist, Jace Beleren (FRA 43) for a 14-day market direction and precon/third-party demand risk.",
       "name": "The Theorist, Jace Beleren",
-      "setCode": "unverified",
-      "collectorNumber": null,
+      "setCode": "fra",
+      "collectorNumber": "43",
       "entryUsd": 63.41,
       "action": "DO_NOT_CHASE",
       "thesis": "TCGplayer reports Standard adoption around Reality Fracture moving the card from about $35 to $63.41; TCGIndex reports a different current price, so exact printing and venue require reconciliation.",
@@ -67,15 +71,17 @@
         "horizonDays": 14,
         "expectedDirection": "UP",
         "projectedPctRange": [
-          0,
-          10
+          8,
+          24
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Developing",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
-      "outcome": null
+      "outcome": null,
+      "printingSourceUrl": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren"
     },
     {
       "id": "2026-10-16-top-10:5:m15:25",
@@ -92,13 +98,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -3,
+          3
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -117,13 +124,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -3,
+          3
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -142,13 +150,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -3,
+          3
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -167,13 +176,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -3,
+          3
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -192,13 +202,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -2,
+          2
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -217,13 +228,14 @@
         "horizonDays": 14,
         "expectedDirection": "FLAT_OR_UNCERTAIN",
         "projectedPctRange": [
-          -5,
-          5
+          -2,
+          2
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
       "outcome": null
     },
@@ -231,10 +243,10 @@
       "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
       "dateKey": "2026-10-16",
       "postId": "2026-10-16-top-10",
-      "prompt": "Assess Abstergo Entertainment (ACR printing unresolved) for a 14-day market direction and precon/third-party demand risk.",
+      "prompt": "Assess Abstergo Entertainment (ACR 79) for a 14-day market direction and precon/third-party demand risk.",
       "name": "Abstergo Entertainment",
       "setCode": "acr",
-      "collectorNumber": null,
+      "collectorNumber": "79",
       "entryUsd": 4,
       "action": "DO_NOT_CHASE",
       "thesis": "TCGplayer reports a move back above $4 after earlier fringe Modern interest; Commander use is secondary until verified.",
@@ -242,15 +254,17 @@
         "horizonDays": 14,
         "expectedDirection": "UP",
         "projectedPctRange": [
-          0,
-          10
+          8,
+          24
         ],
-        "model": "rule-based momentum screen; not a verified AI forecast",
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
-        "evaluationDate": "2026-10-30"
+        "evaluationDate": "2026-10-30",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
       },
-      "outcome": null
+      "outcome": null,
+      "printingSourceUrl": "https://scryfall.com/card/acr/79/abstergo-entertainment"
     },
     {
       "id": "2026-10-13-bulk-collection-triage:1:m15:25",

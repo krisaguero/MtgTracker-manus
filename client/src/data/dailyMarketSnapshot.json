@@ -8,7 +8,7 @@
     "Wizards of the Coast official announcements",
     "Scryfall image endpoint"
   ],
-  "methodology": "Curated daily evidence pass. Reported prices are source-specific and remain developing where venues, exact printings, completed sales, or volume are not reconciled. No percentage is inferred where the source lacks a clean baseline.",
+  "methodology": "Curated daily evidence pass. Reported prices are source-specific and remain developing where venues, exact printings, completed sales, or volume are not reconciled. No percentage is inferred where the source lacks a clean baseline. Exact printings for the October 16 unresolved records were reconciled against Scryfall card pages.",
   "signalCount": 14,
   "signals": [
     {
@@ -220,9 +220,9 @@
     },
     {
       "name": "The Theorist, Jace Beleren",
-      "setCode": "unverified",
+      "setCode": "fra",
       "setName": "Reality Fracture",
-      "collectorNumber": null,
+      "collectorNumber": "43",
       "rarity": "mythic",
       "format": "Standard",
       "category": "high-spikes",
@@ -239,13 +239,14 @@
       "isCatalyst": true,
       "lastUpdated": "2026-10-16T19:20:00Z",
       "id": "the-theorist,-jace-beleren",
-      "key": "the-theorist,-jace-beleren"
+      "key": "the-theorist,-jace-beleren",
+      "printingSourceUrl": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren"
     },
     {
       "name": "Abstergo Entertainment",
       "setCode": "acr",
-      "setName": "Assassin\u2019s Creed",
-      "collectorNumber": null,
+      "setName": "Assassin's Creed",
+      "collectorNumber": "79",
       "rarity": "rare",
       "format": "Modern",
       "category": "high-spikes",
@@ -262,13 +263,14 @@
       "isCatalyst": true,
       "lastUpdated": "2026-10-16T19:20:00Z",
       "id": "abstergo-entertainment",
-      "key": "abstergo-entertainment"
+      "key": "abstergo-entertainment",
+      "printingSourceUrl": "https://scryfall.com/card/acr/79/abstergo-entertainment"
     },
     {
       "name": "Ripples of Potential",
-      "setCode": "eoe",
-      "setName": "Commander: Edge of Eternities",
-      "collectorNumber": null,
+      "setCode": "eoc",
+      "setName": "Edge of Eternities Commander",
+      "collectorNumber": "77",
       "rarity": "rare",
       "format": "Commander",
       "category": "commander-picks",
@@ -285,13 +287,14 @@
       "isCatalyst": true,
       "lastUpdated": "2026-10-16T19:20:00Z",
       "id": "ripples-of-potential",
-      "key": "ripples-of-potential"
+      "key": "ripples-of-potential",
+      "printingSourceUrl": "https://scryfall.com/card/eoc/77/ripples-of-potential"
     },
     {
       "name": "Tivit, Seller of Secrets",
-      "setCode": "snc",
-      "setName": "Streets of New Capenna",
-      "collectorNumber": null,
+      "setCode": "ncc",
+      "setName": "New Capenna Commander",
+      "collectorNumber": "10",
       "rarity": "mythic",
       "format": "Commander",
       "category": "commander-picks",
@@ -308,7 +311,8 @@
       "isCatalyst": true,
       "lastUpdated": "2026-10-16T19:20:00Z",
       "id": "tivit,-seller-of-secrets",
-      "key": "tivit,-seller-of-secrets"
+      "key": "tivit,-seller-of-secrets",
+      "printingSourceUrl": "https://scryfall.com/card/ncc/10/tivit-seller-of-secrets"
     },
     {
       "name": "Haliya, Guided by Light",
