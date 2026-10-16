@@ -178,8 +178,18 @@ export default function CardDetail() {
   const activeSetName = selectedPrinting?.setName || cardData.setName;
   const activeSetCode = selectedPrinting?.setCode || cardData.setCode;
   const activeRarity = selectedPrinting?.rarity || cardData.rarity;
-  const activeIndexedPrice = resolveCardPrice(cardNameParam, activeSetCode);
-  const activePrice = selectedPrinting?.priceUsd ?? activeIndexedPrice?.usd ?? cardData.price;
+  const activeIndexedPriceRecord = resolveCardPrice(cardNameParam, activeSetCode);
+  const activeIndexedPrice = activeIndexedPriceRecord?.match === 'exact-set' ? activeIndexedPriceRecord.usd : null;
+  const activePrice = selectedPrinting
+    ? selectedPrinting.priceUsd ?? activeIndexedPrice
+    : activeIndexedPrice ?? cardData.price;
+  const activePriceSource = selectedPrinting?.priceUsd !== null && selectedPrinting?.priceUsd !== undefined
+    ? 'Scryfall USD for selected printing'
+    : activeIndexedPriceRecord?.match === 'exact-set'
+      ? `Set + name index · ${activeIndexedPriceRecord.updatedAt.slice(0, 10)}`
+      : activePrice === null
+        ? 'No price available for this printing'
+        : 'Scryfall USD for current printing';
   const marketMovers = useMemo(() => moversForCard(cardNameParam, activeSetCode), [cardNameParam, activeSetCode]);
   const suppliedMarketSignals = useMemo(() => suppliedSignalsForCard(cardNameParam), [cardNameParam]);
 
@@ -316,6 +326,7 @@ export default function CardDetail() {
                 </div>
                 <span className="font-mono text-xl font-black text-primary">{activePrice === null ? 'Price unavailable' : `$${activePrice.toFixed(2)} USD`}</span>
               </div>
+              <p className="mt-1 text-right font-mono text-[9px] uppercase text-muted-foreground">{activePriceSource}</p>
 
               <h1 className="text-3xl font-extrabold tracking-tight">{cardNameParam}</h1>
               <p className="font-mono text-xs text-muted-foreground">{cardData.typeLine} — {cardData.manaCost}</p>

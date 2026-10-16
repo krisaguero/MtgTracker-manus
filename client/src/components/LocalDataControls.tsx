@@ -4,6 +4,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { isAnalyticsOptedIn, loadUmamiAnalytics, saveAnalyticsConsent } from '@/lib/analytics';
 import { loadLocalSavedDecks, removeLocalDeck, type LocalSavedDeck } from '@/lib/localSavedDecks';
+import { SupabaseWorkspaceBackup } from '@/components/SupabaseWorkspaceBackup';
 import {
   clearLocalWorkspace,
   createLocalWorkspaceBackup,
@@ -167,6 +168,8 @@ export function LocalDataControls({ onWorkspaceChanged }: LocalDataControlsProps
           <Trash2 className="h-4 w-4" /> Delete local workspace
         </Button>
       </div>
+
+      <SupabaseWorkspaceBackup onWorkspaceChanged={onWorkspaceChanged} />
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-sm font-semibold">Saved deck snapshots on this browser</h3>

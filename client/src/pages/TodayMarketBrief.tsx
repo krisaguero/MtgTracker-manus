@@ -1,53 +1,145 @@
-import { ArrowDownRight, ArrowLeft, ArrowUpRight, ExternalLink, ShieldAlert, Sparkles, TrendingDown, TrendingUp } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldAlert } from 'lucide-react';
 import { Link } from 'wouter';
 import { MarketCardPreview } from '@/components/MarketCardPreview';
 import { importedCardHref, importedSetHref } from '@/data/marketReportArchive';
-import { todayMarketBrief, type TodayMarketSignal } from '@/data/todayMarketBrief';
+import { getChronologicalMarketPosts, type DailyBriefMover, type DailyBriefPost } from '@/lib/dailyPostEngine';
 
-function SignalCard({ signal }: { signal: TodayMarketSignal }) {
-  const bullish = signal.kind === 'confirmed-bullish';
-  const bearish = signal.kind === 'confirmed-bearish';
-  return <div className="border border-border bg-card p-4">
-    <div className="flex items-start gap-3">
-      <MarketCardPreview name={signal.name} setCode={signal.setCode} />
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <div>
-            <Link href={importedCardHref(signal.name)} className="font-bold hover:text-primary">{signal.name}</Link>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{signal.setCode} · {signal.setName}</p>
-          </div>
-          {(bullish || bearish) && <span className={`shrink-0 font-mono text-xs font-black ${bullish ? 'text-emerald-600' : 'text-destructive'}`}>{bullish ? '+' : ''}{signal.changePercent}%</span>}
-        </div>
-        <p className="mt-2 font-mono text-xs font-bold">{signal.priceLabel}</p>
-        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{signal.thesis}</p>
-        {signal.liquidityNote && <p className="mt-2 border-l-2 border-amber-500 pl-2 text-[11px] leading-relaxed text-amber-700">{signal.liquidityNote}</p>}
-        <div className="mt-3 flex flex-wrap gap-3 font-mono text-[10px] font-bold uppercase">
-          <Link href={importedCardHref(signal.name)} className="text-primary hover:underline">Card profile</Link>
-          {importedSetHref(signal.setCode) && <Link href={importedSetHref(signal.setCode)!} className="text-primary hover:underline">Set page</Link>}
-          <a href={`https://scryfall.com/search?q=${encodeURIComponent(`!"${signal.name}"`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary">Scryfall <ExternalLink className="h-3 w-3" /></a>
-        </div>
-      </div>
-    </div>
-  </div>;
+function formatDate(dateKey: string) {
+  const date = new Date(`${dateKey}T00:00:00Z`);
+  return Number.isNaN(date.getTime())
+    ? dateKey
+    : new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(date);
 }
 
-function SignalGrid({ title, signals, tone }: { title: string; signals: TodayMarketSignal[]; tone: 'positive' | 'negative' | 'developing' }) {
-  const styles = { positive: 'border-border bg-card', negative: 'border-border bg-card', developing: 'border-border bg-card' };
-  const icon = tone === 'positive' ? <TrendingUp className="h-4 w-4" /> : tone === 'negative' ? <TrendingDown className="h-4 w-4" /> : <ShieldAlert className="h-4 w-4" />;
-  return <section className={`border p-4 sm:p-5 ${styles[tone]}`}><div className="flex items-center gap-2 border-b border-border pb-3 font-mono text-xs font-black uppercase tracking-widest">{icon}{title}<span className="text-muted-foreground">({signals.length} signals)</span></div><div className="mt-4 grid gap-3 lg:grid-cols-2">{signals.map((signal) => <SignalCard key={`${signal.name}-${signal.setCode}`} signal={signal} />)}</div></section>;
+function MoverCard({ mover }: { mover: DailyBriefMover }) {
+  const positive = mover.changePercent !== null && mover.changePercent > 0;
+  const negative = mover.changePercent !== null && mover.changePercent < 0;
+  const moveTone = positive ? 'text-emerald-700 dark:text-emerald-400' : negative ? 'text-destructive' : 'text-muted-foreground';
+
+  return (
+    <article className="grid gap-4 border border-border bg-background p-4 sm:grid-cols-[92px_minmax(0,1fr)]">
+      <div className="flex justify-center sm:justify-start"><MarketCardPreview name={mover.name} setCode={mover.setCode} size="sm" /></div>
+      <div className="min-w-0">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0">
+            <Link href={importedCardHref(mover.name)} className="text-lg font-black hover:text-primary">{mover.name}</Link>
+            <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+              {mover.setCode || 'Set unavailable'}{mover.setName ? ` · ${mover.setName}` : ''}{mover.category ? ` · ${mover.category}` : ''}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 font-mono text-xs">
+            <span className="border border-border bg-card px-2 py-1">{mover.priceLabel}</span>
+            <span className={`border border-border bg-card px-2 py-1 font-bold ${moveTone}`}>{mover.changeLabel}</span>
+          </div>
+        </div>
+
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{mover.thesis}</p>
+        <div className="mt-3 border-l-2 border-amber-500 bg-amber-500/5 p-3">
+          <p className="font-mono text-[10px] font-black uppercase tracking-wider text-amber-800 dark:text-amber-300">{mover.volatilityLabel} · price date {formatDate(mover.pricingDate)}</p>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{mover.volatilityNote}{mover.streak ? ` Reported streak: ${mover.streak} days.` : ''}</p>
+        </div>
+
+        <div className="mt-3 grid gap-2 md:grid-cols-2">
+          <div className="border border-border bg-card p-3">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Collector budget check · {mover.budgetBand}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{mover.collectorBudgetGuidance}</p>
+          </div>
+          <div className="border border-border bg-card p-3">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Investor risk-budget check</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{mover.investorBudgetGuidance}</p>
+          </div>
+        </div>
+
+        <div className="mt-3 flex flex-wrap gap-3 font-mono text-[10px] font-bold uppercase">
+          <Link href={importedCardHref(mover.name)} className="text-primary hover:underline">Card profile</Link>
+          {importedSetHref(mover.setCode) && <Link href={importedSetHref(mover.setCode)!} className="text-primary hover:underline">Set page</Link>}
+          <a href={mover.scryfallHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary">Verify exact printing on Scryfall <ExternalLink className="h-3 w-3" /></a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ReportPost({ post, embedded = false }: { post: DailyBriefPost; embedded?: boolean }) {
+  const movers = embedded ? post.movers.slice(0, 2) : post.movers;
+  return (
+    <article id={post.dateKey} className="scroll-mt-6 border-2 border-border bg-card p-4 sm:p-6">
+      <header className="border-b border-border pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Historical snapshot · {formatDate(post.dateKey)}</p>
+          {!embedded && <Link href={post.reportHref} className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline">Full archived report <ExternalLink className="h-3 w-3" /></Link>}
+        </div>
+        <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{post.title}</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{post.status}</p>
+        <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-relaxed text-muted-foreground"><strong>Data window:</strong> {post.dataWindow}</p>
+      </header>
+
+      <blockquote className="mt-4 border border-border bg-background p-4 text-sm leading-6 text-muted-foreground">
+        <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Archived report excerpt</p>
+        <p className="mt-2">“{post.excerpt}”</p>
+        <cite className="mt-2 block text-[10px] not-italic">Excerpt from <Link href={post.reportHref} className="font-bold text-primary hover:underline">{post.archiveSource} · {formatDate(post.dateKey)}</Link></cite>
+      </blockquote>
+
+      <div className="mt-4 flex flex-wrap gap-2" aria-label="Sources">
+        {post.sourceLinks.map((source) => (
+          <a key={source.href} href={source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 border border-border bg-background px-3 py-2 font-mono text-[10px] font-bold uppercase hover:border-primary">
+            {source.label} <ExternalLink className="h-3 w-3" />
+          </a>
+        ))}
+      </div>
+
+      <div className="mt-5 space-y-3">
+        {movers.length ? movers.map((mover) => <MoverCard key={`${mover.name}-${mover.setCode}`} mover={mover} />) : (
+          <p className="border border-dashed border-border p-4 text-sm text-muted-foreground">This archived report has no individual mover rows.</p>
+        )}
+      </div>
+      {embedded && post.movers.length > movers.length && <p className="mt-3 text-xs text-muted-foreground">Showing {movers.length} of {post.movers.length} archived movers.</p>}
+    </article>
+  );
 }
 
 export default function TodayMarketBrief({ embedded = false }: { embedded?: boolean; params?: Record<string, string | undefined> }) {
-  const isHistorical = todayMarketBrief.dateKey < new Date().toISOString().slice(0, 10);
-  return <div className={embedded ? 'text-foreground' : 'min-h-screen bg-background text-foreground'}>
-    {!embedded && <header className="border-b border-border bg-card"><div className="mx-auto max-w-7xl px-4 py-6 sm:px-8"><Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Daily movers</Link><p className="mt-8 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">Research published · {todayMarketBrief.publishedLabel}</p>{isHistorical && <p className="mt-3 inline-flex border border-amber-600/40 bg-amber-500/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-200">Historical research · verify current prices and policy status</p>}<h1 className="mt-3 max-w-5xl text-4xl font-black tracking-tight sm:text-6xl">{todayMarketBrief.title}</h1><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{todayMarketBrief.status}</p></div></header>}
-    <main className={embedded ? 'space-y-5' : 'mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8'}>
-      {embedded && <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-5"><div><p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">{isHistorical ? 'Historical research · published' : 'Research published'} · {todayMarketBrief.publishedLabel}</p><h2 className="mt-2 text-2xl font-black">Spoiler/precon-driven, not broad-market repricing</h2>{isHistorical && <p className="mt-2 max-w-2xl border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">This is a dated snapshot, not a current market or policy update.</p>}</div><Link href="/market-today" className="border border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Read full post →</Link></div>}
-      <div className="grid gap-4 md:grid-cols-3"><div className="border border-border bg-card p-5 md:col-span-2"><p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Market read</p><p className="mt-3 text-sm leading-7 text-muted-foreground">{todayMarketBrief.marketRead}</p></div><div className="border border-amber-600/40 bg-amber-500/5 p-5"><p className="font-mono text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200">Policy + supply watch</p><p className="mt-3 text-sm leading-7 text-muted-foreground">{todayMarketBrief.policyWatch}</p><p className="mt-3 text-sm leading-7 text-muted-foreground">{todayMarketBrief.supplyWatch}</p></div></div>
-      <SignalGrid title="Confirmed bullish movers" signals={todayMarketBrief.confirmedBullish} tone="positive" />
-      <SignalGrid title="Confirmed bearish / reprint-risk signals" signals={todayMarketBrief.confirmedBearish} tone="negative" />
-      <SignalGrid title="Developing and speculative watchlist" signals={todayMarketBrief.developing} tone="developing" />
-      {!embedded && <article className="border border-border bg-card p-6 sm:p-10"><div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary"><Sparkles className="h-4 w-4" /> Editorial close · as published</div><div className="mt-5 space-y-5 text-base leading-8 text-muted-foreground"><p>At publication, the cleanest confirmed upside was concentrated in Sonic Screwdriver, Brushland, Xorn, Howling Mine, and Wellwisher. Those names expressed the market’s blend of casual demand, old-print scarcity, and variant-driven attention.</p><p>The defensive read was equally important: Wedding Ring, Natural Order, Dockside Extortionist, Doubling Season, and Sting showed how quickly premium or reprint-sensitive Commander names could retrace when liquidity cooled.</p><p>Ink-Treader Nephilim was the clearest example of a fragile thesis. Public snapshots below the spoiler-season highs supported monitoring rather than treating the spike as a stable new floor. Doom Prevails upgrades were useful demand clues, but Leader, Super-Genius and the other upgrade names remained developing until same-day price evidence confirmed the community signal.</p></div><div className="mt-8 border-t border-border pt-5"><p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Sources</p><div className="mt-3 flex flex-wrap gap-3">{todayMarketBrief.sources.map((source) => <a key={source.href} href={source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 border border-border bg-background px-3 py-2 font-mono text-xs font-bold hover:border-primary">{source.label} <ExternalLink className="h-3 w-3" /></a>)}</div></div></article>}
-    </main>
-  </div>;
+  const posts = getChronologicalMarketPosts();
+  const latestPost = posts[0];
+  const dates = posts.map((post) => post.dateKey).sort();
+
+  if (embedded) {
+    if (!latestPost) return <p className="text-sm text-muted-foreground">No dated market report is available in the archive.</p>;
+    return (
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4">
+          <div>
+            <p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Dated archive · newest snapshot {formatDate(latestPost.dateKey)}</p>
+            <h2 className="mt-2 text-xl font-black">Historical market notes, not a live quote feed</h2>
+          </div>
+          <Link href="/market-today" className="border border-primary bg-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary-foreground hover:opacity-90">Read chronological brief →</Link>
+        </div>
+        <ReportPost post={latestPost} embedded />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b border-border bg-card">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8">
+          <Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Daily movers</Link>
+          <p className="mt-8 font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Chronological market brief · {posts.length} imported reports</p>
+          <h1 className="mt-3 max-w-5xl text-4xl font-black tracking-tight sm:text-6xl">Dated market notes, with the evidence attached.</h1>
+          <p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">Historical posts built from the tracker’s archived market snapshots, newest first{dates.length ? ` (${formatDate(dates[0])}–${formatDate(dates[dates.length - 1])})` : ''}. Prices and percentage moves are reported snapshot values, not live quotes or independently audited sales.</p>
+          <div role="note" className="mt-5 flex items-start gap-3 border border-amber-600/40 bg-amber-500/5 p-4">
+            <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-amber-700 dark:text-amber-300" />
+            <p className="text-xs leading-relaxed text-muted-foreground">A percentage move from one archived report does not show listing depth, completed-sale volume, or intraday volatility. Verify the exact printing and current sold listings before making a purchase. Collector and investor panels are budget/risk checks, not buy or sell recommendations.</p>
+          </div>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-8">
+        {posts.length ? posts.map((post) => <ReportPost key={post.dateKey} post={post} />) : (
+          <div className="border-2 border-dashed border-border p-8 text-center text-sm text-muted-foreground">No dated market reports are available yet.</div>
+        )}
+        <footer className="border-t border-border pt-5 text-xs leading-relaxed text-muted-foreground">Card images are fetched from Scryfall for identification. Archived price data may be stale, may use a market-wide rather than exact-variant price, and can change quickly. MTG card names and artwork belong to their owners; this independent tracker is not affiliated with Wizards of the Coast.</footer>
+      </main>
+    </div>
+  );
 }

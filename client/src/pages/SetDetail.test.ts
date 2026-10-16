@@ -26,4 +26,13 @@ describe('SetDetail loading resilience', () => {
     expect(source).toContain("set.set_type === 'commander' && set.parent_set_code?.toLowerCase() === code");
     expect(source).toContain('The set catalog took too long to respond. Please retry.');
   });
+
+  it('shows exact set-printing price coverage and per-card source labels', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain('summarizeSetPricing(data?.cards || [])');
+    expect(source).toContain('setPricingSummary.setNameIndexCount');
+    expect(source).toContain('resolveSetPrintingPrice(card)');
+    expect(source).toContain('printingPrice.sourceLabel');
+    expect(source).toContain('printingPrice.updatedAt.slice(0, 10)');
+  });
 });

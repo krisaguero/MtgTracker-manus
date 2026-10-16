@@ -1,153 +1,167 @@
-/* Design reminder: hard-edged market publishing engine; generates daily Top 5 mover posts with rigorous movement explanations and weekly prediction performance roundups. */
+import {
+  importedMarketReports,
+  importedReportHref,
+  marketReportArchive,
+  type ImportedMarketMover,
+  type ImportedMarketReport,
+} from '@/data/marketReportArchive';
 
-export interface DailyMoverPostItem {
-  rank: number;
-  cardName: string;
+export interface DailyBriefMover {
+  name: string;
   setCode: string;
-  currentUsd: number;
-  percentChange: number;
-  driverCategory: string;
-  movementThesis: string;
+  setName: string;
+  category: string;
+  price: number | null;
+  priceLabel: string;
+  changePercent: number | null;
+  changeLabel: string;
+  streak: number | null;
+  thesis: string;
+  pricingDate: string;
+  volatilityLabel: string;
+  volatilityNote: string;
+  budgetBand: string;
+  collectorBudgetGuidance: string;
+  investorBudgetGuidance: string;
+  scryfallHref: string;
 }
 
-export interface DailyMoverPost {
-  date: string;
+export interface DailyBriefPost {
+  dateKey: string;
+  publishedLabel: string;
   title: string;
-  subtitle: string;
-  topMovers: DailyMoverPostItem[];
-  marketTakeaway: string;
+  status: string;
+  dataWindow: string;
+  excerpt: string;
+  reportHref: string;
+  archiveSource: string;
+  sourceLinks: Array<{ label: string; href: string }>;
+  movers: DailyBriefMover[];
 }
 
-export interface PredictionRoundupItem {
-  id: string;
-  cardName: string;
-  predictedDate: string;
-  originalPrediction: string;
-  initialPrice: number;
-  currentPrice: number;
-  status: 'Moved as Predicted' | 'Stalled / Rangebound' | 'Reversed / Corrected';
-  outcomeNotes: string;
+function reportExcerpt(report: ImportedMarketReport): string {
+  const content = report.body
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .filter((line) => !/^(executive summary|what changed since yesterday|what to watch|sources?)$/i.test(line));
+
+  return content.find((line) => line.length >= 55 && !/^(data window|market status):/i.test(line))
+    || content.find((line) => !/^(data window|market status):/i.test(line))
+    || content[0]
+    || report.status;
 }
 
-export interface WeeklyRoundup {
-  weekLabel: string;
-  summary: string;
-  accuracyRate: number | null; // null when no audited outcome history exists
-  predictions: PredictionRoundupItem[];
-}
+function volatilityFor(mover: ImportedMarketMover) {
+  if (mover.price === null || !Number.isFinite(mover.price)) {
+    return {
+      label: 'Unpriced watch',
+      note: 'This archived report has no numeric price for the entry. Treat it as a watch item, not a price signal.',
+    };
+  }
 
-export function getDailyMoverPost(): DailyMoverPost {
+  const move = Math.abs(mover.changePercent);
+  const label = move >= 100
+    ? 'Extreme reported move'
+    : move >= 50
+      ? 'High reported move'
+      : move >= 25
+        ? 'Elevated reported move'
+        : move >= 10
+          ? 'Moderate reported move'
+          : 'Small reported move';
+  const liquidityNote = /low.?liquidity|thin inventory|thinly traded/i.test(mover.thesis)
+    ? ' The archived thesis also flags low liquidity or thin inventory.'
+    : '';
+
   return {
-    date: 'Illustrative sample · not live',
-    title: 'Sample Market Brief: Five Illustrative Price-Movement Cases',
-    subtitle: 'This page currently uses hard-coded demonstration values. It is not a scan of today’s Scryfall data, vendor inventory, or completed transactions.',
-    topMovers: [
-      {
-        rank: 1,
-        cardName: 'Doubling Season',
-        setCode: 'rav',
-        currentUsd: 48.00,
-        percentChange: 42.5,
-        driverCategory: 'High Value Spikes',
-        movementThesis: 'Hypothetical example only: a token-focused commander could increase demand for this card. No live listing, sales, or inventory evidence is connected to this sample.',
-      },
-      {
-        rank: 2,
-        cardName: 'Ashnod\'s Altar',
-        setCode: 'atq',
-        currentUsd: 4.50,
-        percentChange: 88.0,
-        driverCategory: 'Penny Risers & Buyout Targets',
-        movementThesis: 'Hypothetical example only: a new sacrifice interaction could draw attention. This is not evidence of a coordinated buyout or thin current inventory.',
-      },
-      {
-        rank: 3,
-        cardName: 'Fierce Guardianship',
-        setCode: 'c20',
-        currentUsd: 38.00,
-        percentChange: 24.2,
-        driverCategory: 'Commander Format Staples',
-        movementThesis: 'Hypothetical example only: staple demand and reprint supply can affect prices. This sample does not measure either factor.',
-      },
-      {
-        rank: 4,
-        cardName: 'Mystic Remora',
-        setCode: 'ice',
-        currentUsd: 11.00,
-        percentChange: 31.0,
-        driverCategory: 'RC Rule-Change Watchers',
-        movementThesis: 'Hypothetical example only: format or policy discussion can influence player attention. No current event is asserted by this demonstration.',
-      },
-      {
-        rank: 5,
-        cardName: 'Aftermath Analyst',
-        setCode: 'eoc',
-        currentUsd: 0.85,
-        percentChange: 112.5,
-        driverCategory: 'Penny Risers & Buyout Targets',
-        movementThesis: 'Hypothetical example only: a newly explored synergy can change interest in an inexpensive card. No current format result is being reported here.',
-      },
-    ],
-    marketTakeaway: 'This is an editorial layout sample, not evidence that any card is moving today. Before acting on a market idea, check a dated quote, recent completed sales, listing depth, reprint risk, and the exact printing.',
+    label,
+    note: `Based on the report’s percentage change only; a single dated snapshot is not an intraday volatility or sales-volume measure.${liquidityNote}`,
   };
 }
 
-export function getWeeklyPredictionRoundup(): WeeklyRoundup {
+function budgetGuidance(mover: ImportedMarketMover, volatilityLabel: string) {
+  if (mover.price === null || !Number.isFinite(mover.price)) {
+    return {
+      band: 'No numeric price in archive',
+      collector: 'Set no purchase budget from this post. First verify a current quote for the exact printing and condition.',
+      investor: 'No allocation can be grounded in this snapshot. Wait for a dated quote and recent completed sales.',
+    };
+  }
+
+  const band = mover.price < 5
+    ? 'Under $5 reference tier'
+    : mover.price < 25
+      ? '$5–$24 reference tier'
+      : mover.price < 100
+        ? '$25–$99 reference tier'
+        : '$100+ reference tier';
+  const collector = mover.price < 5
+    ? 'Low ticket on the archived quote; account for shipping and condition, and buy only if it fills a planned play or collection need.'
+    : mover.price < 25
+      ? 'Compare exact printing, finish, and condition; set a cap before shopping and avoid paying a premium for a trend alone.'
+      : mover.price < 100
+        ? 'Treat this as a deliberate discretionary purchase: compare multiple current listings and choose a maximum spend in advance.'
+        : 'High-ticket reference: verify the exact edition, condition, and seller protections; do not let a headline move set your budget.';
+  const investor = /Extreme|High|Elevated/.test(volatilityLabel)
+    ? 'High reported movement: watch-only until recent sold listings, market depth, and reprint exposure are checked. Do not size a position from this percentage alone.'
+    : 'This is not an entry-price signal. Verify multiple recent sold listings, market depth, and reprint exposure before considering any risk capital.';
+
+  return { band, collector, investor };
+}
+
+function mapMover(mover: ImportedMarketMover): DailyBriefMover {
+  const volatility = volatilityFor(mover);
+  const budget = budgetGuidance(mover, volatility.label);
+  const price = Number.isFinite(mover.price) ? mover.price : null;
+  const hasChange = Number.isFinite(mover.changePercent) && mover.changePercent !== 0;
+  const setCode = mover.setCode || '';
+  const scryfallQuery = `!"${mover.name}"${setCode ? ` set:${setCode}` : ''}`;
+
   return {
-    weekLabel: 'Illustrative fixture · not an audited week',
-    summary: 'The predictions and prices below are hard-coded examples; they have not been reconciled against dated market records and do not represent model performance.',
-    accuracyRate: null,
-    predictions: [
-      {
-        id: 'pred-1',
-        cardName: 'Smothering Tithe',
-        predictedDate: 'Aug 11, 2026',
-        originalPrediction: 'Predicted +25% breakout due to white mana-ramp demand in casual Commander pods.',
-        initialPrice: 19.20,
-        currentPrice: 24.00,
-        status: 'Moved as Predicted',
-        outcomeNotes: 'Successfully hit target (+25%) following heavy weekend tournament adoption and vendor restock delays.',
-      },
-      {
-        id: 'pred-2',
-        cardName: 'Ashnod\'s Altar',
-        predictedDate: 'Aug 12, 2026',
-        originalPrediction: 'Predicted speculative buyout surge past $4.00 on Reddit thread momentum.',
-        initialPrice: 2.40,
-        currentPrice: 4.50,
-        status: 'Moved as Predicted',
-        outcomeNotes: 'Exceeded expectations (+87%) as regional retailers cleared out remaining inventory.',
-      },
-      {
-        id: 'pred-3',
-        cardName: 'Cyclonic Rift',
-        predictedDate: 'Aug 10, 2026',
-        originalPrediction: 'Predicted stable sideways consolidation around $32.00.',
-        initialPrice: 32.00,
-        currentPrice: 32.00,
-        status: 'Stalled / Rangebound',
-        outcomeNotes: 'Held flat as expected; heavy reprint saturation countered casual format absorption.',
-      },
-      {
-        id: 'pred-4',
-        cardName: 'Mental Misstep',
-        predictedDate: 'Aug 11, 2026',
-        originalPrediction: 'Predicted spike to $4.50 on Legacy meta shifts.',
-        initialPrice: 3.10,
-        currentPrice: 3.20,
-        status: 'Stalled / Rangebound',
-        outcomeNotes: 'Movement stalled below resistance as tournament meta favored alternate removal suites.',
-      },
-      {
-        id: 'pred-5',
-        cardName: 'Dockside Extortionist (Precon Foil)',
-        predictedDate: 'Aug 10, 2026',
-        originalPrediction: 'Predicted continued correction toward $45.00 following announcement.',
-        initialPrice: 62.00,
-        currentPrice: 55.00,
-        status: 'Reversed / Corrected',
-        outcomeNotes: 'Correction was sharper than anticipated due to panic selling by speculative holders.',
-      },
-    ],
+    name: mover.name,
+    setCode,
+    setName: mover.setName,
+    category: mover.category,
+    price,
+    priceLabel: price === null ? (mover.priceLabel || 'No price recorded') : mover.priceLabel || `$${price.toFixed(2)}`,
+    changePercent: hasChange ? mover.changePercent : null,
+    changeLabel: hasChange ? `${mover.changePercent > 0 ? '+' : ''}${mover.changePercent}% reported change` : 'No numeric change reported',
+    streak: mover.streak,
+    thesis: mover.thesis,
+    pricingDate: mover.pricingDate,
+    volatilityLabel: volatility.label,
+    volatilityNote: volatility.note,
+    budgetBand: budget.band,
+    collectorBudgetGuidance: budget.collector,
+    investorBudgetGuidance: budget.investor,
+    scryfallHref: `https://scryfall.com/search?q=${encodeURIComponent(scryfallQuery)}`,
   };
+}
+
+function sourcesFor(report: ImportedMarketReport) {
+  const body = report.body.join(' ').toLowerCase();
+  const links = [{ label: 'Open full archived report', href: importedReportHref(report.dateKey) }];
+  if (body.includes('mtgstocks')) {
+    links.push({ label: 'MTGStocks Interests', href: 'https://www.mtgstocks.com/interests' });
+  }
+  return links;
+}
+
+export function getChronologicalMarketPosts(): DailyBriefPost[] {
+  return [...importedMarketReports]
+    .sort((a, b) => b.dateKey.localeCompare(a.dateKey))
+    .map((report) => ({
+      dateKey: report.dateKey,
+      publishedLabel: report.publishedLabel,
+      title: report.title === 'Daily MTG Market Movers Report'
+        ? `Market movers · ${report.publishedLabel}`
+        : report.title,
+      status: report.status,
+      dataWindow: report.dataWindow,
+      excerpt: reportExcerpt(report),
+      reportHref: importedReportHref(report.dateKey),
+      archiveSource: marketReportArchive.source,
+      sourceLinks: sourcesFor(report),
+      movers: report.movers.map(mapMover),
+    }));
 }

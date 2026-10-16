@@ -27,9 +27,6 @@ function SpoilerCard({ card, scanTimestamp }: { card: VerifiedSpoilerCard; scanT
             <span className="font-mono text-xs font-bold uppercase text-muted-foreground">Card image not available yet</span>
           </div>
         )}
-        <span className="absolute left-2 top-2 inline-flex items-center gap-1 border-2 border-amber-500 bg-amber-500 px-2 py-1 font-mono text-[10px] font-black uppercase tracking-wider text-black shadow">
-          <Sparkles className="h-3 w-3" /> Spoiler
-        </span>
       </a>
       <div className="space-y-3 p-3 sm:p-4">
         <div className="flex items-start justify-between gap-2">
@@ -39,7 +36,12 @@ function SpoilerCard({ card, scanTimestamp }: { card: VerifiedSpoilerCard; scanT
               {card.collectorNumber ? `#${card.collectorNumber} · ` : ''}{card.rarity || 'Card'}
             </p>
           </div>
-          <span className="shrink-0 border border-amber-500/60 bg-amber-500/10 px-1.5 py-1 font-mono text-[9px] font-black uppercase text-amber-700 dark:text-amber-300">Verified</span>
+          <div className="flex shrink-0 flex-col items-end gap-1">
+            <span className="inline-flex items-center gap-1 border border-amber-500 bg-amber-500/10 px-1.5 py-1 font-mono text-[9px] font-black uppercase text-amber-700 dark:text-amber-300">
+              <Sparkles className="h-3 w-3" /> Spoiler
+            </span>
+            <span className="border border-border bg-background px-1.5 py-1 font-mono text-[9px] font-black uppercase text-muted-foreground">Verified</span>
+          </div>
         </div>
         <div className="border-l-2 border-primary bg-muted/50 p-2.5 text-xs leading-relaxed">
           <p className="font-semibold">Previewed {formatDate(card.previewedAt)}</p>

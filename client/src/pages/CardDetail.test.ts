@@ -13,4 +13,11 @@ describe('CardDetail primary artwork layout', () => {
     expect(source).toContain('className="block h-full w-full object-contain"');
     expect(source).not.toContain('min-h-[500px] w-full object-contain');
   });
+
+  it('uses only exact set-index data as the indexed fallback for a selected printing', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/CardDetail.tsx'), 'utf8');
+    expect(source).toContain("activeIndexedPriceRecord?.match === 'exact-set'");
+    expect(source).toContain('Set + name index ·');
+    expect(source).toContain('Scryfall USD for selected printing');
+  });
 });

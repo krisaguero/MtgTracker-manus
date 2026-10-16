@@ -25,6 +25,12 @@ describe('application route map', () => {
     expect(source).toContain("const Home = lazy(() => import('./pages/Home'))");
   });
 
+  it('keeps the market-today route connected to the chronological brief page', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    expect(source).toContain('<Route path="/market-today" component={TodayMarketBrief} />');
+    expect(readFileSync(resolve(process.cwd(), 'client/src/pages/TodayMarketBrief.tsx'), 'utf8')).toContain('getChronologicalMarketPosts');
+  });
+
   it('mounts the new player-goal and market hub routes before the dynamic set route', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");

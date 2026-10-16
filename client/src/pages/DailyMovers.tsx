@@ -406,7 +406,7 @@ export function DailyMovers() {
           </div>
         </section>
 
-        {/* Dated editorial signal layer from the October 7 market brief. */}
+        {/* Historical snapshot preview from the imported chronological archive. */}
         <section className="mt-6 border border-border bg-card p-4 sm:p-6" aria-label="Historical market brief">
           <TodayMarketBrief embedded />
         </section>

@@ -72,9 +72,9 @@ export function NextBestPurchases() {
   };
 
   return (
-    <section className="my-10 border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-6 shadow-md relative">
+    <section className="my-10 border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-6 shadow-md">
       {copiedSuccess && (
-        <div className="absolute top-4 right-4 z-50 border-2 border-emerald-500 bg-emerald-500 text-black px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg animate-bounce">
+        <div role="status" aria-live="polite" className="border-2 border-emerald-500 bg-emerald-500/10 px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">
           <Check className="h-4 w-4" /> Copied Recommended Singles! Opening TCGplayer Mass Entry...
         </div>
       )}

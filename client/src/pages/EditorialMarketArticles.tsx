@@ -44,10 +44,12 @@ export default function EditorialMarketArticles() {
               const strongestMove = categoryMovers.reduce((best, mover) => Math.abs(mover.changePercent) > Math.abs(best?.changePercent ?? 0) ? mover : best, categoryMovers[0]);
               return (
                 <Link key={article.slug} href={`/market-category/${article.slug}`} className="group grid overflow-hidden border-2 border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-[6px_6px_0_0_rgba(59,130,246,0.15)] sm:grid-cols-[180px_minmax(0,1fr)]">
-                  <div className="relative flex min-h-48 items-center justify-center overflow-hidden border-b border-border bg-gradient-to-br from-primary/20 via-muted to-amber-500/10 p-4 sm:border-b-0 sm:border-r">
-                    <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] opacity-20 [background-size:14px_14px]" />
-                    {featured ? <MarketCardPreview name={featured.name} setCode={featured.printing} size="md" /> : <BookOpen className="relative h-10 w-10 text-primary" />}
-                    {strongestMove && <span className="absolute bottom-3 left-3 border border-border bg-background/95 px-2 py-1 font-mono text-[10px] font-black text-primary">{strongestMove.changePercent >= 0 ? '+' : ''}{strongestMove.changePercent}% snapshot move</span>}
+                  <div className="border-b border-border sm:border-b-0 sm:border-r">
+                    <div className="relative flex min-h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-amber-500/10 p-4">
+                      <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] opacity-20 [background-size:14px_14px]" />
+                      {featured ? <MarketCardPreview name={featured.name} setCode={featured.printing} size="md" /> : <BookOpen className="relative h-10 w-10 text-primary" />}
+                    </div>
+                    {strongestMove && <div className="border-t border-border bg-background px-3 py-2 text-center font-mono text-[10px] font-black text-primary">{strongestMove.changePercent >= 0 ? '+' : ''}{strongestMove.changePercent}% snapshot move</div>}
                   </div>
                   <div className="flex min-w-0 flex-col p-5 sm:p-6">
                     <div className="flex items-center justify-between gap-3"><span className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">{category}</span><span className="font-mono text-[9px] uppercase text-muted-foreground">{categoryMovers.length} evidence card{categoryMovers.length === 1 ? '' : 's'}</span></div>

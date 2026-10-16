@@ -11,7 +11,7 @@ import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { SetDetailPageSkeleton } from '@/components/PageSkeletons';
 import { moversForCard, moversForSet, suppliedSignalsForSet } from '@/lib/marketMoverLinks';
-import { resolveCardPrice } from '@/lib/marketPriceIndex';
+import { resolveSetPrintingPrice, summarizeSetPricing } from '@/lib/setCatalogPricing';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { VerifiedSpoilerGallery } from '@/components/VerifiedSpoilerGallery';
 
@@ -69,6 +69,10 @@ export default function SetDetail() {
     }
     return list;
   }, [resolvedReleasedAt, resolvedSetCode]);
+  const setPricingSummary = useMemo(
+    () => summarizeSetPricing(data?.cards || []),
+    [data?.cards],
+  );
 
   if (loading) {
     return (
@@ -120,8 +124,8 @@ export default function SetDetail() {
   }).sort((a: ScryfallCard, b: ScryfallCard) => {
     if (sortMode === 'name') return a.name.localeCompare(b.name);
     if (sortMode === 'price') {
-      const priceA = resolveCardPrice(a.name, a.set)?.usd ?? (a.prices?.usd ? parseFloat(a.prices.usd) : 0);
-      const priceB = resolveCardPrice(b.name, b.set)?.usd ?? (b.prices?.usd ? parseFloat(b.prices.usd) : 0);
+      const priceA = resolveSetPrintingPrice(a).usd ?? 0;
+      const priceB = resolveSetPrintingPrice(b).usd ?? 0;
       return priceB - priceA;
     }
     return (parseInt(a.collector_number) || 0) - (parseInt(b.collector_number) || 0);
@@ -162,6 +166,12 @@ export default function SetDetail() {
             <div className="flex justify-between gap-4">
               <span className="text-muted-foreground">Commander Decks:</span>
               <span className="font-bold text-primary">{precons.length}</span>
+            </div>
+            <div className="mt-2 border-t border-border pt-2">
+              <p className="text-muted-foreground">Main-set set + name index:</p>
+              <p className="font-bold">{setPricingSummary.setNameIndexCount} · Scryfall printing fallback: {setPricingSummary.scryfallFallbackCount}</p>
+              <p className="mt-1 text-muted-foreground">Main-set prices unavailable: {setPricingSummary.unavailableCount}</p>
+              <p className="mt-2 max-w-64 text-[9px] leading-relaxed text-muted-foreground">Index matches set + card name, not collector number; fallback uses Scryfall USD for the same returned printing. Estimates, not live sale quotes.</p>
             </div>
           </div>
         </div>
@@ -342,6 +352,7 @@ export default function SetDetail() {
                 const cardMovers = moversForCard(card.name, card.set);
                 const hotMover = cardMovers.find((mover) => mover.percentChange > 0);
                 const isVerifiedSpoiler = verifiedSpoilerIds.has(card.id);
+                const printingPrice = resolveSetPrintingPrice(card);
                 return (
                   <Link
                     key={card.id || card.name}
@@ -366,8 +377,11 @@ export default function SetDetail() {
                       <p className="font-bold text-xs truncate group-hover:text-primary" title={card.name}>{card.name}</p>
                       <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground mt-1">
                         <span>#{card.collector_number || 'P'} · {card.rarity || 'rare'}</span>
-                        {card.prices?.usd ? <span className="font-bold text-primary">${card.prices.usd}</span> : null}
+                        {printingPrice.usd !== null ? <span className="font-bold text-primary">${printingPrice.usd.toFixed(2)} USD</span> : <span className="text-muted-foreground">No price</span>}
                       </div>
+                      <p title={printingPrice.source || 'No price source available'} className={`mt-1 border-l-2 pl-1.5 font-mono text-[8px] uppercase ${printingPrice.usd === null ? 'border-border text-muted-foreground' : 'border-primary/60 text-muted-foreground'}`}>
+                        {printingPrice.sourceLabel}{printingPrice.updatedAt ? ` · ${printingPrice.updatedAt.slice(0, 10)}` : ''}
+                      </p>
                     </div>
                   </Link>
                 );
