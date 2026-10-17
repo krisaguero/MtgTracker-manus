@@ -4,9 +4,10 @@ import { resolve } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 import { October11MarketReportBody } from './October11MarketReport';
+import { chronologicalMarketEntries, formatPricingDate } from '@/data/marketChronology';
 
 const pageSource = readFileSync(resolve(process.cwd(), 'client/src/pages/October11MarketReport.tsx'), 'utf8');
-const archiveSource = readFileSync(resolve(process.cwd(), 'client/src/pages/MarketReportArchive.tsx'), 'utf8');
+const archiveDates = chronologicalMarketEntries.map((entry) => formatPricingDate(entry.dateKey));
 
 describe('October 11 historical market report', () => {
   it('keeps its October 10 data window and the October 11/15/16 reports separate', () => {
@@ -18,9 +19,9 @@ describe('October 11 historical market report', () => {
     expect(pageSource).toContain('/market-report/october-05-daily-market-movers');
     expect(pageSource).toContain('/market-report/october-15-30-signal-brief');
     expect(pageSource).toContain('/market-watch#source-market-watch-heading');
-    expect(archiveSource).toContain('October 11, 2026');
-    expect(archiveSource).toContain('October 15, 2026');
-    expect(archiveSource).toContain('October 16, 2026');
+    expect(archiveDates).toContain('Oct 11, 2026');
+    expect(archiveDates).toContain('Oct 15, 2026');
+    expect(archiveDates).toContain('Oct 16, 2026');
   });
 
   it('keeps source confidence/risk claims and public citations, but omits workflow prompt text and URLs', () => {

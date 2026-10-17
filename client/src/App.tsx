@@ -23,6 +23,7 @@ const MarketReportArchive = lazy(() => import('@/pages/MarketReportArchive'));
 const October5MarketReport = lazy(() => import('@/pages/October5MarketReport').then((module) => ({ default: module.October5MarketReport })));
 const October11MarketReport = lazy(() => import('@/pages/October11MarketReport').then((module) => ({ default: module.October11MarketReport })));
 const October15MarketBrief = lazy(() => import('@/pages/October15MarketBrief').then((module) => ({ default: module.October15MarketBrief })));
+const October16MarketBrief = lazy(() => import('@/pages/October16MarketBrief').then((module) => ({ default: module.October16MarketBrief })));
 const MarketSignalAudit = lazy(() => import('@/pages/MarketSignalAudit'));
 const DailyMovers = lazy(() => import('@/pages/DailyMovers').then((module) => ({ default: module.DailyMovers })));
 const MarketWatchArticle = lazy(() => import('@/pages/MarketWatchArticle').then((module) => ({ default: module.MarketWatchArticle })));
@@ -75,6 +76,7 @@ function Router() {
         <Route path="/market-report/october-05-daily-market-movers" component={October5MarketReport} />
         <Route path="/market-report/october-11-daily-market-movers" component={October11MarketReport} />
         <Route path="/market-report/october-15-30-signal-brief" component={October15MarketBrief} />
+        <Route path="/market-report/october-16-30-signal-brief" component={October16MarketBrief} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />
         <Route path="/market-signal-audit" component={MarketSignalAudit} />
         <Route path="/market-movers-manus-report" component={MarketMoverReportArticle} />

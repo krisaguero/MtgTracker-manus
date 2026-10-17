@@ -13,6 +13,7 @@ import { isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type M
 import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import researchFeed from '@/data/marketResearchFeed.json';
+import { latestMarketWatchEntries } from '@/data/marketChronology';
 
 const latestResearchPost = researchFeed.posts[0];
 
@@ -228,6 +229,11 @@ export function DailyMovers() {
               </Link>
             </div>
           </div>
+
+          <section className="mt-6 border-2 border-amber-500/50 bg-amber-500/5 p-4 sm:p-5" aria-labelledby="latest-watch-heading">
+            <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="font-mono text-[10px] font-black uppercase tracking-widest text-amber-700">Latest dated watch cards</p><h2 id="latest-watch-heading" className="mt-1 text-xl font-black">Source-dated market watch</h2></div><Link href="/market-reports" className="font-mono text-[10px] font-black uppercase tracking-wider text-primary underline">Open chronological hub →</Link></div>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">{latestMarketWatchEntries.map((entry) => <Link key={entry.id} href={entry.href} className="border border-border bg-card p-3 transition-colors hover:border-primary"><div className="flex items-center justify-between gap-2"><span className="font-mono text-[10px] font-black uppercase text-primary">{entry.dateKey}</span><span className="font-mono text-[9px] font-black uppercase text-muted-foreground">{entry.kind}</span></div><h3 className="mt-2 font-black leading-tight">{entry.title}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{entry.verification}</p><p className="mt-2 border-l-2 border-amber-500 pl-2 text-[10px] leading-4 text-muted-foreground">Historical source record; not a live quote.</p></Link>)}</div>
+          </section>
 
           <div className="flex flex-wrap items-center gap-3">
             <Link href="/market-reports" className="inline-flex items-center gap-2 border-2 border-border bg-card px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary">

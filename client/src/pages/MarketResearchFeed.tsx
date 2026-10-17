@@ -1,3 +1,4 @@
+import React from 'react';
 import { ArrowLeft, CalendarDays, ExternalLink, ShieldAlert, TrendingDown, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
 import rawFeed from '@/data/marketResearchFeed.json';
@@ -68,10 +69,20 @@ function FeedCardView({ card }: { card: FeedCard }) {
   </article>;
 }
 
-function SourceMarketWatchSnapshot() {
+export function SourceMarketWatchSnapshot({ requestedDate }: { requestedDate?: string | null }) {
   const snapshot = rawSourceMarketWatch.snapshot;
-  const report = rawSourceMarketWatch.latestReport;
-  const signals = rawSourceMarketWatch.signals;
+  const selectedRecord = rawSourceMarketWatch.reports.find((record) => record.date === requestedDate);
+  const isOlderRecord = Boolean(selectedRecord && selectedRecord.date !== rawSourceMarketWatch.latestReport.date);
+  const report = isOlderRecord && selectedRecord ? {
+    ...rawSourceMarketWatch.latestReport,
+    date: selectedRecord.date,
+    title: selectedRecord.title,
+    executiveSummary: [selectedRecord.dataWindow, selectedRecord.sourceNotes, 'Only the archived summary and source-labeled signals are available for this date; the latest report narrative is not substituted.'],
+    signalsToWatch: [],
+    doNotChase: [],
+    sources: [],
+  } : rawSourceMarketWatch.latestReport;
+  const signals = selectedRecord ? rawSourceMarketWatch.signals.filter((signal) => signal.firstSeen === selectedRecord.date) : rawSourceMarketWatch.signals;
   const announcements = rawSourceMarketWatch.announcements;
   const reviews = rawSourceMarketWatch.reviews;
 
@@ -152,7 +163,7 @@ export default function MarketResearchFeed() {
     <header className="border-b border-border bg-card"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-5 sm:px-8"><Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Market watch</Link><div className="flex flex-wrap gap-2"><Link href="/movers" className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Imported snapshot</Link><Link href="/market-movers-manus-report" className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Source post</Link></div></div></header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8">
       <VerifiedHistoricalEvidence />
-      <SourceMarketWatchSnapshot />
+      <SourceMarketWatchSnapshot requestedDate={requestedDate} />
       <p className="border-l-2 border-primary pl-3 font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">Separate tracker-generated archive · dated cards, data windows, and citations follow</p>
       <section className="border-2 border-primary bg-primary/5 p-6 sm:p-10"><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Recurring market-watch blog feed</p><h1 className="mt-3 text-4xl font-black tracking-tight sm:text-6xl">Daily signals, focused desks, and the Top 10 watchlist.</h1><p className="mt-4 max-w-4xl text-base leading-7 text-muted-foreground">A dated research queue generated from the project’s market snapshots. The weekday desk rotates the lens; every other Friday expands into a ranked Top 10 watchlist. Snapshot velocity is a prompt for verification, not a confirmed trade signal.</p><div className="mt-6 grid gap-3 font-mono text-[10px] font-black uppercase sm:grid-cols-3"><span className="border-2 border-border bg-background p-3">Daily · {feed.schedule.daily}</span><span className="border-2 border-border bg-background p-3">Topic · {feed.schedule.topicExpansion}</span><span className="border-2 border-border bg-background p-3">Top 10 · {feed.schedule.biweeklyTop10}</span></div></section>
       {latest && <section className="border border-border bg-card p-4 sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="font-mono text-xs font-black uppercase tracking-widest text-primary"><CalendarDays className="mr-2 inline h-4 w-4" /> {isHistorical ? 'Historical research · published' : 'Research published'} · {formatDate(latest.dateKey)}</p><h2 className="mt-3 text-3xl font-black tracking-tight">{latest.title}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-muted-foreground">{latest.summary}</p><p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Data window: {latest.dataWindow} · Generated {formatGeneratedAt(latest.generatedAt)}</p>{isHistorical && <p className="mt-3 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">This dated research is historical; verify current prices, catalysts, and policy status before relying on it.</p>}</div><span className="border border-amber-600/40 bg-amber-500/10 px-3 py-2 font-mono text-[10px] font-black uppercase text-amber-800 dark:text-amber-200">{latest.label}</span></div><div className="mt-6 grid gap-4 lg:grid-cols-2">{latest.cards.map((card) => <FeedCardView key={`${latest.id}-${card.name}-${card.setCode}`} card={card} />)}</div><div className="mt-6 border-t border-border pt-5 text-sm leading-7 text-muted-foreground">{latest.body.map((paragraph) => <p key={paragraph} className="mb-3">{paragraph}</p>)}<p className="flex items-start gap-2 border-t border-border pt-4 font-mono text-[10px] font-bold uppercase"><ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" /> {latest.disclaimer}</p></div></section>}

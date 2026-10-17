@@ -4,9 +4,10 @@ import { resolve } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 import { October5MarketReportBody } from './October5MarketReport';
+import { chronologicalMarketEntries, formatPricingDate } from '@/data/marketChronology';
 
 const pageSource = readFileSync(resolve(process.cwd(), 'client/src/pages/October5MarketReport.tsx'), 'utf8');
-const archiveSource = readFileSync(resolve(process.cwd(), 'client/src/pages/MarketReportArchive.tsx'), 'utf8');
+const archiveDates = chronologicalMarketEntries.map((entry) => formatPricingDate(entry.dateKey));
 const markdown = readFileSync(resolve(process.cwd(), 'client/src/data/marketBriefs/2026-10-05-daily-mtg-market-movers.md'), 'utf8');
 
 describe('October 5 historical market report', () => {
@@ -19,10 +20,10 @@ describe('October 5 historical market report', () => {
     expect(pageSource).toContain('/market-report/october-11-daily-market-movers');
     expect(pageSource).toContain('/market-report/october-15-30-signal-brief');
     expect(pageSource).toContain('/market-watch#source-market-watch-heading');
-    expect(archiveSource).toContain('October 5, 2026');
-    expect(archiveSource).toContain('October 11, 2026');
-    expect(archiveSource).toContain('October 15, 2026');
-    expect(archiveSource).toContain('October 16, 2026');
+    expect(archiveDates).toContain('Oct 5, 2026');
+    expect(archiveDates).toContain('Oct 11, 2026');
+    expect(archiveDates).toContain('Oct 15, 2026');
+    expect(archiveDates).toContain('Oct 16, 2026');
     for (let i = 1; i <= 10; i += 1) expect(markdown).toMatch(new RegExp(`^## ${i}\\.`, 'm'));
   });
 
