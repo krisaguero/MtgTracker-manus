@@ -29,6 +29,9 @@ export function NavigationSearch() {
           recentPrices: snap.recentPrices,
           category: snap.category,
           signalSource: snap.signalSource,
+          priceSource: snap.priceSource,
+          sourceCount: snap.sourceCount,
+          lastUpdated: snap.lastUpdated,
           thesis: snap.thesis,
           cardKingdomUsd: snap.cardKingdomUsd,
           tcgplayerMarketUsd: snap.tcgplayerMarketUsd,
@@ -72,7 +75,7 @@ export function NavigationSearch() {
             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
-          placeholder="Search any MTG card for live stats..."
+          placeholder="Search cards in the dated market snapshot..."
           className="w-full bg-card border-2 border-border pl-9 pr-8 py-1.5 font-mono text-xs focus:border-primary focus:outline-none"
           aria-label="Search any MTG card"
         />
@@ -122,11 +125,12 @@ export function NavigationSearch() {
                   </div>
                   <div className="min-w-0">
                     <p className="font-bold text-sm truncate group-hover:text-primary">{card.name}</p>
-                    <p className="font-mono text-[10px] text-muted-foreground uppercase">{card.setCode} · {card.rarity} · {card.signalSource}</p>
+                    <p className="font-mono text-[10px] text-muted-foreground uppercase">{card.setCode} · {card.rarity} · {card.priceSource || card.signalSource} · {card.lastUpdated?.slice(0, 10) || 'date unavailable'}</p>
                   </div>
                 </div>
                 <div className="text-right flex-shrink-0">
                   <span className="font-mono text-sm font-extrabold text-primary">${card.currentUsd.toFixed(2)}</span>
+                  <span className="block font-mono text-[9px] text-muted-foreground">As of {card.lastUpdated?.slice(0, 10) || 'date unavailable'}</span>
                   <span className={`block font-mono text-[10px] ${card.percentChange >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
                     {card.percentChange >= 0 ? `+${card.percentChange}%` : `${card.percentChange}%`}
                   </span>
@@ -151,10 +155,10 @@ export function NavigationSearch() {
             </button>
 
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <TrendingUp className="h-4 w-4" /> Global Card Intelligence &amp; Stats
+              <TrendingUp className="h-4 w-4" /> Snapshot Card Details
             </div>
             <h2 className="mt-2 text-2xl font-extrabold">{selectedCard.name}</h2>
-            <p className="font-mono text-xs text-muted-foreground uppercase">{selectedCard.setCode} Set · Rarity: {selectedCard.rarity} · Source: {selectedCard.signalSource}</p>
+            <p className="font-mono text-xs text-muted-foreground uppercase">{selectedCard.setCode} Set · Rarity: {selectedCard.rarity} · Source: {selectedCard.priceSource || selectedCard.signalSource} · As of {selectedCard.lastUpdated?.slice(0, 10) || 'date unavailable'} · {selectedCard.sourceCount ?? 0} quote(s)</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div className="flex flex-col items-center">
@@ -198,11 +202,11 @@ export function NavigationSearch() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3 border-2 border-border bg-muted/40 p-3 font-mono">
                   <div>
-                    <span className="text-[10px] uppercase text-muted-foreground block">Current USD</span>
+                    <span className="text-[10px] uppercase text-muted-foreground block">Snapshot USD · {selectedCard.lastUpdated?.slice(0, 10) || 'date unavailable'}</span>
                     <span className="text-xl font-extrabold">${selectedCard.currentUsd.toFixed(2)}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase text-muted-foreground block">7-Day Momentum</span>
+                    <span className="text-[10px] uppercase text-muted-foreground block">Source-reported change</span>
                     <span className={`text-xl font-extrabold ${selectedCard.percentChange >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
                       {selectedCard.percentChange >= 0 ? `+${selectedCard.percentChange}%` : `${selectedCard.percentChange}%`}
                     </span>
@@ -210,19 +214,19 @@ export function NavigationSearch() {
                 </div>
 
                 <div className="border border-border p-3 bg-card font-mono text-xs space-y-2">
-                  <span className="font-bold text-muted-foreground uppercase block">Multi-Outlet Pricing</span>
+                  <span className="font-bold text-muted-foreground uppercase block">Vendor quotes included in this row · {selectedCard.sourceCount ?? 0} reported</span>
                   <div className="grid grid-cols-3 gap-1 text-center">
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">Card Kingdom</span>
-                      <span className="font-bold">${selectedCard.cardKingdomUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.cardKingdomUsd == null ? 'Not in snapshot' : `$${selectedCard.cardKingdomUsd.toFixed(2)}`}</span>
                     </div>
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">TCGplayer</span>
-                      <span className="font-bold">${selectedCard.tcgplayerMarketUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.tcgplayerMarketUsd == null ? 'Not in snapshot' : `$${selectedCard.tcgplayerMarketUsd.toFixed(2)}`}</span>
                     </div>
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">MTGGoldfish</span>
-                      <span className="font-bold">${selectedCard.mtgGoldfishUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.mtgGoldfishUsd == null ? 'Not in snapshot' : `$${selectedCard.mtgGoldfishUsd.toFixed(2)}`}</span>
                     </div>
                   </div>
                 </div>

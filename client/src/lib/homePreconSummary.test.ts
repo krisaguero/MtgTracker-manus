@@ -21,7 +21,7 @@ describe('homepage precon equity summary', () => {
     expect(summary).toEqual({
       decklistCount: 173,
       valuedDecklistCount: 173,
-      equityUsd: 19439.65,
+      equityUsd: 19408.97,
       pricedCardCopies: 16944,
       unpricedCardCopies: 356,
       totalCardCopies: 17300,
@@ -34,7 +34,7 @@ describe('homepage precon equity summary', () => {
         commanderPriceSnapshotSource
       )
     ).toBe(
-      '173 local decklists · $19,439.65 estimated indexed card-list equity · 173/173 decklists with value data · 16,944/17,300 card copies priced in USD (356 missing; 97.9% coverage) · MTGJSON AllPricesToday snapshot as of 2026-10-15. This is card-list equity, not sealed product value; only local decklists are included. USD estimates use TCGplayer or Card Kingdom quotes; EUR Cardmarket quotes are excluded.'
+      '173 local decklists · $19,408.97 estimated indexed card-list equity · 173/173 decklists with value data · 16,944/17,300 card copies priced in USD (356 missing; 97.9% coverage) · MTGJSON AllPricesToday snapshot as of 2026-10-16. This is card-list equity, not sealed product value; only local decklists are included. USD estimates use TCGplayer or Card Kingdom quotes; EUR Cardmarket quotes are excluded.'
     );
   });
 });

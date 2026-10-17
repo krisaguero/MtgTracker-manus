@@ -38,13 +38,13 @@ export function FeaturedSignalMatrixArticle() {
               Magic Market-Signal Matrix: Scope, Methodology, and Top Findings
             </h1>
             <p className="mt-4 text-sm font-mono text-muted-foreground">
-              By Manus AI · Based on MTGStocks regular-price Interests feed dated August 18, 2026, retrieved August 19, 2026 UTC
+              MTG Tracker editorial · Historical MTGStocks regular-price Interests feed dated August 18, 2026, retrieved August 19, 2026 UTC
             </p>
           </div>
 
           <div className="border-2 border-primary/30 bg-primary/5 p-4 font-mono text-xs">
-            <span className="font-bold text-primary uppercase block mb-1">Research & Methodology Disclosure</span>
-            Live mover data are sourced from the MTGStocks public regular-price Interests feed dated 2026-08-18 and retrieved 2026-08-19 UTC. Scryfall card text, legality, printing counts, EDHREC rank, and USD reference fields are refreshed during build. This package is research and analysis only, not personalized financial advice.
+            <span className="font-bold text-primary uppercase block mb-1">Historical Source Snapshot · Not Current Quotes</span>
+            All prices, percentage moves, and findings below refer to the MTGStocks regular-price Interests feed dated 2026-08-18 and retrieved 2026-08-19 UTC. This article does not display live pricing; verify the exact printing and current listings independently. Research only, not personalized financial advice.
           </div>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none space-y-6 text-base leading-relaxed">
@@ -54,7 +54,7 @@ export function FeaturedSignalMatrixArticle() {
 
             <h2 className="text-2xl font-bold tracking-tight pt-4 border-t border-border">Featured Cards Mentioned in This Article</h2>
             <p className="text-muted-foreground">
-              The following curated picks represent the strongest structural signals and buyout targets identified in the 250-card matrix. Click any card to inspect live multi-outlet pricing and price history.
+              The following curated picks are historical entries from the August 18, 2026 matrix. Links return to the dated mover archive; they are not live quotes or confirmed price histories.
             </p>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 my-6">

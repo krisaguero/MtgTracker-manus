@@ -118,7 +118,7 @@ export function PreconStrategyPrimer({
                 </div>
                 <div className="mt-4 pt-2 border-t border-border font-mono text-xs font-bold text-primary">
                   <div className="flex items-center justify-between"><span>Market:</span><span>{price === null ? 'Unavailable' : `$${price.toFixed(2)} USD`}</span></div>
-                  {mover && <Link href={mover.articleHref} className="mt-2 inline-flex items-center text-[10px] uppercase text-amber-500 hover:underline">Hot watch · read mover post →</Link>}
+                  {mover && <Link href={mover.articleHref} className="mt-2 inline-flex items-center text-[10px] uppercase text-amber-500 hover:underline">Dated watch · {mover.lastUpdated.slice(0, 10)} · read source note →</Link>}
                 </div>
               </div>
             );

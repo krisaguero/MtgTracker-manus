@@ -11,6 +11,11 @@ describe('market mover linkage and Commander price lineage', () => {
     expect(mover.articleHref).toBe(marketMoverArticleHref(mover.name));
     expect(mover.cardHref).toBe(`/card/${encodeURIComponent(mover.name)}`);
     expect(mover.setHref).toBe(`/${mover.setCode}`);
+    expect(mover).toMatchObject({
+      priceSource: 'MTGJSON',
+      sourceCount: expect.any(Number),
+      lastUpdated: expect.stringMatching(/^2026-10-/),
+    });
     expect(moversForCard(mover.name, mover.setCode)[0]?.name).toBe(mover.name);
     expect(moversForSet(mover.setCode).some((candidate) => candidate.name === mover.name)).toBe(true);
   });

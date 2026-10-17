@@ -10,15 +10,19 @@ describe('product roadmap page', () => {
     expect(read('client/src/components/InternalPageNav.tsx')).toContain("href: '/roadmap', label: 'Product roadmap'");
   });
 
-  it('separates shipped, local-only, staging, and planned work', () => {
+  it('separates shipped features, the privacy boundary, staging, and planned work', () => {
     const page = read('client/src/pages/Roadmap.tsx');
     expect(page).toContain('Live in production');
-    expect(page).toContain('Implemented locally · not shipped');
+    expect(page).toContain('Production privacy boundary');
     expect(page).toContain('Staging only · synthetic data');
     expect(page).toContain('Not implemented · proposals');
-    expect(page).toContain('75a8455');
+    expect(page).toContain('__PRODUCTION_GIT_COMMIT_SHA__');
+    expect(page).not.toContain('75a8455');
     expect(page).toContain('All 38 isolation checks passed');
-    expect(page).toContain('No production data has been moved');
+    expect(page).toContain('does not change user data, backup behavior');
+    expect(page).toContain('order/proxy queues');
+    expect(page).toContain('BYOK keys');
+    expect(page).toContain('import fingerprint/count');
   });
 
   it('explains CSV scale and proposes an opt-in aggregate community watchlist', () => {
@@ -31,8 +35,8 @@ describe('product roadmap page', () => {
 
   it('records the separate Battle Box and Brawlternatives status while keeping shared submissions as future work', () => {
     const page = read('client/src/pages/Roadmap.tsx');
-    expect(page).toContain('Retro 9-deck non-Commander Battle Box');
-    expect(page).toContain('Brawlternatives prototype: precon-themed');
+    expect(page).toContain('non-Commander 9-deck Battle Box');
+    expect(page).toContain('Brawlternatives are separate');
     expect(page).toContain('Shared Battle Box review & publishing backend');
     expect(page).toContain('Expand Brawlternatives');
     expect(page).toContain('not official Magic Brawl');

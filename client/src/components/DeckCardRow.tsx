@@ -48,7 +48,7 @@ export function DeckCardRow({ entry, refreshKey: _refreshKey = 0, arenaMode: _ar
             ) : (
               <span className="font-mono text-[10px] uppercase text-muted-foreground">Missing</span>
             )}
-            {mover && <Link href={mover.articleHref} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-500 hover:underline"><Flame className="h-3 w-3" /> +{mover.percentChange.toFixed(1)}%</Link>}
+            {mover && <Link href={mover.articleHref} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-500 hover:underline"><Flame className="h-3 w-3" /> Dated +{mover.percentChange.toFixed(1)}% · {mover.lastUpdated.slice(0, 10)}</Link>}
           </div>
         </div>
       </div>

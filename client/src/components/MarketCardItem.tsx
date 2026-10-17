@@ -98,11 +98,11 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
 
         <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
           <div>
-            <span className="font-mono text-[10px] text-muted-foreground uppercase block">Current USD</span>
+            <span className="font-mono text-[10px] text-muted-foreground uppercase block">Snapshot USD</span>
             <span className="font-mono text-base font-extrabold text-foreground">${mover.currentUsd.toFixed(2)}</span>
           </div>
           <div className="text-right">
-            <span className="font-mono text-[10px] text-muted-foreground uppercase block">Change</span>
+            <span className="font-mono text-[10px] text-muted-foreground uppercase block">Source change</span>
             <span className={`font-mono text-xs font-bold ${changeTone}`}>
               {mover.changeUsd > 0 ? `+$${mover.changeUsd.toFixed(2)}` : mover.changeUsd < 0 ? `-$${Math.abs(mover.changeUsd).toFixed(2)}` : '$0.00'}
             </span>

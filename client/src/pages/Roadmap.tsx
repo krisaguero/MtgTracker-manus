@@ -13,37 +13,41 @@ import {
 } from 'lucide-react';
 import { Link } from 'wouter';
 
+declare const __PRODUCTION_GIT_COMMIT_SHA__: string;
+
+const productionCommitSha = typeof __PRODUCTION_GIT_COMMIT_SHA__ === 'string'
+  ? __PRODUCTION_GIT_COMMIT_SHA__
+  : '';
+
 const shippedItems = [
   {
-    title: 'ManaBox collection import',
-    detail: 'Import a ManaBox CSV or text list and match owned cards against sets, Commander lists, and market views. Card rows are held in this browser in the currently deployed build.',
+    title: 'ManaBox collection import and matching',
+    detail: 'Import a ManaBox CSV or text list, resolve printing matches, and use local ownership across set and Commander views. Collection rows stay in this browser unless a user separately chooses the manual backup flow.',
   },
   {
-    title: 'Personal Commander completion tools',
-    detail: 'Use your imported collection to see owned cards and missing-card guidance on supported set and Commander views. This is not yet an account-synced checklist across devices.',
+    title: 'Collection and Commander workspace',
+    detail: 'Set goals, exact-variant wishlists, duplicate/trade piles, Commander Passport records, saved precon lists, duel inventories, valuation history, and deck workshop tools are available locally. Continuous account sync is not enabled.',
+  },
+  {
+    title: 'Retro Battle Box and Brawlternatives',
+    detail: 'The non-Commander 9-deck Battle Box includes local inventory queues and print/CSV export. Brawlternatives are separate, non-tuned Commander-preview concepts—not official Magic Brawl—and keep scan-derived ownership out of public data.',
+  },
+  {
+    title: 'Source-dated public market research',
+    detail: 'Browse historical mover rows, dated research reports, official product announcements, and the MTGJSON Commander price index with source dates and coverage counts. These static snapshots are not live quotes.',
   },
   {
     title: 'Private mover watchlist',
-    detail: 'Star cards in Daily Movers and revisit your personal watchlist. It is stored in this browser and is not currently shared with other users.',
-  },
-  {
-    title: 'Set, precon, and market discovery',
-    detail: 'Browse set and Commander archives, card-level market context, and daily mover information without uploading a collection file.',
+    detail: 'Star cards in the imported market snapshot and revisit a personal watchlist stored in this browser; it is not currently shared with other users.',
   },
 ];
 
-const localOnlyItems = [
-  'Retro 9-deck non-Commander Battle Box: data-driven visual layouts, full lists, source discrepancy checks, private inventory queue, print/CSV export, and local community-build drafts. This worktree is not deployed.',
-  'Brawlternatives prototype: precon-themed, self-built, non-tuned 60-card Commander-preview concepts—Dr. Madison Li first, then Araumi of the Dead Tide—with Scryfall identity checks and visible source-list warnings. It is a custom alternative to Brawl, not official Magic Brawl, and keeps scan-derived ownership/proxy claims out of shared data.',
-  'Optional BYOK AI generation remains disabled until the user opts in and clicks generate; the key is session-scoped and inventory card names are not included in the provider request.',
-  'Versioned local-workspace backup and validated restore, plus a user-confirmed local-data clear.',
-  'Browser-local Commander Passport records, saved precon snapshots, duel inventories, and valuation history without requiring sign-in.',
-  'Exact-printing ManaBox preview and duplicate/ambiguous-name resolution, plus set goals, exact-variant wishlists, and duplicate/trade piles.',
-  'Local Deck Workshop for sourced Commander identity and supported-format legality checks, collection matching, budget swap checks, deck snapshots, export/restore, and sideboards.',
-  'Saved themed 60-card presets and Limited sealed/draft pool builder with quantity caps and 40-card export.',
-  'The existing 08:00 UTC GitHub Actions job is extended to refresh the shared public Commander/precon price snapshot. This workflow edit is local-only and will not run until merged; it never reads or uploads personal decks.',
-  'Dated market labels, price coverage counts, and an explicit historical warning for older valuation entries without coverage data.',
-  'Removal of the signed-in import-fingerprint/count request so the import flow does not send that metadata to the app server.',
+const privateDataBoundaryItems = [
+  'Collection rows, scans, order/proxy queues, and other user-specific records are not part of the public market datasets or static site bundles. Local workspace features remain browser-based by default.',
+  'BYOK keys are session-scoped and are not embedded in public data. AI generation requires the user to opt in and explicitly generate; collection card names are not sent in that provider request.',
+  'Optional Supabase workspace backup is separate, off by default, and transfers data only after a user signs in and presses a backup or restore action. This release does not change its behavior or Supabase settings/schema.',
+  'The existing signed-in import flow may send a minimal import fingerprint/count record; it does not upload collection card rows. This release leaves that endpoint behavior unchanged.',
+  'The new public Market Watch snapshot contains only dated research, exact-printing signal fields, official announcements, review outcomes, and public citations. Workspace IDs, relations, and personal records are excluded.',
 ];
 
 const plannedItems = [
@@ -64,8 +68,8 @@ const plannedItems = [
     detail: 'Move larger browser-local workspaces from localStorage to IndexedDB, handle quota errors explicitly, and benchmark real export files before setting supported collection sizes.',
   },
   {
-    title: 'Optional account backup and sync',
-    detail: 'Offer a separate opt-in to sync normalized collection/deck records, with export, conflict handling, deletion, retention rules, and a local-only mode. Signing in should not silently upload a collection.',
+    title: 'Managed account sync beyond manual backup',
+    detail: 'The app offers a separate, opt-in manual Supabase backup; it does not continuously sync. Any future sync experience needs explicit consent, export, conflict handling, deletion and retention rules, and a local-only mode. Signing in must never silently upload a collection.',
   },
   {
     title: 'Community watchlist, without public user profiles',
@@ -87,17 +91,17 @@ export default function Roadmap() {
             <div>
               <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-6xl">Your collection, your choice to sync.</h1>
               <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:mt-5 sm:text-lg">
-                A transparent snapshot of what is live, what is still local work, what has only been tested in staging, and what could come next.
+                A transparent snapshot of what is live, how private data is handled, what has only been tested in staging, and what could come next.
               </p>
             </div>
             <div className="border-2 border-amber-500/70 bg-amber-500/5 p-3 sm:p-4">
               <p className="font-mono text-xs font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">Status boundary</p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">Production remains at commit <code className="font-mono text-foreground">75a8455</code>. This roadmap and the latest local-first privacy work are not deployed. No production data has been moved.</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Production source commit: <code className="break-all font-mono text-foreground">{productionCommitSha || 'provided by the Vercel production build'}</code>. This release updates public roadmap and market-data disclosures only; it does not change user data, backup behavior, production records, or Supabase settings/schema.</p>
             </div>
           </div>
           <div className="mt-7 flex flex-wrap gap-2 font-mono text-[10px] font-black uppercase tracking-wider">
             <span className="inline-flex items-center gap-2 border border-emerald-600/50 bg-emerald-600/5 px-3 py-2 text-emerald-700 dark:text-emerald-400"><CheckCircle2 className="h-3.5 w-3.5" /> Live in production</span>
-            <span className="inline-flex items-center gap-2 border border-amber-600/50 bg-amber-600/5 px-3 py-2 text-amber-700 dark:text-amber-400"><CircleDashed className="h-3.5 w-3.5" /> Local-only work</span>
+            <span className="inline-flex items-center gap-2 border border-amber-600/50 bg-amber-600/5 px-3 py-2 text-amber-700 dark:text-amber-400"><HardDrive className="h-3.5 w-3.5" /> Private data boundary</span>
             <span className="inline-flex items-center gap-2 border border-sky-600/50 bg-sky-600/5 px-3 py-2 text-sky-700 dark:text-sky-400"><ShieldCheck className="h-3.5 w-3.5" /> Staging validation</span>
             <span className="inline-flex items-center gap-2 border border-border bg-background px-3 py-2 text-muted-foreground"><Sparkles className="h-3.5 w-3.5" /> Planned ideas</span>
           </div>
@@ -117,16 +121,16 @@ export default function Roadmap() {
             </article>)}
           </div>
           <p className="mt-4 border-l-2 border-amber-500 bg-amber-500/5 px-4 py-3 text-sm leading-6 text-muted-foreground">
-            Privacy note: in the deployed build, collection card rows stay in browser storage, but a small import fingerprint/count record is still sent for signed-in imports. A local, undeployed change removes that request; the local privacy changes are listed below.
+            Public market and roadmap files contain no user inventory, scans, order/proxy queues, BYOK keys, or workspace records. Collection rows stay browser-local by default; the separate manual backup and minimal signed-in import metadata are described below and are unchanged by this release.
           </p>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2" aria-label="Local work and staging status">
+        <section className="grid gap-6 lg:grid-cols-2" aria-label="Privacy boundary and staging status">
           <article className="border-2 border-amber-600/50 bg-amber-600/5 p-4 sm:p-7">
-            <div className="flex items-center gap-3"><HardDrive className="h-5 w-5 text-amber-700 dark:text-amber-400" /><div><SectionLabel>Implemented locally · not shipped</SectionLabel><h2 className="mt-1 text-2xl font-black">Privacy and backup work</h2></div></div>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">These changes are in the current working tree only. They are uncommitted and undeployed; until a separate release, production behavior does not change.</p>
+            <div className="flex items-center gap-3"><HardDrive className="h-5 w-5 text-amber-700 dark:text-amber-400" /><div><SectionLabel>Production privacy boundary</SectionLabel><h2 className="mt-1 text-2xl font-black">Private data stays out of public bundles</h2></div></div>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">The public site publishes shared card/product reference data and source-dated research—not personal workspace records. Browser-local defaults and existing explicit transfer paths are distinguished below.</p>
             <ul className="mt-4 space-y-3">
-              {localOnlyItems.map((item) => <li key={item} className="flex gap-3 text-sm leading-6"><CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-amber-700 dark:text-amber-400" /><span>{item}</span></li>)}
+              {privateDataBoundaryItems.map((item) => <li key={item} className="flex gap-3 text-sm leading-6"><CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-amber-700 dark:text-amber-400" /><span>{item}</span></li>)}
             </ul>
             <p className="mt-4 text-xs leading-5 text-muted-foreground">Browser storage is not encrypted and can be removed by browser cleanup. A backup file can contain personal inventory details, so keep it private.</p>
           </article>
@@ -156,7 +160,7 @@ export default function Roadmap() {
                 <div className="border border-border bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Scale up</p><p className="mt-2 text-sm leading-6">For larger collections, use IndexedDB locally and store one normalized row per printing/condition grouping. Test quota behavior with real exports before publishing a size limit.</p></div>
                 <div className="border border-border bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">If cloud sync is added</p><p className="mt-2 text-sm leading-6">Sync selected structured rows only after an explicit opt-in. Avoid raw CSV archives, card images, or duplicate price data in each user’s collection.</p></div>
               </div>
-              <p className="mt-4 text-xs leading-5 text-muted-foreground">Practical answer: typical collections are manageable when modeled as compact card records, but browser quota and the Supabase plan must be measured—not assumed. The local-first update is not yet in production, and cloud sync is not currently offered.</p>
+              <p className="mt-4 text-xs leading-5 text-muted-foreground">Practical answer: typical collections are manageable when modeled as compact card records, but browser quota and the Supabase plan must be measured—not assumed. Local-first workspace tools are live; continuous account sync is not offered, while a separate manual backup remains optional and user-triggered.</p>
             </div>
           </div>
         </section>
@@ -182,7 +186,7 @@ export default function Roadmap() {
         </section>
 
         <footer className="border-t border-border pt-5 text-xs leading-5 text-muted-foreground">
-          Roadmap status is a snapshot, not a delivery promise. Current live functionality is separated from local-only code, synthetic staging validation, and future proposals. No deployment or production data change is part of this update.
+          Roadmap status is a snapshot, not a delivery promise. Current production functionality is separated from private-data handling, synthetic staging validation, and future proposals. This release changes public copy and static market data only; it does not modify user records, backup behavior, or Supabase settings/schema.
         </footer>
       </main>
     </div>

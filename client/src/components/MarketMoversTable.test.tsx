@@ -141,8 +141,8 @@ describe("MarketMoversTable filtering and loading state", () => {
     expect(markup).toContain('aria-label="Daily Movers Table mobile cards"');
     expect(markup).toContain('class="grid gap-3 p-3 sm:p-4 md:hidden"');
     expect(markup).toContain("Demonic Tutor");
-    expect(markup).toContain("Current");
-    expect(markup).toContain("Change");
+    expect(markup).toContain("Snapshot");
+    expect(markup).toContain("Reported move");
     expect(markup).not.toContain("scroll horizontally on mobile");
   });
 

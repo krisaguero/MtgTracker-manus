@@ -16,12 +16,12 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(navigation).toContain('aria-controls="mobile-site-navigation"');
     expect(navigation).toContain("aria-expanded={openMobileMenu}");
     expect(navigation).toContain(
-      "{ href: '/movers', label: 'Daily market movers' }"
+      "{ href: '/movers', label: 'Dated market movers' }"
     );
     expect(navigation).toContain("id: 'play-collect'");
     expect(navigation).toContain("{ href: '/limited', label: 'Sealed & draft pool' }");
     expect(navigation).toContain("{ href: '/markets', label: 'All market research & tools' }");
-    expect(marketHub).toContain("['/movers/confirmed', 'Mover desk · confirmed']");
+    expect(marketHub).toContain("['/movers/confirmed', 'Imported report · confirmed']");
     expect(marketHub).toContain("['/signal-matrix-article', 'Featured signal matrix']");
     expect(navigation).toContain(
       "{ href: '/market-reports', label: 'Report archive' }"

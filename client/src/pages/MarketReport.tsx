@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, Bell, BellRing, ExternalLink, Flame, Search, ShieldAlert, TrendingUp, X, SlidersHorizontal, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Bell, BellRing, ExternalLink, Search, ShieldAlert, TrendingUp, X, SlidersHorizontal, CheckCircle2 } from 'lucide-react';
 import { commanderDecklists } from '@/data/commanderDecklists';
-import { getMarketSpikes, analyzePreconSealedEconomics, getReleaseArticles, type MarketFormat, type PreconSealedAnalysis } from '@/lib/marketIntelligence';
+import { getMarketSpikes, getMarketSnapshotMetadata, analyzePreconSealedEconomics, type MarketFormat, type PreconSealedAnalysis } from '@/lib/marketIntelligence';
 import { loadPriceAlerts, refreshPriceAlerts, removePriceAlert, savePriceAlert, type PriceAlert } from '@/lib/priceAlerts';
 import { buildWeeklyMarketDigest } from '@/lib/weeklyDigest';
 import { clearDigestDeliveryLog, loadDigestDeliveryLog, recordDigestDelivery, type DigestDeliveryLogEntry } from '@/lib/digestDeliveryLog';
@@ -13,7 +13,6 @@ import { MarketCardSkeleton, PreconGridSkeleton } from '@/components/PageSkeleto
 
 export default function MarketReport() {
   const spikes = useMemo(() => getMarketSpikes(), []);
-  const articles = useMemo(() => getReleaseArticles(), []);
   const preconAnalyses: PreconSealedAnalysis[] = useMemo(() => commanderDecklists.map((deck) => analyzePreconSealedEconomics(deck)), []);
 
   const ownedMap = useMemo(() => {
@@ -25,12 +24,11 @@ export default function MarketReport() {
     return map;
   }, []);
 
-  const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
   const [formatFilter, setFormatFilter] = useState<'all' | MarketFormat>('all');
   const [setCodeFilter, setSetCodeFilter] = useState<string>('all');
   const [minPriceFilter, setMinPriceFilter] = useState<number>(0);
   const [maxPriceFilter, setMaxPriceFilter] = useState<number>(10000);
-  const [sortBy, setSortBy] = useState<'spike-desc' | 'price-desc' | 'delta-desc' | 'name-asc'>('spike-desc');
+  const [sortBy, setSortBy] = useState<'price-desc' | 'price-asc' | 'name-asc'>('price-desc');
   const [alertThreshold, setAlertThreshold] = useState(10);
   const [alerts, setAlerts] = useState<PriceAlert[]>(() => loadPriceAlerts());
   const [digestCopied, setDigestCopied] = useState(false);
@@ -40,7 +38,7 @@ export default function MarketReport() {
   const [deliveryQuery, setDeliveryQuery] = useState('');
   const [deliveryStatus, setDeliveryStatus] = useState<'all' | 'sent' | 'failed'>('all');
   const [deliveryWindow, setDeliveryWindow] = useState<'all' | '7d' | '30d' | '90d'>('all');
-  const activeArticle = articles.find((a) => a.id === selectedArticleId) || articles[0];
+  const marketSnapshot = useMemo(() => getMarketSnapshotMetadata(), []);
 
   useEffect(() => {
     setAlerts(refreshPriceAlerts(spikes));
@@ -65,9 +63,8 @@ export default function MarketReport() {
     });
 
     result.sort((a, b) => {
-      if (sortBy === 'spike-desc') return b.percentChange - a.percentChange;
       if (sortBy === 'price-desc') return b.currentUsd - a.currentUsd;
-      if (sortBy === 'delta-desc') return b.changeUsd - a.changeUsd;
+      if (sortBy === 'price-asc') return a.currentUsd - b.currentUsd;
       return a.cardName.localeCompare(b.cardName);
     });
 
@@ -116,7 +113,7 @@ export default function MarketReport() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/" className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary hover:underline">← Back to recent sets</Link>
           <div className="flex items-center gap-3">
-            <Link href="/latest-market-report" className="border-2 border-primary bg-primary/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors">Latest Market Report &amp; Sellout Queue 📊</Link>
+            <Link href="/market-watch" className="border-2 border-primary bg-primary/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground transition-colors">Source-dated Market Watch</Link>
             <Link href="/collection" className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary">Collection Workspace</Link>
             <Link href="/commander" className="border border-border bg-primary px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground hover:bg-primary/90">Commander Archive</Link>
           </div>
@@ -125,18 +122,22 @@ export default function MarketReport() {
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
         <div className="border-b-2 border-primary pb-6 sm:pb-8">
-          <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary"><TrendingUp className="h-4 w-4" /> Daily Market Intelligence &amp; Sealed Analysis</div>
+          <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary"><TrendingUp className="h-4 w-4" /> Dated Price References &amp; Sealed Analysis</div>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">The MTG Economic Report</h1>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground sm:text-lg">Evaluating price momentum, top-single premiums, and collection-aware break-even calculations so you know when to buy sealed Commander boxes or target individual singles.</p>
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground sm:text-lg">Review dated card-price references and source-timestamped Commander precon estimates. This page does not provide live quotes or verified market timing.</p>
         </div>
 
         <section className="mt-10 sm:mt-14" aria-labelledby="spike-heading">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Live Momentum Scan</p>
-              <h2 id="spike-heading" className="text-2xl font-bold tracking-tight sm:text-3xl">Trending Price Spikes &amp; High-Value Singles</h2>
+              <p className="font-mono text-xs font-bold uppercase tracking-widest text-primary">Historical Scryfall snapshot · {marketSnapshot.refreshedAt.slice(0, 10) || 'date unavailable'}</p>
+              <h2 id="spike-heading" className="text-2xl font-bold tracking-tight sm:text-3xl">Indexed card-price references</h2>
             </div>
-            <p className="text-xs uppercase tracking-wider text-muted-foreground">Showing {visibleSpikes.length} of {spikes.length} indexed cards · {visibleSpikes.filter((spike) => spike.percentChange > 0).length} positive movers</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground">Showing {visibleSpikes.length} of {spikes.length} prices · sorted by snapshot value</p>
+          </div>
+
+          <div role="note" className="mt-4 border-2 border-amber-500/60 bg-amber-500/10 p-4 text-xs leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Historical only:</strong> the Scryfall price snapshot covers {marketSnapshot.productCount} products and was refreshed {marketSnapshot.refreshedAt || 'on an unavailable date'}. Its price history contains {marketSnapshot.historyObservationCount} observation{marketSnapshot.historyObservationCount === 1 ? '' : 's'}{marketSnapshot.latestHistoryObservationAt ? ` (latest ${marketSnapshot.latestHistoryObservationAt})` : ''}; there is no verified multi-date baseline, so this panel does not report price moves or live alerts. Price references below are not current quotes.
           </div>
 
           {/* Advanced Filter and Sort Toolbar */}
@@ -184,15 +185,14 @@ export default function MarketReport() {
             <label className="flex flex-col gap-1">
               <span className="font-mono text-[10px] uppercase font-bold text-muted-foreground">Sort Order</span>
               <select value={sortBy} onChange={(event) => setSortBy(event.target.value as any)} className="border border-border bg-background px-2 py-1.5 font-mono text-xs font-semibold outline-none">
-                <option value="spike-desc">Highest % Spike</option>
-                <option value="price-desc">Highest USD Price</option>
-                <option value="delta-desc">Highest 7D Delta ($)</option>
+                <option value="price-desc">Highest snapshot price</option>
+                <option value="price-asc">Lowest snapshot price</option>
                 <option value="name-asc">Card Name (A-Z)</option>
               </select>
             </label>
 
             <label className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] uppercase font-bold text-muted-foreground">Alert Threshold</span>
+              <span className="font-mono text-[10px] uppercase font-bold text-muted-foreground">Local reminder threshold</span>
               <select value={alertThreshold} onChange={(event) => setAlertThreshold(Number(event.target.value))} className="border border-border bg-background px-2 py-1.5 font-mono text-xs font-semibold outline-none">
                 <option value={5}>+5% change</option>
                 <option value={10}>+10% change</option>
@@ -205,7 +205,7 @@ export default function MarketReport() {
           <div className="mt-6">
             {isMarketHydrating ? <MarketCardSkeleton count={8} /> : visibleSpikes.length === 0 ? (
               <div className="col-span-full border-2 border-dashed border-border bg-card p-12 text-center">
-                <p className="font-mono text-sm text-muted-foreground uppercase">No movers match the selected filters.</p>
+                <p className="font-mono text-sm text-muted-foreground uppercase">No indexed prices match the selected filters.</p>
                 <Button variant="outline" onClick={() => { setFormatFilter('all'); setSetCodeFilter('all'); setMinPriceFilter(0); setMaxPriceFilter(10000); }} className="mt-4 font-mono text-xs uppercase">
                   Reset Filters
                 </Button>
@@ -230,17 +230,17 @@ export default function MarketReport() {
                       </div>
                     </div>
                     <div className="mt-3 flex items-center justify-between">
-                      <span className="flex items-center gap-1 border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400"><Flame className="h-3 w-3" /> +{spike.percentChange}%</span>
+                      <span className="flex items-center gap-1 border border-border bg-muted/40 px-2 py-1 font-mono text-xs font-bold text-muted-foreground">Historical source value</span>
                     </div>
                     <div className="mt-4 flex items-baseline justify-between border-t border-border pt-3">
-                      <div><p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Current USD</p><p className="text-lg font-extrabold text-primary">${spike.currentUsd.toFixed(2)}</p></div>
-                      <div className="text-right"><p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">7-Day Delta</p><p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">+${spike.changeUsd.toFixed(2)}</p></div>
+                      <div><p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Snapshot USD · {marketSnapshot.refreshedAt.slice(0, 10) || 'date unavailable'}</p><p className="text-lg font-extrabold text-primary">${spike.currentUsd.toFixed(2)}</p></div>
+                      <div className="text-right"><p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Movement baseline</p><p className="text-xs font-semibold text-muted-foreground">Unavailable</p></div>
                     </div>
                     <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                       <button type="button" onClick={() => toggleAlert(spike)} aria-pressed={Boolean(tracked)} className={`inline-flex items-center gap-1 border px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-wider transition-colors ${tracked ? 'border-primary bg-primary text-primary-foreground' : 'border-border text-muted-foreground hover:border-primary hover:text-primary'}`}>
-                        {tracked ? <BellRing className="h-3 w-3" /> : <Bell className="h-3 w-3" />}{tracked ? 'Tracking' : 'Track price'}
+                        {tracked ? <BellRing className="h-3 w-3" /> : <Bell className="h-3 w-3" />}{tracked ? 'Reminder saved' : 'Save local reminder'}
                       </button>
-                      {tracked?.triggered && <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-600"><ShieldAlert className="h-3 w-3" /> Alert hit</span>}
+                      {tracked?.triggered && <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-amber-600"><ShieldAlert className="h-3 w-3" /> Threshold met at snapshot</span>}
                     </div>
                     {spike.scryfallUri && <div className="mt-3"><a href={spike.scryfallUri} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-primary hover:underline">Scryfall market data <ExternalLink className="h-3 w-3" /></a></div>}
                   </div>
@@ -251,7 +251,7 @@ export default function MarketReport() {
           </div>
         </section>
 
-        {/* Remaining sections like precon analysis, articles, and weekly digest */}
+        {/* Remaining sections use source-dated precon analysis and local digest utilities. */}
         <section className="mt-16 border-t-2 border-border pt-12">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>

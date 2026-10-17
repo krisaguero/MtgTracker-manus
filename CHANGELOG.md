@@ -2,6 +2,23 @@
 
 All notable changes, bug fixes, and feature additions to the Magic: The Gathering Set Tracker and Commander Intelligence Hub are documented in this file.
 
+## [1.2.4] — 2026-10-16
+
+### Changed
+- **Market-data provenance**: Separately label the Aug 25 imported 250-row CSV, the Oct 15 nine-printing sample, the Oct 8–16 daily signal window, and the Oct 16 MTGJSON Commander index with its USD coverage.
+- **Market Watch snapshot**: Add a dated, read-only research snapshot with public source links and uncertainty labels; private workspace IDs and user data are excluded.
+- **Historical market archive**: Add separate Oct 5, Oct 11, Oct 15, and Oct 16 reports. The Oct 5 and Oct 11 pages include date-tagged Top 10/Top 8 historical price-watch signals with windows, printing details, catalysts, risks, source confidence, verification status, and citations. They are not merged into the daily price-mover feed; catalyst-only signals remain separate, and no report claims old prices are live.
+- **Production roadmap**: Align shipped and private-local feature status with the live app and display the production commit identifier when provided by Vercel.
+
+### Fixed
+- **Synthetic market outputs**: Pause the legacy morning report and remove fallback seed rows that fabricated price changes or current timestamps. Existing browser-local archive entries are left untouched; no unverified sellout alerts are produced.
+- **Dated price labels**: Carry source dates and quote counts into mover/search surfaces and mark historical market pages accordingly.
+
+### Tests
+- Added regressions for distinct market-data dates and coverage, source-dated mover rows, empty-feed behavior, and the paused morning report.
+
+---
+
 ## [1.2.3] — 2026-08-22
 
 ### Added

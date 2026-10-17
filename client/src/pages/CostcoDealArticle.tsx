@@ -27,8 +27,12 @@ export default function CostcoDealArticle() {
               The Costco TMNT Booster Tin Collection Deal: $49.97 Breakdown &amp; Value Analysis
             </h1>
             <p className="mt-4 text-sm font-mono text-muted-foreground">
-              Published August 19, 2026 · By Manus AI Market Desk
+              Published August 19, 2026 · MTG Tracker Market Desk
             </p>
+          </div>
+
+          <div role="note" className="border-2 border-amber-500/60 bg-amber-500/10 p-4 text-sm leading-6 text-muted-foreground">
+            <strong className="text-foreground">Historical offer reference:</strong> this price and availability check was published August 19, 2026. It is not a current Costco offer; verify today's price, stock, and terms with the retailer.
           </div>
 
           {/* Deal Callout Box */}

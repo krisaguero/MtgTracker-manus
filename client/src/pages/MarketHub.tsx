@@ -2,14 +2,14 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link } from 'wouter';
 
 const sections = [
-  { title: 'Daily price signals', intro: 'Snapshots and specialist mover views. Check the as-of date and source coverage before treating a signal as current.', links: [
-    ['/movers', 'Daily market movers'], ['/movers/confirmed', 'Mover desk · confirmed'], ['/movers/penny', 'Mover desk · penny & portable'], ['/movers/buyout-risk', 'Mover desk · buyout risk'], ['/movers/supply-clock', 'Mover desk · supply clock'],
+  { title: 'Dated price snapshots', intro: 'The imported 250-row mover table is dated 2026-08-25; specialist report desks show their publication date and source limits.', links: [
+    ['/movers', 'Imported mover snapshot · Aug 25'], ['/movers/confirmed', 'Imported report · confirmed'], ['/movers/penny', 'Imported report · penny & portable'], ['/movers/buyout-risk', 'Imported report · buyout-risk'], ['/movers/supply-clock', 'Imported report · supply events'],
   ] },
   { title: 'Reports & briefings', intro: 'Browse published market analysis and archived reports.', links: [
-    ['/market-report', 'Market report'], ['/latest-market-report', 'Latest market report'], ['/market-reports', 'Report archive'], ['/market-today', 'Today’s market brief'], ['/market-movers-manus-report', 'Published mover report'],
+    ['/market-report', 'Market report'], ['/market-watch', 'Source-dated Market Watch'], ['/market-reports', 'Report archive'], ['/market-today', 'Historical market brief'], ['/market-movers-manus-report', 'Published mover report'],
   ] },
   { title: 'Research tools & articles', intro: 'Explore watchlists, audits, signal explainers, and featured articles.', links: [
-    ['/market-watch', 'Market watch feed'], ['/market-articles', 'Market deep dives'], ['/market-signal-audit', 'Signal audit'], ['/market-watch-article', 'Market watch analysis'], ['/signal-matrix-article', 'Featured signal matrix'], ['/costco-deal-article', 'Costco deal analysis'],
+    ['/market-watch', 'Source-dated Market Watch'], ['/market-articles', 'Market deep dives'], ['/market-signal-audit', 'Signal audit'], ['/market-watch-article', 'Historical Market Watch analysis'], ['/signal-matrix-article', 'Featured signal matrix'], ['/costco-deal-article', 'Historical Costco price note'],
   ] },
 ];
 

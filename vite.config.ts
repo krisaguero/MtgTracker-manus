@@ -161,6 +161,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins,
+    define: {
+      __PRODUCTION_GIT_COMMIT_SHA__: JSON.stringify(
+        process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA || "",
+      ),
+    },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

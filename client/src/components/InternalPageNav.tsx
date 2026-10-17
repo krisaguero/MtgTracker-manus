@@ -40,7 +40,7 @@ const navigation: SiteItem[] = [
     id: 'markets',
     label: 'Markets',
     links: [
-      { href: '/movers', label: 'Daily market movers' },
+      { href: '/movers', label: 'Dated market movers' },
       { href: '/market-reports', label: 'Report archive' },
       { href: '/market-watch', label: 'Market watch feed' },
       { href: '/markets', label: 'All market research & tools' },

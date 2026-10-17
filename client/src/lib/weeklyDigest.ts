@@ -1,5 +1,5 @@
-/* Design reminder: hard-edged editorial digest generator; produces source-labelled plain text and HTML without inventing market observations. */
-import { getMarketSpikes } from '@/lib/marketIntelligence';
+/* Source-dated price-reference export; does not invent market movement from a single observation. */
+import { getMarketSnapshotMetadata, getMarketSpikes } from '@/lib/marketIntelligence';
 
 export interface WeeklyDigest {
   subject: string;
@@ -8,20 +8,34 @@ export interface WeeklyDigest {
   html: string;
 }
 
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  })[character] || character);
+}
+
 export function buildWeeklyMarketDigest(): WeeklyDigest {
   const generatedAt = new Date().toISOString();
-  const spikes = getMarketSpikes().slice(0, 8);
-  const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(generatedAt));
-  const subject = `MTG Weekly Market Digest · ${dateLabel}`;
+  const metadata = getMarketSnapshotMetadata();
+  const asOf = metadata.refreshedAt.slice(0, 10) || 'date unavailable';
+  const references = [...getMarketSpikes()]
+    .sort((a, b) => b.currentUsd - a.currentUsd)
+    .slice(0, 8);
+  const subject = `MTG Historical Price Snapshot · ${asOf}`;
+  const limitation = `Historical Scryfall reference prices as of ${asOf}. The source price history contains ${metadata.historyObservationCount} observation${metadata.historyObservationCount === 1 ? '' : 's'}; no percentage movement, weekly delta, live quote, or automatic monitoring is asserted.`;
   const lines = [
     subject,
     '',
-    'Top indexed price movers:',
-    ...spikes.map((spike, index) => `${index + 1}. ${spike.cardName} (${spike.format}, ${spike.setCode.toUpperCase()}) · $${spike.currentUsd.toFixed(2)} · +${spike.percentChange}%`),
+    limitation,
     '',
-    'Source: Scryfall-backed local market index. Validate marketplace availability and current prices before purchasing.',
+    ...references.map((item, index) => `${index + 1}. ${item.cardName} (${item.format}, ${item.setCode.toUpperCase()}) · snapshot USD $${item.currentUsd.toFixed(2)}`),
+    '',
+    `Source: Scryfall (${metadata.source}). Verify current listings independently; this is not a current-price alert or a trading recommendation.`,
   ];
-  const text = lines.join('\n');
-  const html = `<h1>${subject}</h1><h2>Top indexed price movers</h2><ol>${spikes.map((spike) => `<li><strong>${spike.cardName}</strong> (${spike.format}, ${spike.setCode.toUpperCase()}) · $${spike.currentUsd.toFixed(2)} · +${spike.percentChange}%</li>`).join('')}</ol><p>Source: Scryfall-backed local market index. Validate marketplace availability and current prices before purchasing.</p>`;
-  return { subject, generatedAt, text, html };
+  const html = `<h1>${escapeHtml(subject)}</h1><p>${escapeHtml(limitation)}</p><ol>${references.map((item) => `<li><strong>${escapeHtml(item.cardName)}</strong> (${escapeHtml(item.format)}, ${escapeHtml(item.setCode.toUpperCase())}) · snapshot USD $${item.currentUsd.toFixed(2)}</li>`).join('')}</ol><p>Source: <a href="${escapeHtml(metadata.source)}">Scryfall</a>. Verify current listings independently; this is not a current-price alert or a trading recommendation.</p>`;
+  return { subject, generatedAt, text: lines.join('\n'), html };
 }

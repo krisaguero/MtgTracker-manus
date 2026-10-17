@@ -19,13 +19,14 @@ export function ValuationComparisonSection({ commanderEntries, deckEntries, seal
   const rows = allCards.map((entry) => {
     const indexed = resolveCardPrice(entry.card.name, entry.card.set);
     const scryfallUsd = entry.card.prices?.usd ? Number(entry.card.prices.usd) : NaN;
-    const price = indexed || (Number.isFinite(scryfallUsd) && scryfallUsd > 0 ? { usd: scryfallUsd, source: 'Scryfall card response', updatedAt: 'live card response' } : null);
+    const price = indexed || (Number.isFinite(scryfallUsd) && scryfallUsd > 0 ? { usd: scryfallUsd, source: 'Scryfall response · date not supplied', updatedAt: '' } : null);
     const unitUsd = price?.usd ?? null;
     return {
       entry,
       unitUsd,
       totalUsd: unitUsd === null ? null : unitUsd * entry.quantity,
-      source: price?.source || 'No current indexed price',
+      source: price?.source || 'No indexed price',
+      priceDate: price?.updatedAt ? price.updatedAt.slice(0, 10) : 'date not provided',
       mover: moversForCard(entry.card.name, entry.card.set).find((mover) => mover.percentChange > 0),
     };
   });
@@ -43,8 +44,8 @@ export function ValuationComparisonSection({ commanderEntries, deckEntries, seal
       <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase text-primary">
         <DollarSign className="h-4 w-4" /> Sealed vs Singles Baseline
       </div>
-      <h2 id="valuation-comparison-heading" className="mt-2 text-2xl font-bold tracking-tight">Current card-equity matrix</h2>
-      <p className="mt-1 max-w-3xl text-sm text-muted-foreground">Every row below is valued from the latest indexed per-card baseline when available. Missing prices stay unpriced rather than being replaced by a placeholder, so the comparison cannot silently overstate deck equity.</p>
+      <h2 id="valuation-comparison-heading" className="mt-2 text-2xl font-bold tracking-tight">Dated card-equity reference</h2>
+      <p className="mt-1 max-w-3xl text-sm text-muted-foreground">This is a source-dated snapshot estimate, not a current quote. Each price row identifies its source and date; Scryfall fallback prices are marked when the response does not supply a date. Missing prices stay unpriced rather than being replaced by a placeholder.</p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="border border-border bg-background p-4">
@@ -78,10 +79,10 @@ export function ValuationComparisonSection({ commanderEntries, deckEntries, seal
           <span className="font-mono text-[10px] uppercase text-muted-foreground">Prices dated by source</span>
         </div>
         <div className="mt-3 overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left font-mono text-xs">
+          <table className="w-full min-w-[760px] text-left font-mono text-xs">
             <thead>
               <tr className="border-b border-border text-[10px] uppercase text-muted-foreground">
-                <th className="px-2 py-2">Card</th><th className="px-2 py-2">Qty</th><th className="px-2 py-2">Unit</th><th className="px-2 py-2">Line value</th><th className="px-2 py-2">Signal</th><th className="px-2 py-2 text-right">Research</th>
+                <th className="px-2 py-2">Card</th><th className="px-2 py-2">Qty</th><th className="px-2 py-2">Unit</th><th className="px-2 py-2">Line value</th><th className="px-2 py-2">Price source / date</th><th className="px-2 py-2">Signal</th><th className="px-2 py-2 text-right">Research</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/60">
@@ -91,13 +92,14 @@ export function ValuationComparisonSection({ commanderEntries, deckEntries, seal
                   <td className="px-2 py-2">{row.entry.quantity}x</td>
                   <td className="px-2 py-2">{money(row.unitUsd)}</td>
                   <td className="px-2 py-2 font-bold text-primary">{money(row.totalUsd)}</td>
-                  <td className="px-2 py-2">{row.mover ? <Link href={marketMoverArticleHref(row.entry.card.name)} className="inline-flex items-center gap-1 text-amber-500 hover:underline"><Flame className="h-3 w-3" /> Hot watch</Link> : <span className="text-muted-foreground">No mover row</span>}</td>
+                  <td className="px-2 py-2">{row.source} · {row.priceDate}</td>
+                  <td className="px-2 py-2">{row.mover ? <Link href={marketMoverArticleHref(row.entry.card.name)} className="inline-flex items-center gap-1 text-amber-500 hover:underline"><Flame className="h-3 w-3" /> Dated watch · {row.mover.lastUpdated.slice(0, 10)}</Link> : <span className="text-muted-foreground">No mover row</span>}</td>
                   <td className="px-2 py-2 text-right"><Link href={`/card/${encodeURIComponent(row.entry.card.name)}`} className="inline-flex items-center gap-1 text-primary hover:underline">Card <ExternalLink className="h-3 w-3" /></Link></td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {topValueRows.length === 0 && <p className="py-4 text-xs text-muted-foreground">No current price rows are available for this deck yet.</p>}
+          {topValueRows.length === 0 && <p className="py-4 text-xs text-muted-foreground">No source-dated price rows are available for this deck yet.</p>}
         </div>
       </div>
 

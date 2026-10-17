@@ -395,26 +395,26 @@ export default function CardDetail() {
             <div className="border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
                 <h2 className="text-xl font-bold flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-primary" /> Market Movers &amp; Finance History
+                  <TrendingUp className="h-5 w-5 text-primary" /> Dated Market Signals
                 </h2>
                 {marketMovers[0] ? (
                   <span className={`border px-2.5 py-1 font-mono text-xs font-bold ${marketMovers[0].trend === 'up' ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : 'border-rose-500 bg-rose-500/10 text-rose-600 dark:text-rose-400'}`}>
-                    {marketMovers[0].trend === 'up' ? '+' : ''}{marketMovers[0].percentChange.toFixed(1)}% snapshot move
+                    {marketMovers[0].trend === 'up' ? '+' : ''}{marketMovers[0].percentChange.toFixed(1)}% snapshot change · {marketMovers[0].lastUpdated.slice(0, 10)}
                   </span>
-                ) : <span className="border border-border px-2.5 py-1 font-mono text-xs text-muted-foreground">No current mover row</span>}
+                ) : <span className="border border-border px-2.5 py-1 font-mono text-xs text-muted-foreground">No source-dated mover row</span>}
               </div>
               {marketMovers.length > 0 ? (
                 <div className="space-y-3">
-                  <p className="text-sm text-muted-foreground leading-relaxed">This card appears in the canonical market snapshot. Each row links to the backed-up article post for the specific signal.</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">This card appears in a source-dated snapshot. The latest row shown here is dated {marketMovers[0].lastUpdated.slice(0, 10)} and identifies {marketMovers[0].priceSource} with {marketMovers[0].sourceCount} quote(s). Each row links to the dated source note.</p>
                   {marketMovers.slice(0, 3).map((mover) => (
                     <div key={`${mover.setCode}-${mover.category}`} className="flex flex-wrap items-center justify-between gap-3 border border-border bg-background p-3">
-                      <div><p className="font-bold text-sm">{mover.category}</p><p className="mt-1 text-xs text-muted-foreground">{mover.reason}</p></div>
-                      <Link href={mover.articleHref} className="shrink-0 border border-primary px-2.5 py-1.5 font-mono text-[10px] font-bold uppercase text-primary hover:bg-primary hover:text-primary-foreground">Read mover post</Link>
+                      <div><p className="font-bold text-sm">{mover.category} · {mover.lastUpdated.slice(0, 10)}</p><p className="mt-1 text-xs text-muted-foreground">{mover.reason}</p></div>
+                      <Link href={mover.articleHref} className="shrink-0 border border-primary px-2.5 py-1.5 font-mono text-[10px] font-bold uppercase text-primary hover:bg-primary hover:text-primary-foreground">Read dated mover post</Link>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-muted-foreground leading-relaxed">This card has no current canonical mover row. The finance panel stays quiet rather than presenting a synthetic trend.</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">This card has no source-dated mover row. The panel stays quiet rather than presenting a synthetic trend.</p>
               )}
               {suppliedMarketSignals.length > 0 && (
                 <div className="border-t border-border pt-4">

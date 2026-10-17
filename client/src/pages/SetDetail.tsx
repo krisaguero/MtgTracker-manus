@@ -194,7 +194,7 @@ export default function SetDetail() {
                 <Link key={`${mover.setCode}-${mover.name}`} href={mover.articleHref} className="border-2 border-amber-500/60 bg-background p-3 transition-colors hover:border-amber-500">
                   <div className="flex items-start justify-between gap-2">
                     <span className="font-bold text-sm leading-snug">{mover.name}</span>
-                    <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[10px] font-black text-emerald-500"><TrendingUp className="h-3 w-3" /> +{mover.percentChange.toFixed(1)}%</span>
+                    <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[10px] font-black text-emerald-500"><TrendingUp className="h-3 w-3" /> +{mover.percentChange.toFixed(1)}% · {mover.lastUpdated.slice(0, 10)}</span>
                   </div>
                   <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{mover.reason}</p>
                   <span className="mt-3 inline-flex font-mono text-[10px] font-bold uppercase text-primary">Read mover post →</span>
@@ -362,7 +362,7 @@ export default function SetDetail() {
                     <div className="mb-2 flex min-h-5 items-start justify-between gap-2">
                       <div className="flex flex-wrap gap-1">
                         {isVerifiedSpoiler && <span className="border border-amber-500 bg-amber-500 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-black">Spoiler</span>}
-                        {hotMover && <span className="inline-flex items-center gap-1 border border-amber-500 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-amber-500"><Flame className="h-3 w-3" /> Hot watch · +{hotMover.percentChange.toFixed(1)}%</span>}
+                        {hotMover && <span className="inline-flex items-center gap-1 border border-amber-500 bg-amber-500/10 px-1.5 py-0.5 font-mono text-[9px] font-black uppercase text-amber-500"><Flame className="h-3 w-3" /> Dated watch · +{hotMover.percentChange.toFixed(1)}% · {hotMover.lastUpdated.slice(0, 10)}</span>}
                       </div>
                       {ownedQty > 0 && (
                         <span className="bg-emerald-500 px-1.5 py-0.5 font-mono text-[9px] font-bold text-black">

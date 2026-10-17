@@ -1,4 +1,4 @@
-/* Design reminder: hard-edged market analytics engine; computes price momentum, sealed vs. singles break-even thresholds, collection-aware duplicate discounting, and release article connections. */
+/* Dated market analytics engine; resolves source-timestamped price references, sealed-versus-singles estimates, and collection-aware duplicate context. */
 import { commanderDecklists } from '@/data/commanderDecklists';
 import type { RawCommanderDeck, RawDeckCard } from '@/data/commanderDecklists';
 import { loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
@@ -45,25 +45,23 @@ export interface PreconSealedAnalysis {
   priceSource: string;
 }
 
-export interface ReleaseArticle {
-  id: string;
-  title: string;
-  publishedAt: string;
-  category: 'Spike Report' | 'Sealed Analysis' | 'Set Spotlight';
-  summary: string;
-  bodyHtml: string;
-  sourceUrl?: string;
-  sourceLabel?: string;
-  relatedSetCode?: string;
-  relatedDeckSlug?: string;
-}
-
 type SnapshotProduct = { id: string; set_code: string; name: string; released_at?: string; usd: string | number | null; scryfall_uri?: string };
 type HistoryPayload = { observations?: Array<{ observedAt: string; prices: Record<string, number> }> };
 
 const snapshotProducts = (currentSnapshot.products || []) as SnapshotProduct[];
 const previousPrices = ((priceHistory as HistoryPayload).observations || []).at(-1)?.prices || {};
 const productByName = new Map(snapshotProducts.map((product) => [`${product.set_code.toLowerCase()}::${product.name.toLowerCase()}`, product]));
+
+export function getMarketSnapshotMetadata() {
+  const observations = (priceHistory as HistoryPayload).observations || [];
+  return {
+    source: currentSnapshot.source || 'Scryfall snapshot',
+    refreshedAt: currentSnapshot.refreshedAt || '',
+    productCount: snapshotProducts.length,
+    historyObservationCount: observations.length,
+    latestHistoryObservationAt: observations.at(-1)?.observedAt || '',
+  };
+}
 
 function priceForCard(card: RawDeckCard, setCode: string) {
   const resolved = resolveCardPrice(card.name, card.set_code || setCode);
@@ -199,53 +197,4 @@ export function analyzePreconSealedEconomics(deck: RawCommanderDeck): PreconSeal
     priceUpdatedAt,
     priceSource: uniqueSources.join(' + ') || 'Price index unavailable',
   };
-}
-
-export function getReleaseArticles(): ReleaseArticle[] {
-  return [
-    {
-      id: 'art-1',
-      title: 'Commander Spike Report: Why Limited-Print New Releases Command a 40% Premium',
-      publishedAt: '2026-08-16',
-      category: 'Spike Report',
-      summary: 'An analysis of recent Commander product print runs, highlighting why unique first-run cards in precons defy standard reprint gravity.',
-      bodyHtml: `
-        <p>When Wizards of the Coast releases annual Commander precons, the market instantly bifurcates into two distinct valuation classes: <strong>ubiquitous reprints</strong> whose prices collapse upon distribution, and <strong>exclusive first-print cards</strong> that only appear in these specific boxed products.</p>
-        <p>Our daily price tracker reveals that exclusive new-release cards maintain a 40% valuation premium over their baseline reprint counterparts within 30 days of release. For collectors holding existing card pools, this means evaluating whether to buy sealed product requires calculating your exact duplicate overlap before checkout.</p>
-        <p><strong>Key takeaway:</strong> If a precon's new-card ratio falls below 35% and your personal collection already covers more than half of the reprint base, buying singles is universally more cost-effective.</p>
-      `,
-      sourceUrl: 'https://scryfall.com',
-      sourceLabel: 'Scryfall Release Index',
-      relatedSetCode: 'eoe',
-    },
-    {
-      id: 'art-2',
-      title: 'Sealed vs. Singles Breakdown: Edge of Eternity Commander Decks',
-      publishedAt: '2026-08-15',
-      category: 'Sealed Analysis',
-      summary: 'Breaking down the top 5 singles versus boxed retail pricing for Edge of Eternity precons, incorporating personal collection overlap.',
-      bodyHtml: `
-        <p>The latest <em>Edge of Eternity</em> Commander deck lineup brings high-synergy archetypes to the table, but not all boxed products offer equal financial equity.</p>
-        <p>By comparing the sum of the top 5 most valuable singles against standard sealed MSRP, our automated decision engine flags decks where reprint saturation makes singles acquisition the superior choice. Conversely, decks featuring multiple format-staple new printings easily justify the boxed retail price tag.</p>
-        <p>Check the interactive calculator on each deck page to see your personal collection coverage factored into the break-even math.</p>
-      `,
-      sourceUrl: 'https://magic.wizards.com',
-      sourceLabel: 'Wizards Decklist Announcement',
-      relatedSetCode: 'eoe',
-      relatedDeckSlug: 'world-shaper',
-    },
-    {
-      id: 'art-3',
-      title: 'Tracking Momentum: Spotting Price Spikes Before They Peak',
-      publishedAt: '2026-08-14',
-      category: 'Set Spotlight',
-      summary: 'How daily automated Scryfall price snapshots capture emerging format staples across Standard, Modern, and Commander formats.',
-      bodyHtml: `
-        <p>Market liquidity in Magic: The Gathering moves fast. Cards that spike following competitive tournament results or Commander format committee announcements often experience a 48-hour window of high volatility.</p>
-        <p>Our automated daily monitoring pipeline records snapshot deltas across all active sets, identifying cards experiencing upward price velocity. Use the Daily Market Report to review current movers and time your single purchases effectively.</p>
-      `,
-      sourceUrl: 'https://tcgplayer.com',
-      sourceLabel: 'TCGplayer Market Data',
-    },
-  ];
 }

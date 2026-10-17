@@ -11,6 +11,9 @@ export interface LinkedMarketMover {
   trend: 'up' | 'down';
   reason: string;
   source: string;
+  priceSource: string;
+  sourceCount: number;
+  lastUpdated: string;
   articleHref: string;
   cardHref: string;
   setHref: string;
@@ -42,7 +45,10 @@ export function linkedMarketMover(row: (typeof canonicalMarketRows)[number]): Li
     percentChange: row.pct,
     trend: row.trend,
     reason: row.reason,
-    source: row.isCatalyst ? 'Canonical market snapshot · catalyst' : 'Canonical market snapshot',
+    source: row.isCatalyst ? `${row.priceSource} · catalyst` : row.priceSource,
+    priceSource: row.priceSource,
+    sourceCount: row.sourceCount,
+    lastUpdated: row.lastUpdated,
     articleHref: marketMoverArticleHref(row.name),
     cardHref: `/card/${encodeURIComponent(row.name)}`,
     setHref: `/${row.setCode}`,

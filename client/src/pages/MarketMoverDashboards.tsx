@@ -29,7 +29,7 @@ function DashboardCard({ dashboard, card }: { dashboard: ManusMoverDashboard; ca
         <div className="mt-4 flex flex-wrap gap-2">{card.tags.map((tag) => <span key={tag} className="border border-border bg-background px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{tag}</span>)}</div>
         <div className="mt-4 flex flex-wrap gap-3 font-mono text-[10px] font-bold uppercase tracking-wider">
           <a href={`https://scryfall.com/search?q=${encodeURIComponent(`!"${card.name}"`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">Scryfall <ExternalLink className="h-3 w-3" /></a>
-          <Link href="/movers" className="text-muted-foreground hover:text-primary">Live mover feed</Link>
+          <Link href="/movers" className="text-muted-foreground hover:text-primary">Dated mover snapshot</Link>
         </div>
       </div>
     </div>
@@ -51,10 +51,10 @@ export default function MarketMoverDashboards() {
     <header className="border-b-2 border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Daily movers</Link>
+          <Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Dated mover snapshot</Link>
           <Link href="/market-movers-manus-report" className="inline-flex items-center gap-2 border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase tracking-wider hover:border-primary"><Sparkles className="h-4 w-4" /> Read the source post</Link>
         </div>
-        <div className="mt-8 flex items-start gap-3"><span className={`mt-1 inline-flex border-2 p-2 ${tone.border} ${tone.text}`}>{tone.icon}</span><div><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Imported report desk · {manusMoverReport.updated}</p><h1 className="mt-2 max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">{dashboard.label}</h1><p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">{dashboard.description}</p></div></div>
+        <div className="mt-8 flex items-start gap-3"><span className={`mt-1 inline-flex border-2 p-2 ${tone.border} ${tone.text}`}>{tone.icon}</span><div><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Imported report · updated {manusMoverReport.updated}</p><h1 className="mt-2 max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">{dashboard.label}</h1><p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">{dashboard.description}</p><p className="mt-3 max-w-3xl border-l-2 border-amber-500 px-3 py-2 text-xs leading-relaxed text-muted-foreground">Report publication date: {manusMoverReport.published}. Per-row observation dates are not supplied in this imported summary, and this page does not refresh its market data.</p></div></div>
       </div>
     </header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8">
@@ -65,10 +65,10 @@ export default function MarketMoverDashboards() {
         <p className="mt-4 flex items-start gap-2 border-t border-border pt-4 font-mono text-[11px] font-bold uppercase leading-relaxed text-muted-foreground"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" /> This is market intelligence, not financial advice. Verify current listings, liquidity, and your own risk tolerance before acting.</p>
       </section>
       <section aria-labelledby="dashboard-cards">
-        <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-border pb-4"><div><p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Signal cards</p><h2 id="dashboard-cards" className="mt-2 text-2xl font-black">{dashboard.cards.length} names and events in this desk</h2></div><span className="font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground">Source export · {manusMoverReport.published}</span></div>
+        <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-border pb-4"><div><p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Imported report cards</p><h2 id="dashboard-cards" className="mt-2 text-2xl font-black">{dashboard.cards.length} names and events in this desk</h2></div><span className="font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground">Report published · {manusMoverReport.published}</span></div>
         <div className="mt-5 grid gap-4 lg:grid-cols-2">{dashboard.cards.map((card) => <DashboardCard key={`${dashboard.slug}-${card.name}`} dashboard={dashboard} card={card} />)}</div>
       </section>
-      <section className="border-2 border-border bg-card p-5 sm:p-6"><div className="flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary"><ArrowUpRight className="h-4 w-4" /> Continue the market read</div><div className="mt-4 flex flex-wrap gap-3"><Link href="/movers" className="border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open live movers</Link><Link href="/market-today" className="border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Today’s market brief</Link></div></section>
+      <section className="border-2 border-border bg-card p-5 sm:p-6"><div className="flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary"><ArrowUpRight className="h-4 w-4" /> Continue the market read</div><div className="mt-4 flex flex-wrap gap-3"><Link href="/movers" className="border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open dated mover snapshot</Link><Link href="/market-today" className="border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Chronological market brief</Link></div></section>
     </main>
   </div>;
 }

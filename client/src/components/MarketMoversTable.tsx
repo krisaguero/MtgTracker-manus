@@ -341,8 +341,8 @@ export function MarketMoversTable({
               </button>
             </div>
             <dl className="mt-3 grid grid-cols-2 gap-3 border-y border-border py-2.5 font-mono">
-              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Current</dt><dd className="mt-0.5 text-base font-extrabold text-foreground">{formatUsd(mover.currentUsd)}</dd></div>
-              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Change</dt><dd className={`mt-0.5 text-sm font-extrabold ${moveColor}`}>{percentLabel(mover.percentChange)} <span className="text-[10px]">({mover.changeUsd >= 0 ? '+' : '−'}{formatUsd(Math.abs(mover.changeUsd))})</span></dd></div>
+              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Snapshot</dt><dd className="mt-0.5 text-base font-extrabold text-foreground">{formatUsd(mover.currentUsd)}</dd></div>
+              <div><dt className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">Reported move</dt><dd className={`mt-0.5 text-sm font-extrabold ${moveColor}`}>{percentLabel(mover.percentChange)} <span className="text-[10px]">({mover.changeUsd >= 0 ? '+' : '−'}{formatUsd(Math.abs(mover.changeUsd))})</span></dd></div>
             </dl>
             <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[10px] uppercase text-muted-foreground">
               <span>Previous {formatUsd(mover.previousUsd)}</span><span>{mover.rarity}</span>{showCategory && <span>{mover.category.replace(/-/g, ' ')}</span>}
@@ -359,10 +359,10 @@ export function MarketMoversTable({
               {([
                 ['name', 'Card'],
                 ['setCode', 'Set'],
-                ['currentUsd', 'Current'],
-                ['previousUsd', 'Previous'],
-                ['changeUsd', '$ Move'],
-                ['percentChange', '% Move'],
+                ['currentUsd', 'Snapshot'],
+                ['previousUsd', 'Prior'],
+                ['changeUsd', 'Reported $ move'],
+                ['percentChange', 'Reported % move'],
                 ['rarity', 'Rarity'],
               ] as Array<[SortKey, string]>).map(([key, label]) => (
                 <th key={key} scope="col" className="px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">

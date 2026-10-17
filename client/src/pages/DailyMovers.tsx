@@ -1,50 +1,24 @@
-/* Design reminder: hard-edged market intelligence workspace; features 10 categories of 25 movers each, penny buyout watches, Reddit sentiment metrics, and deep-dive sentiment analysis. */
+/* Dated market workspace: the visible mover table is an imported snapshot, not a live quote or sentiment feed. */
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, ExternalLink, Flame, Search, ShieldAlert, Sparkles, Star, TrendingDown, TrendingUp, Zap } from 'lucide-react';
+import { ExternalLink, Search, Sparkles, Star, TrendingUp, Zap } from 'lucide-react';
 import { MarketMoversTable } from '@/components/MarketMoversTable';
-import { MarketCardGridSkeleton } from '@/components/MarketCardSkeleton';
 import { MarketCardItem } from '@/components/MarketCardItem';
-import { MOVER_CATEGORIES, getMarketSentimentDeepDive, type MoverCard } from '@/lib/dailyMoversEngine';
+import { MOVER_CATEGORIES, type MoverCard } from '@/lib/dailyMoversEngine';
 import { loadCanonicalSnapshots, type CanonicalCardSnapshot } from '@/lib/canonicalMarketEngine';
 import { csvMarketMovers, csvMarketMoversAsOf } from '@/data/marketMoversCsv';
+import { getMarketDataFreshness } from '@/data/marketDataFreshness';
 import { NavigationSearch } from '@/components/NavigationSearch';
-import { trpc } from '@/lib/trpc';
-import type { MarketRow } from '@shared/market';
-import { getMarketWatchKey, isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
+import { isMarketCardWatched, loadMarketWatchlist, toggleMarketWatchlist, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
 import { findImportedMover, importedReportHref } from '@/data/marketReportArchive';
 import TodayMarketBrief from '@/pages/TodayMarketBrief';
 import researchFeed from '@/data/marketResearchFeed.json';
 
 const latestResearchPost = researchFeed.posts[0];
 
-function mapMarketRows(rows: MarketRow[], defaultCategory: string): MoverCard[] {
-  return rows.map((row, index) => {
-    const currentUsd = Number(row.current_price) || 0;
-    const previousUsd = Number(row.past_price) || 0;
-    const percentChange = Number(row.pct_change) || 0;
-    const assignedCategory = row.category && row.category !== 'daily-movers' ? row.category : defaultCategory;
-    const signalSource = (row.signal_source as MoverCard['signalSource']) || 'Scryfall Snapshot';
-    return {
-      id: `${assignedCategory}-${row.set_code}-${row.name}-${index}`,
-      name: row.name,
-      setCode: row.set_code,
-      setName: row.set_code.toUpperCase(),
-      rarity: (row.rarity || 'rare') as MoverCard['rarity'],
-      currentUsd,
-      previousUsd,
-      changeUsd: Number((currentUsd - previousUsd).toFixed(2)),
-      percentChange: Number(percentChange.toFixed(1)),
-      recentPrices: row.recent_prices,
-      category: assignedCategory,
-      signalSource,
-      thesis: `Parquet-backed market intelligence signal for ${row.name} in category [${assignedCategory}].`,
-    };
-  });
-}
-
 export function DailyMovers() {
-  const [activeFeed, setActiveFeed] = useState<'live' | 'watchlist'>('live');
+  const marketData = getMarketDataFreshness();
+  const [activeFeed, setActiveFeed] = useState<'snapshot' | 'watchlist'>('snapshot');
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedSetCode, setSelectedSetCode] = useState<string>('all');
   const [priceRange, setPriceRange] = useState<string>('all');
@@ -55,9 +29,9 @@ export function DailyMovers() {
   const [watchlist, setWatchlist] = useState<MarketWatchlistEntry[]>(() => loadMarketWatchlist());
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
 
-  // The attached 2026-08-25 CSV is the primary reproducible feed. The existing
-  // canonical snapshot remains the fallback for environments that omit the CSV.
-  const localMovers = useMemo<MoverCard[]>(() => {
+  // The Aug 25 CSV is the displayed historical table. A local canonical snapshot
+  // is only a fallback if that imported data file is absent.
+  const snapshotMovers = useMemo<MoverCard[]>(() => {
     if (csvMarketMovers.length > 0) {
       return csvMarketMovers.map((mover) => ({
         id: `csv-${mover.rank}-${mover.name}`,
@@ -91,6 +65,9 @@ export function DailyMovers() {
       recentPrices: s.recentPrices,
       category: s.category,
       signalSource: s.signalSource,
+      priceSource: s.priceSource,
+      sourceCount: s.sourceCount,
+      lastUpdated: s.lastUpdated,
       thesis: s.thesis,
       cardKingdomUsd: s.cardKingdomUsd,
       tcgplayerMarketUsd: s.tcgplayerMarketUsd,
@@ -98,27 +75,10 @@ export function DailyMovers() {
       isCatalyst: s.isCatalyst,
     }));
   }, []);
-  const sentiment = useMemo(() => getMarketSentimentDeepDive(), []);
-
-  // Fetch live market rows from server parquet pipeline
-  const { data: serverRows, isLoading: isLoadingMovers } = trpc.market.getMovers.useQuery();
-
-  const liveMovers = useMemo(() => {
-    // Always prioritize localMovers (the comprehensive 250-card signal matrix snapshot)
-    if (localMovers && localMovers.length > 0) {
-      return localMovers;
-    }
-    const rows = (serverRows as any)?.rows || (Array.isArray(serverRows) ? serverRows : []);
-    if (rows && rows.length > 0) {
-      return mapMarketRows(rows, activeCategory === 'all' ? 'high-value-spikes' : activeCategory);
-    }
-    return localMovers;
-  }, [serverRows, activeCategory, localMovers]);
-
-  const activeMoversList = useMemo(() => liveMovers.map((mover) => {
+  const activeMoversList = useMemo(() => snapshotMovers.map((mover) => {
     const imported = findImportedMover(mover.name, mover.setCode);
     return imported ? { ...mover, pricingDate: imported.pricingDate, pricingReportHref: importedReportHref(imported.pricingDate) } : mover;
-  }), [liveMovers]);
+  }), [snapshotMovers]);
 
   const availableSets = useMemo(() => {
     const set = new Set<string>();
@@ -181,16 +141,17 @@ export function DailyMovers() {
     setWatchlist(updated);
   }
 
-  function handleExportTop500Txt() {
+  function handleExportSnapshotTxt() {
     const lines = [
       '====================================================================',
-      ' MTG TOP 500 MARKET MOVERS & SIGNAL MATRIX EXPORT',
-      ` Generated: ${new Date().toISOString()}`,
+      ' MTG IMPORTED MARKET SNAPSHOT EXPORT',
+      ` Data date: ${marketData.importedCsv.asOf}`,
+      ` Exported: ${new Date().toISOString()}`,
       '====================================================================',
       '',
     ];
     activeMoversList.forEach((m, i) => {
-      lines.push(`${i + 1}. [${m.setCode.toUpperCase()}] ${m.name} (${m.rarity}) - Current: $${m.currentUsd.toFixed(2)} | Change: ${m.percentChange >= 0 ? '+' : ''}${m.percentChange}% | Source: ${m.signalSource}`);
+      lines.push(`${i + 1}. [${m.setCode.toUpperCase()}] ${m.name} (${m.rarity}) - Snapshot USD: $${m.currentUsd.toFixed(2)} | Source-reported change: ${m.percentChange >= 0 ? '+' : ''}${m.percentChange}% | Source: ${m.signalSource}`);
       lines.push(`   Thesis: ${m.thesis}`);
       lines.push('');
     });
@@ -198,7 +159,7 @@ export function DailyMovers() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'mtg-top-500-movers.txt';
+    a.download = `mtg-market-movers-${marketData.importedCsv.asOf}.txt`;
     a.click();
   }
 
@@ -213,7 +174,7 @@ export function DailyMovers() {
             </Link>
             <div className="hidden sm:block h-6 w-px bg-border" />
             <span className="hidden sm:inline-block font-mono text-xs font-bold uppercase tracking-widest text-primary">
-              Daily Movers &amp; Market Intel
+              Dated Market Snapshots
             </span>
           </div>
 
@@ -223,7 +184,7 @@ export function DailyMovers() {
               href="/costco-deal-article"
               className="inline-flex items-center gap-1.5 border-2 border-amber-500 bg-amber-500 text-black px-3 py-1.5 font-mono text-xs font-bold uppercase shadow hover:opacity-90 whitespace-nowrap"
             >
-              <Sparkles className="h-3.5 w-3.5" /> Costco TMNT Deal ($49.97)
+              <Sparkles className="h-3.5 w-3.5" /> Historical Costco price note
             </Link>
             <Link
               href="/signal-matrix-article"
@@ -253,15 +214,15 @@ export function DailyMovers() {
         <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-border pb-6">
           <div>
               <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <Zap className="h-4 w-4" /> Imported Market Snapshot · {csvMarketMoversAsOf}
+              <Zap className="h-4 w-4" /> Historical CSV snapshot · {marketData.importedCsv.asOf}
             </div>
-            <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Daily Market Movers &amp; Buyouts</h1>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Imported Market Movers</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Tracking high-value spikes, penny risers, Reddit speculation threads, and old-school reserve list shifts across 10 specialized categories.
+              {marketData.importedCsv.rowCount} rows from a user-provided CSV dated {marketData.importedCsv.asOf}. Prices and moves are historical source values, not live quotes; move periods vary by source.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 border-2 border-amber-500/50 bg-amber-500/10 px-3 py-2 text-xs">
-              <span className="font-mono font-black uppercase tracking-wider text-amber-700">Latest research refresh</span>
-              <span className="text-muted-foreground">{latestResearchPost.title} · {latestResearchPost.cards.length} ranked cards</span>
+              <span className="font-mono font-black uppercase tracking-wider text-amber-700">Latest dated report</span>
+              <span className="text-muted-foreground">{latestResearchPost.dateKey} · {latestResearchPost.title} · {latestResearchPost.cards.length} ranked cards</span>
               <Link href="/market-watch" className="font-mono font-bold uppercase tracking-wider text-amber-800 underline decoration-2 underline-offset-2 hover:text-foreground">
                 Read the report →
               </Link>
@@ -276,17 +237,17 @@ export function DailyMovers() {
               Signal Audit
             </Link>
             <Link href="/market-movers-manus-report" className="inline-flex items-center gap-2 border-2 border-amber-600/50 bg-amber-500/10 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-amber-700 hover:bg-amber-500 hover:text-black">
-              Imported mover desks
+              Historical mover archive
             </Link>
             <div className="inline-flex border-2 border-border bg-card p-1">
               <button
                 type="button"
-                onClick={() => setActiveFeed('live')}
+                onClick={() => setActiveFeed('snapshot')}
                 className={`px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
-                  activeFeed === 'live' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+                  activeFeed === 'snapshot' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                Live Feed ({activeMoversList.length})
+                Imported Snapshot ({activeMoversList.length})
               </button>
               <button
                 type="button"
@@ -302,57 +263,38 @@ export function DailyMovers() {
 
               <button
               type="button"
-              onClick={handleExportTop500Txt}
+              onClick={handleExportSnapshotTxt}
               className="inline-flex items-center gap-2 border-2 border-primary bg-primary text-primary-foreground px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider shadow hover:opacity-90"
             >
-              Export Current Feed (TXT)
+              Export Snapshot (TXT)
             </button>
           </div>
         </div>
 
-        {/* Daily Sentiment Deep-Dive Panel */}
-        <section className="mt-8 border-2 border-primary/30 bg-primary/5 p-6 sm:p-8" aria-labelledby="sentiment-heading">
-          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-5">
-            <div>
-              <span className="border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider text-primary">
-                Daily Sentiment Deep Dive · {sentiment.analyzedAt}
-              </span>
-              <h2 id="sentiment-heading" className="mt-3 text-2xl font-bold tracking-tight">{sentiment.headline}</h2>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="border border-border bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider">
-                Sentiment: <span className="text-emerald-600 dark:text-emerald-400">{sentiment.overallSentiment}</span>
-              </div>
-              <div className="border border-border bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider">
-                Reddit Activity: <span className="text-primary">{sentiment.redditActivityIndex}/100</span>
-              </div>
-              <div className="border border-border bg-background px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider">
-                Buyout Risk: <span className="text-amber-600 dark:text-amber-400">{sentiment.buyoutRiskScore}/100</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Market Synthesis</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{sentiment.summary}</p>
-            </div>
-            <div className="border-l-2 border-primary/30 pl-4 sm:pl-6">
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Key Speculation Drivers</p>
-              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-                {sentiment.keyDrivers.map((driver, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="mt-0.5 font-mono font-bold text-primary">✦</span>
-                    <span>{driver}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <section className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4" aria-label="Market data source coverage">
+          <article className="border border-border bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Table shown · imported CSV</p>
+            <p className="mt-2 text-lg font-black">{marketData.importedCsv.rowCount} rows · {marketData.importedCsv.asOf}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Historical user-provided snapshot. It is not refreshed by this page and should not be read as a live market scan.</p>
+          </article>
+          <article className="border border-border bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Separate MTGJSON sample</p>
+            <p className="mt-2 text-lg font-black">{marketData.october15PrintingSample.trackedCount} printings · {marketData.october15PrintingSample.asOf}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{marketData.october15PrintingSample.pricedPrintingCount} priced printings. A small dated sample, not the 250-row CSV; a flat first observation is a baseline, not a claimed price move.</p>
+          </article>
+          <article className="border border-border bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Separate daily signal snapshot</p>
+            <p className="mt-2 text-lg font-black">{marketData.dailySignals.trackedCount} records · {marketData.dailySignals.oldestObservationAt.slice(0, 10)}–{marketData.dailySignals.newestObservationAt.slice(0, 10)}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{marketData.dailySignals.pricedPrintingCount} records have a source-reported USD value. Observation dates vary by row; this is separate from the Aug 25 CSV and Oct 15 nine-printing sample.</p>
+          </article>
+          <article className="border border-border bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Commander price index</p>
+            <p className="mt-2 text-lg font-black">MTGJSON · {marketData.commanderPriceIndex.asOf}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{marketData.commanderPriceIndex.resolvedUsdQuoteCount.toLocaleString()} of {marketData.commanderPriceIndex.totalPrintingCount.toLocaleString()} printings have a USD quote; {marketData.commanderPriceIndex.unresolvedUsdQuoteCount.toLocaleString()} are unresolved. Cardmarket values are EUR and excluded from USD coverage.</p>
+          </article>
         </section>
 
-        {/* Dated editorial signal layer from the October 7 market brief. */}
-        <section className="mt-8 border-2 border-border bg-card p-5 sm:p-7" aria-label="Today's market highlights">
+        <section className="mt-8 border-2 border-border bg-card p-5 sm:p-7" aria-label="Historical market highlights">
           <TodayMarketBrief embedded />
         </section>
 
@@ -471,35 +413,24 @@ export function DailyMovers() {
             <div className="mt-8 border-2 border-dashed border-amber-500/40 bg-amber-500/5 p-8 text-center">
               <Star className="mx-auto h-6 w-6 text-amber-600 dark:text-amber-300" aria-hidden="true" />
               <p className="mt-3 font-semibold">Your watchlist is empty.</p>
-              <p className="mt-1 text-sm text-muted-foreground">Switch to Live feed and star cards in either table to keep them here.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Switch to the imported snapshot and star cards in the table to keep them here.</p>
             </div>
           )}
 
-          {isLoadingMovers && activeMoversList.length === 0 ? (
-            <MarketCardGridSkeleton count={6} />
-          ) : (
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
-              {activeFeedMovers.map((mover, index) => (
-                <div key={mover.id} className="market-mover-enter" style={{ '--market-mover-index': index } as CSSProperties}>
-                <MarketCardItem
-                  key={mover.id}
-                  mover={mover}
-                  watchlist={watchlist}
-                  onSelect={(m) => setSelectedCard(m)}
-                  onToggleWatchlist={(m) => handleToggleWatchlist(m)}
-                />
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+            {activeFeedMovers.map((mover, index) => (
+              <div key={mover.id} className="market-mover-enter" style={{ '--market-mover-index': index } as CSSProperties}>
+                <MarketCardItem mover={mover} watchlist={watchlist} onSelect={setSelectedCard} onToggleWatchlist={handleToggleWatchlist} />
+              </div>
+            ))}
+          </div>
 
           {/* Detailed Table View */}
           <div className="mt-12 space-y-8">
             <MarketMoversTable
               data={activeFeedMovers}
-              title={activeFeed === 'watchlist' ? 'Watchlist Movers Table' : 'Daily Movers Table'}
-              description="Comprehensive sorted view of market movers, percentage spikes, and live outlet valuations across curated Magic: The Gathering categories."
-              isLoading={isLoadingMovers}
+              title={activeFeed === 'watchlist' ? 'Watchlist Snapshot Table' : 'Imported Snapshot Table'}
+              description={`Source-reported prices and percentage moves from the ${marketData.importedCsv.asOf} data snapshot; no live outlet valuations are available in this table.`}
               watchlist={watchlist}
               onToggleWatchlist={handleToggleWatchlist}
             />
@@ -521,7 +452,7 @@ export function DailyMovers() {
             </button>
 
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              <TrendingUp className="h-4 w-4" /> Global Card Intelligence &amp; Stats
+              <TrendingUp className="h-4 w-4" /> Imported Snapshot Row
             </div>
             <h2 className="mt-2 text-2xl font-extrabold">{selectedCard.name}</h2>
             <p className="font-mono text-xs text-muted-foreground uppercase">{selectedCard.setCode} Set · Rarity: {selectedCard.rarity} · Source: {selectedCard.signalSource}</p>
@@ -568,11 +499,11 @@ export function DailyMovers() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3 border-2 border-border bg-muted/40 p-3 font-mono">
                   <div>
-                    <span className="text-[10px] uppercase text-muted-foreground block">Current USD</span>
+                    <span className="text-[10px] uppercase text-muted-foreground block">Snapshot USD</span>
                     <span className="text-xl font-extrabold">${selectedCard.currentUsd.toFixed(2)}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase text-muted-foreground block">7-Day Momentum</span>
+                    <span className="text-[10px] uppercase text-muted-foreground block">Source-reported change</span>
                     <span className={`text-xl font-extrabold ${selectedCard.percentChange >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'}`}>
                       {selectedCard.percentChange >= 0 ? `+${selectedCard.percentChange}%` : `${selectedCard.percentChange}%`}
                     </span>
@@ -580,19 +511,19 @@ export function DailyMovers() {
                 </div>
 
                 <div className="border border-border p-3 bg-card font-mono text-xs space-y-2">
-                  <span className="font-bold text-muted-foreground uppercase block">Multi-Outlet Pricing</span>
+                  <span className="font-bold text-muted-foreground uppercase block">Vendor quotes included in this row</span>
                   <div className="grid grid-cols-3 gap-1 text-center">
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">Card Kingdom</span>
-                      <span className="font-bold">${selectedCard.cardKingdomUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.cardKingdomUsd == null ? 'Not in snapshot' : `$${selectedCard.cardKingdomUsd.toFixed(2)}`}</span>
                     </div>
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">TCGplayer</span>
-                      <span className="font-bold">${selectedCard.tcgplayerMarketUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.tcgplayerMarketUsd == null ? 'Not in snapshot' : `$${selectedCard.tcgplayerMarketUsd.toFixed(2)}`}</span>
                     </div>
                     <div className="border border-border p-1 bg-muted/20">
                       <span className="text-[9px] text-muted-foreground block">MTGGoldfish</span>
-                      <span className="font-bold">${selectedCard.mtgGoldfishUsd?.toFixed(2) ?? selectedCard.currentUsd.toFixed(2)}</span>
+                      <span className="font-bold">{selectedCard.mtgGoldfishUsd == null ? 'Not in snapshot' : `$${selectedCard.mtgGoldfishUsd.toFixed(2)}`}</span>
                     </div>
                   </div>
                 </div>
