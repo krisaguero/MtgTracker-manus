@@ -4,6 +4,7 @@ import rawFeed from '@/data/marketResearchFeed.json';
 import rawLedger from '@/data/marketPredictionLedger.json';
 import rawSourceMarketWatch from '@/data/notionMarketWatchSnapshot.json';
 import { MarketCardPreview } from '@/components/MarketCardPreview';
+import { VerifiedHistoricalEvidence } from '@/components/VerifiedHistoricalEvidence';
 
 type FeedCard = {
   rank: number;
@@ -150,6 +151,7 @@ export default function MarketResearchFeed() {
   return <div className="min-h-screen bg-background text-foreground">
     <header className="border-b border-border bg-card"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-5 sm:px-8"><Link href="/movers" className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Market watch</Link><div className="flex flex-wrap gap-2"><Link href="/movers" className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Imported snapshot</Link><Link href="/market-movers-manus-report" className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Source post</Link></div></div></header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8">
+      <VerifiedHistoricalEvidence />
       <SourceMarketWatchSnapshot />
       <p className="border-l-2 border-primary pl-3 font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">Separate tracker-generated archive · dated cards, data windows, and citations follow</p>
       <section className="border-2 border-primary bg-primary/5 p-6 sm:p-10"><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Recurring market-watch blog feed</p><h1 className="mt-3 text-4xl font-black tracking-tight sm:text-6xl">Daily signals, focused desks, and the Top 10 watchlist.</h1><p className="mt-4 max-w-4xl text-base leading-7 text-muted-foreground">A dated research queue generated from the project’s market snapshots. The weekday desk rotates the lens; every other Friday expands into a ranked Top 10 watchlist. Snapshot velocity is a prompt for verification, not a confirmed trade signal.</p><div className="mt-6 grid gap-3 font-mono text-[10px] font-black uppercase sm:grid-cols-3"><span className="border-2 border-border bg-background p-3">Daily · {feed.schedule.daily}</span><span className="border-2 border-border bg-background p-3">Topic · {feed.schedule.topicExpansion}</span><span className="border-2 border-border bg-background p-3">Top 10 · {feed.schedule.biweeklyTop10}</span></div></section>

@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-17T21:19:08Z",
+  "priceSource": "Archived MTGJSON-derived TCGplayer reference-price observations in the production daily artifacts",
+  "sourceCommit": "f8f721ecbbb49e590aedbb101887b6238a5db0dc",
+  "methodology": "Each displayed USD value matches both the saved daily history and that day’s MTGJSON-derived tcgplayerMarketUsd field for the same card UUID, set, and collector number. Dates are capture dates, not guaranteed underlying vendor price dates. The importer prefers normal prices but permits finish fallback; finish is not preserved in these artifacts. These are normalized reference values, not independently audited nonfoil quotes or completed sales. No causal explanation or live quote is inferred. Windows were selected retrospectively to illustrate declines, not to measure overall performance.",
+  "formula": "(ending reference USD / starting reference USD − 1) × 100",
+  "dips": [
+    {
+      "uuid": "40470d4d-f834-59ae-9af3-de01926a221a",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "percentChange": -32.15,
+      "points": [
+        {
+          "date": "2026-10-06",
+          "capturedAt": "2026-10-06T14:55:10.420Z",
+          "usd": 3.95,
+          "artifact": "data/market/daily/2026-10-06.json",
+          "artifactSha256": "e4721b9737054364d9b50a5c6c74bc32526d759c02d5cdd1b1e81c4f8e679dac",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        },
+        {
+          "date": "2026-10-07",
+          "capturedAt": "2026-10-07T15:22:06.522Z",
+          "usd": 3.89,
+          "artifact": "data/market/daily/2026-10-07.json",
+          "artifactSha256": "cb6a9eb72de95d685e74ece7d428239e9dfed82bb915244f80e38d681b770af8",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        },
+        {
+          "date": "2026-10-08",
+          "capturedAt": "2026-10-08T15:24:50.940Z",
+          "usd": 3.84,
+          "artifact": "data/market/daily/2026-10-08.json",
+          "artifactSha256": "1616044e02e95e088efc8ef8731893cefdf883fe93b2704fd1da289e4932a746",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        },
+        {
+          "date": "2026-10-09",
+          "capturedAt": "2026-10-09T15:07:21.444Z",
+          "usd": 3.84,
+          "artifact": "data/market/daily/2026-10-09.json",
+          "artifactSha256": "d56cfcaa5b018eed1babf8b850caa437509a530b8a66f1aa3c463940d1a80a1f",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        },
+        {
+          "date": "2026-10-10",
+          "capturedAt": "2026-10-10T14:21:33.331Z",
+          "usd": 3.09,
+          "artifact": "data/market/daily/2026-10-10.json",
+          "artifactSha256": "fb300efd799ab867024afcb2d7427ae7722d1bc150aaf2996acb5e05eaa24ef9",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        },
+        {
+          "date": "2026-10-11",
+          "capturedAt": "2026-10-11T14:47:36.755Z",
+          "usd": 2.68,
+          "artifact": "data/market/daily/2026-10-11.json",
+          "artifactSha256": "8c1923d58441ef6553b5584756cb0abf35a159a8ee25cd8a62cdcc422bbb042d",
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267"
+        }
+      ],
+      "latest": {
+        "date": "2026-10-16",
+        "capturedAt": "2026-10-16T13:06:23.204Z",
+        "usd": 3.55,
+        "artifact": "data/market/daily/2026-10-16.json",
+        "artifactSha256": "aba8f979f649736acbae8a8aafab60f4c456a3326512d1fe401ba44fb963c323",
+        "name": "Counterspell",
+        "setCode": "mh2",
+        "collectorNumber": "267"
+      }
+    },
+    {
+      "uuid": "d0d8e204-7951-522c-80b9-a39c995bbc8a",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "percentChange": -15.69,
+      "points": [
+        {
+          "date": "2026-10-12",
+          "capturedAt": "2026-10-12T17:36:07.560Z",
+          "usd": 1.02,
+          "artifact": "data/market/daily/2026-10-12.json",
+          "artifactSha256": "d92d00ef9a487ae9a655a9102803f7ad4114176525b3071eaf5cbd8f835af555",
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "collectorNumber": "269"
+        },
+        {
+          "date": "2026-10-13",
+          "capturedAt": "2026-10-13T15:45:12.623Z",
+          "usd": 0.86,
+          "artifact": "data/market/daily/2026-10-13.json",
+          "artifactSha256": "d5bce479bdda275080152bc09aa2c1ed44823f471e705fea8690fb28a53029cd",
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "collectorNumber": "269"
+        }
+      ],
+      "latest": {
+        "date": "2026-10-16",
+        "capturedAt": "2026-10-16T13:06:23.204Z",
+        "usd": 1.02,
+        "artifact": "data/market/daily/2026-10-16.json",
+        "artifactSha256": "aba8f979f649736acbae8a8aafab60f4c456a3326512d1fe401ba44fb963c323",
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "collectorNumber": "269"
+      }
+    },
+    {
+      "uuid": "0a573387-0cbb-55f0-8b82-f300660b58eb",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "percentChange": -4.45,
+      "points": [
+        {
+          "date": "2026-10-06",
+          "capturedAt": "2026-10-06T14:55:10.420Z",
+          "usd": 65.89,
+          "artifact": "data/market/daily/2026-10-06.json",
+          "artifactSha256": "e4721b9737054364d9b50a5c6c74bc32526d759c02d5cdd1b1e81c4f8e679dac",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-07",
+          "capturedAt": "2026-10-07T15:22:06.522Z",
+          "usd": 65.53,
+          "artifact": "data/market/daily/2026-10-07.json",
+          "artifactSha256": "cb6a9eb72de95d685e74ece7d428239e9dfed82bb915244f80e38d681b770af8",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-08",
+          "capturedAt": "2026-10-08T15:24:50.940Z",
+          "usd": 65.55,
+          "artifact": "data/market/daily/2026-10-08.json",
+          "artifactSha256": "1616044e02e95e088efc8ef8731893cefdf883fe93b2704fd1da289e4932a746",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-09",
+          "capturedAt": "2026-10-09T15:07:21.444Z",
+          "usd": 65.55,
+          "artifact": "data/market/daily/2026-10-09.json",
+          "artifactSha256": "d56cfcaa5b018eed1babf8b850caa437509a530b8a66f1aa3c463940d1a80a1f",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-10",
+          "capturedAt": "2026-10-10T14:21:33.331Z",
+          "usd": 64.44,
+          "artifact": "data/market/daily/2026-10-10.json",
+          "artifactSha256": "fb300efd799ab867024afcb2d7427ae7722d1bc150aaf2996acb5e05eaa24ef9",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-11",
+          "capturedAt": "2026-10-11T14:47:36.755Z",
+          "usd": 63.8,
+          "artifact": "data/market/daily/2026-10-11.json",
+          "artifactSha256": "8c1923d58441ef6553b5584756cb0abf35a159a8ee25cd8a62cdcc422bbb042d",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-12",
+          "capturedAt": "2026-10-12T17:36:07.560Z",
+          "usd": 63.43,
+          "artifact": "data/market/daily/2026-10-12.json",
+          "artifactSha256": "d92d00ef9a487ae9a655a9102803f7ad4114176525b3071eaf5cbd8f835af555",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-13",
+          "capturedAt": "2026-10-13T15:45:12.623Z",
+          "usd": 63.28,
+          "artifact": "data/market/daily/2026-10-13.json",
+          "artifactSha256": "d5bce479bdda275080152bc09aa2c1ed44823f471e705fea8690fb28a53029cd",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-14",
+          "capturedAt": "2026-10-14T13:28:13.863Z",
+          "usd": 63.28,
+          "artifact": "data/market/daily/2026-10-14.json",
+          "artifactSha256": "ab3354342529b15de615e12340a2c9ab382885e0f555ff1da5592bd9d732e139",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-15",
+          "capturedAt": "2026-10-15T13:12:20.318Z",
+          "usd": 63.28,
+          "artifact": "data/market/daily/2026-10-15.json",
+          "artifactSha256": "081edda141decf86862112d31f71bbdadf33b8b2a92aae89a4599007efd3b247",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        },
+        {
+          "date": "2026-10-16",
+          "capturedAt": "2026-10-16T13:06:23.204Z",
+          "usd": 62.96,
+          "artifact": "data/market/daily/2026-10-16.json",
+          "artifactSha256": "aba8f979f649736acbae8a8aafab60f4c456a3326512d1fe401ba44fb963c323",
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161"
+        }
+      ],
+      "latest": {
+        "date": "2026-10-16",
+        "capturedAt": "2026-10-16T13:06:23.204Z",
+        "usd": 62.96,
+        "artifact": "data/market/daily/2026-10-16.json",
+        "artifactSha256": "aba8f979f649736acbae8a8aafab60f4c456a3326512d1fe401ba44fb963c323",
+        "name": "The Great Henge",
+        "setCode": "eld",
+        "collectorNumber": "161"
+      }
+    }
+  ],
+  "notionReviewCheck": {
+    "source": "Authorized Notion Prediction Reviews — public research fields only",
+    "checkedAt": "2026-10-17T21:19:08Z",
+    "note": "Read-only check. All Actual Outcome fields say Pending review. The source select value Mixed does not resolve a pending record. This newer check is separate from the older static source snapshot below and from the tracker-generated prediction ledger.",
+    "records": [
+      {
+        "name": "Ink-Treader Nephilim",
+        "reviewDate": "2026-10-22",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Last Laugh",
+        "reviewDate": "2026-10-22",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Caller of the Claw",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Jet Medallion",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Abstergo Entertainment",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Haliya, Guided by Light",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "The Theorist, Jace Beleren",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Ripples of Potential",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Tivit, Seller of Secrets",
+        "reviewDate": "2026-10-30",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Molecule Man",
+        "reviewDate": "2026-11-14",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      },
+      {
+        "name": "Doom’s Time Platform",
+        "reviewDate": "2026-11-14",
+        "sourceStatus": "Mixed",
+        "actualOutcome": "Pending review.",
+        "resolution": "pending"
+      }
+    ]
+  },
+  "studies": [
+    {
+      "id": "stanford-2014",
+      "title": "Stanford CS229 · 2014",
+      "kind": "External academic backtest",
+      "result": "The logistic-regression model reported 11% classification error on 3,405 held-out test samples.",
+      "context": "13,608 rare/mythic card-date samples from May 2012–August 2014; 75% train / 25% test. The label examined a price increase of at least $0.50 over the following week.",
+      "limitation": "Retrospective historical evaluation, not a timestamped public trading recommendation or a tracker win. The split does not establish a forward-only live trial. No realized investment return is claimed.",
+      "sourceUrl": "https://cs229.stanford.edu/proj2014/Matt%20Pawlicki,%20Joe%20Polin,%20Jesse%20Zhang,%20Prediction%20of%20Price%20Increase%20for%20MTG%20Cards.pdf"
+    },
+    {
+      "id": "tru-2024",
+      "title": "Thompson Rivers University · 2024",
+      "kind": "External academic backtest",
+      "result": "For card LRW.145, the NN2 forecast-combination example reported 1.06% MAPE, versus a 9.31% base-model average.",
+      "context": "Roberto Primo Curti Sanches used weekly historical data from September 2013–September 2023 and held out the last 12 observations (about three months). MAPE measures average absolute percentage forecast error.",
+      "limitation": "A retrospective, card-specific model comparison, not a market-wide accuracy score, contemporaneous public call, realized return, or tracker win.",
+      "sourceUrl": "https://tru.arcabc.ca/_flysystem/repo-bin/2024-10/tru_6495.pdf",
+      "repositoryUrl": "https://tru.arcabc.ca/node/3151"
+    }
+  ]
+}
