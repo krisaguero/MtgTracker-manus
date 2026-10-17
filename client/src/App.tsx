@@ -34,6 +34,7 @@ const DupeDecks = lazy(() => import('@/pages/DupeDecks').then((module) => ({ def
 const DuelBattleBoxArticle = lazy(() => import('@/pages/DuelBattleBoxArticle'));
 const RetroBattleBox = lazy(() => import('@/pages/RetroBattleBox'));
 const BrawlBox = lazy(() => import('@/pages/BrawlBox'));
+const BrawlMazirek = lazy(() => import('@/pages/BrawlMazirek'));
 const BattleBoxMethodArticle = lazy(() => import('@/pages/BattleBoxMethodArticle'));
 const BattleBoxProxyPrintArticle = lazy(() => import('@/pages/BattleBoxProxyPrintArticle'));
 const CardDetail = lazy(() => import('@/pages/CardDetail'));
@@ -67,6 +68,7 @@ function Router() {
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
         <Route path="/battle-box" component={RetroBattleBox} />
         <Route path="/brawl-box" component={BrawlBox} />
+        <Route path="/brawl/mazirek" component={BrawlMazirek} />
         <Route path="/battle-box-method" component={BattleBoxMethodArticle} />
         <Route path="/battle-box-proxy-print" component={BattleBoxProxyPrintArticle} />
         <Route path="/latest-market-report" component={LatestMarketReport} />

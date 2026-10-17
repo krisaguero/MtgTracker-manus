@@ -29,6 +29,7 @@ const navigation: SiteItem[] = [
     links: [
       { href: '/collection', label: 'Collection goals & imports' },
       { href: '/dupe-decks', label: 'Themed 60-card decks' },
+      { href: '/brawl/mazirek', label: 'Mazirek Brawl lab' },
       { href: '/limited', label: 'Sealed & draft pool' },
       { href: '/duel-battle-box', label: 'Duel battle box' },
       { href: '/battle-box-method', label: 'Battle Box build record' },
