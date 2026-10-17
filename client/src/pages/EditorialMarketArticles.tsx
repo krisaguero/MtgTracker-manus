@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { MarketCardPreview } from '@/components/MarketCardPreview';
 import { InternalPageNav } from '@/components/InternalPageNav';
 import { useEditorialMarket } from '@/hooks/useEditorialMarket';
+import { TabletopPaperSpotlightTeaser } from './TabletopPaperSpotlight';
 
 export default function EditorialMarketArticles() {
   const { data, loading } = useEditorialMarket();
@@ -34,6 +35,7 @@ export default function EditorialMarketArticles() {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-8 sm:py-10">
+        <TabletopPaperSpotlightTeaser />
         {loading ? (
           <div className="grid gap-4 md:grid-cols-2"><div className="h-56 animate-pulse border border-border bg-muted" /><div className="h-56 animate-pulse border border-border bg-muted" /></div>
         ) : articles.length ? (

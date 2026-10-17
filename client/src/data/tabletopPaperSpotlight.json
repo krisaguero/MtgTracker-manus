@@ -1,0 +1,82 @@
+{
+  "title": "Tabletop Paper Company spotlight: seven cards to watch",
+  "href": "/market-report/tabletop-paper-company-spotlight",
+  "dateKey": "2026-10-17",
+  "summary": "Seven picks from Tabletop Paper Company’s October 15 roundup, with direct YouTube timestamps and a quick rules-based guide to each card.",
+  "channel": {
+    "name": "Tabletop Paper Company",
+    "url": "https://www.youtube.com/channel/UCp4WsPnvEiUeTJbJNRlEPzg"
+  },
+  "introduction": [
+    "Tabletop Paper Company’s October 15 roundup brings together seven cards worth a closer look: Tivit, Magister Sphinx, Uthros Research Craft, Agatha, Astral Dragon, The Theorist Jace, and Vronos. Jump straight to each discussion below, then compare the card with what is already in your collection.",
+    "The video is the creator’s market commentary; the notes below are our own rules-based reading guide. A feature in a price-spike roundup is a reason to investigate, not an instruction to buy. We do not repeat the video’s prices as current quotes."
+  ],
+  "videos": [
+    {
+      "title": "This Forgotten Rare Just Spiked to $34! Check Your MTG Binders ASAP!",
+      "url": "https://www.youtube.com/watch?v=a0ZWHvJUYXA",
+      "channelName": "Tabletop Paper Company",
+      "note": "October 15, 2026 roundup covering all seven cards below. Each card links to its segment. The channel listing uses this title; the watch-page heading may vary."
+    }
+  ],
+  "cards": [
+    {
+      "name": "Tivit, Seller of Secrets",
+      "note": "Tivit turns table votes into Clues and Treasures when it enters or connects in combat. For an artifact-focused Commander deck, ask how reliably those tokens advance your plan—not just whether the card is getting attention.",
+      "rulesUrl": "https://scryfall.com/card/ncc/10/tivit-seller-of-secrets",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=16s",
+      "attribution": "Tabletop Paper Company covers Tivit, Seller of Secrets at 0:16 in the October 15 roundup.",
+      "timestamp": "0:16"
+    },
+    {
+      "name": "Magister Sphinx",
+      "note": "Its entrance sets a target player's life total to 10. That is a dramatic effect to evaluate in a blink or reanimation shell, but a memorable ability alone does not establish broad demand.",
+      "rulesUrl": "https://scryfall.com/card/2x2/247/magister-sphinx",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=43s",
+      "attribution": "Tabletop Paper Company covers Magister Sphinx at 0:43 in the October 15 roundup.",
+      "timestamp": "0:43"
+    },
+    {
+      "name": "Uthros Research Craft",
+      "note": "At three charge counters, the Craft rewards artifact spells with card draw and another counter. Check the setup cost and artifact density in your own list before treating it as an automatic inclusion.",
+      "rulesUrl": "https://scryfall.com/card/eoc/7/uthros-research-craft",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=63s",
+      "attribution": "Tabletop Paper Company covers Uthros Research Craft at 1:03 in the October 15 roundup.",
+      "timestamp": "1:03"
+    },
+    {
+      "name": "Agatha of the Vile Cauldron",
+      "note": "Agatha reduces the activation costs of your creatures based on her power, without reducing a mana cost below one mana. This is the legendary creature—not Agatha's Soul Cauldron, the differently named artifact.",
+      "rulesUrl": "https://scryfall.com/card/woe/199/agatha-of-the-vile-cauldron",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=120s",
+      "attribution": "Tabletop Paper Company covers Agatha of the Vile Cauldron at 2:00 in the October 15 roundup.",
+      "timestamp": "2:00"
+    },
+    {
+      "name": "Astral Dragon",
+      "note": "Astral Dragon makes two flying Dragon copies of a noncreature permanent when it enters. The interesting deckbuilding question is which permanent you want to copy and whether your deck can support the Dragon's cost.",
+      "rulesUrl": "https://scryfall.com/card/clb/664/astral-dragon",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=177s",
+      "attribution": "Tabletop Paper Company covers Astral Dragon at 2:57 in the October 15 roundup.",
+      "timestamp": "2:57"
+    },
+    {
+      "name": "The Theorist, Jace Beleren",
+      "note": "This Jace draws you a card at the beginning of each opponent's draw step, makes Illusion tokens, and can bounce an artifact or creature for each opponent. Use the full card name when comparing printings or decklists.",
+      "rulesUrl": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=218s",
+      "attribution": "Tabletop Paper Company covers The Theorist, Jace Beleren at 3:38 in the October 15 roundup.",
+      "timestamp": "3:38"
+    },
+    {
+      "name": "Vronos, Masked Inquisitor",
+      "note": "Vronos can phase out two other planeswalkers at your next end step and offers a bounce ability for each opponent. Consider it in the context of a planeswalker-heavy deck rather than as a universal blue staple.",
+      "rulesUrl": "https://scryfall.com/card/cmm/729/vronos-masked-inquisitor",
+      "videoUrl": "https://www.youtube.com/watch?v=a0ZWHvJUYXA&t=265s",
+      "attribution": "Tabletop Paper Company covers Vronos, Masked Inquisitor at 4:25 in the October 15 roundup.",
+      "timestamp": "4:25"
+    }
+  ],
+  "disclaimer": "This is independent hobby commentary, not financial advice or a live price report. No current prices, percentage gains, or confirmed buy signals are asserted here. Before buying or selling, check the exact printing, finish, condition, completed sales, available supply, fees, and reprint risk.",
+  "verificationNote": "Channel identity and video title were verified on YouTube. Card segment offsets were identified through AI-assisted analysis of the video’s audio and visuals; they are approximate navigation points, not a verbatim transcript."
+}

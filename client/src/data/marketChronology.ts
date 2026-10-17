@@ -1,7 +1,8 @@
 import { importedMarketReports, formatPricingDate } from './marketReportArchive';
 import sourceSnapshot from './notionMarketWatchSnapshot.json';
+import creatorSpotlight from './tabletopPaperSpotlight.json';
 
-type ChronologyKind = 'price snapshot' | 'catalyst brief' | 'market watch';
+type ChronologyKind = 'price snapshot' | 'catalyst brief' | 'market watch' | 'creator spotlight';
 
 export interface MarketChronologyEntry {
   id: string;
@@ -46,6 +47,18 @@ const watchEntries: MarketChronologyEntry[] = sourceSnapshot.reports.map((report
   caveat: report.sourceNotes,
 }));
 
-export const chronologicalMarketEntries = [...importedEntries, ...briefEntries, ...watchEntries].sort((a, b) => b.dateKey.localeCompare(a.dateKey) || a.id.localeCompare(b.id));
+const creatorEntries: MarketChronologyEntry[] = [{
+  id: 'spotlight-tabletop-paper-company-2026-10-17',
+  dateKey: creatorSpotlight.dateKey,
+  title: creatorSpotlight.title,
+  href: creatorSpotlight.href,
+  source: creatorSpotlight.channel.name + ' · YouTube viewing guide',
+  kind: 'creator spotlight',
+  verification: 'Video attribution labeled; no live price claims',
+  dataWindow: 'Seven-card editorial selection dated October 17, 2026; linked videos retain their own publication dates',
+  caveat: 'Rules-based editorial notes are separate from creator commentary. Each card links to its video segment; this is not a buy recommendation.',
+}];
+
+export const chronologicalMarketEntries = [...importedEntries, ...briefEntries, ...watchEntries, ...creatorEntries].sort((a, b) => b.dateKey.localeCompare(a.dateKey) || a.id.localeCompare(b.id));
 export const latestMarketWatchEntries = chronologicalMarketEntries.filter((entry) => entry.kind === 'market watch').slice(0, 3);
 export { formatPricingDate };

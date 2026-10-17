@@ -4,11 +4,20 @@ import { chronologicalMarketEntries, latestMarketWatchEntries } from './marketCh
 describe('chronological market hub', () => {
   it('lists every source record newest first without merging report contents', () => {
     expect(chronologicalMarketEntries.map((entry) => entry.dateKey)).toEqual([
+      '2026-10-17',
       '2026-10-16', '2026-10-16', '2026-10-15', '2026-10-15', '2026-10-11', '2026-10-05',
       '2026-10-02', '2026-09-26', '2026-09-22', '2026-09-19', '2026-09-18',
     ]);
     expect(new Set(chronologicalMarketEntries.map((entry) => entry.id)).size).toBe(chronologicalMarketEntries.length);
     expect(chronologicalMarketEntries.every((entry) => entry.href && entry.source && entry.verification && entry.caveat)).toBe(true);
+  });
+
+  it('discovers the seven-card creator spotlight without relabeling it as price evidence', () => {
+    const entry = chronologicalMarketEntries[0];
+    expect(entry.kind).toBe('creator spotlight');
+    expect(entry.href).toBe('/market-report/tabletop-paper-company-spotlight');
+    expect(entry.source).toContain('Tabletop Paper Company');
+    expect(entry.verification).toContain('no live price claims');
   });
 
   it('keeps the October 16 catalyst brief and Notion snapshot distinct', () => {

@@ -49,6 +49,7 @@ const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
+const TabletopPaperSpotlight = lazy(() => import('@/pages/TabletopPaperSpotlight'));
 
 function Router() {
   return (
@@ -79,6 +80,7 @@ function Router() {
         <Route path="/market-report/october-11-daily-market-movers" component={October11MarketReport} />
         <Route path="/market-report/october-15-30-signal-brief" component={October15MarketBrief} />
         <Route path="/market-report/october-16-30-signal-brief" component={October16MarketBrief} />
+        <Route path="/market-report/tabletop-paper-company-spotlight" component={TabletopPaperSpotlight} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />
         <Route path="/market-signal-audit" component={MarketSignalAudit} />
         <Route path="/market-movers-manus-report" component={MarketMoverReportArticle} />
