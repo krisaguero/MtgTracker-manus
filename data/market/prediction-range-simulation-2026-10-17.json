@@ -1,0 +1,291 @@
+{
+  "simulationDate": "2026-10-17",
+  "scope": "October prediction database readiness plus historical 14-day windows ending in October",
+  "currentOctoberRecords": 15,
+  "currentOctoberScored": 0,
+  "currentOctoberStatus": [
+    {
+      "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
+      "name": "Tivit, Seller of Secrets",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        8,
+        24
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
+      "name": "Ripples of Potential",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        8,
+        24
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
+      "name": "The Theorist, Jace Beleren",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        8,
+        24
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:5:m15:25",
+      "name": "Preeminent Captain",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -3,
+        3
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:6:mh2:267",
+      "name": "Counterspell",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -3,
+        3
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:7:ppdsk:202p",
+      "name": "Tyvar, the Pummeler",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -3,
+        3
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:8:cmd:269",
+      "name": "Command Tower",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -3,
+        3
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:9:eld:161",
+      "name": "The Great Henge",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -2,
+        2
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:10:all:28",
+      "name": "Force of Will",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        -2,
+        2
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
+      "name": "Abstergo Entertainment",
+      "opened": "2026-10-16",
+      "evaluationDate": "2026-10-30",
+      "model": "granular-v2 momentum bands; not a verified AI forecast",
+      "range": [
+        8,
+        24
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:1:m15:25",
+      "name": "Preeminent Captain",
+      "opened": "2026-10-13",
+      "evaluationDate": "2026-10-27",
+      "model": "rule-based momentum screen; not a verified AI forecast",
+      "range": [
+        -5,
+        5
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:2:mh2:267",
+      "name": "Counterspell",
+      "opened": "2026-10-13",
+      "evaluationDate": "2026-10-27",
+      "model": "rule-based momentum screen; not a verified AI forecast",
+      "range": [
+        -5,
+        5
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:3:cmd:269",
+      "name": "Command Tower",
+      "opened": "2026-10-13",
+      "evaluationDate": "2026-10-27",
+      "model": "rule-based momentum screen; not a verified AI forecast",
+      "range": [
+        -5,
+        5
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:4:plst:BLC-277",
+      "name": "Idol of Oblivion",
+      "opened": "2026-10-13",
+      "evaluationDate": "2026-10-27",
+      "model": "rule-based momentum screen; not a verified AI forecast",
+      "range": [
+        -5,
+        5
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:5:plst:E01-54",
+      "name": "Lightning Bolt",
+      "opened": "2026-10-13",
+      "evaluationDate": "2026-10-27",
+      "model": "rule-based momentum screen; not a verified AI forecast",
+      "range": [
+        -5,
+        5
+      ],
+      "exactPrinting": true,
+      "status": "AWAITING_POST_ENTRY_WINDOW"
+    }
+  ],
+  "historicalWindowCount": 72,
+  "models": [
+    {
+      "model": "granular-v2",
+      "windows": 72,
+      "rangeContainmentPct": 56.94,
+      "directionalAccuracyPct": 83.33,
+      "meanAbsoluteMidpointErrorPct": 4.58,
+      "averageRangeWidthPct": 4.86,
+      "medianRangeWidthPct": 4.0
+    },
+    {
+      "model": "legacy",
+      "windows": 72,
+      "rangeContainmentPct": 81.94,
+      "directionalAccuracyPct": 83.33,
+      "meanAbsoluteMidpointErrorPct": 4.72,
+      "averageRangeWidthPct": 10,
+      "medianRangeWidthPct": 10.0
+    }
+  ],
+  "granularV2ByMomentumBand": [
+    {
+      "absMomentumBand": "0% to 1%",
+      "model": "granular-v2",
+      "windows": 56,
+      "rangeContainmentPct": 57.14,
+      "directionalAccuracyPct": 89.29,
+      "meanAbsoluteMidpointErrorPct": 3.74,
+      "averageRangeWidthPct": 4,
+      "medianRangeWidthPct": 4.0
+    },
+    {
+      "absMomentumBand": "1% to 3%",
+      "model": "granular-v2",
+      "windows": 7,
+      "rangeContainmentPct": 71.43,
+      "directionalAccuracyPct": 71.43,
+      "meanAbsoluteMidpointErrorPct": 6.89,
+      "averageRangeWidthPct": 6,
+      "medianRangeWidthPct": 6
+    },
+    {
+      "absMomentumBand": "3% to 5%",
+      "model": "granular-v2",
+      "windows": 5,
+      "rangeContainmentPct": 40.0,
+      "directionalAccuracyPct": 40.0,
+      "meanAbsoluteMidpointErrorPct": 10.87,
+      "averageRangeWidthPct": 10,
+      "medianRangeWidthPct": 10
+    },
+    {
+      "absMomentumBand": "5% to 8%",
+      "model": "granular-v2",
+      "windows": 1,
+      "rangeContainmentPct": 0.0,
+      "directionalAccuracyPct": 0.0,
+      "meanAbsoluteMidpointErrorPct": 3.61,
+      "averageRangeWidthPct": 6,
+      "medianRangeWidthPct": 6
+    },
+    {
+      "absMomentumBand": "8% to 12%",
+      "model": "granular-v2",
+      "windows": 2,
+      "rangeContainmentPct": 50.0,
+      "directionalAccuracyPct": 100.0,
+      "meanAbsoluteMidpointErrorPct": 5.38,
+      "averageRangeWidthPct": 8,
+      "medianRangeWidthPct": 8.0
+    },
+    {
+      "absMomentumBand": "20% to 30%",
+      "model": "granular-v2",
+      "windows": 1,
+      "rangeContainmentPct": 100.0,
+      "directionalAccuracyPct": 100.0,
+      "meanAbsoluteMidpointErrorPct": 3.71,
+      "averageRangeWidthPct": 12,
+      "medianRangeWidthPct": 12
+    }
+  ],
+  "limitations": [
+    "October 13 and October 16 predictions have no 14-day post-entry observations yet.",
+    "Historical windows ending in October are a calibration sample, not a direct score of the October 13/16 theses.",
+    "Price history reflects the stored source snapshots and does not establish completed-sale liquidity."
+  ]
+}

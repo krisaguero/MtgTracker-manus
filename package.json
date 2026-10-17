@@ -10,6 +10,7 @@
     "check": "tsc --noEmit",
     "market:research-feed": "node scripts/build-market-research-feed.mjs",
     "market:prediction-audit": "node scripts/audit-prediction-accuracy.mjs",
+    "market:range-sim": "python3 scripts/simulate-prediction-ranges.py",
     "audit:market": "node scripts/audit-market-categories.mjs",
     "format": "prettier --write .",
     "test": "vitest run",
