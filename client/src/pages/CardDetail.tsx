@@ -6,6 +6,7 @@ import { loadOwnedPrecons } from '@/lib/preconInventory';
 import { loadOwnedCollection, saveOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { moversForCard, suppliedSignalsForCard } from '@/lib/marketMoverLinks';
 import { resolveCardPrice, resolveDeckMarketValue } from '@/lib/marketPriceIndex';
+import { MarketBuyActions } from '@/components/MarketPostCard';
 
 function scryfallFullResolutionImage(card: any): string {
   return card.image_uris?.png || card.image_uris?.large || card.card_faces?.[0]?.image_uris?.png || card.card_faces?.[0]?.image_uris?.large || card.image_uris?.normal || card.card_faces?.[0]?.image_uris?.normal || '';
@@ -26,6 +27,12 @@ export default function CardDetail() {
   const params = useParams();
   const [, navigate] = useLocation();
   const cardNameParam = decodeURIComponent(params?.cardName || '');
+  useEffect(() => {
+    const anchor = window.location.hash.slice(1);
+    if (!['market-history', 'printings'].includes(anchor)) return;
+    const frame = window.requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }));
+    return () => window.cancelAnimationFrame(frame);
+  }, [cardNameParam]);
 
   const [cardData, setCardData] = useState<{
     name: string;
@@ -286,14 +293,7 @@ export default function CardDetail() {
                 {addedSuccess ? <Check className="h-4 w-4 text-black" /> : isAlreadyOwned ? <Check className="h-4 w-4 text-emerald-400" /> : <Plus className="h-4 w-4" />}
                 {addedSuccess ? 'Added to Collection!' : isAlreadyOwned ? 'In Collection (+1 More)' : 'Add to Collection'}
               </button>
-              <a
-                href={`https://www.tcgplayer.com/search/magic/product?q=${encodeURIComponent(cardNameParam)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full border-2 border-primary bg-primary text-primary-foreground py-2 text-center font-mono text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2 block"
-              >
-                <ShoppingBag className="h-4 w-4" /> Buy on TCGplayer <ExternalLink className="h-3 w-3" />
-              </a>
+              <MarketBuyActions name={cardNameParam} />
               <a
                 href={`https://scryfall.com/search?q=${encodeURIComponent(cardNameParam)}`}
                 target="_blank"
@@ -349,7 +349,7 @@ export default function CardDetail() {
             </div>
 
             {/* Alternate Printings & Different Art Gallery */}
-            <div className="border-2 border-border bg-card p-6 sm:p-8 space-y-4">
+            <div id="printings" className="scroll-mt-24 border-2 border-border bg-card p-6 sm:p-8 space-y-4">
               <div className="flex items-center justify-between border-b border-border pb-3">
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   <Layers className="h-5 w-5 text-primary" /> Alternate Printings &amp; Art Versions ({printings.length})
@@ -392,7 +392,7 @@ export default function CardDetail() {
             </div>
 
             {/* Finance & Movers History Section */}
-            <div className="border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-4">
+            <div id="market-history" className="scroll-mt-24 border-2 border-primary/40 bg-card p-6 sm:p-8 space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   <TrendingUp className="h-5 w-5 text-primary" /> Dated Market Signals

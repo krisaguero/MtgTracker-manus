@@ -12,6 +12,7 @@ function colorName(color: string) {
 
 export function BrawlDeckCard({ deck, detail = false, initialView }: { deck: BrawlBoxDeck; detail?: boolean; initialView?: BrawlDeckView }) {
   const [view, setView] = useState<BrawlDeckView>(initialView ?? (detail ? 'visual' : 'list'));
+  const commanderReference = cardReference(deck.commander);
   const Heading = detail ? 'h1' : 'h2';
   const listedCount = deck.groups.reduce((total, group) => total + group.cards.reduce((groupTotal, card) => groupTotal + card.quantity, 0), 0);
   const sideboardCount = deck.sideboardGroups?.reduce((total, group) => total + group.cards.reduce((groupTotal, card) => groupTotal + card.quantity, 0), 0) ?? 0;
@@ -26,7 +27,7 @@ export function BrawlDeckCard({ deck, detail = false, initialView }: { deck: Bra
       </div>
       {deck.publicationStatus === 'work-in-progress' && <p className="mt-4 border-2 border-amber-600 bg-amber-500/10 p-4 text-sm font-bold text-amber-900 dark:text-amber-200" role="status">{deck.reviewStatus}</p>}
       <div className="mt-5 grid items-start gap-5 sm:grid-cols-[160px_minmax(0,1fr)]">
-        <figure className="w-32 sm:w-40">
+        <figure className={detail ? "w-32 sm:w-40" : "w-full max-w-60 sm:w-40"}>
           <div className="aspect-[488/680]"><CardImageZoom src={cardImage(deck.commander)} fallbackSrc={cardImageFallback(deck.commander)} alt={deck.commander} /></div>
           <figcaption className="mt-2 text-[10px] leading-4 text-muted-foreground"><a href={cardRecord(deck.commander)} target="_blank" rel="noopener noreferrer" className="underline">Scryfall · {cardPrintingLabel(deck.commander)}</a></figcaption>
         </figure>
@@ -34,6 +35,7 @@ export function BrawlDeckCard({ deck, detail = false, initialView }: { deck: Bra
           <Heading className="text-2xl font-black tracking-tight sm:text-3xl">{deck.title}</Heading>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">{deck.subtitle}</p>
           {deck.plan && <div className="mt-4 border-l-4 border-primary bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">The game plan</p><p className="mt-2 text-sm leading-6">{deck.plan}</p></div>}
+          {!detail && commanderReference?.oracleText && <div className="mt-4 border border-border bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Printed Oracle text · {deck.commander}</p><p className="mt-2 whitespace-pre-line text-sm leading-6">{commanderReference.oracleText}</p></div>}
         </div>
       </div>
       {!detail && <Link href={brawlDeckPath(deck.id)} className="mt-4 inline-flex min-h-11 items-center gap-2 border-2 border-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary hover:bg-primary/10">Explore deck · list & visual spoiler <ArrowRight className="h-4 w-4" /></Link>}

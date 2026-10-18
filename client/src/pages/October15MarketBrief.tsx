@@ -1,25 +1,16 @@
 import React from 'react';
 import { ArrowLeft, CalendarDays, ShieldAlert } from 'lucide-react';
-import ReactMarkdown, { type Components } from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { MarketPostMarkdown } from '@/components/MarketPostMarkdown';
 import { Link } from 'wouter';
 import sourceBrief from '@/data/marketBriefs/2026-10-15-daily-mtg-market-movers.md?raw';
 
 const reportBody = sourceBrief.replace(/^# Daily MTG Market Movers — 30-Signal Brief\s*/, '');
 
-const markdownComponents: Components = {
-  a: ({ href, children, node: _node, ...props }) => (
-    <a
-      {...props}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="break-words text-primary underline underline-offset-2 hover:opacity-80"
-    >
-      {children}
-    </a>
-  ),
-};
+const enhancedBody = reportBody
+  .replace('## Confirmed Competitive Signals (Price Movement Unverified)', '```mtg-card\n{"name":"Pompous Battlemage"}\n```\n\n## Confirmed Competitive Signals (Price Movement Unverified)')
+  .replace('## Commander and Precon Signals', '```mtg-card\n{"name":"Basking Broodscale"}\n```\n\n## Commander and Precon Signals')
+  .replace('## Constructed Format Watch', '```mtg-card\n{"name":"Baleful Strix"}\n```\n\n## Constructed Format Watch');
+
 
 export function October15MarketBrief() {
   return (
@@ -59,7 +50,7 @@ export function October15MarketBrief() {
 export function October15MarketBriefBody() {
   return (
     <article className="prose prose-neutral max-w-none break-words dark:prose-invert prose-headings:tracking-tight prose-a:text-primary prose-strong:text-foreground prose-li:my-1 prose-blockquote:border-primary prose-blockquote:text-muted-foreground">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{reportBody}</ReactMarkdown>
+      <MarketPostMarkdown body={enhancedBody} sourceDate="2026-10-15" />
     </article>
   );
 }

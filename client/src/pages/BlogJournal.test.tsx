@@ -10,6 +10,8 @@ import { retroBattleBoxDecks } from '@/lib/retroBattleBox';
 import { BuyOnlinePanel } from '@/components/BuyOnlinePanel';
 
 function page(path: string) { return renderToStaticMarkup(<Router ssrPath={path}><Route path="/blog/:slug?" component={BlogJournal} /></Router>); }
+function headingId(text: string) { return text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-'); }
+function prose(html: string) { return html.match(/<article class="journal-prose"[\s\S]*?<\/article>/)?.[0] ?? ''; }
 describe('published journal', () => {
   it('separates text posts from charts and preserves every verified posted report date', () => {
     const html = page('/blog');
@@ -47,9 +49,46 @@ describe('published journal', () => {
     for (const d of brawlDecks) expect(brawl).toContain(`href="/brawl-box/${d.id}#buy-online"`);
     const battle = page('/blog/battle-box-october-17-recap');
     for (const d of retroBattleBoxDecks) expect(battle).toContain(`href="/battle-box/${d.id}#buy-online"`);
-    expect(battle.match(/<img\b/g)).toHaveLength(9);
+    expect(battle.match(/<img\b/g)).toHaveLength(10);
     expect(battle.match(/>Buy Online /g)).toHaveLength(9);
     expect(brawlProposedDecks).toHaveLength(3);
+  });
+  it('gives each illustrated article a TOC whose anchors match every h2 id', () => {
+    for (const article of articles) {
+      const html = page(`/blog/${article.slug}`);
+      const headings = Array.from(article.body.matchAll(/^## (.+)$/gm)).map(match => match[1]);
+      expect(headings.length).toBeGreaterThan(0);
+      for (const heading of headings) {
+        const id = headingId(heading);
+        expect(html).toContain(`href="#${id}"`);
+        expect(html).toContain(`id="${id}"`);
+      }
+    }
+  });
+  it('renders remote and Battle article prose as semantic lists', () => {
+    const remote = prose(page('/blog/remote-play-shuffle-tests'));
+    const battle = prose(page('/blog/battle-box-october-17-recap'));
+    expect(remote).toContain('<ol>');
+    expect(remote).toContain('<ul>');
+    expect(battle).toContain('<ul>');
+    expect(battle).not.toContain('<ol>');
+  });
+  it('keeps the hub illustrated and article pages connected by related links', () => {
+    const hub = page('/blog');
+    expect(hub.match(/<img\b/g)).toHaveLength(3);
+    for (const article of articles) {
+      const html = page(`/blog/${article.slug}`);
+      expect(html).toContain('aria-label="Keep reading"');
+      for (const related of articles.filter(item => item.slug !== article.slug)) {
+        expect(html).toContain(`href="/blog/${related.slug}"`);
+      }
+    }
+  });
+  it('keeps every Battle Box deck link in the article prose, not only the card grid', () => {
+    const articleProse = prose(page('/blog/battle-box-october-17-recap'));
+    for (const deck of retroBattleBoxDecks) {
+      expect(articleProse).toContain(`href="/battle-box/${deck.id}"`);
+    }
   });
   it('offers a transparent search rather than a cart or ownership inference', () => {
     const html = renderToStaticMarkup(<BuyOnlinePanel cards={[{name:"Fire // Ice, Test's",quantity:2}]} proxyHelpHref="/battle-box-proxy-print" />);

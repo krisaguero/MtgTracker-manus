@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowLeft, CalendarDays, ShieldAlert } from 'lucide-react';
-import ReactMarkdown, { type Components } from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { MarketPostMarkdown } from '@/components/MarketPostMarkdown';
 import { Link } from 'wouter';
 import { HistoricalPriceWatchlist } from '@/components/HistoricalPriceWatchlist';
 import { october5WatchSignals } from '@/data/historicalMarketWatchSignals';
@@ -9,13 +8,11 @@ import sourceReport from '@/data/marketBriefs/2026-10-05-daily-mtg-market-movers
 
 const reportBody = sourceReport.replace(/(?:^|\n)# Daily MTG Market Movers Report\s*\n/, '\n');
 
-const markdownComponents: Components = {
-  a: ({ href, children, node: _node, ...props }) => (
-    <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="break-words text-primary underline underline-offset-2 hover:opacity-80">
-      {children}
-    </a>
-  ),
-};
+const enhancedBody = reportBody
+  .replace('## 1. High-Value Price Signals (historical source claims)', '```mtg-card\n{"name":"Ink-Treader Nephilim"}\n```\n\n## 1. High-Value Price Signals (historical source claims)')
+  .replace('## 3. Commander Format Staples', '```mtg-card\n{"name":"Ganax, Astral Hunter"}\n```\n\n## 3. Commander Format Staples')
+  .replace('## 6. Standard Breakout Candidates', '```mtg-card\n{"name":"Raffine, Scheming Seer"}\n```\n\n## 6. Standard Breakout Candidates');
+
 
 export function October5MarketReport() {
   return (
@@ -59,7 +56,7 @@ export function October5MarketReport() {
 export function October5MarketReportBody() {
   return (
     <article className="prose prose-neutral max-w-none break-words dark:prose-invert prose-headings:tracking-tight prose-a:text-primary prose-strong:text-foreground prose-li:my-1 prose-blockquote:border-primary prose-blockquote:text-muted-foreground">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{reportBody}</ReactMarkdown>
+      <MarketPostMarkdown body={enhancedBody} sourceDate="2026-10-05" />
     </article>
   );
 }

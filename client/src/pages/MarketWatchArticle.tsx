@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { MarketPostCard } from '@/components/MarketPostCard';
 import { ArrowLeft, ExternalLink, ShieldAlert, Zap, BookOpen } from 'lucide-react';
 
 export function MarketWatchArticle() {
@@ -94,22 +95,18 @@ export function MarketWatchArticle() {
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="border-2 border-border bg-card p-4">
-                <h4 className="font-bold text-lg text-primary">1. Dwarven Recruiter</h4>
-                <p className="text-sm mt-1 text-muted-foreground">Stacks any number of Dwarves; the new tribe now has far more named targets and payoff density. Two printings; August 18 Scryfall USD reference $10.56, foil $76.39.</p>
-              </div>
-              <div className="border-2 border-border bg-card p-4">
-                <h4 className="font-bold text-lg text-primary">2. Dwarven Bloodboiler</h4>
-                <p className="text-sm mt-1 text-muted-foreground">Converts spare Dwarves into combat power, with token-producing Dwarves giving it more board presence. Two printings; Judgment foil reference $120.13.</p>
-              </div>
-              <div className="border-2 border-border bg-card p-4">
-                <h4 className="font-bold text-lg text-primary">3. Reyav, Master Smith</h4>
-                <p className="text-sm mt-1 text-muted-foreground">Grants double strike to attacking equipped creatures; fits Dwarf Equipment and hone counters cleanly. Eight printings; budget entry under $0.25.</p>
-              </div>
-              <div className="border-2 border-border bg-card p-4">
-                <h4 className="font-bold text-lg text-primary">4. Glóin, Dwarf Emissary</h4>
-                <p className="text-sm mt-1 text-muted-foreground">Historic-spell Treasure making shares storied’s artifacts, legends, and Sagas building blocks. Five printings.</p>
-              </div>
+              <MarketPostCard name="Dwarven Recruiter" sourceDate="2026-08-18" kicker="Historical niche watchlist">
+                <p className="text-sm leading-6 text-muted-foreground">Stacks any number of Dwarves; the new tribe now has far more named targets and payoff density. Two printings; August 18 Scryfall USD reference $10.56, foil $76.39.</p>
+              </MarketPostCard>
+              <MarketPostCard name="Dwarven Bloodboiler" sourceDate="2026-08-18" kicker="Historical niche watchlist">
+                <p className="text-sm leading-6 text-muted-foreground">Converts spare Dwarves into combat power, with token-producing Dwarves giving it more board presence. Two printings; Judgment foil reference $120.13.</p>
+              </MarketPostCard>
+              <MarketPostCard name="Reyav, Master Smith" sourceDate="2026-08-18" kicker="Historical niche watchlist">
+                <p className="text-sm leading-6 text-muted-foreground">Grants double strike to attacking equipped creatures; fits Dwarf Equipment and hone counters cleanly. Eight printings; budget entry under $0.25.</p>
+              </MarketPostCard>
+              <MarketPostCard name="Glóin, Dwarf Emissary" sourceDate="2026-08-18" kicker="Historical niche watchlist">
+                <p className="text-sm leading-6 text-muted-foreground">Historic-spell Treasure making shares storied’s artifacts, legends, and Sagas building blocks. Five printings.</p>
+              </MarketPostCard>
             </div>
 
             <h2 className="text-2xl font-bold tracking-tight pt-4 border-t border-border">Method and Disclosure</h2>

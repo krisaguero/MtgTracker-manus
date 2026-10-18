@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowLeft, CalendarDays, ShieldAlert } from 'lucide-react';
-import ReactMarkdown, { type Components } from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { MarketPostMarkdown } from '@/components/MarketPostMarkdown';
 import { Link } from 'wouter';
 import { HistoricalPriceWatchlist } from '@/components/HistoricalPriceWatchlist';
 import { october11WatchSignals } from '@/data/historicalMarketWatchSignals';
@@ -9,13 +8,11 @@ import sourceReport from '@/data/marketBriefs/2026-10-11-daily-mtg-market-movers
 
 const reportBody = sourceReport.replace(/^# Daily MTG Market Movers Report\s*/, '');
 
-const markdownComponents: Components = {
-  a: ({ href, children, node: _node, ...props }) => (
-    <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="break-words text-primary underline underline-offset-2 hover:opacity-80">
-      {children}
-    </a>
-  ),
-};
+const enhancedBody = reportBody
+  .replace('## 1. Historical Price/Value Signals', '```mtg-card\n{"name":"Ink-Treader Nephilim"}\n```\n\n## 1. Historical Price/Value Signals')
+  .replace('## 3. Commander Format Staples', '```mtg-card\n{"name":"Doom Prevails"}\n```\n\n## 3. Commander Format Staples')
+  .replace('## 6. Standard Breakout Candidates', '```mtg-card\n{"name":"Basking Broodscale"}\n```\n\n## 6. Standard Breakout Candidates');
+
 
 export function October11MarketReport() {
   return (
@@ -61,7 +58,7 @@ export function October11MarketReport() {
 export function October11MarketReportBody() {
   return (
     <article className="prose prose-neutral max-w-none break-words dark:prose-invert prose-headings:tracking-tight prose-a:text-primary prose-strong:text-foreground prose-li:my-1 prose-blockquote:border-primary prose-blockquote:text-muted-foreground">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{reportBody}</ReactMarkdown>
+      <MarketPostMarkdown body={enhancedBody} sourceDate="2026-10-11" />
     </article>
   );
 }

@@ -18,6 +18,7 @@ import {
   type LocalBattleBoxDraft,
   type RetroBattleBoxDeck,
 } from '@/lib/retroBattleBox';
+import { battleBoxReferences } from '@/lib/battleBoxStrategy';
 
 const colorHex: Record<string, string> = { W: '#c8b879', U: '#4e81b6', B: '#52506d', R: '#b95542', G: '#56836b' };
 const colorName: Record<string, string> = { W: 'white', U: 'blue', B: 'black', R: 'red', G: 'green' };
@@ -332,20 +333,27 @@ function DeckLayout({ deck, deckNumber, onDownload }: { deck: RetroBattleBoxDeck
   const nonlandCount = deck.groups.filter((group) => group.label !== 'Lands').flatMap((group) => group.cards).reduce((sum, card) => sum + card.quantity, 0);
   const landCount = landGroup?.cards.reduce((sum, card) => sum + card.quantity, 0) || 0;
   const proxyCopies = deck.groups.flatMap((group) => group.cards).filter((card) => card.proxy).reduce((sum, card) => sum + card.quantity, 0);
-  const featuredArtwork = 'featuredArtwork' in deck ? deck.featuredArtwork ?? [] : [];
+  const suppliedArtwork = 'featuredArtwork' in deck ? deck.featuredArtwork ?? [] : [];
+  const representative = deck.groups.flatMap((group) => group.cards).find((card) => battleBoxReferences[card.name]);
+  const representativeRef = (representative ? battleBoxReferences[representative.name] : undefined) ?? Object.values(battleBoxReferences).find(reference => reference.image_uris?.normal);
+  const featuredArtwork = suppliedArtwork.length > 0
+    ? suppliedArtwork.map((art) => ({ ...art, imageUrl: art.imageUrl.replace('/normal/', '/art_crop/') }))
+    : representativeRef?.image_uris?.normal
+      ? [{ name: representativeRef.name, imageUrl: representativeRef.image_uris.normal.replace('/normal/', '/art_crop/') }]
+      : [];
   const houseRule = 'houseRule' in deck ? deck.houseRule : null;
   return <article id={deck.id} className="flex scroll-mt-20 flex-col border-2 border-border bg-card shadow-sm">
-    <div className="relative min-h-44 overflow-hidden p-4 text-white" style={{ background: colorGradient(deck.colors) }}>
-      <div className="absolute -right-8 -top-6 h-36 w-24 rotate-12 rounded-xl border border-white/30 bg-white/10 shadow-xl" aria-hidden="true" />
-      <div className="absolute -right-1 top-2 h-36 w-24 rotate-6 rounded-xl border border-white/40 bg-black/10 shadow-xl" aria-hidden="true" />
-      <div className="relative z-10 flex min-h-36 flex-col justify-between">
+    <div className="relative aspect-video overflow-hidden p-4 text-white" aria-label="Featured card artwork" style={{ background: colorGradient(deck.colors) }}>
+      {featuredArtwork[0] && <img src={featuredArtwork[0].imageUrl} alt={`${featuredArtwork[0].name} — representative deck artwork`} className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/15" aria-hidden="true" />
+      <div className="relative z-10 flex h-full flex-col justify-between">
         <div className="flex flex-wrap items-center justify-between gap-2"><div className="flex flex-wrap gap-1.5"><span className="border border-white/50 bg-black/20 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-widest">Deck #{deckNumber}</span><span className="border border-white/50 bg-black/20 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-widest">{deck.archetype}</span></div><div className="flex gap-1" aria-label={`Colors: ${deck.colors.map((color) => colorName[color]).join(', ')}`}>{deck.colors.map((color) => <span key={color} title={colorName[color]} className="grid h-5 w-5 place-items-center rounded-full border border-white/60 bg-black/30 text-[9px] font-black">{color}</span>)}</div></div>
         <div><p className="font-mono text-[9px] font-bold uppercase tracking-wider text-white/75">{deck.era}</p><h3 className="mt-1 max-w-[85%] text-xl font-black leading-tight"><Link href={battleBoxDeckPath(deck.id)} className="underline-offset-4 hover:underline">{deck.name}</Link></h3><p className="mt-1 text-xs font-semibold text-white/80">{deck.subtitle}</p></div>
       </div>
     </div>
     <div className="flex flex-1 flex-col p-4">
       <p className="min-h-12 text-xs leading-5 text-muted-foreground">{deck.summary}</p>
-      {featuredArtwork.length > 0 && <div className="mt-3 grid grid-cols-3 gap-2" aria-label="Featured card artwork">{featuredArtwork.map((art) => <a key={art.name} href={cardSearch(art.name)} target="_blank" rel="noreferrer" title={art.name} className="block overflow-hidden border border-border bg-muted"><img src={art.imageUrl} alt={`${art.name} card artwork`} className="aspect-[5/7] w-full object-cover object-top" loading="lazy" decoding="async" /></a>)}</div>}
+      <p className="mt-3 text-[10px] leading-4 text-muted-foreground">Representative artwork only · © Wizards of the Coast. Not a printing or ownership claim.</p>
       <div className="mt-4" aria-label={`${nonlandCount} nonland cards and ${landCount} lands`}>
         <div className="flex h-3 overflow-hidden rounded-sm border border-border" title={`${nonlandCount} nonland cards / ${landCount} lands`}><span className="bg-primary" style={{ width: `${(nonlandCount / 60) * 100}%` }} /><span className="bg-muted-foreground/45" style={{ width: `${(landCount / 60) * 100}%` }} /></div>
         <div className="mt-1.5 flex justify-between font-mono text-[9px] font-bold uppercase tracking-wide text-muted-foreground"><span>{nonlandCount} nonlands</span><span>{landCount} lands</span><span>60 cards</span></div>
