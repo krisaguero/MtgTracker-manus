@@ -1,64 +1,136 @@
 /* Design reminder: hard-edged Dupe-Decks workspace; 60-card 1v1 duel deck builder powered by duplicate inventory matching and Groq-assisted theming. */
-import { useState, useMemo, useRef } from 'react';
-import { Link } from 'wouter';
-import { ArrowLeft, CheckCircle2, Copy, Download, FileUp, Key, Layers, Loader2, ShieldAlert, Sparkles, Upload, Wand2, Dice5 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { DUPE_DECK_THEMES, GROQ_RECIPE_OPTIONS, buildGroqDeckPrompt, generateCustomGroqDeck, generateDupeDeck, loadGroqApiKey, parseInventoryText, saveGroqApiKey, type InventoryCard, type DupeDeckResult, type GroqDeckRecipe } from '@/lib/dupeDecksEngine';
-import { loadSavedInventory, saveSavedInventory, loadSideboard, saveSideboard, loadSavedThemes, saveDuelTheme, type SavedDuelTheme } from '@/lib/dupeDecksStorage';
+import { useState, useMemo, useRef } from "react";
+import { Link } from "wouter";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Copy,
+  Download,
+  FileUp,
+  Key,
+  Layers,
+  Loader2,
+  ShieldAlert,
+  Sparkles,
+  Upload,
+  Wand2,
+  Dice5,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DUPE_DECK_THEMES,
+  GROQ_RECIPE_OPTIONS,
+  buildGroqDeckPrompt,
+  generateCustomGroqDeck,
+  generateDupeDeck,
+  loadGroqApiKey,
+  parseInventoryText,
+  saveGroqApiKey,
+  type InventoryCard,
+  type DupeDeckResult,
+  type GroqDeckRecipe,
+} from "@/lib/dupeDecksEngine";
+import {
+  loadSavedInventory,
+  saveSavedInventory,
+  loadSideboard,
+  saveSideboard,
+  loadSavedThemes,
+  saveDuelTheme,
+  type SavedDuelTheme,
+} from "@/lib/dupeDecksStorage";
 
 export function DupeDecks() {
-  const [activeDeckSlot, setActiveDeckSlot] = useState<'a' | 'b'>('a');
-  const [inventoryA, setInventoryA] = useState<string>(() => loadSavedInventory('a'));
-  const [inventoryB, setInventoryB] = useState<string>(() => loadSavedInventory('b'));
-  const [sideboardA, setSideboardA] = useState<string>(() => loadSideboard('a'));
-  const [sideboardB, setSideboardB] = useState<string>(() => loadSideboard('b'));
-  const [savedThemes, setSavedThemes] = useState<SavedDuelTheme[]>(() => loadSavedThemes());
-  const [themePresetName, setThemePresetName] = useState('');
-  const [themeSavedStatus, setThemeSavedStatus] = useState('');
+  const [activeDeckSlot, setActiveDeckSlot] = useState<"a" | "b">("a");
+  const [inventoryA, setInventoryA] = useState<string>(() =>
+    loadSavedInventory("a")
+  );
+  const [inventoryB, setInventoryB] = useState<string>(() =>
+    loadSavedInventory("b")
+  );
+  const [sideboardA, setSideboardA] = useState<string>(() =>
+    loadSideboard("a")
+  );
+  const [sideboardB, setSideboardB] = useState<string>(() =>
+    loadSideboard("b")
+  );
+  const [savedThemes, setSavedThemes] = useState<SavedDuelTheme[]>(() =>
+    loadSavedThemes()
+  );
+  const [themePresetName, setThemePresetName] = useState("");
+  const [themeSavedStatus, setThemeSavedStatus] = useState("");
 
-  const inventoryInput = activeDeckSlot === 'a' ? inventoryA : inventoryB;
-  const sideboardInput = activeDeckSlot === 'a' ? sideboardA : sideboardB;
+  const inventoryInput = activeDeckSlot === "a" ? inventoryA : inventoryB;
+  const sideboardInput = activeDeckSlot === "a" ? sideboardA : sideboardB;
   const setInventoryInput = (val: string) => {
-    if (activeDeckSlot === 'a') {
+    if (activeDeckSlot === "a") {
       setInventoryA(val);
-      saveSavedInventory('a', val);
+      saveSavedInventory("a", val);
     } else {
       setInventoryB(val);
-      saveSavedInventory('b', val);
+      saveSavedInventory("b", val);
     }
   };
 
-  const [selectedTheme, setSelectedTheme] = useState<string>('counter-burn-tempo');
-  const [inventory, setInventory] = useState<InventoryCard[]>(() => parseInventoryText(inventoryInput));
-  const [deck, setDeck] = useState<DupeDeckResult>(() => generateDupeDeck(selectedTheme, inventory));
+  const [selectedTheme, setSelectedTheme] =
+    useState<string>("counter-burn-tempo");
+  const [inventory, setInventory] = useState<InventoryCard[]>(() =>
+    parseInventoryText(inventoryInput)
+  );
+  const [deck, setDeck] = useState<DupeDeckResult>(() =>
+    generateDupeDeck(selectedTheme, inventory)
+  );
   const [copied, setCopied] = useState(false);
 
   function handleUpdateSideboard(text: string) {
-    if (activeDeckSlot === 'a') { setSideboardA(text); saveSideboard('a', text); }
-    else { setSideboardB(text); saveSideboard('b', text); }
+    if (activeDeckSlot === "a") {
+      setSideboardA(text);
+      saveSideboard("a", text);
+    } else {
+      setSideboardB(text);
+      saveSideboard("b", text);
+    }
   }
 
   function handleSaveThemePreset() {
-    const theme = DUPE_DECK_THEMES.find((item) => item.id === selectedTheme);
+    const theme = DUPE_DECK_THEMES.find(item => item.id === selectedTheme);
     const name = themePresetName.trim();
     if (!theme || !name) {
-      setThemeSavedStatus('Choose a built-in theme and enter a name to save it. Custom AI output is available to copy or download, but is not stored as a reusable recipe.');
+      setThemeSavedStatus(
+        "Choose a built-in theme and enter a name to save it. Custom AI output is available to copy or download, but is not stored as a reusable recipe."
+      );
       return;
     }
     try {
-      const saved = saveDuelTheme({ id: `theme-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, name, themeId: theme.id, slot: activeDeckSlot, savedAt: Date.now() });
-      setSavedThemes(saved); setThemePresetName(''); setThemeSavedStatus(`Saved “${name}” for Deck ${activeDeckSlot.toUpperCase()} in this browser.`);
+      const saved = saveDuelTheme({
+        id: `theme-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        name,
+        themeId: theme.id,
+        slot: activeDeckSlot,
+        savedAt: Date.now(),
+      });
+      setSavedThemes(saved);
+      setThemePresetName("");
+      setThemeSavedStatus(
+        `Saved “${name}” for Deck ${activeDeckSlot.toUpperCase()} in this browser.`
+      );
     } catch {
-      setThemeSavedStatus('Could not save this preset in browser storage. Export a local backup or free storage space and try again.');
+      setThemeSavedStatus(
+        "Could not save this preset in browser storage. Export a local backup or free storage space and try again."
+      );
     }
   }
 
   function handleRestoreTheme(theme: SavedDuelTheme) {
-    setActiveDeckSlot(theme.slot); setSelectedTheme(theme.themeId);
-    const text = theme.slot === 'a' ? inventoryA : inventoryB;
+    setActiveDeckSlot(theme.slot);
+    setSelectedTheme(theme.themeId);
+    const text = theme.slot === "a" ? inventoryA : inventoryB;
     const parsed = parseInventoryText(text);
-    setInventory(parsed); setDeck(generateDupeDeck(theme.themeId, parsed));
-    setThemeSavedStatus(`Loaded “${theme.name}” for Deck ${theme.slot.toUpperCase()}.`);
+    setInventory(parsed);
+    setDeck(generateDupeDeck(theme.themeId, parsed));
+    setThemeSavedStatus(
+      `Loaded “${theme.name}” for Deck ${theme.slot.toUpperCase()}.`
+    );
   }
 
   const fileInputRefA = useRef<HTMLInputElement>(null);
@@ -66,11 +138,13 @@ export function DupeDecks() {
 
   const [apiKey, setApiKey] = useState<string>(() => loadGroqApiKey());
   const [aiOptIn, setAiOptIn] = useState(false);
-  const [customPrompt, setCustomPrompt] = useState<string>('Izzet Prowess Spellslinger 1v1 duel deck');
+  const [customPrompt, setCustomPrompt] = useState<string>(
+    "Izzet Prowess Spellslinger 1v1 duel deck"
+  );
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [generationError, setGenerationError] = useState<string | null>(null);
   const [recipe, setRecipe] = useState<GroqDeckRecipe>({
-    theme: 'A haunted seaside treasure hunt with friendly ghosts and pirates',
+    theme: "A haunted seaside treasure hunt with friendly ghosts and pirates",
     gameplan: GROQ_RECIPE_OPTIONS.gameplan[0],
     complexity: GROQ_RECIPE_OPTIONS.complexity[0],
     budget: GROQ_RECIPE_OPTIONS.budget[0],
@@ -91,27 +165,30 @@ export function DupeDecks() {
     setDeck(generateDupeDeck(selectedTheme, parsed));
   }
 
-  function handleSwitchSlot(slot: 'a' | 'b') {
+  function handleSwitchSlot(slot: "a" | "b") {
     setActiveDeckSlot(slot);
-    const text = slot === 'a' ? inventoryA : inventoryB;
+    const text = slot === "a" ? inventoryA : inventoryB;
     const parsed = parseInventoryText(text);
     setInventory(parsed);
     setDeck(generateDupeDeck(selectedTheme, parsed));
   }
 
-  function handleFileUpload(slot: 'a' | 'b', event: React.ChangeEvent<HTMLInputElement>) {
+  function handleFileUpload(
+    slot: "a" | "b",
+    event: React.ChangeEvent<HTMLInputElement>
+  ) {
     const file = event.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = e => {
       const text = e.target?.result;
-      if (typeof text === 'string') {
-        if (slot === 'a') {
+      if (typeof text === "string") {
+        if (slot === "a") {
           setInventoryA(text);
-          saveSavedInventory('a', text);
+          saveSavedInventory("a", text);
         } else {
           setInventoryB(text);
-          saveSavedInventory('b', text);
+          saveSavedInventory("b", text);
         }
         if (activeDeckSlot === slot) {
           const parsed = parseInventoryText(text);
@@ -121,7 +198,7 @@ export function DupeDecks() {
       }
     };
     reader.readAsText(file);
-    event.target.value = '';
+    event.target.value = "";
   }
 
   function handleMergeInventories() {
@@ -139,11 +216,15 @@ export function DupeDecks() {
 
   async function handleGenerateCustom() {
     if (!aiOptIn) {
-      setGenerationError('AI is off by default. Enable the one-time opt-in below before requesting a Groq generation.');
+      setGenerationError(
+        "AI is off by default. Enable the one-time opt-in below before requesting a Groq generation."
+      );
       return;
     }
     if (!apiKey.trim()) {
-      setGenerationError('Please enter a Groq API key to generate custom AI archetypes.');
+      setGenerationError(
+        "Please enter a Groq API key to generate custom AI archetypes."
+      );
       return;
     }
     setGenerationError(null);
@@ -152,12 +233,22 @@ export function DupeDecks() {
       const parsedInventory = parseInventoryText(inventoryInput);
       setInventory(parsedInventory);
       const prompt = buildGroqDeckPrompt(recipe, customPrompt);
-      const result = await generateCustomGroqDeck(prompt, parsedInventory, apiKey.trim());
+      const result = await generateCustomGroqDeck(
+        prompt,
+        parsedInventory,
+        apiKey.trim()
+      );
       setDeck(result);
-      setSelectedTheme('custom');
+      setSelectedTheme("custom");
     } catch (err: any) {
-      setGenerationError(err?.message || 'Failed to generate custom deck via Groq.');
+      setGenerationError(
+        err?.message || "Failed to generate custom deck via Groq."
+      );
     } finally {
+      // The opt-in and BYOK credential are one-request permissions, never persistent state.
+      setApiKey("");
+      saveGroqApiKey("");
+      setAiOptIn(false);
       setIsGenerating(false);
     }
   }
@@ -165,17 +256,20 @@ export function DupeDecks() {
   const exportText = useMemo(() => {
     const lines: string[] = [];
     lines.push(`// Dupe-Decks 60-Card 1v1 Duel Deck: ${deck.title}`);
-    lines.push(`// Theme: ${deck.theme} | Coverage: ${deck.coveragePercent}% owned from your inventory${deck.groqPowered ? ' (Groq AI)' : ''}`);
-    lines.push('');
+    lines.push(
+      `// Theme: ${deck.theme} | Coverage: ${deck.coveragePercent}% owned from your inventory${deck.groqPowered ? " (Groq AI)" : ""}`
+    );
+    lines.push("");
     for (const card of deck.cards) {
       lines.push(`${card.quantity} ${card.name}`);
     }
     const sideboardCards = parseInventoryText(sideboardInput);
     if (sideboardCards.length) {
-      lines.push('', 'Sideboard');
-      for (const card of sideboardCards) lines.push(`${card.quantity} ${card.name}`);
+      lines.push("", "Sideboard");
+      for (const card of sideboardCards)
+        lines.push(`${card.quantity} ${card.name}`);
     }
-    return lines.join('\n');
+    return lines.join("\n");
   }, [deck, sideboardInput]);
 
   async function handleCopy() {
@@ -189,11 +283,11 @@ export function DupeDecks() {
   }
 
   function handleDownload() {
-    const blob = new Blob([exportText], { type: 'text/plain;charset=utf-8' });
+    const blob = new Blob([exportText], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = `${deck.title.toLowerCase().replace(/[^a-z0-9]/g, '_')}.txt`;
+    link.download = `${deck.title.toLowerCase().replace(/[^a-z0-9]/g, "_")}.txt`;
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -202,17 +296,29 @@ export function DupeDecks() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary hover:underline">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-primary hover:underline"
+          >
             <ArrowLeft className="h-4 w-4" /> Back to Recent Sets
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/market-report" className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary">
+            <Link
+              href="/market-report"
+              className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary"
+            >
               Market Report
             </Link>
-            <Link href="/movers" className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary">
+            <Link
+              href="/movers"
+              className="border border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground hover:border-primary hover:text-primary"
+            >
               Daily Movers
             </Link>
-            <Link href="/duel-battle-box" className="border border-primary bg-primary/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
+            <Link
+              href="/duel-battle-box"
+              className="border border-primary bg-primary/10 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground"
+            >
               Four-Deck Battle Box
             </Link>
           </div>
@@ -224,9 +330,14 @@ export function DupeDecks() {
           <div className="flex flex-wrap items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
             <Layers className="h-4 w-4" /> 60-Card 1v1 Duel Builder + Groq AI
           </div>
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Dupe-Decks: Library &amp; Inventory Processor</h1>
+          <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+            Dupe-Decks: Library &amp; Inventory Processor
+          </h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            Import a card pool or local inventory to build casual 60-card 1v1 theme decks, compare owned copies, plan a sideboard, and save reusable theme presets. Optional AI-generated lists should be checked before play.
+            Import a card pool or local inventory to build casual 60-card 1v1
+            theme decks, compare owned copies, plan a sideboard, and save
+            reusable theme presets. Optional AI-generated lists should be
+            checked before play.
           </p>
         </div>
 
@@ -238,97 +349,214 @@ export function DupeDecks() {
                 <Key className="h-4 w-4" /> Groq AI Integration
               </div>
               <h2 className="mt-2 text-xl font-bold">Configure Groq API Key</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Bring your own Groq API key for optional custom deck ideas. Ordinary deck building and inventory matching stay local and do not need AI.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Bring your own Groq API key for optional custom deck ideas.
+                Ordinary deck building and inventory matching stay local and do
+                not need AI.
+              </p>
               <input
                 type="password"
                 value={apiKey}
-                onChange={(e) => handleSaveKey(e.target.value)}
+                onChange={e => handleSaveKey(e.target.value)}
                 placeholder="gsk_..."
                 aria-label="Groq API Key"
                 className="mt-4 w-full border border-border bg-background p-3 font-mono text-xs text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
               />
-              <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">Held in this tab’s session storage; it is not sent to the app server.</p>
+              <p className="mt-1.5 font-mono text-[10px] text-muted-foreground">
+                Held in memory only and cleared after each AI request; it is not
+                sent to the app server.
+              </p>
 
               <label className="mt-4 flex cursor-pointer items-start gap-2 border border-border bg-background p-3 text-xs leading-5">
-                <input type="checkbox" checked={aiOptIn} onChange={(event) => { setAiOptIn(event.target.checked); setGenerationError(null); }} className="mt-0.5 h-4 w-4 accent-primary" />
-                <span><strong>Allow an AI request in this tab.</strong> Nothing is sent until this is checked and you click Generate. The prompt, recipe choices, and inventory card count go directly from this browser to Groq; card names, the collection file, and ownership records are not included. Your key is sent only to Groq as the request credential.</span>
+                <input
+                  type="checkbox"
+                  checked={aiOptIn}
+                  onChange={event => {
+                    setAiOptIn(event.target.checked);
+                    setGenerationError(null);
+                  }}
+                  className="mt-0.5 h-4 w-4 accent-primary"
+                />
+                <span>
+                  <strong>Allow an AI request in this tab.</strong> Nothing is
+                  sent until this is checked and you click Generate. The prompt,
+                  recipe choices, and inventory card count go directly from this
+                  browser to Groq; card names, the collection file, and
+                  ownership records are not included. Your key is sent only to
+                  Groq as the request credential.
+                </span>
               </label>
 
               <div className="mt-6 border-t border-border pt-5">
                 <div className="flex items-center justify-between gap-3">
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-primary">Custom AI Prompt / Theme</label>
-                  <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase text-muted-foreground"><Dice5 className="h-3.5 w-3.5" /> Recipe mode</span>
+                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-primary">
+                    Custom AI Prompt / Theme
+                  </label>
+                  <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase text-muted-foreground">
+                    <Dice5 className="h-3.5 w-3.5" /> Recipe mode
+                  </span>
                 </div>
                 <input
                   type="text"
                   value={customPrompt}
-                  onChange={(e) => setCustomPrompt(e.target.value)}
+                  onChange={e => setCustomPrompt(e.target.value)}
                   placeholder="e.g. Mono-Red Aggro Goblins"
                   aria-label="Custom AI Prompt or Theme"
                   className="mt-2 w-full border border-border bg-background p-2.5 font-mono text-xs text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                 />
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Game plan<select value={recipe.gameplan} onChange={(e) => setRecipe((current) => ({ ...current, gameplan: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.gameplan.map((option) => <option key={option}>{option}</option>)}</select></label>
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Complexity<select value={recipe.complexity} onChange={(e) => setRecipe((current) => ({ ...current, complexity: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.complexity.map((option) => <option key={option}>{option}</option>)}</select></label>
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Budget lens<select value={recipe.budget} onChange={(e) => setRecipe((current) => ({ ...current, budget: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.budget.map((option) => <option key={option}>{option}</option>)}</select></label>
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Story flavor<select value={recipe.flavor} onChange={(e) => setRecipe((current) => ({ ...current, flavor: e.target.value }))} className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary">{GROQ_RECIPE_OPTIONS.flavor.map((option) => <option key={option}>{option}</option>)}</select></label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Game plan
+                    <select
+                      value={recipe.gameplan}
+                      onChange={e =>
+                        setRecipe(current => ({
+                          ...current,
+                          gameplan: e.target.value,
+                        }))
+                      }
+                      className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary"
+                    >
+                      {GROQ_RECIPE_OPTIONS.gameplan.map(option => (
+                        <option key={option}>{option}</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Complexity
+                    <select
+                      value={recipe.complexity}
+                      onChange={e =>
+                        setRecipe(current => ({
+                          ...current,
+                          complexity: e.target.value,
+                        }))
+                      }
+                      className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary"
+                    >
+                      {GROQ_RECIPE_OPTIONS.complexity.map(option => (
+                        <option key={option}>{option}</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Budget lens
+                    <select
+                      value={recipe.budget}
+                      onChange={e =>
+                        setRecipe(current => ({
+                          ...current,
+                          budget: e.target.value,
+                        }))
+                      }
+                      className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary"
+                    >
+                      {GROQ_RECIPE_OPTIONS.budget.map(option => (
+                        <option key={option}>{option}</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Story flavor
+                    <select
+                      value={recipe.flavor}
+                      onChange={e =>
+                        setRecipe(current => ({
+                          ...current,
+                          flavor: e.target.value,
+                        }))
+                      }
+                      className="mt-1 w-full border border-border bg-background p-2 text-[11px] font-normal normal-case text-foreground outline-none focus:border-primary"
+                    >
+                      {GROQ_RECIPE_OPTIONS.flavor.map(option => (
+                        <option key={option}>{option}</option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
-                <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-relaxed text-muted-foreground">The builder combines these choices into a tighter prompt: simple curve, 60 cards, 1v1 rules, four-copy limits, and a first-three-turn plan.</p>
+                <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-relaxed text-muted-foreground">
+                  The builder combines these choices into a tighter prompt:
+                  simple curve, 60 cards, 1v1 rules, four-copy limits, and a
+                  first-three-turn plan.
+                </p>
                 <Button
                   onClick={handleGenerateCustom}
                   disabled={isGenerating || !aiOptIn || !apiKey.trim()}
                   className="mt-3 w-full gap-2 font-mono text-xs uppercase tracking-wider"
                 >
-                  {isGenerating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
-                  {isGenerating ? 'Generating via Groq AI...' : aiOptIn ? 'Generate Custom AI Deck' : 'AI off · opt in to generate'}
+                  {isGenerating ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Wand2 className="h-4 w-4" />
+                  )}
+                  {isGenerating
+                    ? "Generating via Groq AI..."
+                    : aiOptIn
+                      ? "Generate Custom AI Deck"
+                      : "AI off · opt in to generate"}
                 </Button>
-                {generationError && <p className="mt-2 text-xs font-semibold text-destructive">{generationError}</p>}
+                {generationError && (
+                  <p className="mt-2 text-xs font-semibold text-destructive">
+                    {generationError}
+                  </p>
+                )}
               </div>
             </div>
 
             <div className="border-2 border-border bg-card p-6">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold">1. Import Dual Inventories</h2>
+                <h2 className="text-xl font-bold">
+                  1. Import Dual Inventories
+                </h2>
                 <div className="flex gap-1 border border-border bg-background p-1">
                   <button
                     type="button"
-                    onClick={() => handleSwitchSlot('a')}
-                    className={`px-3 py-1 font-mono text-xs font-bold uppercase transition-colors ${activeDeckSlot === 'a' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                    onClick={() => handleSwitchSlot("a")}
+                    className={`px-3 py-1 font-mono text-xs font-bold uppercase transition-colors ${activeDeckSlot === "a" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
                   >
                     Deck A
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleSwitchSlot('b')}
-                    className={`px-3 py-1 font-mono text-xs font-bold uppercase transition-colors ${activeDeckSlot === 'b' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                    onClick={() => handleSwitchSlot("b")}
+                    className={`px-3 py-1 font-mono text-xs font-bold uppercase transition-colors ${activeDeckSlot === "b" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
                   >
                     Deck B
                   </button>
                 </div>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">Manage and remember two separate inventory lists (e.g. Player A & Player B or two deck pools).</p>
-              
+              <p className="mt-1 text-sm text-muted-foreground">
+                Manage and remember two separate inventory lists (e.g. Player A
+                & Player B or two deck pools).
+              </p>
+
               <div className="mt-4 flex flex-wrap items-center gap-2">
                 <input
                   ref={fileInputRefA}
                   type="file"
                   accept=".txt,.csv"
                   className="hidden"
-                  onChange={(e) => handleFileUpload('a', e)}
+                  onChange={e => handleFileUpload("a", e)}
                 />
                 <input
                   ref={fileInputRefB}
                   type="file"
                   accept=".txt,.csv"
                   className="hidden"
-                  onChange={(e) => handleFileUpload('b', e)}
+                  onChange={e => handleFileUpload("b", e)}
                 />
                 <Button
                   variant="outline"
-                  onClick={() => (activeDeckSlot === 'a' ? fileInputRefA : fileInputRefB).current?.click()}
+                  onClick={() =>
+                    (activeDeckSlot === "a"
+                      ? fileInputRefA
+                      : fileInputRefB
+                    ).current?.click()
+                  }
                   className="gap-2 font-mono text-xs uppercase"
                 >
-                  <Upload className="h-3.5 w-3.5" /> Upload {activeDeckSlot === 'a' ? 'Deck A' : 'Deck B'} File
+                  <Upload className="h-3.5 w-3.5" /> Upload{" "}
+                  {activeDeckSlot === "a" ? "Deck A" : "Deck B"} File
                 </Button>
                 <Button
                   variant="outline"
@@ -341,31 +569,92 @@ export function DupeDecks() {
 
               <textarea
                 value={inventoryInput}
-                onChange={(e) => handleUpdateInventory(e.target.value)}
+                onChange={e => handleUpdateInventory(e.target.value)}
                 rows={6}
                 aria-label={`Paste inventory card list for Deck ${activeDeckSlot.toUpperCase()}`}
                 className="mt-4 w-full border border-border bg-background p-3 font-mono text-xs leading-5 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                 placeholder="4 Lightning Bolt&#10;4 Counterspell..."
               />
-              <p className="mt-2 font-mono text-xs text-muted-foreground">Detected {inventory.length} unique inventory lines.</p>
+              <p className="mt-2 font-mono text-xs text-muted-foreground">
+                Detected {inventory.length} unique inventory lines.
+              </p>
               <div className="mt-4 border-t border-border pt-4">
-                <label htmlFor="duel-sideboard" className="font-mono text-xs font-bold uppercase tracking-wider text-primary">Deck {activeDeckSlot.toUpperCase()} sideboard</label>
-                <p className="mt-1 text-xs text-muted-foreground">Optional cards are kept separate from the 60-card main list and included in exports.</p>
-                <textarea id="duel-sideboard" value={sideboardInput} onChange={(event) => handleUpdateSideboard(event.target.value)} rows={4} placeholder="1 Abrade\n2 Negate" className="mt-2 w-full border border-border bg-background p-3 font-mono text-xs leading-5 text-foreground outline-none focus:border-primary" />
+                <label
+                  htmlFor="duel-sideboard"
+                  className="font-mono text-xs font-bold uppercase tracking-wider text-primary"
+                >
+                  Deck {activeDeckSlot.toUpperCase()} sideboard
+                </label>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Optional cards are kept separate from the 60-card main list
+                  and included in exports.
+                </p>
+                <textarea
+                  id="duel-sideboard"
+                  value={sideboardInput}
+                  onChange={event => handleUpdateSideboard(event.target.value)}
+                  rows={4}
+                  placeholder="1 Abrade\n2 Negate"
+                  className="mt-2 w-full border border-border bg-background p-3 font-mono text-xs leading-5 text-foreground outline-none focus:border-primary"
+                />
               </div>
             </div>
 
             <div className="border-2 border-border bg-card p-6">
               <h2 className="text-xl font-bold">2. Prebuilt 1v1 Duel Themes</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Or choose a classic 60-card archetype.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Or choose a classic 60-card archetype.
+              </p>
               <div className="mt-4 border border-border bg-background p-3">
-                <h3 className="font-mono text-xs font-black uppercase tracking-wider text-primary">Save a theme for later</h3>
-                <div className="mt-2 flex flex-col gap-2 sm:flex-row"><input value={themePresetName} onChange={(event) => setThemePresetName(event.target.value)} maxLength={120} placeholder="Preset name" aria-label="Saved theme preset name" className="min-h-10 flex-1 border border-border bg-card px-3 text-sm" /><Button type="button" variant="outline" className="min-h-10" onClick={handleSaveThemePreset}>Save selected theme</Button></div>
-                {themeSavedStatus && <p role="status" className="mt-2 text-xs text-muted-foreground">{themeSavedStatus}</p>}
-                {savedThemes.length > 0 && <div className="mt-3 flex flex-wrap gap-2"><span className="w-full font-mono text-[10px] font-bold uppercase text-muted-foreground">Saved presets</span>{savedThemes.map((theme) => <button key={theme.id} type="button" onClick={() => handleRestoreTheme(theme)} className="min-h-10 border border-border bg-card px-3 text-xs font-semibold hover:border-primary">{theme.name} · Deck {theme.slot.toUpperCase()}</button>)}</div>}
+                <h3 className="font-mono text-xs font-black uppercase tracking-wider text-primary">
+                  Save a theme for later
+                </h3>
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+                  <input
+                    value={themePresetName}
+                    onChange={event => setThemePresetName(event.target.value)}
+                    maxLength={120}
+                    placeholder="Preset name"
+                    aria-label="Saved theme preset name"
+                    className="min-h-10 flex-1 border border-border bg-card px-3 text-sm"
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="min-h-10"
+                    onClick={handleSaveThemePreset}
+                  >
+                    Save selected theme
+                  </Button>
+                </div>
+                {themeSavedStatus && (
+                  <p
+                    role="status"
+                    className="mt-2 text-xs text-muted-foreground"
+                  >
+                    {themeSavedStatus}
+                  </p>
+                )}
+                {savedThemes.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="w-full font-mono text-[10px] font-bold uppercase text-muted-foreground">
+                      Saved presets
+                    </span>
+                    {savedThemes.map(theme => (
+                      <button
+                        key={theme.id}
+                        type="button"
+                        onClick={() => handleRestoreTheme(theme)}
+                        className="min-h-10 border border-border bg-card px-3 text-xs font-semibold hover:border-primary"
+                      >
+                        {theme.name} · Deck {theme.slot.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="mt-4 space-y-3">
-                {DUPE_DECK_THEMES.map((theme) => {
+                {DUPE_DECK_THEMES.map(theme => {
                   const isSelected = selectedTheme === theme.id;
                   return (
                     <button
@@ -373,7 +662,9 @@ export function DupeDecks() {
                       type="button"
                       onClick={() => handleBuildDeck(theme.id)}
                       className={`w-full text-left border-2 p-4 transition-colors ${
-                        isSelected ? 'border-primary bg-primary/5' : 'border-border bg-background hover:border-primary/50'
+                        isSelected
+                          ? "border-primary bg-primary/5"
+                          : "border-border bg-background hover:border-primary/50"
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -382,7 +673,9 @@ export function DupeDecks() {
                           {theme.archetype}
                         </span>
                       </div>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{theme.desc}</p>
+                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                        {theme.desc}
+                      </p>
                     </button>
                   );
                 })}
@@ -396,14 +689,25 @@ export function DupeDecks() {
               <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-6">
                 <div>
                   <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-primary">
-                    <Sparkles className="h-4 w-4" /> {deck.groqPowered ? 'Groq AI Powered' : 'Local Heuristic Engine'}
+                    <Sparkles className="h-4 w-4" />{" "}
+                    {deck.groqPowered
+                      ? "Groq AI Powered"
+                      : "Local Heuristic Engine"}
                   </div>
-                  <h2 className="mt-2 text-2xl font-bold sm:text-3xl">{deck.title}</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">{deck.description}</p>
+                  <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
+                    {deck.title}
+                  </h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {deck.description}
+                  </p>
                 </div>
                 <div className="border-2 border-border bg-background px-4 py-3 text-right">
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Inventory Coverage</p>
-                  <p className="text-2xl font-extrabold text-primary">{deck.coveragePercent}%</p>
+                  <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Inventory Coverage
+                  </p>
+                  <p className="text-2xl font-extrabold text-primary">
+                    {deck.coveragePercent}%
+                  </p>
                 </div>
               </div>
 
@@ -411,37 +715,58 @@ export function DupeDecks() {
                 <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider">
                   <span>Total Cards: {deck.totalCards}</span>
                   <span>·</span>
-                  <span>Colors: {deck.colors.join(', ')}</span>
+                  <span>Colors: {deck.colors.join(", ")}</span>
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="default" className="gap-2" onClick={handleCopy}>
-                    {copied ? <CheckCircle2 className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                    {copied ? 'List Copied' : 'Copy List'}
+                  <Button
+                    variant="default"
+                    className="gap-2"
+                    onClick={handleCopy}
+                  >
+                    {copied ? (
+                      <CheckCircle2 className="h-4 w-4" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                    {copied ? "List Copied" : "Copy List"}
                   </Button>
-                  <Button variant="outline" className="gap-2" onClick={handleDownload}>
+                  <Button
+                    variant="outline"
+                    className="gap-2"
+                    onClick={handleDownload}
+                  >
                     <Download className="h-4 w-4" /> Download .txt
                   </Button>
                 </div>
               </div>
 
               <div className="mt-6 space-y-2 max-h-[500px] overflow-y-auto pr-2">
-                {deck.cards.map((card) => (
-                  <div key={card.name} className={`flex items-center justify-between border p-3 ${card.isCovered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-rose-500/30 bg-rose-500/5'}`}>
+                {deck.cards.map(card => (
+                  <div
+                    key={card.name}
+                    className={`flex items-center justify-between border p-3 ${card.isCovered ? "border-emerald-500/30 bg-emerald-500/5" : "border-rose-500/30 bg-rose-500/5"}`}
+                  >
                     <div className="flex items-center gap-3">
-                      <span className="border border-border bg-background px-2 py-0.5 font-mono text-xs font-bold">{card.quantity}×</span>
+                      <span className="border border-border bg-background px-2 py-0.5 font-mono text-xs font-bold">
+                        {card.quantity}×
+                      </span>
                       <div>
                         <p className="font-bold text-sm">{card.name}</p>
-                        <p className="text-[10px] font-mono text-muted-foreground uppercase">{card.type}</p>
+                        <p className="text-[10px] font-mono text-muted-foreground uppercase">
+                          {card.type}
+                        </p>
                       </div>
                     </div>
                     <div className="text-right font-mono text-xs">
                       {card.isCovered ? (
                         <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold">
-                          <CheckCircle2 className="h-3.5 w-3.5" /> Owned ({card.ownedCount})
+                          <CheckCircle2 className="h-3.5 w-3.5" /> Owned (
+                          {card.ownedCount})
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-rose-600 dark:text-rose-400 font-bold">
-                          <ShieldAlert className="h-3.5 w-3.5" /> Need {card.quantity - card.ownedCount} more
+                          <ShieldAlert className="h-3.5 w-3.5" /> Need{" "}
+                          {card.quantity - card.ownedCount} more
                         </span>
                       )}
                     </div>

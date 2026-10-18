@@ -10,6 +10,8 @@ import { LocalDataControls } from '@/components/LocalDataControls';
 import { CollectionPlanner } from '@/components/CollectionPlanner';
 import { BinderUpgradeRadar } from '@/components/BinderUpgradeRadar';
 import { InventoryOnboardingAssistant } from '@/components/InventoryOnboardingAssistant';
+import { CollectionDirectory } from '@/components/CollectionDirectory';
+import { PrivateCollectionAnalysis } from '@/components/PrivateCollectionAnalysis';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { startLogin } from '@/const';
@@ -56,13 +58,14 @@ export default function Collection() {
             <Archive className="h-4 w-4" /> Private workspace
           </div>
           <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] sm:text-5xl">Your collection, kept off the shelf.</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">Import a ManaBox export to compare exact printings against Commander decks, track set goals and variant wishlists, reserve duplicates for trading, and build missing-card shopping lists. Collection records stay in this browser.</p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">Turn scanned cards into a useful library: review exact printings, protect keepers, reserve deck copies, and choose what to trade or build next. Work stays in this browser unless you explicitly transfer a private backup or approve an optional analysis.</p>
         </section>
 
         <div className="mt-6 flex flex-wrap gap-2 border-y border-border py-3 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
           <span className="inline-flex items-center gap-2 border border-border bg-card px-3 py-2"><Layers3 className="h-4 w-4 text-primary" /> Browser workspace · exact-printing safe imports</span>
           <button type="button" onClick={() => setIsManaBoxOpen(true)} className="border border-primary bg-primary px-3 py-2 text-primary-foreground transition-colors hover:bg-primary/90">Import ManaBox</button>
           <Link href="/commander" className="border border-border bg-card px-3 py-2 transition-colors hover:border-primary hover:text-primary">Browse Commander archive</Link>
+          <Link href="/collection/sets" className="border border-border bg-card px-3 py-2 transition-colors hover:border-primary hover:text-primary">All release checklists</Link>
         </div>
 
         <LocalDataControls onWorkspaceChanged={() => setCollectionVersion((value) => value + 1)} />
@@ -71,6 +74,10 @@ export default function Collection() {
           <CollectionWorkspaceSkeleton />
         ) : <>
         <NextBestPurchases collection={localCollection} onOpenImportModal={() => setIsManaBoxOpen(true)} />
+
+        <CollectionDirectory key={collectionVersion} cards={localCollection} onOpenImportModal={() => setIsManaBoxOpen(true)} />
+
+        {localCollection.length > 0 && <PrivateCollectionAnalysis setName="Scanned library" collection={localCollection} />}
 
         <CollectionOverview
           onOpenImportModal={() => setIsManaBoxOpen(true)}
@@ -96,7 +103,7 @@ export default function Collection() {
 
       <footer className="border-t border-border bg-muted/30 py-8">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>Collection and deck workspace data stay in this browser unless you export a backup. Set discovery is available from the <Link href="/" className="font-semibold text-primary hover:underline">recent sets timeline</Link>.</p>
+          <p>Local-first collection and deck data stay in this browser until an explicit transfer. Optional private Supabase storage and consent-gated Groq analysis are separate choices. Explore the <Link href="/collection/sets" className="font-semibold text-primary hover:underline">release directory</Link>.</p>
         </div>
       </footer>
     </div>

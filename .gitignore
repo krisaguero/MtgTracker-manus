@@ -38,3 +38,11 @@ pnpm-debug.log*
 # OS
 Thumbs.db
 .project-config.json
+
+# Private collection scans and import receipts never belong in source control.
+ManaBox_Collection.csv
+Inventory_*.csv
+**/mtg-private-import/
+**/normalized_import.json
+**/owned-preview.json
+**/import-receipt.json

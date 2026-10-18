@@ -14,6 +14,9 @@ import {
   type SupabaseWorkspaceSession,
 } from '@/lib/supabaseWorkspaceSync';
 import { createLocalWorkspaceBackup, restoreLocalWorkspaceBackup } from '@/lib/localWorkspace';
+import { loadPrivatePrimaryInventory, type PrivateInventorySnapshot } from '@/lib/privateInventory';
+import { saveOwnedCollection } from '@/lib/manaboxParser';
+import { PrivateInventoryImport } from '@/components/PrivateInventoryImport';
 
 interface SupabaseWorkspaceBackupProps {
   onWorkspaceChanged?: () => void;
@@ -29,9 +32,33 @@ export function SupabaseWorkspaceBackup({ onWorkspaceChanged }: SupabaseWorkspac
   const [creatingAccount, setCreatingAccount] = useState(false);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
+  const [inventoryPreview, setInventoryPreview] = useState<PrivateInventorySnapshot | null>(null);
+
+  async function previewPrimaryInventory() {
+    if (!config) return;
+    setBusy(true);
+    setInventoryPreview(null);
+    try {
+      const snapshot = await loadPrivatePrimaryInventory(config);
+      setInventoryPreview(snapshot);
+      setStatus(`Private inventory preview: ${snapshot.printingEntries.toLocaleString()} printing entries, ${snapshot.copies.toLocaleString()} copies. Nothing in this browser has changed.`);
+    } catch {
+      setStatus('Private inventory is unavailable. Sign in to the intended Supabase account and check the project configuration.');
+    } finally { setBusy(false); }
+  }
+
+  function applyPrimaryInventory() {
+    if (!inventoryPreview || !inventoryPreview.cards.length) return;
+    if (!window.confirm('Replace this browser’s collection with the previewed private primary inventory? Export a local backup first. Existing local-only collection changes are replaced; decks and other workspace records stay unchanged.')) return;
+    saveOwnedCollection(inventoryPreview.cards);
+    onWorkspaceChanged?.();
+    setInventoryPreview(null);
+    setStatus('Primary inventory loaded into this browser. Changes remain local unless you explicitly back up. Source scans and provenance remain private in Supabase.');
+  }
 
   async function handleOptInChange(enabled: boolean) {
     setStatus(null);
+    setInventoryPreview(null);
     if (enabled) {
       setSupabaseSyncOptIn(true);
       setOptedIn(true);
@@ -117,6 +144,7 @@ export function SupabaseWorkspaceBackup({ onWorkspaceChanged }: SupabaseWorkspac
     await signOutFromSupabase(config);
     setSession(null);
     setPassword('');
+    setInventoryPreview(null);
     setStatus('Signed out of Supabase. The cloud backup itself was not deleted.');
   }
 
@@ -175,11 +203,18 @@ export function SupabaseWorkspaceBackup({ onWorkspaceChanged }: SupabaseWorkspac
                 <div className="flex flex-wrap gap-2 border-t border-border pt-3">
                   <Button type="button" variant="outline" onClick={() => void handleBackup()} disabled={busy} className="min-h-10 gap-2"><CloudUpload className="h-4 w-4" /> Back up to cloud</Button>
                   <Button type="button" variant="outline" onClick={() => void handleRestore()} disabled={busy} className="min-h-10 gap-2"><CloudDownload className="h-4 w-4" /> Restore from cloud</Button>
+                  <Button type="button" variant="outline" onClick={() => void previewPrimaryInventory()} disabled={busy} className="min-h-10 gap-2"><CloudDownload className="h-4 w-4" /> Preview primary inventory</Button>
+                  {inventoryPreview && <div className="w-full border border-primary/30 bg-primary/5 p-3 text-sm">
+                    <p>{inventoryPreview.printingEntries.toLocaleString()} printing entries · {inventoryPreview.copies.toLocaleString()} copies. Overlapping scans use conservative maximum counts, not added counts. Unlisted cards are unknown, not necessarily unowned.</p>
+                    <p className="mt-2 text-xs text-muted-foreground">This replaces this browser’s collection only. Shared browsers retain local records after sign-out; export or clear local data when appropriate.</p>
+                    <Button type="button" onClick={applyPrimaryInventory} disabled={busy || !inventoryPreview.cards.length} className="mt-3">Use as this browser’s collection</Button>
+                  </div>}
                 </div>
               )}
             </div>
           )}
           <p className="mt-2 max-w-3xl text-[11px] leading-relaxed text-muted-foreground">Backups are protected by per-user row-level security. The sign-in session is stored in this tab only; the backup excludes passwords, tokens, and API keys. Disconnecting leaves any cloud copy intact.</p>
+          {config && optedIn && session && <PrivateInventoryImport config={config} />}
         </>
       )}
       {status && <p role="status" className="mt-3 border border-primary/30 bg-primary/5 p-3 text-xs leading-relaxed text-muted-foreground">{status}</p>}

@@ -17,6 +17,8 @@ const CommanderLibrary = lazy(() => import('@/pages/CommanderLibrary'));
 const CommanderPreconLibrary = lazy(() => import('@/pages/CommanderPreconLibrary'));
 const CommanderMarketIndex = lazy(() => import('@/pages/CommanderMarketIndex'));
 const Collection = lazy(() => import('@/pages/Collection'));
+const CollectionSetDirectory = lazy(() => import('@/pages/CollectionSetDirectory'));
+const CollectionSetIndex = lazy(() => import('@/pages/CollectionSetIndex'));
 const MarketReport = lazy(() => import('@/pages/MarketReport'));
 const LatestMarketReport = lazy(() => import('@/pages/LatestMarketReport'));
 const MarketReportArchive = lazy(() => import('@/pages/MarketReportArchive'));
@@ -63,6 +65,8 @@ function Router() {
         <Route path={'/precons'} component={CommanderPreconLibrary} />
         <Route path={'/commander-market'} component={CommanderMarketIndex} />
         <Route path={'/collection'} component={Collection} />
+        <Route path={'/collection/sets'} component={CollectionSetIndex} />
+        <Route path={'/collection/sets/:setCode'} component={CollectionSetDirectory} />
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
         <Route path={'/limited'} component={Limited} />
         <Route path={'/markets'} component={MarketHub} />

@@ -10,6 +10,7 @@ export interface OwnedCard {
   language?: string;
   scryfallId?: string;
   proxy?: boolean;
+  tradeQuantity?: number;
 }
 
 export interface CollectionImportReport {

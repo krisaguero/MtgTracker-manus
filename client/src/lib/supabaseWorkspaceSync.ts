@@ -213,6 +213,13 @@ async function requireSession(
   return refreshIfNeeded(session, config, dependencies);
 }
 
+export async function getAuthorizedSupabaseSession(
+  config: SupabasePublicConfig,
+  dependencies: SupabaseSyncDependencies = defaultDependencies(),
+): Promise<SupabaseWorkspaceSession> {
+  return requireSession(config, dependencies);
+}
+
 function restUrl(config: SupabasePublicConfig, query: string) {
   return `${config.url}/rest/v1/${SUPABASE_WORKSPACE_TABLE}${query}`;
 }

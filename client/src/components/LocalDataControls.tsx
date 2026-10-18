@@ -66,7 +66,7 @@ export function LocalDataControls({ onWorkspaceChanged }: LocalDataControlsProps
   }
 
   function handleDeleteAll() {
-    const confirmed = window.confirm('Delete this browser’s local collection, set goals, collector wishlist and trade piles, Limited pools, Commander Passport records, saved local decks, duel inventories, saved 60-card themes, sideboards, and valuation history? This does not delete the tab-scoped Groq API key, sign-in, account records, or UI preferences.');
+    const confirmed = window.confirm('Delete this browser’s local collection, pruning policies, set checklists, set goals, collector wishlist and trade piles, Limited pools, Commander Passport records, saved local decks, duel inventories, saved 60-card themes, sideboards, and valuation history? This does not delete sign-in, cloud account records, or UI preferences. Groq keys are held in memory only.');
     if (!confirmed) return;
     try {
       clearLocalWorkspace();
@@ -142,7 +142,7 @@ export function LocalDataControls({ onWorkspaceChanged }: LocalDataControlsProps
             Your imported collection, set goals, wishlists, trade piles, Limited pools, Commander Passport notes, saved precon deck snapshots, duel inventories, and valuation history stay in this browser by default. They are not uploaded for cloud sync. Browser storage is not encrypted, so use a trusted device and keep exported backups private.
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            Backups exclude sign-in details and API keys. Custom AI deck generation can send the selected inventory and prompt to Groq when you choose that feature. Analytics is off unless you opt in below.
+            Backups include pruning policies and reviewed set checklists, but exclude sign-in details and API keys. Optional Groq requests require a separate one-time opt-in and explain the selected data before sending it. Analytics is off unless you opt in below.
           </p>
           <p className="mt-2 max-w-3xl text-xs leading-relaxed text-muted-foreground">
             This is local-first storage, not a fully offline mode; public card, image, and market-data lookups continue to use the app’s configured services.
