@@ -81,7 +81,7 @@ describe('application route map', () => {
     const brawlPage = readFileSync(resolve(process.cwd(), 'client/src/pages/BrawlBox.tsx'), 'utf8');
     const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
     expect(home).toContain('featured-brawl-box-heading');
-    expect(home).toContain('Precon-themed, 60-card Commander-preview decks');
+    expect(home).toContain('Precon-themed and custom non-precon, 60-card Commander-preview decks');
     expect(home).toContain('Dr. Madison Li leads the shelf, followed by Araumi of the Dead Tide');
     expect(brawlPage).toContain('not official Magic Brawl');
     expect(brawlPage).toContain('Brawlternatives');

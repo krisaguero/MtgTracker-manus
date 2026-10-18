@@ -1,7 +1,7 @@
 {
   "source": "User-supplied decklist text; ownership/proxy annotations intentionally excluded.",
-  "cardDataSource": "Scryfall card collection API; checked 2026-10-16.",
-  "officialBrawlWarning": "Brawlternatives is a personal, precon-themed custom 60-card Commander-preview alternative to Brawl, not official Magic Brawl. Both commanders are marked not legal in Brawl and legal in Commander by Scryfall.",
+  "cardDataSource": "Scryfall API; original entries checked 2026-10-16, Marchesa card names, identities, legality and Oracle notes verified 2026-10-17.",
+  "officialBrawlWarning": "Brawlternatives is a personal, precon-themed and custom non-precon 60-card Commander-preview alternative to Brawl, not official Magic Brawl. All three commanders are marked not legal in Brawl and legal in Commander by Scryfall; these 60-card previews are not regulation Commander decks.",
   "cardIdentityAudit": {
     "Abattoir Ghoul": [
       "B"
@@ -227,7 +227,146 @@
     "Whispersilk Cloak": [],
     "Mountain": [
       "R"
-    ]
+    ],
+    "Marchesa, the Black Rose": [
+      "U",
+      "B",
+      "R"
+    ],
+    "Dack's Duplicate": [
+      "U",
+      "R"
+    ],
+    "Enthralling Victor": [
+      "R"
+    ],
+    "Mark of Mutiny": [
+      "R"
+    ],
+    "Harness by Force": [
+      "R"
+    ],
+    "Grave Betrayal": [
+      "B"
+    ],
+    "Willbreaker": [
+      "U"
+    ],
+    "Flayer of the Hatebound": [
+      "R"
+    ],
+    "Deathbringer Thoctar": [
+      "B",
+      "R"
+    ],
+    "Hellhole Flailer": [
+      "B",
+      "R"
+    ],
+    "Hellspark Elemental": [
+      "R"
+    ],
+    "Chaos Imps": [
+      "R"
+    ],
+    "Carnival Hellsteed": [
+      "B",
+      "R"
+    ],
+    "Oracle of Bones": [
+      "R"
+    ],
+    "Volt Charge": [
+      "R"
+    ],
+    "Ob Nixilis, Unshackled": [
+      "B"
+    ],
+    "Ashnod's Altar": [],
+    "Unspeakable Symbol": [
+      "B"
+    ],
+    "Sage of Fables": [
+      "U"
+    ],
+    "Exava, Rakdos Blood Witch": [
+      "B",
+      "R"
+    ],
+    "Chasm Skulker": [
+      "U"
+    ],
+    "River Kelpie": [
+      "U"
+    ],
+    "Feast on the Fallen": [
+      "B"
+    ],
+    "Feldon of the Third Path": [
+      "R"
+    ],
+    "Disciple of Bolas": [
+      "B"
+    ],
+    "Phyrexian Rager": [
+      "B"
+    ],
+    "Cadaver Imp": [
+      "B"
+    ],
+    "Liliana's Specter": [
+      "B"
+    ],
+    "Notion Thief": [
+      "U",
+      "B"
+    ],
+    "Reanimate": [
+      "B"
+    ],
+    "Swiftfoot Boots": [],
+    "Dragon Blood": [],
+    "Talisman of Dominance": [
+      "U",
+      "B"
+    ],
+    "Talisman of Indulgence": [
+      "B",
+      "R"
+    ],
+    "Burnished Hart": [],
+    "Obelisk of Grixis": [
+      "U",
+      "B",
+      "R"
+    ],
+    "City of Brass": [],
+    "Sulfurous Springs": [
+      "B",
+      "R"
+    ],
+    "Underground River": [
+      "U",
+      "B"
+    ],
+    "Crumbling Necropolis": [
+      "U",
+      "B",
+      "R"
+    ],
+    "Rakdos Carnarium": [
+      "B",
+      "R"
+    ],
+    "Opal Palace": [],
+    "Bojuka Bog": [
+      "B"
+    ],
+    "Temple of Epiphany": [
+      "U",
+      "R"
+    ],
+    "Grixis Panorama": []
   },
   "decks": [
     {
@@ -1035,6 +1174,533 @@
         "Ghoultree has green color identity, outside Araumi’s blue-black identity. It remains in the displayed supplied list and is flagged rather than silently removed.",
         "The source comment says Panharmonicon “doubles all Encore ETB triggers.” It repeats qualifying ETB triggered abilities from artifact or creature entry; it does not double the Encore ability itself."
       ]
+    },
+    {
+      "rank": 3,
+      "commander": "Marchesa, the Black Rose",
+      "commanderColorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "commanderColorIdentityLabel": "Grixis (UBR)",
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 60,
+      "offColorCards": [],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "Marchesa, the Black Rose",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "The Black Rose herself: dethrone, shared dethrone for your other creatures, and delayed recursion for creatures you control that die with +1/+1 counters."
+            }
+          ]
+        },
+        {
+          "label": "ROYAL TREASON & STOLEN FOES",
+          "cards": [
+            {
+              "name": "Dack's Duplicate",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Clones their best creature with Haste & Dethrone"
+            },
+            {
+              "name": "Enthralling Victor",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Steals a small creature to turn against its owner"
+            },
+            {
+              "name": "Mark of Mutiny",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Temporary theft with a +1/+1 counter. To keep the creature with Marchesa, sacrifice it while you still control it and it has the counter; Marchesa returns the card under your control at the next end step if it remains in the graveyard."
+            },
+            {
+              "name": "Harness by Force",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Mass treason in multiplayer games: steal any number of creatures until end of turn, paying the {2}{R} strive cost per target beyond the first. Use a separate sacrifice outlet and +1/+1 counters for Marchesa recursion."
+            },
+            {
+              "name": "Grave Betrayal",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "The ultimate flavor bomb: creatures you do not control that die return under your control at the next end step with an additional +1/+1 counter, also becoming black Zombies."
+            },
+            {
+              "name": "Willbreaker",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Target an opponent’s creature with your spell or ability to gain control of it for as long as you control Willbreaker."
+            }
+          ]
+        },
+        {
+          "label": "CHAOTIC RECURSION & FIERY DAMAGE",
+          "cards": [
+            {
+              "name": "Flayer of the Hatebound",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Fiery damage when it or another creature enters from your graveyard: that creature deals damage equal to its power. Stolen cards returned from an opponent’s graveyard do not trigger it."
+            },
+            {
+              "name": "Deathbringer Thoctar",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Machine-gun +1/+1 counter pinging"
+            },
+            {
+              "name": "Hellhole Flailer",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Sacrifice itself to fling its power at the opponent's face"
+            },
+            {
+              "name": "Hellspark Elemental",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Fast, hasty trampler with unearth. Unearth is an activated ability, not automatic recursion: it exiles the creature at the next end step or if it would leave the battlefield, preventing a normal Marchesa death-and-return loop."
+            },
+            {
+              "name": "Chaos Imps",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Unleash demon with flying and grow potential"
+            },
+            {
+              "name": "Carnival Hellsteed",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Has Haste and grows with Unleash"
+            },
+            {
+              "name": "Oracle of Bones",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Tribute mini-game: an opponent chooses whether to give it two +1/+1 counters; if tribute was not paid, you may cast an instant or sorcery from your hand for free."
+            },
+            {
+              "name": "Volt Charge",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Burn spell that proliferates existing counters, including +1/+1 counters; it does not place a first counter on a creature."
+            },
+            {
+              "name": "Ob Nixilis, Unshackled",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Punishes opponents for searching their libraries and grows massive"
+            }
+          ]
+        },
+        {
+          "label": "SACRIFICE OUTLETS & BLACK ROSE SYNERGY",
+          "cards": [
+            {
+              "name": "Ashnod's Altar",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Classic sac outlet to recycle creatures on opponent turns"
+            },
+            {
+              "name": "Carrion Feeder",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Eats stolen creatures and gains +1/+1 counters"
+            },
+            {
+              "name": "Unspeakable Symbol",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Instant-speed +1/+1 counters at the cost of life"
+            },
+            {
+              "name": "Sage of Fables",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Your other Wizards enter with an additional +1/+1 counter. Pay {2} and remove a +1/+1 counter from any creature you control to draw a card."
+            },
+            {
+              "name": "Exava, Rakdos Blood Witch",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Grants haste to your other creatures with +1/+1 counters; Exava herself has haste, first strike, and unleash."
+            },
+            {
+              "name": "Chasm Skulker",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Grows with card draw and bursts into an army of Squids"
+            },
+            {
+              "name": "River Kelpie",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Draws whenever it or another permanent enters from a graveyard, and whenever a player casts a spell from a graveyard; also has persist."
+            },
+            {
+              "name": "Feast on the Fallen",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "At the beginning of each upkeep, if an opponent lost life last turn, put a +1/+1 counter on a target creature you control—not at every end step."
+            },
+            {
+              "name": "Feldon of the Third Path",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Creates a temporary hasty artifact-token copy of any creature card in your graveyard, not just legendary creatures. Sacrifice the token at the next end step; tokens cannot return with Marchesa."
+            }
+          ]
+        },
+        {
+          "label": "DRAW, SPOILS & UTILITY",
+          "cards": [
+            {
+              "name": "Disciple of Bolas",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Sacrifice a large threat for huge life and card draw"
+            },
+            {
+              "name": "Phyrexian Rager",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Simple cantrip creature that loops with Marchesa"
+            },
+            {
+              "name": "Cadaver Imp",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Recurs key pieces from graveyard to hand"
+            },
+            {
+              "name": "Liliana's Specter",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Forces opponents to discard cards every time it resurrects"
+            },
+            {
+              "name": "Notion Thief",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Steals opponent card draw"
+            },
+            {
+              "name": "Reanimate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Cheap graveyard resurrection"
+            },
+            {
+              "name": "Swiftfoot Boots",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Protects Marchesa"
+            },
+            {
+              "name": "Dragon Blood",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Instant-speed +1/+1 counter generator"
+            }
+          ]
+        },
+        {
+          "label": "MANA ROCKS & FIXING",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Talisman of Dominance",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Talisman of Indulgence",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Burnished Hart",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Obelisk of Grixis",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "MANA BASE",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "City of Brass",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sulfurous Springs",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Underground River",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Crumbling Necropolis",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Rakdos Carnarium",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Opal Palace",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Its {1}, {T} colored-mana ability can add counters when that mana casts Marchesa: she enters with additional +1/+1 counters equal to the number of times she has been cast from the command zone this game."
+            },
+            {
+              "name": "Bojuka Bog",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Temple of Epiphany",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Evolving Wilds",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Terramorphic Expanse",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Grixis Panorama",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Swamp",
+              "quantity": 3,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Island",
+              "quantity": 3,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mountain",
+              "quantity": 4,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "id": "marchesa-the-black-rose",
+      "title": "Marchesa, the Black Rose — Grixis Chaos & Treason",
+      "subtitle": "Flavorful, fun, and chaotic Grixis treason: steal creatures, sacrifice them, unleash fiery threats, and turn recursion into damage. A custom non-precon 60-card Commander preview, not a tuned tutor or fast-combo build.",
+      "sourceIssues": [],
+      "setupNotes": [
+        "Pull and sleeve the exact 60-card list below; no substitutions are required by this build. Ownership and proxy needs are not asserted by this shared list.",
+        "Keep Marchesa in a distinct sleeve or marked for the Command Zone.",
+        "Optional secret-objective cards may be sleeved face-down beside the deck; they are house-rule extras and are outside the 60 cards."
+      ],
+      "storageNotes": [
+        "Store this 60-card Marchesa build in the Battle Box travel case as the Grixis Chaos & Treason option."
+      ],
+      "formatNote": "Custom non-precon Brawlternative, not official Brawl and not a regulation 100-card Commander deck. Marchesa herself is Commander-legal but not Brawl-legal per Scryfall; play this 60-card build by agreement under house rules.",
+      "houseRuleExtras": [
+        "The Suicide Charge",
+        "Overheat the Stack"
+      ],
+      "deckType": "custom-non-precon",
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "The supplied list contains exactly 60 card copies: Marchesa in the command zone plus 59 cards in the library, including 22 lands. No cuts, additions, or quantity changes were made. Secret objectives are optional house-rule extras outside the 60."
     }
   ]
 }

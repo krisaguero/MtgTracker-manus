@@ -596,11 +596,11 @@ export default function Home() {
         <section className="mb-8 overflow-hidden border-2 border-border bg-card shadow-sm" aria-labelledby="featured-brawl-box-heading">
           <div className="bg-primary/5 p-5 sm:p-7">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Precon-themed decks · custom Commander previews</p>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Precon-themed & non-precon · custom Commander previews</p>
               <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">Self-built · not tuned</span>
             </div>
             <h2 id="featured-brawl-box-heading" className="mt-3 max-w-3xl text-2xl font-black tracking-tight sm:text-4xl">Brawlternatives</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">Precon-themed, 60-card Commander-preview decks as a casual alternative to official Brawl. Dr. Madison Li leads the shelf, followed by Araumi of the Dead Tide. This custom house concept is not official Magic Brawl; the shared nine-deck Retro Battle Box remains non-Commander.</p>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">Precon-themed and custom non-precon, 60-card Commander-preview decks as a casual alternative to official Brawl. Dr. Madison Li leads the shelf, followed by Araumi of the Dead Tide and the custom non-precon Marchesa, the Black Rose build. This custom house concept is not official Magic Brawl; the shared nine-deck Retro Battle Box remains non-Commander.</p>
             <div className="mt-5 flex flex-wrap gap-2">
               <a href="/brawl-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open Brawlternatives <ArrowRight className="h-4 w-4" /></a>
               <a href="/battle-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>

@@ -5,8 +5,8 @@ describe('personal Brawlternatives source lists', () => {
   const allGroups = (deck: (typeof brawlBoxData.decks)[number]) => [...deck.groups, ...(deck.sideboardGroups ?? [])];
 
   it('keeps Dr. Madison Li first and Araumi second without merging the Retro Battle Box', () => {
-    expect(brawlBoxData.decks.map((deck) => deck.commander)).toEqual(['Dr. Madison Li', 'Araumi of the Dead Tide']);
-    expect(brawlBoxData.decks.map((deck) => deck.id)).toEqual(['dr-madison-li', 'araumi-of-the-dead-tide']);
+    expect(brawlBoxData.decks.map((deck) => deck.commander)).toEqual(['Dr. Madison Li', 'Araumi of the Dead Tide', 'Marchesa, the Black Rose']);
+    expect(brawlBoxData.decks.map((deck) => deck.id)).toEqual(['dr-madison-li', 'araumi-of-the-dead-tide', 'marchesa-the-black-rose']);
     expect(brawlBoxData.officialBrawlWarning).toContain('not official Magic Brawl');
   });
 
@@ -29,6 +29,7 @@ describe('personal Brawlternatives source lists', () => {
     expect(brawlBoxData.decks.map((deck) => [deck.commanderColorIdentityLabel, deck.commanderCommanderLegal, deck.commanderBrawlLegal])).toEqual([
       ['Jeskai (WUR)', true, false],
       ['Dimir (UB)', true, false],
+      ['Grixis (UBR)', true, false],
     ]);
     const araumi = brawlBoxData.decks[1]!;
     const ghoultree = araumi.groups.flatMap((group) => group.cards).find((card) => card.name === 'Ghoultree');
