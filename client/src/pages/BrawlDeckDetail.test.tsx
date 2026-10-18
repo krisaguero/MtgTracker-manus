@@ -1,0 +1,94 @@
+import React from 'react';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { Route, Router, Switch } from 'wouter';
+import { describe, expect, it } from 'vitest';
+import { BrawlDeckCard } from '@/components/BrawlDeckCard';
+import { brawlDeckPath, brawlDecks, cardImage, findBrawlDeck } from '@/lib/brawlDecks';
+import BrawlBox from './BrawlBox';
+import BrawlDeckDetail from './BrawlDeckDetail';
+
+const escaped = (text: string) => renderToStaticMarkup(<>{text}</>);
+const routeMarkup = (path: string) => renderToStaticMarkup(<Router ssrPath={path}><Switch><Route path="/brawl-box/:deckId" component={BrawlDeckDetail} /></Switch></Router>);
+
+describe('published Brawlternative detail pages', () => {
+  it('registers a direct route and links every published entry from the shelf', () => {
+    const app = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    expect(app).toContain('<Route path="/brawl-box/:deckId" component={BrawlDeckDetail} />');
+    const shelf = renderToStaticMarkup(<Router ssrPath="/brawl-box"><BrawlBox /></Router>);
+    expect(brawlDecks.map((deck) => deck.id)).toEqual(['dr-madison-li', 'araumi-of-the-dead-tide', 'marchesa-the-black-rose']);
+    for (const deck of brawlDecks) {
+      expect(shelf).toContain(`href="${brawlDeckPath(deck.id)}"`);
+      expect(shelf).toContain(`id="${deck.id}"`); // Existing hash links still work.
+    }
+  });
+
+  it.each(brawlDecks)('renders $id from its direct URL with sources and sibling links', (deck) => {
+    const html = routeMarkup(brawlDeckPath(deck.id));
+    expect(html).toContain(escaped(deck.title));
+    expect(html.match(/<h1\b/g)).toHaveLength(1);
+    expect(html.match(/<article\b/g)).toHaveLength(1);
+    expect(html).toContain('Sources and format caveats');
+    expect(html).toContain('User-supplied decklist');
+    expect(html).toContain('not official Magic Brawl');
+    expect(html).toContain('not regulation Commander decks');
+    expect(html).toContain('href="/brawl-box"');
+    for (const sibling of brawlDecks.filter((entry) => entry.id !== deck.id)) {
+      expect(html).toContain(`href="${brawlDeckPath(sibling.id)}"`);
+    }
+  });
+
+  for (const view of ['list', 'visual'] as const) {
+    it.each(brawlDecks)(`preserves all cards, quantities, notes and warnings in ${view}: $id`, (deck) => {
+      const html = renderToStaticMarkup(<Router ssrPath={brawlDeckPath(deck.id)}><BrawlDeckCard deck={deck} detail initialView={view} /></Router>);
+      const cards = [...deck.groups, ...(deck.sideboardGroups ?? [])].flatMap((group) => group.cards);
+      expect(html).toContain(escaped(deck.subtitle));
+      expect(html).toContain(escaped(deck.commanderColorIdentityLabel));
+      expect(html).toContain(escaped(deck.sourceCountNote));
+      for (const note of [...deck.sourceIssues, ...(deck.setupNotes ?? []), ...(deck.storageNotes ?? [])]) {
+        expect(html).toContain(escaped(note));
+      }
+      for (const card of cards) {
+        expect(html).toContain(escaped(card.name));
+        expect(html).toContain(`>${card.quantity}×</span>`);
+        if (card.note) expect(html).toContain(escaped(card.note));
+      }
+      for (const offColor of deck.offColorCards) {
+        expect(html).toContain(escaped(offColor));
+        expect(html).toContain('Off identity');
+        expect(html).toContain('Color-identity warning');
+      }
+      if (deck.sideboardGroups?.length) {
+        expect(html).toContain('7 cards · outside the 60-card main deck');
+        expect(html).toContain(escaped(deck.sideboardNote!));
+      }
+      expect(html).toContain('aria-pressed="true"');
+      expect(html).toContain(`aria-controls="${deck.id}-cards"`);
+      if (view === 'visual') {
+        expect(html.match(/<img\b/g)).toHaveLength(cards.length);
+        expect(html).toContain('loading="lazy"');
+        expect(html).toContain('Images are representative Scryfall printings');
+        for (const card of cards) expect(html).toContain(escaped(cardImage(card.name)));
+      } else {
+        expect(html).not.toContain('<img');
+      }
+      expect(html).not.toMatch(/Owned:|\[PROXY\]|100% owned|zero proxies/i);
+    });
+  }
+
+  it.each(['mothman', 'karlov-of-the-ghost-council', 'rakdos', 'missing-deck'])('does not resolve unpublished or unknown slug %s', (id) => {
+    expect(findBrawlDeck(id)).toBeUndefined();
+    const html = routeMarkup(`/brawl-box/${id}`);
+    expect(html).toContain('Brawlternative not found');
+    expect(html).not.toContain('<article');
+    expect(html).not.toMatch(/The Wise Mothman|Karlov of the Ghost Council|Rakdos, Lord of Riots/);
+  });
+
+  it('encodes exact card names safely in Scryfall image URLs', () => {
+    const url = new URL(cardImage("Dack's Duplicate"));
+    expect(url.searchParams.get('exact')).toBe("Dack's Duplicate");
+    expect(url.searchParams.get('format')).toBe('image');
+    expect(url.searchParams.has('fuzzy')).toBe(false);
+  });
+});
