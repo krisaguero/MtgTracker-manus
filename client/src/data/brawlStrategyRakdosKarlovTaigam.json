@@ -1,0 +1,743 @@
+{
+  "rakdos-lord-of-riots": {
+    "plan": "Cause opponent life loss before casting Rakdos, then use his generic creature discount to deploy oversized threats. Attack triggers and entry damage can extend that turn’s discounts, while removal and draw keep the pressure supplied.",
+    "groups": [
+      {
+        "label": "Life-loss discount engine",
+        "intro": "Cast Rakdos after an opponent loses life, then use that turn’s loss to discount generic creature mana.",
+        "cards": [
+          {
+            "name": "Rakdos, Lord of Riots",
+            "role": "Cast only after an opponent loses life; subsequent creature spells cost less generic mana for all life your opponents lost that turn."
+          }
+        ]
+      },
+      {
+        "label": "Early life-loss enablers",
+        "intro": "These permanents and spells reliably cause opponent life loss, enabling Rakdos and making his creature discount larger.",
+        "cards": [
+          {
+            "name": "Spear Spewer",
+            "role": "Taps to damage every player, providing a repeatable way to unlock Rakdos before combat while also lowering your own life."
+          },
+          {
+            "name": "Night Market Lookout",
+            "role": "Attacking taps it and drains each opponent, setting up a postcombat Rakdos or a larger creature discount."
+          },
+          {
+            "name": "Pulse Tracker",
+            "role": "Its attack trigger makes each opponent lose life even if it is blocked, enabling discounted creatures in your second main phase."
+          },
+          {
+            "name": "Leechridden Swamp",
+            "role": "With two black permanents, pay black and tap it to drain each opponent; this land can unlock Rakdos without attacking."
+          },
+          {
+            "name": "Thermo-Alchemist",
+            "role": "Taps to damage each opponent and untaps when you cast an instant or sorcery, supplying repeatable life-loss setup."
+          },
+          {
+            "name": "Lightning Bolt",
+            "role": "Point three damage at an opponent to enable Rakdos, or remove a small creature when protecting your attack matters more."
+          },
+          {
+            "name": "Bump in the Night",
+            "role": "Makes one opponent lose three life, cheaply setting up Rakdos and his generic creature discount; flashback offers another use later."
+          },
+          {
+            "name": "Loyal Subordinate",
+            "role": "Drains each opponent for three at your combat only while you control your commander; it strengthens later discounts, not Rakdos’s initial cast."
+          }
+        ]
+      },
+      {
+        "label": "Discounted threat package",
+        "intro": "These expensive creatures convert Rakdos’s generic-mana discount into immediate damage, removal, card advantage, or lasting board pressure.",
+        "cards": [
+          {
+            "name": "Bogardan Hellkite",
+            "role": "Flash and five divided damage on entry offer immediate impact; damaging opponents can enlarge discounts for additional creatures that turn."
+          },
+          {
+            "name": "Grave Titan",
+            "role": "Produces two Zombies on entry and each attack, turning one discounted creature spell into a wider board."
+          },
+          {
+            "name": "Drakuseth, Maw of Flames",
+            "role": "Its attack trigger distributes large damage across separate targets, clearing blockers or increasing life loss for postcombat creature discounts."
+          },
+          {
+            "name": "Steel Hellkite",
+            "role": "A discountable flier whose X ability destroys opposing nonland permanents of that mana value after it deals their controller combat damage."
+          },
+          {
+            "name": "Archfiend of Depravity",
+            "role": "Forces each opponent down to two creatures at their end step, helping your oversized threats pressure creature-heavy boards."
+          },
+          {
+            "name": "Lord of the Void",
+            "role": "Combat damage exiles seven cards from that player’s library and can put one of those creatures onto your battlefield."
+          },
+          {
+            "name": "Balefire Dragon",
+            "role": "Combat damage to a player hits every creature they control for the same amount, rewarding a successful evasive attack."
+          },
+          {
+            "name": "Utvara Hellkite",
+            "role": "Each attacking Dragon you control creates a flying 6/6 Dragon token, turning the deck’s Dragon threats into a growing air force."
+          },
+          {
+            "name": "Artisan of Kozilek",
+            "role": "Rakdos can discount its entirely generic cost; casting it reanimates a creature, while annihilator 2 pressures opposing permanents on attacks."
+          },
+          {
+            "name": "Meteor Golem",
+            "role": "A fully generic creature cost benefits strongly from Rakdos; its entry destroys an opponent’s nonland permanent, including awkward enchantments."
+          },
+          {
+            "name": "Sandstone Oracle",
+            "role": "A discountable artifact flier that draws the hand-size difference from a chosen opponent with more cards, refueling after you deploy threats."
+          },
+          {
+            "name": "Combustible Gearhulk",
+            "role": "On entry, an opponent chooses between giving you three cards or milling three and taking damage equal to their total mana value."
+          }
+        ]
+      },
+      {
+        "label": "Mana acceleration",
+        "intro": "These mana sources accelerate Rakdos’s expensive creatures and leave colored mana available for interaction.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "role": "Provides two colorless mana for expensive generic costs; it accelerates threats but cannot cover the commander’s colored mana requirements."
+          },
+          {
+            "name": "Rakdos Signet",
+            "role": "Converts one mana into black and red, helping assemble Rakdos’s demanding double-black, double-red casting cost."
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "role": "Produces colorless freely or black/red for one damage, supporting Rakdos’s colored pips after his discount handles generic costs."
+          },
+          {
+            "name": "Arcane Signet",
+            "role": "Taps for a commander-identity color, fixing colored costs that generic acceleration and cost reductions cannot cover."
+          },
+          {
+            "name": "Mind Stone",
+            "role": "Ramps with colorless mana early, then can be sacrificed with one mana to draw a replacement card when the hand runs low."
+          },
+          {
+            "name": "Charcoal Diamond",
+            "role": "Enters tapped but provides black mana on later turns, helping pay Rakdos’s black pips rather than only generic costs."
+          },
+          {
+            "name": "Fire Diamond",
+            "role": "Enters tapped and supplies red mana thereafter, helping assemble Rakdos’s two red pips and cast red interaction."
+          }
+        ]
+      },
+      {
+        "label": "Interaction and resets",
+        "intro": "These spells remove key threats or reset creature-heavy boards while Rakdos’s mana engine develops.",
+        "cards": [
+          {
+            "name": "Blasphemous Act",
+            "role": "Deals thirteen damage to every creature and gets cheaper with crowded boards, resetting opponents even when your own threats also die."
+          },
+          {
+            "name": "Terminate",
+            "role": "Destroys any target creature without regeneration, cheaply removing a blocker or an engine that your large attackers cannot ignore."
+          },
+          {
+            "name": "Dreadbore",
+            "role": "Sorcery-speed destruction answers a creature or planeswalker, opening attack lanes or removing a noncreature source of advantage."
+          },
+          {
+            "name": "Chaos Warp",
+            "role": "Shuffles any permanent into its owner’s library, answering difficult permanent types but potentially giving that player a replacement permanent."
+          },
+          {
+            "name": "Hero's Downfall",
+            "role": "Instant-speed destruction removes a creature or planeswalker, letting you protect your board plan without committing during your main phase."
+          },
+          {
+            "name": "Toxic Deluge",
+            "role": "Pay X life to give all creatures -X/-X for the turn, choosing a reset size that can bypass indestructible."
+          },
+          {
+            "name": "Bedevil",
+            "role": "Instant-speed destruction covers artifacts, creatures, and planeswalkers, broadening the threats you can answer while developing your own board."
+          },
+          {
+            "name": "Feed the Swarm",
+            "role": "Destroys an opponent’s creature or enchantment at sorcery speed, costing life equal to its mana value for uncommon black enchantment removal."
+          }
+        ]
+      },
+      {
+        "label": "Cards and sacrifice value",
+        "intro": "These effects refill the hand or turn expendable creatures and life totals into additional cards and pressure.",
+        "cards": [
+          {
+            "name": "Read the Bones",
+            "role": "Scry two before drawing two and losing two life, improving the chance of finding the next land, answer, or payoff."
+          },
+          {
+            "name": "Night's Whisper",
+            "role": "Trades two life for two cards at a low mana cost, replenishing the hand without using the entire turn."
+          },
+          {
+            "name": "Disciple of Bolas",
+            "role": "Sacrifices another creature on entry to draw cards and gain life equal to its power, cashing in a large expendable threat."
+          },
+          {
+            "name": "Wheel of Misfortune",
+            "role": "Players not choosing the lowest number discard and draw seven; the highest choices take damage, making refueling risky rather than guaranteed."
+          }
+        ]
+      },
+      {
+        "label": "Mana base",
+        "intro": "These lands provide Rakdos colors; tapped and duplicate submissions remain listed without being presented as additional fixing.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "role": "Provides any commander-identity color without an entry condition, making it a reliable source for this deck’s colored spells."
+          },
+          {
+            "name": "Smoldering Marsh",
+            "role": "Produces black or red and enters untapped with two basic lands, supporting colored costs beside the generic-mana discount."
+          },
+          {
+            "name": "Foreboding Ruins",
+            "role": "Produces black or red; revealing a Swamp or Mountain from hand lets it enter untapped for faster early setup."
+          },
+          {
+            "name": "Dragonskull Summit",
+            "role": "Produces black or red and enters untapped when you already control a Swamp or Mountain, helping sequence colored spells."
+          },
+          {
+            "name": "Rakdos Carnarium",
+            "role": "Enters tapped and returns a land you control to hand, then produces both black and red from one tap."
+          },
+          {
+            "name": "Luxury Suite",
+            "role": "Produces black or red; it enters tapped in a duel because its untapped condition requires at least two opponents."
+          },
+          {
+            "name": "Sulfurous Springs",
+            "role": "Produces colorless without damage or black/red for one damage, providing flexible untapped fixing for Rakdos’s colored requirements."
+          },
+          {
+            "name": "Swamp",
+            "role": "Provides repeatable black mana without entering tapped, supporting black interaction and the commander’s black casting requirements."
+          },
+          {
+            "name": "Mountain",
+            "role": "Provides repeatable red mana without entering tapped, supporting early damage spells and Rakdos’s double-red casting requirement."
+          }
+        ]
+      }
+    ]
+  },
+  "karlov-of-the-ghost-council": {
+    "plan": "Create separate life-gain events to grow Karlov by two +1/+1 counters each, then convert six counters plus {W}{B} into creature exile while lifelink and payoff engines close the game. Cheap life-gain permanents, mana rocks, removal, and card advantage keep the engine online.",
+    "groups": [
+      {
+        "label": "Life-gain counter engine",
+        "intro": "Karlov rewards repeated life gain with +1/+1 counters, then converts six counters and white-black mana into exile removal.",
+        "cards": [
+          {
+            "name": "Karlov of the Ghost Council",
+            "role": "Each life-gain event adds two counters; paying white-black and removing six counters exiles a creature, converting repeatable life gain into removal."
+          }
+        ]
+      },
+      {
+        "label": "Repeatable life-gain triggers",
+        "intro": "Creature-entry and death triggers provide repeated life-gain events for Karlov. Voice of the Blessed shares those rewards rather than gaining life itself; Cleric Class increases life amounts without multiplying Karlov triggers.",
+        "cards": [
+          {
+            "name": "Soul Warden",
+            "role": "Every other creature entering gains you one life, giving Karlov separate triggers from both your creatures and opponents’ creatures."
+          },
+          {
+            "name": "Soul's Attendant",
+            "role": "Offers one life for every other creature entering, repeatedly growing Karlov while letting you decline a life-gain trigger if needed."
+          },
+          {
+            "name": "Authority of the Consuls",
+            "role": "Opposing creatures enter tapped and give you one life, slowing attacks while triggering Karlov as opponents develop their boards."
+          },
+          {
+            "name": "Ajani's Welcome",
+            "role": "Each creature entering under your control gains one life, turning your creatures and Horse or Spirit tokens into Karlov triggers."
+          },
+          {
+            "name": "Daxos, Blessed by the Sun",
+            "role": "Another creature you control entering or dying gains one life, rewarding both token production and creature trades with Karlov counters."
+          },
+          {
+            "name": "Blind Obedience",
+            "role": "Makes opposing artifacts and creatures enter tapped; paying for extort on your spells drains opponents and creates a life-gain event."
+          },
+          {
+            "name": "Voice of the Blessed",
+            "role": "Grows with each life-gain event alongside Karlov, gaining flying and vigilance at four counters and indestructible at ten."
+          },
+          {
+            "name": "Cleric Class",
+            "role": "Increases life gained; paid levels add life-gain counter placement and one reanimation trigger, expanding the engine without adding extra gain events."
+          }
+        ]
+      },
+      {
+        "label": "Lifelink and counter payoffs",
+        "intro": "These threats turn life gain and counters into combat pressure, removal, token production, or scalable mana.",
+        "cards": [
+          {
+            "name": "Vona, Butcher of Magan",
+            "role": "Lifelink replenishes life; paying seven life and tapping destroys a nonland permanent, but activation is restricted to your turn."
+          },
+          {
+            "name": "Daxos the Returned",
+            "role": "Enchantment casts build experience counters; paying three mana creates a Spirit sized by those counters, feeding creature-entry life-gain engines."
+          },
+          {
+            "name": "Archangel of Thune",
+            "role": "Each life-gain event puts a counter on every creature you control, turning Karlov’s small life-gain engines into board-wide growth."
+          },
+          {
+            "name": "Crested Sunmare",
+            "role": "Each end step after you gained life creates a 5/5 Horse; its protection for other Horses makes repeated life gain build resilient pressure."
+          },
+          {
+            "name": "Vito, Thorn of the Dusk Rose",
+            "role": "Life gained makes a targeted opponent lose that much life; its paid ability also gives your creatures lifelink for the turn."
+          },
+          {
+            "name": "Elesh Norn, Grand Cenobite",
+            "role": "Boosts your other creatures by +2/+2 and shrinks opposing creatures by -2/-2, strengthening token attacks while suppressing small enemy boards."
+          },
+          {
+            "name": "Nirkana Revenant",
+            "role": "Adds an extra black whenever you tap a Swamp for mana, supporting expensive payoffs and providing a black-mana combat pump outlet."
+          },
+          {
+            "name": "Crypt Ghast",
+            "role": "Adds black when you tap a Swamp for mana; extort also turns spare white or black mana into life-gain triggers."
+          },
+          {
+            "name": "Serra Ascendant",
+            "role": "A cheap lifelinker that becomes a flying 6/6 at thirty life, rewarding a maintained life total rather than guaranteeing an early threat."
+          }
+        ]
+      },
+      {
+        "label": "Life-total win engines",
+        "intro": "Drain enchantments convert life gain into opposing life loss, while Citadel spends the life cushion on spells and Black Market turns deaths into mana. Exquisite Blood plus Sanguine Bond or Vito can loop after an initiating event if opponents cannot interrupt.",
+        "cards": [
+          {
+            "name": "Exquisite Blood",
+            "role": "Opponent life loss gains you that much life, feeding Karlov and potentially forming a repeating drain loop with Sanguine Bond or Vito."
+          },
+          {
+            "name": "Sanguine Bond",
+            "role": "Your life gain drains a target opponent; paired with Exquisite Blood, one life-gain or opponent-life-loss event can start a repeating loop."
+          },
+          {
+            "name": "Bolas's Citadel",
+            "role": "Spends life to cast spells from your library’s top, turning the life-gain engine into cards played; normal timing and land limits remain."
+          },
+          {
+            "name": "Kaya, Ghost Assassin",
+            "role": "Can drain for a life-gain trigger, trade opposing cards for your draw, or temporarily exile a creature with delayed return."
+          },
+          {
+            "name": "Black Market",
+            "role": "Creature deaths build charge counters that produce black mana at your precombat main phase, fueling expensive payoffs after creatures trade."
+          }
+        ]
+      },
+      {
+        "label": "Mana acceleration",
+        "intro": "Colored rocks help cast white-black payoffs and leave mana for Karlov’s exile activation. Pristine Talisman also creates a life-gain event each time it is tapped for mana.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "role": "Provides two colorless mana for expensive generic costs; it accelerates threats but cannot cover the commander’s colored mana requirements."
+          },
+          {
+            "name": "Orzhov Signet",
+            "role": "Converts one mana into both white and black, fixing Karlov’s exile activation and the deck’s multicolored spells."
+          },
+          {
+            "name": "Talisman of Hierarchy",
+            "role": "Provides colorless or white/black for one damage, supplying the colored mana needed to turn Karlov’s counters into exile removal."
+          },
+          {
+            "name": "Arcane Signet",
+            "role": "Taps for a commander-identity color, fixing colored costs that generic acceleration and cost reductions cannot cover."
+          },
+          {
+            "name": "Mind Stone",
+            "role": "Ramps with colorless mana early, then can be sacrificed with one mana to draw a replacement card when the hand runs low."
+          },
+          {
+            "name": "Pristine Talisman",
+            "role": "Taps for colorless mana and gains one life, making each activation both acceleration and a separate Karlov trigger."
+          }
+        ]
+      },
+      {
+        "label": "Exile and board control",
+        "intro": "These answers exile or destroy opposing permanents, and the sweepers clear boards when targeted removal is insufficient.",
+        "cards": [
+          {
+            "name": "Swords to Plowshares",
+            "role": "Exiles a creature for one white mana; the controller gains life, a drawback to weigh against removing a dangerous engine."
+          },
+          {
+            "name": "Path to Exile",
+            "role": "Exiles a creature cheaply but lets its controller find a tapped basic land, exchanging efficient removal for possible opposing ramp."
+          },
+          {
+            "name": "Anguished Unmaking",
+            "role": "Exiles any nonland permanent at instant speed for three life, using your life cushion to answer diverse threats."
+          },
+          {
+            "name": "Vindicate",
+            "role": "Destroys any permanent at sorcery speed, covering lands and other problem permanents that creature-only removal misses."
+          },
+          {
+            "name": "Utter End",
+            "role": "Exiles any nonland permanent at instant speed, providing a broad answer without Anguished Unmaking’s life payment."
+          },
+          {
+            "name": "Merciless Eviction",
+            "role": "Exiles all artifacts, creatures, enchantments, or planeswalkers of your chosen type, offering a selective reset that also bypasses indestructible."
+          },
+          {
+            "name": "Toxic Deluge",
+            "role": "Pay X life to give all creatures -X/-X for the turn, choosing a reset size that can bypass indestructible."
+          }
+        ]
+      },
+      {
+        "label": "Refuel & rebuild",
+        "intro": "Small draw spells trade life for a deeper hand, and Well of Lost Dreams spends mana after life gain. Debtors’ Knell instead rebuilds your battlefield each upkeep, restarting creature-entry life-gain triggers.",
+        "cards": [
+          {
+            "name": "Read the Bones",
+            "role": "Scry two before drawing two and losing two life, improving the chance of finding the next land, answer, or payoff."
+          },
+          {
+            "name": "Night's Whisper",
+            "role": "Trades two life for two cards at a low mana cost, replenishing the hand without using the entire turn."
+          },
+          {
+            "name": "Well of Lost Dreams",
+            "role": "After gaining life, pay up to that amount of mana to draw that many cards, turning repeated gains into optional refueling."
+          },
+          {
+            "name": "Debtors' Knell",
+            "role": "Returns a creature from any graveyard each upkeep, rebuilding pressure after trades and repeatedly triggering your creature-entry life-gain effects."
+          }
+        ]
+      },
+      {
+        "label": "Mana base",
+        "intro": "White-black sources support the commander and his activation; Scoured Barrens also triggers life gain, while Bojuka Bog disrupts a graveyard. Submitted duplicate nonbasic lands remain subject to the source-list warning.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "role": "Provides any commander-identity color without an entry condition, making it a reliable source for this deck’s colored spells."
+          },
+          {
+            "name": "Caves of Koilos",
+            "role": "Produces colorless freely or white/black for one damage, giving untapped access to Karlov’s colors and exile activation."
+          },
+          {
+            "name": "Orzhov Basilica",
+            "role": "Enters tapped and bounces one of your lands, then produces both white and black to support multicolored spells and Karlov activations."
+          },
+          {
+            "name": "Scoured Barrens",
+            "role": "Enters tapped, gains one life, and later produces white or black; the entry itself can put counters on Karlov."
+          },
+          {
+            "name": "Tainted Field",
+            "role": "Always supplies colorless but needs a Swamp under your control to produce white or black, making Swamp sequencing important."
+          },
+          {
+            "name": "Temple of Silence",
+            "role": "Enters tapped and scries one before supplying white or black, smoothing draws at the cost of immediate mana."
+          },
+          {
+            "name": "Vault of Champions",
+            "role": "Provides white or black; its untapped condition needs two opponents, so expect it to enter tapped in a duel."
+          },
+          {
+            "name": "Bojuka Bog",
+            "role": "Enters tapped and exiles a target player’s graveyard, trading tempo for graveyard disruption while providing black mana thereafter."
+          },
+          {
+            "name": "Plains",
+            "role": "Provides untapped white mana for life-gain engines, removal, and the white half of Karlov’s exile activation."
+          },
+          {
+            "name": "Swamp",
+            "role": "Provides untapped black mana and enables Tainted Field; Crypt Ghast and Nirkana Revenant can add extra black when you tap it."
+          }
+        ]
+      }
+    ]
+  },
+  "taigam-sidisis-hand": {
+    "plan": "Use Taigam’s upkeep look at the top three to replace the skipped draw step while stocking the graveyard, then spend graveyard cards for scalable -X/-X removal. Counters, spot removal, sweepers, mana rocks, and evasive finishers create a controlling 1v1 plan.",
+    "groups": [
+      {
+        "label": "Graveyard-selection commander",
+        "intro": "Taigam skips your draw step, surveils two each upkeep, and lets you cast a graveyard card by paying three life.",
+        "cards": [
+          {
+            "name": "Taigam, Sidisi's Hand",
+            "role": "Skips your draw step for upkeep selection and graveyard fuel; black mana, tapping, and exiled graveyard cards power his -X/-X removal."
+          }
+        ]
+      },
+      {
+        "label": "Creature control",
+        "intro": "These spells efficiently answer opposing creatures so Taigam can stabilize while selecting the best graveyard resources.",
+        "cards": [
+          {
+            "name": "Go for the Throat",
+            "role": "Destroys a nonartifact creature at instant speed, cheaply answering a threat while you preserve mana for countermagic."
+          },
+          {
+            "name": "Hero's Downfall",
+            "role": "Instant-speed destruction removes a creature or planeswalker, letting you protect your board plan without committing during your main phase."
+          },
+          {
+            "name": "Murderous Cut",
+            "role": "Destroys a creature with delve reducing its generic cost; exiling your graveyard competes directly with Taigam’s removal fuel."
+          },
+          {
+            "name": "Reality Shift",
+            "role": "Exiles a creature and manifests its controller’s top card, trading a dangerous threat for an unknown face-down 2/2."
+          },
+          {
+            "name": "Rapid Hybridization",
+            "role": "Destroys a creature for one blue mana but gives its controller a 3/3 Frog Lizard, exchanging threat quality for cheap interaction."
+          },
+          {
+            "name": "Pongify",
+            "role": "One blue mana destroys a creature but leaves its controller a 3/3 Ape, useful when the removed ability matters more than size."
+          },
+          {
+            "name": "Victim of Night",
+            "role": "Instant-speed removal destroys a creature unless it is a Vampire, Werewolf, or Zombie; those exclusions remain important matchup limits."
+          },
+          {
+            "name": "Malicious Affliction",
+            "role": "Destroys a nonblack creature; if a creature died this turn, morbid copies the spell to potentially remove a second threat."
+          },
+          {
+            "name": "Cyclonic Rift",
+            "role": "Bounces an opposing nonland permanent, or overloads to bounce all opponents’ nonland permanents while leaving your own board intact."
+          }
+        ]
+      },
+      {
+        "label": "Stack interaction",
+        "intro": "These counters protect Taigam’s setup and stop decisive opposing spells, with several trading future cards for flexibility.",
+        "cards": [
+          {
+            "name": "Counterspell",
+            "role": "Two blue mana counters any spell, protecting your control engine before an opposing threat can resolve."
+          },
+          {
+            "name": "Arcane Denial",
+            "role": "Counters any spell and replaces itself at the next upkeep, but its controller may also draw up to two cards."
+          },
+          {
+            "name": "Memory Lapse",
+            "role": "Counters a spell onto its owner’s library top rather than their graveyard, buying tempo instead of permanently disposing of the threat."
+          },
+          {
+            "name": "Disallow",
+            "role": "Counters a spell, activated ability, or triggered ability, covering disruptive effects that ordinary spell-only counters cannot stop."
+          },
+          {
+            "name": "Dismiss",
+            "role": "Counters a spell and draws a card immediately, preserving your hand while trading four mana for an opposing play."
+          },
+          {
+            "name": "Spell Crumple",
+            "role": "Counters a spell to its owner’s library bottom and bottoms itself, moving the spell away from graveyard recursion."
+          }
+        ]
+      },
+      {
+        "label": "Upkeep selection and draw",
+        "intro": "These effects complement Taigam’s upkeep surveil by finding action, filtering draws, and filling the graveyard deliberately.",
+        "cards": [
+          {
+            "name": "Brainstorm",
+            "role": "Draws three then returns two cards to your library top, arranging Taigam’s next upkeep selection rather than clearing unwanted cards by itself."
+          },
+          {
+            "name": "Ponder",
+            "role": "Orders your top three or shuffles, then draws a card, improving immediate selection and potentially setting up Taigam’s next upkeep."
+          },
+          {
+            "name": "Fact or Fiction",
+            "role": "An opponent splits five revealed cards into piles; your chosen pile enters hand and the rest fuel Taigam in the graveyard."
+          },
+          {
+            "name": "Read the Bones",
+            "role": "Scry two before drawing two and losing two life, improving the chance of finding the next land, answer, or payoff."
+          },
+          {
+            "name": "Night's Whisper",
+            "role": "Trades two life for two cards at a low mana cost, replenishing the hand without using the entire turn."
+          },
+          {
+            "name": "Dig Through Time",
+            "role": "Finds two cards among seven at instant speed; delve can reduce the cost but consumes cards Taigam could use for removal."
+          }
+        ]
+      },
+      {
+        "label": "Closing threats",
+        "intro": "Flying bodies and Oona’s tokens close games after interaction buys time. Infiltrator and Emeritus instead sustain card flow, while Aberration turns repeated spells and opposing graveyards into pressure.",
+        "cards": [
+          {
+            "name": "Shadowmage Infiltrator",
+            "role": "Fear helps it connect for combat-damage card draws, providing an ongoing card source despite Taigam skipping your draw step."
+          },
+          {
+            "name": "Consuming Aberration",
+            "role": "Grows with opponents’ graveyards and mills them toward lands whenever you cast spells, pairing control-spell volume with an enlarging threat."
+          },
+          {
+            "name": "Sphinx of Uthuun",
+            "role": "A large flier whose entry splits five cards into hand and graveyard piles, combining a closing threat with Taigam fuel."
+          },
+          {
+            "name": "Oona, Queen of the Fae",
+            "role": "Turns spare mana into opposing-library exile and flying tokens for cards matching a chosen color, building pressure without relying on combat first."
+          },
+          {
+            "name": "Archmage Emeritus",
+            "role": "Casting or copying an instant or sorcery draws a card, turning the deck’s many interaction spells into additional resources."
+          },
+          {
+            "name": "Diluvian Primordial",
+            "role": "On entry, casts up to one instant or sorcery from each opponent’s graveyard for free, converting their spent spells into your advantage."
+          }
+        ]
+      },
+      {
+        "label": "Mana acceleration",
+        "intro": "Cheap rocks help you hold up interaction while developing toward expensive threats. Colored fixing matters for counterspells, while colorless acceleration pays generic costs; Thought Vessel also preserves large hands.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "role": "Provides two colorless mana for expensive generic costs; it accelerates threats but cannot cover the commander’s colored mana requirements."
+          },
+          {
+            "name": "Dimir Signet",
+            "role": "Converts one mana into both blue and black, helping keep counterspell and removal mana available together."
+          },
+          {
+            "name": "Talisman of Dominance",
+            "role": "Produces colorless freely or blue/black for one damage, fixing interaction mana while accelerating toward larger threats."
+          },
+          {
+            "name": "Mind Stone",
+            "role": "Ramps with colorless mana early, then can be sacrificed with one mana to draw a replacement card when the hand runs low."
+          },
+          {
+            "name": "Thought Vessel",
+            "role": "Provides colorless acceleration and removes your maximum hand size, letting accumulated selection and draw effects stay in hand."
+          },
+          {
+            "name": "Fellwar Stone",
+            "role": "Provides a color an opponent’s land could produce; useful cheap acceleration, but it is not guaranteed to fix both Dimir colors."
+          },
+          {
+            "name": "Worn Powerstone",
+            "role": "Enters tapped but later supplies two colorless mana, helping reach expensive flying threats and sweepers while reserving colored sources."
+          }
+        ]
+      },
+      {
+        "label": "Board resets",
+        "intro": "These sweepers trade life, mana, or timing for a clean battlefield, preserving Taigam’s long-game advantage.",
+        "cards": [
+          {
+            "name": "Toxic Deluge",
+            "role": "Pay X life to give all creatures -X/-X for the turn, choosing a reset size that can bypass indestructible."
+          },
+          {
+            "name": "Crux of Fate",
+            "role": "Destroys either all Dragons or all non-Dragons; choose the mode for the current board, remembering your own creatures are not exempt."
+          },
+          {
+            "name": "Black Sun's Zenith",
+            "role": "Places X -1/-1 counters on every creature and shuffles back into your library, offering scalable removal that can bypass indestructible."
+          },
+          {
+            "name": "Decree of Pain",
+            "role": "Destroys all creatures and draws for those destroyed; cycling instead draws one and gives every creature -2/-2 for the turn."
+          }
+        ]
+      },
+      {
+        "label": "Mana base",
+        "intro": "Dimir lands support blue countermagic and black removal. Scrying and life-gain lands trade speed for small benefits; Bojuka Bog disrupts graveyards, while Reliquary Tower keeps cards but provides no colored mana.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "role": "Provides any commander-identity color without an entry condition, making it a reliable source for this deck’s colored spells."
+          },
+          {
+            "name": "Dimir Aqueduct",
+            "role": "Enters tapped and returns a land you control, then taps for both blue and black to help hold up layered interaction."
+          },
+          {
+            "name": "Sunken Hollow",
+            "role": "Produces blue or black and has both basic land types; two basics let it enter untapped for smoother interaction turns."
+          },
+          {
+            "name": "Temple of Deceit",
+            "role": "Enters tapped and scries one, then supplies blue or black, exchanging early tempo for draw selection."
+          },
+          {
+            "name": "Dismal Backwater",
+            "role": "Enters tapped and gains one life before providing blue or black, offering budget fixing with a tempo cost."
+          },
+          {
+            "name": "Bojuka Bog",
+            "role": "Enters tapped and exiles a target player’s graveyard, trading tempo for graveyard disruption while providing black mana thereafter."
+          },
+          {
+            "name": "Reliquary Tower",
+            "role": "Produces only colorless but removes maximum hand size, preserving accumulated cards without fixing the deck’s blue or black requirements."
+          },
+          {
+            "name": "Island",
+            "role": "Provides untapped blue mana for countermagic, card selection, and the deck’s blue threats without an additional entry condition."
+          },
+          {
+            "name": "Swamp",
+            "role": "Provides untapped black mana for targeted removal, sweepers, and Taigam’s activated ability while blue sources remain available for counters."
+          }
+        ]
+      }
+    ]
+  }
+}

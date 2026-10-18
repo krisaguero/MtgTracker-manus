@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { Route, Router, Switch } from 'wouter';
 import { describe, expect, it } from 'vitest';
 import { BrawlDeckCard } from '@/components/BrawlDeckCard';
-import { brawlDeckPath, brawlDecks, cardImage, findBrawlDeck } from '@/lib/brawlDecks';
+import { brawlDeckPath, brawlDecks, cardImage, cardImageFallback, cardReference, cardPrintingLabel, findBrawlDeck } from '@/lib/brawlDecks';
 import BrawlBox from './BrawlBox';
 import BrawlDeckDetail from './BrawlDeckDetail';
 
@@ -65,16 +65,17 @@ describe('published Brawlternative detail pages', () => {
       }
       expect(html).toContain('aria-pressed="true"');
       expect(html).toContain(`aria-controls="${deck.id}-cards"`);
-      if (view === 'visual') {
-        expect(html.match(/<img\b/g)).toHaveLength(cards.filter((card) => card.verificationStatus !== 'unresolved').length);
-        expect(html).toContain('loading="lazy"');
-        expect(html).toContain('Images are representative Scryfall printings');
-        for (const card of cards) {
-          if (card.verificationStatus === 'unresolved') expect(html).not.toContain(escaped(cardImage(card.name)));
-          else expect(html).toContain(escaped(cardImage(card.name)));
+      // Each resolved row has artwork in both modes, plus the commander portrait.
+      expect(html.match(/<img\b/g)).toHaveLength(cards.filter((card) => card.verificationStatus !== 'unresolved').length + 1);
+      expect(html).toContain('loading="lazy"');
+      expect(html).toContain('Images are representative Scryfall printings');
+      for (const card of cards) {
+        if (card.verificationStatus === 'unresolved') expect(cardImage(card.name)).toBeUndefined();
+        else {
+          expect(html).toContain(escaped(cardImage(card.name)!));
+          expect(html).toContain(escaped(cardPrintingLabel(card.name)));
         }
-      } else {
-        expect(html).not.toContain('<img');
+        expect(html).toContain(escaped(card.role!));
       }
       expect(html).not.toMatch(/Owned:|\[PROXY\]|100% owned|zero proxies/i);
     });
@@ -88,10 +89,12 @@ describe('published Brawlternative detail pages', () => {
     expect(html).not.toMatch(/The Wise Mothman|Karlov of the Ghost Council|Rakdos, Lord of Riots/);
   });
 
-  it('encodes exact card names safely in Scryfall image URLs', () => {
-    const url = new URL(cardImage("Dack's Duplicate"));
-    expect(url.searchParams.get('exact')).toBe("Dack's Duplicate");
-    expect(url.searchParams.get('format')).toBe('image');
-    expect(url.searchParams.has('fuzzy')).toBe(false);
+  it('uses canonical CDN art and same-printing fallbacks, never fuzzy lookups', () => {
+    const reference = cardReference("Dack's Duplicate")!;
+    const url = new URL(cardImage("Dack's Duplicate")!);
+    expect(url.hostname).toBe('cards.scryfall.io');
+    expect(url.pathname).toContain(reference.id);
+    expect(cardImageFallback("Dack's Duplicate")).toBe(`https://api.scryfall.com/cards/${reference.id}?format=image&version=normal`);
+    expect(cardImage('missing invented card')).toBeUndefined();
   });
 });

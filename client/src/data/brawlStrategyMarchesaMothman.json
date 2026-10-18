@@ -1,0 +1,590 @@
+{
+  "marchesa-the-black-rose": {
+    "plan": "Lead with mana and counter access, then use Marchesa’s dethrone and theft effects to attack the highest-life player. Sacrifice countered creatures—especially borrowed threats—so her next-end-step recursion, ETB damage, and value engines convert temporary swings into a resilient board. Counter-based recursion conflicts with undying: a creature dying with a +1/+1 counter cannot use undying.",
+    "groups": [
+      {
+        "label": "COMMANDER & COUNTER-BASED RECURSION",
+        "intro": "Marchesa is the deck’s timing-sensitive engine: a creature must die with a +1/+1 counter for her delayed return to work.",
+        "cards": [
+          {
+            "name": "Marchesa, the Black Rose",
+            "quantity": 1,
+            "role": "Gives your creatures dethrone and returns a creature that dies with a +1/+1 counter at the next end step."
+          }
+        ]
+      },
+      {
+        "label": "THEFT & OPPONENT-CREATURE CONVERSION",
+        "intro": "Steal or copy opposing creatures, then use counters and sacrifice effects to turn temporary control into lasting board presence where the card allows it.",
+        "cards": [
+          {
+            "name": "Dack's Duplicate",
+            "quantity": 1,
+            "role": "Copies a battlefield creature with haste and dethrone, supplying a threat that can earn the counter needed for Marchesa recursion."
+          },
+          {
+            "name": "Enthralling Victor",
+            "quantity": 1,
+            "role": "Temporarily steals an opposing creature with power 2 or less, untaps it, and gives it haste for a swing."
+          },
+          {
+            "name": "Mark of Mutiny",
+            "quantity": 1,
+            "role": "Steals a creature, adds a +1/+1 counter, and grants haste; sacrifice it while you control it to set up Marchesa recursion."
+          },
+          {
+            "name": "Harness by Force",
+            "quantity": 1,
+            "role": "Steals any number of creatures until end of turn, with a separate strive cost for each extra target; sacrifice outlets can turn them into value."
+          },
+          {
+            "name": "Grave Betrayal",
+            "quantity": 1,
+            "role": "When a creature you do not control dies, returns it under your control next end step with an extra counter, rewarding opposing losses."
+          },
+          {
+            "name": "Willbreaker",
+            "quantity": 1,
+            "role": "Turns your spells or abilities that target opposing creatures into lasting control while it remains on the battlefield."
+          }
+        ]
+      },
+      {
+        "label": "SACRIFICE, COUNTERS & DEATH VALUE",
+        "intro": "These cards supply sacrifice outlets, counter placement, and death/recursion payoffs; counters are deliberately included because Marchesa’s trigger checks them at death.",
+        "cards": [
+          {
+            "name": "Ashnod's Altar",
+            "quantity": 1,
+            "role": "Sacrifices creatures for two colorless mana, enabling stolen-creature conversion, recursion costs, and death-trigger turns throughout the deck."
+          },
+          {
+            "name": "Carrion Feeder",
+            "quantity": 1,
+            "role": "Its free sacrifice ability trades a creature for a counter on itself, converting borrowed threats and setting up Marchesa death triggers."
+          },
+          {
+            "name": "Unspeakable Symbol",
+            "quantity": 1,
+            "role": "Pays 3 life to put a +1/+1 counter on a creature, meeting Marchesa’s death-recursion condition."
+          },
+          {
+            "name": "Sage of Fables",
+            "quantity": 1,
+            "role": "Other Wizards enter with an extra counter; paying two and removing a creature’s counter draws a card, trading recursion protection for resources."
+          },
+          {
+            "name": "Exava, Rakdos Blood Witch",
+            "quantity": 1,
+            "role": "Gives haste to creatures with +1/+1 counters and has unleash, making counter-bearing creatures immediately threatening."
+          },
+          {
+            "name": "Chasm Skulker",
+            "quantity": 1,
+            "role": "Grows from card draws and makes 1/1 Squid tokens when it dies, creating sacrifice material."
+          },
+          {
+            "name": "River Kelpie",
+            "quantity": 1,
+            "role": "Draws when a permanent enters from a graveyard and when a player casts from a graveyard, rewarding repeated recursion."
+          },
+          {
+            "name": "Feast on the Fallen",
+            "quantity": 1,
+            "role": "At each upkeep, an opponent’s life loss last turn can put a counter on your creature, preparing Marchesa’s death-time requirement."
+          },
+          {
+            "name": "Feldon of the Third Path",
+            "quantity": 1,
+            "role": "Makes a temporary artifact copy of a creature in your graveyard; the copy is sacrificed at the next end step."
+          }
+        ]
+      },
+      {
+        "label": "RECURSION, ETB DAMAGE & PRESSURE",
+        "intro": "Hasty and graveyard-returning threats pressure life totals while Flayer and other effects turn creatures entering from the graveyard into damage or value. Important caveat: a +1/+1 counter can stop undying, so counter placement and undying timing conflict.",
+        "cards": [
+          {
+            "name": "Flayer of the Hatebound",
+            "quantity": 1,
+            "role": "Your creatures entering from your graveyard deal their power as damage; undying also returns Flayer if it dies without a +1/+1 counter."
+          },
+          {
+            "name": "Deathbringer Thoctar",
+            "quantity": 1,
+            "role": "Gains a counter whenever another creature dies and can remove a counter to deal 1 damage to any target."
+          },
+          {
+            "name": "Hellhole Flailer",
+            "quantity": 1,
+            "role": "Can enter with a +1/+1 counter and sacrifices to deal damage equal to its power to a player or planeswalker."
+          },
+          {
+            "name": "Hellspark Elemental",
+            "quantity": 1,
+            "role": "Provides a hasty trampling attack; unearth offers another, but its exile replacement prevents that unearthed creature from dying for Marchesa recursion."
+          },
+          {
+            "name": "Chaos Imps",
+            "quantity": 1,
+            "role": "A flying creature with unleash; its counter option makes it a stronger Marchesa recursion candidate."
+          },
+          {
+            "name": "Carnival Hellsteed",
+            "quantity": 1,
+            "role": "A first-striking, hasty threat whose unleash counter makes it useful in a counter-focused attack plan."
+          },
+          {
+            "name": "Oracle of Bones",
+            "quantity": 1,
+            "role": "Haste creature with tribute 2; if tribute is not paid, its entry lets you cast an instant or sorcery from hand for free."
+          },
+          {
+            "name": "Volt Charge",
+            "quantity": 1,
+            "role": "Deals 3 damage to any target, then proliferates, potentially increasing existing +1/+1 counters, rad counters, or other counters."
+          },
+          {
+            "name": "Ob Nixilis, Unshackled",
+            "quantity": 1,
+            "role": "Flies and tramples; punishes opposing library searches with a sacrifice and 10 life loss, while gaining a +1/+1 counter whenever another creature dies."
+          }
+        ]
+      },
+      {
+        "label": "CARD FLOW & GRAVEYARD UTILITY",
+        "intro": "Draw, discard, protection, and creature recovery keep the engine supplied and make expendable bodies useful rather than dead cards.",
+        "cards": [
+          {
+            "name": "Disciple of Bolas",
+            "quantity": 1,
+            "role": "Sacrifices another creature, then draws cards and gains life equal to its power, turning expendable bodies into resources."
+          },
+          {
+            "name": "Phyrexian Rager",
+            "quantity": 1,
+            "role": "Draws a card and costs 1 life when it enters, providing a replaceable body for sacrifice or recursion."
+          },
+          {
+            "name": "Cadaver Imp",
+            "quantity": 1,
+            "role": "Returns a creature card from your graveyard to your hand when it enters, restoring key pieces."
+          },
+          {
+            "name": "Liliana's Specter",
+            "quantity": 1,
+            "role": "Makes each opponent discard a card when it enters, adding disruption to a recursive body."
+          },
+          {
+            "name": "Notion Thief",
+            "quantity": 1,
+            "role": "Replaces an opponent’s extra card draws with your own, while leaving your normal draw effects intact."
+          },
+          {
+            "name": "Reanimate",
+            "quantity": 1,
+            "role": "Returns a creature from any graveyard directly to the battlefield at the cost of life equal to its mana value."
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "quantity": 1,
+            "role": "Equips to grant hexproof and haste, protecting Marchesa or another key creature while enabling an immediate attack or activation."
+          },
+          {
+            "name": "Dragon Blood",
+            "quantity": 1,
+            "role": "Pays mana and taps to put a +1/+1 counter on a creature, directly enabling Marchesa’s return trigger."
+          }
+        ]
+      },
+      {
+        "label": "MANA ACCELERATION & FIXING",
+        "intro": "Artifacts accelerate the high-impact theft, recursion, and threat turns while covering all three Grixis colors.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "role": "Taps for two colorless mana, accelerating Marchesa, counter setup, theft spells, recursion, and expensive threats."
+          },
+          {
+            "name": "Talisman of Dominance",
+            "quantity": 1,
+            "role": "Produces blue or black mana, or colorless, for Grixis fixing at the cost of 1 life for colored activation."
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "quantity": 1,
+            "role": "Produces black or red mana, or colorless, for Grixis fixing at the cost of 1 life for colored activation."
+          },
+          {
+            "name": "Burnished Hart",
+            "quantity": 1,
+            "role": "Sacrifices to search for up to two basic lands and put them onto the battlefield tapped, combining ramp with a death trigger."
+          },
+          {
+            "name": "Obelisk of Grixis",
+            "quantity": 1,
+            "role": "Taps for blue, black, or red mana, smoothing Marchesa’s three-color requirements and supporting demanding theft and recursion turns."
+          }
+        ]
+      },
+      {
+        "label": "COMMANDER MANA BASE",
+        "intro": "The lands provide Grixis colors, utility, and basic-land searching; several enter tapped, so sequencing matters.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "quantity": 1,
+            "role": "Taps for one mana of any color in Marchesa’s Grixis commander identity, providing unconditional color fixing."
+          },
+          {
+            "name": "City of Brass",
+            "quantity": 1,
+            "role": "Taps for one mana of any color, dealing 1 damage whenever it becomes tapped for flexible Grixis fixing."
+          },
+          {
+            "name": "Sulfurous Springs",
+            "quantity": 1,
+            "role": "Taps for colorless, or black or red at the cost of 1 damage, supporting Marchesa’s Rakdos colors."
+          },
+          {
+            "name": "Underground River",
+            "quantity": 1,
+            "role": "Taps for colorless, or blue or black at the cost of 1 damage, supporting Marchesa’s Dimir colors."
+          },
+          {
+            "name": "Crumbling Necropolis",
+            "quantity": 1,
+            "role": "Enters tapped and taps for blue, black, or red, offering complete Grixis fixing at a tempo cost."
+          },
+          {
+            "name": "Rakdos Carnarium",
+            "quantity": 1,
+            "role": "Enters tapped, returns a land you control to hand, and taps for two black-red mana for explosive turns."
+          },
+          {
+            "name": "Opal Palace",
+            "quantity": 1,
+            "role": "Taps for colorless or, for one mana, any commander-identity color; commander casts can add counters based on command-zone casts."
+          },
+          {
+            "name": "Bojuka Bog",
+            "quantity": 1,
+            "role": "Enters tapped, exiles a target player’s graveyard on entry, and taps for black, providing graveyard interaction."
+          },
+          {
+            "name": "Temple of Epiphany",
+            "quantity": 1,
+            "role": "Enters tapped, scries 1 on entry, and taps for blue or red, combining selection with Izzet fixing."
+          },
+          {
+            "name": "Evolving Wilds",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing colors and thinning the deck."
+          },
+          {
+            "name": "Terramorphic Expanse",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing colors and thinning the deck."
+          },
+          {
+            "name": "Grixis Panorama",
+            "quantity": 1,
+            "role": "Taps for colorless or sacrifices for one mana to fetch a basic Island, Swamp, or Mountain tapped."
+          },
+          {
+            "name": "Swamp",
+            "quantity": 3,
+            "role": "Basic land that taps for one black mana, reliably supporting Marchesa’s black spells and colored activations."
+          },
+          {
+            "name": "Island",
+            "quantity": 3,
+            "role": "Basic land that taps for one blue mana, reliably supporting Marchesa’s blue spells and interaction."
+          },
+          {
+            "name": "Mountain",
+            "quantity": 4,
+            "role": "Basic land that taps for one red mana, reliably supporting Marchesa’s theft spells and damage effects."
+          }
+        ]
+      }
+    ]
+  },
+  "the-wise-mothman": {
+    "plan": "Build a Sultai mill-and-counters engine around The Wise Mothman: rad counters and repeated nonland mill events distribute +1/+1 counters among distinct targets, then counter payoffs turn that spread into evasion and damage. Ramp early and use recursion to recover key engine pieces.",
+    "groups": [
+      {
+        "label": "COMMANDER & MILL-TO-COUNTERS ENGINE",
+        "intro": "The commander turns entry/attack rad counters and each nonland mill event into distributed +1/+1 counters; an event with X cards milled targets up to X distinct creatures.",
+        "cards": [
+          {
+            "name": "The Wise Mothman",
+            "quantity": 1,
+            "role": "Entry and attacks give everyone radiation; a mill event with X nonlands puts one counter on each of up to X distinct creatures."
+          }
+        ]
+      },
+      {
+        "label": "MILL, RAD COUNTERS & TRIGGER PAYOFFS",
+        "intro": "These permanents repeatedly mill, create rad counters, or reward deaths and graveyard size; Mothman’s counters are spread among distinct targets rather than piled onto one creature.",
+        "cards": [
+          {
+            "name": "Nuclear Fallout",
+            "quantity": 1,
+            "role": "Each creature gets twice -X/-X until end of turn, and each player gets X rad counters; X is chosen when the spell is cast."
+          },
+          {
+            "name": "Watchful Radstag",
+            "quantity": 1,
+            "role": "Larger creatures entering can evolve it and create another Radstag; placing counters with Mothman alone does not trigger evolve."
+          },
+          {
+            "name": "Harold and Bob, First City",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Agent Frank Horrigan",
+            "quantity": 1,
+            "role": "Proliferates twice when it enters or attacks, multiplying existing counters across chosen permanents or players."
+          },
+          {
+            "name": "Strong, the Brutish Companion",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Lumbering Megasloth",
+            "quantity": 1,
+            "role": "Costs less for each counter among players and permanents, and enters tapped with trample; the counter-heavy shell can reduce its cost."
+          },
+          {
+            "name": "Piper Wright, Public Reporter",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Mesmeric Orb",
+            "quantity": 1,
+            "role": "Untaps mill each player for each permanent they untap, supplying repeated mill events for Mothman."
+          },
+          {
+            "name": "Mindcrank",
+            "quantity": 1,
+            "role": "Opponent life loss mills that many cards, potentially triggering Mothman when nonlands are milled; Mindcrank itself does not cause life loss."
+          },
+          {
+            "name": "Syr Konrad, the Grim",
+            "quantity": 1,
+            "role": "Drains opponents for creature deaths, creature cards milled or discarded, and creature cards leaving your graveyard; its paid ability mills everyone."
+          },
+          {
+            "name": "Stitcher's Supplier",
+            "quantity": 1,
+            "role": "Mills three cards on entry and three more when it dies, stocking the graveyard and creating mill events."
+          },
+          {
+            "name": "Altar of the Brood",
+            "quantity": 1,
+            "role": "Whenever another permanent you control enters, each opponent mills a card, repeatedly feeding Mothman’s trigger."
+          },
+          {
+            "name": "Drown in the Loch",
+            "quantity": 1,
+            "role": "Counters a spell or destroys a creature, with the available mode depending on cards in that player’s graveyard."
+          }
+        ]
+      },
+      {
+        "label": "+1/+1 COUNTER PAYOFFS",
+        "intro": "These cards convert the distributed counters into larger bodies, evasion, proliferated counters, or graveyard access; Hardened Scales and Corpsejack Menace amplify placement.",
+        "cards": [
+          {
+            "name": "Alpha Deathclaw",
+            "quantity": 1,
+            "role": "Has menace and trample, and its monstrosity puts four +1/+1 counters on it while entering or becoming monstrous destroys a permanent."
+          },
+          {
+            "name": "Hancock, Ghoulish Mayor",
+            "quantity": 1,
+            "role": "Counters on Hancock boost your other Zombies and Mutants; adding +1/+1 counters also prevents its undying from triggering at death."
+          },
+          {
+            "name": "Hardened Scales",
+            "quantity": 1,
+            "role": "Adds an extra +1/+1 counter whenever one or more +1/+1 counters would be put on a creature you control."
+          },
+          {
+            "name": "Corpsejack Menace",
+            "quantity": 1,
+            "role": "Doubles the number of +1/+1 counters put on creatures you control, amplifying Mothman’s distributed counters."
+          },
+          {
+            "name": "Abzan Falconer",
+            "quantity": 1,
+            "role": "Gives flying to each creature you control with a +1/+1 counter, converting Mothman’s counters into evasion."
+          },
+          {
+            "name": "Herald of Secret Streams",
+            "quantity": 1,
+            "role": "Makes creatures you control with +1/+1 counters unable to be blocked, converting Mothman’s distributed counters into dependable combat damage."
+          },
+          {
+            "name": "Evolution Sage",
+            "quantity": 1,
+            "role": "Proliferates whenever a land enters under your control, increasing existing +1/+1, rad, and other counters across the board."
+          },
+          {
+            "name": "Thrummingbird",
+            "quantity": 1,
+            "role": "When it deals combat damage to a player, proliferate, extending Mothman’s counter engine across selected permanents and players."
+          },
+          {
+            "name": "Wonder",
+            "quantity": 1,
+            "role": "Gives your creatures flying while it is in your graveyard and you control an Island."
+          },
+          {
+            "name": "Genesis",
+            "quantity": 1,
+            "role": "During your upkeep from the graveyard, you may pay 2G to return a creature card from your graveyard to your hand."
+          },
+          {
+            "name": "Fiend Artisan",
+            "quantity": 1,
+            "role": "Graveyard creatures enlarge it; at sorcery speed, X plus hybrid mana, tapping, and sacrificing another creature tutors a creature costing X or less."
+          }
+        ]
+      },
+      {
+        "label": "RECURSION & GRAVEYARD ACCESS",
+        "intro": "Milling can put useful creatures into the graveyard rather than losing access to them. Reanimate and Dread Return bring back one creature, while Victimize trades a body for two tapped creatures.",
+        "cards": [
+          {
+            "name": "Reanimate",
+            "quantity": 1,
+            "role": "Returns a creature from any graveyard directly to the battlefield at the cost of life equal to its mana value."
+          },
+          {
+            "name": "Victimize",
+            "quantity": 1,
+            "role": "Sacrifices one creature to return two creature cards from your graveyard to the battlefield tapped, trading a body for substantial recursion."
+          },
+          {
+            "name": "Dread Return",
+            "quantity": 1,
+            "role": "Returns a creature from your graveyard to the battlefield and can be flashed back by sacrificing three creatures."
+          }
+        ]
+      },
+      {
+        "label": "RAMP & COLOR FIXING",
+        "intro": "Mana rocks and land tutors accelerate the three-color engine and its expensive payoff creatures.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "role": "Taps for two colorless mana, accelerating Mothman, mill engines, counter payoffs, and expensive recursion spells."
+          },
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "Taps for one mana of any color in The Wise Mothman’s Sultai commander identity, fixing early development and payoff turns."
+          },
+          {
+            "name": "Simic Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one green and one blue mana, fixing Sultai colors for Mothman’s engine."
+          },
+          {
+            "name": "Dimir Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one blue and one black mana, fixing Sultai colors for mill and recursion."
+          },
+          {
+            "name": "Golgari Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one black and one green mana, fixing Sultai colors for graveyard payoffs."
+          },
+          {
+            "name": "Farseek",
+            "quantity": 1,
+            "role": "Searches for a Plains, Island, Swamp, or Mountain card and puts it onto the battlefield tapped."
+          },
+          {
+            "name": "Cultivate",
+            "quantity": 1,
+            "role": "Searches for two basic lands, puts one onto the battlefield tapped and the other into your hand, building reliable three-color development."
+          },
+          {
+            "name": "Wayfarer's Bauble",
+            "quantity": 1,
+            "role": "Pay two, tap, and sacrifice it to fetch a tapped basic land, fixing Sultai colors without needing green mana first."
+          }
+        ]
+      },
+      {
+        "label": "COMMANDER MANA BASE",
+        "intro": "These lands fix Sultai colors, with fetch-like lands and basics supporting the ramp package; several lands enter tapped or cost life.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "quantity": 1,
+            "role": "Taps for one mana of any color in The Wise Mothman’s Sultai commander identity, providing unconditional color fixing."
+          },
+          {
+            "name": "Opulent Palace",
+            "quantity": 1,
+            "role": "Enters tapped and taps for blue, black, or green, supplying complete Sultai fixing at a tempo cost."
+          },
+          {
+            "name": "Exotic Orchard",
+            "quantity": 1,
+            "role": "Taps for any color a land an opponent controls could produce, flexibly fixing Sultai colors in multiplayer."
+          },
+          {
+            "name": "Llanowar Wastes",
+            "quantity": 1,
+            "role": "Taps for colorless, or black or green at the cost of 1 damage, supporting Mothman’s Golgari colors."
+          },
+          {
+            "name": "Yavimaya Coast",
+            "quantity": 1,
+            "role": "Taps for colorless, or green or blue at the cost of 1 damage, supporting Mothman’s Simic colors."
+          },
+          {
+            "name": "Underground River",
+            "quantity": 1,
+            "role": "Taps for colorless, or blue or black at the cost of 1 damage, supporting Mothman’s Dimir colors."
+          },
+          {
+            "name": "Evolving Wilds",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing Sultai colors for the engine."
+          },
+          {
+            "name": "Terramorphic Expanse",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing Sultai colors for the engine."
+          },
+          {
+            "name": "Forest",
+            "quantity": 6,
+            "role": "Basic land that taps for one green mana, reliably supporting Mothman’s ramp, recursion, and counter payoffs."
+          },
+          {
+            "name": "Island",
+            "quantity": 5,
+            "role": "Basic land that taps for one blue mana, reliably supporting Mothman’s mill, interaction, and counter payoffs."
+          },
+          {
+            "name": "Swamp",
+            "quantity": 4,
+            "role": "Basic land that taps for one black mana, reliably supporting Mothman’s graveyard, removal, and recursion spells."
+          }
+        ]
+      }
+    ]
+  }
+}

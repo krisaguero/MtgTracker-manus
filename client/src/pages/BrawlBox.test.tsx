@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { Router } from 'wouter';
 import { describe, expect, it } from 'vitest';
 import { brawlDecks } from '@/lib/brawlDecks';
+import source from '@/data/brawlBox2026.json';
 import BrawlBox from './BrawlBox';
 
 const suppliedCards = `1 Marchesa, the Black Rose
@@ -63,9 +64,10 @@ describe('Marchesa custom non-precon Brawlternative', () => {
   it('preserves every supplied card copy and group total without adding swaps', () => {
     const marchesa = brawlDecks[2]!;
     const cards = marchesa.groups.flatMap((group) => group.cards);
-    expect(cards.map((card) => `${card.quantity} ${card.name}`).join('\n')).toBe(suppliedCards);
+    expect(cards.map((card) => `${card.quantity} ${card.name}`).sort()).toEqual(suppliedCards.split('\n').sort());
     expect(cards.reduce((sum, card) => sum + card.quantity, 0)).toBe(60);
-    expect(marchesa.groups.map((group) => group.cards.reduce((sum, card) => sum + card.quantity, 0))).toEqual([1, 6, 9, 9, 8, 5, 22]);
+    // Original source headings/totals remain untouched; the display groups by job.
+    expect(source.decks[2].groups.map((group) => group.cards.reduce((sum, card) => sum + card.quantity, 0))).toEqual([1, 6, 9, 9, 8, 5, 22]);
     expect(marchesa).toMatchObject({ deckType: 'custom-non-precon', visibleTotal: 60, sourceStatedTotal: 60, targetSize: 60, sourceStatedCuts: 0, offColorCards: [] });
     expect(marchesa.sideboardGroups ?? []).toEqual([]);
   });

@@ -43,7 +43,8 @@ export default function BrawlDeckDetail({ params }: { params: { deckId: string }
         <h2 className="text-xl font-black">About this list</h2>
         <p className="mt-3">{brawlBoxData.officialBrawlWarning}</p>
         <p className="mt-3"><strong>Deck source:</strong> User-supplied decklist, preserved with the source-list audit above. This is a self-built theme-first preview, not a tuned or tournament-ready recommendation.</p>
-        <p className="mt-3"><strong>Card data:</strong> {brawlBoxData.cardDataSource} Card links and representative images are provided by <a href="https://scryfall.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Scryfall</a>. Images do not specify an edition. Card imagery © Wizards of the Coast.</p>
+        <p className="mt-3"><strong>Strategy notes:</strong> Groups and card roles are editorial explanations based on the linked Scryfall card text, not changes to the submitted list. A card can serve several jobs; it appears once in its primary package. WIP, unresolved-name, missing-card and color-identity warnings still apply.</p>
+        <p className="mt-3"><strong>Card data:</strong> {brawlBoxData.cardDataSource} Card links and representative images are provided by <a href="https://scryfall.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Scryfall</a>. Each image links to its displayed printing, labeled with set and collector number. These are representative editions, not a claim about the submitted edition or ownership. Card imagery © Wizards of the Coast.</p>
       </section>
       <nav aria-label="Explore Brawlternatives" className="border-t-2 border-border pt-5">
         <h2 className="text-xl font-black">Explore the shelf</h2>

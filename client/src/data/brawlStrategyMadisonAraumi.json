@@ -1,0 +1,542 @@
+{
+  "dr-madison-li": {
+    "plan": "Cast artifacts and deploy energy creatures to build energy, then use Dr. Madison Li and the payoffs to turn it into cards, artifact recursion, temporary combat boosts, theft, bounce, and occasional free spells. Brago and Panharmonicon multiply useful entry triggers, while removal and countermagic protect the artifact engine.",
+    "groups": [
+      {
+        "label": "COMMANDER: ENERGY COMMAND CENTER",
+        "intro": "Madison converts artifact casts into energy, then turns it into cards, a temporary combat boost, or a tapped artifact returned from the graveyard.",
+        "cards": [
+          {
+            "name": "Dr. Madison Li",
+            "role": "Artifact casts generate energy; her tap abilities spend it on a combat boost, card draw, or returning an artifact tapped.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "ENERGY ENGINE AND PAYOFFS",
+        "intro": "These permanents stockpile energy and turn it into selection, theft, bounce, artifact entries, or a larger attack for the artifact engine.",
+        "cards": [
+          {
+            "name": "Aetherworks Marvel",
+            "role": "Turns sacrificed or destroyed permanents into energy, then digs six cards for a spell you may cast without paying its mana cost.",
+            "quantity": 1
+          },
+          {
+            "name": "Gonti's Aether Heart",
+            "role": "Gains two energy whenever it or another artifact enters and can exile itself for an extra turn at eight energy.",
+            "quantity": 1
+          },
+          {
+            "name": "Confiscation Coup",
+            "role": "Provides four energy and can gain control of a target artifact or creature by paying its mana value in energy.",
+            "quantity": 1
+          },
+          {
+            "name": "Electrostatic Pummeler",
+            "role": "Spending three energy gives +X/+X based on its current power, doubling that power and adding the same amount to toughness.",
+            "quantity": 1
+          },
+          {
+            "name": "Aethersquall Ancient",
+            "role": "Adds three energy each upkeep and can spend eight to return all other creatures to their owners' hands as a sorcery.",
+            "quantity": 1
+          },
+          {
+            "name": "Aethertide Whale",
+            "role": "Enters with six energy and can spend four to return itself to hand for another entry later.",
+            "quantity": 1
+          },
+          {
+            "name": "Aetherstorm Roc",
+            "role": "Gains energy whenever your creatures enter and can spend two on attack for a +1/+1 counter and a tap effect.",
+            "quantity": 1
+          },
+          {
+            "name": "Aether Theorist",
+            "role": "Enters with three energy and taps while paying one energy to scry 1.",
+            "quantity": 1
+          },
+          {
+            "name": "Aether Swooper",
+            "role": "Enters with two energy and can spend two on attack to create a Servo artifact creature token.",
+            "quantity": 1
+          },
+          {
+            "name": "Aether Inspector",
+            "role": "Enters with two energy and can spend two on attack to create a Servo, while vigilance lets it attack and block.",
+            "quantity": 1
+          },
+          {
+            "name": "Consul's Shieldguard",
+            "role": "Enters with two energy and can spend one to give another attacking creature indestructible for the turn.",
+            "quantity": 1
+          },
+          {
+            "name": "Decoction Module",
+            "role": "Gains energy whenever your creatures enter and can pay four and tap to return one of them to hand.",
+            "quantity": 1
+          },
+          {
+            "name": "Glassblower's Puzzleknot",
+            "role": "Scries 2 on entry and supplies two energy for the artifact engine.",
+            "quantity": 1
+          },
+          {
+            "name": "Shielded Aether Thief",
+            "role": "Rewards blocking with energy, then taps and spends three energy to draw a card for the defensive artifact plan.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "ETB FLICKER AND ARTIFACT RECURSION",
+        "intro": "Repeated enters-the-battlefield triggers refill energy and cards, while recursion returns key artifacts or small permanents after they are sacrificed or destroyed.",
+        "cards": [
+          {
+            "name": "Brago, King Eternal",
+            "role": "Combat damage to a player flickers any number of your nonland permanents, reusing energy, draw, and artifact-entry triggers.",
+            "quantity": 1
+          },
+          {
+            "name": "Sun Titan",
+            "role": "Returns a permanent card with mana value 3 or less from your graveyard whenever it enters or attacks.",
+            "quantity": 1
+          },
+          {
+            "name": "Solemn Simulacrum",
+            "role": "Finds a basic land on entry and draws a card when it dies, making it a strong flicker and recursion target.",
+            "quantity": 1
+          },
+          {
+            "name": "Panharmonicon",
+            "role": "When an artifact or creature entering triggers an ability of a permanent you control, it triggers again, multiplying entry value.",
+            "quantity": 1
+          },
+          {
+            "name": "Ichor Wellspring",
+            "role": "Draws a card on entry and again when it is put into a graveyard, rewarding flicker and sacrifice.",
+            "quantity": 1
+          },
+          {
+            "name": "Mycosynth Wellspring",
+            "role": "Finds a basic land on entry and again when it goes to a graveyard.",
+            "quantity": 1
+          },
+          {
+            "name": "Spine of Ish Sah",
+            "role": "Destroys any target permanent on entry and returns to its owner's hand when put into a graveyard from the battlefield.",
+            "quantity": 1
+          },
+          {
+            "name": "Lavinia of the Tenth",
+            "role": "Detains each nonland permanent your opponents control with mana value 4 or less on entry.",
+            "quantity": 1
+          },
+          {
+            "name": "Knight of the White Orchid",
+            "role": "Finds a Plains when an opponent controls more lands, and repeated entry can reuse that catch-up effect.",
+            "quantity": 1
+          },
+          {
+            "name": "Sanctum Gargoyle",
+            "role": "Returns an artifact card from your graveyard to your hand when it enters.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "INTERACTION, CARD ADVANTAGE AND PROTECTION",
+        "intro": "Removal, permission, and Rhystic Study protect the artifact engine while trading for opposing threats and spells.",
+        "cards": [
+          {
+            "name": "Swords to Plowshares",
+            "role": "Exiles a target creature at instant speed, giving its controller life equal to its power.",
+            "quantity": 1
+          },
+          {
+            "name": "Rhystic Study",
+            "role": "Pressures every opposing spell to either pay one mana or give the artifact engine a card.",
+            "quantity": 1
+          },
+          {
+            "name": "Render Silent",
+            "role": "Counters a target spell and prevents its controller from casting further spells that turn.",
+            "quantity": 1
+          },
+          {
+            "name": "Hindering Light",
+            "role": "Counters a spell targeting you or a permanent you control and draws a card.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "MANA ROCKS AND ACCELERATION",
+        "intro": "The rocks accelerate Madison and expensive energy payoffs while artifact casts also earn energy. Mind Stone can become a card later; Thought Vessel instead removes your hand-size limit.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "role": "Adds two colorless mana for expensive artifact spells, which also generate energy when Madison is on the battlefield.",
+            "quantity": 1
+          },
+          {
+            "name": "Mind Stone",
+            "role": "Adds colorless mana early and can be sacrificed for a card later.",
+            "quantity": 1
+          },
+          {
+            "name": "Thought Vessel",
+            "role": "Adds colorless mana and removes the hand-size limit.",
+            "quantity": 1
+          },
+          {
+            "name": "Sky Diamond",
+            "role": "Enters tapped and taps for blue mana.",
+            "quantity": 1
+          },
+          {
+            "name": "Marble Diamond",
+            "role": "Enters tapped and taps for white mana.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "MANA BASE",
+        "intro": "The lands supply Jeskai colors; fetch lands find basics, while Azorius Chancery returns a land and produces both blue and white together.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "role": "Taps for any color in Madison's color identity.",
+            "quantity": 1
+          },
+          {
+            "name": "Evolving Wilds",
+            "role": "Sacrifices to find a basic land tapped and then shuffles.",
+            "quantity": 1
+          },
+          {
+            "name": "Terramorphic Expanse",
+            "role": "Sacrifices to find a basic land tapped and then shuffles.",
+            "quantity": 1
+          },
+          {
+            "name": "Azorius Chancery",
+            "role": "Enters tapped, returns a land to hand, and taps for both blue and white.",
+            "quantity": 1
+          },
+          {
+            "name": "Meandering River",
+            "role": "Enters tapped and taps for either blue or white without life loss.",
+            "quantity": 1
+          },
+          {
+            "name": "Island",
+            "role": "Provides untapped blue mana for interaction and card selection, without the entry delays of the deck’s fixing lands.",
+            "quantity": 9
+          },
+          {
+            "name": "Plains",
+            "role": "Provides untapped white mana for Madison’s white spells, including efficient removal, flicker support, and artifact-recursion creatures.",
+            "quantity": 9
+          },
+          {
+            "name": "Mountain",
+            "role": "Provides untapped red mana for Madison’s Jeskai casting cost; the source quantity remains unchanged rather than automatically rebalanced.",
+            "quantity": 3
+          }
+        ]
+      }
+    ],
+    "sideboardGroups": [
+      {
+        "label": "OPTIONAL FLEX PICKS",
+        "intro": "These alternatives add a free-spell setup, deeper selection, sweepers, evasive protection, or a separate win condition without changing the submitted main deck.",
+        "cards": [
+          {
+            "name": "As Foretold",
+            "role": "Gains a time counter each upkeep and lets you cast one spell each turn with mana value no greater than its counters without paying its mana cost.",
+            "quantity": 1
+          },
+          {
+            "name": "Sphinx of Uthuun",
+            "role": "Reveals five cards and lets an opponent split them while you take one pile, providing a large ETB card-selection effect.",
+            "quantity": 1
+          },
+          {
+            "name": "Approach of the Second Sun",
+            "role": "An alternate win condition: win when cast from hand after a previous Approach cast; otherwise gain seven life and place it seventh from top.",
+            "quantity": 1
+          },
+          {
+            "name": "Slaughter the Strong",
+            "role": "Makes each player keep only creatures totaling four or less power.",
+            "quantity": 1
+          },
+          {
+            "name": "Steel of the Godhead",
+            "role": "A blue-white creature gets +2/+2, lifelink, and cannot be blocked, making Brago more likely to connect for flicker triggers.",
+            "quantity": 1
+          },
+          {
+            "name": "Whispersilk Cloak",
+            "role": "Equip two grants shroud and unblockability, protecting a creature and helping Brago connect, but shroud prevents your own targeted support too.",
+            "quantity": 1
+          },
+          {
+            "name": "Aqueous Form",
+            "role": "Makes the enchanted creature unblockable and scries 1 whenever it attacks.",
+            "quantity": 1
+          }
+        ]
+      }
+    ]
+  },
+  "araumi-of-the-dead-tide": {
+    "plan": "Fill the graveyard with self-mill and disposable creatures, then use Araumi's sorcery-speed encore to pay a creature's mana cost and create one hasty attacking copy for each opponent. Reanimation, sacrifice outlets, ETB payoffs, and permission let the deck reuse those creatures and convert temporary bodies into value.",
+    "groups": [
+      {
+        "label": "COMMANDER: GRAVEYARD ENCORE",
+        "intro": "Araumi exiles cards equal to the number of opponents to grant a graveyard creature encore until end of turn; at sorcery speed, pay its mana cost to make hasty copies attacking each opponent, then sacrifice them at the next end step.",
+        "cards": [
+          {
+            "name": "Araumi of the Dead Tide",
+            "role": "Taps at sorcery speed and exiles cards equal to the opponent count to give a graveyard creature encore, creating hasty copies that attack each opponent before being sacrificed.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "GRAVEYARD FILLERS AND CARD FLOW",
+        "intro": "Self-mill and discard-friendly draw stock the graveyard with encore targets while filtering toward lands, interaction, and reanimation spells.",
+        "cards": [
+          {
+            "name": "Stitcher's Supplier",
+            "role": "Mills three on entry and three more when it dies, quickly filling the graveyard.",
+            "quantity": 1
+          },
+          {
+            "name": "Perpetual Timepiece",
+            "role": "Taps to mill two, stocking encore targets; paying two and exiling it can shuffle chosen graveyard cards back into your library.",
+            "quantity": 1
+          },
+          {
+            "name": "Sifter of Skulls",
+            "role": "Creates a colorless Eldrazi Scion whenever another nontoken creature you control dies.",
+            "quantity": 1
+          },
+          {
+            "name": "Brainstorm",
+            "role": "Draws three then puts two cards from hand on top, allowing unwanted cards to be set up for later draw or mill.",
+            "quantity": 1
+          },
+          {
+            "name": "Impulse",
+            "role": "Selects one of your top four cards for hand, finding a missing land, encore target, or answer without filling the graveyard.",
+            "quantity": 1
+          },
+          {
+            "name": "Fact or Fiction",
+            "role": "Reveals five cards and lets an opponent split them while you take one pile into hand.",
+            "quantity": 1
+          },
+          {
+            "name": "Compulsive Research",
+            "role": "Draws three cards, then makes you discard two unless you discard a land.",
+            "quantity": 1
+          },
+          {
+            "name": "Deep Analysis",
+            "role": "Draws two cards and can be cast from the graveyard for its flashback cost at the cost of 3 life.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "ENCORE ETB PAYOFFS AND SACRIFICE",
+        "intro": "These creatures turn encore copies into life loss, bodies, removal, cards, or sacrifice value; outlets can cash in temporary tokens before their forced end-step sacrifice.",
+        "cards": [
+          {
+            "name": "Gray Merchant of Asphodel",
+            "role": "Makes each opponent lose life equal to your black devotion and gains you the life lost when it enters.",
+            "quantity": 1
+          },
+          {
+            "name": "Grave Titan",
+            "role": "Creates two 2/2 Zombie tokens on entry and whenever it attacks.",
+            "quantity": 1
+          },
+          {
+            "name": "Fleshbag Marauder",
+            "role": "Makes each player sacrifice a creature on entry, turning an encore or reanimated copy into a board-wide edict.",
+            "quantity": 1
+          },
+          {
+            "name": "Mulldrifter",
+            "role": "Draws two cards on entry and can be cast for its evoke cost.",
+            "quantity": 1
+          },
+          {
+            "name": "Shriekmaw",
+            "role": "Destroys a nonartifact, nonblack creature on entry and can be evoked for a reduced cost.",
+            "quantity": 1
+          },
+          {
+            "name": "Abattoir Ghoul",
+            "role": "Has first strike and gains life equal to the toughness of a creature it damaged that dies that turn.",
+            "quantity": 1
+          },
+          {
+            "name": "Phyrexian Ghoul",
+            "role": "Can sacrifice another creature to get +2/+2 until end of turn.",
+            "quantity": 1
+          },
+          {
+            "name": "Ghoultree",
+            "role": "Creature cards in your graveyard reduce its generic cost, but its required green mana is outside Araumi’s identity; the submitted card stays flagged.",
+            "quantity": 1
+          },
+          {
+            "name": "Diregraf Ghoul",
+            "role": "Provides a cheap Zombie body but enters tapped.",
+            "quantity": 1
+          },
+          {
+            "name": "Ghoulraiser",
+            "role": "Returns a random Zombie card from your graveyard to your hand when it enters.",
+            "quantity": 1
+          },
+          {
+            "name": "Viscera Seer",
+            "role": "Sacrifices a creature to scry 1 at instant speed.",
+            "quantity": 1
+          },
+          {
+            "name": "Carrion Feeder",
+            "role": "Its sacrifice ability puts a counter on itself, cashing in temporary encore tokens before their end-step sacrifice; it cannot block.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "REANIMATION, CONTROL AND ENGINE SUPPORT",
+        "intro": "Reanimation reuses creatures without encore; removal and counters answer threats, while Panharmonicon and Lightning Greaves support Araumi's ETB-and-encore engine.",
+        "cards": [
+          {
+            "name": "Victimize",
+            "role": "Sacrifices one creature to return two creature cards from your graveyard tapped.",
+            "quantity": 1
+          },
+          {
+            "name": "Dread Return",
+            "role": "Returns a creature card from your graveyard to the battlefield and can be flashed back by sacrificing three creatures.",
+            "quantity": 1
+          },
+          {
+            "name": "Counterspell",
+            "role": "Counters any spell for two blue mana, protecting Araumi or stopping threats before they reach the battlefield.",
+            "quantity": 1
+          },
+          {
+            "name": "Mana Leak",
+            "role": "Counters a spell unless its controller pays three, protecting early development but becoming less reliable as opponents accumulate mana.",
+            "quantity": 1
+          },
+          {
+            "name": "Negate",
+            "role": "Counters a noncreature spell, guarding the graveyard engine against removal, sweepers, and other noncreature disruption.",
+            "quantity": 1
+          },
+          {
+            "name": "Dissipate",
+            "role": "Counters a target spell and exiles it.",
+            "quantity": 1
+          },
+          {
+            "name": "Doom Blade",
+            "role": "Destroys a nonblack creature at instant speed, clearing a threat while keeping the deck’s creature-recursion plan available.",
+            "quantity": 1
+          },
+          {
+            "name": "Go for the Throat",
+            "role": "Destroys a nonartifact creature, complementing Doom Blade by answering black creatures while leaving artifacts outside its reach.",
+            "quantity": 1
+          },
+          {
+            "name": "Terror",
+            "role": "Destroys a nonartifact, nonblack creature without regeneration, offering cheap interaction with explicit target restrictions.",
+            "quantity": 1
+          },
+          {
+            "name": "Opt",
+            "role": "Scries one and draws one at instant speed, helping find the next land or engine piece while leaving interaction mana flexible.",
+            "quantity": 1
+          },
+          {
+            "name": "Sol Ring",
+            "role": "Provides two colorless mana for expensive spells and encore costs; Araumi’s tap-and-exile ability itself costs no mana.",
+            "quantity": 1
+          },
+          {
+            "name": "Mind Stone",
+            "role": "Adds colorless mana and can be sacrificed for a card.",
+            "quantity": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "role": "Adds one mana of any color in Araumi's color identity.",
+            "quantity": 1
+          },
+          {
+            "name": "Panharmonicon",
+            "role": "When an artifact or creature entering triggers an ability of a permanent you control, it triggers again, multiplying entry value.",
+            "quantity": 1
+          },
+          {
+            "name": "Lightning Greaves",
+            "role": "Gives Araumi haste and shroud with zero equip cost, protecting the commander and enabling an immediate encore activation.",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "label": "MANA BASE",
+        "intro": "Dimir sources and basics support interaction, reanimation, and encore costs; fetch lands find whichever color is missing, while Dimir Aqueduct produces both colors together.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "role": "Taps for any color in Araumi's color identity.",
+            "quantity": 1
+          },
+          {
+            "name": "Dimir Aqueduct",
+            "role": "Enters tapped and returns a land you control, then taps for both blue and black to pay encore and interaction costs.",
+            "quantity": 1
+          },
+          {
+            "name": "Evolving Wilds",
+            "role": "Sacrifices to find a basic land tapped and then shuffles.",
+            "quantity": 1
+          },
+          {
+            "name": "Terramorphic Expanse",
+            "role": "Sacrifices to find a basic land tapped and then shuffles.",
+            "quantity": 1
+          },
+          {
+            "name": "Swamp",
+            "role": "Provides untapped black mana for creature removal and recursion, keeping those effects available beside Araumi’s blue spells.",
+            "quantity": 10
+          },
+          {
+            "name": "Island",
+            "role": "Provides untapped blue mana for interaction and card selection, without the entry delays of the deck’s fixing lands.",
+            "quantity": 10
+          }
+        ]
+      }
+    ],
+    "sideboardGroups": null
+  }
+}

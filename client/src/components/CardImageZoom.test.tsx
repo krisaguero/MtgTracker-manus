@@ -40,7 +40,7 @@ describe('CardImageZoom', () => {
     expect(IMAGE_LOAD_TIMEOUT_MS).toBe(10_000);
     expect(nextImageSourceState(0, 2)).toEqual({ sourceIndex: 1, isLoading: true });
     expect(componentSource).toContain('window.setTimeout(advanceToNextSource, IMAGE_LOAD_TIMEOUT_MS)');
-    expect(componentSource).toContain("{ rootMargin: '3000px' }");
+    expect(componentSource).toContain("{ rootMargin: '0px' }");
   });
 
   it('stops loading and exposes an accessible placeholder when the final source stalls', () => {
@@ -51,5 +51,6 @@ describe('CardImageZoom', () => {
 
     expect(markup).toContain('role="img" aria-label="Example Card"');
     expect(markup).toContain('Example Card');
+    expect(markup).toContain('Artwork unavailable');
   });
 });

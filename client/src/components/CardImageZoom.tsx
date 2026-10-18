@@ -53,7 +53,10 @@ export function CardImageZoom({ src, fallbackSrc, alt, className = '', priority 
         setHasEnteredLoadRange(true);
         observer.disconnect();
       }
-    }, { rootMargin: '3000px' });
+    // Native lazy-loading can defer requests several screens below the fold.
+    // Start the failure timer only when the art is actually visible, not while
+    // a long deck's offscreen cards are still waiting to be requested.
+    }, { rootMargin: '0px' });
     observer.observe(image);
     return () => observer.disconnect();
   }, [hasEnteredLoadRange, priority, resolvedSrc]);
@@ -71,7 +74,7 @@ export function CardImageZoom({ src, fallbackSrc, alt, className = '', priority 
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [open]);
 
-  if (!resolvedSrc) return <div role="img" aria-label={alt} className={`flex min-h-24 items-center justify-center border-2 border-border bg-muted p-3 text-center text-xs font-semibold text-muted-foreground ${className}`}>{alt}</div>;
+  if (!resolvedSrc) return <div role="img" aria-label={alt} className={`flex h-full min-h-24 w-full flex-col items-center justify-center border-2 border-dashed border-border bg-muted p-3 text-center text-xs font-semibold text-muted-foreground ${className}`}><span>{alt}</span><span className="mt-2 text-[10px] font-normal">Artwork unavailable · card text remains linked below</span></div>;
 
   return <>
     <button type="button" onClick={() => setOpen(true)} className={`group/image relative block h-full w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset ${className}`} aria-label={`Zoom image of ${alt}`} aria-busy={isLoading}>

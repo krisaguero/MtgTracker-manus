@@ -18,7 +18,7 @@ describe('personal Brawlternatives source lists', () => {
     expect(madison).toMatchObject({ visibleTotal: 64, sourceStatedTotal: 65, sourceStatedCuts: 5, targetSize: 60 });
     expect(madison?.sourceCountNote).toContain('visible list contains 64 card copies');
     expect(madison?.sourceCountNote).toContain('67 copies across both zones');
-    const landBase = madison?.groups.find((group) => group.label === 'MANA BASE')?.cards ?? [];
+    const landBase = brawlBoxData.decks[0].groups.find((group) => group.label === 'MANA BASE')?.cards ?? [];
     expect(landBase.reduce((sum, card) => sum + card.quantity, 0)).toBe(26);
     expect(landBase.filter((card) => ['Island', 'Plains', 'Mountain'].includes(card.name)).reduce((sum, card) => sum + card.quantity, 0)).toBe(21);
     expect(landBase.find((card) => card.name === 'Mountain')?.quantity).toBe(3);
