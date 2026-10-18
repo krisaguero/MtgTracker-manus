@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { brawlDecks } from '@/lib/brawlDecks';
 import source from '@/data/brawlBox2026.json';
 import BrawlBox from './BrawlBox';
+import BrawlDeckDetail from './BrawlDeckDetail';
 
 const suppliedCards = `1 Marchesa, the Black Rose
 1 Dack's Duplicate
@@ -72,10 +73,13 @@ describe('Marchesa custom non-precon Brawlternative', () => {
     expect(marchesa.sideboardGroups ?? []).toEqual([]);
   });
 
-  it('renders the third entry, custom format label, strategy notes and separate house-rule setup', () => {
+  it('links the third commander card to its unchanged custom deck, strategy notes and house-rule setup', () => {
     const html = renderToStaticMarkup(<Router ssrPath="/brawl-box"><BrawlBox /></Router>);
-    const marchesa = html.slice(html.indexOf('<article id="marchesa-the-black-rose"'));
-    expect(html).toContain('href="#marchesa-the-black-rose"');
+    expect(html).toContain('href="/brawl-box/marchesa-the-black-rose"');
+    expect(html).toContain('id="marchesa-the-black-rose"');
+    expect(html).toContain('alt="Marchesa, the Black Rose"');
+    expect(html).not.toContain('<article');
+    const marchesa = renderToStaticMarkup(<Router ssrPath="/brawl-box/marchesa-the-black-rose"><BrawlDeckDetail params={{ deckId: 'marchesa-the-black-rose' }} /></Router>);
     expect(marchesa).toContain('Entry 03');
     expect(marchesa).toContain('Custom · non-precon Brawlternative');
     expect(marchesa).toContain('Grixis (UBR)');

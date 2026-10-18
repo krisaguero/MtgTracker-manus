@@ -40,6 +40,17 @@ describe('published Brawlternative detail pages', () => {
     }
   });
 
+  it.each([...brawlDecks, ...brawlProposedDecks])('resolves every entry at its canonical detail path: $id', (entry) => {
+    const html = routeMarkup(brawlDeckPath(entry.id));
+    const displayed = brawlProposedDecks.find((proposal) => proposal.sourceDeckId === entry.id) ?? entry;
+    expect(brawlDeckPath(entry.id)).toBe(`/brawl-box/${entry.id}`);
+    expect(html).toContain(escaped(displayed.title));
+    expect(html.match(/<h1\b/g)).toHaveLength(1);
+    expect(html.match(/<article\b/g)).toHaveLength(1);
+    expect(html).toContain('Sources and format caveats');
+    expect(html).toContain(escaped(entry.commander));
+  });
+
   it.each(brawlProposedDecks)('shows complete proposed list and preserved source history for $id', (proposal) => {
     const source = findBrawlDeck(proposal.sourceDeckId!);
     const html = routeMarkup(brawlDeckPath(proposal.sourceDeckId!));

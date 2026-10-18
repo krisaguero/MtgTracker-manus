@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, ArrowRight, CircleAlert, ShieldCheck } from 'lucide-react';
 import { Link } from 'wouter';
-import { BrawlDeckCard } from '@/components/BrawlDeckCard';
+import { BrawlCommanderGallery } from '@/components/BrawlCommanderGallery';
 import { brawlDecks as decks } from '@/lib/brawlDecks';
 
 export default function BrawlBox() {
@@ -33,8 +33,7 @@ export default function BrawlBox() {
       </div>
     </header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-7 sm:px-8 sm:py-10">
-      <nav className="flex flex-wrap gap-2" aria-label="Brawlternatives entries">{decks.map((deck) => <a key={deck.id} href={`#${deck.id}`} className="inline-flex min-h-10 items-center gap-2 border-2 border-border bg-card px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">{String(deck.rank).padStart(2, '0')} · {deck.commander}{deck.publicationStatus === 'work-in-progress' ? ' · WIP' : ''} <ArrowRight className="h-4 w-4" /></a>)}</nav>
-      {decks.map((deck) => <BrawlDeckCard key={deck.id} deck={deck} />)}
+      <BrawlCommanderGallery decks={decks} />
       <section className="border-t-2 border-border pt-5">
         <h2 className="text-xl font-black">Keep the boxes distinct</h2>
         <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">Brawlternatives holds personal, precon-themed and custom non-precon Commander-preview experiments as an alternative to official Brawl. The Retro Battle Box is still the separate, shared non-Commander duel set. Use the Battle Box’s local inventory queue for its nine public lists; this page does not publish scan-derived ownership or proxy flags.</p>
