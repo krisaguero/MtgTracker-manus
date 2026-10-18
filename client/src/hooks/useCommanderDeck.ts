@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import type { RawCommanderDeck, RawDeckCard } from '@/data/commanderDecklists';
-import type { ScryfallCard } from './useSetDetail';
+import { useState, useEffect } from "react";
+import type { RawCommanderDeck, RawDeckCard } from "@/data/commanderDecklists";
+import type { ScryfallCard } from "./useSetDetail";
 
 export interface DecklistEntry {
   quantity: number;
   card: ScryfallCard;
-  zone: 'commander' | 'deck';
+  zone: "commander" | "deck";
 }
 
 export interface CommanderDeckData {
@@ -33,6 +33,21 @@ interface CollectionResponse {
   not_found?: Array<{ set?: string; collector_number?: string }>;
 }
 
+interface OracleSnapshotCard {
+  name?: string;
+  oracle_text?: string;
+  type_line?: string;
+  mana_cost?: string;
+  card_faces?: Array<{
+    name?: string;
+    oracle_text?: string;
+    type_line?: string;
+  }>;
+}
+interface OracleSnapshot {
+  cards?: Record<string, OracleSnapshotCard>;
+}
+
 type RawDeck = RawCommanderDeck;
 type RawCard = RawDeckCard;
 type RawCommander = RawDeckCard;
@@ -40,9 +55,9 @@ type RawCommander = RawDeckCard;
 export function slugify(value: string) {
   return value
     .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
@@ -51,9 +66,12 @@ async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-async function getCollection(refs: Array<RawCard | RawCommander>, signal: AbortSignal) {
+async function getCollection(
+  refs: Array<RawCard | RawCommander>,
+  signal: AbortSignal
+) {
   const unique = new Map<string, RawCard | RawCommander>();
-  refs.forEach((ref) => unique.set(`${ref.set_code}:${ref.number}`, ref));
+  refs.forEach(ref => unique.set(`${ref.set_code}:${ref.number}`, ref));
   const entries = Array.from(unique.values());
 
   const exactCards: ScryfallCard[] = [];
@@ -61,37 +79,59 @@ async function getCollection(refs: Array<RawCard | RawCommander>, signal: AbortS
     for (let index = 0; index < entries.length; index += 75) {
       if (signal.aborted) break;
       const chunk = entries.slice(index, index + 75);
-      const response = await fetch('https://api.scryfall.com/cards/collection', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ identifiers: chunk.map((ref) => ({ set: ref.set_code.toLowerCase(), collector_number: ref.number })) }),
-        signal,
-      });
+      const response = await fetch(
+        "https://api.scryfall.com/cards/collection",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            identifiers: chunk.map(ref => ({
+              set: ref.set_code.toLowerCase(),
+              collector_number: ref.number,
+            })),
+          }),
+          signal,
+        }
+      );
       if (response.ok) {
-        const payload = await response.json() as CollectionResponse;
+        const payload = (await response.json()) as CollectionResponse;
         exactCards.push(...(payload.data ?? []));
       }
     }
   } catch (collectionError) {
-    if (collectionError instanceof DOMException && collectionError.name === 'AbortError') throw collectionError;
-    console.warn('Exact Commander collection batch lookup warning:', collectionError);
+    if (
+      collectionError instanceof DOMException &&
+      collectionError.name === "AbortError"
+    )
+      throw collectionError;
+    console.warn(
+      "Exact Commander collection batch lookup warning:",
+      collectionError
+    );
   }
 
-  const collectedKeys = new Set(exactCards.map((card) => `${card.set}:${card.collector_number}`.toLowerCase()));
-  const missingRefs = entries.filter((ref) => !collectedKeys.has(`${ref.set_code}:${ref.number}`.toLowerCase()));
+  const collectedKeys = new Set(
+    exactCards.map(card => `${card.set}:${card.collector_number}`.toLowerCase())
+  );
+  const missingRefs = entries.filter(
+    ref => !collectedKeys.has(`${ref.set_code}:${ref.number}`.toLowerCase())
+  );
 
   if (missingRefs.length > 0) {
-    const setCodes = Array.from(new Set(missingRefs.map((ref) => ref.set_code.toLowerCase())));
+    const setCodes = Array.from(
+      new Set(missingRefs.map(ref => ref.set_code.toLowerCase()))
+    );
     for (const setCode of setCodes) {
       if (signal.aborted) break;
-      let nextUrl: string | undefined = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${setCode}`)}&unique=prints&order=set`;
+      let nextUrl: string | undefined =
+        `https://api.scryfall.com/cards/search?q=${encodeURIComponent(`set:${setCode}`)}&unique=prints&order=set`;
       let pageCount = 0;
       try {
         while (nextUrl && pageCount < 6) {
           if (signal.aborted) break;
           const searchRes = await fetch(nextUrl, { signal });
           if (!searchRes.ok) break;
-          const searchData = await searchRes.json() as SearchResponse;
+          const searchData = (await searchRes.json()) as SearchResponse;
           const items = searchData.data ?? [];
           for (const card of items) {
             const k = `${card.set}:${card.collector_number}`.toLowerCase();
@@ -110,17 +150,24 @@ async function getCollection(refs: Array<RawCard | RawCommander>, signal: AbortS
   }
 
   // Final fallback: fetch named cards individually for any still missing
-  const stillMissingNames = Array.from(new Set(refs.map((r) => r.name.toLowerCase())));
-  const collectedNameSet = new Set(exactCards.map((c) => c.name.toLowerCase()));
-  const uncollectedNames = stillMissingNames.filter((n) => !collectedNameSet.has(n));
+  const stillMissingNames = Array.from(
+    new Set(refs.map(r => r.name.toLowerCase()))
+  );
+  const collectedNameSet = new Set(exactCards.map(c => c.name.toLowerCase()));
+  const uncollectedNames = stillMissingNames.filter(
+    n => !collectedNameSet.has(n)
+  );
 
   if (uncollectedNames.length > 0 && uncollectedNames.length <= 25) {
     for (const name of uncollectedNames) {
       if (signal.aborted) break;
       try {
-        const res = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`, { signal });
+        const res = await fetch(
+          `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`,
+          { signal }
+        );
         if (res.ok) {
-          const cardData = await res.json() as ScryfallCard;
+          const cardData = (await res.json()) as ScryfallCard;
           if (cardData && cardData.name) exactCards.push(cardData);
         }
       } catch (err) {
@@ -161,12 +208,12 @@ function localCardFromRef(ref: RawCard | RawCommander): ScryfallCard {
   return {
     id: ref.scryfall_id || `fallback-${ref.set_code}-${ref.number}-${ref.name}`,
     name: ref.name,
-    type_line: ref.type_line || 'Card',
-    rarity: 'rare',
+    type_line: ref.type_line || "Card",
+    rarity: "rare",
     set: ref.set_code,
     collector_number: ref.number,
-    released_at: '2024-01-01',
-    layout: 'normal',
+    released_at: "2024-01-01",
+    layout: "normal",
     colors: [],
     color_identity: [],
     prices: { usd: null },
@@ -174,31 +221,100 @@ function localCardFromRef(ref: RawCard | RawCommander): ScryfallCard {
   };
 }
 
-function resolveEntry(ref: RawCard | RawCommander, cards: ScryfallCard[], zone: DecklistEntry['zone']): DecklistEntry | null {
-  const found = cards.find((item) => cardKey(item) === `${ref.set_code}:${ref.number}`.toLowerCase())
-    ?? cards.find((item) => item.name.toLowerCase() === ref.name.toLowerCase());
+async function getOracleSnapshot(setCode: string, signal: AbortSignal) {
+  try {
+    const response = await fetch(
+      `/data/precon-oracle/${setCode.toLowerCase()}.json`,
+      { signal }
+    );
+    if (!response.ok) return new Map<string, OracleSnapshotCard>();
+    const payload = (await response.json()) as OracleSnapshot;
+    return new Map(
+      Object.entries(payload.cards ?? {}).map(([name, card]) => [
+        name.toLowerCase(),
+        card,
+      ])
+    );
+  } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError")
+      throw error;
+    return new Map<string, OracleSnapshotCard>();
+  }
+}
+
+export function hydrateOracle(
+  card: ScryfallCard,
+  snapshot: Map<string, OracleSnapshotCard>
+): ScryfallCard {
+  const patch = snapshot.get(card.name.toLowerCase());
+  if (!patch) return card;
+  const card_faces = card.card_faces
+    ? card.card_faces.map((face, index) => ({
+        ...patch.card_faces?.[index],
+        ...face,
+        oracle_text: face.oracle_text ?? patch.card_faces?.[index]?.oracle_text,
+      }))
+    : patch.card_faces?.map(face => ({
+        ...face,
+        name: face.name ?? card.name,
+      }));
+  return {
+    ...card,
+    oracle_text:
+      card.oracle_text ||
+      patch.oracle_text ||
+      card_faces
+        ?.map(face => `${face.name}\n${face.oracle_text ?? ""}`)
+        .join("\n\n"),
+    type_line:
+      card.type_line !== "Card"
+        ? card.type_line
+        : (patch.type_line ?? card.type_line),
+    mana_cost: card.mana_cost ?? patch.mana_cost,
+    card_faces,
+  };
+}
+
+export function resolveEntry(
+  ref: RawCard | RawCommander,
+  cards: ScryfallCard[],
+  zone: DecklistEntry["zone"]
+): DecklistEntry {
+  const found =
+    cards.find(
+      item => cardKey(item) === `${ref.set_code}:${ref.number}`.toLowerCase()
+    ) ?? cards.find(item => item.name.toLowerCase() === ref.name.toLowerCase());
   const card = found ?? localCardFromRef(ref);
   return { quantity: ref.count ?? 1, card, zone };
 }
 
-function findDeck(decks: RawCommanderDeck[], setCode: string, deckSlug: string) {
+function findDeck(
+  decks: RawCommanderDeck[],
+  setCode: string,
+  deckSlug: string
+) {
   const normalizedSet = setCode.toLowerCase();
   const normalizedSlug = decodeURIComponent(deckSlug).toLowerCase();
 
   // Tier 1: exact set code and exact slug match
-  let matched = decks.find((deck) =>
-    deck.set_code.toLowerCase() === normalizedSet && slugify(deck.name) === normalizedSlug,
+  let matched = decks.find(
+    deck =>
+      deck.set_code.toLowerCase() === normalizedSet &&
+      slugify(deck.name) === normalizedSlug
   );
   if (matched) return matched;
 
   // Tier 2: slug match regardless of set code (handles set code aliases like m3c vs mar etc)
-  matched = decks.find((deck) => slugify(deck.name) === normalizedSlug);
+  matched = decks.find(deck => slugify(deck.name) === normalizedSlug);
   if (matched) return matched;
 
   // Tier 3: partial name inclusion
-  matched = decks.find((deck) => {
+  matched = decks.find(deck => {
     const deckSlugName = slugify(deck.name);
-    return deckSlugName.includes(normalizedSlug) || normalizedSlug.includes(deckSlugName);
+    return (
+      deckSlugName.includes(normalizedSlug) ||
+      normalizedSlug.includes(deckSlugName)
+    );
   });
   return matched ?? null;
 }
@@ -216,10 +332,14 @@ export function useCommanderDeck(setCode?: string, deckSlug?: string) {
       setError(null);
       setLoading(true);
       try {
-        const { commanderDecklists } = await import('@/data/commanderDecklists');
-        const rawDeck = setCode && deckSlug ? findDeck(commanderDecklists, setCode, deckSlug) : null;
+        const { commanderDecklists } =
+          await import("@/data/commanderDecklists");
+        const rawDeck =
+          setCode && deckSlug
+            ? findDeck(commanderDecklists, setCode, deckSlug)
+            : null;
         if (!rawDeck) {
-          setError('Commander precon not found in the decklist index.');
+          setError("Commander precon not found in the decklist index.");
           setLoading(false);
           return;
         }
@@ -228,17 +348,35 @@ export function useCommanderDeck(setCode?: string, deckSlug?: string) {
         // deterministic CDN URLs over a burst of collection/search API calls, which
         // are especially prone to browser CORS and 429 failures. Keep enrichment as
         // a best-effort fallback for legacy rows without a UUID.
-        const cards = refs.some((ref) => !ref.scryfall_id) ? await getCollection(refs, controller.signal) : [];
+        const [cards, oracleSnapshot] = await Promise.all([
+          refs.some(ref => !ref.scryfall_id)
+            ? getCollection(refs, controller.signal)
+            : Promise.resolve([] as ScryfallCard[]),
+          getOracleSnapshot(rawDeck.set_code, controller.signal),
+        ]);
         if (!active) return;
 
         const commander = rawDeck.commander
-          .map((ref) => resolveEntry(ref, cards, 'commander'))
+          .map(ref => {
+            const entry = resolveEntry(ref, cards, "commander");
+            return {
+              ...entry,
+              card: hydrateOracle(entry.card, oracleSnapshot),
+            };
+          })
           .filter((entry): entry is DecklistEntry => entry !== null);
         const deck = rawDeck.cards
-          .map((ref) => resolveEntry(ref, cards, 'deck'))
+          .map(ref => {
+            const entry = resolveEntry(ref, cards, "deck");
+            return {
+              ...entry,
+              card: hydrateOracle(entry.card, oracleSnapshot),
+            };
+          })
           .filter((entry): entry is DecklistEntry => entry !== null);
         const deckCards = deck.reduce((sum, entry) => sum + entry.quantity, 0);
-        const totalCards = deckCards + commander.reduce((sum, entry) => sum + entry.quantity, 0);
+        const totalCards =
+          deckCards + commander.reduce((sum, entry) => sum + entry.quantity, 0);
 
         setData({
           name: rawDeck.name,
@@ -255,9 +393,9 @@ export function useCommanderDeck(setCode?: string, deckSlug?: string) {
         });
         setLoading(false);
       } catch (err) {
-        if (err instanceof DOMException && err.name === 'AbortError') return;
-        console.error('Failed to load commander decklist:', err);
-        setError('Failed to load decklist cards from Scryfall API.');
+        if (err instanceof DOMException && err.name === "AbortError") return;
+        console.error("Failed to load commander decklist:", err);
+        setError("Failed to load decklist cards from Scryfall API.");
         setLoading(false);
       }
     };

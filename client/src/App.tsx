@@ -33,6 +33,7 @@ const CostcoDealArticle = lazy(() => import('@/pages/CostcoDealArticle'));
 const DupeDecks = lazy(() => import('@/pages/DupeDecks').then((module) => ({ default: module.DupeDecks })));
 const DuelBattleBoxArticle = lazy(() => import('@/pages/DuelBattleBoxArticle'));
 const RetroBattleBox = lazy(() => import('@/pages/RetroBattleBox'));
+const BattleBoxDeckDetail = lazy(() => import('@/pages/BattleBoxDeckDetail'));
 const BrawlBox = lazy(() => import('@/pages/BrawlBox'));
 const BrawlDeckDetail = lazy(() => import('@/pages/BrawlDeckDetail'));
 const BrawlMazirek = lazy(() => import('@/pages/BrawlMazirek'));
@@ -69,6 +70,7 @@ function Router() {
         <Route path="/dupe-decks" component={DupeDecks} />
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
         <Route path="/battle-box" component={RetroBattleBox} />
+        <Route path="/battle-box/:deckId" component={BattleBoxDeckDetail} />
         <Route path="/brawl-box" component={BrawlBox} />
         <Route path="/brawl-box/:deckId" component={BrawlDeckDetail} />
         <Route path="/brawl/mazirek" component={BrawlMazirek} />

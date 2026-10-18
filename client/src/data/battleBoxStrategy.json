@@ -1,0 +1,850 @@
+{
+  "goblin-cavalcade": {
+    "plan": "Deploy a critical mass of hasty and evasive Goblins, attack with low-power bodies to trigger Cavalcade, and use cheap burn or forced-unprofitable blocks to keep damage flowing.",
+    "packages": [
+      {
+        "id": "swarm",
+        "title": "Swarm and haste",
+        "intro": "These cheap attackers establish the wide board and convert early turns into combat damage.",
+        "cards": [
+          {
+            "name": "Fanatical Firebrand",
+            "role": "Hasty Goblin that can sacrifice to deal 1 damage to any target."
+          },
+          {
+            "name": "Goblin Instigator",
+            "role": "Enters and creates a 1/1 Goblin token, adding two bodies for one card."
+          },
+          {
+            "name": "Raging Goblin",
+            "role": "A 1/1 Goblin with haste that starts attacking immediately."
+          },
+          {
+            "name": "Shambling Goblin",
+            "role": "Black 1/1 Goblin; when it dies, target creature an opponent controls gets -1/-1 until end of turn."
+          },
+          {
+            "name": "Frenzied Goblin",
+            "role": "When it attacks, paying {R} can make a target creature unable to block this turn."
+          },
+          {
+            "name": "Goblin Trailblazer",
+            "role": "A 2/1 Goblin with menace, requiring at least two blockers. Its power is too high to trigger Cavalcade without a reduction."
+          },
+          {
+            "name": "Goblin Glory Chaser",
+            "role": "A 1/1 attacker that gains a +1/+1 counter and becomes renowned after its first combat damage to a player; renowned gives it menace, but its increased power no longer qualifies for Cavalcade."
+          }
+        ]
+      },
+      {
+        "id": "cavalcade",
+        "title": "Low-power attack payoffs",
+        "intro": "This enchantment rewards attacks by your low-power creatures with 1 damage to the player or planeswalker they attack.",
+        "cards": [
+          {
+            "name": "Cavalcade of Calamity",
+            "role": "Whenever a creature you control with power 1 or less attacks, this enchantment deals 1 damage to the player or planeswalker that creature is attacking."
+          },
+          {
+            "name": "Shock",
+            "role": "Instant-speed 2 damage to any target, clearing a blocker or providing reach."
+          },
+          {
+            "name": "Volcanic Hammer",
+            "role": "Sorcery-speed 3 damage to any target."
+          }
+        ]
+      },
+      {
+        "id": "mana",
+        "title": "Red mana",
+        "intro": "Basic red mana keeps the one- and two-mana swarm and burn spells castable on curve.",
+        "cards": [
+          {
+            "name": "Mountain",
+            "role": "Basic land that taps for {R}."
+          }
+        ]
+      }
+    ]
+  },
+  "kavu-beastmaster": {
+    "plan": "Ramp into oversized Kavu creatures, use red removal to clear combat, and let enters-the-battlefield value and combat keywords turn a creature-heavy midrange board into the winning exchange.",
+    "packages": [
+      {
+        "id": "kavu",
+        "title": "Kavu bodies and combat",
+        "intro": "These Kavu supply creature bodies, first-strike pressure, and entry-trigger value. Horned Kavu can return a red or green creature you control so you can cast it again and reuse an entry trigger.",
+        "cards": [
+          {
+            "name": "Flametongue Kavu",
+            "role": "When it enters, it deals 4 damage to target creature; it may target a creature you control."
+          },
+          {
+            "name": "Kavu Howler",
+            "role": "A 4/5 Kavu that reveals the top four cards and puts all revealed Kavu cards into your hand, with the rest on the bottom."
+          },
+          {
+            "name": "Kavu Chameleon",
+            "role": "This spell cannot be countered; {G} makes it the color of your choice until end of turn."
+          },
+          {
+            "name": "Kavu Climber",
+            "role": "A 3/3 Kavu that draws a card when it enters."
+          },
+          {
+            "name": "Caldera Kavu",
+            "role": "{1}{B} gives it +1/+1 until end of turn, while {G} makes it the color of your choice until end of turn."
+          },
+          {
+            "name": "Horned Kavu",
+            "role": "When it enters, return a red or green creature you control to its owner's hand, enabling reuse of an entry trigger."
+          },
+          {
+            "name": "Penumbra Kavu",
+            "role": "When it dies, creates a 3/3 black Kavu creature token."
+          },
+          {
+            "name": "Pouncing Kavu",
+            "role": "First strike is always present; kicker {2}{R} gives it two +1/+1 counters and haste as it enters."
+          },
+          {
+            "name": "Assault // Battery",
+            "role": "Assault ({R}) deals 2 damage to any target; Battery ({3}{G}) creates a 3/3 green Elephant token."
+          }
+        ]
+      },
+      {
+        "id": "ramp",
+        "title": "Land acceleration and fixing",
+        "intro": "These spells increase land count and smooth both colors so the midrange creatures arrive ahead of schedule.",
+        "cards": [
+          {
+            "name": "Rampant Growth",
+            "role": "Searches for a basic land and puts it onto the battlefield tapped."
+          },
+          {
+            "name": "Harrow",
+            "role": "Sacrifices a land to find two basics onto the battlefield untapped, fixing colors while advancing mana."
+          },
+          {
+            "name": "Forest",
+            "role": "Basic land that taps for {G}."
+          },
+          {
+            "name": "Mountain",
+            "role": "Basic land that taps for {R}."
+          },
+          {
+            "name": "Shivan Oasis",
+            "role": "Enters tapped and taps for {R} or {G}; its source quantity remains unchanged."
+          }
+        ]
+      },
+      {
+        "id": "removal",
+        "title": "Burn for creature control",
+        "intro": "Efficient red interaction removes blockers or finishes damaged creatures while the Kavu curve takes over.",
+        "cards": [
+          {
+            "name": "Incinerate",
+            "role": "Instant that deals 3 damage to any target; a creature dealt damage this way cannot regenerate this turn."
+          }
+        ]
+      }
+    ]
+  },
+  "oldschool-zombie-tribal": {
+    "plan": "Trade creatures freely, recur Zombies from the graveyard, and use tribal lords plus sacrifice outlets to turn disposable bodies into pressure and attrition.",
+    "packages": [
+      {
+        "id": "tribal",
+        "title": "Zombie board and lords",
+        "intro": "These Zombies establish the tribe, scale with its graveyard or board count, and make attacks harder to answer.",
+        "cards": [
+          {
+            "name": "Diregraf Ghoul",
+            "role": "A 2/2 Zombie that enters tapped, trading immediate speed for an efficient body."
+          },
+          {
+            "name": "Ghoulraiser",
+            "role": "When it enters, return a random Zombie card from your graveyard to your hand."
+          },
+          {
+            "name": "Abattoir Ghoul",
+            "role": "First strike; creatures dealt damage by it that die let you gain life equal to their toughness."
+          },
+          {
+            "name": "Lord of the Accursed",
+            "role": "Other Zombies you control get +1/+1; paying {1}{B} and tapping it gives all Zombies menace until end of turn, including opposing Zombies."
+          },
+          {
+            "name": "Soulless One",
+            "role": "Its power and toughness each equal the number of Zombies on the battlefield plus Zombie cards in all graveyards."
+          },
+          {
+            "name": "Zombie Master",
+            "role": "Gives other Zombies swampwalk and regeneration; swampwalk works when an opponent controls a Swamp."
+          },
+          {
+            "name": "Undead Warchief",
+            "role": "Zombie creatures you control, including itself, get +2/+1, and Zombie spells you cast cost {1} less."
+          }
+        ]
+      },
+      {
+        "id": "sacrifice",
+        "title": "Sacrifice and recursion",
+        "intro": "Sacrifice outlets turn creatures into power or removal, while the recursive body keeps the engine supplied.",
+        "cards": [
+          {
+            "name": "Gravecrawler",
+            "role": "Can be cast from your graveyard while you control a Zombie, making it repeatable sacrifice fodder."
+          },
+          {
+            "name": "Carrion Feeder",
+            "role": "Cannot block. Its activated ability sacrifices a creature to put a +1/+1 counter on it; sacrificing to a different outlet does not trigger this ability."
+          },
+          {
+            "name": "Phyrexian Ghoul",
+            "role": "Its activated ability sacrifices a creature to give it +2/+2 until end of turn."
+          },
+          {
+            "name": "Fleshbag Marauder",
+            "role": "On entry, each player sacrifices a creature, turning one body into symmetrical edict removal."
+          }
+        ]
+      },
+      {
+        "id": "removal-draw",
+        "title": "Removal and life-for-cards",
+        "intro": "Spot removal answers creatures while Sign in Blood refuels the attrition plan at a life cost.",
+        "cards": [
+          {
+            "name": "Doom Blade",
+            "role": "Instantly destroys a target nonblack creature."
+          },
+          {
+            "name": "Go for the Throat",
+            "role": "Instantly destroys a target nonartifact creature."
+          },
+          {
+            "name": "Terror",
+            "role": "Instantly destroys a target nonartifact, nonblack creature; it cannot be regenerated."
+          },
+          {
+            "name": "Sign in Blood",
+            "role": "Target player draws two cards and loses 2 life."
+          }
+        ]
+      },
+      {
+        "id": "mana",
+        "title": "Swamp mana",
+        "intro": "Basic black mana casts the Zombie curve and activates its black abilities.",
+        "cards": [
+          {
+            "name": "Swamp",
+            "role": "Basic land that taps for {B}."
+          }
+        ]
+      }
+    ]
+  },
+  "lightning-burn": {
+    "plan": "Spend each mana efficiently on direct damage, use burn to remove blockers or target the opponent, and let a small prowess threat or Eidolon turn the spell density into a fast finish.",
+    "packages": [
+      {
+        "id": "burn",
+        "title": "Direct damage and reach",
+        "intro": "These spells convert mana into damage to creatures or players, with several options to split, suspend, or reuse damage.",
+        "cards": [
+          {
+            "name": "Lightning Bolt",
+            "role": "Instant for 3 damage to any target."
+          },
+          {
+            "name": "Incinerate",
+            "role": "Instant for 3 damage to any target; a creature hit cannot regenerate this turn."
+          },
+          {
+            "name": "Shock",
+            "role": "Instant for 2 damage to any target."
+          },
+          {
+            "name": "Searing Blood",
+            "role": "Deals 2 damage to a target creature; if that creature dies this turn, it deals 3 damage to that creature's controller."
+          },
+          {
+            "name": "Searing Blaze",
+            "role": "Deals 1 damage to a target player or planeswalker and 1 damage to a creature that player or planeswalker's controller controls; landfall raises both to 3."
+          },
+          {
+            "name": "Forked Bolt",
+            "role": "Deals 2 damage divided as you choose among one or two targets."
+          },
+          {
+            "name": "Firebolt",
+            "role": "Deals 2 damage to any target and has flashback for {4}{R}."
+          },
+          {
+            "name": "Fireblast",
+            "role": "You may sacrifice two Mountains rather than pay its mana cost; it then deals 4 damage to any target."
+          },
+          {
+            "name": "Volcanic Hammer",
+            "role": "Sorcery-speed 3 damage to any target."
+          },
+          {
+            "name": "Rift Bolt",
+            "role": "Suspended for {R} to deal 3 damage next upkeep, or cast normally for {2}{R}."
+          },
+          {
+            "name": "Lava Spike",
+            "role": "Sorcery that deals 3 damage to target player or planeswalker."
+          }
+        ]
+      },
+      {
+        "id": "threats",
+        "title": "Spell-fueled attackers",
+        "intro": "These creatures pressure life totals while the deck continues casting cheap spells.",
+        "cards": [
+          {
+            "name": "Monastery Swiftspear",
+            "role": "Haste and prowess make it larger whenever you cast a noncreature spell that turn."
+          },
+          {
+            "name": "Eidolon of the Great Revel",
+            "role": "Whenever a player casts a spell with mana value 3 or less, it deals 2 damage to that player."
+          }
+        ]
+      },
+      {
+        "id": "mana",
+        "title": "Red mana",
+        "intro": "Untapped red mana supports the low curve and keeps Fireblast available as reach.",
+        "cards": [
+          {
+            "name": "Mountain",
+            "role": "Basic land that taps for {R}."
+          }
+        ]
+      }
+    ]
+  },
+  "rg-eldrazi-ramp-stompy": {
+    "plan": "Accelerate through basic-land ramp, stabilize with a few sweepers and bodies, then cast colorless Eldrazi whose size and cast or death triggers overwhelm the board.",
+    "packages": [
+      {
+        "id": "ramp",
+        "title": "Land-ramp ladder",
+        "intro": "These spells put extra lands into play or hand so the deck reaches its expensive threats without Elves.",
+        "cards": [
+          {
+            "name": "Sakura-Tribe Elder",
+            "role": "Sacrifices to search for a basic land and put it onto the battlefield tapped."
+          },
+          {
+            "name": "Farseek",
+            "role": "Searches for a Plains, Island, Swamp, or Mountain and puts it onto the battlefield tapped."
+          },
+          {
+            "name": "Search for Tomorrow",
+            "role": "Searches for a basic land and puts it onto the battlefield untapped; suspend 2—{G} delays the cast."
+          },
+          {
+            "name": "Cultivate",
+            "role": "Puts one basic land onto the battlefield tapped and one into your hand."
+          },
+          {
+            "name": "Kodama's Reach",
+            "role": "Puts one basic land onto the battlefield tapped and one into your hand."
+          },
+          {
+            "name": "Skyshroud Claim",
+            "role": "Searches for up to two Forest cards and puts them onto the battlefield, even if they are nonbasic Forests."
+          }
+        ]
+      },
+      {
+        "id": "eldrazi",
+        "title": "Eldrazi finishers and engines",
+        "intro": "The high end supplies trampling attackers, cast-trigger interaction, and death-based token value.",
+        "cards": [
+          {
+            "name": "Ulamog's Crusher",
+            "role": "An 8/8 with annihilator 2 and must attack each combat if able."
+          },
+          {
+            "name": "It That Betrays",
+            "role": "Annihilator 2, and whenever an opponent sacrifices a nontoken permanent, you put that card onto the battlefield under your control."
+          },
+          {
+            "name": "Artisan of Kozilek",
+            "role": "Annihilator 2; when cast, it returns a creature card from your graveyard to the battlefield."
+          },
+          {
+            "name": "Pawn of Ulamog",
+            "role": "Creates a 0/1 Eldrazi Spawn token whenever it or another nontoken creature you control dies; Spawn can sacrifice for {C}."
+          },
+          {
+            "name": "Conduit of Ruin",
+            "role": "When cast, may search for a colorless creature card with mana value 7 or greater, put it on top, and the first creature spell each turn costs {2} less."
+          }
+        ]
+      },
+      {
+        "id": "interaction",
+        "title": "Red stabilization",
+        "intro": "Early red interaction buys the turns needed to reach the Eldrazi curve.",
+        "cards": [
+          {
+            "name": "Lightning Bolt",
+            "role": "Instant for 3 damage to any target."
+          },
+          {
+            "name": "Pyroclasm",
+            "role": "Deals 2 damage to each creature, clearing most early boards."
+          }
+        ]
+      },
+      {
+        "id": "lands",
+        "title": "Two-color land base",
+        "intro": "These lands supply the ramp spells and red interaction while preserving the supplied quantities.",
+        "cards": [
+          {
+            "name": "Karplusan Forest",
+            "role": "Taps for {C}, or for {R} or {G} while dealing 1 damage to you."
+          },
+          {
+            "name": "Gruul Turf",
+            "role": "Enters tapped, returns a land to your hand, and taps for {R}{G}."
+          },
+          {
+            "name": "Forest",
+            "role": "Basic land that taps for {G}."
+          },
+          {
+            "name": "Mountain",
+            "role": "Basic land that taps for {R}."
+          }
+        ]
+      }
+    ]
+  },
+  "theros-boros-soldiers": {
+    "plan": "Build a wide Soldier board, target your own heroic creatures with combat tricks, and use counters, attack-wide payoffs, and efficient removal to win combat.",
+    "packages": [
+      {
+        "id": "heroic",
+        "title": "Heroic and +1/+1 counters",
+        "intro": "Cast your own targeted spells on heroic creatures, then convert the resulting counters or tokens into a stronger attack.",
+        "cards": [
+          {
+            "name": "Akroan Crusader",
+            "role": "Heroic: whenever you cast a spell that targets it, create a hasty 1/1 red Soldier token."
+          },
+          {
+            "name": "Akroan Sergeant",
+            "role": "First strike and renown 1: combat damage to a player puts a +1/+1 counter on it once."
+          },
+          {
+            "name": "Bloodcrazed Hoplite",
+            "role": "Heroic puts a +1/+1 counter on it; whenever a +1/+1 counter is put on it, remove a +1/+1 counter from target creature an opponent controls."
+          },
+          {
+            "name": "Battlewise Hoplite",
+            "role": "Heroic puts a +1/+1 counter on it, then scry 1."
+          },
+          {
+            "name": "Phalanx Leader",
+            "role": "Heroic puts a +1/+1 counter on each creature you control."
+          },
+          {
+            "name": "Akroan Hoplite",
+            "role": "Gets +X/+0 when it attacks, where X is the number of attacking creatures you control."
+          },
+          {
+            "name": "Gods Willing",
+            "role": "Targets a creature you control to give it protection from a color and scries 1; that targeting can trigger heroic."
+          }
+        ]
+      },
+      {
+        "id": "tokens",
+        "title": "Soldier-wide pressure",
+        "intro": "Token makers and attack triggers widen the board so the hoplites and denizen convert numbers into damage.",
+        "cards": [
+          {
+            "name": "Court Street Denizen",
+            "role": "Whenever another white creature you control enters, tap target creature an opponent controls; Raise the Alarm supplies two white entry triggers."
+          },
+          {
+            "name": "Raise the Alarm",
+            "role": "Instant that creates two 1/1 white Soldier tokens."
+          },
+          {
+            "name": "Alesha's Vanguard",
+            "role": "A 3/3 Orc with dash {2}{B}, giving it haste and returning it to hand at the next end step when dashed."
+          }
+        ]
+      },
+      {
+        "id": "interaction",
+        "title": "Protection and removal",
+        "intro": "These spells protect key attackers or remove blockers without changing the submitted list.",
+        "cards": [
+          {
+            "name": "Lightning Bolt",
+            "role": "Instant for 3 damage to any target."
+          }
+        ]
+      },
+      {
+        "id": "lands",
+        "title": "Boros mana",
+        "intro": "The supplied Plains and Mountains cast the white heroic curve and red interaction; Temple adds scry at a tapped-land cost.",
+        "cards": [
+          {
+            "name": "Temple of Triumph",
+            "role": "Enters tapped, scries 1, and taps for {R} or {W}."
+          },
+          {
+            "name": "Plains",
+            "role": "Basic land that taps for {W}."
+          },
+          {
+            "name": "Mountain",
+            "role": "Basic land that taps for {R}."
+          }
+        ]
+      }
+    ]
+  },
+  "azorius-control": {
+    "plan": "Trade one-for-one early, sculpt draws, sweep the board when needed, and win behind resilient flying finishers while maintaining countermagic.",
+    "packages": [
+      {
+        "id": "permission",
+        "title": "Countermagic and answers",
+        "intro": "Permission protects the control plan on the stack while Pacifism and sweepers answer permanents that resolve.",
+        "cards": [
+          {
+            "name": "Counterspell",
+            "role": "Counters any target spell for {U}{U}."
+          },
+          {
+            "name": "Mana Leak",
+            "role": "Counters a target spell unless its controller pays {3}."
+          },
+          {
+            "name": "Negate",
+            "role": "Counters a target noncreature spell."
+          },
+          {
+            "name": "Dissipate",
+            "role": "Exiles a target spell it counters."
+          },
+          {
+            "name": "Pacifism",
+            "role": "Aura that prevents enchanted creature from attacking or blocking."
+          },
+          {
+            "name": "Wrath of God",
+            "role": "Destroys all creatures; they cannot be regenerated."
+          },
+          {
+            "name": "Supreme Verdict",
+            "role": "Cannot be countered and destroys all creatures."
+          }
+        ]
+      },
+      {
+        "id": "selection",
+        "title": "Card selection and advantage",
+        "intro": "Cheap selection finds lands or answers while the larger draw spells refill after trading resources.",
+        "cards": [
+          {
+            "name": "Brainstorm",
+            "role": "Draws three, then puts two cards from hand on top of the library."
+          },
+          {
+            "name": "Opt",
+            "role": "Scries 1, then draws a card at instant speed."
+          },
+          {
+            "name": "Fact or Fiction",
+            "role": "Reveals five cards; an opponent separates them into piles and you take one pile into hand."
+          }
+        ]
+      },
+      {
+        "id": "finishers",
+        "title": "Airborne finishers",
+        "intro": "Once opposing threats are controlled, these flyers end the game while resisting common answers.",
+        "cards": [
+          {
+            "name": "Mahamoti Djinn",
+            "role": "A 5/6 flying creature with no additional ability, providing a large evasive clock."
+          },
+          {
+            "name": "Sphinx of Jwar Isle",
+            "role": "A 5/5 flying shroud creature, difficult for targeted removal to answer."
+          },
+          {
+            "name": "Sphinx of Magosi",
+            "role": "A 6/6 flyer that can pay {2}{U} to draw a card and put a +1/+1 counter on it."
+          }
+        ]
+      },
+      {
+        "id": "lands",
+        "title": "Azorius mana",
+        "intro": "The lands provide the blue-heavy permission base and white needed for removal and sweepers.",
+        "cards": [
+          {
+            "name": "Azorius Chancery",
+            "role": "Enters tapped, returns a land to hand, and taps for {W}{U}."
+          },
+          {
+            "name": "Meandering River",
+            "role": "Enters tapped and taps for {W} or {U}."
+          },
+          {
+            "name": "Island",
+            "role": "Basic land that taps for {U}."
+          },
+          {
+            "name": "Plains",
+            "role": "Basic land that taps for {W}."
+          }
+        ]
+      }
+    ]
+  },
+  "simic-evasive-tempo-midrange": {
+    "plan": "Use cheap selection and land development to deploy evasive creatures, reuse enter-the-battlefield interaction, and turn untap engines plus tempo spells into a sustained midrange advantage.",
+    "packages": [
+      {
+        "id": "evasion",
+        "title": "Evasive and tempo creatures",
+        "intro": "These creatures pressure from the air or repeatedly reset opposing creatures while the deck develops.",
+        "cards": [
+          {
+            "name": "Coiling Oracle",
+            "role": "When it enters, reveal the top card: a land goes onto the battlefield (not inherently tapped); any other card goes into your hand."
+          },
+          {
+            "name": "Trygon Predator",
+            "role": "A flying attacker whose combat damage to a player may destroy an artifact or enchantment that player controls."
+          },
+          {
+            "name": "Man-o'-War",
+            "role": "When it enters, return target creature to its owner's hand."
+          },
+          {
+            "name": "Peregrine Drake",
+            "role": "A flying creature that untaps up to five lands when it enters, allowing those lands to be used again for interaction or another spell."
+          },
+          {
+            "name": "Prophet of Kruphix",
+            "role": "Gives your creatures flash and untaps all creatures and lands you control during each other player's untap step."
+          },
+          {
+            "name": "Simic Sky Swallower",
+            "role": "A 6/6 flying trampler with shroud, serving as a hard-to-target finisher."
+          }
+        ]
+      },
+      {
+        "id": "development",
+        "title": "Land and card development",
+        "intro": "These spells increase land count or draw through the deck so the tempo threats and interaction stay online.",
+        "cards": [
+          {
+            "name": "Explore",
+            "role": "Draws a card and allows an additional land play this turn."
+          },
+          {
+            "name": "Compulsive Research",
+            "role": "Target player draws three cards, then discards two cards unless they discard a land card; usually refuels your own hand."
+          },
+          {
+            "name": "Deep Analysis",
+            "role": "Target player draws two cards for {3}{U}; flashback costs {1}{U} and 3 life, then exiles the spell."
+          },
+          {
+            "name": "Urban Evolution",
+            "role": "Draws three cards and allows an additional land play this turn."
+          }
+        ]
+      },
+      {
+        "id": "interaction",
+        "title": "Countermagic and reset",
+        "intro": "Permission and bounce preserve the tempo lead and protect the larger evasive threats.",
+        "cards": [
+          {
+            "name": "Counterspell",
+            "role": "Counters any target spell for {U}{U}."
+          },
+          {
+            "name": "Remand",
+            "role": "Counters a target spell and returns it to its owner's hand, then draws you a card."
+          }
+        ]
+      },
+      {
+        "id": "lands",
+        "title": "Simic mana",
+        "intro": "The land base supplies both colors while the bounce land trades an immediate land for two mana later.",
+        "cards": [
+          {
+            "name": "Simic Growth Chamber",
+            "role": "Enters tapped, returns a land to hand, and taps for {G}{U}."
+          },
+          {
+            "name": "Woodland Stream",
+            "role": "Enters tapped and taps for {G} or {U}."
+          },
+          {
+            "name": "Island",
+            "role": "Basic land that taps for {U}."
+          },
+          {
+            "name": "Forest",
+            "role": "Basic land that taps for {G}."
+          }
+        ]
+      }
+    ]
+  },
+  "mono-white-lifegain-sunbond-heroic": {
+    "plan": "Gain life repeatedly, grow Sunbond and lifegain payoffs, then use heroic spells and wide token attacks to turn a defensive start into an evasive, counter-heavy finish.",
+    "packages": [
+      {
+        "id": "lifegain",
+        "title": "Life-gain engine and payoffs",
+        "intro": "Repeated life gain supplies the counters and life buffer that make the deck's creatures scale.",
+        "cards": [
+          {
+            "name": "Soulmender",
+            "role": "Taps to gain 1 life."
+          },
+          {
+            "name": "Ajani's Pridemate",
+            "role": "Whenever you gain life, it gets a +1/+1 counter."
+          },
+          {
+            "name": "Wall of Essence",
+            "role": "Defender; whenever it is dealt combat damage, you gain that much life."
+          },
+          {
+            "name": "Sungrace Pegasus",
+            "role": "Flying and lifelink make it an evasive recurring source of life gain."
+          },
+          {
+            "name": "Sunbond",
+            "role": "Aura that puts that many +1/+1 counters on enchanted creature whenever you gain life."
+          },
+          {
+            "name": "Dawnbringer Charioteers",
+            "role": "Flying and lifelink; heroic puts a +1/+1 counter on it."
+          },
+          {
+            "name": "Archetype of Courage",
+            "role": "Gives your creatures first strike and prevents opponents' creatures from having first strike."
+          }
+        ]
+      },
+      {
+        "id": "counters",
+        "title": "Heroic counters and creature growth",
+        "intro": "Cast your own targeted spells on heroic creatures, then use the counters to build a dominant board.",
+        "cards": [
+          {
+            "name": "Phalanx Leader",
+            "role": "Heroic puts a +1/+1 counter on each creature you control."
+          },
+          {
+            "name": "Tethmos High Priest",
+            "role": "Heroic returns a creature card with mana value 2 or less from your graveyard to the battlefield."
+          },
+          {
+            "name": "Paragon of New Dawns",
+            "role": "Other white creatures you control get +1/+1. Paying {W} and tapping it gives another target white creature you control vigilance until end of turn."
+          },
+          {
+            "name": "Silent Sentinel",
+            "role": "Flying; whenever it attacks, it returns an enchantment card from your graveyard to the battlefield."
+          },
+          {
+            "name": "Soul of Theros",
+            "role": "Can give your creatures +2/+2, first strike, and lifelink until end of turn from the graveyard or battlefield."
+          },
+          {
+            "name": "Heliod's Pilgrim",
+            "role": "When it enters, searches your library for an Aura card and puts it into your hand."
+          }
+        ]
+      },
+      {
+        "id": "spells",
+        "title": "Targeted support and wide attacks",
+        "intro": "These spells trigger heroic when they target your creatures, while token and tap effects make combat favorable.",
+        "cards": [
+          {
+            "name": "Mortal's Ardor",
+            "role": "Gives target creature +1/+1 and lifelink until end of turn. Casting it on your own heroic creature can trigger heroic while combat damage supplies life gain."
+          },
+          {
+            "name": "Divine Favor",
+            "role": "Aura that gives enchanted creature +1/+3 and you 3 life; casting it targeting a creature can trigger heroic."
+          },
+          {
+            "name": "Oppressive Rays",
+            "role": "Aura that taxes the enchanted creature's attacks, blocks, and activated abilities by {3}."
+          },
+          {
+            "name": "Excoriate",
+            "role": "Sorcery that exiles a tapped target creature."
+          },
+          {
+            "name": "Glimpse the Sun God",
+            "role": "Pay {X}{W} to tap X target creatures, then scry 1. It can clear blockers or target your own heroic creatures after they have attacked."
+          },
+          {
+            "name": "Launch the Fleet",
+            "role": "Strive costs {1} for each target beyond the first. Until end of turn, each targeted creature creates a tapped and attacking 1/1 white Soldier token whenever it attacks."
+          },
+          {
+            "name": "Pillar of Light",
+            "role": "Exiles a target creature with toughness 4 or greater."
+          },
+          {
+            "name": "Solemn Offering",
+            "role": "Destroys target artifact or enchantment and gains you 4 life."
+          },
+          {
+            "name": "Evangel of Heliod",
+            "role": "When it enters, creates a number of 1/1 white Soldier tokens equal to your devotion to white."
+          }
+        ]
+      },
+      {
+        "id": "mana",
+        "title": "White mana",
+        "intro": "Basic Plains cast the white curve and leave the deck's life and counter engines color-consistent.",
+        "cards": [
+          {
+            "name": "Plains",
+            "role": "Basic land that taps for {W}."
+          }
+        ]
+      }
+    ]
+  }
+}

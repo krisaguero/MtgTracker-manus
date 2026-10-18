@@ -23,6 +23,9 @@ export interface ScryfallCard {
   };
   card_faces?: Array<{
     name: string;
+    oracle_text?: string;
+    type_line?: string;
+    mana_cost?: string;
     image_uris?: {
       normal: string;
       small: string;
