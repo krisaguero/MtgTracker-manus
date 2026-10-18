@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import { Link } from "wouter";
 import { CardImageZoom } from "@/components/CardImageZoom";
+import { DeckExportPanel } from "@/components/DeckExportPanel";
+import { BuyOnlinePanel } from "@/components/BuyOnlinePanel";
 import {
   deckListText,
   getRetroBattleBoxStats,
@@ -180,6 +182,14 @@ export default function BattleBoxDeckDetail({
             )}
           </header>
           <div className="border-b border-border p-4 sm:p-6">
+            <BuyOnlinePanel cards={deck.groups.flatMap(group => group.cards)} sourceLabel="Shared Battle Box source list." proxyHelpHref="/battle-box-proxy-print" />
+            <DeckExportPanel
+              filename={`${deck.id}-battle-box`}
+              sections={{
+                main: deck.groups.flatMap(group => group.cards.map(card => ({ name: card.name, quantity: card.quantity }))),
+              }}
+              sourceNote="This is the supplied non-Commander Battle Box list. Source proxy labels, repeated rows, and warnings are preserved; no card availability or legality is asserted."
+            />
             <div className="flex flex-wrap justify-between gap-3">
               <div
                 role="group"

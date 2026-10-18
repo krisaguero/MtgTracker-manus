@@ -11,6 +11,7 @@ const navigation: SiteItem[] = [
   { type: 'link', href: '/', label: 'Sets' },
   { type: 'link', href: '/battle-box', label: 'Battle Box' },
   { type: 'link', href: '/brawl-box', label: 'Brawlternatives' },
+  { type: 'link', href: '/blog', label: 'Blog / Journal' },
   {
     type: 'group',
     id: 'commander',

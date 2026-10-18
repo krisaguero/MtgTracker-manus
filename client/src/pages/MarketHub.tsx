@@ -6,6 +6,7 @@ const sections = [
     ['/movers', 'Imported mover snapshot · Aug 25'], ['/movers/confirmed', 'Imported report · confirmed'], ['/movers/penny', 'Imported report · penny & portable'], ['/movers/buyout-risk', 'Imported report · buyout-risk'], ['/movers/supply-clock', 'Imported report · supply events'],
   ] },
   { title: 'Reports & briefings', intro: 'Browse published market analysis and archived reports.', links: [
+    ['/blog', 'Daily prose articles · Blog / Journal (published)'],
     ['/market-report', 'Market report'], ['/market-watch', 'Source-dated Market Watch'], ['/market-reports', 'Report archive'], ['/market-today', 'Historical market brief'], ['/market-movers-manus-report', 'Published mover report'],
   ] },
   { title: 'Research tools & articles', intro: 'Explore watchlists, audits, signal explainers, and featured articles.', links: [

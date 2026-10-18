@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { Route, Router, Switch } from 'wouter';
 import { describe, expect, it } from 'vitest';
 import { BrawlDeckCard } from '@/components/BrawlDeckCard';
-import { brawlDeckPath, brawlDecks, cardImage, cardImageFallback, cardReference, cardPrintingLabel, findBrawlDeck } from '@/lib/brawlDecks';
+import { brawlDeckPath, brawlDecks, brawlProposedDecks, cardImage, cardImageFallback, cardReference, cardPrintingLabel, findBrawlDeck } from '@/lib/brawlDecks';
 import BrawlBox from './BrawlBox';
 import BrawlDeckDetail from './BrawlDeckDetail';
 
@@ -26,7 +26,8 @@ describe('published Brawlternative detail pages', () => {
 
   it.each(brawlDecks)('renders $id from its direct URL with sources and sibling links', (deck) => {
     const html = routeMarkup(brawlDeckPath(deck.id));
-    expect(html).toContain(escaped(deck.title));
+    const displayed = brawlProposedDecks.find((proposal) => proposal.sourceDeckId === deck.id) ?? deck;
+    expect(html).toContain(escaped(displayed.title));
     expect(html.match(/<h1\b/g)).toHaveLength(1);
     expect(html.match(/<article\b/g)).toHaveLength(1);
     expect(html).toContain('Sources and format caveats');
@@ -37,6 +38,31 @@ describe('published Brawlternative detail pages', () => {
     for (const sibling of brawlDecks.filter((entry) => entry.id !== deck.id)) {
       expect(html).toContain(`href="${brawlDeckPath(sibling.id)}"`);
     }
+  });
+
+  it.each(brawlProposedDecks)('shows complete proposed list and preserved source history for $id', (proposal) => {
+    const source = findBrawlDeck(proposal.sourceDeckId!);
+    const html = routeMarkup(brawlDeckPath(proposal.sourceDeckId!));
+    expect(source).toBeDefined();
+    expect(html).toContain('Editorial revision');
+    expect(html).toContain('Published proposed 60-card list');
+    expect(html).toContain('Proposed · editorial revision');
+    expect(html).toContain('Original · source');
+    expect(html).toContain('Source-list history · preserved original with audit');
+    expect(html).toContain(escaped(proposal.title));
+    for (const card of proposal.groups.flatMap((group) => group.cards)) expect(html).toContain(escaped(card.name));
+    expect(proposal.groups.flatMap((group) => group.cards).reduce((total, card) => total + card.quantity, 0)).toBe(60);
+  });
+
+  it.each(brawlDecks)('exports exactly one commander in $id', (source) => {
+    const html = routeMarkup(brawlDeckPath(source.id));
+    const preview = html.match(/<pre[^>]*aria-label="Generic text preview"[^>]*>([\s\S]*?)<\/pre>/)?.[1] ?? '';
+    expect(preview).not.toBe('');
+    const escapedCommander = escaped(source.commander);
+    expect(preview.split(`1 ${escapedCommander}`).length - 1).toBe(1);
+    const mainAndCommander = preview.split('\n\nSideboard')[0];
+    const count = mainAndCommander.split('\n').reduce((sum, row) => sum + Number(row.match(/^(\d+) /)?.[1] ?? 0), 0);
+    expect(count).toBe(60);
   });
 
   for (const view of ['list', 'visual'] as const) {

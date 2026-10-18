@@ -586,5 +586,284 @@
         ]
       }
     ]
+  },
+  "proposal-the-wise-mothman": {
+    "plan": "Build a Sultai mill-and-counters engine around The Wise Mothman: use rad counters and repeated nonland mill to distribute +1/+1 counters among distinct targets, then turn that spread into evasion, card flow, and damage. Ramp early and use recursion to recover key engine pieces.",
+    "groups": [
+      {
+        "label": "COMMANDER & MILL-TO-COUNTERS ENGINE",
+        "intro": "The commander turns entry/attack rad counters and each nonland mill event into distributed +1/+1 counters; an event with X cards milled targets up to X distinct creatures.",
+        "cards": [
+          {
+            "name": "The Wise Mothman",
+            "quantity": 1,
+            "role": "Entry and attacks give everyone radiation; a mill event with X nonlands puts one counter on each of up to X distinct creatures."
+          }
+        ]
+      },
+      {
+        "label": "MILL, RAD COUNTERS & TRIGGER PAYOFFS",
+        "intro": "These permanents repeatedly mill, create rad counters, or reward deaths and graveyard size; Mothman’s counters are spread among distinct targets rather than piled onto one creature.",
+        "cards": [
+          {
+            "name": "Nuclear Fallout",
+            "quantity": 1,
+            "role": "Each creature gets twice -X/-X until end of turn, and each player gets X rad counters; X is chosen when the spell is cast."
+          },
+          {
+            "name": "Watchful Radstag",
+            "quantity": 1,
+            "role": "Larger creatures entering can evolve it and create another Radstag; placing counters with Mothman alone does not trigger evolve."
+          },
+          {
+            "name": "Harold and Bob, First Numens",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Agent Frank Horrigan",
+            "quantity": 1,
+            "role": "Proliferates twice when it enters or attacks, multiplying existing counters across chosen permanents or players."
+          },
+          {
+            "name": "Strong, the Brutish Thespian",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Lumbering Megasloth",
+            "quantity": 1,
+            "role": "Costs less for each counter among players and permanents, and enters tapped with trample; the counter-heavy shell can reduce its cost."
+          },
+          {
+            "name": "Piper Wright, Publick Reporter",
+            "quantity": 1,
+            "role": "UNRESOLVED — cannot assess until verified."
+          },
+          {
+            "name": "Mesmeric Orb",
+            "quantity": 1,
+            "role": "Untaps mill each player for each permanent they untap, supplying repeated mill events for Mothman."
+          },
+          {
+            "name": "Mindcrank",
+            "quantity": 1,
+            "role": "Opponent life loss mills that many cards, potentially triggering Mothman when nonlands are milled; Mindcrank itself does not cause life loss."
+          },
+          {
+            "name": "Syr Konrad, the Grim",
+            "quantity": 1,
+            "role": "Drains opponents for creature deaths, creature cards milled or discarded, and creature cards leaving your graveyard; its paid ability mills everyone."
+          },
+          {
+            "name": "Stitcher's Supplier",
+            "quantity": 1,
+            "role": "Mills three cards on entry and three more when it dies, stocking the graveyard and creating mill events."
+          },
+          {
+            "name": "Altar of the Brood",
+            "quantity": 1,
+            "role": "Whenever another permanent you control enters, each opponent mills a card, repeatedly feeding Mothman’s trigger."
+          },
+          {
+            "name": "Drown in the Loch",
+            "quantity": 1,
+            "role": "Counters a spell or destroys a creature, with the available mode depending on cards in that player’s graveyard."
+          }
+        ]
+      },
+      {
+        "label": "+1/+1 COUNTER PAYOFFS",
+        "intro": "These cards convert the distributed counters into larger bodies, evasion, proliferated counters, or graveyard access; Hardened Scales and Corpsejack Menace amplify placement.",
+        "cards": [
+          {
+            "name": "Alpha Deathclaw",
+            "quantity": 1,
+            "role": "Has menace and trample, and its monstrosity puts four +1/+1 counters on it while entering or becoming monstrous destroys a permanent."
+          },
+          {
+            "name": "Hancock, Ghoulish Mayor",
+            "quantity": 1,
+            "role": "Counters on Hancock boost your other Zombies and Mutants; adding +1/+1 counters also prevents its undying from triggering at death."
+          },
+          {
+            "name": "Hardened Scales",
+            "quantity": 1,
+            "role": "Adds an extra +1/+1 counter whenever one or more +1/+1 counters would be put on a creature you control."
+          },
+          {
+            "name": "Corpsejack Menace",
+            "quantity": 1,
+            "role": "Doubles the number of +1/+1 counters put on creatures you control, amplifying Mothman’s distributed counters."
+          },
+          {
+            "name": "Herald of Secret Streams",
+            "quantity": 1,
+            "role": "Makes creatures you control with +1/+1 counters unable to be blocked, converting Mothman’s distributed counters into dependable combat damage."
+          },
+          {
+            "name": "Evolution Sage",
+            "quantity": 1,
+            "role": "Proliferates whenever a land enters under your control, increasing existing +1/+1, rad, and other counters across the board."
+          },
+          {
+            "name": "Thrummingbird",
+            "quantity": 1,
+            "role": "When it deals combat damage to a player, proliferate, extending Mothman’s counter engine across selected permanents and players."
+          },
+          {
+            "name": "Wonder",
+            "quantity": 1,
+            "role": "Gives your creatures flying while it is in your graveyard and you control an Island."
+          },
+          {
+            "name": "Genesis",
+            "quantity": 1,
+            "role": "During your upkeep from the graveyard, you may pay 2G to return a creature card from your graveyard to your hand."
+          },
+          {
+            "name": "Fiend Artisan",
+            "quantity": 1,
+            "role": "Graveyard creatures enlarge it; at sorcery speed, X plus hybrid mana, tapping, and sacrificing another creature tutors a creature costing X or less."
+          },
+          {
+            "name": "Fathom Mage",
+            "role": "Draws a card whenever a +1/+1 counter is put on it, turning Mothman’s distributed counters into budget-friendly repeatable card flow."
+          },
+          {
+            "name": "Inspiring Call",
+            "role": "Draws for creatures you control with +1/+1 counters and gives them indestructible, protecting the counter board while refilling the hand."
+          }
+        ]
+      },
+      {
+        "label": "RECURSION & GRAVEYARD ACCESS",
+        "intro": "Milling can put useful creatures into the graveyard rather than losing access to them. Reanimate and Dread Return bring back one creature, while Victimize trades a body for two tapped creatures.",
+        "cards": [
+          {
+            "name": "Reanimate",
+            "quantity": 1,
+            "role": "Returns a creature from any graveyard directly to the battlefield at the cost of life equal to its mana value."
+          },
+          {
+            "name": "Victimize",
+            "quantity": 1,
+            "role": "Sacrifices one creature to return two creature cards from your graveyard to the battlefield tapped, trading a body for substantial recursion."
+          },
+          {
+            "name": "Dread Return",
+            "quantity": 1,
+            "role": "Returns a creature from your graveyard to the battlefield and can be flashed back by sacrificing three creatures."
+          }
+        ]
+      },
+      {
+        "label": "RAMP & COLOR FIXING",
+        "intro": "Mana rocks and land tutors accelerate the three-color engine and its expensive payoff creatures.",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "role": "Taps for two colorless mana, accelerating Mothman, mill engines, counter payoffs, and expensive recursion spells."
+          },
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "Taps for one mana of any color in The Wise Mothman’s Sultai commander identity, fixing early development and payoff turns."
+          },
+          {
+            "name": "Simic Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one green and one blue mana, fixing Sultai colors for Mothman’s engine."
+          },
+          {
+            "name": "Dimir Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one blue and one black mana, fixing Sultai colors for mill and recursion."
+          },
+          {
+            "name": "Golgari Signet",
+            "quantity": 1,
+            "role": "Pays one mana and taps to produce one black and one green mana, fixing Sultai colors for graveyard payoffs."
+          },
+          {
+            "name": "Farseek",
+            "quantity": 1,
+            "role": "Searches for a Plains, Island, Swamp, or Mountain card and puts it onto the battlefield tapped."
+          },
+          {
+            "name": "Cultivate",
+            "quantity": 1,
+            "role": "Searches for two basic lands, puts one onto the battlefield tapped and the other into your hand, building reliable three-color development."
+          },
+          {
+            "name": "Wayfarer's Bauble",
+            "quantity": 1,
+            "role": "Pay two, tap, and sacrifice it to fetch a tapped basic land, fixing Sultai colors without needing green mana first."
+          }
+        ]
+      },
+      {
+        "label": "COMMANDER MANA BASE",
+        "intro": "These lands fix Sultai colors, with fetch-like lands and basics supporting the ramp package; several lands enter tapped or cost life.",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "quantity": 1,
+            "role": "Taps for one mana of any color in The Wise Mothman’s Sultai commander identity, providing unconditional color fixing."
+          },
+          {
+            "name": "Opulent Palace",
+            "quantity": 1,
+            "role": "Enters tapped and taps for blue, black, or green, supplying complete Sultai fixing at a tempo cost."
+          },
+          {
+            "name": "Exotic Orchard",
+            "quantity": 1,
+            "role": "Taps for any color a land an opponent controls could produce, flexibly fixing Sultai colors in multiplayer."
+          },
+          {
+            "name": "Llanowar Wastes",
+            "quantity": 1,
+            "role": "Taps for colorless, or black or green at the cost of 1 damage, supporting Mothman’s Golgari colors."
+          },
+          {
+            "name": "Yavimaya Coast",
+            "quantity": 1,
+            "role": "Taps for colorless, or green or blue at the cost of 1 damage, supporting Mothman’s Simic colors."
+          },
+          {
+            "name": "Underground River",
+            "quantity": 1,
+            "role": "Taps for colorless, or blue or black at the cost of 1 damage, supporting Mothman’s Dimir colors."
+          },
+          {
+            "name": "Evolving Wilds",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing Sultai colors for the engine."
+          },
+          {
+            "name": "Terramorphic Expanse",
+            "quantity": 1,
+            "role": "Sacrifices to search for any basic land and put it onto the battlefield tapped, fixing Sultai colors for the engine."
+          },
+          {
+            "name": "Forest",
+            "quantity": 6,
+            "role": "Basic land that taps for one green mana, reliably supporting Mothman’s ramp, recursion, and counter payoffs."
+          },
+          {
+            "name": "Island",
+            "quantity": 5,
+            "role": "Basic land that taps for one blue mana, reliably supporting Mothman’s mill, interaction, and counter payoffs."
+          },
+          {
+            "name": "Swamp",
+            "quantity": 4,
+            "role": "Basic land that taps for one black mana, reliably supporting Mothman’s graveyard, removal, and recursion spells."
+          }
+        ]
+      }
+    ]
   }
 }

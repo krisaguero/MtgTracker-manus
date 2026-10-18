@@ -4267,5 +4267,86 @@
       "G",
       "U"
     ]
+  },
+  "Fathom Mage": {
+    "name": "Fathom Mage",
+    "id": "22be6c55-f95e-498e-b6d2-65b7ed57d2d3",
+    "scryfallUrl": "https://scryfall.com/card/ncc/339/fathom-mage?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/2/2/22be6c55-f95e-498e-b6d2-65b7ed57d2d3.jpg?1783923228",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/2/2/22be6c55-f95e-498e-b6d2-65b7ed57d2d3.jpg?1783923228",
+    "set": "ncc",
+    "setName": "New Capenna Commander",
+    "collectorNumber": "339",
+    "artist": "Ryan Pancoast",
+    "oracleText": "Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)\nWhenever a +1/+1 counter is put on this creature, you may draw a card.",
+    "typeLine": "Creature — Human Wizard",
+    "colorIdentity": [
+      "G",
+      "U"
+    ]
+  },
+  "Inspiring Call": {
+    "name": "Inspiring Call",
+    "id": "2555ec7b-5cc2-4ffd-9344-6368019feff9",
+    "scryfallUrl": "https://scryfall.com/card/tle/168/inspiring-call?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/2/5/2555ec7b-5cc2-4ffd-9344-6368019feff9.jpg?1783904804",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/2/5/2555ec7b-5cc2-4ffd-9344-6368019feff9.jpg?1783904804",
+    "set": "tle",
+    "setName": "Avatar: The Last Airbender Eternal",
+    "collectorNumber": "168",
+    "artist": "Alexander Forssberg",
+    "oracleText": "Draw a card for each creature you control with a +1/+1 counter on it. Those creatures gain indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy them.)",
+    "typeLine": "Instant",
+    "colorIdentity": [
+      "G"
+    ]
+  },
+  "Harold and Bob, First Numens": {
+    "name": "Harold and Bob, First Numens",
+    "id": "d730ac69-20ec-4ef3-85ee-a5fd24e5f277",
+    "scryfallUrl": "https://scryfall.com/card/pip/78/harold-and-bob-first-numens?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/d/7/d730ac69-20ec-4ef3-85ee-a5fd24e5f277.jpg?1783912398",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/d/7/d730ac69-20ec-4ef3-85ee-a5fd24e5f277.jpg?1783912398",
+    "set": "pip",
+    "setName": "Fallout",
+    "collectorNumber": "78",
+    "artist": "Andrea Piparo",
+    "oracleText": "Reach, vigilance\nWhen Harold and Bob dies, if it was a creature, return it to the battlefield. It's an Aura enchantment with enchant Forest you control and \"Enchanted Forest has '{T}: Add three mana of any one color. You get two rad counters.'\" Harold and Bob loses all other abilities.",
+    "typeLine": "Legendary Creature — Treefolk Mutant",
+    "colorIdentity": [
+      "G"
+    ]
+  },
+  "Strong, the Brutish Thespian": {
+    "name": "Strong, the Brutish Thespian",
+    "id": "2bc79ed6-057b-439f-b2cd-58d5bcd8b551",
+    "scryfallUrl": "https://scryfall.com/card/pip/84/strong-the-brutish-thespian?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/2/b/2bc79ed6-057b-439f-b2cd-58d5bcd8b551.jpg?1783912395",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/2/b/2bc79ed6-057b-439f-b2cd-58d5bcd8b551.jpg?1783912395",
+    "set": "pip",
+    "setName": "Fallout",
+    "collectorNumber": "84",
+    "artist": "Jason Rainville",
+    "oracleText": "Ward {2}\nEnrage — Whenever Strong is dealt damage, you get three rad counters and put three +1/+1 counters on Strong.\nYou gain life rather than lose life from radiation.",
+    "typeLine": "Legendary Creature — Mutant Berserker",
+    "colorIdentity": [
+      "G"
+    ]
+  },
+  "Piper Wright, Publick Reporter": {
+    "name": "Piper Wright, Publick Reporter",
+    "id": "916bf331-455a-4694-93d3-15dcf6971072",
+    "scryfallUrl": "https://scryfall.com/card/pip/36/piper-wright-publick-reporter?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/9/1/916bf331-455a-4694-93d3-15dcf6971072.jpg?1783912412",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/9/1/916bf331-455a-4694-93d3-15dcf6971072.jpg?1783912412",
+    "set": "pip",
+    "setName": "Fallout",
+    "collectorNumber": "36",
+    "artist": "Rafater",
+    "oracleText": "Whenever Piper Wright deals combat damage to a player, investigate that many times. (To investigate, create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you sacrifice a Clue, put a +1/+1 counter on target creature you control.",
+    "typeLine": "Legendary Creature — Human Detective",
+    "colorIdentity": [
+      "U"
+    ]
   }
 }

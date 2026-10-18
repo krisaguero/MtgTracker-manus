@@ -36,6 +36,7 @@ import { PreconStickyHeader } from "@/components/PreconStickyHeader";
 import { ValuationComparisonSection } from "@/components/ValuationComparisonSection";
 import { resolveCardPrice } from "@/lib/marketPriceIndex";
 import { PreconVisualSpoiler } from "@/components/PreconVisualSpoiler";
+import { DeckExportPanel } from "@/components/DeckExportPanel";
 import {
   preconIsPreorder,
   preconMarketplaceLinks,
@@ -558,6 +559,15 @@ export default function CommanderDeck() {
           </div>
         </section>
 
+        <DeckExportPanel
+          filename={`${data.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-source`}
+          sections={{
+            commandZone: exportCommander,
+            main: exportDeck,
+          }}
+          sourceNote="This is the source precon selection. No legality, availability, ownership, or printing verification is claimed."
+          revisedNote={arenaMode ? "Arena-Morph is selected in the separate analysis below; it is not silently substituted into this source export." : "Arena-Morph remains a separate optional analysis below and is not applied to this source export."}
+        />
         {/* Decklist Export & Arena-Morph Section */}
         <section className="border-2 border-border bg-card p-6 sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

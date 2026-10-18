@@ -52,6 +52,7 @@ const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
 const TabletopPaperSpotlight = lazy(() => import('@/pages/TabletopPaperSpotlight'));
+const BlogJournal = lazy(() => import('@/pages/BlogJournal'));
 
 function Router() {
   return (
@@ -67,6 +68,8 @@ function Router() {
         <Route path={'/markets'} component={MarketHub} />
         <Route path={'/roadmap'} component={Roadmap} />
         <Route path="/market-report" component={MarketReport} />
+        <Route path="/blog/:slug" component={BlogJournal} />
+        <Route path="/blog" component={BlogJournal} />
         <Route path="/dupe-decks" component={DupeDecks} />
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
         <Route path="/battle-box" component={RetroBattleBox} />

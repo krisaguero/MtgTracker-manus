@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import brawlBoxData from '@/data/brawlBox2026.json';
-import { brawlDecks, type BrawlBoxDeck } from '@/lib/brawlDecks';
+import { brawlDecks, brawlProposedDecks, type BrawlBoxDeck } from '@/lib/brawlDecks';
 
 describe('personal Brawlternatives source lists', () => {
   const allGroups = (deck: BrawlBoxDeck) => [...deck.groups, ...(deck.sideboardGroups ?? [])];
@@ -70,5 +70,34 @@ describe('personal Brawlternatives source lists', () => {
         }
       }
     }
+  });
+
+  it('keeps three complete proposed decks separate from their preserved source records', () => {
+    expect(brawlProposedDecks.map((deck) => deck.id)).toEqual([
+      'proposal-the-wise-mothman',
+      'proposal-rakdos-lord-of-riots',
+      'proposal-karlov-of-the-ghost-council',
+    ]);
+    for (const deck of brawlProposedDecks) {
+      expect(deck.sourceDeckId).toBeDefined();
+      expect(brawlDecks.some((source) => source.id === deck.sourceDeckId)).toBe(true);
+      expect(deck.visibleTotal).toBe(60);
+      expect(deck.groups.flatMap((group) => group.cards).reduce((sum, card) => sum + card.quantity, 0)).toBe(60);
+      expect(deck.proposalRationale?.length).toBeGreaterThanOrEqual(2);
+      expect(deck.formatNote).toContain('Custom 60-card');
+    }
+  });
+
+  it('applies the requested proposal corrections without changing the source lists', () => {
+    const mothman = brawlProposedDecks.find((deck) => deck.id === 'proposal-the-wise-mothman')!;
+    const mothmanNames = mothman.groups.flatMap((group) => group.cards).map((card) => card.name);
+    expect(mothmanNames).toEqual(expect.arrayContaining(['Harold and Bob, First Numens', 'Strong, the Brutish Thespian', 'Piper Wright, Publick Reporter', 'Fathom Mage', 'Inspiring Call']));
+    expect(mothmanNames).not.toContain('Abzan Falconer');
+    expect(brawlDecks.find((deck) => deck.id === 'the-wise-mothman')?.visibleTotal).toBe(59);
+    const rakdos = brawlProposedDecks.find((deck) => deck.id === 'proposal-rakdos-lord-of-riots')!;
+    expect(rakdos.groups.flatMap((group) => group.cards).map((card) => card.name)).toContain('Leechridden Swamp');
+    const karlov = brawlProposedDecks.find((deck) => deck.id === 'proposal-karlov-of-the-ghost-council')!;
+    const karlovNames = karlov.groups.flatMap((group) => group.cards).map((card) => card.name);
+    expect(karlovNames).toEqual(expect.arrayContaining(['Crested Sunmare', 'Daxos the Returned', 'Daxos, Blessed by the Sun']));
   });
 });

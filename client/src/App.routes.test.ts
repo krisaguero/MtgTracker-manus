@@ -88,4 +88,23 @@ describe('application route map', () => {
     expect(navigation).toContain("href: '/brawl-box', label: 'Brawlternatives'");
     expect(navigation).toContain("href: '/battle-box-proxy-print', label: 'Battle Box proxy-print how-to'");
   });
+
+  it('registers the published Blog/Journal hub and its three approved articles', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    for (const route of ['/blog', '/blog/:slug']) {
+      const routeIndex = source.indexOf(`path="${route}"`);
+      expect(routeIndex).toBeGreaterThan(-1);
+      expect(routeIndex).toBeLessThan(dynamicSetIndex);
+    }
+    const blog = readFileSync(resolve(process.cwd(), 'client/src/pages/BlogJournal.tsx'), 'utf8');
+    expect(blog).toContain('Published article / journal');
+    expect(blog).not.toContain('Local review draft');
+    expect(blog).not.toContain('not published');
+    const articles = readFileSync(resolve(process.cwd(), 'client/src/data/journalArticles.json'), 'utf8');
+    expect(articles).toContain('remote-play-shuffle-tests');
+    expect(blog).toContain('brawlternative-shelf-roundup');
+    expect(blog).toContain('battle-box-october-17-recap');
+    expect(blog).not.toContain('Phantasy Codex');
+  });
 });

@@ -8,6 +8,7 @@ export type BrawlBoxCard = { name: string; quantity: number; colorIdentity: stri
 export type BrawlBoxGroup = { label: string; intro?: string; cards: BrawlBoxCard[] };
 export type BrawlBoxDeck = {
   id: string;
+  sourceDeckId?: string;
   rank: number;
   title: string;
   subtitle: string;
@@ -37,6 +38,7 @@ export type BrawlBoxDeck = {
   comparisonNotes?: string[];
   sourceLinks?: { label: string; url: string }[];
   upgradeOptions?: { title: string; cardsIn: string[]; cardsOut: string[]; rationale: string; tradeoff: string; sourceUrls?: string[] }[];
+  proposalRationale?: string[];
 };
 
 type StrategyGroup = { label: string; intro: string; cards: { name: string; role: string }[] };
@@ -60,6 +62,16 @@ function strategyGroups(source: BrawlBoxGroup[], strategy: StrategyGroup[]): Bra
   return result;
 }
 export const brawlDecks: BrawlBoxDeck[] = (brawlBoxData.decks as BrawlBoxDeck[]).map((deck) => {
+  const strategy = strategies[deck.id];
+  if (!strategy) return deck;
+  return {
+    ...deck,
+    plan: strategy.plan,
+    groups: strategyGroups(deck.groups, strategy.groups),
+    ...(deck.sideboardGroups && strategy.sideboardGroups ? { sideboardGroups: strategyGroups(deck.sideboardGroups, strategy.sideboardGroups) } : {}),
+  };
+});
+export const brawlProposedDecks: BrawlBoxDeck[] = ((brawlBoxData.proposedDecks ?? []) as BrawlBoxDeck[]).map((deck) => {
   const strategy = strategies[deck.id];
   if (!strategy) return deck;
   return {
