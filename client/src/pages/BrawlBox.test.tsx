@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Router } from 'wouter';
 import { describe, expect, it } from 'vitest';
-import brawlBoxData from '@/data/brawlBox2026.json';
+import { brawlDecks } from '@/lib/brawlDecks';
 import BrawlBox from './BrawlBox';
 
 const suppliedCards = `1 Marchesa, the Black Rose
@@ -61,7 +61,7 @@ const suppliedCards = `1 Marchesa, the Black Rose
 
 describe('Marchesa custom non-precon Brawlternative', () => {
   it('preserves every supplied card copy and group total without adding swaps', () => {
-    const marchesa = brawlBoxData.decks[2]!;
+    const marchesa = brawlDecks[2]!;
     const cards = marchesa.groups.flatMap((group) => group.cards);
     expect(cards.map((card) => `${card.quantity} ${card.name}`).join('\n')).toBe(suppliedCards);
     expect(cards.reduce((sum, card) => sum + card.quantity, 0)).toBe(60);

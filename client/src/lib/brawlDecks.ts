@@ -1,6 +1,6 @@
 import brawlBoxData from '@/data/brawlBox2026.json';
 
-export type BrawlBoxCard = { name: string; quantity: number; colorIdentity: string[]; commanderLegal: boolean; note?: string };
+export type BrawlBoxCard = { name: string; quantity: number; colorIdentity: string[] | null; commanderLegal: boolean | null; verificationStatus?: string; note?: string };
 export type BrawlBoxGroup = { label: string; cards: BrawlBoxCard[] };
 export type BrawlBoxDeck = {
   id: string;
@@ -27,6 +27,11 @@ export type BrawlBoxDeck = {
   storageNotes?: string[];
   houseRuleExtras?: string[];
   formatNote?: string;
+  publicationStatus?: 'work-in-progress';
+  reviewStatus?: string;
+  comparisonNotes?: string[];
+  sourceLinks?: { label: string; url: string }[];
+  upgradeOptions?: { title: string; cardsIn: string[]; cardsOut: string[]; rationale: string; tradeoff: string; sourceUrls?: string[] }[];
 };
 
 export const brawlDecks = brawlBoxData.decks as BrawlBoxDeck[];

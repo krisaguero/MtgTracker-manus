@@ -17,7 +17,7 @@ describe('published Brawlternative detail pages', () => {
     const app = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     expect(app).toContain('<Route path="/brawl-box/:deckId" component={BrawlDeckDetail} />');
     const shelf = renderToStaticMarkup(<Router ssrPath="/brawl-box"><BrawlBox /></Router>);
-    expect(brawlDecks.map((deck) => deck.id)).toEqual(['dr-madison-li', 'araumi-of-the-dead-tide', 'marchesa-the-black-rose']);
+    expect(brawlDecks.map((deck) => deck.id)).toEqual(['dr-madison-li', 'araumi-of-the-dead-tide', 'marchesa-the-black-rose', 'the-wise-mothman', 'rakdos-lord-of-riots', 'karlov-of-the-ghost-council', 'taigam-sidisis-hand']);
     for (const deck of brawlDecks) {
       expect(shelf).toContain(`href="${brawlDeckPath(deck.id)}"`);
       expect(shelf).toContain(`id="${deck.id}"`); // Existing hash links still work.
@@ -66,10 +66,13 @@ describe('published Brawlternative detail pages', () => {
       expect(html).toContain('aria-pressed="true"');
       expect(html).toContain(`aria-controls="${deck.id}-cards"`);
       if (view === 'visual') {
-        expect(html.match(/<img\b/g)).toHaveLength(cards.length);
+        expect(html.match(/<img\b/g)).toHaveLength(cards.filter((card) => card.verificationStatus !== 'unresolved').length);
         expect(html).toContain('loading="lazy"');
         expect(html).toContain('Images are representative Scryfall printings');
-        for (const card of cards) expect(html).toContain(escaped(cardImage(card.name)));
+        for (const card of cards) {
+          if (card.verificationStatus === 'unresolved') expect(html).not.toContain(escaped(cardImage(card.name)));
+          else expect(html).toContain(escaped(cardImage(card.name)));
+        }
       } else {
         expect(html).not.toContain('<img');
       }
@@ -77,7 +80,7 @@ describe('published Brawlternative detail pages', () => {
     });
   }
 
-  it.each(['mothman', 'karlov-of-the-ghost-council', 'rakdos', 'missing-deck'])('does not resolve unpublished or unknown slug %s', (id) => {
+  it.each(['mothman', 'rakdos', 'missing-deck'])('does not resolve unknown slug %s', (id) => {
     expect(findBrawlDeck(id)).toBeUndefined();
     const html = routeMarkup(`/brawl-box/${id}`);
     expect(html).toContain('Brawlternative not found');

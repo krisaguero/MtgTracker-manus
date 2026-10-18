@@ -1,7 +1,7 @@
 {
   "source": "User-supplied decklist text; ownership/proxy annotations intentionally excluded.",
-  "cardDataSource": "Scryfall API; original entries checked 2026-10-16, Marchesa card names, identities, legality and Oracle notes verified 2026-10-17.",
-  "officialBrawlWarning": "Brawlternatives is a personal, precon-themed and custom non-precon 60-card Commander-preview alternative to Brawl, not official Magic Brawl. All three commanders are marked not legal in Brawl and legal in Commander by Scryfall; these 60-card previews are not regulation Commander decks.",
+  "cardDataSource": "Scryfall API; original entries checked 2026-10-16, Marchesa and new public deck reviews checked 2026-10-17. Unresolved submitted names are explicitly marked unknown.",
+  "officialBrawlWarning": "Brawlternatives is a personal, precon-themed and custom 60-card Commander-preview alternative to Brawl, not official Magic Brawl. These previews are not regulation Commander decks. Commander-card format statuses do not certify deck legality. Public works in progress retain their count, name, identity and strategy warnings.",
   "cardIdentityAudit": {
     "Abattoir Ghoul": [
       "B"
@@ -327,8 +327,8 @@
     "Swiftfoot Boots": [],
     "Dragon Blood": [],
     "Talisman of Dominance": [
-      "U",
-      "B"
+      "B",
+      "U"
     ],
     "Talisman of Indulgence": [
       "B",
@@ -366,7 +366,441 @@
       "U",
       "R"
     ],
-    "Grixis Panorama": []
+    "Grixis Panorama": [],
+    "The Wise Mothman": [
+      "B",
+      "G",
+      "U"
+    ],
+    "Nuclear Fallout": [
+      "B"
+    ],
+    "Watchful Radstag": [
+      "G"
+    ],
+    "Agent Frank Horrigan": [
+      "B",
+      "G"
+    ],
+    "Lumbering Megasloth": [
+      "G"
+    ],
+    "Mesmeric Orb": [],
+    "Mindcrank": [],
+    "Syr Konrad, the Grim": [
+      "B"
+    ],
+    "Altar of the Brood": [],
+    "Drown in the Loch": [
+      "B",
+      "U"
+    ],
+    "Alpha Deathclaw": [
+      "B",
+      "G"
+    ],
+    "Hancock, Ghoulish Mayor": [
+      "B"
+    ],
+    "Hardened Scales": [
+      "G"
+    ],
+    "Corpsejack Menace": [
+      "B",
+      "G"
+    ],
+    "Abzan Falconer": [
+      "W"
+    ],
+    "Herald of Secret Streams": [
+      "U"
+    ],
+    "Evolution Sage": [
+      "G"
+    ],
+    "Thrummingbird": [
+      "U"
+    ],
+    "Wonder": [
+      "U"
+    ],
+    "Genesis": [
+      "G"
+    ],
+    "Fiend Artisan": [
+      "B",
+      "G"
+    ],
+    "Simic Signet": [
+      "G",
+      "U"
+    ],
+    "Dimir Signet": [
+      "B",
+      "U"
+    ],
+    "Golgari Signet": [
+      "B",
+      "G"
+    ],
+    "Farseek": [
+      "G"
+    ],
+    "Cultivate": [
+      "G"
+    ],
+    "Wayfarer's Bauble": [],
+    "Opulent Palace": [
+      "B",
+      "G",
+      "U"
+    ],
+    "Exotic Orchard": [],
+    "Llanowar Wastes": [
+      "B",
+      "G"
+    ],
+    "Yavimaya Coast": [
+      "G",
+      "U"
+    ],
+    "Forest": [
+      "G"
+    ],
+    "Rakdos, Lord of Riots": [
+      "B",
+      "R"
+    ],
+    "Spear Spewer": [
+      "R"
+    ],
+    "Night Market Lookout": [
+      "B"
+    ],
+    "Pulse Tracker": [
+      "B"
+    ],
+    "Leechridden Swamp": [
+      "B"
+    ],
+    "Thermo-Alchemist": [
+      "R"
+    ],
+    "Lightning Bolt": [
+      "R"
+    ],
+    "Bump in the Night": [
+      "B",
+      "R"
+    ],
+    "Loyal Subordinate": [
+      "B"
+    ],
+    "Bogardan Hellkite": [
+      "R"
+    ],
+    "Drakuseth, Maw of Flames": [
+      "R"
+    ],
+    "Steel Hellkite": [],
+    "Archfiend of Depravity": [
+      "B"
+    ],
+    "Lord of the Void": [
+      "B"
+    ],
+    "Balefire Dragon": [
+      "R"
+    ],
+    "Utvara Hellkite": [
+      "R"
+    ],
+    "Artisan of Kozilek": [],
+    "Meteor Golem": [],
+    "Sandstone Oracle": [],
+    "Combustible Gearhulk": [
+      "R"
+    ],
+    "Rakdos Signet": [
+      "B",
+      "R"
+    ],
+    "Charcoal Diamond": [
+      "B"
+    ],
+    "Fire Diamond": [
+      "R"
+    ],
+    "Blasphemous Act": [
+      "R"
+    ],
+    "Terminate": [
+      "B",
+      "R"
+    ],
+    "Dreadbore": [
+      "B",
+      "R"
+    ],
+    "Chaos Warp": [
+      "R"
+    ],
+    "Hero's Downfall": [
+      "B"
+    ],
+    "Toxic Deluge": [
+      "B"
+    ],
+    "Bedevil": [
+      "B",
+      "R"
+    ],
+    "Feed the Swarm": [
+      "B"
+    ],
+    "Read the Bones": [
+      "B"
+    ],
+    "Night's Whisper": [
+      "B"
+    ],
+    "Wheel of Misfortune": [
+      "R"
+    ],
+    "Smoldering Marsh": [
+      "B",
+      "R"
+    ],
+    "Foreboding Ruins": [
+      "B",
+      "R"
+    ],
+    "Dragonskull Summit": [
+      "B",
+      "R"
+    ],
+    "Luxury Suite": [
+      "B",
+      "R"
+    ],
+    "Karlov of the Ghost Council": [
+      "B",
+      "W"
+    ],
+    "Soul Warden": [
+      "W"
+    ],
+    "Soul's Attendant": [
+      "W"
+    ],
+    "Authority of the Consuls": [
+      "W"
+    ],
+    "Ajani's Welcome": [
+      "W"
+    ],
+    "Daxos, Blessed by the Sun": [
+      "W"
+    ],
+    "Blind Obedience": [
+      "W"
+    ],
+    "Voice of the Blessed": [
+      "W"
+    ],
+    "Cleric Class": [
+      "W"
+    ],
+    "Vona, Butcher of Magan": [
+      "B",
+      "W"
+    ],
+    "Daxos the Returned": [
+      "B",
+      "W"
+    ],
+    "Archangel of Thune": [
+      "W"
+    ],
+    "Crested Sunmare": [
+      "W"
+    ],
+    "Vito, Thorn of the Dusk Rose": [
+      "B"
+    ],
+    "Elesh Norn, Grand Cenobite": [
+      "W"
+    ],
+    "Nirkana Revenant": [
+      "B"
+    ],
+    "Crypt Ghast": [
+      "B"
+    ],
+    "Serra Ascendant": [
+      "W"
+    ],
+    "Exquisite Blood": [
+      "B"
+    ],
+    "Sanguine Bond": [
+      "B"
+    ],
+    "Bolas's Citadel": [
+      "B"
+    ],
+    "Kaya, Ghost Assassin": [
+      "B",
+      "W"
+    ],
+    "Black Market": [
+      "B"
+    ],
+    "Orzhov Signet": [
+      "B",
+      "W"
+    ],
+    "Talisman of Hierarchy": [
+      "B",
+      "W"
+    ],
+    "Pristine Talisman": [],
+    "Path to Exile": [
+      "W"
+    ],
+    "Anguished Unmaking": [
+      "B",
+      "W"
+    ],
+    "Vindicate": [
+      "B",
+      "W"
+    ],
+    "Utter End": [
+      "B",
+      "W"
+    ],
+    "Merciless Eviction": [
+      "B",
+      "W"
+    ],
+    "Debtors' Knell": [
+      "B",
+      "W"
+    ],
+    "Well of Lost Dreams": [],
+    "Caves of Koilos": [
+      "B",
+      "W"
+    ],
+    "Orzhov Basilica": [
+      "B",
+      "W"
+    ],
+    "Scoured Barrens": [
+      "B",
+      "W"
+    ],
+    "Tainted Field": [
+      "B",
+      "W"
+    ],
+    "Temple of Silence": [
+      "B",
+      "W"
+    ],
+    "Vault of Champions": [
+      "B",
+      "W"
+    ],
+    "Taigam, Sidisi's Hand": [
+      "B",
+      "U"
+    ],
+    "Murderous Cut": [
+      "B"
+    ],
+    "Reality Shift": [
+      "U"
+    ],
+    "Rapid Hybridization": [
+      "U"
+    ],
+    "Pongify": [
+      "U"
+    ],
+    "Victim of Night": [
+      "B"
+    ],
+    "Malicious Affliction": [
+      "B"
+    ],
+    "Cyclonic Rift": [
+      "U"
+    ],
+    "Arcane Denial": [
+      "U"
+    ],
+    "Memory Lapse": [
+      "U"
+    ],
+    "Disallow": [
+      "U"
+    ],
+    "Dismiss": [
+      "U"
+    ],
+    "Spell Crumple": [
+      "U"
+    ],
+    "Ponder": [
+      "U"
+    ],
+    "Dig Through Time": [
+      "U"
+    ],
+    "Shadowmage Infiltrator": [
+      "B",
+      "U"
+    ],
+    "Consuming Aberration": [
+      "B",
+      "U"
+    ],
+    "Oona, Queen of the Fae": [
+      "B",
+      "U"
+    ],
+    "Archmage Emeritus": [
+      "U"
+    ],
+    "Diluvian Primordial": [
+      "U"
+    ],
+    "Fellwar Stone": [],
+    "Worn Powerstone": [],
+    "Crux of Fate": [
+      "B"
+    ],
+    "Black Sun's Zenith": [
+      "B"
+    ],
+    "Decree of Pain": [
+      "B"
+    ],
+    "Sunken Hollow": [
+      "B",
+      "U"
+    ],
+    "Temple of Deceit": [
+      "B",
+      "U"
+    ],
+    "Dismal Backwater": [
+      "B",
+      "U"
+    ],
+    "Reliquary Tower": []
   },
   "decks": [
     {
@@ -731,12 +1165,12 @@
         }
       ],
       "id": "dr-madison-li",
-      "title": "Dr. Madison Li · Fallout energy & artifacts",
+      "title": "Dr. Madison Li \u00b7 Fallout energy & artifacts",
       "subtitle": "Energy-fueled artifacts, ETB value, recursion, and control.",
       "sourceStatedCuts": 5,
       "sourceCountNote": "The original supplied visible list contains 64 card copies, while its prose says 65 and five cuts. This revised custom build has 60 main-deck cards including the commander and a 7-card sideboard; it adds three Mountains for red sources, for 67 copies across both zones. The original count discrepancy remains unresolved.",
       "sourceIssues": [
-        "The source comment says Panharmonicon “doubles all Energy ETBs.” Panharmonicon only repeats qualifying triggered abilities caused by an artifact or creature entering; it does not double Dr. Madison Li’s artifact-cast trigger."
+        "The source comment says Panharmonicon \u201cdoubles all Energy ETBs.\u201d Panharmonicon only repeats qualifying triggered abilities caused by an artifact or creature entering; it does not double Dr. Madison Li\u2019s artifact-cast trigger."
       ],
       "sideboardGroups": [
         {
@@ -1166,13 +1600,13 @@
         }
       ],
       "id": "araumi-of-the-dead-tide",
-      "title": "Araumi of the Dead Tide · graveyard & encore",
+      "title": "Araumi of the Dead Tide \u00b7 graveyard & encore",
       "subtitle": "A self-mill and encore Commander preview with a half-built, non-tuned feel.",
       "sourceStatedCuts": 0,
       "sourceCountNote": "The visible card rows sum to 60, including the commander.",
       "sourceIssues": [
-        "Ghoultree has green color identity, outside Araumi’s blue-black identity. It remains in the displayed supplied list and is flagged rather than silently removed.",
-        "The source comment says Panharmonicon “doubles all Encore ETB triggers.” It repeats qualifying ETB triggered abilities from artifact or creature entry; it does not double the Encore ability itself."
+        "Ghoultree has green color identity, outside Araumi\u2019s blue-black identity. It remains in the displayed supplied list and is flagged rather than silently removed.",
+        "The source comment says Panharmonicon \u201cdoubles all Encore ETB triggers.\u201d It repeats qualifying ETB triggered abilities from artifact or creature entry; it does not double the Encore ability itself."
       ]
     },
     {
@@ -1263,7 +1697,7 @@
                 "U"
               ],
               "commanderLegal": true,
-              "note": "Target an opponent’s creature with your spell or ability to gain control of it for as long as you control Willbreaker."
+              "note": "Target an opponent\u2019s creature with your spell or ability to gain control of it for as long as you control Willbreaker."
             }
           ]
         },
@@ -1277,7 +1711,7 @@
                 "R"
               ],
               "commanderLegal": true,
-              "note": "Fiery damage when it or another creature enters from your graveyard: that creature deals damage equal to its power. Stolen cards returned from an opponent’s graveyard do not trigger it."
+              "note": "Fiery damage when it or another creature enters from your graveyard: that creature deals damage equal to its power. Stolen cards returned from an opponent\u2019s graveyard do not trigger it."
             },
             {
               "name": "Deathbringer Thoctar",
@@ -1428,7 +1862,7 @@
                 "B"
               ],
               "commanderLegal": true,
-              "note": "At the beginning of each upkeep, if an opponent lost life last turn, put a +1/+1 counter on a target creature you control—not at every end step."
+              "note": "At the beginning of each upkeep, if an opponent lost life last turn, put a +1/+1 counter on a target creature you control\u2014not at every end step."
             },
             {
               "name": "Feldon of the Third Path",
@@ -1682,7 +2116,7 @@
         }
       ],
       "id": "marchesa-the-black-rose",
-      "title": "Marchesa, the Black Rose — Grixis Chaos & Treason",
+      "title": "Marchesa, the Black Rose \u2014 Grixis Chaos & Treason",
       "subtitle": "Flavorful, fun, and chaotic Grixis treason: steal creatures, sacrifice them, unleash fiery threats, and turn recursion into damage. A custom non-precon 60-card Commander preview, not a tuned tutor or fast-combo build.",
       "sourceIssues": [],
       "setupNotes": [
@@ -1701,6 +2135,2099 @@
       "deckType": "custom-non-precon",
       "sourceStatedCuts": 0,
       "sourceCountNote": "The supplied list contains exactly 60 card copies: Marchesa in the command zone plus 59 cards in the library, including 22 lands. No cuts, additions, or quantity changes were made. Secret objectives are optional house-rule extras outside the 60."
+    },
+    {
+      "id": "the-wise-mothman",
+      "rank": 4,
+      "title": "The Wise Mothman \u2014 Wasteland Mutants & Radiation",
+      "subtitle": "Fallout-forward radiation, mill and +1/+1-counter combat. A custom non-precon Brawlternative; the latest submitted 59-card shell is preserved, with corrections and upgrade paths shown separately.",
+      "commander": "The Wise Mothman",
+      "commanderColorIdentityLabel": "Sultai (BGU)",
+      "commanderColorIdentity": [
+        "B",
+        "G",
+        "U"
+      ],
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 59,
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "The latest submitted table contains 59 copies: 1 commander plus 58 library cards, including 22 lands. It is one card short of the 60-card target. Both earlier detailed lists have 60; the Fallout import cheat sheet has 59. The final table drops Blobdrot without a replacement. No card has been silently added, corrected or removed by this review.",
+      "sourceIssues": [
+        "The final installment\u2019s illustrated card spotlights are not rules references: Horrigan is seven mana, 8/6 with no haste and proliferates twice on entering or attacking; Alpha Deathclaw is {4}{B}{G}, 6/6 with menace, trample and monstrosity 4; Nuclear Fallout gives creatures -2X/-2X. Use Oracle text, not the supplied mock cards.",
+        "Private inventory claims and proxy-needed flags have been excluded from this entry. The referenced collection CSV files were not supplied with these installments, so ownership and readiness are not verified.",
+        "Three exact card names in the final table are unresolved: Harold and Bob, First City; Strong, the Brutish Companion; Piper Wright, Public Reporter. Their color identities and legality are unknown, not assumed colorless or legal.",
+        "Likely name corrections, pending approval: Harold and Bob, First Numens; Strong, the Brutish Thespian; Piper Wright, Publick Reporter. The earlier Blobdrot slot was never identified and is absent from the final table. Adding The Master, Transcendent is a separate explicit proposal, not a name correction.",
+        "The submitted handoff claims 15 official Fallout cards and 15 custom reskins, but the detailed list actually contains 32 explicit reskin annotations. Official Fallout-print availability must be distinguished from choosing a custom overlay.",
+        "Power and budget are not certified. The Fallout revision adds expensive threats and removes the original Fathom Mage draw engine, so more theme does not automatically mean a faster or stronger list.",
+        "Publication count correction: the final table has 22 lands, not the 23 claimed in the earlier review prose. All 59 submitted card copies remain unchanged; one slot is still missing."
+      ],
+      "offColorCards": [
+        "Abzan Falconer"
+      ],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "The Wise Mothman",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Each mill event gives one +1/+1 counter to each of up to X distinct target creatures, not X counters to one creature. Radiation affects you too."
+            }
+          ]
+        },
+        {
+          "label": "ENGINE",
+          "cards": [
+            {
+              "name": "Nuclear Fallout",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Watchful Radstag",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Harold and Bob, First City",
+              "quantity": 1,
+              "colorIdentity": null,
+              "commanderLegal": null,
+              "verificationStatus": "unresolved",
+              "note": "Exact submitted name unresolved. Likely intended: Harold and Bob, First Numens. No correction has been applied."
+            },
+            {
+              "name": "Agent Frank Horrigan",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Seven mana; trample and conditional indestructible, not haste. Proliferates twice on entering or attacking. Powerful top end, not a fast opener."
+            },
+            {
+              "name": "Strong, the Brutish Companion",
+              "quantity": 1,
+              "colorIdentity": null,
+              "commanderLegal": null,
+              "verificationStatus": "unresolved",
+              "note": "Exact submitted name unresolved. Likely intended: Strong, the Brutish Thespian. No correction has been applied."
+            },
+            {
+              "name": "Lumbering Megasloth",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Its {1} discount counts every counter among players and permanents, including rad counters and +1/+1 counters. Costs {10}{G}{G} before reductions, has trample and enters tapped; green mana is still required."
+            },
+            {
+              "name": "Piper Wright, Public Reporter",
+              "quantity": 1,
+              "colorIdentity": null,
+              "commanderLegal": null,
+              "verificationStatus": "unresolved",
+              "note": "Exact submitted name unresolved. Likely intended: Piper Wright, Publick Reporter. No correction has been applied."
+            },
+            {
+              "name": "Mesmeric Orb",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Mindcrank",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Triggers on opponents losing life, including radiation life loss. Mindcrank + Mothman alone is not an infinite loop: counters do not cause further life loss."
+            },
+            {
+              "name": "Syr Konrad, the Grim",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Creature cards entering graveyards from libraries trigger Konrad. With Mindcrank, creature hits can chain further life loss and mill, but this is not an unconditional infinite loop."
+            },
+            {
+              "name": "Stitcher's Supplier",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Mills three when it enters and when it dies; an early enabler that remains efficient even with a flavor overlay."
+            },
+            {
+              "name": "Altar of the Brood",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Drown in the Loch",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "PAYOFF",
+          "cards": [
+            {
+              "name": "Alpha Deathclaw",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Hancock, Ghoulish Mayor",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Buffs your other Zombies and Mutants based on his own counters. Not a general reanimation engine; many support creatures do not have either type."
+            },
+            {
+              "name": "Hardened Scales",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Corpsejack Menace",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Abzan Falconer",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "White color identity is outside Mothman\u2019s Sultai identity. Retained unchanged; remove, replace, or explicitly agree to a house-rule exception before play."
+            },
+            {
+              "name": "Herald of Secret Streams",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Evolution Sage",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Thrummingbird",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Wonder",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Grants flying only while in your graveyard and while you control an Island. Basic Islands in this list satisfy the land-type requirement."
+            },
+            {
+              "name": "Genesis",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified",
+              "note": "Upkeep recursion costs {2}{G} and returns a creature to hand, not to the battlefield."
+            },
+            {
+              "name": "Fiend Artisan",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "REANIMATION",
+          "cards": [
+            {
+              "name": "Reanimate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Victimize",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Dread Return",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "RAMP",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "MANA FIX",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "RAMP",
+          "cards": [
+            {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Simic Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "G",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Dimir Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Golgari Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Farseek",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Cultivate",
+              "quantity": 1,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Wayfarer's Bauble",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "LAND",
+          "cards": [
+            {
+              "name": "Opulent Palace",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Exotic Orchard",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Llanowar Wastes",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Yavimaya Coast",
+              "quantity": 1,
+              "colorIdentity": [
+                "G",
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Underground River",
+              "quantity": 1,
+              "colorIdentity": [
+                "U",
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Evolving Wilds",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Terramorphic Expanse",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        },
+        {
+          "label": "BASIC LAND",
+          "cards": [
+            {
+              "name": "Forest",
+              "quantity": 6,
+              "colorIdentity": [
+                "G"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Island",
+              "quantity": 5,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            },
+            {
+              "name": "Swamp",
+              "quantity": 4,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "verificationStatus": "verified"
+            }
+          ]
+        }
+      ],
+      "deckType": "custom-non-precon",
+      "reviewStatus": "PUBLIC WORK IN PROGRESS \u00b7 Entry 04 \u00b7 Published draft \u00b7 not finalized \u00b7 59/60 cards \u00b7 name and identity issues open",
+      "formatNote": "Custom alternative to official Brawl, not an official Brawl list or a regulation 100-card Commander deck. Mothman is Commander-legal but not Brawl-legal. House rules must specify life total, commander tax/damage and objective timing.",
+      "setupNotes": [
+        "Keep Mothman in the command zone; the listed commander counts toward the 60-card target. Resolve the name and color-identity warnings before producing a final playable export.",
+        "Track rad counters for every player, including yourself. At each affected player\u2019s precombat main phase, mill that many cards; each nonland milled this way costs that player 1 life and one rad counter. This is life loss, not damage.",
+        "CHILDREN OF ATOM PILGRIMAGE \u2014 supplied condition: Have 3 or more creatures with +1/+1 counters on them while an opponent has 4 or more rad counters. Supplied reward: Draw 2 cards and choose 1 target creature; put two +1/+1 counters on it.",
+        "Suggested objective clarification, not applied: once per game, during your turn, reveal when the condition is true; choose the target when claiming the reward and agree whether it must be a creature you control. This companion objective is outside the 60 cards."
+      ],
+      "houseRuleExtras": [
+        "CHILDREN OF ATOM PILGRIMAGE (Fallout revision)",
+        "NIGHTWING MUTATION (original alternative; not an additional automatic reward)"
+      ],
+      "comparisonNotes": [
+        "The final submitted table contains 59 copies and 22 lands. Earlier review prose stated 23 lands; that claim has been corrected here. Earlier versions and suggested upgrades remain comparisons, not automatic replacements for the displayed list.",
+        "The revision replaces generic mill/counter pieces with Nuclear Fallout, Watchful Radstag, Horrigan, Deathclaw, Megasloth and named Fallout characters. It loses Fathom Mage, Forgotten Ancient, Hangarback Walker and Golgari Grave-Troll; this trades engine consistency for theme and larger threats.",
+        "Removing Soulless Jailer is helpful for this recursion shell: the original Jailer prevents permanent cards entering from graveyards and prevents all players casting noncreature spells from graveyards or exile, including your Dread Return flashback.",
+        "Use official mechanical names on imports and keep flavor overlays secondary. Glowing One is already a real Fallout card: labeling Syr Konrad as Glowing One can confuse players. Custom art is optional, not evidence that an official Fallout printing does not exist."
+      ],
+      "upgradeOptions": [
+        {
+          "title": "0 \u00b7 Fill the missing slot with a real Fallout engine",
+          "cardsIn": [
+            "The Master, Transcendent"
+          ],
+          "cardsOut": [],
+          "rationale": "An explicit proposal for the final table\u2019s empty 60th slot, not a claim that Blobdrot was this card. The Master adds rad counters and can tap to reanimate a creature card milled this turn as a green 3/3 Mutant.",
+          "tradeoff": "Adds one card to the 59-card final table, reaching 60 if approved. Four mana, requires a target milled this turn, and its tap ability normally waits a turn.",
+          "sourceUrls": [
+            "https://scryfall.com/card/pip/6/the-master-transcendent?utm_source=api"
+          ]
+        },
+        {
+          "title": "Official Fallout art without mechanical swaps",
+          "cardsIn": [],
+          "cardsOut": [],
+          "rationale": "Official PIP printings already exist for Arcane Signet, Hardened Scales, Corpsejack Menace, Farseek, Cultivate, Wayfarer\u2019s Bauble, Opulent Palace, Exotic Orchard, Evolving Wilds and Terramorphic Expanse. Use those versions if you prefer official Fallout art.",
+          "tradeoff": "No deck-size or gameplay change. This is an art choice, not an ownership claim or a verified shopping/proxy list. Custom reskins remain optional.",
+          "sourceUrls": [
+            "https://scryfall.com/sets/pip"
+          ]
+        },
+        {
+          "title": "1 \u00b7 Resolve the source before tuning",
+          "cardsIn": [],
+          "cardsOut": [],
+          "rationale": "Confirm the three likely name corrections first. The final table has 59 copies; the earlier 60-card Fallout list included Blobdrot, which the final table omits. Do not generate a final playable export yet.",
+          "tradeoff": "This fixes data quality, not deck power. Every submitted copy remains in this draft.",
+          "sourceUrls": [
+            "https://gatherer.wizards.com/sets/PIP"
+          ]
+        },
+        {
+          "title": "2 \u00b7 More Fallout through one-for-one swaps",
+          "cardsIn": [
+            "Feral Ghoul",
+            "Glowing One",
+            "Tato Farmer"
+          ],
+          "cardsOut": [
+            "Abzan Falconer",
+            "Genesis",
+            "Fiend Artisan"
+          ],
+          "rationale": "Feral Ghoul removes the white-identity problem and turns deaths into rad counters. Glowing One supplies combat-based radiation and helps offset your own radiation life loss. Tato Farmer connects rad-driven land milling to tapped-land ramp.",
+          "tradeoff": "A proposed three-for-three package, not applied. You lose Falconer\u2019s team flying, Genesis\u2019s repeatable recursion and Artisan\u2019s tutor flexibility. Wonder and Herald of Secret Streams retain evasion; land ramp is conditional, not guaranteed.",
+          "sourceUrls": [
+            "https://scryfall.com/card/pip/44/feral-ghoul?utm_source=api",
+            "https://scryfall.com/card/pip/76/glowing-one?utm_source=api",
+            "https://scryfall.com/card/pip/86/tato-farmer?utm_source=api"
+          ]
+        },
+        {
+          "title": "3 \u00b7 Faster engine rather than bigger threats",
+          "cardsIn": [
+            "Fathom Mage"
+          ],
+          "cardsOut": [
+            "Agent Frank Horrigan"
+          ],
+          "rationale": "Recover the first submission\u2019s repeatable draw engine: Mothman places counters, and Fathom Mage turns counters placed on it into optional draws. Four mana is easier to deploy than Horrigan\u2019s seven.",
+          "tradeoff": "One-for-one option, not applied. Less official Fallout character presence and no double proliferate finisher. Keep Horrigan instead if flavor and splashy late turns matter more.",
+          "sourceUrls": [
+            "https://scryfall.com/card/ncc/339/fathom-mage?utm_source=api",
+            "https://scryfall.com/card/pip/89/agent-frank-horrigan?utm_source=api"
+          ]
+        },
+        {
+          "title": "4 \u00b7 Reduce the punishing mill experience",
+          "cardsIn": [],
+          "cardsOut": [],
+          "rationale": "Test Mesmeric Orb and Syr Konrad + Mindcrank at the table before increasing mill density. Radiation life loss triggers Mindcrank, while Mothman alone does not complete a loop.",
+          "tradeoff": "No mandatory cut. This is a playtest gate: a stronger engine can undermine a relaxed Battle Box experience, and no budget or high-power claim has been validated.",
+          "sourceUrls": [
+            "https://scryfall.com/card/clb/866/mindcrank?utm_source=api",
+            "https://scryfall.com/card/dsc/158/syr-konrad-the-grim?utm_source=api",
+            "https://scryfall.com/card/2xm/272/mesmeric-orb?utm_source=api"
+          ]
+        }
+      ],
+      "publicationStatus": "work-in-progress"
+    },
+    {
+      "id": "rakdos-lord-of-riots",
+      "rank": 5,
+      "title": "Rakdos, Lord of Riots \u2014 Hellfire Discount",
+      "subtitle": "A dramatic 1v1 life-loss engine that turns generic creature costs into splashy post-combat threats. The supplied 60-card custom non-precon list is unchanged; speed and precon-pool claims need correction.",
+      "commander": "Rakdos, Lord of Riots",
+      "commanderColorIdentityLabel": "Rakdos (BR)",
+      "commanderColorIdentity": [
+        "B",
+        "R"
+      ],
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 60,
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "Exactly 60 copies: 1 commander plus 59 library cards. The submitted Lands group has 20, but Leechridden Swamp appears under enablers, making 21 actual lands and 38 nonland library cards. All 49 distinct card names are verified, every nonbasic is singleton, and no card has been added, cut, moved or renamed.",
+      "sourceIssues": [
+        "Discount correction: while Rakdos is on the battlefield, creature spells you cast cost {1} less for each 1 life opponents have lost this turn. This reduces generic costs, not colored requirements or specifically colorless mana symbols; noncreature spells and activated abilities are not discounted. Life loss, including non-damage life loss, counts even if that opponent later gains life.",
+        "Rakdos does not discount his own casting cost or his own commander tax. He normally cannot attack the turn he enters because this list gives him no haste. His six-power attack gives a six-mana discount only if the opponent actually loses six life; blockers or prevention may reduce that amount.",
+        "No turn-three/four guarantee: early enablers must be drawn and survive or resolve. Casting Bolt or Bump and Rakdos in the same turn needs five total mana before tax. Loyal Subordinate needs an existing commander, and Leechridden Swamp needs two black permanents. These are not eight independent, unconditional early enablers.",
+        "After six life lost: Steel Hellkite costs {0}; Bogardan Hellkite and Grave Titan still cost {R}{R} and {B}{B}; Drakuseth still costs {R}{R}{R}; Meteor Golem and Sandstone Oracle each cost {1}; Artisan of Kozilek costs {3}. Seven- and eight-mana bombs are not generally free.",
+        "Precon provenance is not ownership: this is not an exact build from only Plunder the Graves (C15), Built from Scratch (C14), and Vampiric Bloodlust (C17). Rakdos and Grave Titan are not in those three decks; Bogardan Hellkite and Steel Hellkite are in Built from Scratch. Numerous other selections postdate the named precons. Sandstone Oracle appears in C15\u2019s Wade into Battle, not Plunder the Graves. Original deck membership does not establish current ownership.",
+        "1v1 consistency concerns: 20 lands, twelve top-end bombs, multiple tapped lands and a {B}{B}{R}{R} commander put pressure on opening hands. Sol Ring and Mind Stone do not directly supply his colored pips. Luxury Suite always enters tapped in normal 1v1. Fast, splashy and dominant are aspirations, not playtested guarantees."
+      ],
+      "offColorCards": [],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "Rakdos, Lord of Riots",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Requires an opponent to have lost life this turn before you cast him. Costs {B}{B}{R}{R} before commander tax; his own ability does not discount him. Flying and trample, but no haste."
+            }
+          ]
+        },
+        {
+          "label": "UNBLOCKABLE & DIRECT DAMAGE ENABLERS",
+          "cards": [
+            {
+              "name": "Spear Spewer",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Tap to damage each player, including you. Normally must survive a turn before using its tap ability."
+            },
+            {
+              "name": "Night Market Lookout",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Life loss when it becomes tapped, including when declared as an attacker; no combat damage or unblocked attack is needed."
+            },
+            {
+              "name": "Pulse Tracker",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Its attack trigger causes life loss before blockers; it does not need to connect and is not unblockable."
+            },
+            {
+              "name": "Leechridden Swamp",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "A land, retained in its submitted enabler group. Enters tapped; its {B}, {T} life-loss ability requires two black permanents. Counts toward 21 actual lands, not an eighth early spell."
+            },
+            {
+              "name": "Thermo-Alchemist",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Tap damage works after summoning sickness ends. Instants and sorceries untap it, but do not remove summoning sickness."
+            },
+            {
+              "name": "Lightning Bolt",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Can enable Rakdos by targeting the opponent, but costs {R} in addition to Rakdos\u2019s {B}{B}{R}{R} if both are cast this turn."
+            },
+            {
+              "name": "Bump in the Night",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Causes life loss, not damage, which still qualifies. Costs {B} before Rakdos; the flashback cost is {5}{R}."
+            },
+            {
+              "name": "Loyal Subordinate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Requires your commander already on the battlefield at beginning of combat; cannot enable the first Rakdos cast by itself. Menace is not unblockable."
+            }
+          ]
+        },
+        {
+          "label": "HUGE SPLASHY DISCOUNT BOMBS",
+          "cards": [
+            {
+              "name": "Bogardan Hellkite",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "After six life lost, costs {R}{R}; its entry damage can increase discounts for subsequent creature spells that turn."
+            },
+            {
+              "name": "Grave Titan",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "After six life lost, costs {B}{B}, not zero."
+            },
+            {
+              "name": "Drakuseth, Maw of Flames",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "After six life lost, costs {R}{R}{R}; its colored requirements remain. No haste."
+            },
+            {
+              "name": "Steel Hellkite",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "After six life lost, its {6} casting cost becomes zero; activated abilities are not discounted."
+            },
+            {
+              "name": "Archfiend of Depravity",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Lord of the Void",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Balefire Dragon",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Utvara Hellkite",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Artisan of Kozilek",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Costs {9}, so still costs {3} after six life lost; its cast trigger can reanimate a creature. Annihilator 2 can be punishing in 1v1."
+            },
+            {
+              "name": "Meteor Golem",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Costs {1} after six life lost; an artifact creature qualifies for the discount."
+            },
+            {
+              "name": "Sandstone Oracle",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Costs {1} after six life lost. Draws only if the chosen opponent has more cards in hand."
+            },
+            {
+              "name": "Combustible Gearhulk",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Costs {R}{R} after six life lost. Opponent chooses whether you draw three; damage is not guaranteed."
+            }
+          ]
+        },
+        {
+          "label": "FAST RAMP & ACCELERATION",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Adds colorless mana and cannot directly pay Rakdos\u2019s four colored pips. Rakdos does not discount noncreature artifacts."
+            },
+            {
+              "name": "Rakdos Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Talisman of Indulgence",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Colorless ramp can support later bombs but does not directly pay {B}{B}{R}{R}."
+            },
+            {
+              "name": "Charcoal Diamond",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Fire Diamond",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "DIRECT TARGETED REMOVAL & MASS WIPES",
+          "cards": [
+            {
+              "name": "Blasphemous Act",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Terminate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dreadbore",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Chaos Warp",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Hero's Downfall",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Toxic Deluge",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Bedevil",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Feed the Swarm",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "CARD DRAW & FUEL",
+          "cards": [
+            {
+              "name": "Read the Bones",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Night's Whisper",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Disciple of Bolas",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Wheel of Misfortune",
+              "quantity": 1,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "LANDS",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Smoldering Marsh",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Foreboding Ruins",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dragonskull Summit",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Rakdos Carnarium",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Luxury Suite",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true,
+              "note": "Always enters tapped in a normal 1v1 game: its exception requires two or more opponents."
+            },
+            {
+              "name": "Sulfurous Springs",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "R"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Swamp",
+              "quantity": 7,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mountain",
+              "quantity": 6,
+              "colorIdentity": [
+                "R"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "deckType": "custom-non-precon",
+      "reviewStatus": "PUBLIC WORK IN PROGRESS \u00b7 Entry 05 \u00b7 Published draft \u00b7 not finalized \u00b7 60/60 cards \u00b7 strategy and provenance corrected",
+      "formatNote": "A custom 60-card 1v1 Brawlternative, not official Brawl and not a regulation 100-card Commander deck. Rakdos is Commander-legal but not official-Brawl-legal. All listed cards fit his black/red identity; agree on house rules before play.",
+      "setupNotes": [
+        "Keep Rakdos in the command zone, counted as one of the 60. Agree on starting life, commander tax and commander-damage rules; these change the 1v1 experience.",
+        "Establish a life-loss source, then pay {B}{B}{R}{R} for the first Rakdos cast. Life lost before Rakdos entered still counts for subsequent creature spells that turn.",
+        "On a later turn, attack if safe, then cast discounted creatures in the post-combat main phase. The discount is recalculated from life lost that turn and applies separately to every qualifying creature spell, not as a spendable pool.",
+        "Preserved shell, not a tuned recommendation: playtest colored-mana consistency and the bomb density before approving swaps. No purchases, proxy gaps or collection-derived ownership claims are part of this shared entry."
+      ],
+      "sourceLinks": [
+        {
+          "label": "Official Rakdos text and rulings",
+          "url": "https://gatherer.wizards.com/RTR/en-us/187/rakdos-lord-of-riots"
+        },
+        {
+          "label": "Built from Scratch original contents (retailer transcription)",
+          "url": "https://www.bazaarofmagic.eu/en-WW/p/commander-2014-built-from-scratch/9015444"
+        },
+        {
+          "label": "Commander 2015 original decklists",
+          "url": "https://magic.wizards.com/en/news/feature/commander-2015-edition-decklists-2015-11-06"
+        },
+        {
+          "label": "Commander 2017 original decklists",
+          "url": "https://magic.wizards.com/en/news/feature/commander-2017-edition-decklists-2017-08-11"
+        }
+      ],
+      "publicationStatus": "work-in-progress"
+    },
+    {
+      "id": "karlov-of-the-ghost-council",
+      "rank": 6,
+      "title": "Karlov of the Ghost Council \u2014 Orzhov Sovereign",
+      "subtitle": "Low-cost life-gain triggers meet a growing commander, Daxos enchantment value and splashy Orzhov finishers. A custom 60-card 1v1 local draft with the two user-approved card corrections applied; not a tuned or playtested recommendation.",
+      "commander": "Karlov of the Ghost Council",
+      "commanderColorIdentityLabel": "Orzhov (WB)",
+      "commanderColorIdentity": [
+        "W",
+        "B"
+      ],
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 60,
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "Exactly 60 copies: 1 commander plus 59 library cards, with 20 lands and 39 nonland library cards. All 50 distinct current names resolve exactly, every card fits Orzhov identity, and all nonbasics are singleton. Approved changes only: Crested Sunsun corrected to Crested Sunmare; Licia, Sanguine Tribune replaced by Daxos the Returned. All other quantities and group positions remain unchanged.",
+      "sourceIssues": [
+        "Rules correction: Karlov\u2019s exile activation costs {W}{B} as well as six counters. Three separate life-gain triggers make him 8/8 if nothing else changes; a two-turn-cycle clock is not guaranteed. Life gain alone supplies neither trample nor other evasion to Karlov.",
+        "Combo disclosure: Exquisite Blood plus Sanguine Bond or Vito can loop life gain and opposing life loss after an initiating event. This deterministic finish may overwhelm a casual 1v1 box; agree whether it belongs before playtesting. It is not a demonstrated matchup win.",
+        "1v1 fit: 20 lands, five unconditionally tapped lands (including Vault of Champions), a conditional Tainted Field, and expensive finishers put pressure on early turns. Six rocks do not guarantee colored mana or land drops. Sol Ring and Mind Stone do not directly pay Karlov\u2019s {W}{B}.",
+        "Role labels are preserved, not endorsed: Debtors\u2019 Knell is reanimation, not removal; the card-advantage group contains no tutor; not all listed beaters have lifelink. This is an experimental shell, not a tested fast-Voltron result.",
+        "Matchups are hypotheses: Merciless Eviction can exile artifacts against Madison; Bog attacks Araumi\u2019s graveyard but Karlov exiles only battlefield creatures. Against Marchesa, sacrifice outlets can remove a targeted creature in response, so exile is not guaranteed. Lifegain buffers life loss but does not prevent milling or remove radiation counters.",
+        "Color coverage correction: the published baseline is Madison (WUR), Araumi (UB), and Marchesa (UBR). Mothman (UBG) and Rakdos (BR) are separate public works in progress. Karlov does not establish eight of ten two-color decks. Counting embedded pairs across all six proposed identities gives eight pairs, leaving both Selesnya (WG) and Gruul (RG); Rakdos, Lord of Riots is BR, not a Gruul commander."
+      ],
+      "offColorCards": [],
+      "groups": [
+        {
+          "label": "COMMANDER",
+          "cards": [
+            {
+              "name": "Karlov of the Ghost Council",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Each separate life-gain event adds two counters, regardless of life gained. Exiling a creature costs {W}{B} AND removing six counters. Three resolved triggers make an otherwise unchanged Karlov 8/8; timing is not guaranteed."
+            }
+          ]
+        },
+        {
+          "label": "LOW-CURVE LIFE GAIN ENGINE",
+          "cards": [
+            {
+              "name": "Soul Warden",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Soul's Attendant",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Authority of the Consuls",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Ajani's Welcome",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Daxos, Blessed by the Sun",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "The submitted card is the {W}{W} Theros Beyond Death demigod, not Daxos the Returned. It gains life when another creature you control enters or dies."
+            },
+            {
+              "name": "Blind Obedience",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Extort requires an extra {W/B} payment per trigger. In 1v1 one paid extort trigger drains one life and gains one life."
+            },
+            {
+              "name": "Voice of the Blessed",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Grows once per life-gain event; gains flying and vigilance at four counters, indestructible at ten. No immediate evasion is guaranteed."
+            },
+            {
+              "name": "Cleric Class",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "HIGH-IMPACT BEATERS & LIFELINK BOMBS",
+          "cards": [
+            {
+              "name": "Vona, Butcher of Magan",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Vigilance and lifelink. Removal costs tapping her AND paying 7 life; only during your turn, normally after summoning sickness ends."
+            },
+            {
+              "name": "Daxos the Returned",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Gains an experience counter when you cast an enchantment spell. Pay {1}{W}{B} to create a Spirit enchantment creature token with power/toughness equal to your experience counters. Tokens are not cast and do not themselves earn experience. No inherent lifegain or lifelink."
+            },
+            {
+              "name": "Archangel of Thune",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Crested Sunmare",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Other Horses you control have indestructible, not Sunmare itself. At the beginning of each end step, if you gained life that turn, create one 5/5 white Horse token; not one token per life-gain event."
+            },
+            {
+              "name": "Vito, Thorn of the Dusk Rose",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Elesh Norn, Grand Cenobite",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Nirkana Revenant",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Adds {B} when you tap a Swamp for mana. Only the six basic Swamps in this list have the Swamp subtype."
+            },
+            {
+              "name": "Crypt Ghast",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Adds {B} when you tap a Swamp for mana, not any black-producing land. Extort reminder text does not add white to its black color identity."
+            },
+            {
+              "name": "Serra Ascendant",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "A 1/1 with lifelink until you have at least 30 life, when it gets +5/+5 and flying. Starting life is a material house-rule choice."
+            }
+          ]
+        },
+        {
+          "label": "SPLASHY WIN CONDITIONS & ENCHANTMENTS",
+          "cards": [
+            {
+              "name": "Exquisite Blood",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "With Sanguine Bond OR Vito on the battlefield, a life-gain or opposing life-loss event can start a repeating drain loop. Neither half starts it alone; opponents can respond to triggers."
+            },
+            {
+              "name": "Sanguine Bond",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Bolas's Citadel",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Top-of-library spells cost life equal to mana value instead of mana, but normal timing and land-play limits still apply. Its drain activation taps it and sacrifices ten nonland permanents."
+            },
+            {
+              "name": "Kaya, Ghost Assassin",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Her -1 mode causes life loss, not damage, and gains you two life. Her 0 mode temporarily exiles a creature and costs you two life."
+            },
+            {
+              "name": "Black Market",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "ACCELERATION & MANA ROCKS",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Orzhov Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Talisman of Hierarchy",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Pristine Talisman",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "TARGETED REMOVAL & SWEEPERS",
+          "cards": [
+            {
+              "name": "Swords to Plowshares",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Path to Exile",
+              "quantity": 1,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Anguished Unmaking",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Vindicate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Utter End",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Merciless Eviction",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Toxic Deluge",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Debtors' Knell",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Seven-mana upkeep reanimation engine, not removal or a sweeper; kept in the submitted category rather than moved."
+            }
+          ]
+        },
+        {
+          "label": "CARD ADVANTAGE & TUTORS",
+          "cards": [
+            {
+              "name": "Read the Bones",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Night's Whisper",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Well of Lost Dreams",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true,
+              "note": "Life gain offers paid card draw: pay X up to the life gained, then draw X. Not a tutor."
+            }
+          ]
+        },
+        {
+          "label": "LANDS",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Caves of Koilos",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Orzhov Basilica",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Scoured Barrens",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Tainted Field",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Temple of Silence",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Vault of Champions",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "W"
+              ],
+              "commanderLegal": true,
+              "note": "Always enters tapped in normal 1v1: its untapped exception requires two or more opponents. Not a speed upgrade for duels."
+            },
+            {
+              "name": "Bojuka Bog",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Plains",
+              "quantity": 6,
+              "colorIdentity": [
+                "W"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Swamp",
+              "quantity": 6,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "deckType": "custom-non-precon",
+      "reviewStatus": "PUBLIC WORK IN PROGRESS \u00b7 Entry 06 \u00b7 Published draft \u00b7 not finalized \u00b7 Approved card corrections applied",
+      "formatNote": "Custom 60-card 1v1 Brawlternative, not official Brawl or a regulation 100-card Commander deck. Karlov is Commander-legal but not Brawl-legal. All 60 current cards fit his white/black identity; starting life, commander rules and combo policy remain house-rule decisions.",
+      "setupNotes": [
+        "Count Karlov in the 60 and begin with him in the command zone. Agree on starting life, commander tax, commander damage and combo policy; do not assume official Brawl or Commander rules apply unchanged.",
+        "Approved revisions are applied: Crested Sunmare and Daxos the Returned replace the two flagged slots. Daxos, Blessed by the Sun remains a separate card in the life-gain engine; no other slot was changed.",
+        "Test land drops, colored sources and the density of expensive payoffs before approving tuning. Matchup observations are strategic hypotheses, not gameplay results."
+      ],
+      "sourceLinks": [
+        {
+          "label": "Karlov text and rulings",
+          "url": "https://scryfall.com/card/rvr/369/karlov-of-the-ghost-council"
+        },
+        {
+          "label": "Daxos the Returned text and rulings",
+          "url": "https://scryfall.com/card/c15/43/daxos-the-returned?utm_source=api"
+        },
+        {
+          "label": "Vault of Champions text",
+          "url": "https://scryfall.com/card/cmm/436/vault-of-champions?utm_source=api"
+        },
+        {
+          "label": "Crested Sunmare text and rulings",
+          "url": "https://scryfall.com/card/hou/6/crested-sunmare?utm_source=api"
+        },
+        {
+          "label": "Exquisite Blood text",
+          "url": "https://scryfall.com/card/lcc/195/exquisite-blood?utm_source=api"
+        }
+      ],
+      "publicationStatus": "work-in-progress"
+    },
+    {
+      "id": "taigam-sidisis-hand",
+      "rank": 7,
+      "title": "Taigam, Sidisi\u2019s Hand \u2014 Grip of Sidisi",
+      "subtitle": "Blue-black draw-go control, selective upkeep card advantage, removal and graveyard-fueled creature shrinking. Exact user-supplied 60-card list, with sourcing and rules caveats; power level is not certified.",
+      "commander": "Taigam, Sidisi's Hand",
+      "commanderColorIdentityLabel": "Dimir (UB)",
+      "commanderColorIdentity": [
+        "B",
+        "U"
+      ],
+      "commanderCommanderLegal": true,
+      "commanderBrawlLegal": false,
+      "deckType": "custom-non-precon",
+      "targetSize": 60,
+      "sourceStatedTotal": 60,
+      "visibleTotal": 60,
+      "sourceStatedCuts": 0,
+      "sourceCountNote": "Exactly 60 copies: 1 commander plus 59 library cards, including 21 lands. All 48 distinct supplied names resolve exactly in Scryfall and every listed card fits Taigam\u2019s blue-black identity. No cards, quantities or source groups have been changed.",
+      "sourceIssues": [
+        "The source describes this as high-power and entirely C14\u2013C17 precon-sourced. Those are unverified source claims, not a certified power rating or provenance statement. Ownership, availability and precon membership are not verified; no inventory or proxy requirement is published.",
+        "One source attribution is demonstrably wrong: Archmage Emeritus appears in Strixhaven (2021), so it cannot originate from Arcane Wizardry (C17). Other parenthetical deckbox attributions have been omitted rather than repeated as facts.",
+        "Taigam skips your draw step, puts one of your top three cards into your hand on upkeep, and puts the other cards into your graveyard. His targeted shrink ability needs black mana, a tap and graveyard cards; it is not free removal. Delve spells compete for the same graveyard fuel.",
+        "The supplied \u201cEvasive Finisher Threats\u201d group is preserved verbatim, but not every member has evasion. Consuming Aberration mills opponents and has no built-in evasion. Black Sun\u2019s Zenith uses -1/-1 counters. These clarifications do not change any card slot.",
+        "This custom 60-card 1v1 Commander-preview list is not official Brawl or a regulation 100-card Commander deck. Taigam is Commander-legal and not Brawl-legal in Scryfall. The source\u2019s \u201cBattle Box\u201d language describes a proposed play environment, not membership in the separate Retro Battle Box."
+      ],
+      "offColorCards": [],
+      "groups": [
+        {
+          "label": "Commander",
+          "cards": [
+            {
+              "name": "Taigam, Sidisi's Hand",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Skip your draw step. At the beginning of your upkeep, look at the top three cards of your library; put one into your hand and the rest into your graveyard. His removal costs {B}, tapping him, and exiling X cards from your graveyard to give a target creature -X/-X until end of turn. This is not an unrestricted draw engine or free repeatable removal."
+            }
+          ]
+        },
+        {
+          "label": "Targeted Removal & Creature Execution",
+          "cards": [
+            {
+              "name": "Go for the Throat",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Hero's Downfall",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Murderous Cut",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Delve consumes graveyard cards that Taigam may otherwise exile for removal; manage the shared resource."
+            },
+            {
+              "name": "Reality Shift",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Rapid Hybridization",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Pongify",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Victim of Night",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Malicious Affliction",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Cyclonic Rift",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "1v1 Counterspells & Interaction",
+          "cards": [
+            {
+              "name": "Counterspell",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Arcane Denial",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Memory Lapse",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Disallow",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dismiss",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Spell Crumple",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "Card Advantage, Dig & Refuel",
+          "cards": [
+            {
+              "name": "Brainstorm",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Ponder",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Fact or Fiction",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Read the Bones",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Night's Whisper",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dig Through Time",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Delve competes with Taigam for graveyard cards. Look at seven cards, put two into your hand, and the rest on the bottom in any order; this is not a draw instruction."
+            }
+          ]
+        },
+        {
+          "label": "Evasive Finisher Threats",
+          "cards": [
+            {
+              "name": "Shadowmage Infiltrator",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Consuming Aberration",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Its size depends on opponents\u2019 graveyards; casting your spells mills opponents. It has no built-in evasion, so the source\u2019s Evasive Finisher heading is a strategy category, not a rules claim."
+            },
+            {
+              "name": "Sphinx of Uthuun",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Its enter-the-battlefield ability reveals five cards; an opponent separates them into two piles, you put one pile into your hand and the other into your graveyard."
+            },
+            {
+              "name": "Oona, Queen of the Fae",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Her activated ability exiles the top X cards of a target opponent\u2019s library and creates a Faerie for each exiled card of the chosen color; this is exile, not mill."
+            },
+            {
+              "name": "Archmage Emeritus",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true,
+              "note": "Magecraft draws a card when you cast or copy an instant or sorcery spell. Its Strixhaven printing is from 2021, so the source\u2019s C17 Arcane Wizardry attribution cannot be correct. The card stays in the exact list."
+            },
+            {
+              "name": "Diluvian Primordial",
+              "quantity": 1,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "Fast Mana Acceleration & Rocks",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dimir Signet",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Talisman of Dominance",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Thought Vessel",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Fellwar Stone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Worn Powerstone",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "Board Sweepers & Reset Buttons",
+          "cards": [
+            {
+              "name": "Toxic Deluge",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Crux of Fate",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Black Sun's Zenith",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true,
+              "note": "Uses -1/-1 counters, not +1/+1 counters. The source\u2019s no-+1/+1-counter theme does not mean this list is counter-free."
+            },
+            {
+              "name": "Decree of Pain",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        },
+        {
+          "label": "Lands",
+          "cards": [
+            {
+              "name": "Command Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dimir Aqueduct",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Sunken Hollow",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Temple of Deceit",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Dismal Backwater",
+              "quantity": 1,
+              "colorIdentity": [
+                "B",
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Bojuka Bog",
+              "quantity": 1,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Reliquary Tower",
+              "quantity": 1,
+              "colorIdentity": [],
+              "commanderLegal": true
+            },
+            {
+              "name": "Island",
+              "quantity": 7,
+              "colorIdentity": [
+                "U"
+              ],
+              "commanderLegal": true
+            },
+            {
+              "name": "Swamp",
+              "quantity": 7,
+              "colorIdentity": [
+                "B"
+              ],
+              "commanderLegal": true
+            }
+          ]
+        }
+      ],
+      "formatNote": "Custom 60-card 1v1 Brawlternative. Commander-card legality does not certify this deck for official Commander, Duel Commander, Standard Brawl or Arena Brawl. Agree on starting life, commander tax/damage and banned cards as house rules.",
+      "setupNotes": [
+        "Count Taigam in the 60 and begin with him in the command zone. The 59-card library includes 21 lands; acceleration does not guarantee opening-hand consistency.",
+        "Keep enough cards in your graveyard to pay for Taigam after using delve. His tap ability normally cannot be used the turn he enters unless he gains haste.",
+        "Playtesting, land-count tuning and sourcing corrections remain future decisions. No substitutions were made in this publication."
+      ]
     }
   ]
 }

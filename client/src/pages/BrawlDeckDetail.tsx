@@ -10,7 +10,7 @@ export default function BrawlDeckDetail({ params }: { params: { deckId: string }
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = deck ? `${deck.title} · Brawlternatives | MTG Sets Tracker` : 'Deck not found · Brawlternatives | MTG Sets Tracker';
+    document.title = deck ? `${deck.publicationStatus === 'work-in-progress' ? 'WIP · ' : ''}${deck.title} · Brawlternatives | MTG Sets Tracker` : 'Deck not found · Brawlternatives | MTG Sets Tracker';
     const previousMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previousDescription = previousMeta?.content;
     const meta = previousMeta ?? document.createElement('meta');
