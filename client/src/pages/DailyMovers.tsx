@@ -227,6 +227,9 @@ export function DailyMovers() {
               <Link href="/market-watch" className="font-mono font-bold uppercase tracking-wider text-amber-800 underline decoration-2 underline-offset-2 hover:text-foreground">
                 Read the report →
               </Link>
+              <Link href="/market-report/october-17-30-signal-brief" className="font-mono font-bold uppercase tracking-wider text-primary underline decoration-2 underline-offset-2 hover:text-foreground">
+                October 17 catalyst brief →
+              </Link>
             </div>
           </div>
 
