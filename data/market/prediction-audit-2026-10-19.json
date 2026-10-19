@@ -1,0 +1,329 @@
+{
+  "auditDate": "2026-10-19",
+  "historyWindow": {
+    "first": "2026-09-17",
+    "last": "2026-10-16"
+  },
+  "coverage": {
+    "records": 15,
+    "evaluated": 0,
+    "withPostEntryPrices": 5,
+    "unresolved": 15,
+    "duplicateCanonicalKeys": {
+      "Preeminent Captain|m15|25": 2,
+      "Counterspell|mh2|267": 2,
+      "Command Tower|cmd|269": 2
+    }
+  },
+  "accuracy": {
+    "directionalHitRate": null,
+    "rangeContainmentRate": null,
+    "meanAbsoluteErrorPct": null,
+    "evaluatedRecords": 0
+  },
+  "notes": [
+    "No matured exact-printing records with post-entry prices were available at audit time."
+  ],
+  "records": [
+    {
+      "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
+      "opened": "2026-10-16",
+      "name": "Tivit, Seller of Secrets",
+      "setCode": "ncc",
+      "collectorNumber": "10",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
+      "opened": "2026-10-16",
+      "name": "Ripples of Potential",
+      "setCode": "eoc",
+      "collectorNumber": "77",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
+      "opened": "2026-10-16",
+      "name": "The Theorist, Jace Beleren",
+      "setCode": "fra",
+      "collectorNumber": "43",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:5:m15:25",
+      "opened": "2026-10-16",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "collectorNumber": "25",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:6:mh2:267",
+      "opened": "2026-10-16",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:7:ppdsk:202p",
+      "opened": "2026-10-16",
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "collectorNumber": "202p",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:8:cmd:269",
+      "opened": "2026-10-16",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:9:eld:161",
+      "opened": "2026-10-16",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:10:all:28",
+      "opened": "2026-10-16",
+      "name": "Force of Will",
+      "setCode": "all",
+      "collectorNumber": "28",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
+      "opened": "2026-10-16",
+      "name": "Abstergo Entertainment",
+      "setCode": "acr",
+      "collectorNumber": "79",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:1:m15:25",
+      "opened": "2026-10-13",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "collectorNumber": "25",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-10-16",
+        "usd": 0.74
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -1.33,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:2:mh2:267",
+      "opened": "2026-10-13",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-10-16",
+        "usd": 3.55
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -7.55,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:3:cmd:269",
+      "opened": "2026-10-13",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-10-16",
+        "usd": 1.02
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 2,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:4:plst:BLC-277",
+      "opened": "2026-10-13",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "collectorNumber": "BLC-277",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-10-16",
+        "usd": 2.82
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 8.46,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:5:plst:E01-54",
+      "opened": "2026-10-13",
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "collectorNumber": "E01-54",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-10-16",
+        "usd": 1.07
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -0.93,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    }
+  ]
+}
