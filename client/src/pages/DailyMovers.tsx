@@ -254,8 +254,8 @@ export function DailyMovers() {
             >
               Market Watch Feed
             </Link>
-            <details className="relative">
-              <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary whitespace-nowrap">
+            <details className="relative max-w-full">
+              <summary className="inline-flex max-w-full cursor-pointer list-none items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary sm:whitespace-nowrap">
                 More research
               </summary>
               <div className="absolute right-0 top-full z-20 mt-2 grid w-64 gap-1 border-2 border-border bg-background p-2 shadow-xl">
