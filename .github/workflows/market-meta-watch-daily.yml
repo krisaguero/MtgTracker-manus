@@ -88,3 +88,36 @@ jobs:
           else
             echo 'No market or meta changes detected; no pull request was created.'
           fi
+
+      - name: Send market/meta summary webhook
+        if: steps.market-meta-pr.outputs.pull-request-number != ''
+        env:
+          MARKET_META_WEBHOOK_URL: ${{ secrets.MARKET_META_WEBHOOK_URL }}
+          MARKET_META_PR_URL: ${{ steps.market-meta-pr.outputs.pull-request-url }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$MARKET_META_WEBHOOK_URL" ]]; then
+            echo 'MARKET_META_WEBHOOK_URL is not configured; skipping notification.'
+            exit 0
+          fi
+
+          node --input-type=module > /tmp/market-meta-webhook.json <<'NODE'
+          import fs from 'node:fs';
+          const report = JSON.parse(fs.readFileSync('data/market/meta-watch.json', 'utf8'));
+          const priceSignals = report.priceSpikes.signals.slice(0, 5).map((signal) => `${signal.name} ${signal.latestDayPct ?? 'n/a'}% day / ${signal.sevenDayPct ?? 'n/a'}% 7d`).join('; ') || 'none';
+          const shifts = report.commanderDemand.shifts.filter((signal) => signal.signal === 'shift').slice(0, 5).map((signal) => `${signal.name} rank ${signal.rankDelta > 0 ? '+' : ''}${signal.rankDelta}`).join('; ') || 'none';
+          const summary = `MTG Market/Meta Watch ${report.asOf}: price signals: ${priceSignals}; Commander shifts: ${shifts}; Brawl corpus: ${report.brawlMeta.strategyDocumentCount} strategy documents.`;
+          console.log(JSON.stringify({
+            text: `${summary} Review: ${process.env.MARKET_META_PR_URL}`,
+            content: `${summary}\nReview: ${process.env.MARKET_META_PR_URL}`,
+            summary,
+            pullRequestUrl: process.env.MARKET_META_PR_URL,
+            asOf: report.asOf,
+          }));
+          NODE
+
+          curl --fail-with-body --silent --show-error \
+            --retry 3 --retry-delay 2 \
+            -H 'Content-Type: application/json' \
+            --data-binary @/tmp/market-meta-webhook.json \
+            "$MARKET_META_WEBHOOK_URL"
