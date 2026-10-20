@@ -1,12 +1,278 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T19:52:55.062Z",
+  "generatedAt": "2026-10-20T13:50:25.229Z",
   "schedule": {
     "daily": "08:00 UTC",
     "topicExpansion": "weekday rotation",
     "biweeklyTop10": "every other Friday"
   },
   "posts": [
+    {
+      "id": "2026-10-20-bulk-collection-triage",
+      "dateKey": "2026-10-20",
+      "slug": "bulk-collection-triage",
+      "title": "Bulk Collection Triage · 2026-10-20",
+      "label": "Bulk Collection Triage",
+      "kind": "topic-expansion",
+      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+      "generatedAt": "2026-10-20T08:00:00.000Z",
+      "summary": "Bulk Collection Triage · 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "body": [
+        "Bulk Collection Triage · 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+      ],
+      "cards": [
+        {
+          "rank": 1,
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "setName": "CMD",
+          "collectorNumber": "269",
+          "currentUsd": 0.86,
+          "previousUsd": 1.02,
+          "percentChange": -15.69,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WAIT_FOR_DIP",
+          "thesis": "Commander decklist; fell 15.7% since the prior saved observation across 2 available price sources.",
+          "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "DOWN",
+            "projectedPctRange": [
+              -14,
+              -4
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Diamond City",
+          "setCode": "pip",
+          "setName": "PIP",
+          "collectorNumber": "147",
+          "currentUsd": 3,
+          "previousUsd": 3,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Evolution Sage",
+          "setCode": "ncc",
+          "setName": "NCC",
+          "collectorNumber": "287",
+          "currentUsd": 3,
+          "previousUsd": 3,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Monologue Tax",
+          "setCode": "c21",
+          "setName": "C21",
+          "collectorNumber": "19",
+          "currentUsd": 3,
+          "previousUsd": 3,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "Pitiless Plunderer",
+          "setCode": "fic",
+          "setName": "FIC",
+          "collectorNumber": "281",
+          "currentUsd": 3,
+          "previousUsd": 3,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 6,
+          "name": "Bloodforged Battle-Axe",
+          "setCode": "c17",
+          "setName": "C17",
+          "collectorNumber": "50",
+          "currentUsd": 2.99,
+          "previousUsd": 2.99,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 7,
+          "name": "Manaweft Sliver",
+          "setCode": "cmm",
+          "setName": "CMM",
+          "collectorNumber": "900",
+          "currentUsd": 2.99,
+          "previousUsd": 2.99,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        },
+        {
+          "rank": 8,
+          "name": "Mazirek, Kraul Death Priest",
+          "setCode": "c15",
+          "setName": "C15",
+          "collectorNumber": "48",
+          "currentUsd": 2.99,
+          "previousUsd": 2.99,
+          "percentChange": 0,
+          "category": "commander-picks",
+          "sourceCount": 2,
+          "confidence": "Unverified",
+          "action": "WATCH",
+          "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Catalyst and liquidity require independent confirmation before transacting.",
+          "verifiedAt": "2026-10-20T13:50:16.706Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "FLAT_OR_UNCERTAIN",
+            "projectedPctRange": [
+              -2,
+              2
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Unverified",
+            "openedAt": "2026-10-20",
+            "evaluationDate": "2026-11-03"
+          }
+        }
+      ],
+      "sources": [
+        "MTGJSON set data",
+        "MTGJSON paper price data",
+        "Scryfall image endpoint"
+      ],
+      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+    },
     {
       "id": "2026-10-16-top-10",
       "dateKey": "2026-10-16",

@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-16T19:52:55.054Z",
+  "updatedAt": "2026-10-20T13:50:25.222Z",
   "records": [
+    {
+      "id": "2026-10-20-bulk-collection-triage:1:cmd:269",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Command Tower (CMD 269) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "entryUsd": 0.86,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 15.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -14,
+          -4
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:2:pip:147",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Diamond City (PIP 147) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Diamond City",
+      "setCode": "pip",
+      "collectorNumber": "147",
+      "entryUsd": 3,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:3:ncc:287",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Evolution Sage (NCC 287) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Evolution Sage",
+      "setCode": "ncc",
+      "collectorNumber": "287",
+      "entryUsd": 3,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:4:c21:19",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Monologue Tax (C21 19) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Monologue Tax",
+      "setCode": "c21",
+      "collectorNumber": "19",
+      "entryUsd": 3,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:5:fic:281",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Pitiless Plunderer (FIC 281) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Pitiless Plunderer",
+      "setCode": "fic",
+      "collectorNumber": "281",
+      "entryUsd": 3,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:6:c17:50",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Bloodforged Battle-Axe (C17 50) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Bloodforged Battle-Axe",
+      "setCode": "c17",
+      "collectorNumber": "50",
+      "entryUsd": 2.99,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:7:cmm:900",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Manaweft Sliver (CMM 900) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Manaweft Sliver",
+      "setCode": "cmm",
+      "collectorNumber": "900",
+      "entryUsd": 2.99,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:8:c15:48",
+      "dateKey": "2026-10-20",
+      "postId": "2026-10-20-bulk-collection-triage",
+      "prompt": "Assess Mazirek, Kraul Death Priest (C15 48) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mazirek, Kraul Death Priest",
+      "setCode": "c15",
+      "collectorNumber": "48",
+      "entryUsd": 2.99,
+      "action": "WATCH",
+      "thesis": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "projectedPctRange": [
+          -2,
+          2
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-20",
+        "evaluationDate": "2026-11-03"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
       "dateKey": "2026-10-16",
@@ -12,7 +220,7 @@
       "collectorNumber": "10",
       "entryUsd": 15,
       "action": "DO_NOT_CHASE",
-      "thesis": "TCGplayer attributes a move from a long-held $4\u2013$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
+      "thesis": "TCGplayer attributes a move from a long-held $4–$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
       "prediction": {
         "horizonDays": 14,
         "expectedDirection": "UP",
@@ -24,7 +232,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null,
       "printingSourceUrl": "https://scryfall.com/card/ncc/10/tivit-seller-of-secrets"
@@ -51,7 +259,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null,
       "printingSourceUrl": "https://scryfall.com/card/eoc/77/ripples-of-potential"
@@ -78,7 +286,7 @@
         "confidence": "Developing",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null,
       "printingSourceUrl": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren"
@@ -105,7 +313,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -131,7 +339,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -157,7 +365,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -183,7 +391,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -209,7 +417,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -235,7 +443,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null
     },
@@ -261,7 +469,7 @@
         "confidence": "Unverified",
         "openedAt": "2026-10-16",
         "evaluationDate": "2026-10-30",
-        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or >=30%"
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
       "outcome": null,
       "printingSourceUrl": "https://scryfall.com/card/acr/79/abstergo-entertainment"
