@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-16",
+  "generatedFrom": {
+    "priceSnapshotDate": "2026-10-16",
+    "priceBaselineDate": "2026-10-09",
+    "edhrecSource": "client/src/data/edhrecTopCommanders.ts",
+    "brawlStrategyDirectory": "client/src/data/brawlStrategy*.json"
+  },
+  "thresholds": {
+    "latestDayPct": 10,
+    "sevenDayPct": 15,
+    "minimumPriceForAbsoluteMove": 5,
+    "minimumAbsoluteMove": 1,
+    "topPriceSignals": 25,
+    "topCommanderSignals": 25,
+    "topBrawlCardSignals": 25
+  },
+  "priceSpikes": {
+    "asOf": "2026-10-16",
+    "latestDate": "2026-10-16",
+    "previousDate": "2026-10-15",
+    "baselineDate": "2026-10-09",
+    "signals": [
+      {
+        "key": "d0d8e204-7951-522c-80b9-a39c995bbc8a",
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "setName": "CMD",
+        "collectorNumber": "269",
+        "currentUsd": 1.02,
+        "previousUsd": 0.86,
+        "baselineUsd": 1,
+        "latestDayPct": 18.6,
+        "sevenDayPct": 2,
+        "absoluteMove": 0.16,
+        "direction": "up",
+        "category": "penny-risers",
+        "sourceCount": 2,
+        "imageUrl": "https://api.scryfall.com/cards/named?exact=Command%20Tower&format=image&version=normal",
+        "qualifies": true,
+        "evidenceDates": {
+          "latest": "2026-10-16",
+          "previous": "2026-10-15",
+          "baseline": "2026-10-09"
+        }
+      }
+    ]
+  },
+  "commanderDemand": {
+    "methodology": "EDHREC past-month snapshot comparison. A first observation is a baseline, not a measured trend.",
+    "current": [
+      {
+        "name": "Hearthhull, the Worldseed",
+        "decksPastMonth": 5201,
+        "rank": 1
+      },
+      {
+        "name": "Y'shtola, Night's Blessed",
+        "decksPastMonth": 5087,
+        "rank": 2
+      },
+      {
+        "name": "Vivi Ornitier",
+        "decksPastMonth": 3833,
+        "rank": 3
+      },
+      {
+        "name": "Kefka, Court Mage",
+        "decksPastMonth": 3659,
+        "rank": 4
+      },
+      {
+        "name": "The Ur-Dragon",
+        "decksPastMonth": 3600,
+        "rank": 5
+      },
+      {
+        "name": "Edgar Markov",
+        "decksPastMonth": 3571,
+        "rank": 6
+      },
+      {
+        "name": "Teval, the Balanced Scale",
+        "decksPastMonth": 3462,
+        "rank": 7
+      },
+      {
+        "name": "Ragost, Deft Gastronaut",
+        "decksPastMonth": 3449,
+        "rank": 8
+      },
+      {
+        "name": "Cloud, Ex-SOLDIER",
+        "decksPastMonth": 3379,
+        "rank": 9
+      },
+      {
+        "name": "Kilo, Apogee Mind",
+        "decksPastMonth": 3184,
+        "rank": 10
+      },
+      {
+        "name": "Sephiroth, Fabled SOLDIER",
+        "decksPastMonth": 3070,
+        "rank": 11
+      },
+      {
+        "name": "Kaalia of the Vast",
+        "decksPastMonth": 2855,
+        "rank": 12
+      },
+      {
+        "name": "Ms. Bumbleflower",
+        "decksPastMonth": 2826,
+        "rank": 13
+      },
+      {
+        "name": "Atraxa, Praetors' Voice",
+        "decksPastMonth": 2814,
+        "rank": 14
+      },
+      {
+        "name": "Krenko, Mob Boss",
+        "decksPastMonth": 2731,
+        "rank": 15
+      },
+      {
+        "name": "Pantlaza, Sun-Favored",
+        "decksPastMonth": 2692,
+        "rank": 16
+      },
+      {
+        "name": "Jodah, the Unifier",
+        "decksPastMonth": 2553,
+        "rank": 17
+      },
+      {
+        "name": "Giada, Font of Hope",
+        "decksPastMonth": 2507,
+        "rank": 18
+      },
+      {
+        "name": "Sauron, the Dark Lord",
+        "decksPastMonth": 2481,
+        "rank": 19
+      },
+      {
+        "name": "The Wise Mothman",
+        "decksPastMonth": 2479,
+        "rank": 20
+      }
+    ],
+    "shifts": [
+      {
+        "name": "Hearthhull, the Worldseed",
+        "decksPastMonth": 5201,
+        "rank": 1,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Y'shtola, Night's Blessed",
+        "decksPastMonth": 5087,
+        "rank": 2,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Vivi Ornitier",
+        "decksPastMonth": 3833,
+        "rank": 3,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Kefka, Court Mage",
+        "decksPastMonth": 3659,
+        "rank": 4,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "The Ur-Dragon",
+        "decksPastMonth": 3600,
+        "rank": 5,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Edgar Markov",
+        "decksPastMonth": 3571,
+        "rank": 6,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Teval, the Balanced Scale",
+        "decksPastMonth": 3462,
+        "rank": 7,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Ragost, Deft Gastronaut",
+        "decksPastMonth": 3449,
+        "rank": 8,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Cloud, Ex-SOLDIER",
+        "decksPastMonth": 3379,
+        "rank": 9,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Kilo, Apogee Mind",
+        "decksPastMonth": 3184,
+        "rank": 10,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Sephiroth, Fabled SOLDIER",
+        "decksPastMonth": 3070,
+        "rank": 11,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Kaalia of the Vast",
+        "decksPastMonth": 2855,
+        "rank": 12,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Ms. Bumbleflower",
+        "decksPastMonth": 2826,
+        "rank": 13,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Atraxa, Praetors' Voice",
+        "decksPastMonth": 2814,
+        "rank": 14,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Krenko, Mob Boss",
+        "decksPastMonth": 2731,
+        "rank": 15,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Pantlaza, Sun-Favored",
+        "decksPastMonth": 2692,
+        "rank": 16,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Jodah, the Unifier",
+        "decksPastMonth": 2553,
+        "rank": 17,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Giada, Font of Hope",
+        "decksPastMonth": 2507,
+        "rank": 18,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "Sauron, the Dark Lord",
+        "decksPastMonth": 2481,
+        "rank": 19,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      },
+      {
+        "name": "The Wise Mothman",
+        "decksPastMonth": 2479,
+        "rank": 20,
+        "priorRank": null,
+        "priorDecksPastMonth": null,
+        "rankDelta": null,
+        "deckCountDelta": null,
+        "signal": "new-baseline"
+      }
+    ]
+  },
+  "brawlMeta": {
+    "methodology": "Curated strategy-corpus proxy. Counts show representation in repository strategy documents, not tournament results, win rates, or platform-wide deck prevalence.",
+    "strategyDocumentCount": 3,
+    "commanderSignals": [
+      {
+        "commanderKey": "dr-madison-li",
+        "sourceFile": "brawlStrategyMadisonAraumi.json"
+      },
+      {
+        "commanderKey": "araumi-of-the-dead-tide",
+        "sourceFile": "brawlStrategyMadisonAraumi.json"
+      },
+      {
+        "commanderKey": "marchesa-the-black-rose",
+        "sourceFile": "brawlStrategyMarchesaMothman.json"
+      },
+      {
+        "commanderKey": "the-wise-mothman",
+        "sourceFile": "brawlStrategyMarchesaMothman.json"
+      },
+      {
+        "commanderKey": "rakdos-lord-of-riots",
+        "sourceFile": "brawlStrategyRakdosKarlovTaigam.json"
+      },
+      {
+        "commanderKey": "karlov-of-the-ghost-council",
+        "sourceFile": "brawlStrategyRakdosKarlovTaigam.json"
+      },
+      {
+        "commanderKey": "taigam-sidisis-hand",
+        "sourceFile": "brawlStrategyRakdosKarlovTaigam.json"
+      }
+    ],
+    "cardSignals": [
+      {
+        "name": "Command Tower",
+        "strategyCount": 7,
+        "totalCopies": 7,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman",
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Sol Ring",
+        "strategyCount": 7,
+        "totalCopies": 7,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman",
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Swamp",
+        "strategyCount": 6,
+        "totalCopies": 20,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman",
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Island",
+        "strategyCount": 5,
+        "totalCopies": 28,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Mind Stone",
+        "strategyCount": 5,
+        "totalCopies": 5,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Arcane Signet",
+        "strategyCount": 4,
+        "totalCopies": 4,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "the-wise-mothman",
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Evolving Wilds",
+        "strategyCount": 4,
+        "totalCopies": 4,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Terramorphic Expanse",
+        "strategyCount": 4,
+        "totalCopies": 4,
+        "commanders": [
+          "dr-madison-li",
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose",
+          "the-wise-mothman"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Mountain",
+        "strategyCount": 3,
+        "totalCopies": 8,
+        "commanders": [
+          "dr-madison-li",
+          "marchesa-the-black-rose",
+          "rakdos-lord-of-riots"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Bojuka Bog",
+        "strategyCount": 3,
+        "totalCopies": 3,
+        "commanders": [
+          "marchesa-the-black-rose",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Night's Whisper",
+        "strategyCount": 3,
+        "totalCopies": 3,
+        "commanders": [
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Read the Bones",
+        "strategyCount": 3,
+        "totalCopies": 3,
+        "commanders": [
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Toxic Deluge",
+        "strategyCount": 3,
+        "totalCopies": 3,
+        "commanders": [
+          "rakdos-lord-of-riots",
+          "karlov-of-the-ghost-council",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Plains",
+        "strategyCount": 2,
+        "totalCopies": 10,
+        "commanders": [
+          "dr-madison-li",
+          "karlov-of-the-ghost-council"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Brainstorm",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Carrion Feeder",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "marchesa-the-black-rose"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Counterspell",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Dimir Aqueduct",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Dimir Signet",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "the-wise-mothman",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Disciple of Bolas",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "marchesa-the-black-rose",
+          "rakdos-lord-of-riots"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Dread Return",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "the-wise-mothman"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Fact or Fiction",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Go for the Throat",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Grave Titan",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "araumi-of-the-dead-tide",
+          "rakdos-lord-of-riots"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      },
+      {
+        "name": "Hero's Downfall",
+        "strategyCount": 2,
+        "totalCopies": 2,
+        "commanders": [
+          "rakdos-lord-of-riots",
+          "taigam-sidisis-hand"
+        ],
+        "priorStrategyCount": null,
+        "change": null
+      }
+    ]
+  }
+}

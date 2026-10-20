@@ -1,0 +1,90 @@
+name: Daily MTG Market and Meta Watch
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # Daily at 12:00 UTC, after market and release-calendar refreshes
+  workflow_dispatch:
+
+concurrency:
+  group: market-meta-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  build-market-meta-watch:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build price-spike and meta-watch snapshot
+        run: pnpm market:meta-watch
+
+      - name: Validate meta-watch evidence
+        run: |
+          git diff --check
+          pnpm exec vitest run scripts/build-market-meta-watch.test.mjs
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const files = ['data/market/meta-watch.json', 'client/src/data/metaWatch.json'];
+          for (const file of files) {
+            const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+            if (payload.schemaVersion !== 1 || !payload.asOf || !payload.priceSpikes || !payload.commanderDemand || !payload.brawlMeta) throw new Error(`${file} has an invalid meta-watch schema`);
+          }
+          NODE
+
+      - name: Open or update market-meta review pull request
+        id: market-meta-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: automation/market-meta-watch
+          delete-branch: true
+          add-paths: |
+            data/market/meta-watch.json
+            client/src/data/metaWatch.json
+          commit-message: "chore(data): refresh market and meta watch"
+          title: "chore(data): refresh market and meta watch"
+          body: |
+            ## Automated market and meta watch
+
+            This PR was generated from the daily repository evidence pass.
+
+            It tracks:
+            - Price spikes and declines from dated daily market snapshots
+            - EDHREC past-month Commander rank and deck-count shifts
+            - Representation changes in the curated Brawl strategy corpus
+
+            Brawl results are a strategy-document proxy, not tournament or platform-wide prevalence data. Review exact printings, source dates, liquidity, and context before merging.
+
+      - name: Report pull-request result
+        run: |
+          if [[ -n "${{ steps.market-meta-pr.outputs.pull-request-number }}" ]]; then
+            echo "Market/meta PR #${{ steps.market-meta-pr.outputs.pull-request-number }}: ${{ steps.market-meta-pr.outputs.pull-request-url }}"
+          else
+            echo 'No market or meta changes detected; no pull request was created.'
+          fi

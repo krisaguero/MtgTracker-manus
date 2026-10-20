@@ -13,6 +13,7 @@
     "market:range-sim": "python3 scripts/simulate-prediction-ranges.py",
     "audit:market": "node scripts/audit-market-categories.mjs",
     "release:calendar": "node scripts/sync-release-calendar.mjs",
+    "market:meta-watch": "node scripts/build-market-meta-watch.mjs",
     "format": "prettier --write .",
     "test": "vitest run",
     "db:push": "drizzle-kit generate && drizzle-kit migrate"
