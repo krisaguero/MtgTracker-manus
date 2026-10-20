@@ -162,10 +162,21 @@ function MarketReportArticle({ report }: { report: ImportedMarketReport }) {
               {report.status}
             </p>
           </div>
-          <div className="mt-8 space-y-5 text-base leading-8 text-muted-foreground">
-            {report.body.map((paragraph, index) => (
-              <p key={`${report.dateKey}-${index}`}>{paragraph}</p>
-            ))}
+          <div className="mt-8 text-base leading-8 text-muted-foreground">
+            {report.body[0] && <p>{report.body[0]}</p>}
+            {report.body.length > 1 && (
+              <details className="mt-5 border border-border bg-background">
+                <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider text-primary">
+                  Read full report narrative · {report.body.length - 1} more
+                  sections
+                </summary>
+                <div className="space-y-5 border-t border-border p-4 sm:p-6">
+                  {report.body.slice(1).map((paragraph, index) => (
+                    <p key={`${report.dateKey}-${index + 1}`}>{paragraph}</p>
+                  ))}
+                </div>
+              </details>
+            )}
           </div>
           <div className="mt-10 space-y-6 border-t-2 border-primary/30 pt-8">
             <div>

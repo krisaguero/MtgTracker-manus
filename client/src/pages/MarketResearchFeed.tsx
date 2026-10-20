@@ -144,21 +144,28 @@ function FeedCardView({ card }: { card: FeedCard }) {
           <p className="mt-3 text-sm leading-6 text-muted-foreground">
             {card.thesis}
           </p>
-          <p className="mt-3 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">
-            <strong className="text-foreground">Risk:</strong> {card.risk}
-          </p>
-          {card.prediction && (
-            <p className="mt-3 border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">
-              <strong className="text-foreground">14-day guess:</strong>{" "}
-              {card.prediction.expectedDirection.replaceAll("_", " ")} (
-              {card.prediction.projectedPctRange[0]}% to{" "}
-              {card.prediction.projectedPctRange[1]}%). Evaluate{" "}
-              {formatDate(card.prediction.evaluationDate)}.{" "}
-              <span className="text-[10px] uppercase">
-                {card.prediction.model}
-              </span>
-            </p>
-          )}
+          <details className="mt-3 border border-border bg-background">
+            <summary className="cursor-pointer px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider">
+              Why this signal?
+            </summary>
+            <div className="space-y-3 border-t border-border p-3">
+              <p className="border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">
+                <strong className="text-foreground">Risk:</strong> {card.risk}
+              </p>
+              {card.prediction && (
+                <p className="border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">
+                  <strong className="text-foreground">14-day guess:</strong>{" "}
+                  {card.prediction.expectedDirection.replaceAll("_", " ")} (
+                  {card.prediction.projectedPctRange[0]}% to{" "}
+                  {card.prediction.projectedPctRange[1]}%). Evaluate{" "}
+                  {formatDate(card.prediction.evaluationDate)}.{" "}
+                  <span className="text-[10px] uppercase">
+                    {card.prediction.model}
+                  </span>
+                </p>
+              )}
+            </div>
+          </details>
           <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3 font-mono text-[10px] uppercase text-muted-foreground">
             <span>
               {card.currentUsd === null
@@ -501,6 +508,8 @@ export default function MarketResearchFeed() {
       ? new URLSearchParams(window.location.search).get("date")
       : null;
   const latest = posts.find(post => post.dateKey === requestedDate) || posts[0];
+  const visibleCards = latest?.cards.slice(0, 5) || [];
+  const additionalCards = latest?.cards.slice(5) || [];
   const isHistorical = Boolean(
     latest && latest.dateKey < new Date().toISOString().slice(0, 10)
   );
@@ -532,8 +541,15 @@ export default function MarketResearchFeed() {
       </header>
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8">
         {!requestedDate && <TabletopPaperSpotlightTeaser />}
-        <VerifiedHistoricalEvidence />
-        <SourceMarketWatchSnapshot requestedDate={requestedDate} />
+        <details className="border border-border bg-card">
+          <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
+            Historical evidence and source snapshot
+          </summary>
+          <div className="space-y-8 border-t border-border p-0 pt-8">
+            <VerifiedHistoricalEvidence />
+            <SourceMarketWatchSnapshot requestedDate={requestedDate} />
+          </div>
+        </details>
         <MarketMetaWatchDashboard />
         <p className="border-l-2 border-primary pl-3 font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
           Separate tracker-generated archive · dated cards, data windows, and
@@ -597,19 +613,42 @@ export default function MarketResearchFeed() {
               </span>
             </div>
             <div className="mt-6 grid gap-4 lg:grid-cols-2">
-              {latest.cards.map(card => (
+              {visibleCards.map(card => (
                 <FeedCardView
                   key={`${latest.id}-${card.name}-${card.setCode}`}
                   card={card}
                 />
               ))}
             </div>
+            {additionalCards.length > 0 && (
+              <details className="mt-4 border border-border bg-background">
+                <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
+                  Show {additionalCards.length} additional watch cards
+                </summary>
+                <div className="grid gap-4 border-t border-border p-4 lg:grid-cols-2">
+                  {additionalCards.map(card => (
+                    <FeedCardView
+                      key={`${latest.id}-${card.name}-${card.setCode}`}
+                      card={card}
+                    />
+                  ))}
+                </div>
+              </details>
+            )}
             <div className="mt-6 border-t border-border pt-5 text-sm leading-7 text-muted-foreground">
-              {latest.body.map(paragraph => (
-                <p key={paragraph} className="mb-3">
-                  {paragraph}
-                </p>
-              ))}
+              <p className="mb-3">{latest.body[0]}</p>
+              {latest.body.length > 1 && (
+                <details>
+                  <summary className="cursor-pointer font-mono text-[10px] font-black uppercase tracking-wider text-primary">
+                    Read methodology and purchase discipline
+                  </summary>
+                  <div className="mt-3 space-y-3">
+                    {latest.body.slice(1).map(paragraph => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </details>
+              )}
               <p className="flex items-start gap-2 border-t border-border pt-4 font-mono text-[10px] font-bold uppercase">
                 <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />{" "}
                 {latest.disclaimer}
