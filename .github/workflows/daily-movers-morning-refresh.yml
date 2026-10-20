@@ -1,29 +1,37 @@
-name: Morning Daily Movers Refresh
+name: Daily Market Data Refresh
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Every day at 8:00 AM UTC
+    - cron: "0 8 * * *" # Every day at 8:00 AM UTC
   workflow_dispatch:
 
 concurrency:
   group: daily-market-movers
   cancel-in-progress: false
 
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "22"
+
 jobs:
-  refresh-market-movers:
+  refresh-market-data:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 30
     steps:
-      - name: Checkout Repository
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
+          ref: main
+          fetch-depth: 0
           persist-credentials: true
 
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
@@ -31,7 +39,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Refresh shared Commander and precon card-price snapshot
+      - name: Sync with latest main before generating data
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Refresh Commander and precon card-price snapshot
         id: commander-price-refresh
         run: node scripts/refresh-commander-card-prices.mjs
         continue-on-error: true
@@ -40,7 +53,7 @@ jobs:
         if: steps.commander-price-refresh.outcome == 'failure'
         run: echo "::warning::Commander/precon price snapshot refresh failed; the existing dated snapshot was retained."
 
-      - name: Run Daily Market Movers
+      - name: Run daily market movers
         run: node scripts/daily-market-movers.mjs
 
       - name: Build five-category MTG finance feed
@@ -50,17 +63,72 @@ jobs:
           --history data/market/daily-movers-history.json
           --output client/public/mtg-movers.json
 
-      - name: Build Daily Market Watch Research Feed
+      - name: Build daily Market Watch research feed
         run: pnpm market:research-feed
 
-      - name: Commit and Push Updated Market Artifacts
+      - name: Validate generated data and application types
         run: |
-          git config --global user.name 'MTG Morning Bot'
-          git config --global user.email 'bot@mtgtracker.local'
-          git add client/src/data/dailyMarketSnapshot.json client/src/data/commanderCardPriceSnapshot.json client/src/data/commanderCardPriceMeta.json client/src/data/marketResearchFeed.json client/src/data/marketPredictionLedger.json data/market/daily data/market/daily-movers-history.json data/market/research data/market/prediction-ledger.json client/public/mtg-movers.json
+          git diff --check
+          pnpm check
+
+      - name: Commit and push generated market artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'MTG Market Data Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add -- \
+            client/public/mtg-movers.json \
+            client/src/data/commanderCardPriceMeta.json \
+            client/src/data/commanderCardPriceSnapshot.json \
+            client/src/data/dailyMarketSnapshot.json \
+            client/src/data/marketPredictionLedger.json \
+            client/src/data/marketResearchFeed.json \
+            data/market/daily \
+            data/market/daily-movers-history.json \
+            data/market/prediction-ledger.json \
+            data/market/research
+
+          staged_paths="$(git diff --cached --name-only)"
+          unexpected_paths=''
+          while IFS= read -r path; do
+            [[ -z "$path" ]] && continue
+            case "$path" in
+              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
+                ;;
+              data/market/daily/*|data/market/research/*)
+                ;;
+              *)
+                unexpected_paths+="$path\n"
+                ;;
+            esac
+          done <<< "$staged_paths"
+
+          if [[ -n "$unexpected_paths" ]]; then
+            echo 'Refusing to commit files outside the generated market-data allowlist:' >&2
+            printf '%b' "$unexpected_paths" >&2
+            exit 1
+          fi
+
           if git diff --cached --quiet; then
-            echo "No generated market artifacts changed."
+            echo 'No generated market artifacts changed.'
             exit 0
           fi
-          git commit -m "chore(market): refresh daily movers [skip ci]"
-          git push
+
+          git diff --cached --check
+          git commit -m 'chore(market): refresh daily market data [skip ci]'
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            if [[ "$attempt" -lt 3 ]]; then
+              echo "Push rejected; rebasing on the latest main before retry $((attempt + 1))."
+              git fetch origin main
+              git rebase origin/main
+            fi
+          done
+
+          echo 'Unable to publish the daily market refresh after three attempts.' >&2
+          exit 1
