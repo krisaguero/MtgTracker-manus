@@ -56,6 +56,9 @@ jobs:
       - name: Run daily market movers
         run: node scripts/daily-market-movers.mjs
 
+      - name: Mirror historical price history for frontend charts
+        run: cp data/market/daily-movers-history.json client/src/data/dailyMoverHistory.json
+
       - name: Build five-category MTG finance feed
         run: >-
           python3 scripts/mtg-finance/build_tracker_movers_feed.py
@@ -83,6 +86,7 @@ jobs:
             client/src/data/commanderCardPriceMeta.json \
             client/src/data/commanderCardPriceSnapshot.json \
             client/src/data/dailyMarketSnapshot.json \
+            client/src/data/dailyMoverHistory.json \
             client/src/data/marketPredictionLedger.json \
             client/src/data/marketResearchFeed.json \
             data/market/daily \
@@ -95,7 +99,7 @@ jobs:
           while IFS= read -r path; do
             [[ -z "$path" ]] && continue
             case "$path" in
-              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
+              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/dailyMoverHistory.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
                 ;;
               data/market/daily/*|data/market/research/*)
                 ;;
