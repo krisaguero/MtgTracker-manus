@@ -156,201 +156,201 @@
         "name": "Hearthhull, the Worldseed",
         "decksPastMonth": 5201,
         "rank": 1,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 1,
+        "priorDecksPastMonth": 5201,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Y'shtola, Night's Blessed",
         "decksPastMonth": 5087,
         "rank": 2,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 2,
+        "priorDecksPastMonth": 5087,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Vivi Ornitier",
         "decksPastMonth": 3833,
         "rank": 3,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 3,
+        "priorDecksPastMonth": 3833,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Kefka, Court Mage",
         "decksPastMonth": 3659,
         "rank": 4,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 4,
+        "priorDecksPastMonth": 3659,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "The Ur-Dragon",
         "decksPastMonth": 3600,
         "rank": 5,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 5,
+        "priorDecksPastMonth": 3600,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Edgar Markov",
         "decksPastMonth": 3571,
         "rank": 6,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 6,
+        "priorDecksPastMonth": 3571,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Teval, the Balanced Scale",
         "decksPastMonth": 3462,
         "rank": 7,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 7,
+        "priorDecksPastMonth": 3462,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Ragost, Deft Gastronaut",
         "decksPastMonth": 3449,
         "rank": 8,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 8,
+        "priorDecksPastMonth": 3449,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Cloud, Ex-SOLDIER",
         "decksPastMonth": 3379,
         "rank": 9,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 9,
+        "priorDecksPastMonth": 3379,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Kilo, Apogee Mind",
         "decksPastMonth": 3184,
         "rank": 10,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 10,
+        "priorDecksPastMonth": 3184,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Sephiroth, Fabled SOLDIER",
         "decksPastMonth": 3070,
         "rank": 11,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 11,
+        "priorDecksPastMonth": 3070,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Kaalia of the Vast",
         "decksPastMonth": 2855,
         "rank": 12,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 12,
+        "priorDecksPastMonth": 2855,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Ms. Bumbleflower",
         "decksPastMonth": 2826,
         "rank": 13,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 13,
+        "priorDecksPastMonth": 2826,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Atraxa, Praetors' Voice",
         "decksPastMonth": 2814,
         "rank": 14,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 14,
+        "priorDecksPastMonth": 2814,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Krenko, Mob Boss",
         "decksPastMonth": 2731,
         "rank": 15,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 15,
+        "priorDecksPastMonth": 2731,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Pantlaza, Sun-Favored",
         "decksPastMonth": 2692,
         "rank": 16,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 16,
+        "priorDecksPastMonth": 2692,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Jodah, the Unifier",
         "decksPastMonth": 2553,
         "rank": 17,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 17,
+        "priorDecksPastMonth": 2553,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Giada, Font of Hope",
         "decksPastMonth": 2507,
         "rank": 18,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 18,
+        "priorDecksPastMonth": 2507,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "Sauron, the Dark Lord",
         "decksPastMonth": 2481,
         "rank": 19,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 19,
+        "priorDecksPastMonth": 2481,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       },
       {
         "name": "The Wise Mothman",
         "decksPastMonth": 2479,
         "rank": 20,
-        "priorRank": null,
-        "priorDecksPastMonth": null,
-        "rankDelta": null,
-        "deckCountDelta": null,
-        "signal": "new-baseline"
+        "priorRank": 20,
+        "priorDecksPastMonth": 2479,
+        "rankDelta": 0,
+        "deckCountDelta": 0,
+        "signal": "stable-range"
       }
     ]
   },
