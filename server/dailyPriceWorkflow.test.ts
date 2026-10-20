@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 describe('shared public daily Commander price refresh', () => {
   it('extends the existing daily workflow without adding private deck uploads', () => {
     const workflow = readFileSync(resolve(process.cwd(), '.github/workflows/daily-movers-morning-refresh.yml'), 'utf8');
-    expect(workflow).toContain("cron: '0 8 * * *'");
+    expect(workflow).toMatch(/cron:\s*['"]0 8 \* \* \*['"]/);
     expect(workflow).toContain('node scripts/refresh-commander-card-prices.mjs');
     expect(workflow).toContain('client/src/data/commanderCardPriceSnapshot.json');
     expect(workflow).toContain('client/src/data/commanderCardPriceMeta.json');

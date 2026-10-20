@@ -1,0 +1,92 @@
+name: Daily MTG Release Calendar Sync
+
+on:
+  schedule:
+    - cron: "0 10 * * *" # Daily at 10:00 AM UTC, after the market refresh
+  workflow_dispatch:
+
+concurrency:
+  group: release-calendar-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  sync-release-calendar:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync upstream release records
+        run: pnpm release:calendar
+
+      - name: Validate release records
+        run: |
+          git diff --check
+          pnpm exec vitest run scripts/sync-release-calendar.test.mjs
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const files = ['data/releases/upcoming-sets.json', 'data/releases/precon-release-calendar.json'];
+          for (const file of files) {
+            const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+            if (payload.schemaVersion !== 1 || !Array.isArray(payload.records)) throw new Error(`${file} has an invalid release schema`);
+            for (const record of payload.records) {
+              if (!record.id || !record.name || !/^\d{4}-\d{2}-\d{2}$/.test(record.releaseDate)) throw new Error(`${file} contains an incomplete record`);
+            }
+          }
+          NODE
+
+      - name: Open or update release-calendar pull request
+        id: release-calendar-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: automation/release-calendar
+          delete-branch: true
+          add-paths: |
+            data/releases/upcoming-sets.json
+            data/releases/precon-release-calendar.json
+          commit-message: "chore(data): refresh MTG release calendars"
+          title: "chore(data): refresh MTG release calendars"
+          body: |
+            ## Automated release-calendar sync
+
+            This PR was generated from the daily MTGJSON release-calendar check.
+
+            It updates:
+            - `data/releases/upcoming-sets.json`
+            - `data/releases/precon-release-calendar.json`
+
+            Review release dates and upstream source links before merging. Manually curated notes and official source links are preserved by the sync script.
+
+      - name: Report pull-request result
+        run: |
+          if [[ -n "${{ steps.release-calendar-pr.outputs.pull-request-number }}" ]]; then
+            echo "Release-calendar PR #${{ steps.release-calendar-pr.outputs.pull-request-number }}: ${{ steps.release-calendar-pr.outputs.pull-request-url }}"
+          else
+            echo 'No release-calendar changes detected; no pull request was created.'
+          fi

@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 1,
+  "kind": "precon-release-calendar",
+  "sourceBuildDate": "2026-10-19",
+  "asOf": "2026-10-19",
+  "window": {
+    "pastDays": 180,
+    "futureDays": 730
+  },
+  "records": [
+    {
+      "id": "SOC:LoreholdSpirit_SOC",
+      "name": "Lorehold Spirit",
+      "productType": "commander-deck",
+      "setCode": "SOC",
+      "setName": null,
+      "releaseDate": "2026-04-24",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Lorehold Spirit"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/LoreholdSpirit_SOC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SOC:PrismariArtistry_SOC",
+      "name": "Prismari Artistry",
+      "productType": "commander-deck",
+      "setCode": "SOC",
+      "setName": null,
+      "releaseDate": "2026-04-24",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Prismari Artistry"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/PrismariArtistry_SOC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SOC:QuandrixUnlimited_SOC",
+      "name": "Quandrix Unlimited",
+      "productType": "commander-deck",
+      "setCode": "SOC",
+      "setName": null,
+      "releaseDate": "2026-04-24",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Quandrix Unlimited"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/QuandrixUnlimited_SOC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SOC:SilverquillInfluence_SOC",
+      "name": "Silverquill Influence",
+      "productType": "commander-deck",
+      "setCode": "SOC",
+      "setName": null,
+      "releaseDate": "2026-04-24",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Silverquill Influence"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/SilverquillInfluence_SOC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SOC:WitherbloomPestilence_SOC",
+      "name": "Witherbloom Pestilence",
+      "productType": "commander-deck",
+      "setCode": "SOC",
+      "setName": null,
+      "releaseDate": "2026-04-24",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Witherbloom Pestilence"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/WitherbloomPestilence_SOC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SLD:GoblinStorm_SLD",
+      "name": "Goblin Storm",
+      "productType": "commander-deck",
+      "setCode": "SLD",
+      "setName": null,
+      "releaseDate": "2026-05-18",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Goblin Storm"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/GoblinStorm_SLD.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:AvengersAssemble_MSC",
+      "name": "Avengers Assemble",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Avengers Assemble"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/AvengersAssemble_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:AvengersAssembleCollectorSEdition_MSC",
+      "name": "Avengers Assemble Collector's Edition",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Avengers Assemble Collector's Edition"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/AvengersAssembleCollectorSEdition_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:DoomPrevails_MSC",
+      "name": "Doom Prevails",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Doom Prevails"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/DoomPrevails_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:DoomPrevailsCollectorSEdition_MSC",
+      "name": "Doom Prevails Collector's Edition",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Doom Prevails Collector's Edition"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/DoomPrevailsCollectorSEdition_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:TheFantasticFour_MSC",
+      "name": "The Fantastic Four",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "The Fantastic Four"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/TheFantasticFour_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:TheFantasticFourCollectorSEdition_MSC",
+      "name": "The Fantastic Four Collector's Edition",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "The Fantastic Four Collector's Edition"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/TheFantasticFourCollectorSEdition_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:WakandaForever_MSC",
+      "name": "Wakanda Forever",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Wakanda Forever"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/WakandaForever_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MSC:WakandaForeverCollectorSEdition_MSC",
+      "name": "Wakanda Forever Collector's Edition",
+      "productType": "commander-deck",
+      "setCode": "MSC",
+      "setName": null,
+      "releaseDate": "2026-06-26",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Wakanda Forever Collector's Edition"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/WakandaForeverCollectorSEdition_MSC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SLD:HatsuneMiku_SLD",
+      "name": "Hatsune Miku",
+      "productType": "commander-deck",
+      "setCode": "SLD",
+      "setName": null,
+      "releaseDate": "2026-08-10",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Hatsune Miku"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/HatsuneMiku_SLD.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "SLD:OddsAndEnds_SLD",
+      "name": "Odds and Ends",
+      "productType": "commander-deck",
+      "setCode": "SLD",
+      "setName": null,
+      "releaseDate": "2026-09-28",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Odds and Ends"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/OddsAndEnds_SLD.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FDC:CallingAllAngels_FDC",
+      "name": "Calling All Angels",
+      "productType": "commander-deck",
+      "setCode": "FDC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Calling All Angels"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/CallingAllAngels_FDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FDC:KeenEngineering_FDC",
+      "name": "Keen Engineering",
+      "productType": "commander-deck",
+      "setCode": "FDC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Keen Engineering"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/KeenEngineering_FDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FRC:MultiverseReforged_FRC",
+      "name": "Multiverse Reforged",
+      "productType": "commander-deck",
+      "setCode": "FRC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Multiverse Reforged"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/MultiverseReforged_FRC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FDC:ReignOfDragons_FDC",
+      "name": "Reign of Dragons",
+      "productType": "commander-deck",
+      "setCode": "FDC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Reign of Dragons"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/ReignOfDragons_FDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FDC:TramplesaurusRex_FDC",
+      "name": "Tramplesaurus Rex",
+      "productType": "commander-deck",
+      "setCode": "FDC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Tramplesaurus Rex"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/TramplesaurusRex_FDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "FDC:WretchedRanks_FDC",
+      "name": "Wretched Ranks",
+      "productType": "commander-deck",
+      "setCode": "FDC",
+      "setName": null,
+      "releaseDate": "2026-10-02",
+      "status": "released",
+      "decklistStatus": "complete",
+      "confidence": "upstream-structured",
+      "knownDeckNames": [
+        "Wretched Ranks"
+      ],
+      "sources": [
+        {
+          "label": "MTGJSON deck record",
+          "url": "https://mtgjson.com/api/v5/decks/WretchedRanks_FDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON DeckList",
+          "url": "https://mtgjson.com/api/v5/DeckList.json",
+          "type": "structured"
+        }
+      ],
+      "officialSourceUrl": null,
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    }
+  ]
+}

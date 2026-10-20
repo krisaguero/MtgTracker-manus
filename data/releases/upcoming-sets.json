@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "kind": "upcoming-mtg-sets",
+  "sourceBuildDate": "2026-10-19",
+  "asOf": "2026-10-19",
+  "lookaheadDays": 730,
+  "records": [
+    {
+      "id": "MBC",
+      "setCode": "MBC",
+      "name": "Mystery Booster Commander Edition",
+      "setType": "draft_innovation",
+      "releaseDate": "2026-10-19",
+      "status": "released",
+      "confidence": "upstream-structured",
+      "commanderSetCode": "MBC",
+      "commanderProductStatus": "catalog-record",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/MBC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "TRK",
+      "setCode": "TRK",
+      "name": "Star Trek",
+      "setType": "expansion",
+      "releaseDate": "2026-11-13",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": null,
+      "commanderProductStatus": "not-specified",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/TRK.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "TRC",
+      "setCode": "TRC",
+      "name": "Star Trek Commander",
+      "setType": "commander",
+      "releaseDate": "2026-11-13",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": "TRC",
+      "commanderProductStatus": "catalog-record",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/TRC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "NAU",
+      "setCode": "NAU",
+      "name": "Nauctis: The Sunken Realm",
+      "setType": "expansion",
+      "releaseDate": "2027-02-05",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": null,
+      "commanderProductStatus": "not-specified",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/NAU.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MDC",
+      "setCode": "MDC",
+      "name": "Darkhold Destiny Commander",
+      "setType": "commander",
+      "releaseDate": "2027-04-09",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": "MDC",
+      "commanderProductStatus": "catalog-record",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/MDC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    },
+    {
+      "id": "MDD",
+      "setCode": "MDD",
+      "name": "Marvel: Darkhold Destiny",
+      "setType": "expansion",
+      "releaseDate": "2027-04-09",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": null,
+      "commanderProductStatus": "not-specified",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/MDD.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-10-19"
+    }
+  ]
+}
