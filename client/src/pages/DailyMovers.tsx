@@ -35,6 +35,9 @@ export function DailyMovers() {
   const [activeFeed, setActiveFeed] = useState<"snapshot" | "watchlist">(
     "snapshot"
   );
+  const [moverLens, setMoverLens] = useState<
+    "all" | "gainers" | "losers" | "reprint-squashes"
+  >("all");
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedSetCode, setSelectedSetCode] = useState<string>("all");
   const [priceRange, setPriceRange] = useState<string>("all");
@@ -119,6 +122,14 @@ export function DailyMovers() {
       result = result.filter(m => isMarketCardWatched(m, watchlist));
     }
 
+    if (moverLens === "gainers") {
+      result = result.filter(m => m.percentChange > 0);
+    } else if (moverLens === "losers") {
+      result = result.filter(m => m.percentChange < 0);
+    } else if (moverLens === "reprint-squashes") {
+      result = result.filter(m => m.category === "reprint-squashes");
+    }
+
     if (activeCategory !== "all") {
       result = result.filter(m => m.category === activeCategory);
     }
@@ -167,6 +178,7 @@ export function DailyMovers() {
 
     return [...result].sort((a, b) => {
       if (sortBy === "pct-desc") return b.percentChange - a.percentChange;
+      if (sortBy === "pct-asc") return a.percentChange - b.percentChange;
       if (sortBy === "price-desc") return b.currentUsd - a.currentUsd;
       if (sortBy === "price-asc") return a.currentUsd - b.currentUsd;
       if (sortBy === "name-asc") return a.name.localeCompare(b.name);
@@ -175,6 +187,7 @@ export function DailyMovers() {
   }, [
     activeMoversList,
     activeFeed,
+    moverLens,
     activeCategory,
     selectedSetCode,
     priceRange,
@@ -448,6 +461,45 @@ export function DailyMovers() {
 
         {/* Filter and Category Bar */}
         <section className="mt-8 border-2 border-border bg-card p-4 sm:p-6 shadow-sm">
+          <div className="flex flex-col gap-3 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">
+                Mover lens
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Toggle the current window by direction or reprint pressure.
+              </p>
+            </div>
+            <div
+              className="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filter current movers by lens"
+            >
+              {(
+                [
+                  ["all", "All current"],
+                  ["gainers", "Gainers"],
+                  ["losers", "Losers"],
+                  ["reprint-squashes", "Reprint squashes"],
+                ] as const
+              ).map(([value, label]) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setMoverLens(value)}
+                  aria-pressed={moverLens === value}
+                  className={`border px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${
+                    moverLens === value
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border bg-background text-muted-foreground hover:border-primary hover:text-primary"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto flex-1">
               {/* Search Filter */}
@@ -551,12 +603,17 @@ export function DailyMovers() {
                   className="border border-border bg-background px-2.5 py-1.5 font-mono text-xs uppercase text-foreground outline-none focus:border-primary"
                 >
                   <option value="pct-desc">Highest Spike (%)</option>
+                  <option value="pct-asc">Biggest Loss (%)</option>
                   <option value="price-desc">Highest Price ($)</option>
                   <option value="price-asc">Lowest Price ($)</option>
                   <option value="name-asc">Card Name (A-Z)</option>
                 </select>
               </div>
             </div>
+            <p className="w-full font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
+              Showing {activeFeedMovers.length} of {activeMoversList.length}{" "}
+              current movers
+            </p>
           </div>
 
           {/* Category Tabs */}
