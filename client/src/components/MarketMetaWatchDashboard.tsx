@@ -17,6 +17,13 @@ type MetaWatch = typeof rawMetaWatch;
 type PriceSignal = MetaWatch["priceSpikes"]["signals"][number];
 type CommanderSignal = MetaWatch["commanderDemand"]["shifts"][number];
 type BrawlSignal = MetaWatch["brawlMeta"]["cardSignals"][number];
+type PriceHistory = {
+  snapshots: Array<{
+    date: string;
+    prices: Record<string, number>;
+  }>;
+};
+const priceHistory = rawPriceHistory as unknown as PriceHistory;
 
 function formatDate(value: string | null) {
   if (!value) return "n/a";
@@ -43,10 +50,10 @@ function deltaClass(value: number | null) {
 }
 
 function PriceTrendChart({ signal }: { signal: PriceSignal }) {
-  const points = rawPriceHistory.snapshots
+  const points = priceHistory.snapshots
     .map(snapshot => ({
       date: snapshot.date,
-      price: (snapshot.prices as Record<string, number>)[signal.key],
+      price: snapshot.prices[signal.key],
     }))
     .filter(
       (point): point is { date: string; price: number } =>
