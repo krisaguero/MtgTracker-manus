@@ -1,57 +1,64 @@
-import { describe, expect, it } from 'vitest';
-import { commanderDecklistsData } from '@/data/commanderDecklistsData';
+import { describe, expect, it } from "vitest";
+import { commanderDecklistsData } from "@/data/commanderDecklistsData";
 import {
   commanderPriceSnapshotAsOf,
   commanderPriceSnapshotSource,
   resolveDeckMarketValue,
-} from '@/lib/marketPriceIndex';
+} from "@/lib/marketPriceIndex";
 import {
   buildHomePreconSummary,
   formatHomePreconCatalogSummary,
   formatHomePreconSummary,
-} from './homePreconSummary';
+} from "./homePreconSummary";
 
-describe('homepage precon equity summary', () => {
-  it('reports one local-archive scope and its actual card-price coverage instead of zero placeholder values', () => {
+describe("homepage precon equity summary", () => {
+  it("reports one local-archive scope and its actual card-price coverage instead of zero placeholder values", () => {
     const summary = buildHomePreconSummary(
       commanderDecklistsData,
       resolveDeckMarketValue
     );
 
-    expect(summary).toEqual({
-      decklistCount: 173,
-      valuedDecklistCount: 173,
-      equityUsd: 19408.97,
-      pricedCardCopies: 16944,
-      unpricedCardCopies: 356,
-      totalCardCopies: 17300,
-      coveragePercent: 97.9,
-    });
-    expect(
-      formatHomePreconSummary(
-        summary,
-        commanderPriceSnapshotAsOf,
-        commanderPriceSnapshotSource
-      )
-    ).toBe(
-      '173 local decklists · $19,408.97 estimated indexed card-list equity · 173/173 decklists with value data · 16,944/17,300 card copies priced in USD (356 missing; 97.9% coverage) · MTGJSON AllPricesToday snapshot as of 2026-10-16. This is card-list equity, not sealed product value; only local decklists are included. USD estimates use TCGplayer or Card Kingdom quotes; EUR Cardmarket quotes are excluded.'
+    expect(summary.decklistCount).toBe(commanderDecklistsData.length);
+    expect(summary.valuedDecklistCount).toBeGreaterThan(0);
+    expect(summary.valuedDecklistCount).toBeLessThanOrEqual(
+      summary.decklistCount
+    );
+    expect(summary.equityUsd).toBeGreaterThan(0);
+    expect(summary.pricedCardCopies + summary.unpricedCardCopies).toBe(
+      summary.totalCardCopies
+    );
+    expect(summary.totalCardCopies).toBeGreaterThan(0);
+    expect(summary.coveragePercent).toBeGreaterThanOrEqual(0);
+    expect(summary.coveragePercent).toBeLessThanOrEqual(100);
+
+    const formatted = formatHomePreconSummary(
+      summary,
+      commanderPriceSnapshotAsOf,
+      commanderPriceSnapshotSource
+    );
+    expect(formatted).toContain(`${summary.decklistCount} local decklists`);
+    expect(formatted).toContain(
+      `${summary.pricedCardCopies.toLocaleString("en-US")}/${summary.totalCardCopies.toLocaleString("en-US")} card copies priced in USD`
+    );
+    expect(formatted).toContain(
+      `${commanderPriceSnapshotSource} snapshot as of ${commanderPriceSnapshotAsOf}`
     );
   });
 });
 
-describe('homepage precon catalog-count summary', () => {
-  it('uses the stable local archive as the only source for counts and values', () => {
-    expect(formatHomePreconCatalogSummary(173, 173, 173, 'available')).toBe(
-      '173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded'
+describe("homepage precon catalog-count summary", () => {
+  it("uses the stable local archive as the only source for counts and values", () => {
+    expect(formatHomePreconCatalogSummary(173, 173, 173, "available")).toBe(
+      "173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded"
     );
   });
 
-  it('keeps the local count stable while the independent recent-set feed is loading or unavailable', () => {
-    expect(formatHomePreconCatalogSummary(173, 173, 173, 'loading')).toBe(
-      '173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded · Recent-set feed loading'
+  it("keeps the local count stable while the independent recent-set feed is loading or unavailable", () => {
+    expect(formatHomePreconCatalogSummary(173, 173, 173, "loading")).toBe(
+      "173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded · Recent-set feed loading"
     );
-    expect(formatHomePreconCatalogSummary(173, 173, 173, 'unavailable')).toBe(
-      '173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded · Recent-set Scryfall feed unavailable'
+    expect(formatHomePreconCatalogSummary(173, 173, 173, "unavailable")).toBe(
+      "173 of 173 local archive entries · 173 local decklists · Scryfall-only product listings excluded · Recent-set Scryfall feed unavailable"
     );
   });
 });

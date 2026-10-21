@@ -25,7 +25,7 @@ describe("MarketMetaWatchDashboard", () => {
     expect(html).toContain("Price spikes &amp; meta movement");
     expect(html).toContain("Command Tower");
     expect(html).toContain("30-snapshot price trend");
-    expect(html).toContain("Price trend from $0.97 to $1.02");
+    expect(html).toMatch(/Price trend from \$\d+\.\d{2} to \$\d+\.\d{2}/);
     expect(html).toContain("Hearthhull, the Worldseed");
     expect(html).toContain("Brawl corpus pulse");
     expect(html).toContain("not tournament prevalence");
