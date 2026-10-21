@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-20T13:50:25.222Z",
+  "updatedAt": "2026-10-21T13:36:28.623Z",
   "records": [
+    {
+      "id": "2026-10-21-commander-demand:1:znr:382",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Swamp (ZNR 382) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Swamp",
+      "setCode": "znr",
+      "collectorNumber": "382",
+      "entryUsd": 0.75,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 127.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:2:scd:150",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Magmatic Force (SCD 150) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Magmatic Force",
+      "setCode": "scd",
+      "collectorNumber": "150",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 106.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:3:otc:317",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Shadowblood Ridge (OTC 317) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Shadowblood Ridge",
+      "setCode": "otc",
+      "collectorNumber": "317",
+      "entryUsd": 0.69,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 81.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:4:pip:182",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Bastion of Remembrance (PIP 182) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Bastion of Remembrance",
+      "setCode": "pip",
+      "collectorNumber": "182",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 79.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:5:c13:354",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Forest (C13 354) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Forest",
+      "setCode": "c13",
+      "collectorNumber": "354",
+      "entryUsd": 0.22,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 69.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:6:c15:325",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Plains (C15 325) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Plains",
+      "setCode": "c15",
+      "collectorNumber": "325",
+      "entryUsd": 0.05,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 64.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:7:msc:188",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Taunt from the Rampart (MSC 188) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Taunt from the Rampart",
+      "setCode": "msc",
+      "collectorNumber": "188",
+      "entryUsd": 1.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 56.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-21-commander-demand:8:scd:32",
+      "dateKey": "2026-10-21",
+      "postId": "2026-10-21-commander-demand",
+      "prompt": "Assess Rootborn Defenses (SCD 32) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Rootborn Defenses",
+      "setCode": "scd",
+      "collectorNumber": "32",
+      "entryUsd": 0.27,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 53.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-21",
+        "evaluationDate": "2026-11-04"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-20-bulk-collection-triage:1:cmd:269",
       "dateKey": "2026-10-20",
