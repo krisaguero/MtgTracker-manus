@@ -252,7 +252,7 @@ export function DailyMovers() {
             </span>
           </div>
 
-          <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="flex min-w-0 w-full flex-wrap items-center gap-3 md:w-auto">
             <NavigationSearch />
             <Link
               href="/market-watch"
