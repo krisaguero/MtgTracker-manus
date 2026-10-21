@@ -1,0 +1,130 @@
+name: Morning Git Sync and Vercel Health Check
+
+on:
+  schedule:
+    # 8:00 AM Pacific during daylight time; GitHub cron is UTC.
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: morning-git-sync-vercel-check
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  deployments: read
+  actions: read
+
+jobs:
+  verify-main-and-vercel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main with complete history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up GitHub CLI
+        run: gh --version
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Verify repository is synchronized with GitHub main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main --prune
+          local_sha="$(git rev-parse HEAD)"
+          remote_sha="$(git rev-parse origin/main)"
+          if [[ "$local_sha" != "$remote_sha" ]]; then
+            echo "::error::Checkout is not synchronized with origin/main: local=$local_sha remote=$remote_sha"
+            exit 1
+          fi
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "::error::Unexpected working-tree changes in the fresh checkout."
+            git status --short
+            exit 1
+          fi
+          git diff --check
+          {
+            echo "## Git sync"
+            echo "- Repository: [krisaguero/MtgTracker-manus](https://github.com/krisaguero/MtgTracker-manus)"
+            echo "- Main SHA: \`$local_sha\`"
+            echo "- Result: synchronized and clean"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify latest production Vercel deployment
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: krisaguero/MtgTracker-manus
+        run: |
+          set -euo pipefail
+          main_sha="$(git rev-parse HEAD)"
+          deployment_json="$(gh api "repos/$REPOSITORY/deployments?environment=Production&per_page=1")"
+          deployment_id="$(jq -r '.[0].id // empty' <<< "$deployment_json")"
+          deployment_sha="$(jq -r '.[0].sha // empty' <<< "$deployment_json")"
+          deployment_created="$(jq -r '.[0].created_at // empty' <<< "$deployment_json")"
+
+          if [[ -z "$deployment_id" ]]; then
+            echo "::warning::No production Vercel deployment record was found."
+            {
+              echo "## Vercel production"
+              echo "- Result: no GitHub deployment record found"
+              echo "- Expected main SHA: \`$main_sha\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          status_json="$(gh api "repos/$REPOSITORY/deployments/$deployment_id/statuses?per_page=1")"
+          state="$(jq -r '.[0].state // "unknown"' <<< "$status_json")"
+          target_url="$(jq -r '.[0].target_url // empty' <<< "$status_json")"
+          description="$(jq -r '.[0].description // empty' <<< "$status_json")"
+
+          {
+            echo "## Vercel production"
+            echo "- Deployment ID: \`$deployment_id\`"
+            echo "- Deployment SHA: \`$deployment_sha\`"
+            echo "- Created: $deployment_created"
+            echo "- State: **$state**"
+            [[ -n "$target_url" ]] && echo "- URL: $target_url"
+            [[ -n "$description" ]] && echo "- Description: $description"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [[ "$deployment_sha" != "$main_sha" ]]; then
+            echo "::warning::Latest production deployment is for $deployment_sha, while GitHub main is $main_sha."
+          fi
+
+          case "$state" in
+            success)
+              echo "Vercel production deployment succeeded."
+              ;;
+            queued|pending|building|in_progress)
+              echo "::warning::Vercel production deployment is still $state."
+              ;;
+            failure|error)
+              echo "::error::Vercel production deployment reported state $state."
+              exit 1
+              ;;
+            *)
+              echo "::warning::Vercel production deployment returned unrecognized state $state."
+              ;;
+          esac
+
+      - name: Check recent scheduled automation health
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run list --repo "${{ github.repository }}" --limit 12 --json name,status,conclusion,headSha,createdAt \
+            --jq '.[] | "\(.createdAt) | \(.name) | \(.status)/\(.conclusion) | \(.headSha[0:7])"' \
+            | tee /tmp/recent-runs.txt
+          {
+            echo "## Recent automation"
+            echo '```text'
+            cat /tmp/recent-runs.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
