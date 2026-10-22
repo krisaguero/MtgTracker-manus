@@ -1,0 +1,25 @@
+{
+  "id": "2026-10-22-constructed-format-watch",
+  "dateKey": "2026-10-22",
+  "slug": "constructed-format-watch",
+  "title": "Constructed Format Watch · 2026-10-22",
+  "label": "Constructed Format Watch",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "generatedAt": "2026-10-22T08:00:00.000Z",
+  "summary": "Constructed Format Watch · 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Constructed Format Watch · 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}
