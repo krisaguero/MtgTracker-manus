@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "status": "awaiting-coverage",
+  "rule": {
+    "schemaVersion": 1,
+    "targetSetCodes": [
+      "TRK",
+      "TRC",
+      "MBC"
+    ],
+    "targetNamePatterns": [
+      "star trek",
+      "mystery booster commander"
+    ],
+    "thresholds": {
+      "dailyPct": 8,
+      "sevenDayPct": 15,
+      "marketplaceSpreadPct": 12
+    }
+  },
+  "coverage": {
+    "matchingSignals": 0,
+    "alertedSignals": 0,
+    "latestDate": "2026-10-22",
+    "latestGeneratedAt": "2026-10-22T13:38:17.201Z"
+  },
+  "targets": [],
+  "alerts": []
+}

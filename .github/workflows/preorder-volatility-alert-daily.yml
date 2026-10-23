@@ -1,0 +1,123 @@
+name: Daily Star Trek and MBC Preorder Volatility Alert
+
+on:
+  schedule:
+    - cron: "30 12 * * *" # After the daily market snapshot and before the meta-watch review
+  workflow_dispatch:
+
+concurrency:
+  group: preorder-volatility-alert
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  detect-preorder-volatility:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build preorder volatility alert
+        id: detect
+        run: |
+          set -euo pipefail
+          pnpm market:preorder-volatility
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const report = JSON.parse(fs.readFileSync('data/market/preorder-volatility-alert.json', 'utf8'));
+          if (report.schemaVersion !== 1 || !report.status || !report.coverage || !Array.isArray(report.alerts)) {
+            throw new Error('Invalid preorder volatility alert schema');
+          }
+          const fsync = report.alerts.length > 0 ? 'true' : 'false';
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `alert_count=${report.alerts.length}\nhas_alert=${fsync}\nstatus=${report.status}\n`);
+          NODE
+
+      - name: Validate alert rule
+        run: |
+          git diff --check
+          pnpm exec vitest run scripts/build-preorder-volatility-alert.test.mjs
+
+      - name: Open or update high-risk preorder alert PR
+        if: steps.detect.outputs.has_alert == 'true'
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: automation/preorder-volatility-alert
+          delete-branch: true
+          add-paths: data/market/preorder-volatility-alert.json
+          commit-message: "chore(data): flag high-risk preorder volatility"
+          title: "chore(alert): high-risk Star Trek and MBC preorder volatility"
+          body: |
+            ## Automated preorder volatility alert
+
+            This PR was generated because the daily price snapshot crossed the guarded volatility rule for Star Trek (`TRK`/`TRC`) or Mystery Booster Commander (`MBC`) targets.
+
+            Review exact printings, preorder versus release timing, marketplace spread, supply delays, and completed-sale liquidity before merging. The rule is an alerting aid, not a buy recommendation.
+
+      - name: Report coverage and alert status
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const report = JSON.parse(fs.readFileSync('data/market/preorder-volatility-alert.json', 'utf8'));
+          console.log(JSON.stringify({
+            asOf: report.asOf,
+            status: report.status,
+            matchingSignals: report.coverage.matchingSignals,
+            alerts: report.alerts.length,
+            targets: report.rule.targetSetCodes,
+          }, null, 2));
+          NODE
+
+      - name: Send high-risk preorder webhook
+        if: steps.detect.outputs.has_alert == 'true'
+        env:
+          PREORDER_VOLATILITY_WEBHOOK_URL: ${{ secrets.PREORDER_VOLATILITY_WEBHOOK_URL }}
+          ALERT_PR_URL: ${{ steps.create-pull-request.outputs.pull-request-url }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$PREORDER_VOLATILITY_WEBHOOK_URL" ]]; then
+            echo 'PREORDER_VOLATILITY_WEBHOOK_URL is not configured; skipping notification.'
+            exit 0
+          fi
+          node --input-type=module > /tmp/preorder-volatility-webhook.json <<'NODE'
+          import fs from 'node:fs';
+          const report = JSON.parse(fs.readFileSync('data/market/preorder-volatility-alert.json', 'utf8'));
+          const lines = report.alerts.slice(0, 10).map((alert) => `${alert.name} [${alert.setCode}] day ${alert.dailyPct ?? 'n/a'}%, 7d ${alert.sevenDayPct ?? 'n/a'}%, spread ${alert.marketplaceSpreadPct ?? 'n/a'}%`).join('; ');
+          const summary = `MTG preorder volatility alert ${report.asOf}: ${lines}`;
+          console.log(JSON.stringify({
+            text: summary,
+            content: `${summary}\nReview: ${process.env.ALERT_PR_URL || 'GitHub Actions run'}`,
+            summary,
+            pullRequestUrl: process.env.ALERT_PR_URL || null,
+            asOf: report.asOf,
+          }));
+          NODE
+          curl --fail-with-body --silent --show-error --retry 3 --retry-delay 2 \
+            -H 'Content-Type: application/json' \
+            --data-binary @/tmp/preorder-volatility-webhook.json \
+            "$PREORDER_VOLATILITY_WEBHOOK_URL"
