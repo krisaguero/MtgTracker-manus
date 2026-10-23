@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-23",
+  "status": "catalog-seeded-awaiting-retailer-observations",
+  "methodology": "Product-level preorder records are kept separate from individual card printings. Prices remain null until a source observation is captured; no zeroes or inferred quotes are used.",
+  "products": [
+    {
+      "id": "TRC-federation-fleet",
+      "name": "Federation Fleet",
+      "productType": "commander-deck",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "announced",
+      "riskFlags": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "retailerSearchName": "Magic The Gathering Star Trek Federation Fleet Commander deck",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 75,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    },
+    {
+      "id": "TRC-landing-party",
+      "name": "Landing Party",
+      "productType": "commander-deck",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "announced",
+      "riskFlags": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "retailerSearchName": "Magic The Gathering Star Trek Landing Party Commander deck",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 75,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    },
+    {
+      "id": "TRC-klingon-fury",
+      "name": "Klingon Fury",
+      "productType": "commander-deck",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "announced",
+      "riskFlags": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "retailerSearchName": "Magic The Gathering Star Trek Klingon Fury Commander deck",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 75,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    },
+    {
+      "id": "TRC-we-are-the-borg",
+      "name": "We Are the Borg",
+      "productType": "commander-deck",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "announced",
+      "riskFlags": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "retailerSearchName": "Magic The Gathering Star Trek We Are the Borg Commander deck",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 75,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    },
+    {
+      "id": "TRC-collectors-edition",
+      "name": "Star Trek Collector's Edition Commander decks",
+      "productType": "collectors-commander-deck",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "announced",
+      "riskFlags": [
+        "regional-delay-risk",
+        "collector-supply",
+        "preorder-thin-liquidity"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/feature/collecting-star-trek",
+      "retailerSearchName": "Magic The Gathering Star Trek Collector's Edition Commander deck",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 75,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "regional-delay-risk",
+        "collector-supply",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    },
+    {
+      "id": "MBC-festival-in-a-box-atlanta",
+      "name": "Festival in a Box: Atlanta 2026",
+      "productType": "commander-draft-box",
+      "setCode": "MBC",
+      "releaseDate": "2026-11-13",
+      "preorderStatus": "sale-event",
+      "riskFlags": [
+        "limited-supply",
+        "event-driven",
+        "reprint-pressure",
+        "not-a-precon"
+      ],
+      "officialSourceUrl": "https://magic.wizards.com/en/news/announcements/secret-lair-heads-south-with-festival-in-a-box-atlanta-2026-and-mystery-booster-commander-edition",
+      "retailerSearchName": "Mystery Booster Commander Edition Festival in a Box Atlanta 2026",
+      "prices": {
+        "tcgplayer": null,
+        "amazon": null,
+        "cardKingdom": null,
+        "ebay": null
+      },
+      "availability": {
+        "tcgplayer": "unknown",
+        "amazon": "unknown",
+        "cardKingdom": "unknown",
+        "ebay": "unknown"
+      },
+      "lastObservedAt": null,
+      "sourceCount": 0,
+      "riskScore": 85,
+      "riskBand": "high",
+      "releaseWindowDays": 21,
+      "marketplaceSpreadPct": null,
+      "riskFactors": [
+        "limited-supply",
+        "event-driven",
+        "reprint-pressure",
+        "not-a-precon",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ]
+    }
+  ]
+}

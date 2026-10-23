@@ -5,7 +5,15 @@ import { fileURLToPath } from "node:url";
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const dailyDirectory = resolve(root, "data/market/daily");
 const releaseCalendarFile = resolve(root, "data/releases/upcoming-sets.json");
+const productCatalogFile = resolve(
+  root,
+  "data/releases/preorder-products.json"
+);
 const outputFile = resolve(root, "data/market/preorder-volatility-alert.json");
+const historyFile = resolve(
+  root,
+  "data/market/preorder-volatility-alert-history.json"
+);
 
 export const PREORDER_VOLATILITY_RULE = {
   schemaVersion: 1,
@@ -204,11 +212,62 @@ export function buildPreorderVolatilityAlert(
 }
 
 async function main() {
-  const [snapshots, calendar] = await Promise.all([
-    readDailySnapshots(),
-    readJson(releaseCalendarFile, { records: [] }),
-  ]);
+  const [snapshots, calendar, productCatalog, priorHistory] = await Promise.all(
+    [
+      readDailySnapshots(),
+      readJson(releaseCalendarFile, { records: [] }),
+      readJson(productCatalogFile, { products: [] }),
+      readJson(historyFile, { records: [] }),
+    ]
+  );
   const output = buildPreorderVolatilityAlert(snapshots, calendar);
+  output.productRisk = (productCatalog.products || []).map(product => ({
+    id: product.id,
+    name: product.name,
+    setCode: product.setCode,
+    releaseDate: product.releaseDate,
+    riskScore: product.riskScore ?? null,
+    riskBand: product.riskBand || "watch",
+    sourceCount: product.sourceCount || 0,
+    riskFactors: product.riskFactors || product.riskFlags || [],
+    marketplaceSpreadPct: product.marketplaceSpreadPct ?? null,
+  }));
+  output.lifecycle = {
+    state:
+      output.alerts.length ||
+      output.productRisk.some(
+        product => product.sourceCount > 0 && product.riskBand === "high"
+      )
+        ? "detected"
+        : output.coverage.matchingSignals ||
+            output.productRisk.some(product => product.sourceCount > 0)
+          ? "review"
+          : "awaiting-coverage",
+    firstDetectedAt:
+      priorHistory.records?.find(
+        record => record.alertCount > 0 || record.productCoverage > 0
+      )?.asOf || null,
+    lastCheckedAt: output.asOf,
+  };
+  const historyRecords = [
+    ...(priorHistory.records || []).filter(
+      record => record.asOf !== output.asOf
+    ),
+    {
+      asOf: output.asOf,
+      status: output.status,
+      alertCount: output.alerts.length,
+      matchingSignals: output.coverage.matchingSignals,
+      productCoverage: output.productRisk.filter(
+        product => product.sourceCount > 0
+      ).length,
+    },
+  ].sort((a, b) => a.asOf.localeCompare(b.asOf));
+  await writeFile(
+    historyFile,
+    `${JSON.stringify({ schemaVersion: 1, records: historyRecords }, null, 2)}\n`,
+    "utf8"
+  );
   await writeFile(outputFile, `${JSON.stringify(output, null, 2)}\n`, "utf8");
   console.log(
     `Preorder volatility watch: ${output.status}; ${output.coverage.matchingSignals} matching signals; ${output.alerts.length} alerts.`

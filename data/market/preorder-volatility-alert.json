@@ -26,5 +26,115 @@
     "latestGeneratedAt": "2026-10-22T13:38:17.201Z"
   },
   "targets": [],
-  "alerts": []
+  "alerts": [],
+  "productRisk": [
+    {
+      "id": "TRC-federation-fleet",
+      "name": "Federation Fleet",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 75,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    },
+    {
+      "id": "TRC-landing-party",
+      "name": "Landing Party",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 75,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    },
+    {
+      "id": "TRC-klingon-fury",
+      "name": "Klingon Fury",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 75,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    },
+    {
+      "id": "TRC-we-are-the-borg",
+      "name": "We Are the Borg",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 75,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "regional-delay-risk",
+        "franchise-launch",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    },
+    {
+      "id": "TRC-collectors-edition",
+      "name": "Star Trek Collector's Edition Commander decks",
+      "setCode": "TRC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 75,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "regional-delay-risk",
+        "collector-supply",
+        "preorder-thin-liquidity",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    },
+    {
+      "id": "MBC-festival-in-a-box-atlanta",
+      "name": "Festival in a Box: Atlanta 2026",
+      "setCode": "MBC",
+      "releaseDate": "2026-11-13",
+      "riskScore": 85,
+      "riskBand": "high",
+      "sourceCount": 0,
+      "riskFactors": [
+        "limited-supply",
+        "event-driven",
+        "reprint-pressure",
+        "not-a-precon",
+        "release-within-30-days",
+        "thin-price-coverage"
+      ],
+      "marketplaceSpreadPct": null
+    }
+  ],
+  "lifecycle": {
+    "state": "awaiting-coverage",
+    "firstDetectedAt": null,
+    "lastCheckedAt": "2026-10-22"
+  }
 }

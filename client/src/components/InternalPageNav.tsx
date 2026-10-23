@@ -46,6 +46,7 @@ const navigation: SiteItem[] = [
       { href: '/market-reports', label: 'Report archive' },
       { href: '/market-watch', label: 'Market watch feed' },
       { href: '/markets', label: 'All market research & tools' },
+      { href: '/q4-release-risk', label: 'Q4 preorder risk desk' },
     ],
   },
   { type: 'link', href: '/roadmap', label: 'Product roadmap' },

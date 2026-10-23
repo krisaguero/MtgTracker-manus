@@ -44,6 +44,7 @@ jobs:
         id: detect
         run: |
           set -euo pipefail
+          pnpm market:preorder-products
           pnpm market:preorder-volatility
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -69,7 +70,10 @@ jobs:
           base: main
           branch: automation/preorder-volatility-alert
           delete-branch: true
-          add-paths: data/market/preorder-volatility-alert.json
+          add-paths: |
+            data/market/preorder-volatility-alert.json
+            data/market/preorder-volatility-alert-history.json
+            data/releases/preorder-products.json
           commit-message: "chore(data): flag high-risk preorder volatility"
           title: "chore(alert): high-risk Star Trek and MBC preorder volatility"
           body: |

@@ -47,9 +47,11 @@ const EditorialMarketArticles = lazy(() => import('@/pages/EditorialMarketArticl
 const EditorialMarketArticle = lazy(() => import('@/pages/EditorialMarketArticle'));
 const TodayMarketBrief = lazy(() => import('@/pages/TodayMarketBrief'));
 const SpoilerCalendar = lazy(() => import('@/pages/SpoilerCalendar'));
+const Q4ReleaseRisk = lazy(() => import('@/pages/Q4ReleaseRisk'));
 const MarketMoverReportArticle = lazy(() => import('@/pages/MarketMoverReportArticle'));
 const MarketMoverDashboards = lazy(() => import('@/pages/MarketMoverDashboards'));
 const MarketResearchFeed = lazy(() => import('@/pages/MarketResearchFeed'));
+const QuarterlyMarketTrendArticle = lazy(() => import('@/pages/QuarterlyMarketTrendArticle').then((module) => ({ default: module.QuarterlyMarketTrendArticle })));
 const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const Limited = lazy(() => import('@/pages/Limited'));
@@ -88,11 +90,13 @@ function Router() {
         <Route path="/market-reports" component={MarketReportArchive} />
         <Route path="/market-today" component={TodayMarketBrief} />
         <Route path="/spoiler-calendar" component={SpoilerCalendar} />
+        <Route path="/q4-release-risk" component={Q4ReleaseRisk} />
         <Route path="/market-report/october-05-daily-market-movers" component={October5MarketReport} />
         <Route path="/market-report/october-11-daily-market-movers" component={October11MarketReport} />
         <Route path="/market-report/october-15-30-signal-brief" component={October15MarketBrief} />
         <Route path="/market-report/october-16-30-signal-brief" component={October16MarketBrief} />
         <Route path="/market-report/october-17-30-signal-brief" component={October17MarketBrief} />
+        <Route path="/market-report/quarterly-trend-comparison-2026-10-22" component={QuarterlyMarketTrendArticle} />
         <Route path="/market-report/tabletop-paper-company-spotlight" component={TabletopPaperSpotlight} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />
         <Route path="/market-signal-audit" component={MarketSignalAudit} />

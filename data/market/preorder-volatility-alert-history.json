@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "asOf": "2026-10-22",
+      "status": "awaiting-coverage",
+      "alertCount": 0,
+      "matchingSignals": 0,
+      "productCoverage": 0
+    }
+  ]
+}

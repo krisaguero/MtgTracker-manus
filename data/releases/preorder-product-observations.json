@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-23",
+  "methodology": "Populate only from captured retailer observations. Null prices are intentional and must not be converted to zero.",
+  "products": []
+}

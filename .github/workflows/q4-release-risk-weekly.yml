@@ -1,0 +1,52 @@
+name: Weekly Q4 Release Risk Brief
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  build-brief:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Sync product risk records
+        run: pnpm market:preorder-products
+      - name: Build weekly brief
+        run: pnpm market:q4-brief
+      - name: Open or update weekly brief PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: automation/q4-release-risk-brief
+          delete-branch: true
+          add-paths: |
+            data/releases/preorder-products.json
+            docs/market-briefs
+          commit-message: "chore(data): refresh weekly Q4 release risk brief"
+          title: "chore(report): weekly Q4 release risk brief"
+          body: |
+            Automated weekly product-level risk brief for Star Trek Commander products and Mystery Booster Commander Edition.
+
+            Product prices remain source-driven; missing observations are not inferred.

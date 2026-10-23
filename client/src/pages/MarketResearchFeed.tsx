@@ -536,6 +536,12 @@ export default function MarketResearchFeed() {
             >
               Source post
             </Link>
+            <Link
+              href="/market-report/quarterly-trend-comparison-2026-10-22"
+              className="border border-primary/60 bg-primary/5 px-3 py-2 font-mono text-[10px] font-black uppercase text-primary hover:border-primary"
+            >
+              Quarterly comparison
+            </Link>
           </div>
         </div>
       </header>
