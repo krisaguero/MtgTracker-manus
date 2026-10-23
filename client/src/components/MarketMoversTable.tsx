@@ -15,6 +15,7 @@ import {
   isMarketCardWatched,
   type MarketWatchlistEntry,
 } from "@/lib/marketWatchlist";
+import { MoverPriceHistoryDialog } from "@/components/MoverPriceHistoryDialog";
 
 const OLD_SCHOOL_SET_CODES = new Set([
   "lea",
@@ -658,6 +659,9 @@ export function MarketMoversTable({
                     <span>{mover.category.replace(/-/g, " ")}</span>
                   )}
                 </div>
+                <div className="mt-3">
+                  <MoverPriceHistoryDialog mover={mover} />
+                </div>
               </li>
             );
           })}
@@ -882,7 +886,10 @@ export function MarketMoversTable({
                         </a>
                       </td>
                       <td className="px-4 py-3">
-                        <PriceTrendSparkline mover={mover} />
+                        <div className="flex min-w-[132px] flex-col items-start gap-2">
+                          <PriceTrendSparkline mover={mover} />
+                          <MoverPriceHistoryDialog mover={mover} />
+                        </div>
                       </td>
                     </tr>
                   );

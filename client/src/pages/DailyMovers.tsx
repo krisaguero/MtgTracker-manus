@@ -24,6 +24,12 @@ import {
   importedReportHref,
 } from "@/data/marketReportArchive";
 import currentSnapshot from "@/data/dailyMarketSnapshot.json";
+import moverHistory from "@/data/dailyMoverHistory.json";
+
+const rollingPriceSnapshots = moverHistory.snapshots as unknown as Array<{
+  date: string;
+  prices: Record<string, number>;
+}>;
 
 const currentSnapshotDate = currentSnapshot.signals.reduce(
   (latest, signal) =>
@@ -50,39 +56,76 @@ export function DailyMovers() {
   );
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
 
-  // The primary feed is the newest dated snapshot only. Older CSV and canonical
-  // records remain available through the archive and deeper research routes.
+  // The primary feed starts with the newest dated snapshot, then adds cards with
+  // a real multi-day move from the rolling history window. This keeps flat first
+  // observations out while surfacing cards that are riding or falling between
+  // daily refreshes.
   const snapshotMovers = useMemo<MoverCard[]>(() => {
     return currentSnapshot.signals
       .filter(
         signal =>
           signal.lastUpdated === currentSnapshotDate &&
-          signal.previousUsd !== null &&
-          signal.percentChange !== 0
+          signal.currentUsd !== null
       )
-      .map(signal => ({
-        id: signal.id,
-        name: signal.name,
-        setCode: signal.setCode,
-        setName: signal.setName,
-        rarity: signal.rarity as MoverCard["rarity"],
-        currentUsd: signal.currentUsd,
-        previousUsd: signal.previousUsd as number,
-        changeUsd: Number(
-          (signal.currentUsd - (signal.previousUsd as number)).toFixed(2)
-        ),
-        percentChange: signal.percentChange,
-        recentPrices: [signal.previousUsd as number, signal.currentUsd],
-        category: signal.category,
-        signalSource: "MTGJSON Aggregate",
-        priceSource: signal.source,
-        sourceCount: signal.sourceCount,
-        lastUpdated: signal.lastUpdated,
-        thesis: signal.reason,
-        cardKingdomUsd: signal.cardKingdomUsd ?? undefined,
-        tcgplayerMarketUsd: signal.tcgplayerMarketUsd ?? undefined,
-        isCatalyst: signal.isCatalyst,
-      }));
+      .map((signal): MoverCard | null => {
+        const history = rollingPriceSnapshots
+          .map(snapshot => snapshot.prices[signal.id])
+          .filter(
+            (price): price is number => Number.isFinite(price) && price > 0
+          );
+        const latestPrice = signal.currentUsd;
+        const hasDailyMove =
+          signal.previousUsd !== null && signal.percentChange !== 0;
+        const historyBaseline = history[0] ?? signal.previousUsd;
+        const windowPercentChange =
+          history.length >= 2 && historyBaseline
+            ? Number(
+                (
+                  ((latestPrice - historyBaseline) / historyBaseline) *
+                  100
+                ).toFixed(2)
+              )
+            : 0;
+        const effectivePercentChange = hasDailyMove
+          ? signal.percentChange
+          : windowPercentChange;
+
+        if (
+          effectivePercentChange === 0 ||
+          (!hasDailyMove && history.length < 2)
+        ) {
+          return null;
+        }
+
+        const previousUsd = hasDailyMove
+          ? (signal.previousUsd as number)
+          : (historyBaseline as number);
+        return {
+          id: signal.id,
+          name: signal.name,
+          setCode: signal.setCode,
+          setName: signal.setName,
+          rarity: signal.rarity as MoverCard["rarity"],
+          currentUsd: latestPrice,
+          previousUsd,
+          changeUsd: Number((latestPrice - previousUsd).toFixed(2)),
+          percentChange: effectivePercentChange,
+          recentPrices:
+            history.length >= 2 ? history : [previousUsd, latestPrice],
+          category: signal.category,
+          signalSource: "MTGJSON Aggregate" as const,
+          priceSource: signal.source,
+          sourceCount: signal.sourceCount,
+          lastUpdated: signal.lastUpdated,
+          thesis: hasDailyMove
+            ? signal.reason
+            : `${signal.reason} Rolling ${history.length}-snapshot trend added to the current watch window.`,
+          cardKingdomUsd: signal.cardKingdomUsd ?? undefined,
+          tcgplayerMarketUsd: signal.tcgplayerMarketUsd ?? undefined,
+          isCatalyst: signal.isCatalyst,
+        };
+      })
+      .filter((mover): mover is MoverCard => mover !== null);
   }, []);
   const activeMoversList = useMemo(
     () =>
@@ -303,9 +346,9 @@ export function DailyMovers() {
               Current Market Movers
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Only the newest dated signal records with a non-zero move are
-              shown here. Use category filters to narrow the current screen; use
-              Market Watch for historical context and methodology.
+              Daily movers plus multi-day riders and drops from the rolling
+              snapshot history. Use category and direction filters to narrow the
+              current screen; use Market Watch for deeper methodology.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 border-2 border-primary/40 bg-primary/5 px-3 py-2 text-xs">
               <span className="font-mono font-black uppercase tracking-wider text-primary">
@@ -313,7 +356,7 @@ export function DailyMovers() {
               </span>
               <span className="text-muted-foreground">
                 {currentSnapshotDate.slice(0, 10)} · {snapshotMovers.length}{" "}
-                cards with a non-zero move
+                cards moving in the daily or rolling window
               </span>
               <Link
                 href="/market-watch"
@@ -411,8 +454,9 @@ export function DailyMovers() {
                 {currentSnapshotDate.slice(0, 10)}
               </p>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                Only records with this latest observation date and a non-zero
-                prior-period change appear in the mover grid.
+                Records use the latest observation date plus a rolling-history
+                comparison so flat daily observations can still surface as
+                riders or drops when their multi-day trend is active.
               </p>
             </article>
             <article className="border border-border bg-card p-4">
