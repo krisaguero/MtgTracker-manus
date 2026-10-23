@@ -1,0 +1,268 @@
+{
+  "id": "2026-10-23-penny-watch",
+  "dateKey": "2026-10-23",
+  "slug": "penny-watch",
+  "title": "Penny Watch & Do Not Chase · 2026-10-23",
+  "label": "Penny Watch & Do Not Chase",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "selectionMode": "topic-filter",
+  "selectionNote": null,
+  "generatedAt": "2026-10-23T08:00:00.000Z",
+  "summary": "Penny Watch & Do Not Chase · 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Penny Watch & Do Not Chase · 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [
+    {
+      "rank": 1,
+      "name": "Scavenger Grounds",
+      "setCode": "msc",
+      "setName": "MSC",
+      "collectorNumber": "263",
+      "currentUsd": 0.58,
+      "previousUsd": 0.23,
+      "percentChange": 152.17,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 152.2% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Vanquish the Horde",
+      "setCode": "msc",
+      "setName": "MSC",
+      "collectorNumber": "146",
+      "currentUsd": 0.56,
+      "previousUsd": 0.24,
+      "percentChange": 133.33,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 133.3% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "setName": "FIC",
+      "collectorNumber": "403",
+      "currentUsd": 0.57,
+      "previousUsd": 0.26,
+      "percentChange": 119.23,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 119.2% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Sun Titan",
+      "setCode": "c19",
+      "setName": "C19",
+      "collectorNumber": "76",
+      "currentUsd": 0.64,
+      "previousUsd": 0.32,
+      "percentChange": 100,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Nightshade Harvester",
+      "setCode": "dsc",
+      "setName": "DSC",
+      "collectorNumber": "150",
+      "currentUsd": 0.68,
+      "previousUsd": 0.36,
+      "percentChange": 88.89,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.9% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Shrine of the Forsaken Gods",
+      "setCode": "m3c",
+      "setName": "M3C",
+      "collectorNumber": "376",
+      "currentUsd": 0.67,
+      "previousUsd": 0.36,
+      "percentChange": 86.11,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Tomb of the Spirit Dragon",
+      "setCode": "m3c",
+      "setName": "M3C",
+      "collectorNumber": "397",
+      "currentUsd": 0.71,
+      "previousUsd": 0.4,
+      "percentChange": 77.5,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 77.5% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Mountain",
+      "setCode": "c15",
+      "setName": "C15",
+      "collectorNumber": "335",
+      "currentUsd": 0.15,
+      "previousUsd": 0.61,
+      "percentChange": -75.41,
+      "category": "reprint-squashes",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 75.4% since the prior saved observation across 2 available price sources.",
+      "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+      "verifiedAt": "2026-10-23T13:13:56.528Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      }
+    }
+  ],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}

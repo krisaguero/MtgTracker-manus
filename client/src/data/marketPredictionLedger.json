@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-23T00:41:37.974Z",
+  "updatedAt": "2026-10-23T13:14:04.839Z",
   "records": [
+    {
+      "id": "2026-10-23-penny-watch:1:msc:263",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Scavenger Grounds (MSC 263) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Scavenger Grounds",
+      "setCode": "msc",
+      "collectorNumber": "263",
+      "entryUsd": 0.58,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 152.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:2:msc:146",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Vanquish the Horde (MSC 146) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Vanquish the Horde",
+      "setCode": "msc",
+      "collectorNumber": "146",
+      "entryUsd": 0.56,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 133.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:3:fic:403",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Hinterland Harbor (FIC 403) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "collectorNumber": "403",
+      "entryUsd": 0.57,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 119.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:4:c19:76",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Sun Titan (C19 76) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sun Titan",
+      "setCode": "c19",
+      "collectorNumber": "76",
+      "entryUsd": 0.64,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:5:dsc:150",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Nightshade Harvester (DSC 150) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Nightshade Harvester",
+      "setCode": "dsc",
+      "collectorNumber": "150",
+      "entryUsd": 0.68,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:6:m3c:376",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Shrine of the Forsaken Gods (M3C 376) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Shrine of the Forsaken Gods",
+      "setCode": "m3c",
+      "collectorNumber": "376",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:7:m3c:397",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Tomb of the Spirit Dragon (M3C 397) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tomb of the Spirit Dragon",
+      "setCode": "m3c",
+      "collectorNumber": "397",
+      "entryUsd": 0.71,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 77.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-23-penny-watch:8:c15:335",
+      "dateKey": "2026-10-23",
+      "postId": "2026-10-23-penny-watch",
+      "prompt": "Assess Mountain (C15 335) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mountain",
+      "setCode": "c15",
+      "collectorNumber": "335",
+      "entryUsd": 0.15,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 75.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-23",
+        "evaluationDate": "2026-11-06"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-22-constructed-format-watch:1:tdc:407",
       "dateKey": "2026-10-22",
