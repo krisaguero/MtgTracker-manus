@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T13:38:28.239Z",
+  "updatedAt": "2026-10-23T00:41:37.974Z",
   "records": [
+    {
+      "id": "2026-10-22-constructed-format-watch:1:tdc:407",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Temple of Triumph (TDC 407) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Temple of Triumph",
+      "setCode": "tdc",
+      "collectorNumber": "407",
+      "entryUsd": 0.49,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 157.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:2:soc:408",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Sulfur Falls (SOC 408) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sulfur Falls",
+      "setCode": "soc",
+      "collectorNumber": "408",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 130.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:3:eoc:88",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Hammer of Purphoros (EOC 88) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hammer of Purphoros",
+      "setCode": "eoc",
+      "collectorNumber": "88",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 129.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:4:drc:39",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Reality Shift (DRC 39) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "entryUsd": 0.61,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 125.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:5:tdc:99",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Goblin Electromancer (TDC 99) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Goblin Electromancer",
+      "setCode": "tdc",
+      "collectorNumber": "99",
+      "entryUsd": 0.58,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 123.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:6:blc:37",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Octomancer (BLC 37) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Octomancer",
+      "setCode": "blc",
+      "collectorNumber": "37",
+      "entryUsd": 0.61,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 110.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:7:pip:190",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Loyal Apprentice (PIP 190) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Loyal Apprentice",
+      "setCode": "pip",
+      "collectorNumber": "190",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 106.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:8:c19:145",
+      "dateKey": "2026-10-22",
+      "postId": "2026-10-22-constructed-format-watch",
+      "prompt": "Assess Guttersnipe (C19 145) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Guttersnipe",
+      "setCode": "c19",
+      "collectorNumber": "145",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 106.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-22",
+        "evaluationDate": "2026-11-05"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-21-commander-demand:1:znr:382",
       "dateKey": "2026-10-21",
