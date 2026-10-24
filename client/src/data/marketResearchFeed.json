@@ -1,12 +1,280 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T13:14:04.844Z",
+  "generatedAt": "2026-10-24T12:31:51.600Z",
   "schedule": {
     "daily": "08:00 UTC",
     "topicExpansion": "weekday rotation",
     "biweeklyTop10": "every other Friday"
   },
   "posts": [
+    {
+      "id": "2026-10-24-collection-buy-list",
+      "dateKey": "2026-10-24",
+      "slug": "collection-buy-list",
+      "title": "Collection Buy List · 2026-10-24",
+      "label": "Collection Buy List",
+      "kind": "topic-expansion",
+      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+      "selectionMode": "topic-filter",
+      "selectionNote": null,
+      "generatedAt": "2026-10-24T08:00:00.000Z",
+      "summary": "Collection Buy List · 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "body": [
+        "Collection Buy List · 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+      ],
+      "cards": [
+        {
+          "rank": 1,
+          "name": "Terramorphic Expanse",
+          "setCode": "sos",
+          "setName": "SOS",
+          "collectorNumber": "265",
+          "currentUsd": 0.26,
+          "previousUsd": 0.1,
+          "percentChange": 160,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 160.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Vile Redeemer",
+          "setCode": "m3c",
+          "setName": "M3C",
+          "collectorNumber": "251",
+          "currentUsd": 0.58,
+          "previousUsd": 0.29,
+          "percentChange": 100,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Mold Shambler",
+          "setCode": "c13",
+          "setName": "C13",
+          "collectorNumber": "156",
+          "currentUsd": 0.2,
+          "previousUsd": 0.1,
+          "percentChange": 100,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Drowner of Hope",
+          "setCode": "m3c",
+          "setName": "M3C",
+          "collectorNumber": "182",
+          "currentUsd": 0.62,
+          "previousUsd": 0.32,
+          "percentChange": 93.75,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 93.8% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "Mangara, the Diplomat",
+          "setCode": "soc",
+          "setName": "SOC",
+          "collectorNumber": "155",
+          "currentUsd": 0.68,
+          "previousUsd": 0.37,
+          "percentChange": 83.78,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 83.8% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 6,
+          "name": "Deepfathom Skulker",
+          "setCode": "m3c",
+          "setName": "M3C",
+          "collectorNumber": "180",
+          "currentUsd": 0.62,
+          "previousUsd": 0.34,
+          "percentChange": 82.35,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 82.3% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 7,
+          "name": "Bismuth Mindrender",
+          "setCode": "m3c",
+          "setName": "M3C",
+          "collectorNumber": "51",
+          "currentUsd": 0.67,
+          "previousUsd": 0.37,
+          "percentChange": 81.08,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 81.1% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        },
+        {
+          "rank": 8,
+          "name": "Cazur, Ruthless Stalker",
+          "setCode": "otc",
+          "setName": "OTC",
+          "collectorNumber": "188",
+          "currentUsd": 0.7,
+          "previousUsd": 0.39,
+          "percentChange": 79.49,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 79.5% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-24T12:31:43.741Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-24",
+            "evaluationDate": "2026-11-07"
+          }
+        }
+      ],
+      "sources": [
+        "MTGJSON set data",
+        "MTGJSON paper price data",
+        "Scryfall image endpoint"
+      ],
+      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+    },
     {
       "id": "2026-10-23-penny-watch",
       "dateKey": "2026-10-23",

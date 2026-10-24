@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-23T13:14:04.839Z",
+  "updatedAt": "2026-10-24T12:31:51.594Z",
   "records": [
+    {
+      "id": "2026-10-24-collection-buy-list:1:sos:265",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Terramorphic Expanse (SOS 265) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Terramorphic Expanse",
+      "setCode": "sos",
+      "collectorNumber": "265",
+      "entryUsd": 0.26,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 160.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:2:m3c:251",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Vile Redeemer (M3C 251) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Vile Redeemer",
+      "setCode": "m3c",
+      "collectorNumber": "251",
+      "entryUsd": 0.58,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:3:c13:156",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Mold Shambler (C13 156) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mold Shambler",
+      "setCode": "c13",
+      "collectorNumber": "156",
+      "entryUsd": 0.2,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:4:m3c:182",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Drowner of Hope (M3C 182) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Drowner of Hope",
+      "setCode": "m3c",
+      "collectorNumber": "182",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 93.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:5:soc:155",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Mangara, the Diplomat (SOC 155) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mangara, the Diplomat",
+      "setCode": "soc",
+      "collectorNumber": "155",
+      "entryUsd": 0.68,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 83.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:6:m3c:180",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Deepfathom Skulker (M3C 180) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Deepfathom Skulker",
+      "setCode": "m3c",
+      "collectorNumber": "180",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 82.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:7:m3c:51",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Bismuth Mindrender (M3C 51) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Bismuth Mindrender",
+      "setCode": "m3c",
+      "collectorNumber": "51",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 81.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:8:otc:188",
+      "dateKey": "2026-10-24",
+      "postId": "2026-10-24-collection-buy-list",
+      "prompt": "Assess Cazur, Ruthless Stalker (OTC 188) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Cazur, Ruthless Stalker",
+      "setCode": "otc",
+      "collectorNumber": "188",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 79.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-24",
+        "evaluationDate": "2026-11-07"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-23-penny-watch:1:msc:263",
       "dateKey": "2026-10-23",
