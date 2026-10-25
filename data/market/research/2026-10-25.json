@@ -1,0 +1,268 @@
+{
+  "id": "2026-10-25-spoiler-supply-watch",
+  "dateKey": "2026-10-25",
+  "slug": "spoiler-supply-watch",
+  "title": "Spoiler & Supply Watch · 2026-10-25",
+  "label": "Spoiler & Supply Watch",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "selectionMode": "topic-filter",
+  "selectionNote": null,
+  "generatedAt": "2026-10-25T08:00:00.000Z",
+  "summary": "Spoiler & Supply Watch · 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Spoiler & Supply Watch · 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [
+    {
+      "rank": 1,
+      "name": "Island",
+      "setCode": "cm2",
+      "setName": "CM2",
+      "collectorNumber": "291",
+      "currentUsd": 0.49,
+      "previousUsd": 0.1,
+      "percentChange": 390,
+      "category": "penny-risers",
+      "sourceCount": 1,
+      "confidence": "Unverified",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 390.0% since the prior saved observation across 1 available price source.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Hedron Archive",
+      "setCode": "scd",
+      "setName": "SCD",
+      "collectorNumber": "266",
+      "currentUsd": 0.56,
+      "previousUsd": 0.25,
+      "percentChange": 124,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 124.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Worn Powerstone",
+      "setCode": "scd",
+      "setName": "SCD",
+      "collectorNumber": "288",
+      "currentUsd": 0.59,
+      "previousUsd": 0.27,
+      "percentChange": 118.52,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 118.5% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Pearl-Ear, Imperial Advisor",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "160",
+      "currentUsd": 0.58,
+      "previousUsd": 0.27,
+      "percentChange": 114.81,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 114.8% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Island",
+      "setCode": "cmd",
+      "setName": "CMD",
+      "collectorNumber": "306",
+      "currentUsd": 0.49,
+      "previousUsd": 0.24,
+      "percentChange": 104.17,
+      "category": "penny-risers",
+      "sourceCount": 1,
+      "confidence": "Unverified",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 104.2% since the prior saved observation across 1 available price source.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Convert to Slime",
+      "setCode": "dsc",
+      "setName": "DSC",
+      "collectorNumber": "37",
+      "currentUsd": 0.61,
+      "previousUsd": 0.3,
+      "percentChange": 103.33,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.3% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Mind Stone",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "352",
+      "currentUsd": 0.62,
+      "previousUsd": 0.31,
+      "percentChange": 100,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "River Kelpie",
+      "setCode": "tdc",
+      "setName": "TDC",
+      "collectorNumber": "166",
+      "currentUsd": 0.68,
+      "previousUsd": 0.36,
+      "percentChange": 88.89,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.9% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-25T13:04:44.764Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-25",
+        "evaluationDate": "2026-11-08"
+      }
+    }
+  ],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}
