@@ -8,7 +8,7 @@ const clientDataDir = path.join(root, 'client', 'src', 'data');
 const outputDir = path.join(root, 'data', 'market');
 
 const categorySource = await readFile(path.join(root, 'client', 'src', 'lib', 'dailyMoversEngine.ts'), 'utf8');
-const configuredCategories = [...categorySource.matchAll(/\{ id: '([^']+)', label: '([^']+)' \}/g)].map(([, id, label]) => ({ id, label }));
+const configuredCategories = [...categorySource.matchAll(/\{ id: ["']([^"']+)["'], label: ["']([^"']+)["'] \}/g)].map(([, id, label]) => ({ id, label }));
 const snapshotFiles = (await readdir(dailyDir)).filter((file) => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort();
 const snapshots = await Promise.all(snapshotFiles.map(async (file) => ({ date: file.slice(0, 10), ...JSON.parse(await readFile(path.join(dailyDir, file), 'utf8')) })));
 const latest = snapshots.at(-1);

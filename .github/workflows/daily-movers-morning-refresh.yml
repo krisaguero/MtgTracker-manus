@@ -56,6 +56,9 @@ jobs:
       - name: Run daily market movers
         run: node scripts/daily-market-movers.mjs
 
+      - name: Refresh market signal audit from latest snapshots
+        run: pnpm audit:market
+
       - name: Mirror historical price history for frontend charts
         run: cp data/market/daily-movers-history.json client/src/data/dailyMoverHistory.json
 
@@ -65,6 +68,9 @@ jobs:
           --snapshot client/src/data/dailyMarketSnapshot.json
           --history data/market/daily-movers-history.json
           --output client/public/mtg-movers.json
+
+      - name: Build Perplexity-aligned daily research context
+        run: pnpm market:research-context
 
       - name: Build daily Market Watch research feed
         run: pnpm market:research-feed
@@ -89,8 +95,11 @@ jobs:
             client/src/data/dailyMoverHistory.json \
             client/src/data/marketPredictionLedger.json \
             client/src/data/marketResearchFeed.json \
+            client/src/data/dailyResearchContext.json \
+            client/src/data/marketSignalAudit.json \
             data/market/daily \
             data/market/daily-movers-history.json \
+            data/market/category-signal-audit.json \
             data/market/prediction-ledger.json \
             data/market/research
 
@@ -99,9 +108,9 @@ jobs:
           while IFS= read -r path; do
             [[ -z "$path" ]] && continue
             case "$path" in
-              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/dailyMoverHistory.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
+              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/dailyMoverHistory.json|client/src/data/dailyResearchContext.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|client/src/data/marketSignalAudit.json|data/market/category-signal-audit.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
                 ;;
-              data/market/daily/*|data/market/research/*)
+              data/market/daily/*|data/market/research/*|data/market/research-context/*)
                 ;;
               *)
                 unexpected_paths+="$path\n"

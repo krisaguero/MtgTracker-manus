@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit",
     "market:research-feed": "node scripts/build-market-research-feed.mjs",
+    "market:research-context": "node scripts/build-daily-research-context.mjs",
     "market:prediction-audit": "node scripts/audit-prediction-accuracy.mjs",
     "market:range-sim": "python3 scripts/simulate-prediction-ranges.py",
     "audit:market": "node scripts/audit-market-categories.mjs",

@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-25T22:45:08.717Z",
+  "pricingDate": "2026-10-25",
+  "dataWindow": "2026-10-02 through 2026-10-25",
+  "marketStatus": [
+    "Reprint-heavy",
+    "Commander-driven"
+  ],
+  "signalCount": 12511,
+  "positiveSignals": 2023,
+  "negativeSignals": 2096,
+  "sourceCoverage": {
+    "declaredSources": [
+      "MTGJSON set data",
+      "MTGJSON paper price data",
+      "Scryfall image endpoint"
+    ],
+    "singleSourceSignals": 83,
+    "multiSourceSignals": 12428,
+    "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
+  },
+  "categoryStats": [
+    {
+      "category": "penny-risers",
+      "cards": 45,
+      "positiveSignals": 45,
+      "negativeSignals": 0,
+      "averagePctChange": 48.72
+    },
+    {
+      "category": "commander-picks",
+      "cards": 12429,
+      "positiveSignals": 1978,
+      "negativeSignals": 2059,
+      "averagePctChange": 0.04
+    },
+    {
+      "category": "reprint-squashes",
+      "cards": 37,
+      "positiveSignals": 0,
+      "negativeSignals": 37,
+      "averagePctChange": -25.12
+    }
+  ],
+  "executiveSummary": [
+    "12511 exact-printing price observations were screened for 2026-10-25; 2023 rose and 2096 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +48.72% across 45 cards.",
+    "83 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "37 reprint-floor observations require supply and reprint-risk review before buying.",
+    "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
+  ],
+  "whatChangedSinceYesterday": {
+    "newSignals": [],
+    "topGainers": [
+      {
+        "name": "Island",
+        "setCode": "cm2",
+        "collectorNumber": "291",
+        "currentUsd": 0.49,
+        "percentChange": 390,
+        "sourceCount": 1,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Hedron Archive",
+        "setCode": "scd",
+        "collectorNumber": "266",
+        "currentUsd": 0.56,
+        "percentChange": 124,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Worn Powerstone",
+        "setCode": "scd",
+        "collectorNumber": "288",
+        "currentUsd": 0.59,
+        "percentChange": 118.52,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Pearl-Ear, Imperial Advisor",
+        "setCode": "soc",
+        "collectorNumber": "160",
+        "currentUsd": 0.58,
+        "percentChange": 114.81,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Island",
+        "setCode": "cmd",
+        "collectorNumber": "306",
+        "currentUsd": 0.49,
+        "percentChange": 104.17,
+        "sourceCount": 1,
+        "category": "penny-risers"
+      }
+    ],
+    "topDecliners": [
+      {
+        "name": "Dusk // Dawn",
+        "setCode": "drc",
+        "collectorNumber": "65",
+        "currentUsd": 0.34,
+        "percentChange": -47.69,
+        "sourceCount": 1,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Heroic Sacrifice",
+        "setCode": "msc",
+        "collectorNumber": "18",
+        "currentUsd": 0.39,
+        "percentChange": -45.07,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
+        "currentUsd": 0.33,
+        "percentChange": -44.07,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Street Spasm",
+        "setCode": "c13",
+        "collectorNumber": "123",
+        "currentUsd": 0.1,
+        "percentChange": -41.18,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Vibranium Strike Gauntlets",
+        "setCode": "msc",
+        "collectorNumber": "118",
+        "currentUsd": 0.45,
+        "percentChange": -38.36,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      }
+    ],
+    "snapshotWarnings": []
+  },
+  "historicalSignalCheck": {
+    "windowDays": 21,
+    "snapshotsReviewed": 21,
+    "repeatedMovers": [
+      {
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "collectorNumber": "269",
+        "observations": 21,
+        "firstDate": "2026-10-02",
+        "lastDate": "2026-10-25",
+        "totalPctChange": -14,
+        "positiveDays": 4,
+        "negativeDays": 3
+      },
+      {
+        "name": "Idol of Oblivion",
+        "setCode": "plst",
+        "collectorNumber": "BLC-277",
+        "observations": 21,
+        "firstDate": "2026-10-02",
+        "lastDate": "2026-10-25",
+        "totalPctChange": 10.16,
+        "positiveDays": 4,
+        "negativeDays": 0
+      },
+      {
+        "name": "Tyvar, the Pummeler",
+        "setCode": "ppdsk",
+        "collectorNumber": "202p",
+        "observations": 15,
+        "firstDate": "2026-10-02",
+        "lastDate": "2026-10-16",
+        "totalPctChange": 12.38,
+        "positiveDays": 4,
+        "negativeDays": 0
+      },
+      {
+        "name": "Counterspell",
+        "setCode": "mh2",
+        "collectorNumber": "267",
+        "observations": 15,
+        "firstDate": "2026-10-02",
+        "lastDate": "2026-10-16",
+        "totalPctChange": 5.65,
+        "positiveDays": 6,
+        "negativeDays": 5
+      },
+      {
+        "name": "The Great Henge",
+        "setCode": "eld",
+        "collectorNumber": "161",
+        "observations": 15,
+        "firstDate": "2026-10-02",
+        "lastDate": "2026-10-16",
+        "totalPctChange": -3.63,
+        "positiveDays": 4,
+        "negativeDays": 7
+      }
+    ],
+    "predictionsDue": [],
+    "predictionsResolved": [],
+    "recurringCatalystsToReview": [
+      "spoilers",
+      "precons",
+      "reprints",
+      "tournament results",
+      "rules and policy",
+      "collector demand"
+    ],
+    "patternWarnings": [
+      "thin listings",
+      "spoiler reversal",
+      "post-release supply",
+      "reprint compression",
+      "low-liquidity premium"
+    ]
+  },
+  "externalResearchQueue": {
+    "status": "pending-live-web-review",
+    "requiredBeforeConfirmed": [
+      "Official Wizards, Magic.gg, Arena, and Commander Rules Committee policy/product checks",
+      "Completed sales, market-price tools, buylist, and multiple-marketplace comparison",
+      "Tournament and deck-data review for Constructed adoption",
+      "EDHREC, Moxfield, Archidekt, and upgrade-list review for Commander demand",
+      "Release, spoiler, reprint, restock, preorder, and rotation review"
+    ],
+    "sourceDiversityTarget": "At least 10 distinct domains when reasonably available; no single source family above 25% of material claims.",
+    "unavailableClaims": "No live-web catalyst or completed-sale claim is invented by this deterministic job."
+  },
+  "confidenceRules": {
+    "Confirmed": "Printing-specific price movement corroborated by reliable market or liquidity evidence.",
+    "Developing": "Real catalyst or deck demand with incomplete broad price/liquidity confirmation.",
+    "Speculative": "Spoiler, social, thin-listing, or anticipated-synergy thesis; not confirmed demand.",
+    "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
+  },
+  "actionGuardrails": {
+    "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
+    "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
+    "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
+    "preconDecisions": [
+      "BUY_SEALED",
+      "BUY_SINGLES",
+      "WAIT_FOR_DIP",
+      "SKIP_OR_MONITOR"
+    ]
+  },
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Prices may be volatile, treatment-specific, region-specific, and distorted by low-liquidity inventory. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}

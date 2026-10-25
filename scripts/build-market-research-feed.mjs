@@ -6,6 +6,7 @@ const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const snapshotFile = resolve(root, "client/src/data/dailyMarketSnapshot.json");
 const historyFile = resolve(root, "data/market/daily-movers-history.json");
 const feedFile = resolve(root, "client/src/data/marketResearchFeed.json");
+const researchContextFile = resolve(root, "client/src/data/dailyResearchContext.json");
 const archiveDirectory = resolve(root, "data/market/research");
 const predictionLedgerFile = resolve(
   root,
@@ -213,7 +214,7 @@ function paragraph(topic, dateKey, cards, snapshot, biweekly, selectionMode) {
       : "";
   return `${topic.label} · ${dateKey}. The generated screen contains ${snapshot.signalCount} priced signals, with ${direction} positive moves in the current snapshot. ${mode}${fallbackNote} The leading screened name is ${top ? `${top.name} (${top.setCode.toUpperCase()}) at ${money(top.currentUsd)} and ${signed(top.percentChange)}` : "no qualifying card after filtering"}. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.`;
 }
-export function buildPost({ dateKey, topic, snapshot, history, isBiweekly }) {
+export function buildPost({ dateKey, topic, snapshot, history, isBiweekly, researchContext }) {
   const topicSignals = [...(snapshot.signals || [])].filter(
     signal => isBiweekly || topicMatches(signal, topic)
   );
@@ -262,15 +263,27 @@ export function buildPost({ dateKey, topic, snapshot, history, isBiweekly }) {
     cards,
     sources: snapshot.sources || [],
     methodology: snapshot.methodology,
-    marketStatus:
+    marketStatus: researchContext?.marketStatus?.join("; ") ||
       "Snapshot-derived; live catalyst and completed-sale review required",
+    researchContext: researchContext
+      ? {
+          pricingDate: researchContext.pricingDate,
+          dataWindow: researchContext.dataWindow,
+          executiveSummary: researchContext.executiveSummary,
+          whatChangedSinceYesterday: researchContext.whatChangedSinceYesterday,
+          historicalSignalCheck: researchContext.historicalSignalCheck,
+          externalResearchQueue: researchContext.externalResearchQueue,
+          confidenceRules: researchContext.confidenceRules,
+          actionGuardrails: researchContext.actionGuardrails,
+        }
+      : null,
     disclaimer:
       "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting.",
   };
 }
 
 async function main() {
-  const [snapshot, history, previousFeed, predictionLedger] = await Promise.all(
+  const [snapshot, history, previousFeed, predictionLedger, researchContext] = await Promise.all(
     [
       readJson(snapshotFile, {
         signalCount: 0,
@@ -281,6 +294,7 @@ async function main() {
       readJson(historyFile, { snapshots: [] }),
       readJson(feedFile, { schemaVersion: 1, generatedAt: null, posts: [] }),
       readJson(predictionLedgerFile, { schemaVersion: 1, records: [] }),
+      readJson(researchContextFile, null),
     ]
   );
   const { date, weekday } = dateParts(generatedDate);
@@ -292,6 +306,7 @@ async function main() {
     snapshot,
     history,
     isBiweekly,
+    researchContext,
   });
   const priorRecords = Array.isArray(predictionLedger.records)
     ? predictionLedger.records

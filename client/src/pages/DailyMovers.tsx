@@ -114,12 +114,19 @@ export function DailyMovers() {
   const [moverLens, setMoverLens] = useState<
     "all" | "gainers" | "losers" | "reprint-squashes"
   >("all");
+  const [missionScope, setMissionScope] = useState<
+    "top" | "major" | "all"
+  >("top");
+  const [quickPreset, setQuickPreset] = useState<
+    "none" | "top-gainers" | "dollar-shifts" | "budget-breakouts"
+  >("none");
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedSetCode, setSelectedSetCode] = useState<string>("all");
   const [priceRange, setPriceRange] = useState<string>("all");
   const [rarityFilter, setRarityFilter] = useState<string>("all");
   const [trendFilter, setTrendFilter] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("pct-desc");
+  const [page, setPage] = useState(1);
   const [searchFilter, setSearchFilter] = useState<string>("");
   const [watchlist, setWatchlist] = useState<MarketWatchlistEntry[]>(() =>
     loadMarketWatchlist()
@@ -264,6 +271,7 @@ export function DailyMovers() {
       rising: activeMoversList.filter(mover => mover.percentChange > 0).length,
       falling: activeMoversList.filter(mover => mover.percentChange < 0).length,
       shortlist: shortlist.size,
+      shortlistIds: new Set(shortlist.keys()),
     };
   }, [activeMoversList, currentSnapshot]);
 
@@ -288,6 +296,31 @@ export function DailyMovers() {
 
     if (activeFeed === "watchlist") {
       result = result.filter(m => isMarketCardWatched(m, watchlist));
+    }
+
+    if (missionScope === "top") {
+      result = result.filter(m => scannerSummary.shortlistIds.has(m.id));
+    } else if (missionScope === "major") {
+      result = result.filter(
+        m =>
+          m.currentUsd >= 10 ||
+          Math.abs(m.changeUsd) >= 1 ||
+          (Math.abs(m.percentChange) >= 20 &&
+          (m.rarity === "mythic" || m.rarity === "rare"))
+      );
+    }
+
+    if (quickPreset === "top-gainers") {
+      result = result.filter(m => m.percentChange > 0);
+    } else if (quickPreset === "dollar-shifts") {
+      result = result.filter(m => Math.abs(m.changeUsd) >= 1);
+    } else if (quickPreset === "budget-breakouts") {
+      result = result.filter(
+        m =>
+          m.currentUsd <= 10 &&
+          m.changeUsd >= 0.25 &&
+          m.percentChange >= 10
+      );
     }
 
     if (moverLens === "gainers") {
@@ -355,6 +388,9 @@ export function DailyMovers() {
   }, [
     activeMoversList,
     activeFeed,
+    missionScope,
+    quickPreset,
+    scannerSummary.shortlistIds,
     moverLens,
     activeCategory,
     selectedSetCode,
@@ -366,7 +402,15 @@ export function DailyMovers() {
     watchlist,
   ]);
 
-  const activeFeedMovers = filteredMovers;
+  const PAGE_SIZE = 24;
+  const pageCount = Math.max(1, Math.ceil(filteredMovers.length / PAGE_SIZE));
+  const activeFeedMovers = useMemo(
+    () => filteredMovers.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filteredMovers, page]
+  );
+  useEffect(() => {
+    setPage(1);
+  }, [activeFeed, missionScope, quickPreset, moverLens, activeCategory, selectedSetCode, priceRange, rarityFilter, trendFilter, searchFilter, sortBy]);
   const visibleWatchlist = activeMoversList.filter(m =>
     isMarketCardWatched(m, watchlist)
   );
@@ -876,9 +920,88 @@ export function DailyMovers() {
               </div>
             </div>
             <p className="w-full font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
-              Showing {activeFeedMovers.length} of {activeMoversList.length}{" "}
-              current movers
+              Showing {activeFeedMovers.length} of {filteredMovers.length} filtered ·{" "}
+              {activeMoversList.length.toLocaleString()} surfaced total
             </p>
+          </div>
+
+          <div className="mt-5 border border-primary/30 bg-primary/5 p-3 sm:p-4">
+            <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">
+                  Mission Control scope
+                </p>
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-muted-foreground">
+                  Start with the capped signal shortlist, switch to major-dollar cards,
+                  or page through every surfaced observation without mounting the full feed.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2" role="group" aria-label="Mission Control scope">
+                {(
+                  [
+                    ["top", "Top movers", `${scannerSummary.shortlist}`],
+                    ["major", "Major players", "price / $ move"],
+                    ["all", "All surfaced", `${activeMoversList.length}`],
+                  ] as const
+                ).map(([value, label, note]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => setMissionScope(value)}
+                    aria-pressed={missionScope === value}
+                    className={`border px-3 py-2 text-left font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${
+                      missionScope === value
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-background text-muted-foreground hover:border-primary hover:text-primary"
+                    }`}
+                  >
+                    <span className="block">{label}</span>
+                    <span className="mt-1 block text-[9px] font-normal opacity-80">{note}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-col gap-3 border border-border bg-background p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4">
+            <div>
+              <p className="font-mono text-[10px] font-black uppercase tracking-widest text-foreground">
+                Quick presets
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Fast screens for the three most useful daily review queues.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Quick mover presets">
+              {(
+                [
+                  ["top-gainers", "Top gainers", "> 0%", "pct-desc"],
+                  ["dollar-shifts", "Massive dollar shifts", "≥ $1 move", "price-desc"],
+                  ["budget-breakouts", "Budget breakouts", "≤ $10 · ≥ 10%", "pct-desc"],
+                ] as const
+              ).map(([value, label, note, presetSort]) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => {
+                    setQuickPreset(current => (current === value ? "none" : value));
+                    setMissionScope("all");
+                    setMoverLens("all");
+                    setActiveCategory("all");
+                    setSortBy(presetSort);
+                  }}
+                  aria-pressed={quickPreset === value}
+                  className={`border px-3 py-2 text-left font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${
+                    quickPreset === value
+                      ? "border-amber-600 bg-amber-500 text-black"
+                      : "border-border bg-card text-muted-foreground hover:border-amber-600 hover:text-foreground"
+                  }`}
+                >
+                  <span className="block">{label}</span>
+                  <span className="mt-1 block text-[9px] font-normal opacity-80">{note}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Category Tabs */}
@@ -903,6 +1026,32 @@ export function DailyMovers() {
               );
             })}
           </div>
+
+          {filteredMovers.length > PAGE_SIZE && (
+            <nav className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4" aria-label="Mover pages">
+              <p className="font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
+                Page {Math.min(page, pageCount)} of {pageCount} · {PAGE_SIZE} cards per page
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setPage(current => Math.max(1, current - 1))}
+                  disabled={page <= 1}
+                  className="border border-border px-3 py-2 font-mono text-[10px] font-black uppercase disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPage(current => Math.min(pageCount, current + 1))}
+                  disabled={page >= pageCount}
+                  className="border border-primary bg-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary-foreground disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Next
+                </button>
+              </div>
+            </nav>
+          )}
 
           {/* Movers Grid with Loading Skeleton or Cards */}
           {activeFeed === "watchlist" && visibleWatchlist.length === 0 && (
