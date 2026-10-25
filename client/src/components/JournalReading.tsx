@@ -36,6 +36,13 @@ const features = {
     takeaways: ['Seven chaptered commanders with distinct build-around constraints.', 'Short video excerpts are labeled capture notes, not certified transcript quotes.', 'Open each card profile and test the plan before buying into it.'],
     action: 'Open the Commander Library', target: '/commander',
   },
+  'simple-builds-that-dominate-your-playgroup': {
+    label: 'Simple build showcase', icon: MonitorPlay, card: 'Jasmine Boreal of the Seven',
+    href: '/card/Jasmine%20Boreal%20of%20the%20Seven',
+    imageUrl: 'https://i.ytimg.com/vi/x8KK0-U8FAc/hqdefault.jpg',
+    takeaways: ['Eight commander showcases from the video and its retrieved captions.', 'Each section reduces the deck to a short, testable set of jobs.', 'Quoted excerpts include timestamps and link back to the original video.'],
+    action: 'Browse the Commander Library', target: '/commander',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }

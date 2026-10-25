@@ -92,6 +92,14 @@ describe('published journal', () => {
     }
     expect(html).toContain('transcript-adjacent');
   });
+  it('showcases every commander in the simple-builds companion feature', () => {
+    const html = page('/blog/simple-builds-that-dominate-your-playgroup');
+    for (const commander of ['Jasmine Boreal of the Seven', 'Yargle and Multani', 'Arcades, the Strategist', 'Edric, Spymaster of Trest', 'Ovika, Enigma Goliath', 'Omnath, Locus of Mana', 'Mr. Orfeo, the Boulder', 'Ruric Thar, the Unbowed']) {
+      expect(html).toContain(commander);
+    }
+    expect(html).toContain('0:17–0:25');
+    expect(html).toContain('Source notes and affiliate disclosure');
+  });
   it('keeps every Battle Box deck link in the article prose, not only the card grid', () => {
     const articleProse = prose(page('/blog/battle-box-october-17-recap'));
     for (const deck of retroBattleBoxDecks) {
