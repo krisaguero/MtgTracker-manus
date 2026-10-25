@@ -29,7 +29,7 @@ describe('published journal', () => {
     const html = page(`/blog/${article.slug}`);
     expect(html.match(/<h1\b/g)).toHaveLength(1);
     expect(html).toContain('Published article / journal');
-    expect(html).toContain('October 18, 2026 · Published');
+    expect(html).toContain(article.dateLabel);
     expect(html).not.toContain('Local review draft');
     expect(html).not.toContain('not published');
     expect(article.body.length).toBeGreaterThan(2000);
@@ -75,7 +75,7 @@ describe('published journal', () => {
   });
   it('keeps the hub illustrated and article pages connected by related links', () => {
     const hub = page('/blog');
-    expect(hub.match(/<img\b/g)).toHaveLength(3);
+    expect(hub.match(/<img\b/g)).toHaveLength(articles.length);
     for (const article of articles) {
       const html = page(`/blog/${article.slug}`);
       expect(html).toContain('aria-label="Keep reading"');
@@ -83,6 +83,14 @@ describe('published journal', () => {
         expect(html).toContain(`href="/blog/${related.slug}"`);
       }
     }
+  });
+  it('publishes the Commander’s Quarters feature with its source video and seven chaptered commanders', () => {
+    const html = page('/blog/commanders-100-percent-worth-building-around');
+    expect(html).toContain('https://www.youtube.com/watch?v=9Zg1zAsXsQ8');
+    for (const commander of ['Sakiko, Mother of Summer', 'Meria, Scholar of Antiquity', 'Alaundo the Seer', 'Valduk, Keeper of the Flame', 'Memnarch', 'Denry Klin, Editor in Chief', 'Nikya of the Old Ways']) {
+      expect(html).toContain(commander);
+    }
+    expect(html).toContain('transcript-adjacent');
   });
   it('keeps every Battle Box deck link in the article prose, not only the card grid', () => {
     const articleProse = prose(page('/blog/battle-box-october-17-recap'));

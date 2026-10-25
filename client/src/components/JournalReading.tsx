@@ -29,6 +29,13 @@ const features = {
     takeaways: ['Nine shared 60-card decks, each with its own game plan.', 'The build record and new deck pages have distinct dates.', 'Check source warnings and agree on house rules first.'],
     action: 'Choose a Battle Box deck', target: '#deck-library',
   },
+  'commanders-100-percent-worth-building-around': {
+    label: 'Watch, then build', icon: MonitorPlay, card: 'Sakiko, Mother of Summer',
+    href: '/card/Sakiko%2C%20Mother%20of%20Summer',
+    imageUrl: 'https://i.ytimg.com/vi/9Zg1zAsXsQ8/hqdefault.jpg',
+    takeaways: ['Seven chaptered commanders with distinct build-around constraints.', 'Short video excerpts are labeled capture notes, not certified transcript quotes.', 'Open each card profile and test the plan before buying into it.'],
+    action: 'Open the Commander Library', target: '/commander',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -54,6 +61,7 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
 export function journalCardImage(slug: string) {
   const feature = readingFeature(slug);
   if (!feature) return undefined;
+  if ('imageUrl' in feature && feature.imageUrl) return { imageUrl: feature.imageUrl, artUrl: feature.imageUrl };
   const brawl = cardReference(feature.card);
   if (brawl) return { imageUrl: brawl.imageUrl ?? undefined, artUrl: brawl.artUrl ?? undefined };
   const battle = battleBoxReferences[feature.card];
