@@ -1,10 +1,14 @@
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import { commanderDecklistsData } from '@/data/commanderDecklistsData';
 import { allLinkedMarketMovers, moversForCard, moversForSet, marketMoverArticleHref, suppliedSignalsForCard, suppliedSignalsForSet } from '@/lib/marketMoverLinks';
 import { getPreconMarketContext } from '@/lib/preconMarketContext';
-import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
+import { loadMarketPriceIndex, resolveDeckMarketValue } from '@/lib/marketPriceIndex';
 
 describe('market mover linkage and Commander price lineage', () => {
+  beforeAll(async () => {
+    await loadMarketPriceIndex();
+  });
+
   it('gives canonical movers card, set, and article destinations', () => {
     const [mover] = allLinkedMarketMovers();
     expect(mover).toBeDefined();

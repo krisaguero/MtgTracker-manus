@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Star, TrendingUp, TrendingDown, Flame } from 'lucide-react';
 import { MoverCard } from '@/lib/dailyMoversEngine';
 import { isMarketCardWatched, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
-import { marketMoverArticleHref } from '@/lib/marketMoverLinks';
+import { marketMoverArticleHref } from '@/lib/marketMoverHref';
 import { Link } from 'wouter';
 
 interface MarketCardItemProps {
@@ -78,6 +78,8 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
           }}
           className={`h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
+          decoding="async"
+          fetchPriority="low"
         />
       </div>
 

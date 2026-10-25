@@ -1,8 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { resolveDeckMarketValue } from '../lib/marketPriceIndex';
+import { beforeAll, describe, it, expect } from 'vitest';
+import { loadMarketPriceIndex, resolveDeckMarketValue } from '../lib/marketPriceIndex';
 import { commanderDecklistsData } from '../data/commanderDecklistsData';
 
 describe('Commander valuation matrix and pricing provenance', () => {
+  beforeAll(async () => {
+    await loadMarketPriceIndex();
+  });
+
   it('resolves market value across all catalog decks with coverage percentages', () => {
     expect(commanderDecklistsData.length).toBeGreaterThan(0);
     for (const deck of commanderDecklistsData.slice(0, 5)) {

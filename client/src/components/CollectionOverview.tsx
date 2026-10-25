@@ -30,7 +30,11 @@ export function CollectionOverview({ onOpenImportModal, refreshKey }: Collection
     let cancelled = false;
     const col = loadOwnedCollection();
     setCollection(col);
-    setRecommendations(getDeckCoverageRecommendations());
+    void getDeckCoverageRecommendations().then((nextRecommendations) => {
+      if (!cancelled) setRecommendations(nextRecommendations);
+    }).catch(() => {
+      if (!cancelled) setRecommendations([]);
+    });
     if (col.length === 0) {
       setHistory(getValuationHistory());
       setValuationStatus('ready');

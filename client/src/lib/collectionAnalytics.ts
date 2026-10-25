@@ -1,5 +1,5 @@
 import { loadOwnedCollection } from './manaboxParser';
-import { commanderDecklists } from '@/data/commanderDecklists';
+import { loadCommanderArchive } from '@/lib/commanderArchive';
 import dailySnapshot from '@/data/dailyMarketSnapshot.json';
 import commanderPriceMeta from '@/data/commanderCardPriceMeta.json';
 
@@ -190,7 +190,8 @@ export function calculateCollectionValuation(collection: Array<{ name: string; q
   };
 }
 
-export function getDeckCoverageRecommendations(): DeckCoverageRecommendation[] {
+export async function getDeckCoverageRecommendations(): Promise<DeckCoverageRecommendation[]> {
+  const commanderDecklists = await loadCommanderArchive();
   const collection = loadOwnedCollection();
   const ownedMap = new Map<string, number>();
   for (const c of collection) {

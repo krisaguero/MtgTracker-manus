@@ -137,6 +137,7 @@ describe("MarketMoversTable filtering and loading state", () => {
         data={[sampleMover]}
         title="Daily Movers Table"
         description="Sparkline test"
+        forceDesktop
       />
     );
 
@@ -169,6 +170,7 @@ describe("MarketMoversTable filtering and loading state", () => {
         data={[{ ...sampleMover, recentPrices: [38, 45] }]}
         title="Daily Movers Table"
         description="Sparkline fallback test"
+        forceDesktop
       />
     );
 

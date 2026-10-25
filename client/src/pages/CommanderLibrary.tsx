@@ -1,9 +1,9 @@
 // Design philosophy: hard-edged MTG editorial archive, with chronology as the main structure, color-coded filter chips, and product art left unobscured.
 import { useMemo, useState } from 'react';
-import { ArrowDownUp, ArrowLeft, CalendarDays, ExternalLink, Layers3, Search, Sparkles } from 'lucide-react';
+import { ArrowDownUp, ArrowLeft, ArrowRight, CalendarDays, ExternalLink, Layers3, Search, Sparkles } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import { classifySet, useCommanderLibrary, type CommanderArchiveSet } from '@/hooks/useCommanderLibrary';
+import { useCommanderArchiveIndex, type CommanderArchiveIndexEntry } from '@/lib/commanderArchive';
 import { CatalogSkeleton } from '@/components/CatalogSkeleton';
 import { InternalPageNav } from '@/components/InternalPageNav';
 import { CommanderCardFrame } from '@/components/CommanderCardFrame';
@@ -32,6 +32,7 @@ const FAMILY_LABELS: Record<FamilyFilter, string> = {
 export default function CommanderLibrary() {
   const [, navigate] = useLocation();
   const { sets, loading, productsLoading, error } = useCommanderLibrary();
+  const { entries: commanderDeckIndex, loading: commanderArchiveLoading } = useCommanderArchiveIndex();
   const [query, setQuery] = useState('');
   const [family, setFamily] = useState<FamilyFilter>('all');
   const [coverage, setCoverage] = useState<CoverageFilter>('all');
@@ -40,7 +41,7 @@ export default function CommanderLibrary() {
 
   const [colorFilter, setColorFilter] = useState<string>('all');
   const years = useMemo(() => Array.from(new Set(sets.map((set) => set.released_at.slice(0, 4)))), [sets]);
-  const localSetCodes = useMemo(() => new Set(commanderDecklists.map((deck) => deck.set_code.toLowerCase())), []);
+  const localSetCodes = useMemo(() => new Set((commanderDeckIndex ?? []).map((deck) => deck.set_code.toLowerCase())), [commanderDeckIndex]);
   const filteredSets = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return [...sets]
@@ -65,7 +66,7 @@ export default function CommanderLibrary() {
       });
   }, [colorFilter, coverage, family, localSetCodes, query, sets, sortMode, year]);
 
-  const productCount = sets.reduce((sum, set) => sum + set.products.length, 0);
+  const productCount = commanderDeckIndex?.length ?? 0;
   const localCount = sets.filter((set) => localSetCodes.has(set.code.toLowerCase())).length;
 
   return (
@@ -77,7 +78,7 @@ export default function CommanderLibrary() {
             <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Back to timeline</Link>
             <div className="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
               <span className="border border-border bg-card px-3 py-2">{sets.length} releases</span>
-              <span className="border border-border bg-card px-3 py-2">{productCount} products</span>
+              <span className="border border-border bg-card px-3 py-2">{productCount} precon decks</span>
               <span className="border border-primary/30 bg-primary/5 px-3 py-2 text-primary">2022 → now</span>
             </div>
           </div>
@@ -98,9 +99,10 @@ export default function CommanderLibrary() {
 
         {!loading && !error && (
           <>
+            {commanderArchiveLoading && <div className="mb-4 border-2 border-primary/40 bg-primary/5 px-4 py-3 font-mono text-[10px] font-black uppercase tracking-wider text-primary" role="status">Loading local Commander deck coverage…</div>}
             <section className="grid gap-px border border-border bg-border md:grid-cols-3">
               <ArchiveStat icon={<CalendarDays className="h-5 w-5" />} label="Release span" value={years.length ? `${years.at(-1)} → ${years[0]}` : '—'} detail="Set chronology from the live index" />
-              <ArchiveStat icon={<Layers3 className="h-5 w-5" />} label="Cataloged products" value={`${productCount}`} detail={productsLoading ? 'Product cards still resolving' : 'Scryfall product records found'} />
+              <ArchiveStat icon={<Layers3 className="h-5 w-5" />} label="Indexed precon decks" value={`${productCount}`} detail={productsLoading ? 'Release imagery still resolving' : 'Commander deck entries available to open'} />
               <ArchiveStat icon={<Sparkles className="h-5 w-5" />} label="Local coverage" value={`${localCount} releases`} detail="Decklists available for collection matching" />
             </section>
 
@@ -146,7 +148,7 @@ export default function CommanderLibrary() {
             </section>
 
             <section className="mt-8" aria-label="Chronological Commander release archive">
-              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. Color identity only includes products with a verified Scryfall color-identity value; try another color or clear filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); setColorFilter('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count} indexed cards</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
+              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. Color identity only includes products with a verified Scryfall color-identity value; try another color or clear your filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); setColorFilter('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count} indexed cards</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} deckEntries={(commanderDeckIndex ?? []).filter((deck) => deck.set_code.toLowerCase() === set.code.toLowerCase())} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
             </section>
           </>
         )}
@@ -168,21 +170,26 @@ function FilterChip({ children, active, onClick, tone = 'indigo' }: { children: 
   return <button type="button" onClick={onClick} className={`border px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors ${active ? 'border-primary bg-primary text-primary-foreground' : `bg-card hover:bg-muted ${tones[tone]}`}`}>{children}</button>;
 }
 
-function CommanderArchiveCard({ set, hasLocalDecklist, onOpen }: { set: CommanderArchiveSet; hasLocalDecklist: boolean; onOpen: () => void }) {
-  return <article className="border-2 border-border bg-card p-5 transition-colors hover:border-primary sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{formatDate(set.released_at)} · {set.code.toUpperCase()}</p><h3 className="mt-2 text-2xl font-bold tracking-tight">{set.name}</h3><p className="mt-2 text-sm text-muted-foreground">{set.card_count} cards in the Scryfall index</p></div><div className="flex flex-wrap justify-end gap-2 text-[10px] font-bold uppercase tracking-wider"><span className="border border-border bg-background px-2 py-1">{classifySet(set)}</span>{hasLocalDecklist && <span className="border border-amber-600/50 bg-amber-500/10 px-2 py-1 text-amber-800">Local decklists</span>}</div></div><div className="mt-5 grid gap-3 sm:grid-cols-2">{        set.products.length > 0 ? set.products.map((product) => {
+function CommanderArchiveCard({ set, deckEntries, hasLocalDecklist, onOpen }: { set: CommanderArchiveSet; deckEntries: CommanderArchiveIndexEntry[]; hasLocalDecklist: boolean; onOpen: () => void }) {
+  return <article className="border-2 border-border bg-card p-5 transition-colors hover:border-primary sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{formatDate(set.released_at)} · {set.code.toUpperCase()}</p><h3 className="mt-2 text-2xl font-bold tracking-tight">{set.name}</h3><p className="mt-2 text-sm text-muted-foreground">{set.card_count} cards in the Scryfall index</p></div><div className="flex flex-wrap justify-end gap-2 text-[10px] font-bold uppercase tracking-wider"><span className="border border-border bg-background px-2 py-1">{classifySet(set)}</span>{hasLocalDecklist && <span className="border border-amber-600/50 bg-amber-500/10 px-2 py-1 text-amber-800">Local decklists</span>}</div></div><div className="mt-5 grid gap-3 sm:grid-cols-2">{        deckEntries.length > 0 ? deckEntries.map((deck) => {
+          const product = set.products.find((entry) => normalizeDeckName(entry.name) === normalizeDeckName(deck.name));
           return (
-            <div key={product.id} className="flex min-w-0 gap-3 border-2 border-border bg-background p-4">
-              <CommanderCardFrame cardName={product.name} fallbackSrc={product.imageUrl} alt={`${product.name} Commander full card frame`} compact />
+            <div key={`${deck.set_code}-${deck.name}`} className="flex min-w-0 gap-3 border-2 border-border bg-background p-4">
+              <CommanderCardFrame cardName={deck.commander[0]?.name || deck.name} fallbackSrc={product?.imageUrl} alt={`${deck.name} Commander helming card`} compact />
               <div className="min-w-0 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <p className="font-bold text-sm leading-snug">{product.name}</p>
+                    <p className="font-bold text-sm leading-snug">{deck.name}</p>
                     <span className="border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[9px] font-bold text-primary">Precon Deck</span>
                   </div>
-                  <p className="mt-1 text-xs text-muted-foreground">{product.cardCount ? `${product.cardCount} cards` : 'Official 100-card release'}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Official Commander deck · {deck.synopsis || '100-card preconstructed release'}</p>
+                  {(() => {
+                    return <p className="mt-3 border-l-2 border-primary/50 pl-2 text-xs leading-relaxed"><span className="font-bold uppercase tracking-wider text-primary">Helmed by</span><br />{deck.commander.map((commander) => commander.name).join(' · ')}</p>;
+                  })()}
                 </div>
                 <div className="flex items-center gap-3 pt-2">
-                  {product.scryfall_uri && (
+                  <Link href={`/precon/${deck.set_code}/${slugifyDeck(deck.name)}`} className="inline-flex items-center gap-1 border border-primary bg-primary px-2 py-1 font-mono text-[10px] font-bold uppercase text-primary-foreground hover:bg-primary/90">Open precon deck <ArrowRight className="h-3 w-3" /></Link>
+                  {product?.scryfall_uri && (
                     <a href={product.scryfall_uri} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-primary hover:underline">
                       Scryfall View ↗
                     </a>
@@ -193,5 +200,8 @@ function CommanderArchiveCard({ set, hasLocalDecklist, onOpen }: { set: Commande
           );
         }) : <div className="border border-dashed border-border p-4 text-sm text-muted-foreground">Scryfall has not exposed a product card for this release yet; the set catalog remains available.</div>}</div><div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4"><p className="text-xs leading-relaxed text-muted-foreground">{hasLocalDecklist ? 'Collection matching is available for at least one local decklist in this release.' : 'Use the live set catalog to browse every indexed card.'}</p><button type="button" onClick={onOpen} className="inline-flex items-center gap-2 border border-primary bg-primary px-3 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/90">Open set catalog <ExternalLink className="h-3 w-3" /></button></div></article>;
 }
+
+function normalizeDeckName(value: string) { return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+function slugifyDeck(value: string) { return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 
 function formatDate(value: string) { return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(`${value}T00:00:00`)); }

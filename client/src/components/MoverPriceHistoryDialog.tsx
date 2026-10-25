@@ -1,6 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { History, TrendingDown, TrendingUp } from "lucide-react";
-import rawPriceHistory from "@/data/dailyMoverHistory.json";
 import type { MoverCard } from "@/lib/dailyMoversEngine";
 import {
   Dialog,
@@ -19,8 +18,6 @@ type PriceHistorySnapshot = {
 type PriceHistoryData = {
   snapshots: PriceHistorySnapshot[];
 };
-
-const priceHistory = rawPriceHistory as unknown as PriceHistoryData;
 
 function formatUsd(value: number) {
   return `$${value.toFixed(2)}`;
@@ -137,12 +134,22 @@ function HistoryChart({
 }
 
 export function MoverPriceHistoryDialog({ mover }: { mover: MoverCard }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [priceHistory, setPriceHistory] = useState<PriceHistoryData | null>(null);
+
+  useEffect(() => {
+    if (!isOpen || priceHistory) return;
+    import("@/data/dailyMoverHistory.json")
+      .then(module => setPriceHistory(module.default as unknown as PriceHistoryData))
+      .catch(() => setPriceHistory({ snapshots: [] }));
+  }, [isOpen, priceHistory]);
+
   const points = useMemo(
     () =>
-      priceHistory.snapshots.filter(snapshot =>
+      (priceHistory?.snapshots ?? []).filter(snapshot =>
         Number.isFinite(snapshot.prices[mover.id])
       ),
-    [mover.id]
+    [mover.id, priceHistory]
   );
   const first = points[0]?.prices[mover.id];
   const last = points[points.length - 1]?.prices[mover.id];
@@ -154,7 +161,7 @@ export function MoverPriceHistoryDialog({ mover }: { mover: MoverCard }) {
     changePct !== null && changePct < 0 ? TrendingDown : TrendingUp;
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <button
           type="button"
@@ -180,7 +187,16 @@ export function MoverPriceHistoryDialog({ mover }: { mover: MoverCard }) {
           </DialogDescription>
         </DialogHeader>
 
-        {points.length >= 2 && first !== undefined && last !== undefined ? (
+        {!priceHistory ? (
+          <div className="border-2 border-dashed border-border p-8 text-center">
+            <p className="font-mono text-xs font-black uppercase tracking-wider">
+              Loading history
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Fetching the dated observations for this exact printing.
+            </p>
+          </div>
+        ) : points.length >= 2 && first !== undefined && last !== undefined ? (
           <>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               <div className="border border-border bg-muted/20 p-3">

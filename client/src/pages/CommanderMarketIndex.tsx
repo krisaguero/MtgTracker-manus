@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { ArrowLeft, ExternalLink, Flame, Sparkles, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import type { RawCommanderDeck } from '@/data/commanderDecklists';
-import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
+import { resolveDeckMarketValue, useMarketPriceIndex } from '@/lib/marketPriceIndex';
 import { edhrecCommanderHref, edhrecSnapshotDate, edhrecSourceUrl, edhrecTopCommanders } from '@/data/edhrecTopCommanders';
 import { slugify } from '@/hooks/useCommanderDeck';
 import commanderCardPriceMeta from '@/data/commanderCardPriceMeta.json';
 import { InternalPageNav } from '@/components/InternalPageNav';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 
 const edhrecByName = new Map(edhrecTopCommanders.map((commander) => [commander.name.toLowerCase(), commander]));
 const priceMeta = commanderCardPriceMeta as {
@@ -30,8 +30,8 @@ function watchReason(deck: RawCommanderDeck, rank: number | null, indexedValue: 
   return 'Watch for price and demand confirmation';
 }
 
-function preconRows() {
-  return commanderDecklists.map((deck) => {
+function preconRows(decks: RawCommanderDeck[], resolveDeckMarketValue: typeof import('@/lib/marketPriceIndex').resolveDeckMarketValue) {
+  return decks.map((deck) => {
     const value = resolveDeckMarketValue(deck);
     const demand = deck.commander.map((commander) => edhrecByName.get(commander.name.toLowerCase())).filter(Boolean)[0];
     return { deck, value, demand: demand ?? null, rank: demand?.rank ?? null, heat: demand ? Math.max(0, 21 - demand.rank) * 10 + value.totalUsd / 10 : value.totalUsd / 10 };
@@ -39,7 +39,9 @@ function preconRows() {
 }
 
 export default function CommanderMarketIndex() {
-  const rows = useMemo(preconRows, []);
+  const { loading: marketPriceLoading } = useMarketPriceIndex();
+  const { decks, loading: archiveLoading } = useCommanderArchive();
+  const rows = useMemo(() => decks ? preconRows(decks, resolveDeckMarketValue) : [], [decks, marketPriceLoading]);
   return <div className="min-h-screen bg-background text-foreground">
     <InternalPageNav active="/commander-market" />
     <header className="border-b-2 border-border bg-card">
@@ -49,7 +51,7 @@ export default function CommanderMarketIndex() {
           <div>
             <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">Commander market intelligence</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">The Commander demand index</h1>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">A practical watchlist for precon buyers: dated indexed card equity, price coverage, and EDHREC deck-building demand in one place. Hot badges identify demand signals—not guaranteed returns.</p>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">A practical watchlist for precon buyers: dated exact-printing card equity, price coverage, and EDHREC deck-building demand in one place. Collector&apos;s Edition rows do not substitute regular printings when a variant quote is unavailable. Hot badges identify demand signals—not guaranteed returns.</p>
           </div>
           <div className="border-2 border-amber-500 bg-amber-500/10 p-4 font-mono text-xs">
             <p className="font-black uppercase text-amber-700 dark:text-amber-400">Directional only</p>
@@ -73,7 +75,7 @@ export default function CommanderMarketIndex() {
         </div>
         <div className="border-2 border-border bg-card p-5">
           <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Internal links</p>
-          <p className="mt-2 text-2xl font-black">{rows.length} watchlist decks</p>
+          <p className="mt-2 text-2xl font-black">{archiveLoading ? 'Loading…' : `${rows.length} watchlist decks`}</p>
           <p className="mt-1 text-xs text-muted-foreground">Each row opens the indexed decklist</p>
         </div>
       </section>

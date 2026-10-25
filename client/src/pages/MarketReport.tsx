@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight, Bell, BellRing, ExternalLink, Search, ShieldAlert, TrendingUp, X, SlidersHorizontal, CheckCircle2 } from 'lucide-react';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import { getMarketSpikes, getMarketSnapshotMetadata, analyzePreconSealedEconomics, type MarketFormat, type PreconSealedAnalysis } from '@/lib/marketIntelligence';
 import { loadPriceAlerts, refreshPriceAlerts, removePriceAlert, savePriceAlert, type PriceAlert } from '@/lib/priceAlerts';
 import { buildWeeklyMarketDigest } from '@/lib/weeklyDigest';
@@ -10,10 +9,13 @@ import { clearDigestDeliveryLog, loadDigestDeliveryLog, recordDigestDelivery, ty
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { toast } from 'sonner';
 import { MarketCardSkeleton, PreconGridSkeleton } from '@/components/PageSkeletons';
-
+import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 export default function MarketReport() {
+  useMarketPriceIndex();
+  const { decks: commanderDecklists } = useCommanderArchive();
   const spikes = useMemo(() => getMarketSpikes(), []);
-  const preconAnalyses: PreconSealedAnalysis[] = useMemo(() => commanderDecklists.map((deck) => analyzePreconSealedEconomics(deck)), []);
+  const preconAnalyses: PreconSealedAnalysis[] = useMemo(() => (commanderDecklists ?? []).map((deck) => analyzePreconSealedEconomics(deck)), [commanderDecklists]);
 
   const ownedMap = useMemo(() => {
     const col = loadOwnedCollection();

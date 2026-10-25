@@ -1,0 +1,2594 @@
+{
+  "generatedAt": "2026-10-24T21:40:30.810Z",
+  "decks": [
+    {
+      "name": "Avengers Assemble",
+      "set_code": "msc",
+      "set_name": "MSC Commander Products",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Captain America, Team Leader"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Doom Prevails",
+      "set_code": "msc",
+      "set_name": "MSC Commander Products",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Doctor Doom, King of Latveria"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "The Fantastic Four",
+      "set_code": "msc",
+      "set_name": "MSC Commander Products",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Invisible Woman"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Wakanda Forever",
+      "set_code": "msc",
+      "set_name": "MSC Commander Products",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "T'Challa, the Black Panther"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 80 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Goblin Storm",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2026-05-18",
+      "commander": [
+        {
+          "name": "Zada, Hedron Grinder"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Lorehold Spirit",
+      "set_code": "soc",
+      "set_name": "SOC Commander Products",
+      "release_date": "2026-04-24",
+      "commander": [
+        {
+          "name": "Quintorius, History Chaser"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Prismari Artistry",
+      "set_code": "soc",
+      "set_name": "SOC Commander Products",
+      "release_date": "2026-04-24",
+      "commander": [
+        {
+          "name": "Rootha, Mastering the Moment"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Quandrix Unlimited",
+      "set_code": "soc",
+      "set_name": "SOC Commander Products",
+      "release_date": "2026-04-24",
+      "commander": [
+        {
+          "name": "Zimone, Infinite Analyst"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Silverquill Influence",
+      "set_code": "soc",
+      "set_name": "SOC Commander Products",
+      "release_date": "2026-04-24",
+      "commander": [
+        {
+          "name": "Killian, Decisive Mentor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Witherbloom Pestilence",
+      "set_code": "soc",
+      "set_name": "SOC Commander Products",
+      "release_date": "2026-04-24",
+      "commander": [
+        {
+          "name": "Dina, Essence Brewer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Turtle Power!",
+      "set_code": "tmc",
+      "set_name": "TMC Commander Products",
+      "release_date": "2026-03-06",
+      "commander": [
+        {
+          "name": "Heroes in a Half Shell"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Blight Curse",
+      "set_code": "ecc",
+      "set_name": "ECC Commander Products",
+      "release_date": "2026-01-23",
+      "commander": [
+        {
+          "name": "Auntie Ool, Cursewretch"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 85 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Dance of the Elements",
+      "set_code": "ecc",
+      "set_name": "ECC Commander Products",
+      "release_date": "2026-01-23",
+      "commander": [
+        {
+          "name": "Ashling, the Limitless"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Counter Intelligence",
+      "set_code": "eoc",
+      "set_name": "EOC Commander Products",
+      "release_date": "2025-08-01",
+      "commander": [
+        {
+          "name": "Inspirit, Flagship Vessel"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "World Shaper",
+      "set_code": "eoc",
+      "set_name": "EOC Commander Products",
+      "release_date": "2025-08-01",
+      "commander": [
+        {
+          "name": "Hearthhull, the Worldseed"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Counter Blitz (FINAL FANTASY X)",
+      "set_code": "fic",
+      "set_name": "FIC Commander Products",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Tidus, Yuna's Guardian"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Limit Break (FINAL FANTASY VII)",
+      "set_code": "fic",
+      "set_name": "FIC Commander Products",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Cloud, Ex-SOLDIER"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Revival Trance (FINAL FANTASY VI)",
+      "set_code": "fic",
+      "set_name": "FIC Commander Products",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Terra, Herald of Hope"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 99 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Scions & Spellcraft (FINAL FANTASY XIV)",
+      "set_code": "fic",
+      "set_name": "FIC Commander Products",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Y'shtola, Night's Blessed"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 98 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Everyone's Invited!",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2025-05-12",
+      "commander": [
+        {
+          "name": "Morophon, the Boundless"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Abzan Armor",
+      "set_code": "tdc",
+      "set_name": "TDC Commander Products",
+      "release_date": "2025-04-11",
+      "commander": [
+        {
+          "name": "Felothar the Steadfast"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Jeskai Striker",
+      "set_code": "tdc",
+      "set_name": "TDC Commander Products",
+      "release_date": "2025-04-11",
+      "commander": [
+        {
+          "name": "Shiko and Narset, Unified"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mardu Surge",
+      "set_code": "tdc",
+      "set_name": "TDC Commander Products",
+      "release_date": "2025-04-11",
+      "commander": [
+        {
+          "name": "Zurgo Stormrender"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Sultai Arisen",
+      "set_code": "tdc",
+      "set_name": "TDC Commander Products",
+      "release_date": "2025-04-11",
+      "commander": [
+        {
+          "name": "Teval, the Balanced Scale"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Temur Roar",
+      "set_code": "tdc",
+      "set_name": "TDC Commander Products",
+      "release_date": "2025-04-11",
+      "commander": [
+        {
+          "name": "Eshki, Temur's Roar"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Eternal Might",
+      "set_code": "drc",
+      "set_name": "DRC Commander Products",
+      "release_date": "2025-02-14",
+      "commander": [
+        {
+          "name": "Temmet, Naktamun's Will"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Living Energy",
+      "set_code": "drc",
+      "set_name": "DRC Commander Products",
+      "release_date": "2025-02-14",
+      "commander": [
+        {
+          "name": "Saheeli, Radiant Creator"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "20 Ways to Win",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2024-12-04",
+      "commander": [
+        {
+          "name": "Go-Shintai of Life's Origin"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Death Toll",
+      "set_code": "dsc",
+      "set_name": "DSC Commander Products",
+      "release_date": "2024-09-27",
+      "commander": [
+        {
+          "name": "Winter, Cynical Opportunist"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Endless Punishment",
+      "set_code": "dsc",
+      "set_name": "DSC Commander Products",
+      "release_date": "2024-09-27",
+      "commander": [
+        {
+          "name": "Valgavoth, Harrower of Souls"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Jump Scare!",
+      "set_code": "dsc",
+      "set_name": "DSC Commander Products",
+      "release_date": "2024-09-27",
+      "commander": [
+        {
+          "name": "Zimone, Mystery Unraveler"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Miracle Worker",
+      "set_code": "dsc",
+      "set_name": "DSC Commander Products",
+      "release_date": "2024-09-27",
+      "commander": [
+        {
+          "name": "Aminatou, Veil Piercer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Animated Army",
+      "set_code": "blc",
+      "set_name": "BLC Commander Products",
+      "release_date": "2024-08-02",
+      "commander": [
+        {
+          "name": "Bello, Bard of the Brambles"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Family Matters",
+      "set_code": "blc",
+      "set_name": "BLC Commander Products",
+      "release_date": "2024-08-02",
+      "commander": [
+        {
+          "name": "Zinnia, Valley's Voice"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Peace Offering",
+      "set_code": "blc",
+      "set_name": "BLC Commander Products",
+      "release_date": "2024-08-02",
+      "commander": [
+        {
+          "name": "Ms. Bumbleflower"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Squirreled Away",
+      "set_code": "blc",
+      "set_name": "BLC Commander Products",
+      "release_date": "2024-08-02",
+      "commander": [
+        {
+          "name": "Hazel of the Rootbloom"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Creative Energy",
+      "set_code": "m3c",
+      "set_name": "M3C Commander Products",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Satya, Aetherflux Genius"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Eldrazi Incursion",
+      "set_code": "m3c",
+      "set_name": "M3C Commander Products",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Ulalek, Fused Atrocity"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Graveyard Overdrive",
+      "set_code": "m3c",
+      "set_name": "M3C Commander Products",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Disa the Restless"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tricky Terrain",
+      "set_code": "m3c",
+      "set_name": "M3C Commander Products",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Omo, Queen of Vesuva"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Desert Bloom",
+      "set_code": "otc",
+      "set_name": "OTC Commander Products",
+      "release_date": "2024-04-19",
+      "commander": [
+        {
+          "name": "Yuma, Proud Protector"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Grand Larceny",
+      "set_code": "otc",
+      "set_name": "OTC Commander Products",
+      "release_date": "2024-04-19",
+      "commander": [
+        {
+          "name": "Gonti, Canny Acquisitor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Most Wanted",
+      "set_code": "otc",
+      "set_name": "OTC Commander Products",
+      "release_date": "2024-04-19",
+      "commander": [
+        {
+          "name": "Olivia, Opulent Outlaw"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 98 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Quick Draw",
+      "set_code": "otc",
+      "set_name": "OTC Commander Products",
+      "release_date": "2024-04-19",
+      "commander": [
+        {
+          "name": "Stella Lee, Wild Card"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Hail, Caesar",
+      "set_code": "pip",
+      "set_name": "PIP Commander Products",
+      "release_date": "2024-03-08",
+      "commander": [
+        {
+          "name": "Caesar, Legion's Emperor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mutant Menace",
+      "set_code": "pip",
+      "set_name": "PIP Commander Products",
+      "release_date": "2024-03-08",
+      "commander": [
+        {
+          "name": "The Wise Mothman"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Science!",
+      "set_code": "pip",
+      "set_name": "PIP Commander Products",
+      "release_date": "2024-03-08",
+      "commander": [
+        {
+          "name": "Dr. Madison Li"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Scrappy Survivors",
+      "set_code": "pip",
+      "set_name": "PIP Commander Products",
+      "release_date": "2024-03-08",
+      "commander": [
+        {
+          "name": "Dogmeat, Ever Loyal"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Blame Game",
+      "set_code": "mkc",
+      "set_name": "MKC Commander Products",
+      "release_date": "2024-02-09",
+      "commander": [
+        {
+          "name": "Nelly Borca, Impulsive Accuser"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Deadly Disguise",
+      "set_code": "mkc",
+      "set_name": "MKC Commander Products",
+      "release_date": "2024-02-09",
+      "commander": [
+        {
+          "name": "Kaust, Eyes of the Glade"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 95 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Deep Clue Sea",
+      "set_code": "mkc",
+      "set_name": "MKC Commander Products",
+      "release_date": "2024-02-09",
+      "commander": [
+        {
+          "name": "Morska, Undersea Sleuth"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Revenant Recon",
+      "set_code": "mkc",
+      "set_name": "MKC Commander Products",
+      "release_date": "2024-02-09",
+      "commander": [
+        {
+          "name": "Mirko, Obsessive Theorist"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Raining Cats and Dogs",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2024-01-22",
+      "commander": [
+        {
+          "name": "Rin and Seri, Inseparable // Rin and Seri, Inseparable"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Ahoy Mateys",
+      "set_code": "lcc",
+      "set_name": "LCC Commander Products",
+      "release_date": "2023-11-17",
+      "commander": [
+        {
+          "name": "Admiral Brass, Unsinkable"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Blood Rites",
+      "set_code": "lcc",
+      "set_name": "LCC Commander Products",
+      "release_date": "2023-11-17",
+      "commander": [
+        {
+          "name": "Clavileño, First of the Blessed"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Explorers of the Deep",
+      "set_code": "lcc",
+      "set_name": "LCC Commander Products",
+      "release_date": "2023-11-17",
+      "commander": [
+        {
+          "name": "Hakbal of the Surging Soul"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Veloci-Ramp-Tor",
+      "set_code": "lcc",
+      "set_name": "LCC Commander Products",
+      "release_date": "2023-11-17",
+      "commander": [
+        {
+          "name": "Pantlaza, Sun-Favored"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Blast from the Past",
+      "set_code": "who",
+      "set_name": "WHO Commander Products",
+      "release_date": "2023-10-13",
+      "commander": [
+        {
+          "name": "The Fourth Doctor"
+        },
+        {
+          "name": "Sarah Jane Smith"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 99 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Masters of Evil",
+      "set_code": "who",
+      "set_name": "WHO Commander Products",
+      "release_date": "2023-10-13",
+      "commander": [
+        {
+          "name": "Davros, Dalek Creator"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Paradox Power",
+      "set_code": "who",
+      "set_name": "WHO Commander Products",
+      "release_date": "2023-10-13",
+      "commander": [
+        {
+          "name": "The Thirteenth Doctor"
+        },
+        {
+          "name": "Yasmin Khan"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 95 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Timey-Wimey",
+      "set_code": "who",
+      "set_name": "WHO Commander Products",
+      "release_date": "2023-10-13",
+      "commander": [
+        {
+          "name": "The Tenth Doctor"
+        },
+        {
+          "name": "Rose Tyler"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Fae Dominion",
+      "set_code": "woc",
+      "set_name": "WOC Commander Products",
+      "release_date": "2023-09-08",
+      "commander": [
+        {
+          "name": "Tegwyll, Duke of Splendor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Virtue and Valor",
+      "set_code": "woc",
+      "set_name": "WOC Commander Products",
+      "release_date": "2023-09-08",
+      "commander": [
+        {
+          "name": "Ellivere of the Wild Court"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 75 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Angels: They're Just Like Us but Cooler and with Wings",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2023-08-14",
+      "commander": [
+        {
+          "name": "Gisela, the Broken Blade // Brisela, Voice of Nightmares"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 74 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Eldrazi Unbound",
+      "set_code": "cmm",
+      "set_name": "CMM Commander Products",
+      "release_date": "2023-08-04",
+      "commander": [
+        {
+          "name": "Zhulodok, Void Gorger"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Enduring Enchantments",
+      "set_code": "cmm",
+      "set_name": "CMM Commander Products",
+      "release_date": "2023-08-04",
+      "commander": [
+        {
+          "name": "Anikthea, Hand of Erebos"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Planeswalker Party",
+      "set_code": "cmm",
+      "set_name": "CMM Commander Products",
+      "release_date": "2023-08-04",
+      "commander": [
+        {
+          "name": "Commodore Guff"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Sliver Swarm",
+      "set_code": "cmm",
+      "set_name": "CMM Commander Products",
+      "release_date": "2023-08-04",
+      "commander": [
+        {
+          "name": "Sliver Gravemother"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Elven Council",
+      "set_code": "ltc",
+      "set_name": "LTC Commander Products",
+      "release_date": "2023-06-23",
+      "commander": [
+        {
+          "name": "Galadriel, Elven-Queen"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 78 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Food and Fellowship",
+      "set_code": "ltc",
+      "set_name": "LTC Commander Products",
+      "release_date": "2023-06-23",
+      "commander": [
+        {
+          "name": "Frodo, Adventurous Hobbit"
+        },
+        {
+          "name": "Sam, Loyal Attendant"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Riders of Rohan",
+      "set_code": "ltc",
+      "set_name": "LTC Commander Products",
+      "release_date": "2023-06-23",
+      "commander": [
+        {
+          "name": "Éowyn, Shieldmaiden"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "The Hosts of Mordor",
+      "set_code": "ltc",
+      "set_name": "LTC Commander Products",
+      "release_date": "2023-06-23",
+      "commander": [
+        {
+          "name": "Sauron, Lord of the Rings"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "From Cute to Brute",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2023-05-08",
+      "commander": [
+        {
+          "name": "Esika, God of the Tree // The Prismatic Bridge"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Call for Backup",
+      "set_code": "moc",
+      "set_name": "MOC Commander Products",
+      "release_date": "2023-04-21",
+      "commander": [
+        {
+          "name": "Bright-Palm, Soul Awakener"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Cavalry Charge",
+      "set_code": "moc",
+      "set_name": "MOC Commander Products",
+      "release_date": "2023-04-21",
+      "commander": [
+        {
+          "name": "Sidar Jabari of Zhalfir"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Divine Convocation",
+      "set_code": "moc",
+      "set_name": "MOC Commander Products",
+      "release_date": "2023-04-21",
+      "commander": [
+        {
+          "name": "Kasla, the Broken Halo"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Growing Threat",
+      "set_code": "moc",
+      "set_name": "MOC Commander Products",
+      "release_date": "2023-04-21",
+      "commander": [
+        {
+          "name": "Brimaz, Blight of Oreskos"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tinker Time",
+      "set_code": "moc",
+      "set_name": "MOC Commander Products",
+      "release_date": "2023-04-21",
+      "commander": [
+        {
+          "name": "Gimbal, Gremlin Prodigy"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 80 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Corrupting Influence",
+      "set_code": "onc",
+      "set_name": "ONC Commander Products",
+      "release_date": "2023-02-10",
+      "commander": [
+        {
+          "name": "Ixhel, Scion of Atraxa"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Rebellion Rising",
+      "set_code": "onc",
+      "set_name": "ONC Commander Products",
+      "release_date": "2023-02-10",
+      "commander": [
+        {
+          "name": "Neyali, Suns' Vanguard"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 80 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Chaos Incarnate",
+      "set_code": "scd",
+      "set_name": "SCD Commander Products",
+      "release_date": "2022-12-02",
+      "commander": [
+        {
+          "name": "Kardur, Doomscourge"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Draconic Destruction",
+      "set_code": "scd",
+      "set_name": "SCD Commander Products",
+      "release_date": "2022-12-02",
+      "commander": [
+        {
+          "name": "Atarka, World Render"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 78 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "First Flight",
+      "set_code": "scd",
+      "set_name": "SCD Commander Products",
+      "release_date": "2022-12-02",
+      "commander": [
+        {
+          "name": "Isperia, Supreme Judge"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 78 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Grave Danger",
+      "set_code": "scd",
+      "set_name": "SCD Commander Products",
+      "release_date": "2022-12-02",
+      "commander": [
+        {
+          "name": "Gisa and Geralf"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Token Triumph",
+      "set_code": "scd",
+      "set_name": "SCD Commander Products",
+      "release_date": "2022-12-02",
+      "commander": [
+        {
+          "name": "Emmara, Soul of the Accord"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Urza's Iron Alliance",
+      "set_code": "brc",
+      "set_name": "BRC Commander Products",
+      "release_date": "2022-11-18",
+      "commander": [
+        {
+          "name": "Urza, Chief Artificer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 95 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Forces of the Imperium",
+      "set_code": "40k",
+      "set_name": "40K Commander Products",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Inquisitor Greyfax"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Necron Dynasties",
+      "set_code": "40k",
+      "set_name": "40K Commander Products",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Szarekh, the Silent King"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 73 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "The Ruinous Powers",
+      "set_code": "40k",
+      "set_name": "40K Commander Products",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Abaddon the Despoiler"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tyranid Swarm",
+      "set_code": "40k",
+      "set_name": "40K Commander Products",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "The Swarmlord"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Legends' Legacy",
+      "set_code": "dmc",
+      "set_name": "DMC Commander Products",
+      "release_date": "2022-09-09",
+      "commander": [
+        {
+          "name": "Dihada, Binder of Wills"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Painbow",
+      "set_code": "dmc",
+      "set_name": "DMC Commander Products",
+      "release_date": "2022-09-09",
+      "commander": [
+        {
+          "name": "Jared Carthalion"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Draconic Dissent",
+      "set_code": "clb",
+      "set_name": "CLB Commander Products",
+      "release_date": "2022-06-10",
+      "commander": [
+        {
+          "name": "Firkraag, Cunning Instigator"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Exit from Exile",
+      "set_code": "clb",
+      "set_name": "CLB Commander Products",
+      "release_date": "2022-06-10",
+      "commander": [
+        {
+          "name": "Faldorn, Dread Wolf Herald"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 85 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mind Flayarrrs",
+      "set_code": "clb",
+      "set_name": "CLB Commander Products",
+      "release_date": "2022-06-10",
+      "commander": [
+        {
+          "name": "Captain N'ghathrod"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Party Time",
+      "set_code": "clb",
+      "set_name": "CLB Commander Products",
+      "release_date": "2022-06-10",
+      "commander": [
+        {
+          "name": "Nalia de'Arnise"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Bedecked Brokers",
+      "set_code": "ncc",
+      "set_name": "NCC Commander Products",
+      "release_date": "2022-04-29",
+      "commander": [
+        {
+          "name": "Perrie, the Pulverizer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Cabaretti Cacophony",
+      "set_code": "ncc",
+      "set_name": "NCC Commander Products",
+      "release_date": "2022-04-29",
+      "commander": [
+        {
+          "name": "Kitt Kanto, Mayhem Diva"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Maestros Massacre",
+      "set_code": "ncc",
+      "set_name": "NCC Commander Products",
+      "release_date": "2022-04-29",
+      "commander": [
+        {
+          "name": "Anhelo, the Painter"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Obscura Operation",
+      "set_code": "ncc",
+      "set_name": "NCC Commander Products",
+      "release_date": "2022-04-29",
+      "commander": [
+        {
+          "name": "Kamiz, Obscura Oculus"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Riveteers Rampage",
+      "set_code": "ncc",
+      "set_name": "NCC Commander Products",
+      "release_date": "2022-04-29",
+      "commander": [
+        {
+          "name": "Henzie \"Toolbox\" Torre"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Heads I Win, Tails You Lose",
+      "set_code": "sld",
+      "set_name": "SLD Commander Products",
+      "release_date": "2022-04-22",
+      "commander": [
+        {
+          "name": "Zndrsplt, Eye of Wisdom // Zndrsplt, Eye of Wisdom"
+        },
+        {
+          "name": "Okaun, Eye of Chaos // Okaun, Eye of Chaos"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Buckle Up",
+      "set_code": "nec",
+      "set_name": "NEC Commander Products",
+      "release_date": "2022-02-18",
+      "commander": [
+        {
+          "name": "Kotori, Pilot Prodigy"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 74 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Upgrades Unleashed",
+      "set_code": "nec",
+      "set_name": "NEC Commander Products",
+      "release_date": "2022-02-18",
+      "commander": [
+        {
+          "name": "Chishiro, the Shattered Blade"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Spirit Squadron",
+      "set_code": "voc",
+      "set_name": "VOC Commander Products",
+      "release_date": "2021-11-19",
+      "commander": [
+        {
+          "name": "Millicent, Restless Revenant"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Vampiric Bloodline",
+      "set_code": "voc",
+      "set_name": "VOC Commander Products",
+      "release_date": "2021-11-19",
+      "commander": [
+        {
+          "name": "Strefan, Maurer Progenitor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Coven Counters",
+      "set_code": "mic",
+      "set_name": "MIC Commander Products",
+      "release_date": "2021-09-24",
+      "commander": [
+        {
+          "name": "Leinore, Autumn Sovereign"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 78 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Undead Unleashed",
+      "set_code": "mic",
+      "set_name": "MIC Commander Products",
+      "release_date": "2021-09-24",
+      "commander": [
+        {
+          "name": "Wilhelt, the Rotcleaver"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 75 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Aura of Courage",
+      "set_code": "afc",
+      "set_name": "AFC Commander Products",
+      "release_date": "2021-07-23",
+      "commander": [
+        {
+          "name": "Galea, Kindler of Hope"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 96 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Draconic Rage",
+      "set_code": "afc",
+      "set_name": "AFC Commander Products",
+      "release_date": "2021-07-23",
+      "commander": [
+        {
+          "name": "Vrondiss, Rage of Ancients"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Dungeons of Death",
+      "set_code": "afc",
+      "set_name": "AFC Commander Products",
+      "release_date": "2021-07-23",
+      "commander": [
+        {
+          "name": "Sefris of the Hidden Ways"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Planar Portal",
+      "set_code": "afc",
+      "set_name": "AFC Commander Products",
+      "release_date": "2021-07-23",
+      "commander": [
+        {
+          "name": "Prosper, Tome-Bound"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Lorehold Legacies",
+      "set_code": "c21",
+      "set_name": "C21 Commander Products",
+      "release_date": "2021-04-23",
+      "commander": [
+        {
+          "name": "Osgir, the Reconstructor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Prismari Performance",
+      "set_code": "c21",
+      "set_name": "C21 Commander Products",
+      "release_date": "2021-04-23",
+      "commander": [
+        {
+          "name": "Zaffai, Thunder Conductor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 85 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Quantum Quandrix",
+      "set_code": "c21",
+      "set_name": "C21 Commander Products",
+      "release_date": "2021-04-23",
+      "commander": [
+        {
+          "name": "Adrix and Nev, Twincasters"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Silverquill Statement",
+      "set_code": "c21",
+      "set_name": "C21 Commander Products",
+      "release_date": "2021-04-23",
+      "commander": [
+        {
+          "name": "Breena, the Demagogue"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 80 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Witherbloom Witchcraft",
+      "set_code": "c21",
+      "set_name": "C21 Commander Products",
+      "release_date": "2021-04-23",
+      "commander": [
+        {
+          "name": "Willowdusk, Essence Seer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 82 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Elven Empire",
+      "set_code": "khc",
+      "set_name": "KHC Commander Products",
+      "release_date": "2021-02-05",
+      "commander": [
+        {
+          "name": "Lathril, Blade of the Elves"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 73 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Phantom Premonition",
+      "set_code": "khc",
+      "set_name": "KHC Commander Products",
+      "release_date": "2021-02-05",
+      "commander": [
+        {
+          "name": "Ranar the Ever-Watchful"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Arm for Battle",
+      "set_code": "cmr",
+      "set_name": "CMR Commander Products",
+      "release_date": "2020-11-20",
+      "commander": [
+        {
+          "name": "Wyleth, Soul of Steel"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Reap the Tides",
+      "set_code": "cmr",
+      "set_name": "CMR Commander Products",
+      "release_date": "2020-11-20",
+      "commander": [
+        {
+          "name": "Aesi, Tyrant of Gyre Strait"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 74 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Land's Wrath",
+      "set_code": "znc",
+      "set_name": "ZNC Commander Products",
+      "release_date": "2020-09-25",
+      "commander": [
+        {
+          "name": "Obuun, Mul Daya Ancestor"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 82 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Sneak Attack",
+      "set_code": "znc",
+      "set_name": "ZNC Commander Products",
+      "release_date": "2020-09-25",
+      "commander": [
+        {
+          "name": "Anowon, the Ruin Thief"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 72 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Arcane Maelstrom",
+      "set_code": "c20",
+      "set_name": "C20 Commander Products",
+      "release_date": "2020-04-17",
+      "commander": [
+        {
+          "name": "Kalamax, the Stormsire"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Enhanced Evolution",
+      "set_code": "c20",
+      "set_name": "C20 Commander Products",
+      "release_date": "2020-04-17",
+      "commander": [
+        {
+          "name": "Otrimi, the Ever-Playful"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Ruthless Regiment",
+      "set_code": "c20",
+      "set_name": "C20 Commander Products",
+      "release_date": "2020-04-17",
+      "commander": [
+        {
+          "name": "Jirina Kudro"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Symbiotic Swarm",
+      "set_code": "c20",
+      "set_name": "C20 Commander Products",
+      "release_date": "2020-04-17",
+      "commander": [
+        {
+          "name": "Kathril, Aspect Warper"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Timeless Wisdom",
+      "set_code": "c20",
+      "set_name": "C20 Commander Products",
+      "release_date": "2020-04-17",
+      "commander": [
+        {
+          "name": "Gavi, Nest Warden"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Faceless Menace",
+      "set_code": "c19",
+      "set_name": "C19 Commander Products",
+      "release_date": "2019-08-23",
+      "commander": [
+        {
+          "name": "Kadena, Slinking Sorcerer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Merciless Rage",
+      "set_code": "c19",
+      "set_name": "C19 Commander Products",
+      "release_date": "2019-08-23",
+      "commander": [
+        {
+          "name": "Anje Falkenrath"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mystic Intellect",
+      "set_code": "c19",
+      "set_name": "C19 Commander Products",
+      "release_date": "2019-08-23",
+      "commander": [
+        {
+          "name": "Sevinne, the Chronoclasm"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Primal Genesis",
+      "set_code": "c19",
+      "set_name": "C19 Commander Products",
+      "release_date": "2019-08-23",
+      "commander": [
+        {
+          "name": "Ghired, Conclave Exile"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Adaptive Enchantment",
+      "set_code": "c18",
+      "set_name": "C18 Commander Products",
+      "release_date": "2018-08-10",
+      "commander": [
+        {
+          "name": "Estrid, the Masked"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Exquisite Invention",
+      "set_code": "c18",
+      "set_name": "C18 Commander Products",
+      "release_date": "2018-08-10",
+      "commander": [
+        {
+          "name": "Saheeli, the Gifted"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Nature's Vengeance",
+      "set_code": "c18",
+      "set_name": "C18 Commander Products",
+      "release_date": "2018-08-10",
+      "commander": [
+        {
+          "name": "Lord Windgrace"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Subjective Reality",
+      "set_code": "c18",
+      "set_name": "C18 Commander Products",
+      "release_date": "2018-08-10",
+      "commander": [
+        {
+          "name": "Aminatou, the Fateshifter"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Breed Lethality",
+      "set_code": "cm2",
+      "set_name": "CM2 Commander Products",
+      "release_date": "2018-06-08",
+      "commander": [
+        {
+          "name": "Atraxa, Praetors' Voice"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Built From Scratch",
+      "set_code": "cm2",
+      "set_name": "CM2 Commander Products",
+      "release_date": "2018-06-08",
+      "commander": [
+        {
+          "name": "Daretti, Scrap Savant"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 77 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Devour for Power",
+      "set_code": "cm2",
+      "set_name": "CM2 Commander Products",
+      "release_date": "2018-06-08",
+      "commander": [
+        {
+          "name": "The Mimeoplasm"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Wade into Battle",
+      "set_code": "cm2",
+      "set_name": "CM2 Commander Products",
+      "release_date": "2018-06-08",
+      "commander": [
+        {
+          "name": "Kalemne, Disciple of Iroas"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Arcane Wizardry",
+      "set_code": "c17",
+      "set_name": "C17 Commander Products",
+      "release_date": "2017-08-25",
+      "commander": [
+        {
+          "name": "Inalla, Archmage Ritualist"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 89 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Draconic Domination",
+      "set_code": "c17",
+      "set_name": "C17 Commander Products",
+      "release_date": "2017-08-25",
+      "commander": [
+        {
+          "name": "The Ur-Dragon"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Feline Ferocity",
+      "set_code": "c17",
+      "set_name": "C17 Commander Products",
+      "release_date": "2017-08-25",
+      "commander": [
+        {
+          "name": "Arahbo, Roar of the World"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Vampiric Bloodlust",
+      "set_code": "c17",
+      "set_name": "C17 Commander Products",
+      "release_date": "2017-08-25",
+      "commander": [
+        {
+          "name": "Edgar Markov"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Evasive Maneuvers",
+      "set_code": "cma",
+      "set_name": "CMA Commander Products",
+      "release_date": "2017-06-09",
+      "commander": [
+        {
+          "name": "Derevi, Empyrial Tactician"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Guided by Nature",
+      "set_code": "cma",
+      "set_name": "CMA Commander Products",
+      "release_date": "2017-06-09",
+      "commander": [
+        {
+          "name": "Freyalise, Llanowar's Fury"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 87 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Heavenly Inferno",
+      "set_code": "cma",
+      "set_name": "CMA Commander Products",
+      "release_date": "2017-06-09",
+      "commander": [
+        {
+          "name": "Kaalia of the Vast"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 96 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Plunder the Graves",
+      "set_code": "cma",
+      "set_name": "CMA Commander Products",
+      "release_date": "2017-06-09",
+      "commander": [
+        {
+          "name": "Meren of Clan Nel Toth"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 95 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Breed Lethality",
+      "set_code": "c16",
+      "set_name": "C16 Commander Products",
+      "release_date": "2016-11-11",
+      "commander": [
+        {
+          "name": "Atraxa, Praetors' Voice"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Entropic Uprising",
+      "set_code": "c16",
+      "set_name": "C16 Commander Products",
+      "release_date": "2016-11-11",
+      "commander": [
+        {
+          "name": "Yidris, Maelstrom Wielder"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Invent Superiority",
+      "set_code": "c16",
+      "set_name": "C16 Commander Products",
+      "release_date": "2016-11-11",
+      "commander": [
+        {
+          "name": "Breya, Etherium Shaper"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Open Hostility",
+      "set_code": "c16",
+      "set_name": "C16 Commander Products",
+      "release_date": "2016-11-11",
+      "commander": [
+        {
+          "name": "Saskia the Unyielding"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 96 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Stalwart Unity",
+      "set_code": "c16",
+      "set_name": "C16 Commander Products",
+      "release_date": "2016-11-11",
+      "commander": [
+        {
+          "name": "Kynaios and Tiro of Meletis"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Call the Spirits",
+      "set_code": "c15",
+      "set_name": "C15 Commander Products",
+      "release_date": "2015-11-13",
+      "commander": [
+        {
+          "name": "Daxos the Returned"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Plunder the Graves",
+      "set_code": "c15",
+      "set_name": "C15 Commander Products",
+      "release_date": "2015-11-13",
+      "commander": [
+        {
+          "name": "Meren of Clan Nel Toth"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Seize Control",
+      "set_code": "c15",
+      "set_name": "C15 Commander Products",
+      "release_date": "2015-11-13",
+      "commander": [
+        {
+          "name": "Mizzix of the Izmagnus"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Swell the Host",
+      "set_code": "c15",
+      "set_name": "C15 Commander Products",
+      "release_date": "2015-11-13",
+      "commander": [
+        {
+          "name": "Ezuri, Claw of Progress"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Wade into Battle",
+      "set_code": "c15",
+      "set_name": "C15 Commander Products",
+      "release_date": "2015-11-13",
+      "commander": [
+        {
+          "name": "Kalemne, Disciple of Iroas"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Built From Scratch",
+      "set_code": "c14",
+      "set_name": "C14 Commander Products",
+      "release_date": "2014-11-07",
+      "commander": [
+        {
+          "name": "Daretti, Scrap Savant"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 75 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Forged In Stone",
+      "set_code": "c14",
+      "set_name": "C14 Commander Products",
+      "release_date": "2014-11-07",
+      "commander": [
+        {
+          "name": "Nahiri, the Lithomancer"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 72 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Guided By Nature",
+      "set_code": "c14",
+      "set_name": "C14 Commander Products",
+      "release_date": "2014-11-07",
+      "commander": [
+        {
+          "name": "Freyalise, Llanowar's Fury"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Peer Through Time",
+      "set_code": "c14",
+      "set_name": "C14 Commander Products",
+      "release_date": "2014-11-07",
+      "commander": [
+        {
+          "name": "Teferi, Temporal Archmage"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 73 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Sworn To Darkness",
+      "set_code": "c14",
+      "set_name": "C14 Commander Products",
+      "release_date": "2014-11-07",
+      "commander": [
+        {
+          "name": "Ob Nixilis of the Black Oath"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 72 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Eternal Bargain",
+      "set_code": "c13",
+      "set_name": "C13 Commander Products",
+      "release_date": "2013-11-01",
+      "commander": [
+        {
+          "name": "Oloro, Ageless Ascetic"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Evasive Maneuvers",
+      "set_code": "c13",
+      "set_name": "C13 Commander Products",
+      "release_date": "2013-11-01",
+      "commander": [
+        {
+          "name": "Derevi, Empyrial Tactician"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mind Seize",
+      "set_code": "c13",
+      "set_name": "C13 Commander Products",
+      "release_date": "2013-11-01",
+      "commander": [
+        {
+          "name": "Jeleva, Nephalia's Scourge"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Nature of the Beast",
+      "set_code": "c13",
+      "set_name": "C13 Commander Products",
+      "release_date": "2013-11-01",
+      "commander": [
+        {
+          "name": "Marath, Will of the Wild"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 95 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Power Hungry",
+      "set_code": "c13",
+      "set_name": "C13 Commander Products",
+      "release_date": "2013-11-01",
+      "commander": [
+        {
+          "name": "Prossh, Skyraider of Kher"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Counterpunch",
+      "set_code": "cmd",
+      "set_name": "CMD Commander Products",
+      "release_date": "2011-06-17",
+      "commander": [
+        {
+          "name": "Ghave, Guru of Spores"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Devour for Power",
+      "set_code": "cmd",
+      "set_name": "CMD Commander Products",
+      "release_date": "2011-06-17",
+      "commander": [
+        {
+          "name": "The Mimeoplasm"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 85 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Heavenly Inferno",
+      "set_code": "cmd",
+      "set_name": "CMD Commander Products",
+      "release_date": "2011-06-17",
+      "commander": [
+        {
+          "name": "Kaalia of the Vast"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mirror Mastery",
+      "set_code": "cmd",
+      "set_name": "CMD Commander Products",
+      "release_date": "2011-06-17",
+      "commander": [
+        {
+          "name": "Riku of Two Reflections"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Political Puppets",
+      "set_code": "cmd",
+      "set_name": "CMD Commander Products",
+      "release_date": "2011-06-17",
+      "commander": [
+        {
+          "name": "Zedruu the Greathearted"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Calling All Angels",
+      "set_code": "fdc",
+      "set_name": "Foundations Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Giada, Font of Hope"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 70 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Keen Engineering",
+      "set_code": "fdc",
+      "set_name": "Foundations Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Sai, Master Thopterist"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 68 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Multiverse Reforged",
+      "set_code": "frc",
+      "set_name": "Reality Fracture Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Jace, Multiverse Architect"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Reign of Dragons",
+      "set_code": "fdc",
+      "set_name": "Foundations Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Lathliss, Dragon Queen"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 70 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tramplesaurus Rex",
+      "set_code": "fdc",
+      "set_name": "Foundations Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Ghalta, Primal Hunger"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 70 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Wretched Ranks",
+      "set_code": "fdc",
+      "set_name": "Foundations Commander",
+      "release_date": "2026-10-02",
+      "commander": [
+        {
+          "name": "Ghoulcaller Gisa"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 69 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Odds and Ends",
+      "set_code": "sld",
+      "set_name": "Secret Lair Drop",
+      "release_date": "2026-09-28",
+      "commander": [
+        {
+          "name": "Yennett, Cryptic Sovereign"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Hatsune Miku",
+      "set_code": "sld",
+      "set_name": "Secret Lair Drop",
+      "release_date": "2026-08-10",
+      "commander": [
+        {
+          "name": "Trostani, Selesnya's Voice"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 88 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Avengers Assemble Collector's Edition",
+      "set_code": "msc",
+      "set_name": "Marvel Super Heroes Commander",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Captain America, Team Leader"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 90 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Doom Prevails Collector's Edition",
+      "set_code": "msc",
+      "set_name": "Marvel Super Heroes Commander",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Doctor Doom, King of Latveria"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "The Fantastic Four Collector's Edition",
+      "set_code": "msc",
+      "set_name": "Marvel Super Heroes Commander",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "Invisible Woman"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Wakanda Forever Collector's Edition",
+      "set_code": "msc",
+      "set_name": "Marvel Super Heroes Commander",
+      "release_date": "2026-06-26",
+      "commander": [
+        {
+          "name": "T'Challa, the Black Panther"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 80 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Counter Blitz Collector's Edition (FINAL FANTASY X)",
+      "set_code": "fic",
+      "set_name": "Final Fantasy Commander",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Tidus, Yuna's Guardian"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Limit Break Collector's Edition (FINAL FANTASY VII)",
+      "set_code": "fic",
+      "set_name": "Final Fantasy Commander",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Cloud, Ex-SOLDIER"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Revival Trance Collector's Edition (FINAL FANTASY VI)",
+      "set_code": "fic",
+      "set_name": "Final Fantasy Commander",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Terra, Herald of Hope"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Scions & Spellcraft Collector's Edition (FINAL FANTASY XIV)",
+      "set_code": "fic",
+      "set_name": "Final Fantasy Commander",
+      "release_date": "2025-06-13",
+      "commander": [
+        {
+          "name": "Y'shtola, Night's Blessed"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 92 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Creative Energy Collector's Edition",
+      "set_code": "m3c",
+      "set_name": "Modern Horizons 3 Commander",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Satya, Aetherflux Genius"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 86 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Eldrazi Incursion Collector's Edition",
+      "set_code": "m3c",
+      "set_name": "Modern Horizons 3 Commander",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Ulalek, Fused Atrocity"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 100 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Graveyard Overdrive Collector's Edition",
+      "set_code": "m3c",
+      "set_name": "Modern Horizons 3 Commander",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Disa the Restless"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tricky Terrain Collector's Edition",
+      "set_code": "m3c",
+      "set_name": "Modern Horizons 3 Commander",
+      "release_date": "2024-06-14",
+      "commander": [
+        {
+          "name": "Omo, Queen of Vesuva"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 97 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Mishra's Burnished Banner",
+      "set_code": "brc",
+      "set_name": "The Brothers' War Commander",
+      "release_date": "2022-11-18",
+      "commander": [
+        {
+          "name": "Mishra, Eminent One"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Forces of the Imperium Collector's Edition",
+      "set_code": "40k",
+      "set_name": "Warhammer 40,000 Commander",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Inquisitor Greyfax"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 83 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Necron Dynasties Collector's Edition",
+      "set_code": "40k",
+      "set_name": "Warhammer 40,000 Commander",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Szarekh, the Silent King"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 73 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "The Ruinous Powers Collector's Edition",
+      "set_code": "40k",
+      "set_name": "Warhammer 40,000 Commander",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "Abaddon the Despoiler"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 79 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Tyranid Swarm Collector's Edition",
+      "set_code": "40k",
+      "set_name": "Warhammer 40,000 Commander",
+      "release_date": "2022-10-07",
+      "commander": [
+        {
+          "name": "The Swarmlord"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 81 indexed card entries and 100 total cards by quantity."
+    }
+  ]
+}

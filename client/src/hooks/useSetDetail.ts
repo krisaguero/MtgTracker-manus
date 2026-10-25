@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { productAssetFor } from '@/data/preconProductAssets';
-import { commanderDecklists } from '@/data/commanderDecklists';
+import { loadCommanderArchive } from '@/lib/commanderArchive';
 
 function scryfallNamedImage(name: string, version: 'normal' | 'small' = 'normal') {
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=${version}`;
@@ -133,10 +133,11 @@ export function useSetDetail(setCode?: string) {
       setLoading(true);
 
       try {
-        const [cardsResponse, setInfo, setList] = await Promise.all([
+        const [cardsResponse, setInfo, setList, commanderDecklists] = await Promise.all([
           getJson<SearchResponse>(`https://api.scryfall.com/cards/search?q=${encodeURIComponent(`e:${code}`)}&unique=prints&order=set`, controller.signal),
           getJson<SetSummary>(`https://api.scryfall.com/sets/${code}`, controller.signal),
           getJson<SetListResponse>('https://api.scryfall.com/sets', controller.signal),
+          loadCommanderArchive(),
         ]);
 
         const relatedCodes = new Set([

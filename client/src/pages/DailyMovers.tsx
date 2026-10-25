@@ -1,6 +1,8 @@
 /* Dated market workspace: the visible mover table is an imported snapshot, not a live quote or sentiment feed. */
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Link } from "wouter";
+import dailyMarketSnapshotUrl from "@/data/dailyMarketSnapshot.json?url";
+import dailyMoverHistoryUrl from "@/data/dailyMoverHistory.json?url";
 import {
   ExternalLink,
   Search,
@@ -23,21 +25,89 @@ import {
   findImportedMover,
   importedReportHref,
 } from "@/data/marketReportArchive";
-import currentSnapshot from "@/data/dailyMarketSnapshot.json";
-import moverHistory from "@/data/dailyMoverHistory.json";
 
-const rollingPriceSnapshots = moverHistory.snapshots as unknown as Array<{
+type RollingPriceSnapshot = {
   date: string;
-  prices: Record<string, number>;
-}>;
+  prices: Record<string, number | undefined>;
+};
+type MarketSignal = {
+  id: string;
+  name: string;
+  setCode: string;
+  setName: string;
+  rarity: string;
+  currentUsd: number | null;
+  previousUsd: number | null;
+  percentChange: number;
+  category: string;
+  source: string;
+  sourceCount: number;
+  reason: string;
+  cardKingdomUsd?: number | null;
+  tcgplayerMarketUsd?: number | null;
+  isCatalyst?: boolean;
+  lastUpdated: string;
+};
+type DailyMarketSnapshot = {
+  signals: MarketSignal[];
+  sources: string[];
+};
+type DailyMoverHistory = {
+  snapshots: RollingPriceSnapshot[];
+};
 
-const currentSnapshotDate = currentSnapshot.signals.reduce(
-  (latest, signal) =>
-    signal.lastUpdated > latest ? signal.lastUpdated : latest,
-  ""
-);
+const MOBILE_CARD_HEIGHT = 320;
+const MOBILE_CARD_VIEWPORT_HEIGHT = 680;
+const MOBILE_CARD_OVERSCAN = 4;
 
 export function DailyMovers() {
+  const [currentSnapshot, setCurrentSnapshot] =
+    useState<DailyMarketSnapshot | null>(null);
+  const [moverHistory, setMoverHistory] = useState<DailyMoverHistory | null>(
+    null
+  );
+  const [snapshotError, setSnapshotError] = useState<string | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    const fetchJson = async (url: string) => {
+      const response = await fetch(url, { cache: "no-cache" });
+      if (!response.ok) {
+        throw new Error(`Market data request failed: ${response.status}`);
+      }
+      return response.json();
+    };
+    Promise.all([fetchJson(dailyMarketSnapshotUrl), fetchJson(dailyMoverHistoryUrl)])
+      .then(([snapshot, history]) => {
+        if (cancelled) return;
+        setCurrentSnapshot(snapshot as DailyMarketSnapshot);
+        setMoverHistory(history as DailyMoverHistory);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setSnapshotError(
+            "The market snapshot could not be loaded. Please refresh and try again."
+          );
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const rollingPriceSnapshots = useMemo<RollingPriceSnapshot[]>(
+    () => (moverHistory?.snapshots ?? []) as unknown as RollingPriceSnapshot[],
+    [moverHistory]
+  );
+  const currentSnapshotDate = useMemo(
+    () =>
+      currentSnapshot?.signals.reduce(
+        (latest, signal) =>
+          signal.lastUpdated > latest ? signal.lastUpdated : latest,
+        ""
+      ) ?? "",
+    [currentSnapshot]
+  );
+  const snapshotLoading = !currentSnapshot && !snapshotError;
   const [activeFeed, setActiveFeed] = useState<"snapshot" | "watchlist">(
     "snapshot"
   );
@@ -55,12 +125,26 @@ export function DailyMovers() {
     loadMarketWatchlist()
   );
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
+  const [mobileLayout, setMobileLayout] = useState(true);
+  const [cardWindowStart, setCardWindowStart] = useState(0);
+  const cardViewportRef = useRef<HTMLDivElement>(null);
+  const cardScrollEndTimerRef = useRef<number | null>(null);
+  const cardWindowStartRef = useRef(0);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 639px)");
+    const syncLayout = () => setMobileLayout(media.matches);
+    syncLayout();
+    media.addEventListener("change", syncLayout);
+    return () => media.removeEventListener("change", syncLayout);
+  }, []);
 
   // The primary feed starts with the newest dated snapshot, then adds cards with
   // a real multi-day move from the rolling history window. This keeps flat first
   // observations out while surfacing cards that are riding or falling between
   // daily refreshes.
   const snapshotMovers = useMemo<MoverCard[]>(() => {
+    if (!currentSnapshot) return [];
     return currentSnapshot.signals
       .filter(
         signal =>
@@ -68,12 +152,14 @@ export function DailyMovers() {
           signal.currentUsd !== null
       )
       .map((signal): MoverCard | null => {
+        const latestPrice = signal.currentUsd;
+        if (latestPrice === null) return null;
         const history = rollingPriceSnapshots
           .map(snapshot => snapshot.prices[signal.id])
           .filter(
-            (price): price is number => Number.isFinite(price) && price > 0
+            (price): price is number =>
+              price !== undefined && Number.isFinite(price) && price > 0
           );
-        const latestPrice = signal.currentUsd;
         const hasDailyMove =
           signal.previousUsd !== null && signal.percentChange !== 0;
         const historyBaseline = history[0] ?? signal.previousUsd;
@@ -126,7 +212,7 @@ export function DailyMovers() {
         };
       })
       .filter((mover): mover is MoverCard => mover !== null);
-  }, []);
+  }, [currentSnapshot, currentSnapshotDate, rollingPriceSnapshots]);
   const activeMoversList = useMemo(
     () =>
       snapshotMovers.map(mover => {
@@ -141,6 +227,45 @@ export function DailyMovers() {
       }),
     [snapshotMovers]
   );
+
+  const scannerSummary = useMemo(() => {
+    const shortlist = new Map<string, MoverCard>();
+    const takeTop = (items: MoverCard[], limit: number) => {
+      items
+        .slice()
+        .sort(
+          (left, right) =>
+            Math.abs(right.percentChange) - Math.abs(left.percentChange) ||
+            Math.abs(right.changeUsd) - Math.abs(left.changeUsd)
+        )
+        .slice(0, limit)
+        .forEach(item => shortlist.set(item.id, item));
+    };
+    const pricedAtDollar = activeMoversList.filter(
+      mover => mover.currentUsd >= 1 && mover.previousUsd >= 1
+    );
+    takeTop(pricedAtDollar.filter(mover => mover.percentChange > 0), 10);
+    takeTop(pricedAtDollar.filter(mover => mover.percentChange < 0), 10);
+    takeTop(activeMoversList.filter(mover => mover.changeUsd >= 1), 10);
+    takeTop(activeMoversList.filter(mover => mover.changeUsd <= -1), 10);
+    takeTop(
+      activeMoversList.filter(
+        mover =>
+          mover.currentUsd <= 10 &&
+          mover.changeUsd >= 0.25 &&
+          mover.percentChange >= 10
+      ),
+      10
+    );
+
+    return {
+      rawObservations: currentSnapshot?.signals.length ?? 0,
+      moverWindow: activeMoversList.length,
+      rising: activeMoversList.filter(mover => mover.percentChange > 0).length,
+      falling: activeMoversList.filter(mover => mover.percentChange < 0).length,
+      shortlist: shortlist.size,
+    };
+  }, [activeMoversList, currentSnapshot]);
 
   const availableSets = useMemo(() => {
     const set = new Set<string>();
@@ -246,6 +371,67 @@ export function DailyMovers() {
     isMarketCardWatched(m, watchlist)
   );
 
+  useEffect(() => {
+    const viewport = cardViewportRef.current;
+    if (!viewport || !mobileLayout) return;
+    let frame = 0;
+    const onScroll = () => {
+      viewport.dataset.marketScrolling = "true";
+      if (cardScrollEndTimerRef.current !== null) {
+        window.clearTimeout(cardScrollEndTimerRef.current);
+      }
+      cardScrollEndTimerRef.current = window.setTimeout(() => {
+        delete viewport.dataset.marketScrolling;
+        cardScrollEndTimerRef.current = null;
+      }, 120);
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const nextWindowStart = Math.max(
+          0,
+          Math.floor(viewport.scrollTop / MOBILE_CARD_HEIGHT) -
+            MOBILE_CARD_OVERSCAN
+        );
+        if (nextWindowStart !== cardWindowStartRef.current) {
+          cardWindowStartRef.current = nextWindowStart;
+          setCardWindowStart(nextWindowStart);
+        }
+      });
+    };
+    viewport.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      if (cardScrollEndTimerRef.current !== null) {
+        window.clearTimeout(cardScrollEndTimerRef.current);
+      }
+      viewport.removeEventListener("scroll", onScroll);
+    };
+  }, [mobileLayout]);
+
+  useEffect(() => {
+    cardWindowStartRef.current = 0;
+    setCardWindowStart(0);
+    cardViewportRef.current?.scrollTo({ top: 0 });
+  }, [activeFeedMovers]);
+
+  const virtualFeedMovers = useMemo(() => {
+    if (!mobileLayout || activeFeedMovers.length === 0) {
+      return { rows: activeFeedMovers, start: 0, end: activeFeedMovers.length };
+    }
+    const visibleCount = Math.ceil(
+      MOBILE_CARD_VIEWPORT_HEIGHT / MOBILE_CARD_HEIGHT
+    );
+    const start = cardWindowStart;
+    const end = Math.min(
+      activeFeedMovers.length,
+      start + visibleCount + MOBILE_CARD_OVERSCAN * 2
+    );
+    return {
+      rows: activeFeedMovers.slice(start, end),
+      start,
+      end,
+    };
+  }, [activeFeedMovers, cardWindowStart, mobileLayout]);
+
   function handleToggleWatchlist(mover: MoverCard) {
     const updated = toggleMarketWatchlist(mover);
     setWatchlist(updated);
@@ -340,11 +526,21 @@ export function DailyMovers() {
           <div>
             <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">
               <Zap className="h-4 w-4" /> Current signal window ·{" "}
-              {currentSnapshotDate.slice(0, 10)}
+              {snapshotLoading
+                ? "Loading snapshot…"
+                : currentSnapshotDate.slice(0, 10)}
             </div>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
               Current Market Movers
             </h1>
+            {snapshotError && (
+              <p
+                role="alert"
+                className="mt-3 border-2 border-destructive/50 bg-destructive/5 p-3 text-sm font-semibold text-destructive"
+              >
+                {snapshotError}
+              </p>
+            )}
             <p className="mt-1 text-sm text-muted-foreground">
               Daily movers plus multi-day riders and drops from the rolling
               snapshot history. Use category and direction filters to narrow the
@@ -352,11 +548,11 @@ export function DailyMovers() {
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 border-2 border-primary/40 bg-primary/5 px-3 py-2 text-xs">
               <span className="font-mono font-black uppercase tracking-wider text-primary">
-                Current signal window
+                Surfaced mover window
               </span>
               <span className="text-muted-foreground">
-                {currentSnapshotDate.slice(0, 10)} · {snapshotMovers.length}{" "}
-                cards moving in the daily or rolling window
+                {snapshotLoading ? "Loading snapshot…" : currentSnapshotDate.slice(0, 10)} · {scannerSummary.moverWindow}{" "}
+                cards with a daily or rolling move
               </span>
               <Link
                 href="/market-watch"
@@ -440,10 +636,34 @@ export function DailyMovers() {
           </div>
         </div>
 
+        <section className="mt-6 grid gap-px border-2 border-border bg-border sm:grid-cols-2 xl:grid-cols-4" aria-labelledby="scanner-coverage-heading">
+          <h2 id="scanner-coverage-heading" className="sr-only">Scanner coverage and surfaced mover counts</h2>
+          <article className="bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">Raw observations</p>
+            <p className="mt-2 text-2xl font-black tabular-nums">{snapshotLoading ? "—" : scannerSummary.rawObservations.toLocaleString()}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Exact-printing price records scanned in the latest snapshot.</p>
+          </article>
+          <article className="bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-primary">Mover window</p>
+            <p className="mt-2 text-2xl font-black tabular-nums">{snapshotLoading ? "—" : scannerSummary.moverWindow.toLocaleString()}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Daily movers plus multi-day riders and drops shown in this table.</p>
+          </article>
+          <article className="bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-400">Threshold shortlist</p>
+            <p className="mt-2 text-2xl font-black tabular-nums">{snapshotLoading ? "—" : scannerSummary.shortlist.toLocaleString()}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Top capped candidates across percentage, dollar, and budget lenses.</p>
+          </article>
+          <article className="bg-card p-4">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">Direction split</p>
+            <p className="mt-2 text-2xl font-black tabular-nums">{snapshotLoading ? "—" : `${scannerSummary.rising.toLocaleString()} / ${scannerSummary.falling.toLocaleString()}`}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Rising versus falling cards in the surfaced mover window.</p>
+          </article>
+        </section>
+
         <details className="mt-8 border border-border bg-card">
           <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
-            Current snapshot provenance · {currentSnapshot.signals.length}{" "}
-            signals tracked
+            Raw snapshot provenance · {currentSnapshot?.signals.length ?? 0}{" "}
+            observations tracked
           </summary>
           <div className="grid gap-3 border-t border-border p-4 md:grid-cols-3">
             <article className="border border-border bg-card p-4">
@@ -464,10 +684,11 @@ export function DailyMovers() {
                 Sources
               </p>
               <p className="mt-2 text-lg font-black">
-                {currentSnapshot.sources.length} feeds
+                {currentSnapshot?.sources.length ?? 0} feeds
               </p>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                {currentSnapshot.sources.join(" · ")}
+                {currentSnapshot?.sources.join(" · ") ||
+                  (snapshotLoading ? "Loading snapshot sources…" : "Unavailable")}
               </p>
             </article>
             <article className="border border-border bg-card p-4">
@@ -699,13 +920,25 @@ export function DailyMovers() {
           )}
 
           <div
-            className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            ref={cardViewportRef}
+            className="mt-8 grid grid-cols-1 gap-6 overflow-y-auto sm:grid-cols-2 lg:grid-cols-3"
+            style={mobileLayout ? { maxHeight: MOBILE_CARD_VIEWPORT_HEIGHT } : undefined}
             aria-live="polite"
           >
-            {activeFeedMovers.map((mover, index) => (
+            {mobileLayout && activeFeedMovers.length > 0 && (
+              <div
+                aria-hidden="true"
+                className="pointer-events-none"
+                style={{
+                  height: virtualFeedMovers.start * MOBILE_CARD_HEIGHT,
+                  gridColumn: "1 / -1",
+                }}
+              />
+            )}
+            {virtualFeedMovers.rows.map((mover, index) => (
               <div
                 key={mover.id}
-                className="market-mover-enter"
+                className="market-mover-enter market-mover-card-surface"
                 style={{ "--market-mover-index": index } as CSSProperties}
               >
                 <MarketCardItem
@@ -716,18 +949,31 @@ export function DailyMovers() {
                 />
               </div>
             ))}
+            {mobileLayout && activeFeedMovers.length > 0 && (
+              <div
+                aria-hidden="true"
+                className="pointer-events-none"
+                style={{
+                  height:
+                    (activeFeedMovers.length - virtualFeedMovers.end) *
+                    MOBILE_CARD_HEIGHT,
+                  gridColumn: "1 / -1",
+                }}
+              />
+            )}
           </div>
 
           {/* Detailed Table View */}
           <div className="mt-12 space-y-8">
             <MarketMoversTable
               data={activeFeedMovers}
+              isLoading={snapshotLoading}
               title={
                 activeFeed === "watchlist"
                   ? "Watchlist Table"
                   : "Current Movers Table"
               }
-              description={`Current source-reported prices and percentage moves from the ${currentSnapshotDate.slice(0, 10)} signal window; exact printing and liquidity still require verification.`}
+              description={`Current source-reported prices and percentage moves from the ${snapshotLoading ? "loading" : currentSnapshotDate.slice(0, 10)} signal window; exact printing and liquidity still require verification.`}
               watchlist={watchlist}
               onToggleWatchlist={handleToggleWatchlist}
             />

@@ -1,47 +1,53 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Search, ExternalLink, Star, X, TrendingUp } from 'lucide-react';
 import { MoverCard } from '@/lib/dailyMoversEngine';
-import { loadCanonicalSnapshots } from '@/lib/canonicalMarketEngine';
 import { loadMarketWatchlist, toggleMarketWatchlist, isMarketCardWatched } from '@/lib/marketWatchlist';
 
 export function NavigationSearch() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCard, setSelectedCard] = useState<MoverCard | null>(null);
+  const [allCards, setAllCards] = useState<MoverCard[]>([]);
+  const [isLoadingCards, setIsLoadingCards] = useState(false);
   const [watchlist, setWatchlist] = useState(() => loadMarketWatchlist());
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const allCards = useMemo(() => {
-    const snaps = loadCanonicalSnapshots();
-    const byName = new Map<string, MoverCard>();
-    snaps.forEach((snap) => {
-      if (!byName.has(snap.name.toLowerCase())) {
-        byName.set(snap.name.toLowerCase(), {
-          id: snap.id,
-          name: snap.name,
-          setCode: snap.setCode,
-          setName: snap.setCode.toUpperCase(),
-          rarity: snap.rarity,
-          currentUsd: snap.currentUsd,
-          previousUsd: snap.previousUsd,
-          changeUsd: Number((snap.currentUsd - snap.previousUsd).toFixed(2)),
-          percentChange: snap.percentChange,
-          recentPrices: snap.recentPrices,
-          category: snap.category,
-          signalSource: snap.signalSource,
-          priceSource: snap.priceSource,
-          sourceCount: snap.sourceCount,
-          lastUpdated: snap.lastUpdated,
-          thesis: snap.thesis,
-          cardKingdomUsd: snap.cardKingdomUsd,
-          tcgplayerMarketUsd: snap.tcgplayerMarketUsd,
-          mtgGoldfishUsd: snap.mtgGoldfishUsd,
-          isCatalyst: snap.isCatalyst,
+  useEffect(() => {
+    if (!isOpen || allCards.length > 0 || isLoadingCards) return;
+    setIsLoadingCards(true);
+    import('@/lib/canonicalMarketEngine')
+      .then(({ loadCanonicalSnapshots }) => {
+        const byName = new Map<string, MoverCard>();
+        loadCanonicalSnapshots().forEach((snap) => {
+          if (!byName.has(snap.name.toLowerCase())) {
+            byName.set(snap.name.toLowerCase(), {
+              id: snap.id,
+              name: snap.name,
+              setCode: snap.setCode,
+              setName: snap.setCode.toUpperCase(),
+              rarity: snap.rarity,
+              currentUsd: snap.currentUsd,
+              previousUsd: snap.previousUsd,
+              changeUsd: Number((snap.currentUsd - snap.previousUsd).toFixed(2)),
+              percentChange: snap.percentChange,
+              recentPrices: snap.recentPrices,
+              category: snap.category,
+              signalSource: snap.signalSource,
+              priceSource: snap.priceSource,
+              sourceCount: snap.sourceCount,
+              lastUpdated: snap.lastUpdated,
+              thesis: snap.thesis,
+              cardKingdomUsd: snap.cardKingdomUsd,
+              tcgplayerMarketUsd: snap.tcgplayerMarketUsd,
+              mtgGoldfishUsd: snap.mtgGoldfishUsd,
+              isCatalyst: snap.isCatalyst,
+            });
+          }
         });
-      }
-    });
-    return Array.from(byName.values());
-  }, []);
+        setAllCards(Array.from(byName.values()));
+      })
+      .finally(() => setIsLoadingCards(false));
+  }, [allCards.length, isLoadingCards, isOpen]);
 
   const searchResults = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();

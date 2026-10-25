@@ -7,11 +7,12 @@ import { Input } from '@/components/ui/input';
 import { CardImageZoom } from '@/components/CardImageZoom';
 import { PreconSection } from '@/components/PreconSection';
 import { Link } from 'wouter';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { SetDetailPageSkeleton } from '@/components/PageSkeletons';
 import { moversForCard, moversForSet, suppliedSignalsForSet } from '@/lib/marketMoverLinks';
 import { resolveSetPrintingPrice, summarizeSetPricing } from '@/lib/setCatalogPricing';
+import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { VerifiedSpoilerGallery } from '@/components/VerifiedSpoilerGallery';
 
@@ -20,6 +21,8 @@ export default function SetDetail() {
   const [, params] = useRoute('/:setCode');
   const [, navigate] = useLocation();
   const setCode = params?.setCode || '';
+  useMarketPriceIndex();
+  const { decks: commanderDecklists, loading: commanderArchiveLoading } = useCommanderArchive();
 
   const { data, loading, error } = useSetDetail(setCode);
 
@@ -44,7 +47,7 @@ export default function SetDetail() {
   const resolvedSetCode = data?.setCode || setCode;
   const resolvedReleasedAt = data?.releasedAt || '2024-01-01';
   const preconCardsList = useMemo(() => {
-    const matchedDecks = commanderDecklists.filter((d) => d.set_code.toLowerCase() === resolvedSetCode.toLowerCase());
+    const matchedDecks = (commanderDecklists ?? []).filter((d) => d.set_code.toLowerCase() === resolvedSetCode.toLowerCase());
     const list: ScryfallCard[] = [];
     const seen = new Set<string>();
     for (const deck of matchedDecks) {
@@ -68,7 +71,7 @@ export default function SetDetail() {
       }
     }
     return list;
-  }, [resolvedReleasedAt, resolvedSetCode]);
+  }, [commanderDecklists, resolvedReleasedAt, resolvedSetCode]);
   const setPricingSummary = useMemo(
     () => summarizeSetPricing(data?.cards || []),
     [data?.cards],
@@ -155,7 +158,7 @@ export default function SetDetail() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1">{setName}</h1>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
-              Browsing full card catalog ({cards.length} indexed) and associated Commander precons.
+              Browsing full card catalog ({cards.length} indexed) and associated Commander precons{commanderArchiveLoading ? ' (archive loading…)' : '.'}
             </p>
           </div>
           <div className="font-mono text-xs border-2 border-border bg-background p-4 shrink-0 space-y-1">

@@ -1,10 +1,14 @@
-import { describe, expect, it } from "vitest";
-import { resolveCardPrice, resolveDeckMarketValue } from "./marketPriceIndex";
+import { beforeAll, describe, expect, it } from "vitest";
+import { loadMarketPriceIndex, resolveCardPrice, resolveDeckMarketValue } from "./marketPriceIndex";
 import { commanderDecklistsData } from "@/data/commanderDecklistsData";
 import commanderCardPriceSnapshot from "@/data/commanderCardPriceSnapshot.json";
 import dailyMarketSnapshot from "@/data/dailyMarketSnapshot.json";
 
 describe("shared market price index", () => {
+  beforeAll(async () => {
+    await loadMarketPriceIndex();
+  });
+
   it("resolves a known daily snapshot signal with source and timestamp", () => {
     const signal = dailyMarketSnapshot.signals.find(
       record => record.name && Number(record.currentUsd) > 0
@@ -39,12 +43,51 @@ describe("shared market price index", () => {
         typeof item.prices?.cardmarket === "number"
     );
     expect(record).toBeDefined();
-    const price = resolveCardPrice(record!.name, record!.set_code);
+    const price = resolveCardPrice(
+      record!.name,
+      record!.set_code,
+      record!.collector_number,
+      record!.uuid
+    );
     expect(price?.usd).toBe(
       record!.prices.tcgplayer ?? record!.prices.cardkingdom
     );
     expect(price?.cardmarketPrice).toBe(record!.prices.cardmarket);
-    expect(price?.cardmarketCurrency).toBe("EUR");
+    expect(price?.cardmarketCurrency).toBe(record!.prices.cardmarketCurrency);
+  });
+
+  it("does not substitute a regular printing for an unpriced Collector's Edition variant", () => {
+    const collector = commanderCardPriceSnapshot.records.find(
+      record =>
+        record.name === "Captain America, Team Leader" &&
+        record.set_code === "msc" &&
+        record.collector_number === "879"
+    );
+    expect(collector).toBeDefined();
+    expect(
+      resolveCardPrice(
+        collector!.name,
+        collector!.set_code,
+        collector!.collector_number,
+        collector!.uuid
+      )
+    ).toBeNull();
+    const regular = commanderCardPriceSnapshot.records.find(
+      record =>
+        record.name === collector!.name &&
+        record.set_code === collector!.set_code &&
+        record.collector_number === "5" &&
+        typeof record.usd === "number"
+    );
+    expect(regular).toBeDefined();
+    expect(
+      resolveCardPrice(
+        regular!.name,
+        regular!.set_code,
+        regular!.collector_number,
+        regular!.uuid
+      )?.usd
+    ).toBeGreaterThan(0);
   });
 
   it("reports coverage instead of presenting a synthetic deck total as fully priced", () => {

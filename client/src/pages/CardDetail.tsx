@@ -1,11 +1,12 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useParams, useLocation } from 'wouter';
 import { ArrowLeft, ExternalLink, ShieldCheck, ShoppingBag, Sparkles, TrendingUp, Users, Layers, Zap, Plus, Check } from 'lucide-react';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import { loadOwnedPrecons } from '@/lib/preconInventory';
 import { loadOwnedCollection, saveOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { moversForCard, suppliedSignalsForCard } from '@/lib/marketMoverLinks';
 import { resolveCardPrice, resolveDeckMarketValue } from '@/lib/marketPriceIndex';
+import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 import { MarketBuyActions } from '@/components/MarketPostCard';
 
 function scryfallFullResolutionImage(card: any): string {
@@ -25,6 +26,8 @@ interface PrintingVersion {
 
 export default function CardDetail() {
   const params = useParams();
+  useMarketPriceIndex();
+  const { decks: commanderDecklists } = useCommanderArchive();
   const [, navigate] = useLocation();
   const cardNameParam = decodeURIComponent(params?.cardName || '');
   useEffect(() => {
@@ -204,7 +207,7 @@ export default function CardDetail() {
     const list: Array<{ name: string; setCode: string; setName: string; slug: string; isOwned: boolean; marketValue: number; pricedCards: number; totalCards: number; topValueCard?: { name: string; usd: number } }> = [];
     const queryName = cardNameParam.toLowerCase();
 
-    for (const deck of commanderDecklists) {
+    for (const deck of commanderDecklists ?? []) {
       const allDeckCards = [...deck.commander, ...deck.cards];
       const hasCard = allDeckCards.some((c) => c.name.toLowerCase() === queryName);
       if (hasCard) {
@@ -233,7 +236,7 @@ export default function CardDetail() {
     }
 
     return list.sort((a, b) => (b.isOwned ? 1 : 0) - (a.isOwned ? 1 : 0));
-  }, [cardNameParam, ownedSlugs, inventoryCards]);
+  }, [cardNameParam, ownedSlugs, inventoryCards, commanderDecklists]);
 
   const activeImage = selectedPrinting?.imageUrl || cardData.imageUrl;
 

@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'wouter';
 import { Sparkles, ShoppingBag, ArrowRight, Check, Upload } from 'lucide-react';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import type { OwnedCard } from '@/lib/manaboxParser';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 
 export function NextBestPurchases({ collection, onOpenImportModal }: { collection: OwnedCard[]; onOpenImportModal: () => void }) {
+  const { decks: commanderDecklists } = useCommanderArchive();
   const [copiedSuccess, setCopiedSuccess] = useState(false);
 
   const closestDeckData = useMemo(() => {
@@ -22,7 +23,7 @@ export function NextBestPurchases({ collection, onOpenImportModal }: { collectio
     let bestCoverage = -1;
     let missingList: Array<{ name: string; price: number | null; type: string }> = [];
 
-    for (const deck of commanderDecklists) {
+    for (const deck of commanderDecklists ?? []) {
       const allCards = [...deck.commander, ...deck.cards];
       let total = 0;
       let owned = 0;
@@ -57,7 +58,7 @@ export function NextBestPurchases({ collection, onOpenImportModal }: { collectio
       coverage: bestCoverage,
       missing: missingList.slice(0, 5),
     };
-  }, [collection]);
+  }, [collection, commanderDecklists]);
 
   if (collection.length === 0) {
     return (

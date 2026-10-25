@@ -1,9 +1,10 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import { commanderDecklistsData } from "@/data/commanderDecklistsData";
 import {
   commanderPriceSnapshotAsOf,
   commanderPriceSnapshotSource,
   resolveDeckMarketValue,
+  loadMarketPriceIndex,
 } from "@/lib/marketPriceIndex";
 import {
   buildHomePreconSummary,
@@ -12,6 +13,10 @@ import {
 } from "./homePreconSummary";
 
 describe("homepage precon equity summary", () => {
+  beforeAll(async () => {
+    await loadMarketPriceIndex();
+  });
+
   it("reports one local-archive scope and its actual card-price coverage instead of zero placeholder values", () => {
     const summary = buildHomePreconSummary(
       commanderDecklistsData,

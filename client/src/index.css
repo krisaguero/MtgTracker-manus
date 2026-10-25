@@ -208,6 +208,19 @@
   animation-delay: calc(var(--market-mover-index, 0) * 38ms);
 }
 
+/* Keep virtualized card windows cheap to lay out and paint on constrained phones. */
+.market-mover-card-surface {
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px;
+}
+
+[data-market-scrolling="true"] .market-mover-enter {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .market-mover-skeleton::after,
   .market-mover-enter {

@@ -35,6 +35,7 @@ import { DecklistSkeleton } from "@/components/DecklistSkeleton";
 import { PreconStickyHeader } from "@/components/PreconStickyHeader";
 import { ValuationComparisonSection } from "@/components/ValuationComparisonSection";
 import { resolveCardPrice } from "@/lib/marketPriceIndex";
+import { useMarketPriceIndex } from "@/lib/marketPriceIndex";
 import { PreconVisualSpoiler } from "@/components/PreconVisualSpoiler";
 import { DeckExportPanel } from "@/components/DeckExportPanel";
 import {
@@ -119,6 +120,7 @@ export default function CommanderDeck() {
     deckSlug: string;
   }>();
   const { data, loading, error } = useCommanderDeck(setCode, deckSlug);
+  useMarketPriceIndex();
   const [exportFormat, setExportFormat] = useState<
     "arena" | "moxfield" | "mtgo" | "archidekt"
   >("moxfield");
@@ -161,7 +163,12 @@ export default function CommanderDeck() {
     const allEntries = [...data.commander, ...data.deck];
 
     for (const entry of allEntries) {
-      const indexed = resolveCardPrice(entry.card.name, entry.card.set);
+      const indexed = resolveCardPrice(
+        entry.card.name,
+        entry.card.set,
+        entry.card.collector_number,
+        entry.card.id
+      );
       const scryfallPrice = entry.card.prices?.usd
         ? Number(entry.card.prices.usd)
         : NaN;
@@ -460,7 +467,11 @@ export default function CommanderDeck() {
           approxValue={liveMarketValue.total ?? sealedBaseline}
         />
 
-        <PreconVisualSpoiler key={`${data.setCode}:${data.name}`} commander={data.commander} deck={data.deck} />
+        <PreconVisualSpoiler
+          key={`${data.setCode}:${data.name}`}
+          commander={data.commander}
+          deck={data.deck}
+        />
 
         <ValuationComparisonSection
           commanderEntries={data.commander}
@@ -566,7 +577,11 @@ export default function CommanderDeck() {
             main: exportDeck,
           }}
           sourceNote="This is the source precon selection. No legality, availability, ownership, or printing verification is claimed."
-          revisedNote={arenaMode ? "Arena-Morph is selected in the separate analysis below; it is not silently substituted into this source export." : "Arena-Morph remains a separate optional analysis below and is not applied to this source export."}
+          revisedNote={
+            arenaMode
+              ? "Arena-Morph is selected in the separate analysis below; it is not silently substituted into this source export."
+              : "Arena-Morph remains a separate optional analysis below and is not applied to this source export."
+          }
         />
         {/* Decklist Export & Arena-Morph Section */}
         <section className="border-2 border-border bg-card p-6 sm:p-8">
@@ -677,7 +692,6 @@ export default function CommanderDeck() {
             </p>
           )}
         </section>
-
       </main>
       <span className="sr-only">{deckSlugLabel}</span>
 

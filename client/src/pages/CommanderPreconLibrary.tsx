@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link, useLocation } from 'wouter';
 import { ArrowLeft, Check, ChevronDown, ExternalLink, Filter, Search, ShieldCheck, ShoppingBag, Sparkles, Star, Users, Layers, Zap } from 'lucide-react';
-import { commanderDecklists } from '@/data/commanderDecklists';
 import type { RawCommanderDeck } from '@/data/commanderDecklists';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { slugify } from '@/hooks/useCommanderDeck';
@@ -11,6 +10,8 @@ import { productAssetFor } from '@/data/preconProductAssets';
 import { InternalPageNav } from '@/components/InternalPageNav';
 import { CommanderCardFrame } from '@/components/CommanderCardFrame';
 import { resolveDeckMarketValue } from '@/lib/marketPriceIndex';
+import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
+import { useCommanderArchive } from '@/lib/commanderArchive';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { formatRadarDate, preconReleaseRadar } from '@/data/preconReleaseRadar';
@@ -39,7 +40,8 @@ const GUILDS = [
   { name: 'Partner / Friends', code: 'PARTNER' },
 ];
 
-const EXTENDED_PRECON_LIBRARY: PreconLibraryItem[] = commanderDecklists.map((deck) => {
+function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): PreconLibraryItem[] {
+  return commanderDecklists.map((deck) => {
   const slug = slugify(deck.name);
   const releaseYear = deck.release_date ? new Date(deck.release_date).getFullYear() : 2024;
   const msrp = null; // MTGJSON does not publish a sealed MSRP; never infer one from release year.
@@ -68,9 +70,13 @@ const EXTENDED_PRECON_LIBRARY: PreconLibraryItem[] = commanderDecklists.map((dec
     isPartner,
     guild,
   };
-}).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
+  }).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
+}
 
 export default function CommanderPreconLibrary() {
+  useMarketPriceIndex();
+  const { decks: commanderDecklists, loading: archiveLoading } = useCommanderArchive();
+  const EXTENDED_PRECON_LIBRARY = useMemo(() => buildExtendedPreconLibrary(commanderDecklists ?? []), [commanderDecklists]);
   const [, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGuild, setSelectedGuild] = useState('all');
@@ -149,6 +155,7 @@ export default function CommanderPreconLibrary() {
       </header>
 
       <main className="w-full px-2 py-6 sm:px-4 sm:py-8 lg:px-6 2xl:px-8 space-y-8">
+        {archiveLoading && <div className="border-2 border-primary/40 bg-primary/5 px-4 py-3 font-mono text-[10px] font-black uppercase tracking-wider text-primary" role="status">Loading Commander deck archive…</div>}
         {/* Hero Banner with Creative Art Styling */}
         <div className="relative border-2 border-border bg-card overflow-hidden p-6 sm:p-10">
           <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -168,7 +175,12 @@ export default function CommanderPreconLibrary() {
           </div>
         </div>
 
-        <section className="border-2 border-amber-500/60 bg-amber-500/5 p-5 sm:p-6" aria-labelledby="precon-release-radar">
+        <details className="border-2 border-amber-500/60 bg-amber-500/5 p-5 sm:p-6 group">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-mono text-xs font-black uppercase tracking-wider text-amber-700 dark:text-amber-400" aria-labelledby="precon-release-radar">
+            <span><span id="precon-release-radar">Precon release radar</span> <span className="font-normal text-muted-foreground">· spoiler and schedule watch</span></span>
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="mt-4 border-t border-amber-500/30 pt-4">
           <div className="flex flex-col gap-3 border-b border-amber-500/30 pb-4 sm:flex-row sm:items-end sm:justify-between">
             <div><p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-amber-700 dark:text-amber-400">Recent releases &amp; spoiler watch</p><h2 id="precon-release-radar" className="mt-2 text-2xl font-black tracking-tight">Precon release radar</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Confirmed decklists are separated from announced products and community schedule claims. A radar item is not added to the complete decklist catalog until its list is published and indexed.</p></div>
             <span className="font-mono text-[10px] font-bold uppercase text-muted-foreground">Updated Oct 4, 2026</span>
@@ -179,7 +191,8 @@ export default function CommanderPreconLibrary() {
               return <article key={item.name} className="border-2 border-border bg-card p-4"><div className="flex items-start justify-between gap-3"><div><h3 className="font-bold leading-snug">{item.name}</h3><p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{item.productLine}</p></div><span className={`shrink-0 border px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider ${statusClass}`}>{item.status === 'released' ? 'Decklist live' : item.status === 'announced' ? 'Announced' : 'Verify'}</span></div><p className="mt-3 text-xs leading-relaxed text-muted-foreground">{item.detail}</p><div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-3 font-mono text-[10px] uppercase"><span className="text-foreground">{formatRadarDate(item.releaseDate)}</span><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{item.sourceLabel} ↗</a></div></article>;
             })}
           </div>
-        </section>
+          </div>
+        </details>
 
         <section className="border-2 border-primary/40 bg-gradient-to-br from-primary/5 via-card to-amber-500/5 p-5 sm:p-6" aria-labelledby="mtgjson-catalog-scan">
           <div className="flex flex-col gap-4 border-b border-border pb-4 lg:flex-row lg:items-end lg:justify-between">

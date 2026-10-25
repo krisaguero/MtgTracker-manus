@@ -1,5 +1,5 @@
 /* Design reminder: hard-edged market intelligence table; dense editorial data view with square controls, clear positive/negative signals, and responsive horizontal scrolling. */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUp,
@@ -37,6 +37,10 @@ type SortKey =
   | "rarity";
 type SortDirection = "asc" | "desc";
 
+const MOBILE_ROW_HEIGHT = 232;
+const MOBILE_VIEWPORT_HEIGHT = 680;
+const MOBILE_OVERSCAN = 6;
+
 type MarketMoversTableProps = {
   data: MoverCard[];
   title: string;
@@ -48,6 +52,7 @@ type MarketMoversTableProps = {
   loadingRowCount?: number;
   watchlist?: MarketWatchlistEntry[];
   onToggleWatchlist?: (mover: MoverCard) => void;
+  forceDesktop?: boolean;
 };
 
 function formatUsd(value: number) {
@@ -244,6 +249,7 @@ export function MarketMoversTable({
   loadingRowCount = 7,
   watchlist = [],
   onToggleWatchlist,
+  forceDesktop = false,
 }: MarketMoversTableProps) {
   const [cardNameQuery, setCardNameQuery] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -254,19 +260,23 @@ export function MarketMoversTable({
   const [minimumMove, setMinimumMove] = useState("0");
   const [sortKey, setSortKey] = useState<SortKey>("percentChange");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
-  const [desktopViewport, setDesktopViewport] = useState(false);
+  const [desktopViewport, setDesktopViewport] = useState(forceDesktop);
   const [advancedFiltersOpen, setAdvancedFiltersOpen] = useState(false);
+  const [mobileWindowStart, setMobileWindowStart] = useState(0);
+  const mobileViewportRef = useRef<HTMLUListElement>(null);
+  const mobileScrollEndTimerRef = useRef<number | null>(null);
+  const mobileWindowStartRef = useRef(0);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
     const syncViewport = () => {
-      setDesktopViewport(media.matches);
-      setAdvancedFiltersOpen(media.matches);
+      setDesktopViewport(forceDesktop || media.matches);
+      setAdvancedFiltersOpen(forceDesktop || media.matches);
     };
     syncViewport();
     media.addEventListener("change", syncViewport);
     return () => media.removeEventListener("change", syncViewport);
-  }, []);
+  }, [forceDesktop]);
 
   const categories = useMemo(
     () => Array.from(new Set(data.map(item => item.category))).sort(),
@@ -303,6 +313,60 @@ export function MarketMoversTable({
       upwardTrendOnly,
     ]
   );
+
+  useEffect(() => {
+    const viewport = mobileViewportRef.current;
+    if (!viewport || desktopViewport) return;
+    let frame = 0;
+    const onScroll = () => {
+      viewport.dataset.marketScrolling = "true";
+      if (mobileScrollEndTimerRef.current !== null) {
+        window.clearTimeout(mobileScrollEndTimerRef.current);
+      }
+      mobileScrollEndTimerRef.current = window.setTimeout(() => {
+        delete viewport.dataset.marketScrolling;
+        mobileScrollEndTimerRef.current = null;
+      }, 120);
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const nextWindowStart = Math.max(
+          0,
+          Math.floor(viewport.scrollTop / MOBILE_ROW_HEIGHT) - MOBILE_OVERSCAN
+        );
+        if (nextWindowStart !== mobileWindowStartRef.current) {
+          mobileWindowStartRef.current = nextWindowStart;
+          setMobileWindowStart(nextWindowStart);
+        }
+      });
+    };
+    viewport.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      if (mobileScrollEndTimerRef.current !== null) {
+        window.clearTimeout(mobileScrollEndTimerRef.current);
+      }
+      viewport.removeEventListener("scroll", onScroll);
+    };
+  }, [desktopViewport]);
+
+  useEffect(() => {
+    mobileWindowStartRef.current = 0;
+    setMobileWindowStart(0);
+    mobileViewportRef.current?.scrollTo({ top: 0 });
+  }, [filteredRows]);
+
+  const mobileVirtualRows = useMemo(() => {
+    if (isLoading || filteredRows.length === 0) {
+      return { rows: [] as MoverCard[], start: 0, end: 0 };
+    }
+    const visibleCount = Math.ceil(MOBILE_VIEWPORT_HEIGHT / MOBILE_ROW_HEIGHT);
+    const start = mobileWindowStart;
+    const end = Math.min(
+      filteredRows.length,
+      start + visibleCount + MOBILE_OVERSCAN * 2
+    );
+    return { rows: filteredRows.slice(start, end), start, end };
+  }, [filteredRows, isLoading, mobileWindowStart]);
 
   function updateSort(nextKey: SortKey) {
     if (sortKey === nextKey) {
@@ -586,12 +650,22 @@ export function MarketMoversTable({
       </div>
 
       <ul
+        ref={mobileViewportRef}
         className="grid gap-3 p-3 sm:p-4 md:hidden"
+        style={{ maxHeight: MOBILE_VIEWPORT_HEIGHT, overflowY: "auto" }}
         aria-label={`${title} mobile cards`}
         aria-live="polite"
       >
         {!isLoading &&
-          filteredRows.map(mover => {
+          filteredRows.length > 0 && (
+            <li
+              aria-hidden="true"
+              className="pointer-events-none list-none"
+              style={{ height: mobileVirtualRows.start * MOBILE_ROW_HEIGHT }}
+            />
+          )}
+        {!isLoading &&
+          mobileVirtualRows.rows.map(mover => {
             const isPositive = mover.percentChange > 0;
             const moveColor = isPositive
               ? "text-emerald-600 dark:text-emerald-400"
@@ -601,8 +675,9 @@ export function MarketMoversTable({
             const watched = isMarketCardWatched(mover, watchlist);
             return (
               <li
-                key={`mobile-${mover.id}-${mover.name}`}
-                className="border border-border bg-background p-3"
+              key={`mobile-${mover.id}-${mover.name}`}
+                className="market-mover-card-surface border border-border bg-background p-3"
+                style={{ minHeight: MOBILE_ROW_HEIGHT }}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
@@ -665,9 +740,21 @@ export function MarketMoversTable({
               </li>
             );
           })}
+        {!isLoading &&
+          filteredRows.length > 0 && (
+            <li
+              aria-hidden="true"
+              className="pointer-events-none list-none"
+              style={{
+                height:
+                  (filteredRows.length - mobileVirtualRows.end) *
+                  MOBILE_ROW_HEIGHT,
+              }}
+            />
+          )}
       </ul>
 
-      <div className="hidden overflow-x-auto md:block">
+      {(desktopViewport || isLoading) && <div className="hidden overflow-x-auto md:block">
         <table
           className="w-full min-w-[980px] border-collapse text-left"
           aria-label={title}
@@ -896,7 +983,7 @@ export function MarketMoversTable({
                 })}
           </tbody>
         </table>
-      </div>
+      </div>}
 
       {!isLoading && filteredRows.length === 0 && (
         <div className="border-t border-border p-10 text-center text-sm text-muted-foreground">

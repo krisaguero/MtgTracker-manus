@@ -15,8 +15,10 @@ import { PrivateCollectionAnalysis } from '@/components/PrivateCollectionAnalysi
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { startLogin } from '@/const';
+import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
 
 export default function Collection() {
+  useMarketPriceIndex();
   const { user, loading: authLoading, logout } = useAuth();
   const [isManaBoxOpen, setIsManaBoxOpen] = useState(false);
   const [collectionVersion, setCollectionVersion] = useState(0);
