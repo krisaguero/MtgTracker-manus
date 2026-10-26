@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T22:45:08.717Z",
-  "pricingDate": "2026-10-25",
-  "dataWindow": "2026-10-02 through 2026-10-25",
+  "generatedAt": "2026-10-26T15:00:18.339Z",
+  "pricingDate": "2026-10-26",
+  "dataWindow": "2026-10-03 through 2026-10-26",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2023,
-  "negativeSignals": 2096,
+  "positiveSignals": 2796,
+  "negativeSignals": 3088,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 83,
-    "multiSourceSignals": 12428,
+    "singleSourceSignals": 76,
+    "multiSourceSignals": 12435,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 45,
-      "positiveSignals": 45,
+      "cards": 104,
+      "positiveSignals": 104,
       "negativeSignals": 0,
-      "averagePctChange": 48.72
+      "averagePctChange": 33.94
     },
     {
       "category": "commander-picks",
-      "cards": 12429,
-      "positiveSignals": 1978,
-      "negativeSignals": 2059,
-      "averagePctChange": 0.04
+      "cards": 12313,
+      "positiveSignals": 2692,
+      "negativeSignals": 2994,
+      "averagePctChange": -0.03
     },
     {
       "category": "reprint-squashes",
-      "cards": 37,
+      "cards": 94,
       "positiveSignals": 0,
-      "negativeSignals": 37,
-      "averagePctChange": -25.12
+      "negativeSignals": 94,
+      "averagePctChange": -23.49
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-10-25; 2023 rose and 2096 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +48.72% across 45 cards.",
-    "83 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "37 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-10-26; 2796 rose and 3088 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +33.94% across 104 cards.",
+    "76 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "94 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Island",
-        "setCode": "cm2",
-        "collectorNumber": "291",
-        "currentUsd": 0.49,
-        "percentChange": 390,
-        "sourceCount": 1,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Hedron Archive",
-        "setCode": "scd",
-        "collectorNumber": "266",
-        "currentUsd": 0.56,
-        "percentChange": 124,
+        "name": "Temple of Abandon",
+        "setCode": "blc",
+        "collectorNumber": "338",
+        "currentUsd": 0.55,
+        "percentChange": 139.13,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Worn Powerstone",
-        "setCode": "scd",
-        "collectorNumber": "288",
+        "name": "Path of Ancestry",
+        "setCode": "blc",
+        "collectorNumber": "322",
         "currentUsd": 0.59,
-        "percentChange": 118.52,
+        "percentChange": 136,
         "sourceCount": 2,
         "category": "penny-risers"
-      },
-      {
-        "name": "Pearl-Ear, Imperial Advisor",
-        "setCode": "soc",
-        "collectorNumber": "160",
-        "currentUsd": 0.58,
-        "percentChange": 114.81,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Island",
-        "setCode": "cmd",
-        "collectorNumber": "306",
-        "currentUsd": 0.49,
-        "percentChange": 104.17,
-        "sourceCount": 1,
-        "category": "penny-risers"
-      }
-    ],
-    "topDecliners": [
-      {
-        "name": "Dusk // Dawn",
-        "setCode": "drc",
-        "collectorNumber": "65",
-        "currentUsd": 0.34,
-        "percentChange": -47.69,
-        "sourceCount": 1,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Heroic Sacrifice",
-        "setCode": "msc",
-        "collectorNumber": "18",
-        "currentUsd": 0.39,
-        "percentChange": -45.07,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
       },
       {
         "name": "Hinterland Harbor",
         "setCode": "fic",
         "collectorNumber": "403",
-        "currentUsd": 0.33,
-        "percentChange": -44.07,
+        "currentUsd": 0.7,
+        "percentChange": 112.12,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Summon: Ixion",
+        "setCode": "fic",
+        "collectorNumber": "27",
+        "currentUsd": 0.65,
+        "percentChange": 103.13,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Gruul Turf",
+        "setCode": "blc",
+        "collectorNumber": "310",
+        "currentUsd": 0.62,
+        "percentChange": 100,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      }
+    ],
+    "topDecliners": [
+      {
+        "name": "Island",
+        "setCode": "cmd",
+        "collectorNumber": "306",
+        "currentUsd": 0.2,
+        "percentChange": -59.18,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Street Spasm",
-        "setCode": "c13",
-        "collectorNumber": "123",
-        "currentUsd": 0.1,
-        "percentChange": -41.18,
+        "name": "Loyal Apprentice",
+        "setCode": "pip",
+        "collectorNumber": "190",
+        "currentUsd": 0.28,
+        "percentChange": -53.33,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Vibranium Strike Gauntlets",
-        "setCode": "msc",
-        "collectorNumber": "118",
-        "currentUsd": 0.45,
-        "percentChange": -38.36,
+        "name": "Terramorphic Expanse",
+        "setCode": "drc",
+        "collectorNumber": "179",
+        "currentUsd": 0.3,
+        "percentChange": -51.61,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Sulfur Falls",
+        "setCode": "soc",
+        "collectorNumber": "408",
+        "currentUsd": 0.32,
+        "percentChange": -50.77,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Hammer of Purphoros",
+        "setCode": "eoc",
+        "collectorNumber": "88",
+        "currentUsd": 0.37,
+        "percentChange": -49.32,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,33 +153,33 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "observations": 21,
-        "firstDate": "2026-10-02",
-        "lastDate": "2026-10-25",
-        "totalPctChange": -14,
-        "positiveDays": 4,
-        "negativeDays": 3
-      },
-      {
         "name": "Idol of Oblivion",
         "setCode": "plst",
         "collectorNumber": "BLC-277",
         "observations": 21,
-        "firstDate": "2026-10-02",
-        "lastDate": "2026-10-25",
-        "totalPctChange": 10.16,
-        "positiveDays": 4,
+        "firstDate": "2026-10-03",
+        "lastDate": "2026-10-26",
+        "totalPctChange": 13.28,
+        "positiveDays": 5,
         "negativeDays": 0
+      },
+      {
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "collectorNumber": "269",
+        "observations": 21,
+        "firstDate": "2026-10-03",
+        "lastDate": "2026-10-26",
+        "totalPctChange": -13,
+        "positiveDays": 5,
+        "negativeDays": 3
       },
       {
         "name": "Tyvar, the Pummeler",
         "setCode": "ppdsk",
         "collectorNumber": "202p",
-        "observations": 15,
-        "firstDate": "2026-10-02",
+        "observations": 14,
+        "firstDate": "2026-10-03",
         "lastDate": "2026-10-16",
         "totalPctChange": 12.38,
         "positiveDays": 4,
@@ -189,23 +189,23 @@
         "name": "Counterspell",
         "setCode": "mh2",
         "collectorNumber": "267",
-        "observations": 15,
-        "firstDate": "2026-10-02",
+        "observations": 14,
+        "firstDate": "2026-10-03",
         "lastDate": "2026-10-16",
         "totalPctChange": 5.65,
         "positiveDays": 6,
-        "negativeDays": 5
+        "negativeDays": 4
       },
       {
         "name": "The Great Henge",
         "setCode": "eld",
         "collectorNumber": "161",
-        "observations": 15,
-        "firstDate": "2026-10-02",
+        "observations": 14,
+        "firstDate": "2026-10-03",
         "lastDate": "2026-10-16",
         "totalPctChange": -3.63,
         "positiveDays": 4,
-        "negativeDays": 7
+        "negativeDays": 6
       }
     ],
     "predictionsDue": [],

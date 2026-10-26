@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T22:45:09.863Z",
+  "updatedAt": "2026-10-26T15:00:18.668Z",
   "records": [
+    {
+      "id": "2026-10-26-precon-sealed-economics:1:blc:338",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Temple of Abandon (BLC 338) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Temple of Abandon",
+      "setCode": "blc",
+      "collectorNumber": "338",
+      "entryUsd": 0.55,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 139.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:2:blc:322",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Path of Ancestry (BLC 322) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "blc",
+      "collectorNumber": "322",
+      "entryUsd": 0.59,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 136.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:3:fic:403",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Hinterland Harbor (FIC 403) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "collectorNumber": "403",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 112.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:4:fic:27",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Summon: Ixion (FIC 27) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Summon: Ixion",
+      "setCode": "fic",
+      "collectorNumber": "27",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:5:blc:310",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Gruul Turf (BLC 310) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Gruul Turf",
+      "setCode": "blc",
+      "collectorNumber": "310",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:6:drc:139",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Soul-Guide Lantern (DRC 139) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Soul-Guide Lantern",
+      "setCode": "drc",
+      "collectorNumber": "139",
+      "entryUsd": 0.61,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 96.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:7:lcc:346",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Path of Ancestry (LCC 346) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "lcc",
+      "collectorNumber": "346",
+      "entryUsd": 0.52,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 92.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:8:pip:230",
+      "dateKey": "2026-10-26",
+      "postId": "2026-10-26-precon-sealed-economics",
+      "prompt": "Assess Everflowing Chalice (PIP 230) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Everflowing Chalice",
+      "setCode": "pip",
+      "collectorNumber": "230",
+      "entryUsd": 0.68,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-26",
+        "evaluationDate": "2026-11-09"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-25-spoiler-supply-watch:1:cm2:291",
       "dateKey": "2026-10-25",
