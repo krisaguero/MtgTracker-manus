@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-23",
+  "asOf": "2026-10-26",
   "status": "catalog-seeded-awaiting-retailer-observations",
   "methodology": "Product-level preorder records are kept separate from individual card printings. Prices remain null until a source observation is captured; no zeroes or inferred quotes are used.",
   "products": [
@@ -34,7 +34,7 @@
       "sourceCount": 0,
       "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
@@ -74,7 +74,7 @@
       "sourceCount": 0,
       "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
@@ -114,7 +114,7 @@
       "sourceCount": 0,
       "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
@@ -154,7 +154,7 @@
       "sourceCount": 0,
       "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
@@ -194,7 +194,7 @@
       "sourceCount": 0,
       "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
@@ -235,7 +235,7 @@
       "sourceCount": 0,
       "riskScore": 85,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": 18,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "limited-supply",
