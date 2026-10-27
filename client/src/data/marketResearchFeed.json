@@ -1,12 +1,527 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T15:00:18.672Z",
+  "generatedAt": "2026-10-27T14:13:48.295Z",
   "schedule": {
     "daily": "08:00 UTC",
     "topicExpansion": "weekday rotation",
     "biweeklyTop10": "every other Friday"
   },
   "posts": [
+    {
+      "id": "2026-10-27-bulk-collection-triage",
+      "dateKey": "2026-10-27",
+      "slug": "bulk-collection-triage",
+      "title": "Bulk Collection Triage · 2026-10-27",
+      "label": "Bulk Collection Triage",
+      "kind": "topic-expansion",
+      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+      "selectionMode": "topic-filter",
+      "selectionNote": null,
+      "generatedAt": "2026-10-27T08:00:00.000Z",
+      "summary": "Bulk Collection Triage · 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "body": [
+        "Bulk Collection Triage · 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+      ],
+      "cards": [
+        {
+          "rank": 1,
+          "name": "Deathgorge Scavenger",
+          "setCode": "lcc",
+          "setName": "LCC",
+          "collectorNumber": "236",
+          "currentUsd": 0.57,
+          "previousUsd": 0.26,
+          "percentChange": 119.23,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 119.2% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Rootbound Crag",
+          "setCode": "drc",
+          "setName": "DRC",
+          "collectorNumber": "168",
+          "currentUsd": 0.61,
+          "previousUsd": 0.28,
+          "percentChange": 117.86,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 117.9% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Wind-Scarred Crag",
+          "setCode": "c15",
+          "setName": "C15",
+          "collectorNumber": "321",
+          "currentUsd": 0.27,
+          "previousUsd": 0.15,
+          "percentChange": 80,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 80.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Fabled Passage",
+          "setCode": "tmc",
+          "setName": "TMC",
+          "collectorNumber": "67",
+          "currentUsd": 1.76,
+          "previousUsd": 1.09,
+          "percentChange": 61.47,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 61.5% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "UP",
+            "projectedPctRange": [
+              8,
+              24
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "Methods of the Mighty",
+          "setCode": "msc",
+          "setName": "MSC",
+          "collectorNumber": "21",
+          "currentUsd": 0.24,
+          "previousUsd": 0.57,
+          "percentChange": -57.89,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WAIT_FOR_DIP",
+          "thesis": "Commander decklist; fell 57.9% since the prior saved observation across 2 available price sources.",
+          "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "DOWN",
+            "projectedPctRange": [
+              -24,
+              -8
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 6,
+          "name": "Dream Pillager",
+          "setCode": "afc",
+          "setName": "AFC",
+          "collectorNumber": "125",
+          "currentUsd": 0.34,
+          "previousUsd": 0.65,
+          "percentChange": -47.69,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WAIT_FOR_DIP",
+          "thesis": "Commander decklist; fell 47.7% since the prior saved observation across 2 available price sources.",
+          "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "DOWN",
+            "projectedPctRange": [
+              -24,
+              -8
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 7,
+          "name": "Shriekwood Devourer",
+          "setCode": "dsc",
+          "setName": "DSC",
+          "collectorNumber": "35",
+          "currentUsd": 0.46,
+          "previousUsd": 0.78,
+          "percentChange": -41.03,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WAIT_FOR_DIP",
+          "thesis": "Commander decklist; fell 41.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "DOWN",
+            "projectedPctRange": [
+              -24,
+              -8
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        },
+        {
+          "rank": 8,
+          "name": "Fervent Charge",
+          "setCode": "pip",
+          "setName": "PIP",
+          "collectorNumber": "215",
+          "currentUsd": 0.45,
+          "previousUsd": 0.76,
+          "percentChange": -40.79,
+          "category": "reprint-squashes",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "WAIT_FOR_DIP",
+          "thesis": "Commander decklist; fell 40.8% since the prior saved observation across 2 available price sources.",
+          "risk": "Reprint, supply release, or metagame pressure may be creating a temporary floor.",
+          "verifiedAt": "2026-10-27T14:13:22.492Z",
+          "prediction": {
+            "horizonDays": 14,
+            "expectedDirection": "DOWN",
+            "projectedPctRange": [
+              -24,
+              -8
+            ],
+            "model": "granular-v2 momentum bands; not a verified AI forecast",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+            "confidence": "Developing",
+            "openedAt": "2026-10-27",
+            "evaluationDate": "2026-11-10"
+          }
+        }
+      ],
+      "sources": [
+        "MTGJSON set data",
+        "MTGJSON paper price data",
+        "Scryfall image endpoint"
+      ],
+      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "marketStatus": "Reprint-heavy; Commander-driven",
+      "researchContext": {
+        "pricingDate": "2026-10-27",
+        "dataWindow": "2026-10-04 through 2026-10-27",
+        "executiveSummary": [
+          "12511 exact-printing price observations were screened for 2026-10-27; 2028 rose and 2309 fell in the latest snapshot.",
+          "penny-risers has the strongest latest average movement at +28.9% across 39 cards.",
+          "75 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+          "33 reprint-floor observations require supply and reprint-risk review before buying.",
+          "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
+        ],
+        "whatChangedSinceYesterday": {
+          "newSignals": [],
+          "topGainers": [
+            {
+              "name": "Deathgorge Scavenger",
+              "setCode": "lcc",
+              "collectorNumber": "236",
+              "currentUsd": 0.57,
+              "percentChange": 119.23,
+              "sourceCount": 2,
+              "category": "penny-risers"
+            },
+            {
+              "name": "Rootbound Crag",
+              "setCode": "drc",
+              "collectorNumber": "168",
+              "currentUsd": 0.61,
+              "percentChange": 117.86,
+              "sourceCount": 2,
+              "category": "penny-risers"
+            },
+            {
+              "name": "Wind-Scarred Crag",
+              "setCode": "c15",
+              "collectorNumber": "321",
+              "currentUsd": 0.27,
+              "percentChange": 80,
+              "sourceCount": 2,
+              "category": "penny-risers"
+            },
+            {
+              "name": "Fabled Passage",
+              "setCode": "tmc",
+              "collectorNumber": "67",
+              "currentUsd": 1.76,
+              "percentChange": 61.47,
+              "sourceCount": 2,
+              "category": "penny-risers"
+            },
+            {
+              "name": "Talisman of Hierarchy",
+              "setCode": "moc",
+              "collectorNumber": "385",
+              "currentUsd": 1.1,
+              "percentChange": 37.5,
+              "sourceCount": 2,
+              "category": "penny-risers"
+            }
+          ],
+          "topDecliners": [
+            {
+              "name": "Methods of the Mighty",
+              "setCode": "msc",
+              "collectorNumber": "21",
+              "currentUsd": 0.24,
+              "percentChange": -57.89,
+              "sourceCount": 2,
+              "category": "reprint-squashes"
+            },
+            {
+              "name": "Dream Pillager",
+              "setCode": "afc",
+              "collectorNumber": "125",
+              "currentUsd": 0.34,
+              "percentChange": -47.69,
+              "sourceCount": 2,
+              "category": "reprint-squashes"
+            },
+            {
+              "name": "Shriekwood Devourer",
+              "setCode": "dsc",
+              "collectorNumber": "35",
+              "currentUsd": 0.46,
+              "percentChange": -41.03,
+              "sourceCount": 2,
+              "category": "reprint-squashes"
+            },
+            {
+              "name": "Fervent Charge",
+              "setCode": "pip",
+              "collectorNumber": "215",
+              "currentUsd": 0.45,
+              "percentChange": -40.79,
+              "sourceCount": 2,
+              "category": "reprint-squashes"
+            },
+            {
+              "name": "Forest",
+              "setCode": "cm2",
+              "collectorNumber": "307",
+              "currentUsd": 0.24,
+              "percentChange": -36.84,
+              "sourceCount": 2,
+              "category": "reprint-squashes"
+            }
+          ],
+          "snapshotWarnings": []
+        },
+        "historicalSignalCheck": {
+          "windowDays": 21,
+          "snapshotsReviewed": 21,
+          "repeatedMovers": [
+            {
+              "name": "Idol of Oblivion",
+              "setCode": "plst",
+              "collectorNumber": "BLC-277",
+              "observations": 21,
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-27",
+              "totalPctChange": 16.02,
+              "positiveDays": 6,
+              "negativeDays": 0
+            },
+            {
+              "name": "Command Tower",
+              "setCode": "cmd",
+              "collectorNumber": "269",
+              "observations": 21,
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-27",
+              "totalPctChange": -13,
+              "positiveDays": 5,
+              "negativeDays": 3
+            },
+            {
+              "name": "Tyvar, the Pummeler",
+              "setCode": "ppdsk",
+              "collectorNumber": "202p",
+              "observations": 13,
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-16",
+              "totalPctChange": 8.68,
+              "positiveDays": 4,
+              "negativeDays": 0
+            },
+            {
+              "name": "The Great Henge",
+              "setCode": "eld",
+              "collectorNumber": "161",
+              "observations": 13,
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-16",
+              "totalPctChange": -3.69,
+              "positiveDays": 4,
+              "negativeDays": 6
+            },
+            {
+              "name": "Preeminent Captain",
+              "setCode": "m15",
+              "collectorNumber": "25",
+              "observations": 13,
+              "firstDate": "2026-10-04",
+              "lastDate": "2026-10-16",
+              "totalPctChange": 1.37,
+              "positiveDays": 1,
+              "negativeDays": 1
+            }
+          ],
+          "predictionsDue": [
+            {
+              "name": "Preeminent Captain",
+              "setCode": "m15",
+              "collectorNumber": "25",
+              "evaluationDate": "2026-10-27"
+            },
+            {
+              "name": "Counterspell",
+              "setCode": "mh2",
+              "collectorNumber": "267",
+              "evaluationDate": "2026-10-27"
+            },
+            {
+              "name": "Command Tower",
+              "setCode": "cmd",
+              "collectorNumber": "269",
+              "evaluationDate": "2026-10-27"
+            },
+            {
+              "name": "Idol of Oblivion",
+              "setCode": "plst",
+              "collectorNumber": "BLC-277",
+              "evaluationDate": "2026-10-27"
+            },
+            {
+              "name": "Lightning Bolt",
+              "setCode": "plst",
+              "collectorNumber": "E01-54",
+              "evaluationDate": "2026-10-27"
+            }
+          ],
+          "predictionsResolved": [],
+          "recurringCatalystsToReview": [
+            "spoilers",
+            "precons",
+            "reprints",
+            "tournament results",
+            "rules and policy",
+            "collector demand"
+          ],
+          "patternWarnings": [
+            "thin listings",
+            "spoiler reversal",
+            "post-release supply",
+            "reprint compression",
+            "low-liquidity premium"
+          ]
+        },
+        "externalResearchQueue": {
+          "status": "pending-live-web-review",
+          "requiredBeforeConfirmed": [
+            "Official Wizards, Magic.gg, Arena, and Commander Rules Committee policy/product checks",
+            "Completed sales, market-price tools, buylist, and multiple-marketplace comparison",
+            "Tournament and deck-data review for Constructed adoption",
+            "EDHREC, Moxfield, Archidekt, and upgrade-list review for Commander demand",
+            "Release, spoiler, reprint, restock, preorder, and rotation review"
+          ],
+          "sourceDiversityTarget": "At least 10 distinct domains when reasonably available; no single source family above 25% of material claims.",
+          "unavailableClaims": "No live-web catalyst or completed-sale claim is invented by this deterministic job."
+        },
+        "confidenceRules": {
+          "Confirmed": "Printing-specific price movement corroborated by reliable market or liquidity evidence.",
+          "Developing": "Real catalyst or deck demand with incomplete broad price/liquidity confirmation.",
+          "Speculative": "Spoiler, social, thin-listing, or anticipated-synergy thesis; not confirmed demand.",
+          "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
+        },
+        "actionGuardrails": {
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
+          "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
+          "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
+          "preconDecisions": [
+            "BUY_SEALED",
+            "BUY_SINGLES",
+            "WAIT_FOR_DIP",
+            "SKIP_OR_MONITOR"
+          ]
+        }
+      },
+      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+    },
     {
       "id": "2026-10-26-precon-sealed-economics",
       "dateKey": "2026-10-26",
