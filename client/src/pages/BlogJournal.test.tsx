@@ -100,6 +100,15 @@ describe('published journal', () => {
     expect(html).toContain('0:17–0:25');
     expect(html).toContain('Source notes and affiliate disclosure');
   });
+  it('publishes practical deck blueprints with tests and failure modes', () => {
+    const html = page('/blog/eight-simple-commander-deck-blueprints');
+    for (const phrase of ['vanilla evasion midrange', 'commander-damage Voltron', 'defender tempo and toughness', 'evasive tempo and combat-damage cards', 'noncreature spells into hasty Phyrexians', 'the mana-bank Voltron deck', 'power doubling and fling damage', 'creature-heavy punishment']) {
+      expect(html).toContain(phrase);
+    }
+    expect(html).toContain('Opening-hand test');
+    expect(html).toContain('Main weakness');
+    expect(html).toContain('construction briefs');
+  });
   it('keeps every Battle Box deck link in the article prose, not only the card grid', () => {
     const articleProse = prose(page('/blog/battle-box-october-17-recap'));
     for (const deck of retroBattleBoxDecks) {
