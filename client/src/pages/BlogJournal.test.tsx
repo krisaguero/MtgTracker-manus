@@ -108,6 +108,7 @@ describe('published journal', () => {
     expect(html).toContain('Opening-hand test');
     expect(html).toContain('Main weakness');
     expect(html).toContain('construction briefs');
+    expect(html.match(/Budget upgrade guide/g)).toHaveLength(8);
   });
   it('keeps every Battle Box deck link in the article prose, not only the card grid', () => {
     const articleProse = prose(page('/blog/battle-box-october-17-recap'));
