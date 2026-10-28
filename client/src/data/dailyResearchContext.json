@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T14:13:47.798Z",
-  "pricingDate": "2026-10-27",
-  "dataWindow": "2026-10-04 through 2026-10-27",
+  "generatedAt": "2026-10-28T14:58:47.594Z",
+  "pricingDate": "2026-10-28",
+  "dataWindow": "2026-10-05 through 2026-10-28",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2028,
-  "negativeSignals": 2309,
+  "positiveSignals": 2147,
+  "negativeSignals": 2288,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 75,
-    "multiSourceSignals": 12436,
+    "singleSourceSignals": 74,
+    "multiSourceSignals": 12437,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 39,
-      "positiveSignals": 39,
+      "cards": 56,
+      "positiveSignals": 56,
       "negativeSignals": 0,
-      "averagePctChange": 28.9
+      "averagePctChange": 34.26
     },
     {
       "category": "commander-picks",
-      "cards": 12439,
-      "positiveSignals": 1989,
-      "negativeSignals": 2276,
-      "averagePctChange": -0.05
+      "cards": 12396,
+      "positiveSignals": 2091,
+      "negativeSignals": 2229,
+      "averagePctChange": -0.03
     },
     {
       "category": "reprint-squashes",
-      "cards": 33,
+      "cards": 59,
       "positiveSignals": 0,
-      "negativeSignals": 33,
-      "averagePctChange": -24.54
+      "negativeSignals": 59,
+      "averagePctChange": -24.3
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-10-27; 2028 rose and 2309 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +28.9% across 39 cards.",
-    "75 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "33 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-10-28; 2147 rose and 2288 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +34.26% across 56 cards.",
+    "74 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "59 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Deathgorge Scavenger",
-        "setCode": "lcc",
-        "collectorNumber": "236",
-        "currentUsd": 0.57,
-        "percentChange": 119.23,
+        "name": "Command Tower",
+        "setCode": "soc",
+        "collectorNumber": "129",
+        "currentUsd": 0.6,
+        "percentChange": 185.71,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Rootbound Crag",
+        "name": "Castle Ardenvale",
+        "setCode": "blc",
+        "collectorNumber": "298",
+        "currentUsd": 0.63,
+        "percentChange": 90.91,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Explosive Vegetation",
         "setCode": "drc",
-        "collectorNumber": "168",
-        "currentUsd": 0.61,
-        "percentChange": 117.86,
+        "collectorNumber": "112",
+        "currentUsd": 0.64,
+        "percentChange": 88.24,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Wind-Scarred Crag",
-        "setCode": "c15",
-        "collectorNumber": "321",
-        "currentUsd": 0.27,
-        "percentChange": 80,
+        "name": "Velomachus Lorehold",
+        "setCode": "tdc",
+        "collectorNumber": "309",
+        "currentUsd": 0.62,
+        "percentChange": 87.88,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Fabled Passage",
-        "setCode": "tmc",
-        "collectorNumber": "67",
-        "currentUsd": 1.76,
-        "percentChange": 61.47,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Talisman of Hierarchy",
-        "setCode": "moc",
-        "collectorNumber": "385",
-        "currentUsd": 1.1,
-        "percentChange": 37.5,
+        "name": "Mycoloth",
+        "setCode": "soc",
+        "collectorNumber": "276",
+        "currentUsd": 0.67,
+        "percentChange": 86.11,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Methods of the Mighty",
+        "name": "Skyward Eye Prophets",
+        "setCode": "cma",
+        "collectorNumber": "193",
+        "currentUsd": 0.07,
+        "percentChange": -68.18,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Mountain",
+        "setCode": "c14",
+        "collectorNumber": "330",
+        "currentUsd": 0.07,
+        "percentChange": -53.33,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Vanquish the Horde",
         "setCode": "msc",
-        "collectorNumber": "21",
-        "currentUsd": 0.24,
-        "percentChange": -57.89,
+        "collectorNumber": "146",
+        "currentUsd": 0.31,
+        "percentChange": -50.79,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Dream Pillager",
-        "setCode": "afc",
-        "collectorNumber": "125",
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
         "currentUsd": 0.34,
-        "percentChange": -47.69,
+        "percentChange": -50.72,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Shriekwood Devourer",
+        "name": "Barbflare Gremlin",
         "setCode": "dsc",
-        "collectorNumber": "35",
-        "currentUsd": 0.46,
-        "percentChange": -41.03,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Fervent Charge",
-        "setCode": "pip",
-        "collectorNumber": "215",
-        "currentUsd": 0.45,
-        "percentChange": -40.79,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Forest",
-        "setCode": "cm2",
-        "collectorNumber": "307",
-        "currentUsd": 0.24,
-        "percentChange": -36.84,
+        "collectorNumber": "26",
+        "currentUsd": 0.37,
+        "percentChange": -44.78,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -157,8 +157,8 @@
         "setCode": "plst",
         "collectorNumber": "BLC-277",
         "observations": 21,
-        "firstDate": "2026-10-04",
-        "lastDate": "2026-10-27",
+        "firstDate": "2026-10-05",
+        "lastDate": "2026-10-28",
         "totalPctChange": 16.02,
         "positiveDays": 6,
         "negativeDays": 0
@@ -168,8 +168,8 @@
         "setCode": "cmd",
         "collectorNumber": "269",
         "observations": 21,
-        "firstDate": "2026-10-04",
-        "lastDate": "2026-10-27",
+        "firstDate": "2026-10-05",
+        "lastDate": "2026-10-28",
         "totalPctChange": -13,
         "positiveDays": 5,
         "negativeDays": 3
@@ -178,68 +178,37 @@
         "name": "Tyvar, the Pummeler",
         "setCode": "ppdsk",
         "collectorNumber": "202p",
-        "observations": 13,
-        "firstDate": "2026-10-04",
+        "observations": 12,
+        "firstDate": "2026-10-05",
         "lastDate": "2026-10-16",
         "totalPctChange": 8.68,
-        "positiveDays": 4,
+        "positiveDays": 3,
         "negativeDays": 0
-      },
-      {
-        "name": "The Great Henge",
-        "setCode": "eld",
-        "collectorNumber": "161",
-        "observations": 13,
-        "firstDate": "2026-10-04",
-        "lastDate": "2026-10-16",
-        "totalPctChange": -3.69,
-        "positiveDays": 4,
-        "negativeDays": 6
-      },
-      {
-        "name": "Preeminent Captain",
-        "setCode": "m15",
-        "collectorNumber": "25",
-        "observations": 13,
-        "firstDate": "2026-10-04",
-        "lastDate": "2026-10-16",
-        "totalPctChange": 1.37,
-        "positiveDays": 1,
-        "negativeDays": 1
-      }
-    ],
-    "predictionsDue": [
-      {
-        "name": "Preeminent Captain",
-        "setCode": "m15",
-        "collectorNumber": "25",
-        "evaluationDate": "2026-10-27"
       },
       {
         "name": "Counterspell",
         "setCode": "mh2",
         "collectorNumber": "267",
-        "evaluationDate": "2026-10-27"
+        "observations": 12,
+        "firstDate": "2026-10-05",
+        "lastDate": "2026-10-16",
+        "totalPctChange": -6.58,
+        "positiveDays": 5,
+        "negativeDays": 4
       },
       {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "evaluationDate": "2026-10-27"
-      },
-      {
-        "name": "Idol of Oblivion",
-        "setCode": "plst",
-        "collectorNumber": "BLC-277",
-        "evaluationDate": "2026-10-27"
-      },
-      {
-        "name": "Lightning Bolt",
-        "setCode": "plst",
-        "collectorNumber": "E01-54",
-        "evaluationDate": "2026-10-27"
+        "name": "The Great Henge",
+        "setCode": "eld",
+        "collectorNumber": "161",
+        "observations": 12,
+        "firstDate": "2026-10-05",
+        "lastDate": "2026-10-16",
+        "totalPctChange": -4.27,
+        "positiveDays": 3,
+        "negativeDays": 6
       }
     ],
+    "predictionsDue": [],
     "predictionsResolved": [],
     "recurringCatalystsToReview": [
       "spoilers",

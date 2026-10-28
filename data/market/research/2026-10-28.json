@@ -1,0 +1,484 @@
+{
+  "id": "2026-10-28-commander-demand",
+  "dateKey": "2026-10-28",
+  "slug": "commander-demand",
+  "title": "Commander Demand Desk · 2026-10-28",
+  "label": "Commander Demand Desk",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "selectionMode": "topic-filter",
+  "selectionNote": null,
+  "generatedAt": "2026-10-28T08:00:00.000Z",
+  "summary": "Commander Demand Desk · 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Commander Demand Desk · 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [
+    {
+      "rank": 1,
+      "name": "Command Tower",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "129",
+      "currentUsd": 0.6,
+      "previousUsd": 0.21,
+      "percentChange": 185.71,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 185.7% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Castle Ardenvale",
+      "setCode": "blc",
+      "setName": "BLC",
+      "collectorNumber": "298",
+      "currentUsd": 0.63,
+      "previousUsd": 0.33,
+      "percentChange": 90.91,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 90.9% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Explosive Vegetation",
+      "setCode": "drc",
+      "setName": "DRC",
+      "collectorNumber": "112",
+      "currentUsd": 0.64,
+      "previousUsd": 0.34,
+      "percentChange": 88.24,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.2% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Velomachus Lorehold",
+      "setCode": "tdc",
+      "setName": "TDC",
+      "collectorNumber": "309",
+      "currentUsd": 0.62,
+      "previousUsd": 0.33,
+      "percentChange": 87.88,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 87.9% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Mycoloth",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "276",
+      "currentUsd": 0.67,
+      "previousUsd": 0.36,
+      "percentChange": 86.11,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Sai, Master Thopterist",
+      "setCode": "drc",
+      "setName": "DRC",
+      "collectorNumber": "82",
+      "currentUsd": 0.67,
+      "previousUsd": 0.36,
+      "percentChange": 86.11,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Explore",
+      "setCode": "blc",
+      "setName": "BLC",
+      "collectorNumber": "216",
+      "currentUsd": 0.66,
+      "previousUsd": 0.36,
+      "percentChange": 83.33,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 83.3% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Battlefield Forge",
+      "setCode": "ltc",
+      "setName": "LTC",
+      "collectorNumber": "296",
+      "currentUsd": 0.67,
+      "previousUsd": 0.39,
+      "percentChange": 71.79,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 71.8% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-10-28T14:58:18.055Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      }
+    }
+  ],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Reprint-heavy; Commander-driven",
+  "researchContext": {
+    "pricingDate": "2026-10-28",
+    "dataWindow": "2026-10-05 through 2026-10-28",
+    "executiveSummary": [
+      "12511 exact-printing price observations were screened for 2026-10-28; 2147 rose and 2288 fell in the latest snapshot.",
+      "penny-risers has the strongest latest average movement at +34.26% across 56 cards.",
+      "74 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+      "59 reprint-floor observations require supply and reprint-risk review before buying.",
+      "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
+    ],
+    "whatChangedSinceYesterday": {
+      "newSignals": [],
+      "topGainers": [
+        {
+          "name": "Command Tower",
+          "setCode": "soc",
+          "collectorNumber": "129",
+          "currentUsd": 0.6,
+          "percentChange": 185.71,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Castle Ardenvale",
+          "setCode": "blc",
+          "collectorNumber": "298",
+          "currentUsd": 0.63,
+          "percentChange": 90.91,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Explosive Vegetation",
+          "setCode": "drc",
+          "collectorNumber": "112",
+          "currentUsd": 0.64,
+          "percentChange": 88.24,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Velomachus Lorehold",
+          "setCode": "tdc",
+          "collectorNumber": "309",
+          "currentUsd": 0.62,
+          "percentChange": 87.88,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Mycoloth",
+          "setCode": "soc",
+          "collectorNumber": "276",
+          "currentUsd": 0.67,
+          "percentChange": 86.11,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        }
+      ],
+      "topDecliners": [
+        {
+          "name": "Skyward Eye Prophets",
+          "setCode": "cma",
+          "collectorNumber": "193",
+          "currentUsd": 0.07,
+          "percentChange": -68.18,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Mountain",
+          "setCode": "c14",
+          "collectorNumber": "330",
+          "currentUsd": 0.07,
+          "percentChange": -53.33,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Vanquish the Horde",
+          "setCode": "msc",
+          "collectorNumber": "146",
+          "currentUsd": 0.31,
+          "percentChange": -50.79,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Hinterland Harbor",
+          "setCode": "fic",
+          "collectorNumber": "403",
+          "currentUsd": 0.34,
+          "percentChange": -50.72,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Barbflare Gremlin",
+          "setCode": "dsc",
+          "collectorNumber": "26",
+          "currentUsd": 0.37,
+          "percentChange": -44.78,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        }
+      ],
+      "snapshotWarnings": []
+    },
+    "historicalSignalCheck": {
+      "windowDays": 21,
+      "snapshotsReviewed": 21,
+      "repeatedMovers": [
+        {
+          "name": "Idol of Oblivion",
+          "setCode": "plst",
+          "collectorNumber": "BLC-277",
+          "observations": 21,
+          "firstDate": "2026-10-05",
+          "lastDate": "2026-10-28",
+          "totalPctChange": 16.02,
+          "positiveDays": 6,
+          "negativeDays": 0
+        },
+        {
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "collectorNumber": "269",
+          "observations": 21,
+          "firstDate": "2026-10-05",
+          "lastDate": "2026-10-28",
+          "totalPctChange": -13,
+          "positiveDays": 5,
+          "negativeDays": 3
+        },
+        {
+          "name": "Tyvar, the Pummeler",
+          "setCode": "ppdsk",
+          "collectorNumber": "202p",
+          "observations": 12,
+          "firstDate": "2026-10-05",
+          "lastDate": "2026-10-16",
+          "totalPctChange": 8.68,
+          "positiveDays": 3,
+          "negativeDays": 0
+        },
+        {
+          "name": "Counterspell",
+          "setCode": "mh2",
+          "collectorNumber": "267",
+          "observations": 12,
+          "firstDate": "2026-10-05",
+          "lastDate": "2026-10-16",
+          "totalPctChange": -6.58,
+          "positiveDays": 5,
+          "negativeDays": 4
+        },
+        {
+          "name": "The Great Henge",
+          "setCode": "eld",
+          "collectorNumber": "161",
+          "observations": 12,
+          "firstDate": "2026-10-05",
+          "lastDate": "2026-10-16",
+          "totalPctChange": -4.27,
+          "positiveDays": 3,
+          "negativeDays": 6
+        }
+      ],
+      "predictionsDue": [],
+      "predictionsResolved": [],
+      "recurringCatalystsToReview": [
+        "spoilers",
+        "precons",
+        "reprints",
+        "tournament results",
+        "rules and policy",
+        "collector demand"
+      ],
+      "patternWarnings": [
+        "thin listings",
+        "spoiler reversal",
+        "post-release supply",
+        "reprint compression",
+        "low-liquidity premium"
+      ]
+    },
+    "externalResearchQueue": {
+      "status": "pending-live-web-review",
+      "requiredBeforeConfirmed": [
+        "Official Wizards, Magic.gg, Arena, and Commander Rules Committee policy/product checks",
+        "Completed sales, market-price tools, buylist, and multiple-marketplace comparison",
+        "Tournament and deck-data review for Constructed adoption",
+        "EDHREC, Moxfield, Archidekt, and upgrade-list review for Commander demand",
+        "Release, spoiler, reprint, restock, preorder, and rotation review"
+      ],
+      "sourceDiversityTarget": "At least 10 distinct domains when reasonably available; no single source family above 25% of material claims.",
+      "unavailableClaims": "No live-web catalyst or completed-sale claim is invented by this deterministic job."
+    },
+    "confidenceRules": {
+      "Confirmed": "Printing-specific price movement corroborated by reliable market or liquidity evidence.",
+      "Developing": "Real catalyst or deck demand with incomplete broad price/liquidity confirmation.",
+      "Speculative": "Spoiler, social, thin-listing, or anticipated-synergy thesis; not confirmed demand.",
+      "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
+    },
+    "actionGuardrails": {
+      "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
+      "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
+      "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
+      "preconDecisions": [
+        "BUY_SEALED",
+        "BUY_SINGLES",
+        "WAIT_FOR_DIP",
+        "SKIP_OR_MONITOR"
+      ]
+    }
+  },
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}

@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T14:13:48.288Z",
+  "updatedAt": "2026-10-28T14:58:47.985Z",
   "records": [
+    {
+      "id": "2026-10-28-commander-demand:1:soc:129",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Command Tower (SOC 129) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "soc",
+      "collectorNumber": "129",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 185.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:2:blc:298",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Castle Ardenvale (BLC 298) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Castle Ardenvale",
+      "setCode": "blc",
+      "collectorNumber": "298",
+      "entryUsd": 0.63,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 90.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:3:drc:112",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Explosive Vegetation (DRC 112) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Explosive Vegetation",
+      "setCode": "drc",
+      "collectorNumber": "112",
+      "entryUsd": 0.64,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:4:tdc:309",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Velomachus Lorehold (TDC 309) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Velomachus Lorehold",
+      "setCode": "tdc",
+      "collectorNumber": "309",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 87.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:5:soc:276",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Mycoloth (SOC 276) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mycoloth",
+      "setCode": "soc",
+      "collectorNumber": "276",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:6:drc:82",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Sai, Master Thopterist (DRC 82) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sai, Master Thopterist",
+      "setCode": "drc",
+      "collectorNumber": "82",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:7:blc:216",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Explore (BLC 216) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Explore",
+      "setCode": "blc",
+      "collectorNumber": "216",
+      "entryUsd": 0.66,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 83.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-28-commander-demand:8:ltc:296",
+      "dateKey": "2026-10-28",
+      "postId": "2026-10-28-commander-demand",
+      "prompt": "Assess Battlefield Forge (LTC 296) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Battlefield Forge",
+      "setCode": "ltc",
+      "collectorNumber": "296",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 71.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-28",
+        "evaluationDate": "2026-11-11"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-27-bulk-collection-triage:1:lcc:236",
       "dateKey": "2026-10-27",
