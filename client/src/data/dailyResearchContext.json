@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T14:58:47.594Z",
-  "pricingDate": "2026-10-28",
-  "dataWindow": "2026-10-05 through 2026-10-28",
+  "generatedAt": "2026-10-29T15:04:09.721Z",
+  "pricingDate": "2026-10-29",
+  "dataWindow": "2026-10-06 through 2026-10-29",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2147,
-  "negativeSignals": 2288,
+  "positiveSignals": 1795,
+  "negativeSignals": 2208,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 74,
-    "multiSourceSignals": 12437,
+    "singleSourceSignals": 92,
+    "multiSourceSignals": 12419,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 56,
-      "positiveSignals": 56,
+      "cards": 40,
+      "positiveSignals": 40,
       "negativeSignals": 0,
-      "averagePctChange": 34.26
+      "averagePctChange": 43.72
     },
     {
       "category": "commander-picks",
-      "cards": 12396,
-      "positiveSignals": 2091,
-      "negativeSignals": 2229,
-      "averagePctChange": -0.03
+      "cards": 12438,
+      "positiveSignals": 1755,
+      "negativeSignals": 2175,
+      "averagePctChange": -0.1
     },
     {
       "category": "reprint-squashes",
-      "cards": 59,
+      "cards": 33,
       "positiveSignals": 0,
-      "negativeSignals": 59,
-      "averagePctChange": -24.3
+      "negativeSignals": 33,
+      "averagePctChange": -28.4
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-10-28; 2147 rose and 2288 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +34.26% across 56 cards.",
-    "74 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "59 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-10-29; 1795 rose and 2208 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +43.72% across 40 cards.",
+    "92 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "33 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Command Tower",
-        "setCode": "soc",
-        "collectorNumber": "129",
-        "currentUsd": 0.6,
-        "percentChange": 185.71,
+        "name": "Mountain",
+        "setCode": "c14",
+        "collectorNumber": "330",
+        "currentUsd": 0.23,
+        "percentChange": 228.57,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Castle Ardenvale",
+        "name": "Dismantling Blow",
+        "setCode": "c18",
+        "collectorNumber": "66",
+        "currentUsd": 0.1,
+        "percentChange": 100,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Exotic Orchard",
         "setCode": "blc",
-        "collectorNumber": "298",
-        "currentUsd": 0.63,
-        "percentChange": 90.91,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Explosive Vegetation",
-        "setCode": "drc",
-        "collectorNumber": "112",
-        "currentUsd": 0.64,
-        "percentChange": 88.24,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Velomachus Lorehold",
-        "setCode": "tdc",
-        "collectorNumber": "309",
-        "currentUsd": 0.62,
-        "percentChange": 87.88,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Mycoloth",
-        "setCode": "soc",
-        "collectorNumber": "276",
+        "collectorNumber": "131",
         "currentUsd": 0.67,
-        "percentChange": 86.11,
+        "percentChange": 97.06,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Absorb",
+        "setCode": "scd",
+        "collectorNumber": "216",
+        "currentUsd": 0.67,
+        "percentChange": 91.43,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Command Tower",
+        "setCode": "pip",
+        "collectorNumber": "259",
+        "currentUsd": 0.66,
+        "percentChange": 88.57,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Skyward Eye Prophets",
-        "setCode": "cma",
-        "collectorNumber": "193",
-        "currentUsd": 0.07,
-        "percentChange": -68.18,
+        "name": "Dawnglare Invoker",
+        "setCode": "cm2",
+        "collectorNumber": "25",
+        "currentUsd": 0.2,
+        "percentChange": -59.18,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Mountain",
-        "setCode": "c14",
-        "collectorNumber": "330",
-        "currentUsd": 0.07,
-        "percentChange": -53.33,
+        "name": "Mana Bloom",
+        "setCode": "soc",
+        "collectorNumber": "275",
+        "currentUsd": 0.27,
+        "percentChange": -54.24,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Vanquish the Horde",
-        "setCode": "msc",
-        "collectorNumber": "146",
-        "currentUsd": 0.31,
-        "percentChange": -50.79,
+        "name": "Reality Shift",
+        "setCode": "drc",
+        "collectorNumber": "39",
+        "currentUsd": 0.32,
+        "percentChange": -50,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Hinterland Harbor",
-        "setCode": "fic",
-        "collectorNumber": "403",
+        "name": "Hour of Reckoning",
+        "setCode": "pip",
+        "collectorNumber": "161",
         "currentUsd": 0.34,
-        "percentChange": -50.72,
+        "percentChange": -47.69,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Barbflare Gremlin",
-        "setCode": "dsc",
-        "collectorNumber": "26",
-        "currentUsd": 0.37,
-        "percentChange": -44.78,
+        "name": "Ferrous Lake",
+        "setCode": "pip",
+        "collectorNumber": "148",
+        "currentUsd": 0.34,
+        "percentChange": -46.88,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -157,8 +157,8 @@
         "setCode": "plst",
         "collectorNumber": "BLC-277",
         "observations": 21,
-        "firstDate": "2026-10-05",
-        "lastDate": "2026-10-28",
+        "firstDate": "2026-10-06",
+        "lastDate": "2026-10-29",
         "totalPctChange": 16.02,
         "positiveDays": 6,
         "negativeDays": 0
@@ -168,43 +168,43 @@
         "setCode": "cmd",
         "collectorNumber": "269",
         "observations": 21,
-        "firstDate": "2026-10-05",
-        "lastDate": "2026-10-28",
-        "totalPctChange": -13,
+        "firstDate": "2026-10-06",
+        "lastDate": "2026-10-29",
+        "totalPctChange": -13.86,
         "positiveDays": 5,
         "negativeDays": 3
+      },
+      {
+        "name": "Counterspell",
+        "setCode": "mh2",
+        "collectorNumber": "267",
+        "observations": 11,
+        "firstDate": "2026-10-06",
+        "lastDate": "2026-10-16",
+        "totalPctChange": -10.13,
+        "positiveDays": 4,
+        "negativeDays": 4
       },
       {
         "name": "Tyvar, the Pummeler",
         "setCode": "ppdsk",
         "collectorNumber": "202p",
-        "observations": 12,
-        "firstDate": "2026-10-05",
+        "observations": 11,
+        "firstDate": "2026-10-06",
         "lastDate": "2026-10-16",
         "totalPctChange": 8.68,
         "positiveDays": 3,
         "negativeDays": 0
       },
       {
-        "name": "Counterspell",
-        "setCode": "mh2",
-        "collectorNumber": "267",
-        "observations": 12,
-        "firstDate": "2026-10-05",
-        "lastDate": "2026-10-16",
-        "totalPctChange": -6.58,
-        "positiveDays": 5,
-        "negativeDays": 4
-      },
-      {
         "name": "The Great Henge",
         "setCode": "eld",
         "collectorNumber": "161",
-        "observations": 12,
-        "firstDate": "2026-10-05",
+        "observations": 11,
+        "firstDate": "2026-10-06",
         "lastDate": "2026-10-16",
-        "totalPctChange": -4.27,
-        "positiveDays": 3,
+        "totalPctChange": -4.45,
+        "positiveDays": 2,
         "negativeDays": 6
       }
     ],

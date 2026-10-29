@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T14:58:46.434Z",
-  "pricingDate": "2026-10-28",
-  "snapshotCount": 61,
+  "generatedAt": "2026-10-29T15:04:07.955Z",
+  "pricingDate": "2026-10-29",
+  "snapshotCount": 62,
   "configuredCategories": [
     {
       "id": "all",
@@ -32,17 +32,17 @@
       "id": "penny-risers",
       "label": "2. Penny Risers & Buyout Targets",
       "observedInDailyFeed": true,
-      "observationCount": 600,
-      "latestCount": 56,
-      "lastObservedDate": "2026-10-28"
+      "observationCount": 640,
+      "latestCount": 40,
+      "lastObservedDate": "2026-10-29"
     },
     {
       "id": "commander-picks",
       "label": "3. Commander Format Staples",
       "observedInDailyFeed": true,
-      "observationCount": 111936,
-      "latestCount": 12396,
-      "lastObservedDate": "2026-10-28"
+      "observationCount": 124374,
+      "latestCount": 12438,
+      "lastObservedDate": "2026-10-29"
     },
     {
       "id": "rule-watchers",
@@ -96,9 +96,9 @@
       "id": "reprint-squashes",
       "label": "10. Reprint Floor Squashes",
       "observedInDailyFeed": true,
-      "observationCount": 393,
-      "latestCount": 59,
-      "lastObservedDate": "2026-10-28"
+      "observationCount": 426,
+      "latestCount": 33,
+      "lastObservedDate": "2026-10-29"
     },
     {
       "id": "constructed-watch",
@@ -126,24 +126,24 @@
   "categoryMomentum": [
     {
       "category": "penny-risers",
-      "cards": 56,
-      "averagePctChange": 30.45,
-      "positiveSignals": 48,
-      "negativeSignals": 6
+      "cards": 40,
+      "averagePctChange": 30.26,
+      "positiveSignals": 32,
+      "negativeSignals": 8
     },
     {
       "category": "commander-picks",
-      "cards": 12396,
-      "averagePctChange": 0.39,
-      "positiveSignals": 4165,
-      "negativeSignals": 4511
+      "cards": 12438,
+      "averagePctChange": 0.16,
+      "positiveSignals": 4033,
+      "negativeSignals": 4622
     },
     {
       "category": "reprint-squashes",
-      "cards": 59,
-      "averagePctChange": -18.7,
-      "positiveSignals": 7,
-      "negativeSignals": 50
+      "cards": 33,
+      "averagePctChange": -17.7,
+      "positiveSignals": 9,
+      "negativeSignals": 24
     }
   ],
   "reprintSquashesTrend": [
@@ -892,18 +892,23 @@
           "date": "2026-10-25",
           "price": 0.33,
           "dailyPct": -15.38
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.24,
+          "dailyPct": -25
         }
       ],
-      "observations": 3,
+      "observations": 4,
       "firstDate": "2026-10-21",
-      "lastDate": "2026-10-25",
+      "lastDate": "2026-10-29",
       "firstPrice": 0.23,
-      "lastPrice": 0.33,
-      "totalPctChange": 43.48,
+      "lastPrice": 0.24,
+      "totalPctChange": 4.35,
       "peakPrice": 0.33,
       "troughPrice": 0.19,
       "maxDailyGain": 73.68,
-      "maxDailyDrop": -17.39,
+      "maxDailyDrop": -27.27,
       "recentPrices": [
         {
           "date": "2026-10-21",
@@ -919,6 +924,11 @@
           "date": "2026-10-25",
           "price": 0.33,
           "dailyPct": -15.38
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.24,
+          "dailyPct": -25
         }
       ]
     },
@@ -1327,18 +1337,23 @@
           "date": "2026-10-28",
           "price": 0.99,
           "dailyPct": -19.51
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.6,
+          "dailyPct": -39.39
         }
       ],
-      "observations": 2,
+      "observations": 3,
       "firstDate": "2026-10-22",
-      "lastDate": "2026-10-28",
+      "lastDate": "2026-10-29",
       "firstPrice": 0.79,
-      "lastPrice": 0.99,
-      "totalPctChange": 25.32,
+      "lastPrice": 0.6,
+      "totalPctChange": -24.05,
       "peakPrice": 0.99,
-      "troughPrice": 0.79,
+      "troughPrice": 0.6,
       "maxDailyGain": 25.32,
-      "maxDailyDrop": 25.32,
+      "maxDailyDrop": -39.39,
       "recentPrices": [
         {
           "date": "2026-10-22",
@@ -1349,6 +1364,11 @@
           "date": "2026-10-28",
           "price": 0.99,
           "dailyPct": -19.51
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.6,
+          "dailyPct": -39.39
         }
       ]
     },
@@ -3982,23 +4002,33 @@
           "date": "2026-10-25",
           "price": 0.65,
           "dailyPct": -37.5
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.99,
+          "dailyPct": -16.1
         }
       ],
-      "observations": 1,
+      "observations": 2,
       "firstDate": "2026-10-25",
-      "lastDate": "2026-10-25",
+      "lastDate": "2026-10-29",
       "firstPrice": 0.65,
-      "lastPrice": 0.65,
-      "totalPctChange": 0,
-      "peakPrice": 0.65,
+      "lastPrice": 0.99,
+      "totalPctChange": 52.31,
+      "peakPrice": 0.99,
       "troughPrice": 0.65,
-      "maxDailyGain": 0,
-      "maxDailyDrop": 0,
+      "maxDailyGain": 52.31,
+      "maxDailyDrop": 52.31,
       "recentPrices": [
         {
           "date": "2026-10-25",
           "price": 0.65,
           "dailyPct": -37.5
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.99,
+          "dailyPct": -16.1
         }
       ]
     },
@@ -4496,11 +4526,16 @@
           "date": "2026-10-25",
           "price": 0.22,
           "dailyPct": -18.52
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.22,
+          "dailyPct": -15.38
         }
       ],
-      "observations": 1,
+      "observations": 2,
       "firstDate": "2026-10-25",
-      "lastDate": "2026-10-25",
+      "lastDate": "2026-10-29",
       "firstPrice": 0.22,
       "lastPrice": 0.22,
       "totalPctChange": 0,
@@ -4513,6 +4548,11 @@
           "date": "2026-10-25",
           "price": 0.22,
           "dailyPct": -18.52
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.22,
+          "dailyPct": -15.38
         }
       ]
     },
@@ -9188,23 +9228,33 @@
           "date": "2026-10-28",
           "price": 0.26,
           "dailyPct": -16.13
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.21,
+          "dailyPct": -19.23
         }
       ],
-      "observations": 1,
+      "observations": 2,
       "firstDate": "2026-10-28",
-      "lastDate": "2026-10-28",
+      "lastDate": "2026-10-29",
       "firstPrice": 0.26,
-      "lastPrice": 0.26,
-      "totalPctChange": 0,
+      "lastPrice": 0.21,
+      "totalPctChange": -19.23,
       "peakPrice": 0.26,
-      "troughPrice": 0.26,
-      "maxDailyGain": 0,
-      "maxDailyDrop": 0,
+      "troughPrice": 0.21,
+      "maxDailyGain": -19.23,
+      "maxDailyDrop": -19.23,
       "recentPrices": [
         {
           "date": "2026-10-28",
           "price": 0.26,
           "dailyPct": -16.13
+        },
+        {
+          "date": "2026-10-29",
+          "price": 0.21,
+          "dailyPct": -19.23
         }
       ]
     },
@@ -9431,6 +9481,790 @@
           "dailyPct": -15.38
         }
       ]
+    },
+    {
+      "name": "Dawnglare Invoker",
+      "setCode": "cm2",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -59.18
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.2,
+      "lastPrice": 0.2,
+      "totalPctChange": 0,
+      "peakPrice": 0.2,
+      "troughPrice": 0.2,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -59.18
+        }
+      ]
+    },
+    {
+      "name": "Mana Bloom",
+      "setCode": "soc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.27,
+          "dailyPct": -54.24
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.27,
+      "lastPrice": 0.27,
+      "totalPctChange": 0,
+      "peakPrice": 0.27,
+      "troughPrice": 0.27,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.27,
+          "dailyPct": -54.24
+        }
+      ]
+    },
+    {
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.32,
+          "dailyPct": -50
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.32,
+      "lastPrice": 0.32,
+      "totalPctChange": 0,
+      "peakPrice": 0.32,
+      "troughPrice": 0.32,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.32,
+          "dailyPct": -50
+        }
+      ]
+    },
+    {
+      "name": "Hour of Reckoning",
+      "setCode": "pip",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.34,
+          "dailyPct": -47.69
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.34,
+      "lastPrice": 0.34,
+      "totalPctChange": 0,
+      "peakPrice": 0.34,
+      "troughPrice": 0.34,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.34,
+          "dailyPct": -47.69
+        }
+      ]
+    },
+    {
+      "name": "Ferrous Lake",
+      "setCode": "pip",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.34,
+          "dailyPct": -46.88
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.34,
+      "lastPrice": 0.34,
+      "totalPctChange": 0,
+      "peakPrice": 0.34,
+      "troughPrice": 0.34,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.34,
+          "dailyPct": -46.88
+        }
+      ]
+    },
+    {
+      "name": "Summon: Ixion",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.36,
+          "dailyPct": -45.45
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.36,
+      "lastPrice": 0.36,
+      "totalPctChange": 0,
+      "peakPrice": 0.36,
+      "troughPrice": 0.36,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.36,
+          "dailyPct": -45.45
+        }
+      ]
+    },
+    {
+      "name": "Mangara, the Diplomat",
+      "setCode": "soc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.42,
+          "dailyPct": -41.67
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.42,
+      "lastPrice": 0.42,
+      "totalPctChange": 0,
+      "peakPrice": 0.42,
+      "troughPrice": 0.42,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.42,
+          "dailyPct": -41.67
+        }
+      ]
+    },
+    {
+      "name": "Oran-Rief, the Vastwood",
+      "setCode": "soc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.42,
+          "dailyPct": -40
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.42,
+      "lastPrice": 0.42,
+      "totalPctChange": 0,
+      "peakPrice": 0.42,
+      "troughPrice": 0.42,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.42,
+          "dailyPct": -40
+        }
+      ]
+    },
+    {
+      "name": "Mind Stone",
+      "setCode": "soc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.39,
+          "dailyPct": -40
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.39,
+      "lastPrice": 0.39,
+      "totalPctChange": 0,
+      "peakPrice": 0.39,
+      "troughPrice": 0.39,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.39,
+          "dailyPct": -40
+        }
+      ]
+    },
+    {
+      "name": "Cursed Mirror",
+      "setCode": "soc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.47,
+          "dailyPct": -38.96
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.47,
+      "lastPrice": 0.47,
+      "totalPctChange": 0,
+      "peakPrice": 0.47,
+      "troughPrice": 0.47,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.47,
+          "dailyPct": -38.96
+        }
+      ]
+    },
+    {
+      "name": "Puppet Master, String Puller",
+      "setCode": "msc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.56,
+          "dailyPct": -34.12
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.56,
+      "lastPrice": 0.56,
+      "totalPctChange": 0,
+      "peakPrice": 0.56,
+      "troughPrice": 0.56,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.56,
+          "dailyPct": -34.12
+        }
+      ]
+    },
+    {
+      "name": "Winding Way",
+      "setCode": "otc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 3.98,
+          "dailyPct": -24.48
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 3.98,
+      "lastPrice": 3.98,
+      "totalPctChange": 0,
+      "peakPrice": 3.98,
+      "troughPrice": 3.98,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 3.98,
+          "dailyPct": -24.48
+        }
+      ]
+    },
+    {
+      "name": "Terramorphic Expanse",
+      "setCode": "dsk",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.19,
+          "dailyPct": -24
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.19,
+      "lastPrice": 0.19,
+      "totalPctChange": 0,
+      "peakPrice": 0.19,
+      "troughPrice": 0.19,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.19,
+          "dailyPct": -24
+        }
+      ]
+    },
+    {
+      "name": "Overwhelming Stampede",
+      "setCode": "msc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.36,
+          "dailyPct": -23.6
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 1.36,
+      "lastPrice": 1.36,
+      "totalPctChange": 0,
+      "peakPrice": 1.36,
+      "troughPrice": 1.36,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.36,
+          "dailyPct": -23.6
+        }
+      ]
+    },
+    {
+      "name": "Setzer, Wandering Gambler",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -23.08
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.2,
+      "lastPrice": 0.2,
+      "totalPctChange": 0,
+      "peakPrice": 0.2,
+      "troughPrice": 0.2,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -23.08
+        }
+      ]
+    },
+    {
+      "name": "Poison-Tip Archer",
+      "setCode": "khc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.93,
+          "dailyPct": -20.9
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 1.93,
+      "lastPrice": 1.93,
+      "totalPctChange": 0,
+      "peakPrice": 1.93,
+      "troughPrice": 1.93,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.93,
+          "dailyPct": -20.9
+        }
+      ]
+    },
+    {
+      "name": "Ornithopter of Paradise",
+      "setCode": "blc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.95,
+          "dailyPct": -20.17
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.95,
+      "lastPrice": 0.95,
+      "totalPctChange": 0,
+      "peakPrice": 0.95,
+      "troughPrice": 0.95,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.95,
+          "dailyPct": -20.17
+        }
+      ]
+    },
+    {
+      "name": "Temple of Plenty",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -20
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.2,
+      "lastPrice": 0.2,
+      "totalPctChange": 0,
+      "peakPrice": 0.2,
+      "troughPrice": 0.2,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.2,
+          "dailyPct": -20
+        }
+      ]
+    },
+    {
+      "name": "Laboratory Drudge",
+      "setCode": "scd",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.12,
+          "dailyPct": -20
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.12,
+      "lastPrice": 0.12,
+      "totalPctChange": 0,
+      "peakPrice": 0.12,
+      "troughPrice": 0.12,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.12,
+          "dailyPct": -20
+        }
+      ]
+    },
+    {
+      "name": "Evendo Brushrazer",
+      "setCode": "eoc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.25,
+          "dailyPct": -19.35
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.25,
+      "lastPrice": 0.25,
+      "totalPctChange": 0,
+      "peakPrice": 0.25,
+      "troughPrice": 0.25,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.25,
+          "dailyPct": -19.35
+        }
+      ]
+    },
+    {
+      "name": "Sunscorched Divide",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.22,
+          "dailyPct": -18.52
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.22,
+      "lastPrice": 0.22,
+      "totalPctChange": 0,
+      "peakPrice": 0.22,
+      "troughPrice": 0.22,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.22,
+          "dailyPct": -18.52
+        }
+      ]
+    },
+    {
+      "name": "Forest",
+      "setCode": "tmt",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.15,
+          "dailyPct": -16.67
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.15,
+      "lastPrice": 0.15,
+      "totalPctChange": 0,
+      "peakPrice": 0.15,
+      "troughPrice": 0.15,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.15,
+          "dailyPct": -16.67
+        }
+      ]
+    },
+    {
+      "name": "Talisman of Dominance",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.79,
+          "dailyPct": -15.96
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.79,
+      "lastPrice": 0.79,
+      "totalPctChange": 0,
+      "peakPrice": 0.79,
+      "troughPrice": 0.79,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.79,
+          "dailyPct": -15.96
+        }
+      ]
+    },
+    {
+      "name": "Elemental Masterpiece",
+      "setCode": "stx",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.16,
+          "dailyPct": -15.79
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.16,
+      "lastPrice": 0.16,
+      "totalPctChange": 0,
+      "peakPrice": 0.16,
+      "troughPrice": 0.16,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.16,
+          "dailyPct": -15.79
+        }
+      ]
+    },
+    {
+      "name": "Glaring Fleshraker",
+      "setCode": "mh3",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.14,
+          "dailyPct": -15.56
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 1.14,
+      "lastPrice": 1.14,
+      "totalPctChange": 0,
+      "peakPrice": 1.14,
+      "troughPrice": 1.14,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.14,
+          "dailyPct": -15.56
+        }
+      ]
+    },
+    {
+      "name": "Phyrexian Triniform",
+      "setCode": "moc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.74,
+          "dailyPct": -15.53
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 1.74,
+      "lastPrice": 1.74,
+      "totalPctChange": 0,
+      "peakPrice": 1.74,
+      "troughPrice": 1.74,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 1.74,
+          "dailyPct": -15.53
+        }
+      ]
+    },
+    {
+      "name": "Angel of the Ruins",
+      "setCode": "fic",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.28,
+          "dailyPct": -15.15
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.28,
+      "lastPrice": 0.28,
+      "totalPctChange": 0,
+      "peakPrice": 0.28,
+      "troughPrice": 0.28,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.28,
+          "dailyPct": -15.15
+        }
+      ]
+    },
+    {
+      "name": "Relic of Legends",
+      "setCode": "msc",
+      "prices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.96,
+          "dailyPct": -15.04
+        }
+      ],
+      "observations": 1,
+      "firstDate": "2026-10-29",
+      "lastDate": "2026-10-29",
+      "firstPrice": 0.96,
+      "lastPrice": 0.96,
+      "totalPctChange": 0,
+      "peakPrice": 0.96,
+      "troughPrice": 0.96,
+      "maxDailyGain": 0,
+      "maxDailyDrop": 0,
+      "recentPrices": [
+        {
+          "date": "2026-10-29",
+          "price": 0.96,
+          "dailyPct": -15.04
+        }
+      ]
     }
   ],
   "topGainers": [
@@ -9455,40 +10289,12 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 1 available price source.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": 0.39,
       "sevenDayPctChange": 390,
-      "firstObservedDate": "2026-10-22"
-    },
-    {
-      "id": "6b6f61bf-418f-580d-bbcc-00c1908bd59d",
-      "key": "6b6f61bf-418f-580d-bbcc-00c1908bd59d",
-      "name": "Bronzebeak Foragers",
-      "setCode": "lcc",
-      "setName": "LCC",
-      "collectorNumber": "69",
-      "rarity": "rare",
-      "format": "Commander",
-      "category": "commander-picks",
-      "currentUsd": 3.29,
-      "previousUsd": 3.23,
-      "percentChange": 1.86,
-      "trend": "up",
-      "tcgplayerMarketUsd": 3.29,
-      "cardKingdomUsd": 2.79,
-      "sourceCount": 2,
-      "imageUrl": "https://api.scryfall.com/cards/named?exact=Bronzebeak%20Foragers&format=image&version=normal",
-      "reason": "Commander decklist; rose 1.9% since the prior saved observation across 2 available price sources.",
-      "source": "MTGJSON",
-      "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0.06,
-      "pctDelta": 1.86,
-      "sevenDayPriceDelta": 2.28,
-      "sevenDayPctChange": 225.74,
-      "firstObservedDate": "2026-10-22"
+      "firstObservedDate": "2026-10-23"
     },
     {
       "id": "50d11718-1752-5a03-a0f6-478716507e35",
@@ -9511,40 +10317,40 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": 0.16,
       "sevenDayPctChange": 160,
-      "firstObservedDate": "2026-10-22"
+      "firstObservedDate": "2026-10-23"
     },
     {
-      "id": "457eb780-41bf-5a85-b04a-4d0de4c34232",
-      "key": "457eb780-41bf-5a85-b04a-4d0de4c34232",
-      "name": "Deathgorge Scavenger",
-      "setCode": "lcc",
-      "setName": "LCC",
-      "collectorNumber": "236",
+      "id": "d701d7d9-3fb5-5aae-b6db-646a998fc9b3",
+      "key": "d701d7d9-3fb5-5aae-b6db-646a998fc9b3",
+      "name": "Pearl-Ear, Imperial Advisor",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "160",
       "rarity": "rare",
       "format": "Commander",
       "category": "commander-picks",
-      "currentUsd": 0.57,
-      "previousUsd": 0.57,
-      "percentChange": 0,
-      "trend": "flat",
-      "tcgplayerMarketUsd": 0.57,
-      "cardKingdomUsd": 0.49,
+      "currentUsd": 0.68,
+      "previousUsd": 0.61,
+      "percentChange": 11.48,
+      "trend": "up",
+      "tcgplayerMarketUsd": 0.68,
+      "cardKingdomUsd": 0.59,
       "sourceCount": 2,
-      "imageUrl": "https://api.scryfall.com/cards/named?exact=Deathgorge%20Scavenger&format=image&version=normal",
-      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
+      "imageUrl": "https://api.scryfall.com/cards/named?exact=Pearl-Ear%2C%20Imperial%20Advisor&format=image&version=normal",
+      "reason": "Commander decklist; rose 11.5% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0,
-      "pctDelta": 0,
-      "sevenDayPriceDelta": 0.33,
-      "sevenDayPctChange": 137.5,
-      "firstObservedDate": "2026-10-22"
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": 0.07,
+      "pctDelta": 11.48,
+      "sevenDayPriceDelta": 0.41,
+      "sevenDayPctChange": 151.85,
+      "firstObservedDate": "2026-10-23"
     },
     {
       "id": "e26ac155-2913-5c78-8f1c-c30a53a2bbcf",
@@ -9556,82 +10362,54 @@
       "rarity": "common",
       "format": "Commander",
       "category": "commander-picks",
-      "currentUsd": 0.65,
-      "previousUsd": 0.6,
-      "percentChange": 8.33,
+      "currentUsd": 0.66,
+      "previousUsd": 0.65,
+      "percentChange": 1.54,
       "trend": "up",
-      "tcgplayerMarketUsd": 0.65,
+      "tcgplayerMarketUsd": 0.66,
       "cardKingdomUsd": 0.39,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Path%20of%20Ancestry&format=image&version=normal",
-      "reason": "Commander decklist; rose 8.3% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; rose 1.5% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0.05,
-      "pctDelta": 8.33,
-      "sevenDayPriceDelta": 0.37,
-      "sevenDayPctChange": 132.14,
-      "firstObservedDate": "2026-10-22"
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": 0.01,
+      "pctDelta": 1.54,
+      "sevenDayPriceDelta": 0.39,
+      "sevenDayPctChange": 144.44,
+      "firstObservedDate": "2026-10-23"
+    },
+    {
+      "id": "b3fac98f-1124-52fa-99e8-808382be8b0b",
+      "key": "b3fac98f-1124-52fa-99e8-808382be8b0b",
+      "name": "Temple of Abandon",
+      "setCode": "blc",
+      "setName": "BLC",
+      "collectorNumber": "338",
+      "rarity": "rare",
+      "format": "Commander",
+      "category": "commander-picks",
+      "currentUsd": 0.54,
+      "previousUsd": 0.55,
+      "percentChange": -1.82,
+      "trend": "down",
+      "tcgplayerMarketUsd": 0.54,
+      "cardKingdomUsd": 0.49,
+      "sourceCount": 2,
+      "imageUrl": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Abandon&format=image&version=normal",
+      "reason": "Commander decklist; fell 1.8% since the prior saved observation across 2 available price sources.",
+      "source": "MTGJSON",
+      "isCatalyst": false,
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": -0.01,
+      "pctDelta": -1.82,
+      "sevenDayPriceDelta": 0.31,
+      "sevenDayPctChange": 134.78,
+      "firstObservedDate": "2026-10-23"
     }
   ],
   "topDecliners": [
-    {
-      "id": "8df9ae07-07e5-5c19-91af-034ce2af9d99",
-      "key": "8df9ae07-07e5-5c19-91af-034ce2af9d99",
-      "name": "Mountain",
-      "setCode": "c15",
-      "setName": "C15",
-      "collectorNumber": "335",
-      "rarity": "common",
-      "format": "Commander",
-      "category": "commander-picks",
-      "currentUsd": 0.15,
-      "previousUsd": 0.15,
-      "percentChange": 0,
-      "trend": "flat",
-      "tcgplayerMarketUsd": 0.15,
-      "cardKingdomUsd": 0.49,
-      "sourceCount": 2,
-      "imageUrl": "https://api.scryfall.com/cards/named?exact=Mountain&format=image&version=normal",
-      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "source": "MTGJSON",
-      "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0,
-      "pctDelta": 0,
-      "sevenDayPriceDelta": -0.46,
-      "sevenDayPctChange": -75.41,
-      "firstObservedDate": "2026-10-22"
-    },
-    {
-      "id": "97e2eba0-938d-5284-837c-8c2df0354b8c",
-      "key": "97e2eba0-938d-5284-837c-8c2df0354b8c",
-      "name": "Dawnglare Invoker",
-      "setCode": "c15",
-      "setName": "C15",
-      "collectorNumber": "67",
-      "rarity": "common",
-      "format": "Commander",
-      "category": "commander-picks",
-      "currentUsd": 0.09,
-      "previousUsd": 0.09,
-      "percentChange": 0,
-      "trend": "flat",
-      "tcgplayerMarketUsd": 0.09,
-      "cardKingdomUsd": 0.35,
-      "sourceCount": 2,
-      "imageUrl": "https://api.scryfall.com/cards/named?exact=Dawnglare%20Invoker&format=image&version=normal",
-      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
-      "source": "MTGJSON",
-      "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0,
-      "pctDelta": 0,
-      "sevenDayPriceDelta": -0.26,
-      "sevenDayPctChange": -74.29,
-      "firstObservedDate": "2026-10-22"
-    },
     {
       "id": "91a282d4-6431-5dc2-97a8-d98011198e7e",
       "key": "91a282d4-6431-5dc2-97a8-d98011198e7e",
@@ -9641,24 +10419,52 @@
       "collectorNumber": "193",
       "rarity": "uncommon",
       "format": "Commander",
-      "category": "reprint-squashes",
+      "category": "commander-picks",
       "currentUsd": 0.07,
-      "previousUsd": 0.22,
-      "percentChange": -68.18,
-      "trend": "down",
+      "previousUsd": 0.07,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.07,
       "cardKingdomUsd": 0.35,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Skyward%20Eye%20Prophets&format=image&version=normal",
-      "reason": "Commander decklist; fell 68.2% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
-      "isCatalyst": true,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": -0.15,
-      "pctDelta": -68.18,
+      "isCatalyst": false,
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": -0.15,
       "sevenDayPctChange": -68.18,
-      "firstObservedDate": "2026-10-22"
+      "firstObservedDate": "2026-10-23"
+    },
+    {
+      "id": "ea9bd110-78de-5845-90e7-bcbae4fbfec3",
+      "key": "ea9bd110-78de-5845-90e7-bcbae4fbfec3",
+      "name": "Dawnglare Invoker",
+      "setCode": "cm2",
+      "setName": "CM2",
+      "collectorNumber": "25",
+      "rarity": "common",
+      "format": "Commander",
+      "category": "reprint-squashes",
+      "currentUsd": 0.2,
+      "previousUsd": 0.49,
+      "percentChange": -59.18,
+      "trend": "down",
+      "tcgplayerMarketUsd": 0.2,
+      "cardKingdomUsd": 0.35,
+      "sourceCount": 2,
+      "imageUrl": "https://api.scryfall.com/cards/named?exact=Dawnglare%20Invoker&format=image&version=normal",
+      "reason": "Commander decklist; fell 59.2% since the prior saved observation across 2 available price sources.",
+      "source": "MTGJSON",
+      "isCatalyst": true,
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": -0.29,
+      "pctDelta": -59.18,
+      "sevenDayPriceDelta": -0.29,
+      "sevenDayPctChange": -59.18,
+      "firstObservedDate": "2026-10-23"
     },
     {
       "id": "19d1a565-a1e9-50f6-8fda-87c7acd4c19e",
@@ -9670,61 +10476,89 @@
       "rarity": "rare",
       "format": "Commander",
       "category": "commander-picks",
-      "currentUsd": 0.24,
+      "currentUsd": 0.25,
       "previousUsd": 0.24,
-      "percentChange": 0,
-      "trend": "flat",
-      "tcgplayerMarketUsd": 0.24,
+      "percentChange": 4.17,
+      "trend": "up",
+      "tcgplayerMarketUsd": 0.25,
       "cardKingdomUsd": 0.49,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Methods%20of%20the%20Mighty&format=image&version=normal",
+      "reason": "Commander decklist; rose 4.2% since the prior saved observation across 2 available price sources.",
+      "source": "MTGJSON",
+      "isCatalyst": false,
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": 0.01,
+      "pctDelta": 4.17,
+      "sevenDayPriceDelta": -0.33,
+      "sevenDayPctChange": -56.9,
+      "firstObservedDate": "2026-10-23"
+    },
+    {
+      "id": "a8d95e2f-e850-5c39-a371-b4130bb69a89",
+      "key": "a8d95e2f-e850-5c39-a371-b4130bb69a89",
+      "name": "Wear // Tear",
+      "setCode": "pip",
+      "setName": "PIP",
+      "collectorNumber": "222",
+      "rarity": "uncommon",
+      "format": "Commander",
+      "category": "commander-picks",
+      "currentUsd": 0.86,
+      "previousUsd": 0.94,
+      "percentChange": -8.51,
+      "trend": "down",
+      "tcgplayerMarketUsd": 0.86,
+      "cardKingdomUsd": 2.49,
+      "sourceCount": 2,
+      "imageUrl": "https://api.scryfall.com/cards/named?exact=Wear%20%2F%2F%20Tear&format=image&version=normal",
+      "reason": "Commander decklist; fell 8.5% since the prior saved observation across 2 available price sources.",
+      "source": "MTGJSON",
+      "isCatalyst": false,
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
+      "priceDelta": -0.08,
+      "pctDelta": -8.51,
+      "sevenDayPriceDelta": -1.01,
+      "sevenDayPctChange": -54.01,
+      "firstObservedDate": "2026-10-23"
+    },
+    {
+      "id": "1c67c8d9-1273-5f78-8777-2ff8c5c7c5b5",
+      "key": "1c67c8d9-1273-5f78-8777-2ff8c5c7c5b5",
+      "name": "Cut a Deal",
+      "setCode": "msc",
+      "setName": "MSC",
+      "collectorNumber": "127",
+      "rarity": "uncommon",
+      "format": "Commander",
+      "category": "commander-picks",
+      "currentUsd": 0.3,
+      "previousUsd": 0.3,
+      "percentChange": 0,
+      "trend": "flat",
+      "tcgplayerMarketUsd": 0.3,
+      "cardKingdomUsd": 0.69,
+      "sourceCount": 2,
+      "imageUrl": "https://api.scryfall.com/cards/named?exact=Cut%20a%20Deal&format=image&version=normal",
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
+      "lastUpdated": "2026-10-29T15:03:48.042Z",
       "priceDelta": 0,
       "pctDelta": 0,
-      "sevenDayPriceDelta": -0.34,
-      "sevenDayPctChange": -58.62,
-      "firstObservedDate": "2026-10-22"
-    },
-    {
-      "id": "3b971da9-e5e4-587d-8524-639c060cc673",
-      "key": "3b971da9-e5e4-587d-8524-639c060cc673",
-      "name": "The Gitrog Monster",
-      "setCode": "eoc",
-      "setName": "EOC",
-      "collectorNumber": "117",
-      "rarity": "mythic",
-      "format": "Commander",
-      "category": "commander-picks",
-      "currentUsd": 0.55,
-      "previousUsd": 0.54,
-      "percentChange": 1.85,
-      "trend": "up",
-      "tcgplayerMarketUsd": 0.55,
-      "cardKingdomUsd": 1.29,
-      "sourceCount": 2,
-      "imageUrl": "https://api.scryfall.com/cards/named?exact=The%20Gitrog%20Monster&format=image&version=normal",
-      "reason": "Commander decklist; rose 1.9% since the prior saved observation across 2 available price sources.",
-      "source": "MTGJSON",
-      "isCatalyst": false,
-      "lastUpdated": "2026-10-28T14:58:18.055Z",
-      "priceDelta": 0.01,
-      "pctDelta": 1.85,
-      "sevenDayPriceDelta": -0.74,
-      "sevenDayPctChange": -57.36,
-      "firstObservedDate": "2026-10-22"
+      "sevenDayPriceDelta": -0.35,
+      "sevenDayPctChange": -53.85,
+      "firstObservedDate": "2026-10-23"
     }
   ],
   "findings": [
-    "The latest feed is dated 2026-10-28 and contains 12511 signals across 3 observed categories; seven-day momentum is used when the latest file is flat.",
-    "penny-risers is the strongest latest category by average observed change (30.45%).",
+    "The latest feed is dated 2026-10-29 and contains 12511 signals across 3 observed categories; seven-day momentum is used when the latest file is flat.",
+    "penny-risers is the strongest latest category by average observed change (30.26%).",
     "Counterspell is the only card currently driving Reprint Squashes: 52 observations, $3.04 to $3.55 (16.78%), with a maximum daily drop of -28.41%.",
     "Island is the strongest seven-day gainer at 390.00%. Verify liquidity before treating it as a trend.",
-    "Mountain is the sharpest seven-day decliner at -75.41%, making reprint or demand exhaustion a risk to investigate.",
+    "Skyward Eye Prophets is the sharpest seven-day decliner at -68.18%, making reprint or demand exhaustion a risk to investigate.",
     "All observed daily categories are represented in the configured site tabs."
   ],
-  "moverPrompt": "Act as an MTG market analyst. Using only the attached site snapshot, explain the strongest market signals without treating a single low-liquidity print as proof of durable demand. Prioritize: (1) category momentum, (2) cards with repeat observations, (3) price direction and absolute move, (4) reprint or variant risk, and (5) what evidence would invalidate the thesis. Cite the pricing date 2026-10-28 and distinguish observed data from speculation.",
+  "moverPrompt": "Act as an MTG market analyst. Using only the attached site snapshot, explain the strongest market signals without treating a single low-liquidity print as proof of durable demand. Prioritize: (1) category momentum, (2) cards with repeat observations, (3) price direction and absolute move, (4) reprint or variant risk, and (5) what evidence would invalidate the thesis. Cite the pricing date 2026-10-29 and distinguish observed data from speculation.",
   "methodology": "Computed from repository daily market snapshots. Latest changes compare the two most recent dated files; seven-day momentum compares the first and last observation for each signal in the most recent seven dated files."
 }

@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-28T14:58:47.985Z",
+  "updatedAt": "2026-10-29T15:04:10.262Z",
   "records": [
+    {
+      "id": "2026-10-29-constructed-format-watch:1:c14:330",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Mountain (C14 330) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mountain",
+      "setCode": "c14",
+      "collectorNumber": "330",
+      "entryUsd": 0.23,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 228.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:2:c18:66",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Dismantling Blow (C18 66) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Dismantling Blow",
+      "setCode": "c18",
+      "collectorNumber": "66",
+      "entryUsd": 0.1,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:3:blc:131",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Exotic Orchard (BLC 131) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Exotic Orchard",
+      "setCode": "blc",
+      "collectorNumber": "131",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 97.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:4:scd:216",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Absorb (SCD 216) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Absorb",
+      "setCode": "scd",
+      "collectorNumber": "216",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 91.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:5:pip:259",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Command Tower (PIP 259) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "pip",
+      "collectorNumber": "259",
+      "entryUsd": 0.66,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:6:msc:221",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Talisman of Progress (MSC 221) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Talisman of Progress",
+      "setCode": "msc",
+      "collectorNumber": "221",
+      "entryUsd": 0.69,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:7:blc:175",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Sphinx of Enlightenment (BLC 175) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sphinx of Enlightenment",
+      "setCode": "blc",
+      "collectorNumber": "175",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:8:c19:287",
+      "dateKey": "2026-10-29",
+      "postId": "2026-10-29-constructed-format-watch",
+      "prompt": "Assess Yavimaya Coast (C19 287) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Yavimaya Coast",
+      "setCode": "c19",
+      "collectorNumber": "287",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 79.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-29",
+        "evaluationDate": "2026-11-12"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-28-commander-demand:1:soc:129",
       "dateKey": "2026-10-28",
