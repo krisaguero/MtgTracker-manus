@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { ArrowLeft, Check, ChevronDown, ExternalLink, Filter, Search, ShieldCheck, ShoppingBag, Sparkles, Star, Users, Layers, Zap } from 'lucide-react';
 import type { RawCommanderDeck } from '@/data/commanderDecklists';
@@ -81,6 +81,8 @@ export default function CommanderPreconLibrary() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGuild, setSelectedGuild] = useState('all');
   const [filterOwnedOnly, setFilterOwnedOnly] = useState(false);
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'name' | 'value'>('newest');
+  const [currentPage, setCurrentPage] = useState(1);
   const [showMarketBreakdown, setShowMarketBreakdown] = useState(false);
   const [ownedPrecons, setOwnedPrecons] = useState<OwnedPreconEntry[]>(() => loadOwnedPrecons());
   const [inventoryCards] = useState(() => loadOwnedCollection());
@@ -155,6 +157,27 @@ export default function CommanderPreconLibrary() {
       return true;
     });
   }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap]);
+
+  const sortedDecks = useMemo(() => {
+    return [...filteredDecks].sort((a, b) => {
+      if (sortOrder === 'name') return a.name.localeCompare(b.name);
+      if (sortOrder === 'value') return resolveDeckMarketValue(b).totalUsd - resolveDeckMarketValue(a).totalUsd;
+      const dateCompare = (b.release_date || '').localeCompare(a.release_date || '');
+      return sortOrder === 'oldest' ? -dateCompare || a.name.localeCompare(b.name) : dateCompare || a.name.localeCompare(b.name);
+    });
+  }, [filteredDecks, sortOrder]);
+
+  const PAGE_SIZE = 18;
+  const totalPages = Math.max(1, Math.ceil(sortedDecks.length / PAGE_SIZE));
+  const visibleDecks = sortedDecks.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedGuild, filterOwnedOnly, sortOrder]);
+
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+  }, [currentPage, totalPages]);
 
   const ownershipSummary = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.reduce((summary, deck) => {
@@ -330,8 +353,24 @@ export default function CommanderPreconLibrary() {
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t border-border font-mono text-xs text-muted-foreground">
-            <span>Showing <strong className="text-foreground">{filteredDecks.length}</strong> of {EXTENDED_PRECON_LIBRARY.length} precons</span>
-            <span>Click any precon card or decklist button to inspect 100-card contents &amp; missing singles</span>
+            <span>Showing <strong className="text-foreground">{filteredDecks.length}</strong> of {EXTENDED_PRECON_LIBRARY.length} precons · page {currentPage} / {totalPages}</span>
+            <span>18 per page · click a deck to inspect 100-card contents &amp; missing singles</span>
+          </div>
+          <div className="flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between">
+            <label className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+              Sort
+              <select value={sortOrder} onChange={(event) => setSortOrder(event.target.value as typeof sortOrder)} className="border-2 border-border bg-background px-3 py-2 text-xs text-foreground focus:border-primary focus:outline-none">
+                <option value="newest">Newest releases</option>
+                <option value="oldest">Oldest releases</option>
+                <option value="name">Name A–Z</option>
+                <option value="value">Highest indexed value</option>
+              </select>
+            </label>
+            <div className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-wider">
+              <button type="button" onClick={() => setCurrentPage((page) => Math.max(1, page - 1))} disabled={currentPage === 1} className="border-2 border-border bg-background px-3 py-2 disabled:cursor-not-allowed disabled:opacity-40 hover:border-primary">← Previous</button>
+              <span className="px-1 text-muted-foreground">Page {currentPage} of {totalPages}</span>
+              <button type="button" onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))} disabled={currentPage === totalPages} className="border-2 border-border bg-background px-3 py-2 disabled:cursor-not-allowed disabled:opacity-40 hover:border-primary">Next →</button>
+            </div>
           </div>
         </div>
 
@@ -454,7 +493,7 @@ export default function CommanderPreconLibrary() {
 
         {/* Precon Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDecks.map((deck) => {
+          {visibleDecks.map((deck) => {
             const isManuallyOwned = ownedPrecons.some((o) => o.deckSlug.toLowerCase() === deck.slug.toLowerCase());
             const deckCardNames = [...deck.commander, ...deck.cards].map((c) => c.name.toLowerCase());
             const matchedCount = deckCardNames.filter((name) => (inventoryNamesMap.get(name) || 0) > 0).length;
@@ -463,7 +502,8 @@ export default function CommanderPreconLibrary() {
 
             const asset = productAssetFor(deck.name);
             const marketValue = resolveDeckMarketValue(deck);
-            const primaryCommander = deck.commander[0]?.name || deck.name;
+            const primaryCommanderCard = deck.commander[0];
+            const primaryCommander = primaryCommanderCard?.name || deck.name;
             const fallbackCardUrl = asset?.imageUrl;
 
             return (
@@ -473,9 +513,9 @@ export default function CommanderPreconLibrary() {
               >
                 <div>
                   {/* Standardized full-card Commander frame */}
-                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-background border-b-2 border-border sm:aspect-[4/5]">
-                    <div className="relative z-10 h-full w-full p-2 sm:p-3 flex items-center justify-center">
-                      <CommanderCardFrame cardName={primaryCommander} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander full card frame`} />
+                  <div className="relative aspect-[63/88] w-full overflow-hidden bg-[#171a24] border-b-2 border-border">
+                    <div className="relative z-10 h-full w-full flex items-center justify-center">
+                      <CommanderCardFrame fullWidth cardName={primaryCommander} cardId={primaryCommanderCard?.scryfall_id} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander`} />
                     </div>
 
                     {/* Top Badges */}

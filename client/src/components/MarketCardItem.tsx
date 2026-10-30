@@ -13,14 +13,16 @@ interface MarketCardItemProps {
 }
 
 export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }: MarketCardItemProps) {
+  const cleanName = mover.name.replace(/\s*\([^)]*\)/g, '').trim();
+  const scryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&set=${encodeURIComponent(mover.setCode.toLowerCase())}&format=image&version=normal`;
+  const fallbackScryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&format=image&version=normal`;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
+  const [imageSrc, setImageSrc] = useState(scryfallImageUrl);
 
   const isPositive = mover.percentChange > 0;
   const isNegative = mover.percentChange < 0;
   const changeTone = isPositive ? 'text-emerald-600 dark:text-emerald-400' : isNegative ? 'text-destructive' : 'text-muted-foreground';
-  const cleanName = mover.name.replace(/\s*\([^)]*\)/g, '').trim();
-  const scryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&set=${encodeURIComponent(mover.setCode.toLowerCase())}&format=image&version=normal`;
   const isWatched = isMarketCardWatched(mover, watchlist);
 
   return (
@@ -58,7 +60,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
       </div>
 
       {/* Hero Card Image Display - Clean, Non-Overlaid, with Border & Subtle Hover Zoom */}
-      <div className="relative mx-auto w-full max-w-[240px] aspect-[5/7] overflow-hidden border-2 border-border bg-muted shadow-md">
+      <div className="relative mx-auto w-full max-w-[240px] aspect-[5/7] overflow-hidden border-2 border-border bg-[#171a24] shadow-md">
         {!imageLoaded && !imageFailed && (
           <div className="absolute inset-0 bg-muted flex flex-col items-center justify-center p-4">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/40 to-transparent animate-[shimmer_1.5s_infinite]" />
@@ -68,15 +70,20 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
         )}
 
         <img
-          src={scryfallImageUrl}
+          src={imageSrc}
           alt={mover.name}
           onLoad={() => setImageLoaded(true)}
           onError={(e) => {
+            if (imageSrc !== fallbackScryfallImageUrl) {
+              setImageSrc(fallbackScryfallImageUrl);
+              return;
+            }
             setImageFailed(true);
             setImageLoaded(true);
             (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="336" viewBox="0 0 240 336"><rect fill="%231e293b" width="240" height="336"/><text x="120" y="158" font-family="monospace" font-size="14" fill="%23cbd5e1" text-anchor="middle">MTG Spike Art</text><text x="120" y="182" font-family="monospace" font-size="11" fill="%2394a3b8" text-anchor="middle">' + mover.setCode.toUpperCase() + '</text></svg>';
           }}
-          className={`h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          referrerPolicy="no-referrer"
+          className={`h-full w-full object-contain transition-transform duration-300 group-hover/card:scale-[1.02] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           decoding="async"
           fetchPriority="low"
