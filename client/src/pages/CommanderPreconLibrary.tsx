@@ -353,7 +353,7 @@ export default function CommanderPreconLibrary() {
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t border-border font-mono text-xs text-muted-foreground">
-            <span>Showing <strong className="text-foreground">{filteredDecks.length}</strong> of {EXTENDED_PRECON_LIBRARY.length} precons · page {currentPage} / {totalPages}</span>
+            <span>Showing <strong className="text-foreground">{filteredDecks.length}</strong> of {EXTENDED_PRECON_LIBRARY.length} precons · page {currentPage} / {totalPages} · 18 per page</span>
             <span>18 per page · click a deck to inspect 100-card contents &amp; missing singles</span>
           </div>
           <div className="flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between">
