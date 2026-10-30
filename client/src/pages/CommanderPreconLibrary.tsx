@@ -4,7 +4,7 @@ import { ArrowLeft, Check, ChevronDown, ExternalLink, Filter, Search, ShieldChec
 import type { RawCommanderDeck } from '@/data/commanderDecklists';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { slugify } from '@/hooks/useCommanderDeck';
-import { loadOwnedPrecons, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
+import { loadOwnedPrecons, recordPreconAcquisition, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { productAssetFor } from '@/data/preconProductAssets';
 import { InternalPageNav } from '@/components/InternalPageNav';
@@ -84,6 +84,12 @@ export default function CommanderPreconLibrary() {
   const [showMarketBreakdown, setShowMarketBreakdown] = useState(false);
   const [ownedPrecons, setOwnedPrecons] = useState<OwnedPreconEntry[]>(() => loadOwnedPrecons());
   const [inventoryCards] = useState(() => loadOwnedCollection());
+  const [acquisitionSlug, setAcquisitionSlug] = useState<string | null>(null);
+  const [acquisitionCost, setAcquisitionCost] = useState('');
+  const [acquisitionDate, setAcquisitionDate] = useState(() => new Date().toISOString().slice(0, 10));
+  const [acquisitionSource, setAcquisitionSource] = useState('');
+  const [acquisitionBoosters, setAcquisitionBoosters] = useState('');
+  const [acquisitionNotes, setAcquisitionNotes] = useState('');
 
   const inventoryNamesMap = useMemo(() => {
     const map = new Map<string, number>();
@@ -97,6 +103,37 @@ export default function CommanderPreconLibrary() {
     const updated = toggleOwnedPrecon(deck.slug, deck.name, deck.set_code);
     setOwnedPrecons(updated);
   };
+
+  const beginAcquisition = (deck: PreconLibraryItem) => {
+    const existing = ownedPrecons.find((entry) => entry.deckSlug.toLowerCase() === deck.slug.toLowerCase());
+    setAcquisitionSlug(deck.slug);
+    setAcquisitionCost(existing?.costBasisUsd?.toFixed(2) || '');
+    setAcquisitionDate(existing?.acquiredAt || new Date().toISOString().slice(0, 10));
+    setAcquisitionSource(existing?.acquisitionSource || 'Costco');
+    setAcquisitionBoosters(existing?.includedBoosters?.toString() || '');
+    setAcquisitionNotes(existing?.notes || '');
+  };
+
+  const saveAcquisition = (deck: PreconLibraryItem) => {
+    const cost = Number(acquisitionCost);
+    if (!Number.isFinite(cost) || cost < 0 || !/^\d{4}-\d{2}-\d{2}$/.test(acquisitionDate)) return;
+    setOwnedPrecons(recordPreconAcquisition({
+      deckSlug: deck.slug,
+      setName: deck.name,
+      setCode: deck.set_code,
+      costBasisUsd: cost,
+      acquiredAt: acquisitionDate,
+      acquisitionSource,
+      includedBoosters: acquisitionBoosters ? Math.max(0, Math.floor(Number(acquisitionBoosters))) : undefined,
+      notes: acquisitionNotes,
+    }));
+    setAcquisitionSlug(null);
+  };
+
+  const acquisitionDeck = acquisitionSlug ? EXTENDED_PRECON_LIBRARY.find((deck) => deck.slug === acquisitionSlug) : undefined;
+  const acquisitionRecord = acquisitionSlug ? ownedPrecons.find((entry) => entry.deckSlug.toLowerCase() === acquisitionSlug.toLowerCase()) : undefined;
+  const acquisitionValue = acquisitionDeck ? resolveDeckMarketValue(acquisitionDeck).totalUsd : 0;
+  const acquisitionGain = acquisitionRecord?.costBasisUsd === undefined ? null : acquisitionValue - acquisitionRecord.costBasisUsd;
 
   const filteredDecks = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.filter((deck) => {
@@ -320,6 +357,23 @@ export default function CommanderPreconLibrary() {
           </details>
         </section>
 
+        {acquisitionDeck && (
+          <section className="border-2 border-primary bg-primary/5 p-5 sm:p-6" aria-labelledby="precon-acquisition-tracker">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div><p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">Acquisition ledger</p><h2 id="precon-acquisition-tracker" className="mt-2 text-xl font-black">Track {acquisitionDeck.name}</h2><p className="mt-1 text-sm text-muted-foreground">Cost basis is saved with the owned-precon record. Gain is calculated against the current indexed card-equity baseline, not a sealed resale quote.</p></div>
+              <button type="button" onClick={() => setAcquisitionSlug(null)} className="font-mono text-xs font-bold uppercase text-muted-foreground hover:text-foreground">Close</button>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              <label className="font-mono text-[10px] font-bold uppercase tracking-wider">Paid USD<input value={acquisitionCost} onChange={(event) => setAcquisitionCost(event.target.value)} inputMode="decimal" placeholder="49.97" className="mt-1 w-full border-2 border-border bg-background px-3 py-2 text-sm font-bold" /></label>
+              <label className="font-mono text-[10px] font-bold uppercase tracking-wider">Acquired<input type="date" value={acquisitionDate} onChange={(event) => setAcquisitionDate(event.target.value)} className="mt-1 w-full border-2 border-border bg-background px-3 py-2 text-sm" /></label>
+              <label className="font-mono text-[10px] font-bold uppercase tracking-wider">Source<input value={acquisitionSource} onChange={(event) => setAcquisitionSource(event.target.value)} placeholder="Costco" className="mt-1 w-full border-2 border-border bg-background px-3 py-2 text-sm" /></label>
+              <label className="font-mono text-[10px] font-bold uppercase tracking-wider">Boosters<input value={acquisitionBoosters} onChange={(event) => setAcquisitionBoosters(event.target.value)} inputMode="numeric" placeholder="2" className="mt-1 w-full border-2 border-border bg-background px-3 py-2 text-sm" /></label>
+              <label className="font-mono text-[10px] font-bold uppercase tracking-wider">Notes<input value={acquisitionNotes} onChange={(event) => setAcquisitionNotes(event.target.value)} placeholder="Avengers Tower promo" className="mt-1 w-full border-2 border-border bg-background px-3 py-2 text-sm" /></label>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-border pt-4 font-mono text-xs"><span>Indexed value: <strong>${acquisitionValue.toFixed(2)}</strong></span>{acquisitionGain !== null && <span className={acquisitionGain >= 0 ? 'font-black text-emerald-600' : 'font-black text-amber-600'}>{acquisitionGain >= 0 ? '+' : '-'}${Math.abs(acquisitionGain).toFixed(2)} unrealized {acquisitionGain >= 0 ? 'gain' : 'basis gap'}</span>}<button type="button" onClick={() => saveAcquisition(acquisitionDeck)} className="border-2 border-primary bg-primary px-4 py-2 font-black uppercase text-primary-foreground hover:bg-primary/90">Save acquisition</button></div>
+          </section>
+        )}
+
         {/* Commander Market Valuation Matrix Summary */}
         <div className="mb-8 border-2 border-border bg-card p-6 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-border">
@@ -510,6 +564,7 @@ export default function CommanderPreconLibrary() {
                   >
                     <Check className="h-3.5 w-3.5" /> {isManuallyOwned ? 'In Inventory' : 'Mark Owned'}
                   </button>
+                  <button type="button" onClick={() => beginAcquisition(deck)} className="col-span-2 border border-primary/60 bg-primary/5 py-2 text-center font-mono text-[10px] font-bold uppercase tracking-wider text-primary hover:bg-primary/10">{ownedPrecons.some((owned) => owned.deckSlug.toLowerCase() === deck.slug.toLowerCase() && owned.costBasisUsd !== undefined) ? 'Update acquisition / gain' : 'Track acquisition cost'}</button>
                   <div className="col-span-2 grid grid-cols-2 gap-2 border-t border-border pt-3 sm:grid-cols-4">
                     {preconMarketplaceLinks(deck.name, deck.release_date).map((marketplace) => (
                       <a

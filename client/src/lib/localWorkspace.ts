@@ -28,6 +28,7 @@ import {
   type CollectionPlannerData,
 } from "./collectionPlanner";
 import { DIRECTORY_STORAGE_KEY } from "./collectionDirectory";
+import { loadOwnedPrecons, type OwnedPreconEntry } from "./preconInventory";
 
 import {
   EMPTY_LIMITED_WORKSPACE,
@@ -83,6 +84,7 @@ export interface LocalWorkspaceBackup {
   savedDecklists: LocalSavedDeck[];
   duelInventories: DuelInventories;
   valuationHistory: ValuationSnapshot[];
+  ownedPrecons?: OwnedPreconEntry[];
   collectionPlanner?: CollectionPlannerData;
   limitedWorkspace?: LimitedWorkspace;
   privateDirectory?: PrivateDirectoryBackup;
@@ -91,6 +93,7 @@ export interface LocalWorkspaceBackup {
 const BACKUP_KEYS = [
   "mtg_tracker_manabox_collection_v2",
   "mtg_tracker_manabox_collection_v1",
+  "mtg_tracker_owned_precons_v1",
   COMMANDER_PASSPORT_STORAGE_KEY,
   LOCAL_SAVED_DECKS_STORAGE_KEY,
   STORAGE_KEY_DECK_A,
@@ -374,6 +377,7 @@ export function createLocalWorkspaceBackup(): LocalWorkspaceBackup {
     savedDecklists: loadLocalSavedDecks().filter(isValidSavedDeck),
     duelInventories: loadStoredInventories(),
     valuationHistory: getValuationHistory().filter(isValuationSnapshot),
+    ownedPrecons: loadOwnedPrecons(),
     collectionPlanner: loadCollectionPlanner(),
     limitedWorkspace: loadLimitedWorkspace(),
     privateDirectory: loadPrivateDirectoryBackup(),
@@ -396,6 +400,7 @@ export function validateLocalWorkspaceBackup(
     typeof value.duelInventories.a !== "string" ||
     typeof value.duelInventories.b !== "string" ||
     !Array.isArray(value.valuationHistory) ||
+    (value.ownedPrecons !== undefined && !Array.isArray(value.ownedPrecons)) ||
     (value.collectionPlanner !== undefined &&
       !isCollectionPlannerData(value.collectionPlanner)) ||
     (value.limitedWorkspace !== undefined &&
@@ -448,7 +453,12 @@ export function validateLocalWorkspaceBackup(
     value.collection.every(isOwnedCard) &&
     value.commanderDecks.every(isCommanderDeckRecord) &&
     value.savedDecklists.every(isValidSavedDeck) &&
-    value.valuationHistory.every(isValuationSnapshot)
+    value.valuationHistory.every(isValuationSnapshot) &&
+    (value.ownedPrecons === undefined || value.ownedPrecons.every((entry) =>
+      isRecord(entry) && typeof entry.deckSlug === "string" && typeof entry.setName === "string"
+      && typeof entry.setCode === "string" && typeof entry.addedAt === "number"
+      && (entry.costBasisUsd === undefined || (typeof entry.costBasisUsd === "number" && Number.isFinite(entry.costBasisUsd)))
+    ))
   );
 }
 
@@ -483,6 +493,7 @@ export function restoreLocalWorkspaceBackup(value: unknown): void {
       backup.duelInventories.savedThemes ?? []
     ),
     [COLLECTION_HISTORY_STORAGE_KEY]: JSON.stringify(backup.valuationHistory),
+    mtg_tracker_owned_precons_v1: JSON.stringify(backup.ownedPrecons ?? []),
     [COLLECTION_PLANNER_STORAGE_KEY]: JSON.stringify(
       backup.collectionPlanner ?? EMPTY_COLLECTION_PLANNER
     ),
@@ -555,6 +566,7 @@ export function clearLocalWorkspace(): void {
     COMMANDER_PASSPORT_STORAGE_KEY,
     LOCAL_SAVED_DECKS_STORAGE_KEY,
     COLLECTION_HISTORY_STORAGE_KEY,
+    "mtg_tracker_owned_precons_v1",
     COLLECTION_PLANNER_STORAGE_KEY,
     LIMITED_WORKSPACE_STORAGE_KEY,
     DIRECTORY_STORAGE_KEY,
