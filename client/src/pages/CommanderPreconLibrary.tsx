@@ -154,7 +154,7 @@ export default function CommanderPreconLibrary() {
       }
       return true;
     });
-  }, [searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap]);
+  }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap]);
 
   const ownershipSummary = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.reduce((summary, deck) => {
@@ -174,7 +174,7 @@ export default function CommanderPreconLibrary() {
       summary.status.set(deck.slug, { isOwned, coveragePct });
       return summary;
     }, { ownedValue: 0, unownedValue: 0, ownedCount: 0, unownedCount: 0, status: new Map<string, { isOwned: boolean; coveragePct: number }>() });
-  }, [ownedPrecons, inventoryNamesMap]);
+  }, [EXTENDED_PRECON_LIBRARY, ownedPrecons, inventoryNamesMap]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
