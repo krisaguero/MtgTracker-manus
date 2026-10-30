@@ -1,7 +1,267 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-29T15:04:10.262Z",
+  "updatedAt": "2026-10-30T14:56:47.285Z",
   "records": [
+    {
+      "id": "2026-10-30-top-10:1:soc:205",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Treasure Cruise (SOC 205) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Treasure Cruise",
+      "setCode": "soc",
+      "collectorNumber": "205",
+      "entryUsd": 0.51,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 142.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:2:cm2:285",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Plains (CM2 285) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Plains",
+      "setCode": "cm2",
+      "collectorNumber": "285",
+      "entryUsd": 0.49,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 133.3% since the prior saved observation across 1 available price source.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:3:c15:117",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Blood Bairn (C15 117) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Blood Bairn",
+      "setCode": "c15",
+      "collectorNumber": "117",
+      "entryUsd": 0.19,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 111.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:4:soc:208",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Blight Mound (SOC 208) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Blight Mound",
+      "setCode": "soc",
+      "collectorNumber": "208",
+      "entryUsd": 0.66,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 88.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:5:soc:147",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Gift of Immortality (SOC 147) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Gift of Immortality",
+      "setCode": "soc",
+      "collectorNumber": "147",
+      "entryUsd": 0.69,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 81.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:6:pip:294",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Sulfur Falls (PIP 294) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sulfur Falls",
+      "setCode": "pip",
+      "collectorNumber": "294",
+      "entryUsd": 0.69,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 81.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:7:soc:250",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Plargg and Nassari (SOC 250) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Plargg and Nassari",
+      "setCode": "soc",
+      "collectorNumber": "250",
+      "entryUsd": 0.53,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 76.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:8:moc:386",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Thopter Assembly (MOC 386) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Thopter Assembly",
+      "setCode": "moc",
+      "collectorNumber": "386",
+      "entryUsd": 0.74,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 76.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:9:msc:115",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Tri-Sentinel, Act of Vengeance (MSC 115) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tri-Sentinel, Act of Vengeance",
+      "setCode": "msc",
+      "collectorNumber": "115",
+      "entryUsd": 0.83,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 69.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-30-top-10:10:blc:10",
+      "dateKey": "2026-10-30",
+      "postId": "2026-10-30-top-10",
+      "prompt": "Assess Murmuration (BLC 10) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Murmuration",
+      "setCode": "blc",
+      "collectorNumber": "10",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 67.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-30",
+        "evaluationDate": "2026-11-13"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-29-constructed-format-watch:1:c14:330",
       "dateKey": "2026-10-29",
@@ -2106,7 +2366,13 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -22.07,
+        "actualDirection": "DOWN"
+      },
       "printingSourceUrl": "https://scryfall.com/card/ncc/10/tivit-seller-of-secrets"
     },
     {
@@ -2133,7 +2399,13 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -11,
+        "actualDirection": "DOWN"
+      },
       "printingSourceUrl": "https://scryfall.com/card/eoc/77/ripples-of-potential"
     },
     {
@@ -2160,7 +2432,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      },
       "printingSourceUrl": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren"
     },
     {
@@ -2187,7 +2463,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
     },
     {
       "id": "2026-10-16-top-10:6:mh2:267",
@@ -2213,7 +2493,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
     },
     {
       "id": "2026-10-16-top-10:7:ppdsk:202p",
@@ -2239,7 +2523,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
     },
     {
       "id": "2026-10-16-top-10:8:cmd:269",
@@ -2265,7 +2553,13 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -13,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-16-top-10:9:eld:161",
@@ -2291,7 +2585,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
     },
     {
       "id": "2026-10-16-top-10:10:all:28",
@@ -2317,7 +2615,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
     },
     {
       "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
@@ -2343,7 +2645,11 @@
         "evaluationDate": "2026-10-30",
         "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or >=30%"
       },
-      "outcome": null,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      },
       "printingSourceUrl": "https://scryfall.com/card/acr/79/abstergo-entertainment"
     },
     {
