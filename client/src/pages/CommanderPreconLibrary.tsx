@@ -23,6 +23,7 @@ interface PreconLibraryItem extends RawCommanderDeck {
   orderUrl: string;
   isPartner: boolean;
   guild?: string;
+  isCollectorEdition: boolean;
 }
 
 const GUILDS = [
@@ -47,6 +48,7 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
   const msrp = null; // MTGJSON does not publish a sealed MSRP; never infer one from release year.
 
   const isPartner = deck.commander.length > 1 || deck.name.toLowerCase().includes('partner') || deck.name.toLowerCase().includes('&');
+  const isCollectorEdition = /collector'?s? edition/i.test(deck.name);
 
   let guild = 'WU';
   const nameLower = (deck.name + ' ' + (deck.commander[0]?.name || '')).toLowerCase();
@@ -68,6 +70,7 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
     msrp,
     orderUrl: `https://www.tcgplayer.com/search/magic/product?q=${encodeURIComponent(deck.name + ' commander deck')}`,
     isPartner,
+    isCollectorEdition,
     guild,
   };
   }).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
@@ -76,7 +79,14 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
 export default function CommanderPreconLibrary() {
   useMarketPriceIndex();
   const { decks: commanderDecklists, loading: archiveLoading } = useCommanderArchive();
-  const EXTENDED_PRECON_LIBRARY = useMemo(() => buildExtendedPreconLibrary(commanderDecklists ?? []), [commanderDecklists]);
+  const [showCollectorPrecons, setShowCollectorPrecons] = useState(false);
+  const [collectorDecks, setCollectorDecks] = useState<RawCommanderDeck[]>([]);
+  const [collectorLoading, setCollectorLoading] = useState(false);
+  const EXTENDED_PRECON_LIBRARY = useMemo(() => {
+    const baseDecks = commanderDecklists ?? [];
+    const combined = showCollectorPrecons ? [...baseDecks, ...collectorDecks] : baseDecks;
+    return buildExtendedPreconLibrary(combined);
+  }, [commanderDecklists, collectorDecks, showCollectorPrecons]);
   const [, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGuild, setSelectedGuild] = useState('all');
@@ -139,6 +149,7 @@ export default function CommanderPreconLibrary() {
 
   const filteredDecks = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.filter((deck) => {
+      if (deck.isCollectorEdition && !showCollectorPrecons) return false;
       if (selectedGuild !== 'all' && deck.guild !== selectedGuild) return false;
       if (filterOwnedOnly) {
         const isManuallyOwned = ownedPrecons.some((o) => o.deckSlug.toLowerCase() === deck.slug.toLowerCase());
@@ -156,7 +167,7 @@ export default function CommanderPreconLibrary() {
       }
       return true;
     });
-  }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap]);
+  }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap, showCollectorPrecons]);
 
   const sortedDecks = useMemo(() => {
     return [...filteredDecks].sort((a, b) => {
@@ -178,6 +189,25 @@ export default function CommanderPreconLibrary() {
   useEffect(() => {
     if (currentPage > totalPages) setCurrentPage(totalPages);
   }, [currentPage, totalPages]);
+
+  useEffect(() => {
+    if (!showCollectorPrecons || collectorDecks.length > 0) return;
+    let active = true;
+    setCollectorLoading(true);
+    void import('@/data/mtgjsonPreconDecks.json')
+      .then((module) => {
+        if (!active) return;
+        const records = (module.default as RawCommanderDeck[]).filter((deck) => /collector'?s? edition/i.test(deck.name));
+        setCollectorDecks(records);
+      })
+      .catch(() => {
+        if (active) setCollectorDecks([]);
+      })
+      .finally(() => {
+        if (active) setCollectorLoading(false);
+      });
+    return () => { active = false; };
+  }, [showCollectorPrecons, collectorDecks.length]);
 
   const ownershipSummary = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.reduce((summary, deck) => {
@@ -350,7 +380,20 @@ export default function CommanderPreconLibrary() {
             >
               <ShieldCheck className="h-4 w-4" /> {filterOwnedOnly ? 'Showing Owned / 50%+ Complete' : 'Filter Owned Decks'}
             </button>
+
+            <button
+              type="button"
+              onClick={() => setShowCollectorPrecons((visible) => !visible)}
+              aria-pressed={showCollectorPrecons}
+              className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors shrink-0 inline-flex items-center justify-center gap-2 ${showCollectorPrecons ? 'border-fuchsia-500 bg-fuchsia-500 text-black' : 'border-border bg-background text-foreground hover:border-fuchsia-500'}`}
+            >
+              <Sparkles className="h-4 w-4" /> {showCollectorPrecons ? 'Hide Collector Editions' : 'Show Collector Editions'}
+            </button>
           </div>
+
+          {showCollectorPrecons && <div className="border-t border-border pt-3 font-mono text-[10px] font-bold uppercase tracking-wider text-fuchsia-700 dark:text-fuchsia-300" role="status">
+            {collectorLoading ? 'Loading collector deck records…' : `Collector Editions visible · ${collectorDecks.length} premium deck records · foil commander treatment enabled`}
+          </div>}
 
           <div className="flex items-center justify-between pt-2 border-t border-border font-mono text-xs text-muted-foreground">
             <span>Showing <strong className="text-foreground">{filteredDecks.length}</strong> of {EXTENDED_PRECON_LIBRARY.length} precons · page {currentPage} / {totalPages} · 18 per page</span>
@@ -515,7 +558,7 @@ export default function CommanderPreconLibrary() {
                   {/* Standardized full-card Commander frame */}
                   <div className="relative aspect-[63/88] w-full overflow-hidden bg-[#171a24] border-b-2 border-border">
                     <div className="relative z-10 h-full w-full flex items-center justify-center">
-                      <CommanderCardFrame fullWidth cardName={primaryCommander} cardId={primaryCommanderCard?.scryfall_id} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander`} />
+                      <CommanderCardFrame fullWidth foil={deck.isCollectorEdition} cardName={primaryCommander} cardId={primaryCommanderCard?.scryfall_id} fallbackSrc={fallbackCardUrl} alt={`${deck.name} primary Commander`} />
                     </div>
 
                     {/* Top Badges */}
