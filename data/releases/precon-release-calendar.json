@@ -1,158 +1,13 @@
 {
   "schemaVersion": 1,
   "kind": "precon-release-calendar",
-  "sourceBuildDate": "2026-10-19",
-  "asOf": "2026-10-19",
+  "sourceBuildDate": "2026-10-30",
+  "asOf": "2026-10-30",
   "window": {
     "pastDays": 180,
     "futureDays": 730
   },
   "records": [
-    {
-      "id": "SOC:LoreholdSpirit_SOC",
-      "name": "Lorehold Spirit",
-      "productType": "commander-deck",
-      "setCode": "SOC",
-      "setName": null,
-      "releaseDate": "2026-04-24",
-      "status": "released",
-      "decklistStatus": "complete",
-      "confidence": "upstream-structured",
-      "knownDeckNames": [
-        "Lorehold Spirit"
-      ],
-      "sources": [
-        {
-          "label": "MTGJSON deck record",
-          "url": "https://mtgjson.com/api/v5/decks/LoreholdSpirit_SOC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON DeckList",
-          "url": "https://mtgjson.com/api/v5/DeckList.json",
-          "type": "structured"
-        }
-      ],
-      "officialSourceUrl": null,
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "SOC:PrismariArtistry_SOC",
-      "name": "Prismari Artistry",
-      "productType": "commander-deck",
-      "setCode": "SOC",
-      "setName": null,
-      "releaseDate": "2026-04-24",
-      "status": "released",
-      "decklistStatus": "complete",
-      "confidence": "upstream-structured",
-      "knownDeckNames": [
-        "Prismari Artistry"
-      ],
-      "sources": [
-        {
-          "label": "MTGJSON deck record",
-          "url": "https://mtgjson.com/api/v5/decks/PrismariArtistry_SOC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON DeckList",
-          "url": "https://mtgjson.com/api/v5/DeckList.json",
-          "type": "structured"
-        }
-      ],
-      "officialSourceUrl": null,
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "SOC:QuandrixUnlimited_SOC",
-      "name": "Quandrix Unlimited",
-      "productType": "commander-deck",
-      "setCode": "SOC",
-      "setName": null,
-      "releaseDate": "2026-04-24",
-      "status": "released",
-      "decklistStatus": "complete",
-      "confidence": "upstream-structured",
-      "knownDeckNames": [
-        "Quandrix Unlimited"
-      ],
-      "sources": [
-        {
-          "label": "MTGJSON deck record",
-          "url": "https://mtgjson.com/api/v5/decks/QuandrixUnlimited_SOC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON DeckList",
-          "url": "https://mtgjson.com/api/v5/DeckList.json",
-          "type": "structured"
-        }
-      ],
-      "officialSourceUrl": null,
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "SOC:SilverquillInfluence_SOC",
-      "name": "Silverquill Influence",
-      "productType": "commander-deck",
-      "setCode": "SOC",
-      "setName": null,
-      "releaseDate": "2026-04-24",
-      "status": "released",
-      "decklistStatus": "complete",
-      "confidence": "upstream-structured",
-      "knownDeckNames": [
-        "Silverquill Influence"
-      ],
-      "sources": [
-        {
-          "label": "MTGJSON deck record",
-          "url": "https://mtgjson.com/api/v5/decks/SilverquillInfluence_SOC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON DeckList",
-          "url": "https://mtgjson.com/api/v5/DeckList.json",
-          "type": "structured"
-        }
-      ],
-      "officialSourceUrl": null,
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "SOC:WitherbloomPestilence_SOC",
-      "name": "Witherbloom Pestilence",
-      "productType": "commander-deck",
-      "setCode": "SOC",
-      "setName": null,
-      "releaseDate": "2026-04-24",
-      "status": "released",
-      "decklistStatus": "complete",
-      "confidence": "upstream-structured",
-      "knownDeckNames": [
-        "Witherbloom Pestilence"
-      ],
-      "sources": [
-        {
-          "label": "MTGJSON deck record",
-          "url": "https://mtgjson.com/api/v5/decks/WitherbloomPestilence_SOC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON DeckList",
-          "url": "https://mtgjson.com/api/v5/DeckList.json",
-          "type": "structured"
-        }
-      ],
-      "officialSourceUrl": null,
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
     {
       "id": "SLD:GoblinStorm_SLD",
       "name": "Goblin Storm",
@@ -180,7 +35,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:AvengersAssemble_MSC",
@@ -209,7 +64,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:AvengersAssembleCollectorSEdition_MSC",
@@ -238,7 +93,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:DoomPrevails_MSC",
@@ -267,7 +122,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:DoomPrevailsCollectorSEdition_MSC",
@@ -296,7 +151,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:TheFantasticFour_MSC",
@@ -325,7 +180,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:TheFantasticFourCollectorSEdition_MSC",
@@ -354,7 +209,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:WakandaForever_MSC",
@@ -383,7 +238,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MSC:WakandaForeverCollectorSEdition_MSC",
@@ -412,7 +267,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "SLD:HatsuneMiku_SLD",
@@ -441,7 +296,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "SLD:OddsAndEnds_SLD",
@@ -470,7 +325,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FDC:CallingAllAngels_FDC",
@@ -499,7 +354,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FDC:KeenEngineering_FDC",
@@ -528,7 +383,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FRC:MultiverseReforged_FRC",
@@ -557,7 +412,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FDC:ReignOfDragons_FDC",
@@ -586,7 +441,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FDC:TramplesaurusRex_FDC",
@@ -615,7 +470,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "FDC:WretchedRanks_FDC",
@@ -644,7 +499,7 @@
       ],
       "officialSourceUrl": null,
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     }
   ]
 }
