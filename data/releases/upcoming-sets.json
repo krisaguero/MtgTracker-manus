@@ -1,35 +1,10 @@
 {
   "schemaVersion": 1,
   "kind": "upcoming-mtg-sets",
-  "sourceBuildDate": "2026-10-19",
-  "asOf": "2026-10-19",
+  "sourceBuildDate": "2026-10-30",
+  "asOf": "2026-10-30",
   "lookaheadDays": 730,
   "records": [
-    {
-      "id": "MBC",
-      "setCode": "MBC",
-      "name": "Mystery Booster Commander Edition",
-      "setType": "draft_innovation",
-      "releaseDate": "2026-10-19",
-      "status": "released",
-      "confidence": "upstream-structured",
-      "commanderSetCode": "MBC",
-      "commanderProductStatus": "catalog-record",
-      "sources": [
-        {
-          "label": "MTGJSON set record",
-          "url": "https://mtgjson.com/api/v5/MBC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON SetList",
-          "url": "https://mtgjson.com/api/v5/SetList.json",
-          "type": "structured"
-        }
-      ],
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
     {
       "id": "TRK",
       "setCode": "TRK",
@@ -53,7 +28,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "TRC",
@@ -78,7 +53,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "NAU",
@@ -103,7 +78,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MDC",
@@ -128,7 +103,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     },
     {
       "id": "MDD",
@@ -153,7 +128,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-10-30"
     }
   ]
 }
