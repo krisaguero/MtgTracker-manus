@@ -76,6 +76,15 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
   }).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
 }
 
+function collectorPairKey(name: string) {
+  return name
+    .replace(/\s*collector'?s?\s*edition\b/i, '')
+    .replace(/\s*\([^)]*\)\s*$/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
 export default function CommanderPreconLibrary() {
   useMarketPriceIndex();
   const { decks: commanderDecklists, loading: archiveLoading } = useCommanderArchive();
@@ -177,6 +186,25 @@ export default function CommanderPreconLibrary() {
       return sortOrder === 'oldest' ? -dateCompare || a.name.localeCompare(b.name) : dateCompare || a.name.localeCompare(b.name);
     });
   }, [filteredDecks, sortOrder]);
+
+  const collectorPriceComparisons = useMemo(() => {
+    const regularByPair = new Map<string, PreconLibraryItem>();
+    for (const deck of EXTENDED_PRECON_LIBRARY) {
+      if (!deck.isCollectorEdition) regularByPair.set(collectorPairKey(deck.name), deck);
+    }
+    return EXTENDED_PRECON_LIBRARY
+      .filter((deck) => deck.isCollectorEdition)
+      .map((collectorDeck) => {
+        const rawDeck = regularByPair.get(collectorPairKey(collectorDeck.name));
+        const rawValue = rawDeck ? resolveDeckMarketValue(rawDeck) : null;
+        const foilValue = resolveDeckMarketValue(collectorDeck);
+        const premiumPercent = rawValue && rawValue.totalUsd > 0
+          ? ((foilValue.totalUsd - rawValue.totalUsd) / rawValue.totalUsd) * 100
+          : null;
+        return { collectorDeck, rawDeck, rawValue, foilValue, premiumPercent };
+      })
+      .sort((a, b) => (b.premiumPercent ?? -Infinity) - (a.premiumPercent ?? -Infinity));
+  }, [EXTENDED_PRECON_LIBRARY]);
 
   const PAGE_SIZE = 18;
   const totalPages = Math.max(1, Math.ceil(sortedDecks.length / PAGE_SIZE));
@@ -455,6 +483,37 @@ export default function CommanderPreconLibrary() {
             <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-border pt-4 font-mono text-xs"><span>Indexed value: <strong>${acquisitionValue.toFixed(2)}</strong></span>{acquisitionGain !== null && <span className={acquisitionGain >= 0 ? 'font-black text-emerald-600' : 'font-black text-amber-600'}>{acquisitionGain >= 0 ? '+' : '-'}${Math.abs(acquisitionGain).toFixed(2)} unrealized {acquisitionGain >= 0 ? 'gain' : 'basis gap'}</span>}<button type="button" onClick={() => saveAcquisition(acquisitionDeck)} className="border-2 border-primary bg-primary px-4 py-2 font-black uppercase text-primary-foreground hover:bg-primary/90">Save acquisition</button></div>
           </section>
         )}
+
+        <section className="border-2 border-fuchsia-500/60 bg-fuchsia-500/5 p-5 sm:p-6" aria-labelledby="collector-price-tracker">
+          <div className="flex flex-col gap-3 border-b border-fuchsia-500/30 pb-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-fuchsia-700 dark:text-fuchsia-300">Premium printing monitor</p>
+              <h2 id="collector-price-tracker" className="mt-2 text-2xl font-black tracking-tight">Collector raw vs. foil market tracker</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Compares each collector-edition deck against its regular counterpart. Raw uses the normal deck’s exact printing records; foil uses the collector deck’s exact UUID and collector-number records. This is indexed card equity, not a sealed-deck quote.</p>
+            </div>
+            <span className="shrink-0 border border-fuchsia-500/50 bg-background px-3 py-2 font-mono text-[10px] font-bold uppercase text-fuchsia-700 dark:text-fuchsia-300">{showCollectorPrecons ? `${collectorPriceComparisons.length} collector decks` : 'Collector view off'}</span>
+          </div>
+
+          {!showCollectorPrecons && <div className="mt-4 flex flex-col gap-3 border border-fuchsia-500/30 bg-background p-4 sm:flex-row sm:items-center sm:justify-between"><p className="text-sm text-muted-foreground">Enable <strong className="text-foreground">Show Collector Editions</strong> above to load premium deck records and compare regular card equity against collector/foil card equity.</p><button type="button" onClick={() => setShowCollectorPrecons(true)} className="shrink-0 border-2 border-fuchsia-500 bg-fuchsia-500 px-4 py-2 font-mono text-xs font-black uppercase text-black hover:bg-fuchsia-400">Load tracker</button></div>}
+
+          {showCollectorPrecons && collectorLoading && <p className="mt-4 font-mono text-xs font-bold uppercase tracking-wider text-fuchsia-700 dark:text-fuchsia-300" role="status">Loading exact collector price records…</p>}
+          {showCollectorPrecons && !collectorLoading && <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[760px] text-left font-mono text-xs">
+              <thead><tr className="border-b border-fuchsia-500/30 text-[10px] uppercase text-muted-foreground"><th className="px-3 py-2.5">Collector deck</th><th className="px-3 py-2.5">Raw baseline</th><th className="px-3 py-2.5">Foil / collector</th><th className="px-3 py-2.5">Premium</th><th className="px-3 py-2.5">Coverage</th></tr></thead>
+              <tbody>
+                {collectorPriceComparisons.map(({ collectorDeck, rawDeck, rawValue, foilValue, premiumPercent }) => (
+                  <tr key={`collector-price-${collectorDeck.slug}`} className="border-b border-border/70 align-top hover:bg-fuchsia-500/5">
+                    <td className="px-3 py-3"><strong className="block text-sm text-foreground">{collectorDeck.name.replace(/\s*collector'?s?\s*edition/i, '')}</strong><span className="mt-1 block text-[10px] uppercase text-muted-foreground">{rawDeck ? 'paired regular deck found' : 'no regular pair indexed'}</span></td>
+                    <td className="px-3 py-3">{rawValue ? <><strong className="block text-foreground">${rawValue.totalUsd.toFixed(2)}</strong><span className="text-[10px] text-muted-foreground">{rawValue.coveragePercent}% · {rawValue.pricedCards}/{rawValue.pricedCards + rawValue.unpricedCards} cards</span></> : <span className="text-muted-foreground">—</span>}</td>
+                    <td className="px-3 py-3"><strong className="block text-fuchsia-700 dark:text-fuchsia-300">${foilValue.totalUsd.toFixed(2)}</strong><span className="text-[10px] text-muted-foreground">{foilValue.coveragePercent}% · {foilValue.pricedCards}/{foilValue.pricedCards + foilValue.unpricedCards} exact cards</span></td>
+                    <td className={`px-3 py-3 font-black ${premiumPercent === null ? 'text-muted-foreground' : premiumPercent >= 0 ? 'text-emerald-600' : 'text-amber-600'}`}>{premiumPercent === null ? '—' : `${premiumPercent >= 0 ? '+' : ''}${premiumPercent.toFixed(1)}%`}</td>
+                    <td className="px-3 py-3 text-[10px] text-muted-foreground">{foilValue.updatedAt || 'Price date unavailable'}<span className="mt-1 block">Exact UUID / collector # matching</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>}
+        </section>
 
         {/* Commander Market Valuation Matrix Summary */}
         <div className="mb-8 border-2 border-border bg-card p-6 shadow-sm">
