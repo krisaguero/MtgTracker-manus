@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { isAnalyticsOptedIn, loadUmamiAnalytics, saveAnalyticsConsent } from '@/lib/analytics';
 import { loadLocalSavedDecks, removeLocalDeck, type LocalSavedDeck } from '@/lib/localSavedDecks';
 import { SupabaseWorkspaceBackup } from '@/components/SupabaseWorkspaceBackup';
+import { AccountWorkspaceSync } from '@/components/AccountWorkspaceSync';
 import {
   clearLocalWorkspace,
   createLocalWorkspaceBackup,
@@ -170,6 +171,7 @@ export function LocalDataControls({ onWorkspaceChanged }: LocalDataControlsProps
       </div>
 
       <SupabaseWorkspaceBackup onWorkspaceChanged={onWorkspaceChanged} />
+      <AccountWorkspaceSync onWorkspaceChanged={onWorkspaceChanged} />
 
       <div className="mt-5 border-t border-border pt-4">
         <h3 className="text-sm font-semibold">Saved deck snapshots on this browser</h3>

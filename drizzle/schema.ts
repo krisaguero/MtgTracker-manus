@@ -36,6 +36,13 @@ export const savedDecks = mysqlTable("saved_decks", {
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 }, (table) => ({ savedDeckUserKey: uniqueIndex("saved_decks_user_key").on(table.userId, table.deckKey) }));
 
+/** One explicit, versioned workspace snapshot per signed-in app account. */
+export const accountWorkspaces = mysqlTable("account_workspaces", {
+  userId: int("userId").primaryKey(),
+  backupJson: text("backupJson").notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
 /** Retained for compatibility with existing databases; no current route writes to this table. */
 /** Retained for compatibility with existing databases; no current route writes to this table. */
 export const collectionImportAudits = mysqlTable("collection_import_audits", {
@@ -51,3 +58,4 @@ export const collectionImportAudits = mysqlTable("collection_import_audits", {
 
 export type SavedDeck = typeof savedDecks.$inferSelect;
 export type CollectionImportAudit = typeof collectionImportAudits.$inferSelect;
+export type AccountWorkspace = typeof accountWorkspaces.$inferSelect;

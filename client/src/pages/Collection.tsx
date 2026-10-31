@@ -60,7 +60,7 @@ export default function Collection() {
             <Archive className="h-4 w-4" /> Private workspace
           </div>
           <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] sm:text-5xl">Your collection, kept off the shelf.</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">Turn scanned cards into a useful library: review exact printings, protect keepers, reserve deck copies, and choose what to trade or build next. Work stays in this browser unless you explicitly transfer a private backup or approve an optional analysis.</p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">Turn scanned cards into a useful library: review exact printings, protect keepers, reserve deck copies, and choose what to trade or build next. Work stays in this browser by default; your signed-in account can store an explicit private workspace backup when you enable it.</p>
         </section>
 
         <div className="mt-6 flex flex-wrap gap-2 border-y border-border py-3 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
@@ -105,7 +105,7 @@ export default function Collection() {
 
       <footer className="border-t border-border bg-muted/30 py-8">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>Local-first collection and deck data stay in this browser until an explicit transfer. Optional private Supabase storage and consent-gated Groq analysis are separate choices. Explore the <Link href="/collection/sets" className="font-semibold text-primary hover:underline">release directory</Link>.</p>
+          <p>Local-first collection and deck data stay in this browser until an explicit transfer. The signed-in account workspace and optional Supabase backup are separate, opt-in choices. Explore the <Link href="/collection/sets" className="font-semibold text-primary hover:underline">release directory</Link>.</p>
         </div>
       </footer>
     </div>

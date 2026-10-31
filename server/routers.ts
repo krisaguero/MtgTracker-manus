@@ -24,6 +24,14 @@ export const appRouter = router({
     savedDecks: protectedProcedure.query(({ ctx }) => db.listSavedDecks(ctx.user.id)),
     saveDeck: protectedProcedure.input(z.object({ deckKey: z.string().min(1).max(160), name: z.string().min(1).max(255), source: z.string().min(1).max(64).default('commander-precon'), deckJson: z.string().min(2).max(200000) })).mutation(({ ctx, input }) => db.upsertSavedDeck({ userId: ctx.user.id, ...input }).then(() => ({ success: true }))),
     deleteDeck: protectedProcedure.input(z.object({ deckKey: z.string().min(1).max(160) })).mutation(({ ctx, input }) => db.deleteSavedDeck(ctx.user.id, input.deckKey).then(() => ({ success: true }))),
+    workspace: protectedProcedure.query(async ({ ctx }) => {
+      const record = await db.getAccountWorkspace(ctx.user.id);
+      if (!record) return null;
+      return { backupJson: record.backupJson, updatedAt: record.updatedAt.toISOString() };
+    }),
+    saveWorkspace: protectedProcedure.input(z.object({ backupJson: z.string().min(2).max(20_000_000) })).mutation(({ ctx, input }) =>
+      db.upsertAccountWorkspace(ctx.user.id, input.backupJson).then(() => ({ success: true, updatedAt: new Date().toISOString() }))
+    ),
   }),
 });
 

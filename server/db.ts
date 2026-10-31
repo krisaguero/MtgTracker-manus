@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, savedDecks, users } from "../drizzle/schema.js";
+import { AccountWorkspace, accountWorkspaces, InsertUser, savedDecks, users } from "../drizzle/schema.js";
 import { ENV } from './_core/env.js';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -107,6 +107,21 @@ export async function deleteSavedDeck(userId: number, deckKey: string) {
   const db = await getDb();
   if (!db) throw new Error('Database is not configured');
   await db.delete(savedDecks).where(and(eq(savedDecks.userId, userId), eq(savedDecks.deckKey, deckKey)));
+}
+
+export async function getAccountWorkspace(userId: number): Promise<AccountWorkspace | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(accountWorkspaces).where(eq(accountWorkspaces.userId, userId)).limit(1);
+  return result[0];
+}
+
+export async function upsertAccountWorkspace(userId: number, backupJson: string): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error('Database is not configured');
+  await db.insert(accountWorkspaces).values({ userId, backupJson }).onDuplicateKeyUpdate({
+    set: { backupJson, updatedAt: new Date() },
+  });
 }
 
 // TODO: add feature queries here as your schema grows.
