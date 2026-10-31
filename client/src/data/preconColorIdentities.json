@@ -1,0 +1,3591 @@
+{
+  "schemaVersion": 1,
+  "source": "Scryfall",
+  "generatedAt": "2026-10-31T23:19:18.032Z",
+  "records": {
+    "avengers-assemble-msc": {
+      "deckName": "Avengers Assemble",
+      "setCode": "msc",
+      "identityKey": "avengers-assemble-msc",
+      "commanderNames": [
+        "Captain America, Team Leader"
+      ],
+      "commanderScryfallIds": [
+        "61a51b67-d941-4e07-9c12-ffe583cb65d4"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.010Z"
+    },
+    "doom-prevails-msc": {
+      "deckName": "Doom Prevails",
+      "setCode": "msc",
+      "identityKey": "doom-prevails-msc",
+      "commanderNames": [
+        "Doctor Doom, King of Latveria"
+      ],
+      "commanderScryfallIds": [
+        "099ed408-9178-4403-8b2d-479ca3cbda9b"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.015Z"
+    },
+    "the-fantastic-four-msc": {
+      "deckName": "The Fantastic Four",
+      "setCode": "msc",
+      "identityKey": "the-fantastic-four-msc",
+      "commanderNames": [
+        "Invisible Woman"
+      ],
+      "commanderScryfallIds": [
+        "d8e13ecb-98be-4d9b-86a2-24eaa98f7f0d"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "QUAD-WURG",
+      "label": "WURG four-color",
+      "short": "WURG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.015Z"
+    },
+    "wakanda-forever-msc": {
+      "deckName": "Wakanda Forever",
+      "setCode": "msc",
+      "identityKey": "wakanda-forever-msc",
+      "commanderNames": [
+        "T'Challa, the Black Panther"
+      ],
+      "commanderScryfallIds": [
+        "c1c8ad61-b7e1-446c-8b74-6e29371ea1d5"
+      ],
+      "colorIdentity": [
+        "W",
+        "G"
+      ],
+      "category": "WG",
+      "label": "WG pair",
+      "short": "WG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.015Z"
+    },
+    "goblin-storm-sld": {
+      "deckName": "Goblin Storm",
+      "setCode": "sld",
+      "identityKey": "goblin-storm-sld",
+      "commanderNames": [
+        "Zada, Hedron Grinder"
+      ],
+      "commanderScryfallIds": [
+        "b17fb671-f7ff-4633-bdef-39375c6f857c"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "category": "MONO-R",
+      "label": "Mono-R",
+      "short": "R",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "lorehold-spirit-soc": {
+      "deckName": "Lorehold Spirit",
+      "setCode": "soc",
+      "identityKey": "lorehold-spirit-soc",
+      "commanderNames": [
+        "Quintorius, History Chaser"
+      ],
+      "commanderScryfallIds": [
+        "0742f19d-179c-43c4-ab95-4160c56b4384"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "prismari-artistry-soc": {
+      "deckName": "Prismari Artistry",
+      "setCode": "soc",
+      "identityKey": "prismari-artistry-soc",
+      "commanderNames": [
+        "Rootha, Mastering the Moment"
+      ],
+      "commanderScryfallIds": [
+        "a5b3dbb2-c090-4118-9e47-56c16202572c"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "quandrix-unlimited-soc": {
+      "deckName": "Quandrix Unlimited",
+      "setCode": "soc",
+      "identityKey": "quandrix-unlimited-soc",
+      "commanderNames": [
+        "Zimone, Infinite Analyst"
+      ],
+      "commanderScryfallIds": [
+        "605afac4-d2e5-4e68-97d2-3ac2ead5f3a9"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "silverquill-influence-soc": {
+      "deckName": "Silverquill Influence",
+      "setCode": "soc",
+      "identityKey": "silverquill-influence-soc",
+      "commanderNames": [
+        "Killian, Decisive Mentor"
+      ],
+      "commanderScryfallIds": [
+        "76b6c35a-bb92-4ad3-8f85-88b9bafc6266"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "witherbloom-pestilence-soc": {
+      "deckName": "Witherbloom Pestilence",
+      "setCode": "soc",
+      "identityKey": "witherbloom-pestilence-soc",
+      "commanderNames": [
+        "Dina, Essence Brewer"
+      ],
+      "commanderScryfallIds": [
+        "9fe237b8-c02c-41ea-9fc4-b771b91d2157"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "turtle-power-tmc": {
+      "deckName": "Turtle Power!",
+      "setCode": "tmc",
+      "identityKey": "turtle-power-tmc",
+      "commanderNames": [
+        "Heroes in a Half Shell"
+      ],
+      "commanderScryfallIds": [
+        "ccc2a4e6-f505-4040-9d8a-c7b8e1a2b55e"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "blight-curse-ecc": {
+      "deckName": "Blight Curse",
+      "setCode": "ecc",
+      "identityKey": "blight-curse-ecc",
+      "commanderNames": [
+        "Auntie Ool, Cursewretch"
+      ],
+      "commanderScryfallIds": [
+        "9a2e4252-9fbc-4d43-8935-db2cafaa7b5f"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.016Z"
+    },
+    "dance-of-the-elements-ecc": {
+      "deckName": "Dance of the Elements",
+      "setCode": "ecc",
+      "identityKey": "dance-of-the-elements-ecc",
+      "commanderNames": [
+        "Ashling, the Limitless"
+      ],
+      "commanderScryfallIds": [
+        "5924c01f-2815-4e37-b700-3ba6cc81e0e4"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.017Z"
+    },
+    "counter-intelligence-eoc": {
+      "deckName": "Counter Intelligence",
+      "setCode": "eoc",
+      "identityKey": "counter-intelligence-eoc",
+      "commanderNames": [
+        "Inspirit, Flagship Vessel"
+      ],
+      "commanderScryfallIds": [
+        "46900ec7-eb18-45c4-8e90-a48b665cfdee"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "world-shaper-eoc": {
+      "deckName": "World Shaper",
+      "setCode": "eoc",
+      "identityKey": "world-shaper-eoc",
+      "commanderNames": [
+        "Hearthhull, the Worldseed"
+      ],
+      "commanderScryfallIds": [
+        "6b913e79-a9f6-44d4-bb37-c4f6f66b8151"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "counter-blitz-final-fantasy-x-fic": {
+      "deckName": "Counter Blitz (FINAL FANTASY X)",
+      "setCode": "fic",
+      "identityKey": "counter-blitz-final-fantasy-x-fic",
+      "commanderNames": [
+        "Tidus, Yuna's Guardian"
+      ],
+      "commanderScryfallIds": [
+        "2cfd4494-346c-4cbc-8072-e267254cefcc"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "limit-break-final-fantasy-vii-fic": {
+      "deckName": "Limit Break (FINAL FANTASY VII)",
+      "setCode": "fic",
+      "identityKey": "limit-break-final-fantasy-vii-fic",
+      "commanderNames": [
+        "Cloud, Ex-SOLDIER"
+      ],
+      "commanderScryfallIds": [
+        "07b4e4f8-6a31-4533-be51-668ce3ddc84f"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "revival-trance-final-fantasy-vi-fic": {
+      "deckName": "Revival Trance (FINAL FANTASY VI)",
+      "setCode": "fic",
+      "identityKey": "revival-trance-final-fantasy-vi-fic",
+      "commanderNames": [
+        "Terra, Herald of Hope"
+      ],
+      "commanderScryfallIds": [
+        "5aa1a2d7-6133-41a9-9662-9008d1309935"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "scions-spellcraft-final-fantasy-xiv-fic": {
+      "deckName": "Scions & Spellcraft (FINAL FANTASY XIV)",
+      "setCode": "fic",
+      "identityKey": "scions-spellcraft-final-fantasy-xiv-fic",
+      "commanderNames": [
+        "Y'shtola, Night's Blessed"
+      ],
+      "commanderScryfallIds": [
+        "c7f2c2d5-e052-49e8-b5de-712858c2ea78"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "everyone-s-invited-sld": {
+      "deckName": "Everyone's Invited!",
+      "setCode": "sld",
+      "identityKey": "everyone-s-invited-sld",
+      "commanderNames": [
+        "Morophon, the Boundless"
+      ],
+      "commanderScryfallIds": [
+        "58e4a55f-b35a-411a-9a05-0cbb0d767920"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.018Z"
+    },
+    "abzan-armor-tdc": {
+      "deckName": "Abzan Armor",
+      "setCode": "tdc",
+      "identityKey": "abzan-armor-tdc",
+      "commanderNames": [
+        "Felothar the Steadfast"
+      ],
+      "commanderScryfallIds": [
+        "2c3549f6-25df-4ea7-84ad-922ccd4af6b2"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "TRI-WBG",
+      "label": "WBG tri-color",
+      "short": "WBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "jeskai-striker-tdc": {
+      "deckName": "Jeskai Striker",
+      "setCode": "tdc",
+      "identityKey": "jeskai-striker-tdc",
+      "commanderNames": [
+        "Shiko and Narset, Unified"
+      ],
+      "commanderScryfallIds": [
+        "5a42fc7d-52ac-4e95-9e04-8f8fa7f687c8"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "mardu-surge-tdc": {
+      "deckName": "Mardu Surge",
+      "setCode": "tdc",
+      "identityKey": "mardu-surge-tdc",
+      "commanderNames": [
+        "Zurgo Stormrender"
+      ],
+      "commanderScryfallIds": [
+        "dc8eb325-75c9-4331-830d-3f7d62d77290"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "sultai-arisen-tdc": {
+      "deckName": "Sultai Arisen",
+      "setCode": "tdc",
+      "identityKey": "sultai-arisen-tdc",
+      "commanderNames": [
+        "Teval, the Balanced Scale"
+      ],
+      "commanderScryfallIds": [
+        "b5d1955a-9ff0-4f8b-9af8-341371957299"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "temur-roar-tdc": {
+      "deckName": "Temur Roar",
+      "setCode": "tdc",
+      "identityKey": "temur-roar-tdc",
+      "commanderNames": [
+        "Eshki, Temur's Roar"
+      ],
+      "commanderScryfallIds": [
+        "ff9aa863-8773-452d-946c-ae334c632e11"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "eternal-might-drc": {
+      "deckName": "Eternal Might",
+      "setCode": "drc",
+      "identityKey": "eternal-might-drc",
+      "commanderNames": [
+        "Temmet, Naktamun's Will"
+      ],
+      "commanderScryfallIds": [
+        "c0629894-0b72-4abe-9771-03becfdb241c"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "living-energy-drc": {
+      "deckName": "Living Energy",
+      "setCode": "drc",
+      "identityKey": "living-energy-drc",
+      "commanderNames": [
+        "Saheeli, Radiant Creator"
+      ],
+      "commanderScryfallIds": [
+        "5fea0781-e933-47ef-9414-92c8652a7778"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "20-ways-to-win-sld": {
+      "deckName": "20 Ways to Win",
+      "setCode": "sld",
+      "identityKey": "20-ways-to-win-sld",
+      "commanderNames": [
+        "Go-Shintai of Life's Origin"
+      ],
+      "commanderScryfallIds": [
+        "4e9a1f19-6ee3-49fb-a08d-4048ee7c1e34"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "death-toll-dsc": {
+      "deckName": "Death Toll",
+      "setCode": "dsc",
+      "identityKey": "death-toll-dsc",
+      "commanderNames": [
+        "Winter, Cynical Opportunist"
+      ],
+      "commanderScryfallIds": [
+        "94dc35e4-a492-4019-afcd-cbef6f59a512"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "endless-punishment-dsc": {
+      "deckName": "Endless Punishment",
+      "setCode": "dsc",
+      "identityKey": "endless-punishment-dsc",
+      "commanderNames": [
+        "Valgavoth, Harrower of Souls"
+      ],
+      "commanderScryfallIds": [
+        "8d7c1f6c-af45-4449-8cf8-e13830b3df8a"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "category": "BR",
+      "label": "BR pair",
+      "short": "BR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "jump-scare-dsc": {
+      "deckName": "Jump Scare!",
+      "setCode": "dsc",
+      "identityKey": "jump-scare-dsc",
+      "commanderNames": [
+        "Zimone, Mystery Unraveler"
+      ],
+      "commanderScryfallIds": [
+        "30f23588-5064-48d9-a271-039df757f8d2"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "miracle-worker-dsc": {
+      "deckName": "Miracle Worker",
+      "setCode": "dsc",
+      "identityKey": "miracle-worker-dsc",
+      "commanderNames": [
+        "Aminatou, Veil Piercer"
+      ],
+      "commanderScryfallIds": [
+        "9f868023-6035-403d-ba91-7a4840c6c392"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.019Z"
+    },
+    "animated-army-blc": {
+      "deckName": "Animated Army",
+      "setCode": "blc",
+      "identityKey": "animated-army-blc",
+      "commanderNames": [
+        "Bello, Bard of the Brambles"
+      ],
+      "commanderScryfallIds": [
+        "31e4b7a1-b377-49d2-a92e-4bcb0db35f16"
+      ],
+      "colorIdentity": [
+        "R",
+        "G"
+      ],
+      "category": "RG",
+      "label": "RG pair",
+      "short": "RG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "family-matters-blc": {
+      "deckName": "Family Matters",
+      "setCode": "blc",
+      "identityKey": "family-matters-blc",
+      "commanderNames": [
+        "Zinnia, Valley's Voice"
+      ],
+      "commanderScryfallIds": [
+        "dfe36901-5841-4942-8b61-c273111f715e"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "peace-offering-blc": {
+      "deckName": "Peace Offering",
+      "setCode": "blc",
+      "identityKey": "peace-offering-blc",
+      "commanderNames": [
+        "Ms. Bumbleflower"
+      ],
+      "commanderScryfallIds": [
+        "42bbedc1-6b83-46b4-8b3b-a4e05ce77d87"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "squirreled-away-blc": {
+      "deckName": "Squirreled Away",
+      "setCode": "blc",
+      "identityKey": "squirreled-away-blc",
+      "commanderNames": [
+        "Hazel of the Rootbloom"
+      ],
+      "commanderScryfallIds": [
+        "1269ca79-907e-4932-9e77-a9a5d2929060"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "creative-energy-m3c": {
+      "deckName": "Creative Energy",
+      "setCode": "m3c",
+      "identityKey": "creative-energy-m3c",
+      "commanderNames": [
+        "Satya, Aetherflux Genius"
+      ],
+      "commanderScryfallIds": [
+        "3b964bbe-54cc-425c-9cc6-c877f82af7ba"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "eldrazi-incursion-m3c": {
+      "deckName": "Eldrazi Incursion",
+      "setCode": "m3c",
+      "identityKey": "eldrazi-incursion-m3c",
+      "commanderNames": [
+        "Ulalek, Fused Atrocity"
+      ],
+      "commanderScryfallIds": [
+        "fdad1b0e-d3cc-4d76-ae7e-fee12558cf2c"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "graveyard-overdrive-m3c": {
+      "deckName": "Graveyard Overdrive",
+      "setCode": "m3c",
+      "identityKey": "graveyard-overdrive-m3c",
+      "commanderNames": [
+        "Disa the Restless"
+      ],
+      "commanderScryfallIds": [
+        "c976edeb-0fa1-4647-a16c-870d8a3c30c6"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.020Z"
+    },
+    "tricky-terrain-m3c": {
+      "deckName": "Tricky Terrain",
+      "setCode": "m3c",
+      "identityKey": "tricky-terrain-m3c",
+      "commanderNames": [
+        "Omo, Queen of Vesuva"
+      ],
+      "commanderScryfallIds": [
+        "e5d1c814-4c22-4917-95ae-dffaf491db32"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "desert-bloom-otc": {
+      "deckName": "Desert Bloom",
+      "setCode": "otc",
+      "identityKey": "desert-bloom-otc",
+      "commanderNames": [
+        "Yuma, Proud Protector"
+      ],
+      "commanderScryfallIds": [
+        "18df72be-07d2-4412-b36d-a45119763db3"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "grand-larceny-otc": {
+      "deckName": "Grand Larceny",
+      "setCode": "otc",
+      "identityKey": "grand-larceny-otc",
+      "commanderNames": [
+        "Gonti, Canny Acquisitor"
+      ],
+      "commanderScryfallIds": [
+        "03a7e79f-625a-49ac-9cb1-e1fe5f51f5a0"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "most-wanted-otc": {
+      "deckName": "Most Wanted",
+      "setCode": "otc",
+      "identityKey": "most-wanted-otc",
+      "commanderNames": [
+        "Olivia, Opulent Outlaw"
+      ],
+      "commanderScryfallIds": [
+        "55e6c31b-f9e9-4e42-a875-985d99300d9d"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "quick-draw-otc": {
+      "deckName": "Quick Draw",
+      "setCode": "otc",
+      "identityKey": "quick-draw-otc",
+      "commanderNames": [
+        "Stella Lee, Wild Card"
+      ],
+      "commanderScryfallIds": [
+        "2a8a7696-b5d9-4378-9d5c-2c9007e4df63"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "hail-caesar-pip": {
+      "deckName": "Hail, Caesar",
+      "setCode": "pip",
+      "identityKey": "hail-caesar-pip",
+      "commanderNames": [
+        "Caesar, Legion's Emperor"
+      ],
+      "commanderScryfallIds": [
+        "246a7176-98bc-4f54-aa61-38747420f178"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.021Z"
+    },
+    "mutant-menace-pip": {
+      "deckName": "Mutant Menace",
+      "setCode": "pip",
+      "identityKey": "mutant-menace-pip",
+      "commanderNames": [
+        "The Wise Mothman"
+      ],
+      "commanderScryfallIds": [
+        "3d6d6944-a364-41c2-b824-7a1bf6ad0d1e"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "science-pip": {
+      "deckName": "Science!",
+      "setCode": "pip",
+      "identityKey": "science-pip",
+      "commanderNames": [
+        "Dr. Madison Li"
+      ],
+      "commanderScryfallIds": [
+        "95af426d-a8af-4314-9ad0-ac61935e8e8e"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "scrappy-survivors-pip": {
+      "deckName": "Scrappy Survivors",
+      "setCode": "pip",
+      "identityKey": "scrappy-survivors-pip",
+      "commanderNames": [
+        "Dogmeat, Ever Loyal"
+      ],
+      "commanderScryfallIds": [
+        "86b45e3e-8460-4678-87d1-d74479936c83"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "blame-game-mkc": {
+      "deckName": "Blame Game",
+      "setCode": "mkc",
+      "identityKey": "blame-game-mkc",
+      "commanderNames": [
+        "Nelly Borca, Impulsive Accuser"
+      ],
+      "commanderScryfallIds": [
+        "2ef59aa9-f5e1-413a-869b-d287db95efd0"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "deadly-disguise-mkc": {
+      "deckName": "Deadly Disguise",
+      "setCode": "mkc",
+      "identityKey": "deadly-disguise-mkc",
+      "commanderNames": [
+        "Kaust, Eyes of the Glade"
+      ],
+      "commanderScryfallIds": [
+        "648c15d1-a2a2-4f59-9b0a-5448be3e990f"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "deep-clue-sea-mkc": {
+      "deckName": "Deep Clue Sea",
+      "setCode": "mkc",
+      "identityKey": "deep-clue-sea-mkc",
+      "commanderNames": [
+        "Morska, Undersea Sleuth"
+      ],
+      "commanderScryfallIds": [
+        "ae9ccfec-05c6-469e-b1dd-dfbafa1e927f"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "revenant-recon-mkc": {
+      "deckName": "Revenant Recon",
+      "setCode": "mkc",
+      "identityKey": "revenant-recon-mkc",
+      "commanderNames": [
+        "Mirko, Obsessive Theorist"
+      ],
+      "commanderScryfallIds": [
+        "690acbbf-5e92-4323-b939-31bdb07f9905"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "raining-cats-and-dogs-sld": {
+      "deckName": "Raining Cats and Dogs",
+      "setCode": "sld",
+      "identityKey": "raining-cats-and-dogs-sld",
+      "commanderNames": [
+        "Rin and Seri, Inseparable // Rin and Seri, Inseparable"
+      ],
+      "commanderScryfallIds": [
+        "a129558c-45a1-441c-97f0-b70b4e9d8a56"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "ahoy-mateys-lcc": {
+      "deckName": "Ahoy Mateys",
+      "setCode": "lcc",
+      "identityKey": "ahoy-mateys-lcc",
+      "commanderNames": [
+        "Admiral Brass, Unsinkable"
+      ],
+      "commanderScryfallIds": [
+        "bdc2d492-9d1e-4543-8b9c-c66ee67992ce"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.022Z"
+    },
+    "blood-rites-lcc": {
+      "deckName": "Blood Rites",
+      "setCode": "lcc",
+      "identityKey": "blood-rites-lcc",
+      "commanderNames": [
+        "Clavileño, First of the Blessed"
+      ],
+      "commanderScryfallIds": [
+        "9f55b648-b1ec-407a-a0c7-7647755793d1"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "explorers-of-the-deep-lcc": {
+      "deckName": "Explorers of the Deep",
+      "setCode": "lcc",
+      "identityKey": "explorers-of-the-deep-lcc",
+      "commanderNames": [
+        "Hakbal of the Surging Soul"
+      ],
+      "commanderScryfallIds": [
+        "e738e675-4fd1-4bc3-97f5-71d0e2fc3f2e"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "veloci-ramp-tor-lcc": {
+      "deckName": "Veloci-Ramp-Tor",
+      "setCode": "lcc",
+      "identityKey": "veloci-ramp-tor-lcc",
+      "commanderNames": [
+        "Pantlaza, Sun-Favored"
+      ],
+      "commanderScryfallIds": [
+        "2524645e-b066-4351-885b-10faa8d819d7"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "blast-from-the-past-who": {
+      "deckName": "Blast from the Past",
+      "setCode": "who",
+      "identityKey": "blast-from-the-past-who",
+      "commanderNames": [
+        "The Fourth Doctor",
+        "Sarah Jane Smith"
+      ],
+      "commanderScryfallIds": [
+        "c84ea0fd-efc7-4614-9f8f-41a3c71fceaa",
+        "1ba76f68-e647-4786-903c-92dbd3cef05d"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "PARTNER",
+      "label": "Partner / Friends",
+      "short": "PARTNER",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "masters-of-evil-who": {
+      "deckName": "Masters of Evil",
+      "setCode": "who",
+      "identityKey": "masters-of-evil-who",
+      "commanderNames": [
+        "Davros, Dalek Creator"
+      ],
+      "commanderScryfallIds": [
+        "59c5bd2b-cf68-4e5e-819d-53917a6c5275"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "paradox-power-who": {
+      "deckName": "Paradox Power",
+      "setCode": "who",
+      "identityKey": "paradox-power-who",
+      "commanderNames": [
+        "The Thirteenth Doctor",
+        "Yasmin Khan"
+      ],
+      "commanderScryfallIds": [
+        "0dc4ec90-1650-4b98-9350-66341394cf0b",
+        "12b09a4f-bb62-4766-8115-cae4d5cc4c12"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "PARTNER",
+      "label": "Partner / Friends",
+      "short": "PARTNER",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "timey-wimey-who": {
+      "deckName": "Timey-Wimey",
+      "setCode": "who",
+      "identityKey": "timey-wimey-who",
+      "commanderNames": [
+        "The Tenth Doctor",
+        "Rose Tyler"
+      ],
+      "commanderScryfallIds": [
+        "f1499f49-793b-4265-9ad0-883a431941ab",
+        "3aa8d034-f98c-4e27-b6af-850eadf59941"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "PARTNER",
+      "label": "Partner / Friends",
+      "short": "PARTNER",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "fae-dominion-woc": {
+      "deckName": "Fae Dominion",
+      "setCode": "woc",
+      "identityKey": "fae-dominion-woc",
+      "commanderNames": [
+        "Tegwyll, Duke of Splendor"
+      ],
+      "commanderScryfallIds": [
+        "03fab911-7bd4-45fa-ba07-cd0e51b0cd95"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "virtue-and-valor-woc": {
+      "deckName": "Virtue and Valor",
+      "setCode": "woc",
+      "identityKey": "virtue-and-valor-woc",
+      "commanderNames": [
+        "Ellivere of the Wild Court"
+      ],
+      "commanderScryfallIds": [
+        "45851394-b8f3-4713-8239-afcb387d47c5"
+      ],
+      "colorIdentity": [
+        "W",
+        "G"
+      ],
+      "category": "WG",
+      "label": "WG pair",
+      "short": "WG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "angels-they-re-just-like-us-but-cooler-and-with-wings-sld": {
+      "deckName": "Angels: They're Just Like Us but Cooler and with Wings",
+      "setCode": "sld",
+      "identityKey": "angels-they-re-just-like-us-but-cooler-and-with-wings-sld",
+      "commanderNames": [
+        "Gisela, the Broken Blade"
+      ],
+      "commanderScryfallIds": [
+        "d1cfc318-9c3e-471f-90eb-dc76454da957"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "category": "MONO-W",
+      "label": "Mono-W",
+      "short": "W",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "eldrazi-unbound-cmm": {
+      "deckName": "Eldrazi Unbound",
+      "setCode": "cmm",
+      "identityKey": "eldrazi-unbound-cmm",
+      "commanderNames": [
+        "Zhulodok, Void Gorger"
+      ],
+      "commanderScryfallIds": [
+        "a015461d-4214-4feb-8b04-519c537759eb"
+      ],
+      "colorIdentity": [],
+      "category": "COLORLESS",
+      "label": "Colorless",
+      "short": "C",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.023Z"
+    },
+    "enduring-enchantments-cmm": {
+      "deckName": "Enduring Enchantments",
+      "setCode": "cmm",
+      "identityKey": "enduring-enchantments-cmm",
+      "commanderNames": [
+        "Anikthea, Hand of Erebos"
+      ],
+      "commanderScryfallIds": [
+        "8b796a56-1611-4835-ac5b-48b4e9263685"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "TRI-WBG",
+      "label": "WBG tri-color",
+      "short": "WBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "planeswalker-party-cmm": {
+      "deckName": "Planeswalker Party",
+      "setCode": "cmm",
+      "identityKey": "planeswalker-party-cmm",
+      "commanderNames": [
+        "Commodore Guff"
+      ],
+      "commanderScryfallIds": [
+        "92870fc6-a6bc-4198-bb31-397e07e0e835"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "sliver-swarm-cmm": {
+      "deckName": "Sliver Swarm",
+      "setCode": "cmm",
+      "identityKey": "sliver-swarm-cmm",
+      "commanderNames": [
+        "Sliver Gravemother"
+      ],
+      "commanderScryfallIds": [
+        "9f5d253e-9eb2-423c-90ee-68f27ec6bf88"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "elven-council-ltc": {
+      "deckName": "Elven Council",
+      "setCode": "ltc",
+      "identityKey": "elven-council-ltc",
+      "commanderNames": [
+        "Galadriel, Elven-Queen"
+      ],
+      "commanderScryfallIds": [
+        "8fa46d54-563d-4b5c-9c69-5ab37dd529b3"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "food-and-fellowship-ltc": {
+      "deckName": "Food and Fellowship",
+      "setCode": "ltc",
+      "identityKey": "food-and-fellowship-ltc",
+      "commanderNames": [
+        "Frodo, Adventurous Hobbit",
+        "Sam, Loyal Attendant"
+      ],
+      "commanderScryfallIds": [
+        "328df403-7428-4b17-bdd1-9759fc0f32d8",
+        "687a2b76-3f05-4732-bd9b-513d06d16300"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "PARTNER",
+      "label": "Partner / Friends",
+      "short": "PARTNER",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "riders-of-rohan-ltc": {
+      "deckName": "Riders of Rohan",
+      "setCode": "ltc",
+      "identityKey": "riders-of-rohan-ltc",
+      "commanderNames": [
+        "Éowyn, Shieldmaiden"
+      ],
+      "commanderScryfallIds": [
+        "dd4a00ff-2206-4e12-a0ab-61ed82c9e6c5"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "the-hosts-of-mordor-ltc": {
+      "deckName": "The Hosts of Mordor",
+      "setCode": "ltc",
+      "identityKey": "the-hosts-of-mordor-ltc",
+      "commanderNames": [
+        "Sauron, Lord of the Rings"
+      ],
+      "commanderScryfallIds": [
+        "fc53dec0-79fe-4f6f-9d5b-cf298588e808"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "from-cute-to-brute-sld": {
+      "deckName": "From Cute to Brute",
+      "setCode": "sld",
+      "identityKey": "from-cute-to-brute-sld",
+      "commanderNames": [
+        "Esika, God of the Tree // The Prismatic Bridge"
+      ],
+      "commanderScryfallIds": [
+        "46d43696-3c63-4c55-bc61-e1560c8b8201"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "call-for-backup-moc": {
+      "deckName": "Call for Backup",
+      "setCode": "moc",
+      "identityKey": "call-for-backup-moc",
+      "commanderNames": [
+        "Bright-Palm, Soul Awakener"
+      ],
+      "commanderScryfallIds": [
+        "a485c2c3-c90b-43b4-bb00-c1b811b4b392"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.024Z"
+    },
+    "cavalry-charge-moc": {
+      "deckName": "Cavalry Charge",
+      "setCode": "moc",
+      "identityKey": "cavalry-charge-moc",
+      "commanderNames": [
+        "Sidar Jabari of Zhalfir"
+      ],
+      "commanderScryfallIds": [
+        "5fc707be-9286-4ba1-90f6-475265d19ed2"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "divine-convocation-moc": {
+      "deckName": "Divine Convocation",
+      "setCode": "moc",
+      "identityKey": "divine-convocation-moc",
+      "commanderNames": [
+        "Kasla, the Broken Halo"
+      ],
+      "commanderScryfallIds": [
+        "a209bda2-f0bf-4417-94f9-b73eff0b4217"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "growing-threat-moc": {
+      "deckName": "Growing Threat",
+      "setCode": "moc",
+      "identityKey": "growing-threat-moc",
+      "commanderNames": [
+        "Brimaz, Blight of Oreskos"
+      ],
+      "commanderScryfallIds": [
+        "f0d31ae7-8580-402a-a917-3d626a9e1f49"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "tinker-time-moc": {
+      "deckName": "Tinker Time",
+      "setCode": "moc",
+      "identityKey": "tinker-time-moc",
+      "commanderNames": [
+        "Gimbal, Gremlin Prodigy"
+      ],
+      "commanderScryfallIds": [
+        "4a9aa899-752b-4106-89ba-9475ee777d41"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "corrupting-influence-onc": {
+      "deckName": "Corrupting Influence",
+      "setCode": "onc",
+      "identityKey": "corrupting-influence-onc",
+      "commanderNames": [
+        "Ixhel, Scion of Atraxa"
+      ],
+      "commanderScryfallIds": [
+        "ab866ec4-dcb4-47ef-8de1-a369986609c0"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "TRI-WBG",
+      "label": "WBG tri-color",
+      "short": "WBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "rebellion-rising-onc": {
+      "deckName": "Rebellion Rising",
+      "setCode": "onc",
+      "identityKey": "rebellion-rising-onc",
+      "commanderNames": [
+        "Neyali, Suns' Vanguard"
+      ],
+      "commanderScryfallIds": [
+        "2b5df03d-2463-468b-b444-d946eeb1c96d"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "chaos-incarnate-scd": {
+      "deckName": "Chaos Incarnate",
+      "setCode": "scd",
+      "identityKey": "chaos-incarnate-scd",
+      "commanderNames": [
+        "Kardur, Doomscourge"
+      ],
+      "commanderScryfallIds": [
+        "19e4d494-e8b3-4ae2-93e3-70c65ab90f15"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "category": "BR",
+      "label": "BR pair",
+      "short": "BR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "draconic-destruction-scd": {
+      "deckName": "Draconic Destruction",
+      "setCode": "scd",
+      "identityKey": "draconic-destruction-scd",
+      "commanderNames": [
+        "Atarka, World Render"
+      ],
+      "commanderScryfallIds": [
+        "719f172b-f9ad-4960-af66-757eb54147f6"
+      ],
+      "colorIdentity": [
+        "R",
+        "G"
+      ],
+      "category": "RG",
+      "label": "RG pair",
+      "short": "RG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "first-flight-scd": {
+      "deckName": "First Flight",
+      "setCode": "scd",
+      "identityKey": "first-flight-scd",
+      "commanderNames": [
+        "Isperia, Supreme Judge"
+      ],
+      "commanderScryfallIds": [
+        "de3278de-a045-4290-b05f-3b19e7055091"
+      ],
+      "colorIdentity": [
+        "W",
+        "U"
+      ],
+      "category": "WU",
+      "label": "WU pair",
+      "short": "WU",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "grave-danger-scd": {
+      "deckName": "Grave Danger",
+      "setCode": "scd",
+      "identityKey": "grave-danger-scd",
+      "commanderNames": [
+        "Gisa and Geralf"
+      ],
+      "commanderScryfallIds": [
+        "4d8fd87c-caf7-402e-b543-e35ba3007bcb"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "token-triumph-scd": {
+      "deckName": "Token Triumph",
+      "setCode": "scd",
+      "identityKey": "token-triumph-scd",
+      "commanderNames": [
+        "Emmara, Soul of the Accord"
+      ],
+      "commanderScryfallIds": [
+        "e8510a1e-62ca-462c-b036-d1312729f27d"
+      ],
+      "colorIdentity": [
+        "W",
+        "G"
+      ],
+      "category": "WG",
+      "label": "WG pair",
+      "short": "WG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "urza-s-iron-alliance-brc": {
+      "deckName": "Urza's Iron Alliance",
+      "setCode": "brc",
+      "identityKey": "urza-s-iron-alliance-brc",
+      "commanderNames": [
+        "Urza, Chief Artificer"
+      ],
+      "commanderScryfallIds": [
+        "ea409050-4296-4b76-a6cd-2896ce1b88e4"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "forces-of-the-imperium-40k": {
+      "deckName": "Forces of the Imperium",
+      "setCode": "40k",
+      "identityKey": "forces-of-the-imperium-40k",
+      "commanderNames": [
+        "Inquisitor Greyfax"
+      ],
+      "commanderScryfallIds": [
+        "1956cebe-bb71-45cc-b4ff-72ee3bb95c81"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "necron-dynasties-40k": {
+      "deckName": "Necron Dynasties",
+      "setCode": "40k",
+      "identityKey": "necron-dynasties-40k",
+      "commanderNames": [
+        "Szarekh, the Silent King"
+      ],
+      "commanderScryfallIds": [
+        "12a3400d-7a8b-4bae-9a4f-c9a1bc741e68"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "category": "MONO-B",
+      "label": "Mono-B",
+      "short": "B",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "the-ruinous-powers-40k": {
+      "deckName": "The Ruinous Powers",
+      "setCode": "40k",
+      "identityKey": "the-ruinous-powers-40k",
+      "commanderNames": [
+        "Abaddon the Despoiler"
+      ],
+      "commanderScryfallIds": [
+        "a78ab8fe-4499-4860-87d3-f8707398c00c"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.025Z"
+    },
+    "tyranid-swarm-40k": {
+      "deckName": "Tyranid Swarm",
+      "setCode": "40k",
+      "identityKey": "tyranid-swarm-40k",
+      "commanderNames": [
+        "The Swarmlord"
+      ],
+      "commanderScryfallIds": [
+        "c9dbba5a-fb9a-422e-87a1-a29d2c17a04e"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "legends-legacy-dmc": {
+      "deckName": "Legends' Legacy",
+      "setCode": "dmc",
+      "identityKey": "legends-legacy-dmc",
+      "commanderNames": [
+        "Dihada, Binder of Wills"
+      ],
+      "commanderScryfallIds": [
+        "ddeb54d6-a600-42b9-98df-20f8d58caed8"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "painbow-dmc": {
+      "deckName": "Painbow",
+      "setCode": "dmc",
+      "identityKey": "painbow-dmc",
+      "commanderNames": [
+        "Jared Carthalion"
+      ],
+      "commanderScryfallIds": [
+        "5acffa48-9e3f-4ba3-a55f-d459307f46df"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "draconic-dissent-clb": {
+      "deckName": "Draconic Dissent",
+      "setCode": "clb",
+      "identityKey": "draconic-dissent-clb",
+      "commanderNames": [
+        "Firkraag, Cunning Instigator"
+      ],
+      "commanderScryfallIds": [
+        "b55e624b-6f6a-42ae-89aa-0cc62ee55a31"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "exit-from-exile-clb": {
+      "deckName": "Exit from Exile",
+      "setCode": "clb",
+      "identityKey": "exit-from-exile-clb",
+      "commanderNames": [
+        "Faldorn, Dread Wolf Herald"
+      ],
+      "commanderScryfallIds": [
+        "213e530e-33a9-4358-b43b-4a276a7e7190"
+      ],
+      "colorIdentity": [
+        "R",
+        "G"
+      ],
+      "category": "RG",
+      "label": "RG pair",
+      "short": "RG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "mind-flayarrrs-clb": {
+      "deckName": "Mind Flayarrrs",
+      "setCode": "clb",
+      "identityKey": "mind-flayarrrs-clb",
+      "commanderNames": [
+        "Captain N'ghathrod"
+      ],
+      "commanderScryfallIds": [
+        "55c02dc8-0743-400c-b334-ca029caf0463"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "party-time-clb": {
+      "deckName": "Party Time",
+      "setCode": "clb",
+      "identityKey": "party-time-clb",
+      "commanderNames": [
+        "Nalia de'Arnise"
+      ],
+      "commanderScryfallIds": [
+        "7a1294fd-9885-4dfd-8192-0ca074fc83f7"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "bedecked-brokers-ncc": {
+      "deckName": "Bedecked Brokers",
+      "setCode": "ncc",
+      "identityKey": "bedecked-brokers-ncc",
+      "commanderNames": [
+        "Perrie, the Pulverizer"
+      ],
+      "commanderScryfallIds": [
+        "d438237b-c6f7-44d0-a3e6-6ec7d7465d33"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "cabaretti-cacophony-ncc": {
+      "deckName": "Cabaretti Cacophony",
+      "setCode": "ncc",
+      "identityKey": "cabaretti-cacophony-ncc",
+      "commanderNames": [
+        "Kitt Kanto, Mayhem Diva"
+      ],
+      "commanderScryfallIds": [
+        "9b9850d6-49d3-45ec-9a45-75aa0fce9ee5"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "maestros-massacre-ncc": {
+      "deckName": "Maestros Massacre",
+      "setCode": "ncc",
+      "identityKey": "maestros-massacre-ncc",
+      "commanderNames": [
+        "Anhelo, the Painter"
+      ],
+      "commanderScryfallIds": [
+        "462e887d-6b91-4b31-9487-2780ffe8943f"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "obscura-operation-ncc": {
+      "deckName": "Obscura Operation",
+      "setCode": "ncc",
+      "identityKey": "obscura-operation-ncc",
+      "commanderNames": [
+        "Kamiz, Obscura Oculus"
+      ],
+      "commanderScryfallIds": [
+        "74b8ae28-e169-46be-8180-ebdaf80efd81"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "riveteers-rampage-ncc": {
+      "deckName": "Riveteers Rampage",
+      "setCode": "ncc",
+      "identityKey": "riveteers-rampage-ncc",
+      "commanderNames": [
+        "Henzie \"Toolbox\" Torre"
+      ],
+      "commanderScryfallIds": [
+        "ee228dcc-3170-4c24-80bc-28bcee07cb43"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "heads-i-win-tails-you-lose-sld": {
+      "deckName": "Heads I Win, Tails You Lose",
+      "setCode": "sld",
+      "identityKey": "heads-i-win-tails-you-lose-sld",
+      "commanderNames": [
+        "Zndrsplt, Eye of Wisdom // Zndrsplt, Eye of Wisdom",
+        "Okaun, Eye of Chaos // Okaun, Eye of Chaos"
+      ],
+      "commanderScryfallIds": [
+        "d5dfd236-b1da-4552-b94f-ebf6bb9dafdf",
+        "94eea6e3-20bc-4dab-90ba-3113c120fb90"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "PARTNER",
+      "label": "Partner / Friends",
+      "short": "PARTNER",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "buckle-up-nec": {
+      "deckName": "Buckle Up",
+      "setCode": "nec",
+      "identityKey": "buckle-up-nec",
+      "commanderNames": [
+        "Kotori, Pilot Prodigy"
+      ],
+      "commanderScryfallIds": [
+        "fea6c1c8-eff9-4b66-b96d-e23016f0bb62"
+      ],
+      "colorIdentity": [
+        "W",
+        "U"
+      ],
+      "category": "WU",
+      "label": "WU pair",
+      "short": "WU",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.026Z"
+    },
+    "upgrades-unleashed-nec": {
+      "deckName": "Upgrades Unleashed",
+      "setCode": "nec",
+      "identityKey": "upgrades-unleashed-nec",
+      "commanderNames": [
+        "Chishiro, the Shattered Blade"
+      ],
+      "commanderScryfallIds": [
+        "bffa36ac-137d-481c-b1b7-76a88ef15d54"
+      ],
+      "colorIdentity": [
+        "R",
+        "G"
+      ],
+      "category": "RG",
+      "label": "RG pair",
+      "short": "RG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "spirit-squadron-voc": {
+      "deckName": "Spirit Squadron",
+      "setCode": "voc",
+      "identityKey": "spirit-squadron-voc",
+      "commanderNames": [
+        "Millicent, Restless Revenant"
+      ],
+      "commanderScryfallIds": [
+        "2b86b538-0766-440d-a2cd-f5d5bfcfb010"
+      ],
+      "colorIdentity": [
+        "W",
+        "U"
+      ],
+      "category": "WU",
+      "label": "WU pair",
+      "short": "WU",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "vampiric-bloodline-voc": {
+      "deckName": "Vampiric Bloodline",
+      "setCode": "voc",
+      "identityKey": "vampiric-bloodline-voc",
+      "commanderNames": [
+        "Strefan, Maurer Progenitor"
+      ],
+      "commanderScryfallIds": [
+        "8f54c6ce-fde4-47ef-a106-5c68b4397f99"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "category": "BR",
+      "label": "BR pair",
+      "short": "BR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "coven-counters-mic": {
+      "deckName": "Coven Counters",
+      "setCode": "mic",
+      "identityKey": "coven-counters-mic",
+      "commanderNames": [
+        "Leinore, Autumn Sovereign"
+      ],
+      "commanderScryfallIds": [
+        "bd7e1645-ea8f-41c4-b3ee-58f44fc5c574"
+      ],
+      "colorIdentity": [
+        "W",
+        "G"
+      ],
+      "category": "WG",
+      "label": "WG pair",
+      "short": "WG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "undead-unleashed-mic": {
+      "deckName": "Undead Unleashed",
+      "setCode": "mic",
+      "identityKey": "undead-unleashed-mic",
+      "commanderNames": [
+        "Wilhelt, the Rotcleaver"
+      ],
+      "commanderScryfallIds": [
+        "2501a911-d072-436d-ae3b-a5164e3b30aa"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "aura-of-courage-afc": {
+      "deckName": "Aura of Courage",
+      "setCode": "afc",
+      "identityKey": "aura-of-courage-afc",
+      "commanderNames": [
+        "Galea, Kindler of Hope"
+      ],
+      "commanderScryfallIds": [
+        "1efbea01-c6a1-4380-a14f-6206c7895e48"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "draconic-rage-afc": {
+      "deckName": "Draconic Rage",
+      "setCode": "afc",
+      "identityKey": "draconic-rage-afc",
+      "commanderNames": [
+        "Vrondiss, Rage of Ancients"
+      ],
+      "commanderScryfallIds": [
+        "683ca7f0-e9df-459b-a8e3-cf80b39c732d"
+      ],
+      "colorIdentity": [
+        "R",
+        "G"
+      ],
+      "category": "RG",
+      "label": "RG pair",
+      "short": "RG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "dungeons-of-death-afc": {
+      "deckName": "Dungeons of Death",
+      "setCode": "afc",
+      "identityKey": "dungeons-of-death-afc",
+      "commanderNames": [
+        "Sefris of the Hidden Ways"
+      ],
+      "commanderScryfallIds": [
+        "d30255f6-e058-476a-b377-2ee4c9178ed1"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "planar-portal-afc": {
+      "deckName": "Planar Portal",
+      "setCode": "afc",
+      "identityKey": "planar-portal-afc",
+      "commanderNames": [
+        "Prosper, Tome-Bound"
+      ],
+      "commanderScryfallIds": [
+        "d743336e-d5c7-4053-a23d-92ec7581f74e"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "category": "BR",
+      "label": "BR pair",
+      "short": "BR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "lorehold-legacies-c21": {
+      "deckName": "Lorehold Legacies",
+      "setCode": "c21",
+      "identityKey": "lorehold-legacies-c21",
+      "commanderNames": [
+        "Osgir, the Reconstructor"
+      ],
+      "commanderScryfallIds": [
+        "5815fe6e-e26b-4918-a090-55d6442722c1"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "prismari-performance-c21": {
+      "deckName": "Prismari Performance",
+      "setCode": "c21",
+      "identityKey": "prismari-performance-c21",
+      "commanderNames": [
+        "Zaffai, Thunder Conductor"
+      ],
+      "commanderScryfallIds": [
+        "ea1ab937-8647-4c83-99d5-6a40dffa4c9b"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "quantum-quandrix-c21": {
+      "deckName": "Quantum Quandrix",
+      "setCode": "c21",
+      "identityKey": "quantum-quandrix-c21",
+      "commanderNames": [
+        "Adrix and Nev, Twincasters"
+      ],
+      "commanderScryfallIds": [
+        "d495e084-92ec-4675-b6aa-8ade2775b796"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "silverquill-statement-c21": {
+      "deckName": "Silverquill Statement",
+      "setCode": "c21",
+      "identityKey": "silverquill-statement-c21",
+      "commanderNames": [
+        "Breena, the Demagogue"
+      ],
+      "commanderScryfallIds": [
+        "6cb82b10-d785-4e20-84ac-0660d49be8ad"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "witherbloom-witchcraft-c21": {
+      "deckName": "Witherbloom Witchcraft",
+      "setCode": "c21",
+      "identityKey": "witherbloom-witchcraft-c21",
+      "commanderNames": [
+        "Willowdusk, Essence Seer"
+      ],
+      "commanderScryfallIds": [
+        "42a97ec1-f613-49a5-9236-7fded1a81f3b"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "elven-empire-khc": {
+      "deckName": "Elven Empire",
+      "setCode": "khc",
+      "identityKey": "elven-empire-khc",
+      "commanderNames": [
+        "Lathril, Blade of the Elves"
+      ],
+      "commanderScryfallIds": [
+        "547888c3-a9a6-4413-b29a-6bcd8a9279bf"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.027Z"
+    },
+    "phantom-premonition-khc": {
+      "deckName": "Phantom Premonition",
+      "setCode": "khc",
+      "identityKey": "phantom-premonition-khc",
+      "commanderNames": [
+        "Ranar the Ever-Watchful"
+      ],
+      "commanderScryfallIds": [
+        "1c8c41dd-8551-4ce8-a9be-9b9f65718852"
+      ],
+      "colorIdentity": [
+        "W",
+        "U"
+      ],
+      "category": "WU",
+      "label": "WU pair",
+      "short": "WU",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "arm-for-battle-cmr": {
+      "deckName": "Arm for Battle",
+      "setCode": "cmr",
+      "identityKey": "arm-for-battle-cmr",
+      "commanderNames": [
+        "Wyleth, Soul of Steel"
+      ],
+      "commanderScryfallIds": [
+        "7c5ada8c-98f2-4f9c-bcb5-dfa4f804fbe6"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "reap-the-tides-cmr": {
+      "deckName": "Reap the Tides",
+      "setCode": "cmr",
+      "identityKey": "reap-the-tides-cmr",
+      "commanderNames": [
+        "Aesi, Tyrant of Gyre Strait"
+      ],
+      "commanderScryfallIds": [
+        "d607b003-6b48-429c-a7fd-45b8dd1bb4f9"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "land-s-wrath-znc": {
+      "deckName": "Land's Wrath",
+      "setCode": "znc",
+      "identityKey": "land-s-wrath-znc",
+      "commanderNames": [
+        "Obuun, Mul Daya Ancestor"
+      ],
+      "commanderScryfallIds": [
+        "8319b155-0fba-4d30-9481-bf01afbd3457"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "sneak-attack-znc": {
+      "deckName": "Sneak Attack",
+      "setCode": "znc",
+      "identityKey": "sneak-attack-znc",
+      "commanderNames": [
+        "Anowon, the Ruin Thief"
+      ],
+      "commanderScryfallIds": [
+        "bca84fc4-4710-44c8-b90a-73ef888714d8"
+      ],
+      "colorIdentity": [
+        "U",
+        "B"
+      ],
+      "category": "UB",
+      "label": "UB pair",
+      "short": "UB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "arcane-maelstrom-c20": {
+      "deckName": "Arcane Maelstrom",
+      "setCode": "c20",
+      "identityKey": "arcane-maelstrom-c20",
+      "commanderNames": [
+        "Kalamax, the Stormsire"
+      ],
+      "commanderScryfallIds": [
+        "f990cd78-2165-446f-a116-ae55d7a0f00d"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "enhanced-evolution-c20": {
+      "deckName": "Enhanced Evolution",
+      "setCode": "c20",
+      "identityKey": "enhanced-evolution-c20",
+      "commanderNames": [
+        "Otrimi, the Ever-Playful"
+      ],
+      "commanderScryfallIds": [
+        "639df7bc-b87d-4bf5-8005-8eabc54e955b"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "ruthless-regiment-c20": {
+      "deckName": "Ruthless Regiment",
+      "setCode": "c20",
+      "identityKey": "ruthless-regiment-c20",
+      "commanderNames": [
+        "Jirina Kudro"
+      ],
+      "commanderScryfallIds": [
+        "6e660d42-f5d3-452a-9662-74e18a1ae9e4"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "symbiotic-swarm-c20": {
+      "deckName": "Symbiotic Swarm",
+      "setCode": "c20",
+      "identityKey": "symbiotic-swarm-c20",
+      "commanderNames": [
+        "Kathril, Aspect Warper"
+      ],
+      "commanderScryfallIds": [
+        "ebc57f73-a517-463e-8d55-56aa996d091e"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "TRI-WBG",
+      "label": "WBG tri-color",
+      "short": "WBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "timeless-wisdom-c20": {
+      "deckName": "Timeless Wisdom",
+      "setCode": "c20",
+      "identityKey": "timeless-wisdom-c20",
+      "commanderNames": [
+        "Gavi, Nest Warden"
+      ],
+      "commanderScryfallIds": [
+        "80bc07d5-bdbb-4a6d-8958-0c172ea80245"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "faceless-menace-c19": {
+      "deckName": "Faceless Menace",
+      "setCode": "c19",
+      "identityKey": "faceless-menace-c19",
+      "commanderNames": [
+        "Kadena, Slinking Sorcerer"
+      ],
+      "commanderScryfallIds": [
+        "68a144f1-df18-4dc5-81c3-dff2af27527f"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "merciless-rage-c19": {
+      "deckName": "Merciless Rage",
+      "setCode": "c19",
+      "identityKey": "merciless-rage-c19",
+      "commanderNames": [
+        "Anje Falkenrath"
+      ],
+      "commanderScryfallIds": [
+        "913dd06f-ed2f-4128-9c9d-9cd0d8a55425"
+      ],
+      "colorIdentity": [
+        "B",
+        "R"
+      ],
+      "category": "BR",
+      "label": "BR pair",
+      "short": "BR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "mystic-intellect-c19": {
+      "deckName": "Mystic Intellect",
+      "setCode": "c19",
+      "identityKey": "mystic-intellect-c19",
+      "commanderNames": [
+        "Sevinne, the Chronoclasm"
+      ],
+      "commanderScryfallIds": [
+        "2c209efe-b4dc-44a3-bd45-d647f5680cbe"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "primal-genesis-c19": {
+      "deckName": "Primal Genesis",
+      "setCode": "c19",
+      "identityKey": "primal-genesis-c19",
+      "commanderNames": [
+        "Ghired, Conclave Exile"
+      ],
+      "commanderScryfallIds": [
+        "d0825bcd-8cf8-498a-a61e-406f136e1f3f"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "adaptive-enchantment-c18": {
+      "deckName": "Adaptive Enchantment",
+      "setCode": "c18",
+      "identityKey": "adaptive-enchantment-c18",
+      "commanderNames": [
+        "Estrid, the Masked"
+      ],
+      "commanderScryfallIds": [
+        "3340b83e-72dc-42e2-9f93-92f732c047df"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "exquisite-invention-c18": {
+      "deckName": "Exquisite Invention",
+      "setCode": "c18",
+      "identityKey": "exquisite-invention-c18",
+      "commanderNames": [
+        "Saheeli, the Gifted"
+      ],
+      "commanderScryfallIds": [
+        "ca095559-ac77-4186-8d9b-b75ce0607582"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "nature-s-vengeance-c18": {
+      "deckName": "Nature's Vengeance",
+      "setCode": "c18",
+      "identityKey": "nature-s-vengeance-c18",
+      "commanderNames": [
+        "Lord Windgrace"
+      ],
+      "commanderScryfallIds": [
+        "213d6fb8-5624-4804-b263-51f339482754"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "subjective-reality-c18": {
+      "deckName": "Subjective Reality",
+      "setCode": "c18",
+      "identityKey": "subjective-reality-c18",
+      "commanderNames": [
+        "Aminatou, the Fateshifter"
+      ],
+      "commanderScryfallIds": [
+        "16b9f43a-9c3f-4bfa-9eb1-734189a4bb1f"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "breed-lethality-cm2": {
+      "deckName": "Breed Lethality",
+      "setCode": "cm2",
+      "identityKey": "breed-lethality-cm2",
+      "commanderNames": [
+        "Atraxa, Praetors' Voice"
+      ],
+      "commanderScryfallIds": [
+        "b2e330dd-7cd3-445d-9c05-56e4a57526e9"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "QUAD-WUBG",
+      "label": "WUBG four-color",
+      "short": "WUBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "built-from-scratch-cm2": {
+      "deckName": "Built From Scratch",
+      "setCode": "cm2",
+      "identityKey": "built-from-scratch-cm2",
+      "commanderNames": [
+        "Daretti, Scrap Savant"
+      ],
+      "commanderScryfallIds": [
+        "3f4e6adf-d52f-4087-a919-789a543a9a3e"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "category": "MONO-R",
+      "label": "Mono-R",
+      "short": "R",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "devour-for-power-cm2": {
+      "deckName": "Devour for Power",
+      "setCode": "cm2",
+      "identityKey": "devour-for-power-cm2",
+      "commanderNames": [
+        "The Mimeoplasm"
+      ],
+      "commanderScryfallIds": [
+        "aedc7a6b-c481-4719-bc83-424eeb216aef"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "wade-into-battle-cm2": {
+      "deckName": "Wade into Battle",
+      "setCode": "cm2",
+      "identityKey": "wade-into-battle-cm2",
+      "commanderNames": [
+        "Kalemne, Disciple of Iroas"
+      ],
+      "commanderScryfallIds": [
+        "3c718940-dc07-4449-ba35-4029f366c3eb"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "arcane-wizardry-c17": {
+      "deckName": "Arcane Wizardry",
+      "setCode": "c17",
+      "identityKey": "arcane-wizardry-c17",
+      "commanderNames": [
+        "Inalla, Archmage Ritualist"
+      ],
+      "commanderScryfallIds": [
+        "7c6e803a-451c-4aa6-97a2-400077f32c47"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "draconic-domination-c17": {
+      "deckName": "Draconic Domination",
+      "setCode": "c17",
+      "identityKey": "draconic-domination-c17",
+      "commanderNames": [
+        "The Ur-Dragon"
+      ],
+      "commanderScryfallIds": [
+        "7e78b70b-0c67-4f14-8ad7-c9f8e3f59743"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "FIVE",
+      "label": "Five-color",
+      "short": "WUBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "feline-ferocity-c17": {
+      "deckName": "Feline Ferocity",
+      "setCode": "c17",
+      "identityKey": "feline-ferocity-c17",
+      "commanderNames": [
+        "Arahbo, Roar of the World"
+      ],
+      "commanderScryfallIds": [
+        "81dc3d00-97cd-4549-b5a4-15a1e08767f5"
+      ],
+      "colorIdentity": [
+        "W",
+        "G"
+      ],
+      "category": "WG",
+      "label": "WG pair",
+      "short": "WG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "vampiric-bloodlust-c17": {
+      "deckName": "Vampiric Bloodlust",
+      "setCode": "c17",
+      "identityKey": "vampiric-bloodlust-c17",
+      "commanderNames": [
+        "Edgar Markov"
+      ],
+      "commanderScryfallIds": [
+        "8d94b8ec-ecda-43c8-a60e-1ba33e6a54a4"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "evasive-maneuvers-cma": {
+      "deckName": "Evasive Maneuvers",
+      "setCode": "cma",
+      "identityKey": "evasive-maneuvers-cma",
+      "commanderNames": [
+        "Derevi, Empyrial Tactician"
+      ],
+      "commanderScryfallIds": [
+        "3a1d0dad-18a8-489e-ac11-08f64b72fda4"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "guided-by-nature-cma": {
+      "deckName": "Guided by Nature",
+      "setCode": "cma",
+      "identityKey": "guided-by-nature-cma",
+      "commanderNames": [
+        "Freyalise, Llanowar's Fury"
+      ],
+      "commanderScryfallIds": [
+        "cb67310a-da5d-4932-8694-2ad6afe5aeae"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "category": "MONO-G",
+      "label": "Mono-G",
+      "short": "G",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "heavenly-inferno-cma": {
+      "deckName": "Heavenly Inferno",
+      "setCode": "cma",
+      "identityKey": "heavenly-inferno-cma",
+      "commanderNames": [
+        "Kaalia of the Vast"
+      ],
+      "commanderScryfallIds": [
+        "5c509c36-43a8-454e-80fc-321f41981049"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.028Z"
+    },
+    "plunder-the-graves-cma": {
+      "deckName": "Plunder the Graves",
+      "setCode": "cma",
+      "identityKey": "plunder-the-graves-cma",
+      "commanderNames": [
+        "Meren of Clan Nel Toth"
+      ],
+      "commanderScryfallIds": [
+        "17d6703c-ad79-457b-a1b5-c2284e363085"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "breed-lethality-c16": {
+      "deckName": "Breed Lethality",
+      "setCode": "c16",
+      "identityKey": "breed-lethality-c16",
+      "commanderNames": [
+        "Atraxa, Praetors' Voice"
+      ],
+      "commanderScryfallIds": [
+        "c34ae834-775e-447a-a330-0270c227c667"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "QUAD-WUBG",
+      "label": "WUBG four-color",
+      "short": "WUBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "entropic-uprising-c16": {
+      "deckName": "Entropic Uprising",
+      "setCode": "c16",
+      "identityKey": "entropic-uprising-c16",
+      "commanderNames": [
+        "Yidris, Maelstrom Wielder"
+      ],
+      "commanderScryfallIds": [
+        "c219dd22-433c-4f6a-a0c4-fae12239291c"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "QUAD-UBRG",
+      "label": "UBRG four-color",
+      "short": "UBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "invent-superiority-c16": {
+      "deckName": "Invent Superiority",
+      "setCode": "c16",
+      "identityKey": "invent-superiority-c16",
+      "commanderNames": [
+        "Breya, Etherium Shaper"
+      ],
+      "commanderScryfallIds": [
+        "8b585ce8-77a3-4755-8aa6-aee83724bbab"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "QUAD-WUBR",
+      "label": "WUBR four-color",
+      "short": "WUBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "open-hostility-c16": {
+      "deckName": "Open Hostility",
+      "setCode": "c16",
+      "identityKey": "open-hostility-c16",
+      "commanderNames": [
+        "Saskia the Unyielding"
+      ],
+      "commanderScryfallIds": [
+        "5b483db6-b614-4af1-820a-42a4ee0c8707"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "QUAD-WBRG",
+      "label": "WBRG four-color",
+      "short": "WBRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "stalwart-unity-c16": {
+      "deckName": "Stalwart Unity",
+      "setCode": "c16",
+      "identityKey": "stalwart-unity-c16",
+      "commanderNames": [
+        "Kynaios and Tiro of Meletis"
+      ],
+      "commanderScryfallIds": [
+        "97fa8615-2b6c-445a-bcaf-44a7e847bf65"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "QUAD-WURG",
+      "label": "WURG four-color",
+      "short": "WURG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "call-the-spirits-c15": {
+      "deckName": "Call the Spirits",
+      "setCode": "c15",
+      "identityKey": "call-the-spirits-c15",
+      "commanderNames": [
+        "Daxos the Returned"
+      ],
+      "commanderScryfallIds": [
+        "4abe142e-7e87-464b-be2a-ad2fc7aebd51"
+      ],
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "category": "WB",
+      "label": "WB pair",
+      "short": "WB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "plunder-the-graves-c15": {
+      "deckName": "Plunder the Graves",
+      "setCode": "c15",
+      "identityKey": "plunder-the-graves-c15",
+      "commanderNames": [
+        "Meren of Clan Nel Toth"
+      ],
+      "commanderScryfallIds": [
+        "f43bf91d-bc08-417f-a549-64919c24052a"
+      ],
+      "colorIdentity": [
+        "B",
+        "G"
+      ],
+      "category": "BG",
+      "label": "BG pair",
+      "short": "BG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "seize-control-c15": {
+      "deckName": "Seize Control",
+      "setCode": "c15",
+      "identityKey": "seize-control-c15",
+      "commanderNames": [
+        "Mizzix of the Izmagnus"
+      ],
+      "commanderScryfallIds": [
+        "d0ea2c3a-c36d-44e8-bc46-5361f5f9d0e7"
+      ],
+      "colorIdentity": [
+        "U",
+        "R"
+      ],
+      "category": "UR",
+      "label": "UR pair",
+      "short": "UR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "swell-the-host-c15": {
+      "deckName": "Swell the Host",
+      "setCode": "c15",
+      "identityKey": "swell-the-host-c15",
+      "commanderNames": [
+        "Ezuri, Claw of Progress"
+      ],
+      "commanderScryfallIds": [
+        "ef1b62ff-dbb3-4500-9d64-a3047ce193ec"
+      ],
+      "colorIdentity": [
+        "U",
+        "G"
+      ],
+      "category": "UG",
+      "label": "UG pair",
+      "short": "UG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "wade-into-battle-c15": {
+      "deckName": "Wade into Battle",
+      "setCode": "c15",
+      "identityKey": "wade-into-battle-c15",
+      "commanderNames": [
+        "Kalemne, Disciple of Iroas"
+      ],
+      "commanderScryfallIds": [
+        "c049d734-cb1c-4c38-b276-7e5ac9c81254"
+      ],
+      "colorIdentity": [
+        "W",
+        "R"
+      ],
+      "category": "WR",
+      "label": "WR pair",
+      "short": "WR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "built-from-scratch-c14": {
+      "deckName": "Built From Scratch",
+      "setCode": "c14",
+      "identityKey": "built-from-scratch-c14",
+      "commanderNames": [
+        "Daretti, Scrap Savant"
+      ],
+      "commanderScryfallIds": [
+        "cda40e31-ba99-4565-ad92-7c687ff44bd9"
+      ],
+      "colorIdentity": [
+        "R"
+      ],
+      "category": "MONO-R",
+      "label": "Mono-R",
+      "short": "R",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "forged-in-stone-c14": {
+      "deckName": "Forged In Stone",
+      "setCode": "c14",
+      "identityKey": "forged-in-stone-c14",
+      "commanderNames": [
+        "Nahiri, the Lithomancer"
+      ],
+      "commanderScryfallIds": [
+        "9a226eae-1c77-45a9-9115-f846b76681a3"
+      ],
+      "colorIdentity": [
+        "W"
+      ],
+      "category": "MONO-W",
+      "label": "Mono-W",
+      "short": "W",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "guided-by-nature-c14": {
+      "deckName": "Guided By Nature",
+      "setCode": "c14",
+      "identityKey": "guided-by-nature-c14",
+      "commanderNames": [
+        "Freyalise, Llanowar's Fury"
+      ],
+      "commanderScryfallIds": [
+        "6c6ef042-1a69-4b16-abae-4f436dbadbbd"
+      ],
+      "colorIdentity": [
+        "G"
+      ],
+      "category": "MONO-G",
+      "label": "Mono-G",
+      "short": "G",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "peer-through-time-c14": {
+      "deckName": "Peer Through Time",
+      "setCode": "c14",
+      "identityKey": "peer-through-time-c14",
+      "commanderNames": [
+        "Teferi, Temporal Archmage"
+      ],
+      "commanderScryfallIds": [
+        "80eec0bd-9eb4-4360-b97b-9c7985a63343"
+      ],
+      "colorIdentity": [
+        "U"
+      ],
+      "category": "MONO-U",
+      "label": "Mono-U",
+      "short": "U",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "sworn-to-darkness-c14": {
+      "deckName": "Sworn To Darkness",
+      "setCode": "c14",
+      "identityKey": "sworn-to-darkness-c14",
+      "commanderNames": [
+        "Ob Nixilis of the Black Oath"
+      ],
+      "commanderScryfallIds": [
+        "bf472be9-f375-455e-a800-7af5258f4e59"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "category": "MONO-B",
+      "label": "Mono-B",
+      "short": "B",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "eternal-bargain-c13": {
+      "deckName": "Eternal Bargain",
+      "setCode": "c13",
+      "identityKey": "eternal-bargain-c13",
+      "commanderNames": [
+        "Oloro, Ageless Ascetic"
+      ],
+      "commanderScryfallIds": [
+        "abf8df47-405c-42d8-be9e-0f0d0a49589b"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "B"
+      ],
+      "category": "TRI-WUB",
+      "label": "WUB tri-color",
+      "short": "WUB",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "evasive-maneuvers-c13": {
+      "deckName": "Evasive Maneuvers",
+      "setCode": "c13",
+      "identityKey": "evasive-maneuvers-c13",
+      "commanderNames": [
+        "Derevi, Empyrial Tactician"
+      ],
+      "commanderScryfallIds": [
+        "3d61a4d4-f0d5-4bc4-8977-57bbb3d97776"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "G"
+      ],
+      "category": "TRI-WUG",
+      "label": "WUG tri-color",
+      "short": "WUG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "mind-seize-c13": {
+      "deckName": "Mind Seize",
+      "setCode": "c13",
+      "identityKey": "mind-seize-c13",
+      "commanderNames": [
+        "Jeleva, Nephalia's Scourge"
+      ],
+      "commanderScryfallIds": [
+        "83f9aeb8-05ba-49d9-a834-62f42fcd295b"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "R"
+      ],
+      "category": "TRI-UBR",
+      "label": "UBR tri-color",
+      "short": "UBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "nature-of-the-beast-c13": {
+      "deckName": "Nature of the Beast",
+      "setCode": "c13",
+      "identityKey": "nature-of-the-beast-c13",
+      "commanderNames": [
+        "Marath, Will of the Wild"
+      ],
+      "commanderScryfallIds": [
+        "57afa796-db46-45ff-91bd-f02922e5f33d"
+      ],
+      "colorIdentity": [
+        "W",
+        "R",
+        "G"
+      ],
+      "category": "TRI-WRG",
+      "label": "WRG tri-color",
+      "short": "WRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "power-hungry-c13": {
+      "deckName": "Power Hungry",
+      "setCode": "c13",
+      "identityKey": "power-hungry-c13",
+      "commanderNames": [
+        "Prossh, Skyraider of Kher"
+      ],
+      "commanderScryfallIds": [
+        "fc411c52-3ee2-4fe4-983d-3fa43b516237"
+      ],
+      "colorIdentity": [
+        "B",
+        "R",
+        "G"
+      ],
+      "category": "TRI-BRG",
+      "label": "BRG tri-color",
+      "short": "BRG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "counterpunch-cmd": {
+      "deckName": "Counterpunch",
+      "setCode": "cmd",
+      "identityKey": "counterpunch-cmd",
+      "commanderNames": [
+        "Ghave, Guru of Spores"
+      ],
+      "commanderScryfallIds": [
+        "91194df8-4066-4235-a829-2b688ba4afcb"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "G"
+      ],
+      "category": "TRI-WBG",
+      "label": "WBG tri-color",
+      "short": "WBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "devour-for-power-cmd": {
+      "deckName": "Devour for Power",
+      "setCode": "cmd",
+      "identityKey": "devour-for-power-cmd",
+      "commanderNames": [
+        "The Mimeoplasm"
+      ],
+      "commanderScryfallIds": [
+        "20ffedd2-0575-4050-b687-fa1212966c46"
+      ],
+      "colorIdentity": [
+        "U",
+        "B",
+        "G"
+      ],
+      "category": "TRI-UBG",
+      "label": "UBG tri-color",
+      "short": "UBG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "heavenly-inferno-cmd": {
+      "deckName": "Heavenly Inferno",
+      "setCode": "cmd",
+      "identityKey": "heavenly-inferno-cmd",
+      "commanderNames": [
+        "Kaalia of the Vast"
+      ],
+      "commanderScryfallIds": [
+        "4b71d89b-7ba4-406f-8736-ac62b9864f21"
+      ],
+      "colorIdentity": [
+        "W",
+        "B",
+        "R"
+      ],
+      "category": "TRI-WBR",
+      "label": "WBR tri-color",
+      "short": "WBR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "mirror-mastery-cmd": {
+      "deckName": "Mirror Mastery",
+      "setCode": "cmd",
+      "identityKey": "mirror-mastery-cmd",
+      "commanderNames": [
+        "Riku of Two Reflections"
+      ],
+      "commanderScryfallIds": [
+        "716d0b3b-bac9-4fb8-882e-bd6171864043"
+      ],
+      "colorIdentity": [
+        "U",
+        "R",
+        "G"
+      ],
+      "category": "TRI-URG",
+      "label": "URG tri-color",
+      "short": "URG",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.029Z"
+    },
+    "political-puppets-cmd": {
+      "deckName": "Political Puppets",
+      "setCode": "cmd",
+      "identityKey": "political-puppets-cmd",
+      "commanderNames": [
+        "Zedruu the Greathearted"
+      ],
+      "commanderScryfallIds": [
+        "f851b861-4e9c-4422-8156-37d7bf2928cd"
+      ],
+      "colorIdentity": [
+        "W",
+        "U",
+        "R"
+      ],
+      "category": "TRI-WUR",
+      "label": "WUR tri-color",
+      "short": "WUR",
+      "source": "Scryfall card.color_identity",
+      "fetchedAt": "2026-10-31T23:19:18.032Z"
+    }
+  }
+}

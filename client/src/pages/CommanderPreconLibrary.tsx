@@ -20,6 +20,7 @@ import { Input } from '@/components/ui/input';
 import { formatRadarDate, preconReleaseRadar } from '@/data/preconReleaseRadar';
 import { preconIsPreorder, preconMarketplaceLinks } from '@/lib/preconMarketplaceLinks';
 import { PreconColorBarometer } from '@/components/PreconColorBarometer';
+import preconColorIdentities from '@/data/preconColorIdentities.json';
 
 interface PreconLibraryItem extends RawCommanderDeck {
   slug: string;
@@ -27,22 +28,29 @@ interface PreconLibraryItem extends RawCommanderDeck {
   orderUrl: string;
   isPartner: boolean;
   guild?: string;
+  colorIdentity: string[];
+  colorCategory: string;
   isCollectorEdition: boolean;
 }
 
 const GUILDS = [
-  { name: 'All Guilds / Colors', code: 'all' },
+  { name: 'All Color Identities', code: 'all' },
   { name: 'Azorius (WU)', code: 'WU' },
   { name: 'Dimir (UB)', code: 'UB' },
   { name: 'Rakdos (BR)', code: 'BR' },
   { name: 'Gruul (RG)', code: 'RG' },
-  { name: 'Selesnya (GW)', code: 'GW' },
+  { name: 'Selesnya (WG)', code: 'WG' },
   { name: 'Orzhov (WB)', code: 'WB' },
   { name: 'Izzet (UR)', code: 'UR' },
   { name: 'Golgari (BG)', code: 'BG' },
-  { name: 'Boros (RW)', code: 'RW' },
-  { name: 'Simic (GU)', code: 'GU' },
+  { name: 'Boros (WR)', code: 'WR' },
+  { name: 'Simic (UG)', code: 'UG' },
   { name: 'Partner / Friends', code: 'PARTNER' },
+  { name: 'Mono-color', code: 'MONO' },
+  { name: 'Three-color', code: 'TRI' },
+  { name: 'Four-color', code: 'QUAD' },
+  { name: 'Five-color', code: 'FIVE' },
+  { name: 'Colorless', code: 'COLORLESS' },
 ];
 
 function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): PreconLibraryItem[] {
@@ -51,22 +59,11 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
   const releaseYear = deck.release_date ? new Date(deck.release_date).getFullYear() : 2024;
   const msrp = null; // MTGJSON does not publish a sealed MSRP; never infer one from release year.
 
-  const isPartner = deck.commander.length > 1 || deck.name.toLowerCase().includes('partner') || deck.name.toLowerCase().includes('&');
+  const identityKey = `${slug}-${deck.set_code.toLowerCase()}`;
+  const identity = (preconColorIdentities.records as Record<string, { category: string; colorIdentity: string[] }>)[identityKey];
+  const colorCategory = identity?.category || 'UNKNOWN';
+  const isPartner = colorCategory === 'PARTNER' || deck.commander.length > 1;
   const isCollectorEdition = /collector'?s? edition/i.test(deck.name);
-
-  let guild = 'WU';
-  const nameLower = (deck.name + ' ' + (deck.commander[0]?.name || '')).toLowerCase();
-  if (nameLower.includes('rakdos') || nameLower.includes('blitz') || nameLower.includes('blood')) guild = 'BR';
-  else if (nameLower.includes('izzet') || nameLower.includes('spell') || nameLower.includes('storm')) guild = 'UR';
-  else if (nameLower.includes('dimir') || nameLower.includes('rogue') || nameLower.includes('faerie')) guild = 'UB';
-  else if (nameLower.includes('selesnya') || nameLower.includes('token') || nameLower.includes('elf')) guild = 'GW';
-  else if (nameLower.includes('gruul') || nameLower.includes('dinosaur') || nameLower.includes('dragon')) guild = 'RG';
-  else if (nameLower.includes('orzhov') || nameLower.includes('aristocrat') || nameLower.includes('ghost')) guild = 'WB';
-  else if (nameLower.includes('golgari') || nameLower.includes('graveyard') || nameLower.includes('saproling')) guild = 'BG';
-  else if (nameLower.includes('boros') || nameLower.includes('equipment') || nameLower.includes('soldier')) guild = 'RW';
-  else if (nameLower.includes('simic') || nameLower.includes('counter') || nameLower.includes('landfall')) guild = 'GU';
-
-  if (isPartner) guild = 'PARTNER';
 
   return {
     ...deck,
@@ -75,9 +72,17 @@ function buildExtendedPreconLibrary(commanderDecklists: RawCommanderDeck[]): Pre
     orderUrl: `https://www.tcgplayer.com/search/magic/product?q=${encodeURIComponent(deck.name + ' commander deck')}`,
     isPartner,
     isCollectorEdition,
-    guild,
+    guild: colorCategory,
+    colorIdentity: identity?.colorIdentity || [],
+    colorCategory,
   };
   }).sort((a, b) => (b.release_date || '').localeCompare(a.release_date || '') || a.name.localeCompare(b.name));
+}
+
+function matchesColorFilter(category: string | undefined, selected: string) {
+  if (!category) return false;
+  if (selected === 'MONO' || selected === 'TRI' || selected === 'QUAD') return category.startsWith(`${selected}-`);
+  return category === selected;
 }
 
 function collectorPairKey(name: string) {
@@ -179,7 +184,7 @@ export default function CommanderPreconLibrary() {
   const filteredDecks = useMemo(() => {
     return EXTENDED_PRECON_LIBRARY.filter((deck) => {
       if (deck.isCollectorEdition && !showCollectorPrecons) return false;
-      if (selectedGuild !== 'all' && deck.guild !== selectedGuild) return false;
+      if (selectedGuild !== 'all' && !matchesColorFilter(deck.colorCategory, selectedGuild)) return false;
       if (filterOwnedOnly) {
         const isManuallyOwned = ownedPrecons.some((o) => o.deckSlug.toLowerCase() === deck.slug.toLowerCase());
         const inventoryCompletion = inventoryDeckCompletions.get(deck.slug.toLowerCase());
@@ -317,6 +322,9 @@ export default function CommanderPreconLibrary() {
             </p>
             <Link href="/commander-market" className="inline-flex items-center gap-2 border-2 border-amber-500 bg-amber-500 px-4 py-2 font-mono text-xs font-black uppercase tracking-wider text-black transition-transform hover:-translate-y-0.5">
               <Sparkles className="h-4 w-4" /> Open Commander demand index →
+            </Link>
+            <Link href="/precon-command-center" className="inline-flex items-center gap-2 border-2 border-primary bg-background px-4 py-2 font-mono text-xs font-black uppercase tracking-wider text-primary transition-colors hover:bg-primary/10">
+              Open precon command center →
             </Link>
           </div>
         </div>

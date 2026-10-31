@@ -19,6 +19,7 @@ const navigation: SiteItem[] = [
     links: [
       { href: '/commander', label: 'Commander archive' },
       { href: '/commander-market', label: 'Commander demand index' },
+      { href: '/precon-command-center', label: 'Precon command center' },
       { href: '/deck-workshop', label: 'Build & check a deck' },
     ],
   },
