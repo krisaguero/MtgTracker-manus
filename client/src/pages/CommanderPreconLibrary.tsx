@@ -19,6 +19,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { formatRadarDate, preconReleaseRadar } from '@/data/preconReleaseRadar';
 import { preconIsPreorder, preconMarketplaceLinks } from '@/lib/preconMarketplaceLinks';
+import { PreconColorBarometer } from '@/components/PreconColorBarometer';
 
 interface PreconLibraryItem extends RawCommanderDeck {
   slug: string;
@@ -394,6 +395,7 @@ export default function CommanderPreconLibrary() {
           </div>
         </section>
 
+        <PreconColorBarometer decks={EXTENDED_PRECON_LIBRARY} ownedSlugs={effectiveOwnedSlugs} />
         {/* Filter Toolbar */}
         <div className="border-2 border-border bg-card p-4 space-y-4">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
