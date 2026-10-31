@@ -22,6 +22,40 @@ export function commanderReleaseMatchesColor(
   );
 }
 
+export function mergeLocalOnlyCommanderReleases(
+  releases: CommanderArchiveSet[],
+  deckIndex: CommanderArchiveIndexEntry[],
+): CommanderArchiveSet[] {
+  const knownCodes = new Set(releases.map((release) => release.code.toLowerCase()));
+  const grouped = new Map<string, CommanderArchiveIndexEntry[]>();
+
+  for (const deck of deckIndex) {
+    const code = deck.set_code.toLowerCase();
+    if (knownCodes.has(code)) continue;
+    const entries = grouped.get(code) ?? [];
+    entries.push(deck);
+    grouped.set(code, entries);
+  }
+
+  const localOnlyReleases = Array.from(grouped.entries()).map(([code, entries]) => {
+    const first = entries[0];
+    return {
+      id: `local-${code}`,
+      code,
+      name: first.set_name,
+      released_at: entries.map((entry) => entry.release_date).filter(Boolean).sort()[0] ?? '1970-01-01',
+      card_count: 0,
+      products: entries.map((entry) => ({
+        id: `local-${code}-${entry.name}`,
+        name: entry.name,
+        cardCount: 100,
+      })),
+    } satisfies CommanderArchiveSet;
+  });
+
+  return [...releases, ...localOnlyReleases];
+}
+
 const FAMILY_LABELS: Record<FamilyFilter, string> = {
   all: 'All families',
   set: 'Set-linked',
@@ -40,11 +74,15 @@ export default function CommanderLibrary() {
   const [sortMode, setSortMode] = useState<SortMode>('newest');
 
   const [colorFilter, setColorFilter] = useState<string>('all');
-  const years = useMemo(() => Array.from(new Set(sets.map((set) => set.released_at.slice(0, 4)))), [sets]);
+  const archiveSets = useMemo(
+    () => mergeLocalOnlyCommanderReleases(sets, commanderDeckIndex ?? []),
+    [commanderDeckIndex, sets],
+  );
+  const years = useMemo(() => Array.from(new Set(archiveSets.map((set) => set.released_at.slice(0, 4)))), [archiveSets]);
   const localSetCodes = useMemo(() => new Set((commanderDeckIndex ?? []).map((deck) => deck.set_code.toLowerCase())), [commanderDeckIndex]);
   const filteredSets = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    return [...sets]
+    return [...archiveSets]
       .filter((set) => {
         const kind = classifySet(set);
         const matchesQuery = !normalized || set.name.toLowerCase().includes(normalized) || set.code.toLowerCase().includes(normalized) || set.products.some((product) => product.name.toLowerCase().includes(normalized));
@@ -64,10 +102,10 @@ export default function CommanderLibrary() {
         if (sortMode === 'products') return b.products.length - a.products.length || dateValue(b) - dateValue(a);
         return dateValue(b) - dateValue(a);
       });
-  }, [colorFilter, coverage, family, localSetCodes, query, sets, sortMode, year]);
+  }, [archiveSets, colorFilter, coverage, family, localSetCodes, query, sortMode, year]);
 
   const productCount = commanderDeckIndex?.length ?? 0;
-  const localCount = sets.filter((set) => localSetCodes.has(set.code.toLowerCase())).length;
+  const localCount = archiveSets.filter((set) => localSetCodes.has(set.code.toLowerCase())).length;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -77,7 +115,7 @@ export default function CommanderLibrary() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Back to timeline</Link>
             <div className="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-              <span className="border border-border bg-card px-3 py-2">{sets.length} releases</span>
+              <span className="border border-border bg-card px-3 py-2">{archiveSets.length} releases</span>
               <span className="border border-border bg-card px-3 py-2">{productCount} precon decks</span>
               <span className="border border-primary/30 bg-primary/5 px-3 py-2 text-primary">2022 → now</span>
             </div>
@@ -112,7 +150,7 @@ export default function CommanderLibrary() {
                 <div className="flex items-center gap-3">
                   <div className="border-2 border-primary bg-primary/10 px-4 py-2 font-mono text-xs font-bold text-primary">
                     <span className="text-foreground text-sm font-black mr-1">{filteredSets.length}</span> matching releases
-                    <span className="text-muted-foreground ml-1 font-normal">(out of {sets.length} total)</span>
+                    <span className="text-muted-foreground ml-1 font-normal">(out of {archiveSets.length} total)</span>
                   </div>
                 </div>
               </div>
@@ -148,7 +186,7 @@ export default function CommanderLibrary() {
             </section>
 
             <section className="mt-8" aria-label="Chronological Commander release archive">
-              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. Color identity only includes products with a verified Scryfall color-identity value; try another color or clear your filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); setColorFilter('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count} indexed cards</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} deckEntries={(commanderDeckIndex ?? []).filter((deck) => deck.set_code.toLowerCase() === set.code.toLowerCase())} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
+              {filteredSets.length === 0 ? <div className="border-2 border-dashed border-border p-12 text-center text-sm text-muted-foreground">No Commander releases match those filters. Color identity only includes products with a verified Scryfall color-identity value; try another color or clear your filters. <button type="button" onClick={() => { setQuery(''); setFamily('all'); setCoverage('all'); setYear('all'); setColorFilter('all'); }} className="font-semibold text-primary hover:underline">Clear the archive filters.</button></div> : <div className="relative space-y-8 pl-7 before:absolute before:bottom-0 before:left-2 before:top-0 before:w-0.5 before:bg-primary/25 lg:space-y-10 lg:pl-0">{filteredSets.map((set, index) => <div key={set.id} className="relative grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-8"><div className="relative lg:pt-7"><span className="absolute -left-[31px] top-7 h-4 w-4 border-2 border-background bg-primary lg:left-auto lg:right-[-25px]" /><p className="text-xs font-black uppercase tracking-[0.18em] text-primary">{formatDate(set.released_at)}</p><p className="mt-1 font-mono text-sm font-bold text-foreground">{set.code.toUpperCase()}</p><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{set.card_count ? `${set.card_count} indexed cards` : 'Local decklist coverage'}</p></div><div className={index % 2 === 0 ? 'lg:translate-x-0' : 'lg:translate-x-8'}><CommanderArchiveCard set={set} deckEntries={(commanderDeckIndex ?? []).filter((deck) => deck.set_code.toLowerCase() === set.code.toLowerCase())} hasLocalDecklist={localSetCodes.has(set.code.toLowerCase())} onOpen={() => navigate(`/${set.parent_set_code || set.code}`)} /></div></div>)}</div>}
             </section>
           </>
         )}
@@ -171,7 +209,7 @@ function FilterChip({ children, active, onClick, tone = 'indigo' }: { children: 
 }
 
 function CommanderArchiveCard({ set, deckEntries, hasLocalDecklist, onOpen }: { set: CommanderArchiveSet; deckEntries: CommanderArchiveIndexEntry[]; hasLocalDecklist: boolean; onOpen: () => void }) {
-  return <article className="border-2 border-border bg-card p-5 transition-colors hover:border-primary sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{formatDate(set.released_at)} · {set.code.toUpperCase()}</p><h3 className="mt-2 text-2xl font-bold tracking-tight">{set.name}</h3><p className="mt-2 text-sm text-muted-foreground">{set.card_count} cards in the Scryfall index</p></div><div className="flex flex-wrap justify-end gap-2 text-[10px] font-bold uppercase tracking-wider"><span className="border border-border bg-background px-2 py-1">{classifySet(set)}</span>{hasLocalDecklist && <span className="border border-amber-600/50 bg-amber-500/10 px-2 py-1 text-amber-800">Local decklists</span>}</div></div><div className="mt-5 grid gap-3 sm:grid-cols-2">{        deckEntries.length > 0 ? deckEntries.map((deck) => {
+  return <article className="border-2 border-border bg-card p-5 transition-colors hover:border-primary sm:p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{formatDate(set.released_at)} · {set.code.toUpperCase()}</p><h3 className="mt-2 text-2xl font-bold tracking-tight">{set.name}</h3><p className="mt-2 text-sm text-muted-foreground">{set.card_count ? `${set.card_count} cards in the Scryfall index` : 'Local decklist-backed release group'}</p></div><div className="flex flex-wrap justify-end gap-2 text-[10px] font-bold uppercase tracking-wider"><span className="border border-border bg-background px-2 py-1">{classifySet(set)}</span>{hasLocalDecklist && <span className="border border-amber-600/50 bg-amber-500/10 px-2 py-1 text-amber-800">Local decklists</span>}</div></div><div className="mt-5 grid gap-3 sm:grid-cols-2">{        deckEntries.length > 0 ? deckEntries.map((deck) => {
           const product = set.products.find((entry) => normalizeDeckName(entry.name) === normalizeDeckName(deck.name));
           return (
             <div key={`${deck.set_code}-${deck.name}`} className="flex min-w-0 gap-3 border-2 border-border bg-background p-4">
