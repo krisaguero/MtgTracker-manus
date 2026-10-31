@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
+import { LOCAL_WORKSPACE_CHANGED_EVENT } from '@/lib/localWorkspace';
 import { isBasicLandName } from '@/lib/collectionAnalytics';
 import { CheckCircle2, AlertCircle, BookmarkCheck, ShoppingCart } from 'lucide-react';
 
@@ -16,7 +17,10 @@ export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppin
   const [excludeBasicLands, setExcludeBasicLands] = useState(false);
 
   useEffect(() => {
-    setCollection(loadOwnedCollection());
+    const refresh = () => setCollection(loadOwnedCollection());
+    refresh();
+    window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh);
+    return () => window.removeEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh);
   }, []);
 
   const ownedMap = new Map<string, number>();

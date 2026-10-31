@@ -134,14 +134,17 @@ export default function CommanderDeck() {
   const [arenaMode, setArenaMode] = useState(false);
   const [savedDecks, setSavedDecks] = useState(() => loadLocalSavedDecks());
   useEffect(() => {
-    const refreshSavedDecks = () => setSavedDecks(loadLocalSavedDecks());
-    window.addEventListener("storage", refreshSavedDecks);
-    window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refreshSavedDecks);
+    const refreshWorkspace = () => {
+      setSavedDecks(loadLocalSavedDecks());
+      setCollectionVersion(version => version + 1);
+    };
+    window.addEventListener("storage", refreshWorkspace);
+    window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refreshWorkspace);
     return () => {
-      window.removeEventListener("storage", refreshSavedDecks);
+      window.removeEventListener("storage", refreshWorkspace);
       window.removeEventListener(
         LOCAL_WORKSPACE_CHANGED_EVENT,
-        refreshSavedDecks
+        refreshWorkspace
       );
     };
   }, []);
