@@ -5,6 +5,7 @@ import type { RawCommanderDeck } from '@/data/commanderDecklists';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
 import { slugify } from '@/hooks/useCommanderDeck';
 import { loadOwnedPrecons, recordPreconAcquisition, toggleOwnedPrecon, type OwnedPreconEntry } from '@/lib/preconInventory';
+import { simulatePreconCoverage } from '@/lib/preconCoverageSimulation';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { productAssetFor } from '@/data/preconProductAssets';
 import { InternalPageNav } from '@/components/InternalPageNav';
@@ -92,7 +93,7 @@ export default function CommanderPreconLibrary() {
   const [collectorDecks, setCollectorDecks] = useState<RawCommanderDeck[]>([]);
   const [collectorLoading, setCollectorLoading] = useState(false);
   const EXTENDED_PRECON_LIBRARY = useMemo(() => {
-    const baseDecks = commanderDecklists ?? [];
+    const baseDecks = (commanderDecklists ?? []).filter((deck) => !/collector'?s? edition/i.test(deck.name));
     const combined = showCollectorPrecons ? [...baseDecks, ...collectorDecks] : baseDecks;
     return buildExtendedPreconLibrary(combined);
   }, [commanderDecklists, collectorDecks, showCollectorPrecons]);
@@ -119,6 +120,10 @@ export default function CommanderPreconLibrary() {
     }
     return map;
   }, [inventoryCards]);
+  const simulatedCoverage = useMemo(() => {
+    const ownedSlugs = new Set(ownedPrecons.map((entry) => entry.deckSlug.toLowerCase()));
+    return simulatePreconCoverage(commanderDecklists ?? [], ownedSlugs, slugify);
+  }, [commanderDecklists, ownedPrecons]);
 
   const handleToggleOwned = (deck: PreconLibraryItem) => {
     const updated = toggleOwnedPrecon(deck.slug, deck.name, deck.set_code);
@@ -466,6 +471,40 @@ export default function CommanderPreconLibrary() {
             </div>
           </details>
         </section>
+
+        {ownedPrecons.length > 0 && (
+          <details className="border-2 border-cyan-500/60 bg-cyan-500/5 p-5 sm:p-6" aria-labelledby="precon-coverage-simulation">
+            <summary className="cursor-pointer list-none font-mono text-xs font-black uppercase tracking-wider text-cyan-700 dark:text-cyan-300">
+              <span id="precon-coverage-simulation">Simulate owned-deck coverage across the full archive</span>
+              <span className="ml-2 font-normal text-muted-foreground">· {ownedPrecons.length} owned precon{ownedPrecons.length === 1 ? '' : 's'} treated as virtual card pools</span>
+            </summary>
+            <div className="mt-4 border-t border-cyan-500/30 pt-4">
+              <p className="max-w-4xl text-sm leading-relaxed text-muted-foreground">
+                This is a planning simulation, not an inventory import. Every card in your checked owned precon decks is treated as virtually available, then compared against every other indexed Commander deck—including Collector’s Edition records and decks outside your scanned library.
+              </p>
+              {simulatedCoverage.length === 0 ? (
+                <p className="mt-4 border border-cyan-500/30 bg-background p-4 text-sm text-muted-foreground">All indexed decks are already marked owned, or the archive is still loading.</p>
+              ) : (
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full min-w-[680px] text-left text-xs">
+                    <thead><tr className="border-b border-cyan-500/30 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><th className="px-3 py-2">Target deck</th><th className="px-3 py-2">Virtual coverage</th><th className="px-3 py-2">Matched cards</th><th className="px-3 py-2">Next singles to source</th></tr></thead>
+                    <tbody>
+                      {simulatedCoverage.slice(0, 10).map((result) => (
+                        <tr key={`simulated-${result.deck.set_code}-${result.deck.name}`} className="border-b border-border/70 align-top hover:bg-cyan-500/5">
+                          <td className="px-3 py-3"><Link href={`/precon/${result.deck.set_code}/${slugify(result.deck.name)}`} className="font-bold text-primary hover:underline">{result.deck.name}</Link><span className="mt-1 block font-mono text-[10px] uppercase text-muted-foreground">{result.deck.set_code}</span></td>
+                          <td className="px-3 py-3"><strong className={`text-lg ${result.coveragePercent >= 75 ? 'text-emerald-600' : result.coveragePercent >= 40 ? 'text-cyan-700 dark:text-cyan-300' : 'text-foreground'}`}>{result.coveragePercent}%</strong></td>
+                          <td className="px-3 py-3 font-mono">{result.matchedCards} / {result.totalCards}</td>
+                          <td className="max-w-[260px] px-3 py-3 text-muted-foreground">{result.missingCards.slice(0, 3).join(' · ')}{result.missingCards.length > 3 ? ` · +${result.missingCards.length - 3} more` : ''}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Showing the top 10 targets by virtual card coverage · quantities included · duplicate copies are not reserved across decks.</p>
+                </div>
+              )}
+            </div>
+          </details>
+        )}
 
         {acquisitionDeck && (
           <section className="border-2 border-primary bg-primary/5 p-5 sm:p-6" aria-labelledby="precon-acquisition-tracker">
