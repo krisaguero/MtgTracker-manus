@@ -104,6 +104,7 @@ export default function CommanderPreconLibrary() {
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'name' | 'value'>('newest');
   const [currentPage, setCurrentPage] = useState(1);
   const [showMarketBreakdown, setShowMarketBreakdown] = useState(false);
+  const [showOwnershipChecklist, setShowOwnershipChecklist] = useState(false);
   const [ownedPrecons, setOwnedPrecons] = useState<OwnedPreconEntry[]>(() => loadOwnedPrecons());
   const [inventoryCards] = useState(() => loadOwnedCollection());
   const [acquisitionSlug, setAcquisitionSlug] = useState<string | null>(null);
@@ -460,15 +461,15 @@ export default function CommanderPreconLibrary() {
             <div className="border-2 border-border bg-card p-4"><span className="font-mono text-[10px] font-bold uppercase text-muted-foreground">Not owned / unmatched</span><strong className="mt-1 block text-2xl font-black">${ownershipSummary.unownedValue.toFixed(2)}</strong><span className="font-mono text-xs text-muted-foreground">{ownershipSummary.unownedCount} decks</span></div>
             <div className="border-2 border-primary bg-primary/10 p-4"><span className="font-mono text-[10px] font-bold uppercase text-primary">Catalog total</span><strong className="mt-1 block text-2xl font-black text-primary">${(ownershipSummary.ownedValue + ownershipSummary.unownedValue).toFixed(2)}</strong><span className="font-mono text-xs text-muted-foreground">{EXTENDED_PRECON_LIBRARY.length} decks indexed</span></div>
           </div>
-          <details className="mt-5 border-t border-border pt-4">
+          <details className="mt-5 border-t border-border pt-4" open={showOwnershipChecklist} onToggle={(event) => setShowOwnershipChecklist(event.currentTarget.open)}>
             <summary className="cursor-pointer list-none font-mono text-xs font-black uppercase tracking-wider text-primary">Open owned-precon checklist</summary>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {showOwnershipChecklist && <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {EXTENDED_PRECON_LIBRARY.map((deck) => {
                 const status = ownershipSummary.status.get(deck.slug);
                 const manuallyOwned = ownedPrecons.some((owned) => owned.deckSlug.toLowerCase() === deck.slug.toLowerCase());
                 return <label key={`checklist-${deck.slug}`} className="flex cursor-pointer items-start gap-3 border border-border bg-card p-3 hover:border-emerald-500"><input type="checkbox" checked={manuallyOwned} onChange={() => handleToggleOwned(deck)} className="mt-0.5 h-4 w-4 accent-emerald-500" /><span className="min-w-0"><span className="block truncate text-sm font-bold">{deck.name}</span><span className="font-mono text-[10px] uppercase text-muted-foreground">{status?.isOwned ? `Counted owned · ${status.coveragePct}% match` : 'Not counted owned'}</span></span></label>;
               })}
-            </div>
+            </div>}
           </details>
         </section>
 
