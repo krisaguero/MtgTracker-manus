@@ -116,25 +116,28 @@ export default function CommanderPreconLibrary() {
   const [acquisitionBoosters, setAcquisitionBoosters] = useState('');
   const [acquisitionNotes, setAcquisitionNotes] = useState('');
 
-  const inventoryNamesMap = useMemo(() => {
-    const map = new Map<string, number>();
-    for (const card of inventoryCards) {
-      const key = card.name.toLowerCase();
-      map.set(key, (map.get(key) || 0) + card.quantity);
-    }
-    return map;
-  }, [inventoryCards]);
   const inventoryDeckCompletions = useMemo(
     () => detectInventoryDeckCompletions(EXTENDED_PRECON_LIBRARY, inventoryCards, slugify),
     [EXTENDED_PRECON_LIBRARY, inventoryCards],
   );
-  const simulatedCoverage = useMemo(() => {
-    const ownedSlugs = new Set([
+  const inventoryOwnedSlugs = useMemo(
+    () => new Set(
+      Array.from(inventoryDeckCompletions.values())
+        .filter((status) => status.complete)
+        .map((status) => status.deckSlug.toLowerCase()),
+    ),
+    [inventoryDeckCompletions],
+  );
+  const effectiveOwnedSlugs = useMemo(
+    () => new Set([
       ...ownedPrecons.map((entry) => entry.deckSlug.toLowerCase()),
-      ...Array.from(inventoryDeckCompletions.values()).filter((status) => status.complete).map((status) => status.deckSlug.toLowerCase()),
-    ]);
-    return simulatePreconCoverage(commanderDecklists ?? [], ownedSlugs, slugify);
-  }, [commanderDecklists, ownedPrecons, inventoryDeckCompletions]);
+      ...Array.from(inventoryOwnedSlugs),
+    ]),
+    [ownedPrecons, inventoryOwnedSlugs],
+  );
+  const simulatedCoverage = useMemo(() => {
+    return simulatePreconCoverage(commanderDecklists ?? [], effectiveOwnedSlugs, slugify);
+  }, [commanderDecklists, effectiveOwnedSlugs]);
 
   const handleToggleOwned = (deck: PreconLibraryItem) => {
     const updated = toggleOwnedPrecon(deck.slug, deck.name, deck.set_code);
@@ -179,10 +182,7 @@ export default function CommanderPreconLibrary() {
       if (filterOwnedOnly) {
         const isManuallyOwned = ownedPrecons.some((o) => o.deckSlug.toLowerCase() === deck.slug.toLowerCase());
         const inventoryCompletion = inventoryDeckCompletions.get(deck.slug.toLowerCase());
-        const deckCardNames = [...deck.commander, ...deck.cards].map((c) => c.name.toLowerCase());
-        const matchedCount = deckCardNames.filter((name) => (inventoryNamesMap.get(name) || 0) > 0).length;
-        const coveragePct = Math.round((matchedCount / Math.max(1, deckCardNames.length)) * 100);
-        if (!isManuallyOwned && !inventoryCompletion?.complete && coveragePct < 50) return false;
+        if (!isManuallyOwned && !inventoryCompletion?.complete) return false;
       }
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
@@ -193,7 +193,7 @@ export default function CommanderPreconLibrary() {
       }
       return true;
     });
-  }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryNamesMap, inventoryDeckCompletions, showCollectorPrecons]);
+  }, [EXTENDED_PRECON_LIBRARY, searchQuery, selectedGuild, filterOwnedOnly, ownedPrecons, inventoryDeckCompletions, showCollectorPrecons]);
 
   const sortedDecks = useMemo(() => {
     return [...filteredDecks].sort((a, b) => {
@@ -269,9 +269,8 @@ export default function CommanderPreconLibrary() {
       const isManuallyOwned = ownedPrecons.some((owned) => owned.deckSlug.toLowerCase() === deck.slug.toLowerCase());
       const inventoryCompletion = inventoryDeckCompletions.get(deck.slug.toLowerCase());
       const deckCardNames = [...deck.commander, ...deck.cards].map((card) => card.name.toLowerCase());
-      const matchedCount = deckCardNames.filter((name) => (inventoryNamesMap.get(name) || 0) > 0).length;
-      const coveragePct = Math.round((matchedCount / Math.max(1, deckCardNames.length)) * 100);
-      const isOwned = isManuallyOwned || inventoryCompletion?.complete === true || coveragePct >= 50;
+      const coveragePct = inventoryCompletion?.coveragePercent || 0;
+      const isOwned = isManuallyOwned || inventoryCompletion?.complete === true;
       const value = resolveDeckMarketValue(deck).totalUsd;
       if (isOwned) {
         summary.ownedValue += value;
@@ -283,7 +282,7 @@ export default function CommanderPreconLibrary() {
       summary.status.set(deck.slug, { isOwned, coveragePct, inventoryComplete: inventoryCompletion?.complete === true, inventoryMatchedCopies: inventoryCompletion?.matchedCopies || 0, inventoryTotalCopies: inventoryCompletion?.totalCopies || deckCardNames.length });
       return summary;
     }, { ownedValue: 0, unownedValue: 0, ownedCount: 0, unownedCount: 0, status: new Map<string, { isOwned: boolean; coveragePct: number; inventoryComplete: boolean; inventoryMatchedCopies: number; inventoryTotalCopies: number }>() });
-  }, [EXTENDED_PRECON_LIBRARY, ownedPrecons, inventoryNamesMap, inventoryDeckCompletions]);
+  }, [EXTENDED_PRECON_LIBRARY, ownedPrecons, inventoryDeckCompletions]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -434,7 +433,7 @@ export default function CommanderPreconLibrary() {
                 filterOwnedOnly ? 'border-emerald-500 bg-emerald-500 text-black' : 'border-border bg-background text-foreground hover:border-emerald-500'
               }`}
             >
-              <ShieldCheck className="h-4 w-4" /> {filterOwnedOnly ? 'Showing Owned / 50%+ Complete' : 'Filter Owned Decks'}
+              <ShieldCheck className="h-4 w-4" /> {filterOwnedOnly ? 'Showing Owned / Fully Covered' : 'Filter Owned Decks'}
             </button>
 
             <button
@@ -475,7 +474,7 @@ export default function CommanderPreconLibrary() {
 
         <section className="border-2 border-emerald-500/60 bg-emerald-500/5 p-5 sm:p-6" aria-labelledby="precon-ownership-tally">
           <div className="flex flex-col gap-3 border-b border-emerald-500/30 pb-4 sm:flex-row sm:items-end sm:justify-between">
-            <div><p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Collection checklist</p><h2 id="precon-ownership-tally" className="mt-2 text-2xl font-black tracking-tight">Approximate owned vs. not-owned value</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Check a deck as owned from its card, or use the existing collection match. A deck counts as owned when manually checked or when at least 50% of its indexed cards match your imported collection.</p></div>
+            <div><p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">Collection checklist</p><h2 id="precon-ownership-tally" className="mt-2 text-2xl font-black tracking-tight">Approximate owned vs. not-owned value</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">Check a deck manually, or let the second inventory layer auto-check it when every required card copy is covered by your imported collection. Partial matches remain visible as coverage but are not counted as owned.</p></div>
             <span className="font-mono text-[10px] font-bold uppercase text-muted-foreground">Indexed card equity · not sealed resale value</span>
           </div>
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -490,17 +489,24 @@ export default function CommanderPreconLibrary() {
                 const status = ownershipSummary.status.get(deck.slug);
                 const manuallyOwned = ownedPrecons.some((owned) => owned.deckSlug.toLowerCase() === deck.slug.toLowerCase());
                 const inventoryComplete = status?.inventoryComplete === true;
-                return <label key={`checklist-${deck.slug}`} className="flex cursor-pointer items-start gap-3 border border-border bg-card p-3 hover:border-emerald-500"><input type="checkbox" checked={manuallyOwned || inventoryComplete} disabled={inventoryComplete} onChange={() => handleToggleOwned(deck)} className="mt-0.5 h-4 w-4 accent-emerald-500" /><span className="min-w-0"><span className="block truncate text-sm font-bold">{deck.name}</span><span className="font-mono text-[10px] uppercase text-muted-foreground">{inventoryComplete ? `Inventory complete · ${status.inventoryMatchedCopies}/${status.inventoryTotalCopies} copies` : status?.isOwned ? `Counted owned · ${status.coveragePct}% match` : 'Not counted owned'}</span></span></label>;
+                const coverageLabel = inventoryComplete
+                  ? `Inventory complete · ${status.inventoryMatchedCopies}/${status.inventoryTotalCopies} copies`
+                  : manuallyOwned
+                    ? `Manually owned · ${status?.coveragePct || 0}% card coverage`
+                    : status && status.coveragePct > 0
+                      ? `Partial inventory · ${status.coveragePct}% card coverage`
+                      : 'Not counted owned';
+                return <label key={`checklist-${deck.slug}`} className="flex cursor-pointer items-start gap-3 border border-border bg-card p-3 hover:border-emerald-500"><input type="checkbox" checked={manuallyOwned || inventoryComplete} disabled={inventoryComplete} onChange={() => handleToggleOwned(deck)} className="mt-0.5 h-4 w-4 accent-emerald-500" /><span className="min-w-0"><span className="block truncate text-sm font-bold">{deck.name}</span><span className="font-mono text-[10px] uppercase text-muted-foreground">{coverageLabel}</span></span></label>;
               })}
             </div>}
           </details>
         </section>
 
-        {ownedPrecons.length > 0 && (
+        {effectiveOwnedSlugs.size > 0 && (
           <details className="border-2 border-cyan-500/60 bg-cyan-500/5 p-5 sm:p-6" aria-labelledby="precon-coverage-simulation">
             <summary className="cursor-pointer list-none font-mono text-xs font-black uppercase tracking-wider text-cyan-700 dark:text-cyan-300">
               <span id="precon-coverage-simulation">Simulate owned-deck coverage across the full archive</span>
-              <span className="ml-2 font-normal text-muted-foreground">· {ownedPrecons.length} owned precon{ownedPrecons.length === 1 ? '' : 's'} treated as virtual card pools</span>
+              <span className="ml-2 font-normal text-muted-foreground">· {effectiveOwnedSlugs.size} owned deck{effectiveOwnedSlugs.size === 1 ? '' : 's'} treated as virtual card pools</span>
             </summary>
             <div className="mt-4 border-t border-cyan-500/30 pt-4">
               <p className="max-w-4xl text-sm leading-relaxed text-muted-foreground">
@@ -660,10 +666,12 @@ export default function CommanderPreconLibrary() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleDecks.map((deck) => {
             const isManuallyOwned = ownedPrecons.some((o) => o.deckSlug.toLowerCase() === deck.slug.toLowerCase());
-            const deckCardNames = [...deck.commander, ...deck.cards].map((c) => c.name.toLowerCase());
-            const matchedCount = deckCardNames.filter((name) => (inventoryNamesMap.get(name) || 0) > 0).length;
-            const coveragePct = Math.round((matchedCount / Math.max(1, deckCardNames.length)) * 100);
-            const isOwned = isManuallyOwned || coveragePct >= 50;
+            const inventoryCompletion = inventoryDeckCompletions.get(deck.slug.toLowerCase());
+            const matchedCount = inventoryCompletion?.matchedCopies || 0;
+            const totalCount = inventoryCompletion?.totalCopies || 100;
+            const coveragePct = inventoryCompletion?.coveragePercent || 0;
+            const isInventoryComplete = inventoryCompletion?.complete === true;
+            const isOwned = isManuallyOwned || isInventoryComplete;
 
             const asset = productAssetFor(deck.name);
             const marketValue = resolveDeckMarketValue(deck);
@@ -696,7 +704,7 @@ export default function CommanderPreconLibrary() {
                         )}
                         {isOwned && (
                           <span className="border border-emerald-500 bg-emerald-500 text-black px-2 py-0.5 font-mono text-[10px] font-black uppercase tracking-wider shadow-xs flex items-center gap-1">
-                            <Check className="h-3 w-3" /> {coveragePct}% Owned
+                            <Check className="h-3 w-3" /> {isInventoryComplete ? 'Inventory Complete' : 'Manually Owned'}
                           </span>
                         )}
                       </div>
@@ -737,7 +745,7 @@ export default function CommanderPreconLibrary() {
                     <div className="mt-3 pt-3 border-t border-border space-y-1.5">
                       <div className="flex justify-between items-center font-mono text-xs">
                         <span className="text-muted-foreground uppercase tracking-wider text-[10px]">Collection Match</span>
-                        <span className="font-bold text-primary">{matchedCount} / 100 cards ({coveragePct}%)</span>
+                        <span className="font-bold text-primary">{matchedCount} / {totalCount} copies ({coveragePct}%)</span>
                       </div>
                       <div className="h-2 w-full bg-muted border border-border overflow-hidden">
                         <div
