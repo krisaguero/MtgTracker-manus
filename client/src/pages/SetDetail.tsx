@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { CardImageZoom } from '@/components/CardImageZoom';
 import { PreconSection } from '@/components/PreconSection';
 import { Link } from 'wouter';
-import { loadOwnedCollection } from '@/lib/manaboxParser';
+import { addOwnedCard, loadOwnedCollection } from '@/lib/manaboxParser';
 import { SetDetailPageSkeleton } from '@/components/PageSkeletons';
 import { moversForCard, moversForSet, suppliedSignalsForSet } from '@/lib/marketMoverLinks';
 import { resolveSetPrintingPrice, summarizeSetPricing } from '@/lib/setCatalogPricing';
@@ -33,7 +33,7 @@ export default function SetDetail() {
   const [viewMode, setViewMode] = useState<'main' | 'precons' | 'all'>('main');
   const [hideOwned, setHideOwned] = useState(false);
 
-  const ownedCollection = useMemo(() => loadOwnedCollection(), []);
+  const [ownedCollection, setOwnedCollection] = useState(() => loadOwnedCollection());
   const ownedNamesMap = useMemo(() => {
     const map = new Map<string, number>();
     for (const item of ownedCollection) {
@@ -41,6 +41,9 @@ export default function SetDetail() {
     }
     return map;
   }, [ownedCollection]);
+  const addCardToInventory = (card: ScryfallCard) => {
+    setOwnedCollection(addOwnedCard({ name: card.name, setCode: card.set, collectorNumber: card.collector_number, scryfallId: card.id, finish: 'normal', language: 'en' }));
+  };
 
   // This memo must run during loading and error renders too; otherwise the first
   // successful Scryfall response changes the hook count and crashes the route.
@@ -357,9 +360,8 @@ export default function SetDetail() {
                 const isVerifiedSpoiler = verifiedSpoilerIds.has(card.id);
                 const printingPrice = resolveSetPrintingPrice(card);
                 return (
-                  <Link
+                  <div
                     key={card.id || card.name}
-                    href={`/card/${encodeURIComponent(card.name)}`}
                     className={`border-2 bg-card p-3 flex flex-col justify-between group transition-colors cursor-pointer relative ${hotMover ? 'border-amber-500/80 shadow-[0_0_18px_rgba(245,158,11,0.12)] hover:border-amber-500' : 'border-border hover:border-primary'}`}
                   >
                     <div className="mb-2 flex min-h-5 items-start justify-between gap-2">
@@ -376,7 +378,7 @@ export default function SetDetail() {
                     <div className="aspect-[5/7] w-full overflow-hidden bg-muted border border-border relative">
                       <CardImageZoom src={normalImg} alt={card.name} className="h-full w-full object-cover pointer-events-none" />
                     </div>
-                    <div className="mt-3">
+                    <Link href={`/card/${encodeURIComponent(card.name)}`} className="mt-3 block">
                       <p className="font-bold text-xs truncate group-hover:text-primary" title={card.name}>{card.name}</p>
                       <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground mt-1">
                         <span>#{card.collector_number || 'P'} · {card.rarity || 'rare'}</span>
@@ -385,8 +387,11 @@ export default function SetDetail() {
                       <p title={printingPrice.source || 'No price source available'} className={`mt-1 border-l-2 pl-1.5 font-mono text-[8px] uppercase ${printingPrice.usd === null ? 'border-border text-muted-foreground' : 'border-primary/60 text-muted-foreground'}`}>
                         {printingPrice.sourceLabel}{printingPrice.updatedAt ? ` · ${printingPrice.updatedAt.slice(0, 10)}` : ''}
                       </p>
-                    </div>
-                  </Link>
+                    </Link>
+                    <button type="button" onClick={() => addCardToInventory(card)} className={`mt-3 inline-flex min-h-9 w-full items-center justify-center border px-2 py-1 font-mono text-[10px] font-bold uppercase transition-colors ${ownedQty > 0 ? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20' : 'border-primary bg-primary text-primary-foreground hover:bg-primary/90'}`}>
+                      {ownedQty > 0 ? `In inventory · ${ownedQty}` : 'Add to inventory'}
+                    </button>
+                  </div>
                 );
               })}
             </div>

@@ -73,6 +73,22 @@ export function saveOwnedCollection(cards: OwnedCard[]): void {
   }
 }
 
+/** Add cards from an indexed decklist without losing exact printing identity. */
+export function addOwnedCard(card: Omit<OwnedCard, 'quantity'>, quantity = 1): OwnedCard[] {
+  const amount = Math.max(1, Math.floor(quantity));
+  const current = loadOwnedCollection();
+  const identity = collectionIdentity(card);
+  const existingIndex = current.findIndex((candidate) => collectionIdentity(candidate) === identity);
+  const updated = existingIndex === -1
+    ? [...current, { ...card, quantity: amount }]
+    : current.map((candidate, index) => index === existingIndex ? { ...candidate, quantity: candidate.quantity + amount } : candidate);
+  saveOwnedCollection(updated);
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('mtg-tracker-local-workspace-changed'));
+  }
+  return updated;
+}
+
 export function loadOwnedCollection(): OwnedCard[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);

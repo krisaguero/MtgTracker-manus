@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   Bookmark,
   ExternalLink,
@@ -17,7 +17,7 @@ import {
 } from "@/components/MarketDataCue";
 import type { PreconDeck, ScryfallSet } from "@/hooks/useScryfallSets";
 import { slugify } from "@/hooks/useCommanderDeck";
-import { loadOwnedCollection } from "@/lib/manaboxParser";
+import { addOwnedCard, loadOwnedCollection } from "@/lib/manaboxParser";
 import { CommanderCardFrame } from "@/components/CommanderCardFrame";
 
 interface SetCardProps {
@@ -280,13 +280,14 @@ function PreconCard({
   precon: PreconDeck;
   ownedCollection: ReturnType<typeof loadOwnedCollection>;
 }) {
+  const [collection, setCollection] = useState(ownedCollection);
   const allRefCards = [
     ...(precon.commanderCards || []),
     ...(precon.mainCards || []),
   ];
   const deckCardNames = allRefCards.map(c => c.name.toLowerCase());
   const ownedCount = deckCardNames.reduce((acc, name) => {
-    const found = ownedCollection.find(
+    const found = collection.find(
       item => item.name.toLowerCase() === name
     );
     return acc + (found ? Math.min(found.quantity, 1) : 0);
@@ -305,6 +306,13 @@ function PreconCard({
   ].filter((url): url is string => Boolean(url));
   const commanderNamesText =
     precon.commanderCards?.map(c => c.name).join(" & ") || "Commander Deck";
+  const addDeckToInventory = () => {
+    let updated = collection;
+    for (const card of allRefCards) {
+      updated = addOwnedCard({ name: card.name, setCode: card.set_code, collectorNumber: card.number, scryfallId: card.scryfall_id, finish: "normal", language: "en" }, card.count);
+    }
+    setCollection(updated);
+  };
 
   return (
     <div className="border border-border bg-background p-3 transition-colors hover:border-primary sm:p-4">
@@ -342,7 +350,7 @@ function PreconCard({
             />
           </div>
 
-          <div className="mt-3 flex items-center justify-between gap-2">
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
             <Button
               asChild
               size="sm"
@@ -355,6 +363,11 @@ function PreconCard({
                   : "Browse Product Catalog"}
               </Link>
             </Button>
+            {precon.hasDecklist && allRefCards.length > 0 && (
+              <Button type="button" variant="outline" size="sm" onClick={addDeckToInventory} className="min-h-11 w-full font-mono text-[10px] uppercase font-bold">
+                Add 100 cards to inventory
+              </Button>
+            )}
           </div>
         </div>
       </div>

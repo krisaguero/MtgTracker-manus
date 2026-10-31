@@ -1,9 +1,11 @@
-import React, { useMemo, useState } from "react";
-import { Info, LayoutGrid, List } from "lucide-react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Check, Info, LayoutGrid, List, Plus } from "lucide-react";
 import { CardImageZoom } from "@/components/CardImageZoom";
 import type { ScryfallCard } from "@/hooks/useSetDetail";
 import type { DecklistEntry } from "@/hooks/useCommanderDeck";
 import type { DeckEntryLike } from "@/lib/preconStrategyEvidence";
+import { addOwnedCard, loadOwnedCollection, type OwnedCard } from "@/lib/manaboxParser";
+import { LOCAL_WORKSPACE_CHANGED_EVENT } from "@/lib/localWorkspace";
 import {
   cardExplanation,
   preconOracleText,
@@ -34,6 +36,15 @@ export function PreconVisualSpoiler({
   deck: DecklistEntry[];
 }) {
   const [mode, setMode] = useState<"visual" | "list">("visual");
+  const [collection, setCollection] = useState<OwnedCard[]>(() => loadOwnedCollection());
+  useEffect(() => {
+    const refresh = () => setCollection(loadOwnedCollection());
+    window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh);
+    return () => window.removeEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh);
+  }, []);
+  const addCard = (card: ScryfallCard) => {
+    setCollection(addOwnedCard({ name: card.name, setCode: card.set, collectorNumber: card.collector_number, scryfallId: card.id, finish: "normal", language: "en" }));
+  };
   const packages = useMemo(() => strategyPackages(deck), [deck]);
   const total = deck.reduce((sum, entry) => sum + entry.quantity, 0);
   const commandCount = commander.reduce(
@@ -120,15 +131,17 @@ export function PreconVisualSpoiler({
             {mode === "visual" ? (
               <div className="mt-3 grid max-w-3xl grid-cols-2 items-start gap-3 sm:grid-cols-4">
                 {commander.map((entry, index) => (
-                  <VisualCard
-                    key={`${entry.card.id}-commander-${index}`}
-                    entry={entry}
+                    <VisualCard
+                      key={`${entry.card.id}-commander-${index}`}
+                      entry={entry}
+                      collection={collection}
+                      onAdd={addCard}
                   />
                 ))}
               </div>
             ) : (
               <div className="mt-3">
-                <ReadableList entries={commander} />
+                <ReadableList entries={commander} collection={collection} onAdd={addCard} />
               </div>
             )}
           </section>
@@ -161,9 +174,11 @@ export function PreconVisualSpoiler({
                 </div>
                 <div className="mt-4 grid grid-cols-2 items-start gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
                   {pkg.cards.map((entry, index) => (
-                    <VisualCard
-                      key={`${entry.card.id}-${pkg.label}-${index}`}
-                      entry={entry}
+                      <VisualCard
+                        key={`${entry.card.id}-${pkg.label}-${index}`}
+                        entry={entry}
+                        collection={collection}
+                        onAdd={addCard}
                     />
                   ))}
                 </div>
@@ -180,7 +195,7 @@ export function PreconVisualSpoiler({
               regrouping.
             </p>
             <div className="mt-3">
-              <ReadableList entries={deck} />
+              <ReadableList entries={deck} collection={collection} onAdd={addCard} />
             </div>
           </section>
         )}
@@ -202,7 +217,16 @@ function RulesEvidence({ card }: { card: ScryfallCard }) {
     </details>
   );
 }
-function VisualCard({ entry }: { entry: DeckEntryLike }) {
+function ownedQuantity(card: ScryfallCard, collection: OwnedCard[]) {
+  return collection.filter((owned) => owned.scryfallId?.toLowerCase() === card.id.toLowerCase() || (!owned.scryfallId && owned.name.toLowerCase() === card.name.toLowerCase() && owned.setCode?.toLowerCase() === card.set.toLowerCase() && owned.collectorNumber === card.collector_number)).reduce((sum, owned) => sum + owned.quantity, 0);
+}
+
+function InventoryAction({ card, collection, onAdd }: { card: ScryfallCard; collection: OwnedCard[]; onAdd: (card: ScryfallCard) => void }) {
+  const quantity = ownedQuantity(card, collection);
+  return <button type="button" onClick={() => onAdd(card)} className={`mt-2 inline-flex min-h-9 items-center gap-1 border px-2 py-1 text-[10px] font-bold uppercase transition-colors ${quantity > 0 ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20" : "border-primary bg-primary text-primary-foreground hover:bg-primary/90"}`} title="Add one exact printing to inventory"><span>{quantity > 0 ? <Check className="h-3 w-3" /> : <Plus className="h-3 w-3" />}</span>{quantity > 0 ? `In inventory · ${quantity}` : "Add to inventory"}</button>;
+}
+
+function VisualCard({ entry, collection, onAdd }: { entry: DeckEntryLike; collection: OwnedCard[]; onAdd: (card: ScryfallCard) => void }) {
   const card = entry.card;
   return (
     <article
@@ -235,12 +259,13 @@ function VisualCard({ entry }: { entry: DeckEntryLike }) {
         >
           {printingLabel(card)} · Scryfall
         </a>
+        <InventoryAction card={card} collection={collection} onAdd={onAdd} />
         <RulesEvidence card={card} />
       </div>
     </article>
   );
 }
-function ReadableList({ entries }: { entries: DecklistEntry[] }) {
+function ReadableList({ entries, collection, onAdd }: { entries: DecklistEntry[]; collection: OwnedCard[]; onAdd: (card: ScryfallCard) => void }) {
   return (
     <div className="divide-y divide-border border border-border bg-card">
       {entries.map((entry, index) => {
@@ -270,6 +295,7 @@ function ReadableList({ entries }: { entries: DecklistEntry[] }) {
               >
                 {printingLabel(card)} · Scryfall
               </a>
+              <div><InventoryAction card={card} collection={collection} onAdd={onAdd} /></div>
               <RulesEvidence card={card} />
             </div>
             <span className="text-right font-mono text-[10px] uppercase text-muted-foreground">
