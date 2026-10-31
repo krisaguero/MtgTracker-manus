@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-30T14:56:47.285Z",
+  "updatedAt": "2026-10-31T14:25:40.717Z",
   "records": [
+    {
+      "id": "2026-10-31-collection-buy-list:1:c19:273",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Shrine of the Forsaken Gods (C19 273) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Shrine of the Forsaken Gods",
+      "setCode": "c19",
+      "collectorNumber": "273",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 91.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:2:m3c:289",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Dreamstone Hedron (M3C 289) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Dreamstone Hedron",
+      "setCode": "m3c",
+      "collectorNumber": "289",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 85.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:3:msc:227",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Canopy Vista (MSC 227) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Canopy Vista",
+      "setCode": "msc",
+      "collectorNumber": "227",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 80.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:4:soc:214",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Ghoulish Impetus (SOC 214) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ghoulish Impetus",
+      "setCode": "soc",
+      "collectorNumber": "214",
+      "entryUsd": 0.84,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 68.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:5:msc:169",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Beast Within (MSC 169) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Beast Within",
+      "setCode": "msc",
+      "collectorNumber": "169",
+      "entryUsd": 1.32,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 63.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:6:scd:194",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Jaspera Sentinel (SCD 194) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Jaspera Sentinel",
+      "setCode": "scd",
+      "collectorNumber": "194",
+      "entryUsd": 0.28,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 55.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:7:fic:302",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Farseek (FIC 302) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Farseek",
+      "setCode": "fic",
+      "collectorNumber": "302",
+      "entryUsd": 0.9,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 55.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:8:drc:82",
+      "dateKey": "2026-10-31",
+      "postId": "2026-10-31-collection-buy-list",
+      "prompt": "Assess Sai, Master Thopterist (DRC 82) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sai, Master Thopterist",
+      "setCode": "drc",
+      "collectorNumber": "82",
+      "entryUsd": 0.33,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 50.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-10-31",
+        "evaluationDate": "2026-11-14"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-30-top-10:1:soc:205",
       "dateKey": "2026-10-30",

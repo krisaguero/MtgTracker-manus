@@ -1,52 +1,52 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T14:56:46.885Z",
-  "pricingDate": "2026-10-30",
-  "dataWindow": "2026-10-07 through 2026-10-30",
+  "generatedAt": "2026-10-31T14:25:40.321Z",
+  "pricingDate": "2026-10-31",
+  "dataWindow": "2026-10-08 through 2026-10-31",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 1840,
-  "negativeSignals": 2437,
+  "positiveSignals": 1969,
+  "negativeSignals": 2360,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 75,
-    "multiSourceSignals": 12436,
+    "singleSourceSignals": 76,
+    "multiSourceSignals": 12435,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 39,
-      "positiveSignals": 39,
+      "cards": 46,
+      "positiveSignals": 46,
       "negativeSignals": 0,
-      "averagePctChange": 42.59
+      "averagePctChange": 30.66
     },
     {
       "category": "commander-picks",
-      "cards": 12427,
-      "positiveSignals": 1801,
-      "negativeSignals": 2392,
-      "averagePctChange": -0.17
+      "cards": 12420,
+      "positiveSignals": 1923,
+      "negativeSignals": 2315,
+      "averagePctChange": -0.08
     },
     {
       "category": "reprint-squashes",
       "cards": 45,
       "positiveSignals": 0,
       "negativeSignals": 45,
-      "averagePctChange": -26.17
+      "averagePctChange": -23.65
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-10-30; 1840 rose and 2437 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +42.59% across 39 cards.",
-    "75 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "12511 exact-printing price observations were screened for 2026-10-31; 1969 rose and 2360 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +30.66% across 46 cards.",
+    "76 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
     "45 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
@@ -54,94 +54,94 @@
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Treasure Cruise",
-        "setCode": "soc",
-        "collectorNumber": "205",
-        "currentUsd": 0.51,
-        "percentChange": 142.86,
+        "name": "Shrine of the Forsaken Gods",
+        "setCode": "c19",
+        "collectorNumber": "273",
+        "currentUsd": 0.65,
+        "percentChange": 91.18,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Plains",
-        "setCode": "cm2",
-        "collectorNumber": "285",
-        "currentUsd": 0.49,
-        "percentChange": 133.33,
-        "sourceCount": 1,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Blood Bairn",
-        "setCode": "c15",
-        "collectorNumber": "117",
-        "currentUsd": 0.19,
-        "percentChange": 111.11,
+        "name": "Dreamstone Hedron",
+        "setCode": "m3c",
+        "collectorNumber": "289",
+        "currentUsd": 0.65,
+        "percentChange": 85.71,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Blight Mound",
-        "setCode": "soc",
-        "collectorNumber": "208",
-        "currentUsd": 0.66,
-        "percentChange": 88.57,
+        "name": "Canopy Vista",
+        "setCode": "msc",
+        "collectorNumber": "227",
+        "currentUsd": 0.65,
+        "percentChange": 80.56,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Gift of Immortality",
+        "name": "Ghoulish Impetus",
         "setCode": "soc",
-        "collectorNumber": "147",
-        "currentUsd": 0.69,
-        "percentChange": 81.58,
+        "collectorNumber": "214",
+        "currentUsd": 0.84,
+        "percentChange": 68,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Beast Within",
+        "setCode": "msc",
+        "collectorNumber": "169",
+        "currentUsd": 1.32,
+        "percentChange": 62.96,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Soul-Guide Lantern",
+        "name": "Sai, Master Thopterist",
         "setCode": "drc",
-        "collectorNumber": "139",
-        "currentUsd": 0.29,
-        "percentChange": -53.23,
+        "collectorNumber": "82",
+        "currentUsd": 0.33,
+        "percentChange": -50,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Fortified Village",
-        "setCode": "ltc",
-        "collectorNumber": "311",
-        "currentUsd": 0.3,
-        "percentChange": -51.61,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Terramorphic Expanse",
-        "setCode": "cma",
-        "collectorNumber": "278",
-        "currentUsd": 0.13,
-        "percentChange": -48,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Stonybrook Banneret",
-        "setCode": "lcc",
-        "collectorNumber": "173",
+        "name": "Command Tower",
+        "setCode": "pip",
+        "collectorNumber": "259",
         "currentUsd": 0.34,
-        "percentChange": -47.69,
+        "percentChange": -48.48,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Octomancer",
-        "setCode": "blc",
-        "collectorNumber": "37",
+        "name": "Bloodbraid Challenger",
+        "setCode": "m3c",
+        "collectorNumber": "122",
+        "currentUsd": 0.32,
+        "percentChange": -48.39,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Frontline Medic",
+        "setCode": "c20",
+        "collectorNumber": "89",
         "currentUsd": 0.37,
         "percentChange": -45.59,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Stonecoil Serpent",
+        "setCode": "soc",
+        "collectorNumber": "356",
+        "currentUsd": 0.39,
+        "percentChange": -43.48,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -157,10 +157,10 @@
         "setCode": "plst",
         "collectorNumber": "BLC-277",
         "observations": 21,
-        "firstDate": "2026-10-07",
-        "lastDate": "2026-10-30",
+        "firstDate": "2026-10-08",
+        "lastDate": "2026-10-31",
         "totalPctChange": 14.23,
-        "positiveDays": 6,
+        "positiveDays": 5,
         "negativeDays": 0
       },
       {
@@ -168,9 +168,9 @@
         "setCode": "cmd",
         "collectorNumber": "269",
         "observations": 21,
-        "firstDate": "2026-10-07",
-        "lastDate": "2026-10-30",
-        "totalPctChange": -13.86,
+        "firstDate": "2026-10-08",
+        "lastDate": "2026-10-31",
+        "totalPctChange": -13,
         "positiveDays": 4,
         "negativeDays": 3
       },
@@ -178,98 +178,37 @@
         "name": "Island",
         "setCode": "cm2",
         "collectorNumber": "291",
-        "observations": 11,
+        "observations": 12,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-10-30",
+        "lastDate": "2026-10-31",
         "totalPctChange": 390,
         "positiveDays": 1,
+        "negativeDays": 0
+      },
+      {
+        "name": "Bronzebeak Foragers",
+        "setCode": "lcc",
+        "collectorNumber": "69",
+        "observations": 12,
+        "firstDate": "2026-10-20",
+        "lastDate": "2026-10-31",
+        "totalPctChange": 258.76,
+        "positiveDays": 9,
         "negativeDays": 0
       },
       {
         "name": "Swamp",
         "setCode": "znr",
         "collectorNumber": "382",
-        "observations": 11,
+        "observations": 12,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-10-30",
-        "totalPctChange": 248.48,
+        "lastDate": "2026-10-31",
+        "totalPctChange": 233.33,
         "positiveDays": 4,
-        "negativeDays": 5
-      },
-      {
-        "name": "Bronzebeak Foragers",
-        "setCode": "lcc",
-        "collectorNumber": "69",
-        "observations": 11,
-        "firstDate": "2026-10-20",
-        "lastDate": "2026-10-30",
-        "totalPctChange": 239.18,
-        "positiveDays": 8,
-        "negativeDays": 0
+        "negativeDays": 6
       }
     ],
-    "predictionsDue": [
-      {
-        "name": "Tivit, Seller of Secrets",
-        "setCode": "ncc",
-        "collectorNumber": "10",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Ripples of Potential",
-        "setCode": "eoc",
-        "collectorNumber": "77",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "The Theorist, Jace Beleren",
-        "setCode": "fra",
-        "collectorNumber": "43",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Preeminent Captain",
-        "setCode": "m15",
-        "collectorNumber": "25",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Counterspell",
-        "setCode": "mh2",
-        "collectorNumber": "267",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Tyvar, the Pummeler",
-        "setCode": "ppdsk",
-        "collectorNumber": "202p",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "The Great Henge",
-        "setCode": "eld",
-        "collectorNumber": "161",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Force of Will",
-        "setCode": "all",
-        "collectorNumber": "28",
-        "evaluationDate": "2026-10-30"
-      },
-      {
-        "name": "Abstergo Entertainment",
-        "setCode": "acr",
-        "collectorNumber": "79",
-        "evaluationDate": "2026-10-30"
-      }
-    ],
+    "predictionsDue": [],
     "predictionsResolved": [],
     "recurringCatalystsToReview": [
       "spoilers",
