@@ -48,6 +48,7 @@ import {
   saveLocalDeck,
 } from "@/lib/localSavedDecks";
 import { LOCAL_WORKSPACE_CHANGED_EVENT } from "@/lib/localWorkspace";
+import { toggleOwnedPrecon } from "@/lib/preconInventory";
 
 const GROUPS = [
   {
@@ -236,6 +237,7 @@ export default function CommanderDeck() {
   const deckSlugLabel = deckSlug
     ? decodeURIComponent(deckSlug).replace(/-/g, " ")
     : data.name;
+  const ownershipSlug = deckSlug || data.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
 
   const exportCommander = data.commander.map(e => ({
     name: e.card.name,
@@ -425,6 +427,11 @@ export default function CommanderDeck() {
             ]}
             onOpenImportModal={() => setIsManaBoxOpen(true)}
             onOpenShoppingList={() => setIsShoppingListOpen(true)}
+            preconOwnership={{ deckSlug: ownershipSlug, setName: data.name, setCode: data.setCode }}
+            onTogglePreconOwned={() => {
+              toggleOwnedPrecon(ownershipSlug, data.name, data.setCode);
+              setCollectionVersion(version => version + 1);
+            }}
           />
         </div>
 

@@ -4,15 +4,18 @@ import { useState, useEffect } from 'react';
 import { loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { LOCAL_WORKSPACE_CHANGED_EVENT } from '@/lib/localWorkspace';
 import { isBasicLandName } from '@/lib/collectionAnalytics';
-import { CheckCircle2, AlertCircle, BookmarkCheck, ShoppingCart } from 'lucide-react';
+import { isPreconOwned } from '@/lib/preconInventory';
+import { CheckCircle2, AlertCircle, BookmarkCheck, ShoppingCart, PackageCheck } from 'lucide-react';
 
 interface DeckCompletionCardProps {
   deckCards: Array<{ name: string; quantity: number; usd?: number | null }>;
   onOpenImportModal: () => void;
   onOpenShoppingList: () => void;
+  preconOwnership?: { deckSlug: string; setName: string; setCode: string };
+  onTogglePreconOwned?: () => void;
 }
 
-export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppingList }: DeckCompletionCardProps) {
+export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppingList, preconOwnership, onTogglePreconOwned }: DeckCompletionCardProps) {
   const [collection, setCollection] = useState<OwnedCard[]>([]);
   const [excludeBasicLands, setExcludeBasicLands] = useState(false);
 
@@ -61,6 +64,8 @@ export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppin
 
   const percentage = totalDeckCards > 0 ? Math.round((totalOwnedCards / totalDeckCards) * 100) : 0;
   const hasCollection = collection.length > 0;
+  const sealedPreconOwned = preconOwnership ? isPreconOwned(preconOwnership.deckSlug) : false;
+  const effectiveProductPercentage = sealedPreconOwned ? 100 : percentage;
 
   return (
     <div className="border-2 border-border bg-card p-6 text-card-foreground">
@@ -70,15 +75,24 @@ export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppin
             <BookmarkCheck className="h-6 w-6" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">ManaBox Collection Match</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Two-layer ownership status</p>
             <h3 className="text-lg font-bold">
-              {hasCollection ? `${percentage}% Deck Owned (${totalOwnedCards}/${totalDeckCards} cards)` : 'Import ManaBox Collection to Match'}
+              {sealedPreconOwned
+                ? '100% Product Owned'
+                : hasCollection
+                  ? `${percentage}% Scanned Coverage (${totalOwnedCards}/${totalDeckCards} cards)`
+                  : 'Mark the sealed precon owned or import ManaBox'}
             </h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {sealedPreconOwned
+                ? `Sealed ownership recorded${preconOwnership?.setName ? ` for ${preconOwnership.setName}` : ''}; ManaBox scans remain a separate layer.`
+                : 'Product ownership and individual card scans are tracked independently.'}
+            </p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {hasCollection && missingCount > 0 && (
+          {hasCollection && !sealedPreconOwned && missingCount > 0 && (
             <button
               onClick={onOpenShoppingList}
               className="inline-flex items-center gap-2 border-2 border-primary bg-primary text-primary-foreground px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors"
@@ -92,23 +106,38 @@ export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppin
           >
             {hasCollection ? 'Manage ManaBox Import →' : 'Import ManaBox CSV →'}
           </button>
+          {preconOwnership && onTogglePreconOwned && (
+            <button
+              onClick={onTogglePreconOwned}
+              className={`border-2 px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors ${sealedPreconOwned ? 'border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700' : 'border-border bg-background hover:border-emerald-500 hover:text-emerald-600'}`}
+            >
+              <PackageCheck className="mr-2 inline h-4 w-4" /> {sealedPreconOwned ? 'Owned · Remove Flag' : 'Mark Precon Owned'}
+            </button>
+          )}
         </div>
       </div>
 
-      {hasCollection && (
+      {(hasCollection || sealedPreconOwned) && (
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-border pt-4 text-xs">
+          <div className="flex items-center gap-2 border-2 border-emerald-500 bg-emerald-500/10 p-3">
+            <PackageCheck className="h-4 w-4 text-emerald-600" />
+            <div>
+              <p className="font-bold">{effectiveProductPercentage}% Product Owned</p>
+              <p className="text-muted-foreground">{sealedPreconOwned ? 'Sealed precon ledger' : 'Not marked owned'}</p>
+            </div>
+          </div>
           <div className="flex items-center gap-2 border border-border bg-background p-3">
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
             <div>
-              <p className="font-bold">{totalOwnedCards} Cards Owned</p>
-              <p className="text-muted-foreground">Found in local storage</p>
+              <p className="font-bold">{hasCollection ? `${totalOwnedCards}/${totalDeckCards} Scanned` : 'No scans imported'}</p>
+              <p className="text-muted-foreground">ManaBox card layer · {percentage}%</p>
             </div>
           </div>
           <div className="flex items-center gap-2 border border-border bg-background p-3">
             <AlertCircle className="h-4 w-4 text-amber-600" />
             <div>
-              <p className="font-bold">{missingCount} Cards Missing</p>
-              <p className="text-muted-foreground">Need to acquire</p>
+              <p className="font-bold">{sealedPreconOwned ? `${totalDeckCards - totalOwnedCards} Not Scanned` : `${missingCount} Cards Missing`}</p>
+              <p className="text-muted-foreground">{sealedPreconOwned ? 'Not evidence of missing cards' : 'Need to acquire'}</p>
             </div>
           </div>
           <div className="group relative border border-border bg-background p-3 focus-within:border-primary">
@@ -150,9 +179,9 @@ export function DeckCompletionCard({ deckCards, onOpenImportModal, onOpenShoppin
           </div>
           <div className="flex items-center gap-2 border border-border bg-background p-3">
             <div className="h-2 w-full bg-muted">
-              <div className="h-full bg-primary" style={{ width: `${Math.min(100, percentage)}%` }} />
+              <div className="h-full bg-primary" style={{ width: `${Math.min(100, effectiveProductPercentage)}%` }} />
             </div>
-            <span className="shrink-0 font-bold">{percentage}%</span>
+            <span className="shrink-0 font-bold">{effectiveProductPercentage}%</span>
           </div>
         </div>
       )}
