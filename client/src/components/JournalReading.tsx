@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -86,6 +86,50 @@ export function journalCardImage(slug: string) {
   if (brawl) return { imageUrl: brawl.imageUrl ?? undefined, artUrl: brawl.artUrl ?? undefined };
   const battle = battleBoxReferences[feature.card];
   return battle ? { imageUrl: battle.image_uris?.normal, artUrl: battle.image_uris?.normal?.replace('/normal/', '/art_crop/') } : undefined;
+}
+
+const invisibleWomanSpotlights = [
+  { name: 'Invisible Woman', label: 'Commander engine', reason: 'Cast a noncreature spell before combat, then turn the resulting Wall into a real board plan.' },
+  { name: 'Shark Typhoon', label: 'Spell-to-token engine', reason: 'Cycles as a cheap trigger or turns every later noncreature spell into an evasive threat.' },
+  { name: 'Third Path Iconoclast', label: 'Budget token maker', reason: 'Makes the interaction and cantrips already in the deck produce additional bodies.' },
+  { name: 'High Alert', label: 'Wall conversion', reason: 'Turns the deck’s high-toughness defensive board into a legitimate attacking force.' },
+  { name: 'Impact Tremors', label: 'Noncombat finisher', reason: 'Lets repeated token production close games without exposing every creature to combat.' },
+  { name: 'Parallel Lives', label: 'Token multiplier', reason: 'Doubles Walls, Sharks, Monks, and other tokens after the engine is already online.' },
+  { name: 'Cryptolith Rite', label: 'Token-to-mana bridge', reason: 'Turns a wide board into the colored mana needed for a large spell or activation turn.' },
+  { name: 'Aetherflux Reservoir', label: 'High-power alternate win', reason: 'Converts a protected chain of cheap noncreature spells into a noncombat table finish.' },
+];
+
+type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string };
+
+export function CardSpotlightGallery({ slug }: { slug: string }) {
+  const [cards, setCards] = useState<SpotlightCard[]>([]);
+  useEffect(() => {
+    if (slug !== 'invisible-woman-build-the-wall') return;
+    let cancelled = false;
+    const load = async () => {
+      const results = await Promise.all(invisibleWomanSpotlights.map(async (spotlight) => {
+        try {
+          const response = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
+          if (!response.ok) return spotlight;
+          const card = await response.json() as { image_uris?: { normal?: string }; scryfall_uri?: string };
+          return { ...spotlight, imageUrl: card.image_uris?.normal, scryfallUri: card.scryfall_uri };
+        } catch {
+          return spotlight;
+        }
+      }));
+      if (!cancelled) setCards(results);
+    };
+    void load();
+    return () => { cancelled = true; };
+  }, [slug]);
+  if (slug !== 'invisible-woman-build-the-wall' || !cards.length) return null;
+  return <section className="journal-card-gallery" aria-label="Invisible Woman highlighted cards">
+    <div className="journal-card-gallery-heading"><div><p className="journal-eyebrow">Card desk · visual upgrade map</p><h2>Cards that change the deck’s posture</h2></div><p>Representative current printings from Scryfall. Images identify the card; they are not ownership or edition claims.</p></div>
+    <div className="journal-card-gallery-grid">{cards.map(card => <article key={card.name} className="journal-card-spotlight">
+      <div className="journal-card-spotlight-image">{card.imageUrl ? <img src={card.imageUrl} alt={`${card.name} card art`} loading="lazy" /> : <span>{card.name}</span>}</div>
+      <div className="journal-card-spotlight-copy"><p className="journal-eyebrow">{card.label}</p><h3>{card.name}</h3><p>{card.reason}</p>{card.scryfallUri && <a href={card.scryfallUri} target="_blank" rel="noopener noreferrer">Verify printing on Scryfall →</a>}</div>
+    </article>)}</div>
+  </section>;
 }
 
 export function ReadingOverview({ article }: { article: ReadingArticle }) {

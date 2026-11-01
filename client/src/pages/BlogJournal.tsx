@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, ArrowRight, BarChart3, BookOpen, CalendarDays, LockKeyhole } from 'lucide-react';
 import { Link, useParams } from 'wouter';
-import { ArticleCover, ReadingBody, ReadingMeta, ReadingOverview, RelatedReading, journalCardImage } from '@/components/JournalReading';
+import { ArticleCover, CardSpotlightGallery, ReadingBody, ReadingMeta, ReadingOverview, RelatedReading, journalCardImage } from '@/components/JournalReading';
 import { chronologicalMarketEntries } from '@/data/marketChronology';
 import articles from '@/data/journalArticles.json';
 import marketReports from '@/data/marketJournalReports.json';
@@ -72,6 +72,7 @@ export default function BlogJournal() {
   return <Shell><header className="border-b-2 border-border"><Link href="/blog" className="inline-flex min-h-11 items-center gap-2 font-mono text-xs font-black uppercase tracking-widest text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Blog / Journal</Link><div className="mt-5 flex flex-wrap items-center gap-3"><PublishedBadge /><span className="text-xs text-muted-foreground">{article.dateLabel}</span><ReadingMeta body={article.body} /></div><div className="journal-hero"><div><p className="journal-eyebrow mb-4">{article.category}</p><h1>{article.title}</h1><p className="journal-hero-summary">{article.summary}</p></div><ArticleCover slug={slug} /></div></header>
     {'sourceUrl' in article && <aside className="mt-6 max-w-3xl border-l-4 border-amber-500 bg-amber-500/5 p-4 text-sm leading-7"><p><strong>Historical source window:</strong> {article.dataWindow}.</p><p className="mt-2">{article.caveat}</p><a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block font-bold text-primary underline">Original report source</a><p className="mt-2"><strong>Published journal source copy:</strong> this entry preserves the original report context; prices and named catalysts below are historical source claims, not freshly verified quotes or new daily moves.</p></aside>}
     <ReadingOverview article={article} />
+    {slug === 'invisible-woman-build-the-wall' && <CardSpotlightGallery slug={slug} />}
     <ReadingBody article={article} />
     {'sourceUrl' in article && <nav aria-label="Separate market chart tools" className="mt-8 flex flex-wrap gap-4 border-t border-border pt-5"><Link href="/movers" className="font-bold text-primary underline">Open chart dashboards</Link><Link href="/market-watch" className="font-bold text-primary underline">Source watchlist feed</Link></nav>}
     {slug === 'brawlternative-shelf-roundup' && <DeckCards type="brawl" />}

@@ -117,3 +117,29 @@
 }
 
 .journal-cover, .journal-inline-deck { scroll-margin-top: 5rem; }
+.journal-card-gallery { margin: 2rem 0 3.5rem; padding: 1.25rem; border: 2px solid var(--border); background: var(--journal-soft); }
+.journal-card-gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.journal-card-gallery-heading h2 { margin-top: .45rem; font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.2; font-weight: 900; letter-spacing: -.025em; }
+.journal-card-gallery-heading > p { max-width: 24rem; margin: 0; font-size: .75rem; line-height: 1.6; color: var(--muted-foreground); }
+.journal-card-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; padding-top: 1.25rem; }
+.journal-card-spotlight { display: flex; min-width: 0; flex-direction: column; border: 1px solid var(--border); background: var(--card); }
+.journal-card-spotlight-image { display: flex; aspect-ratio: 488 / 680; align-items: center; justify-content: center; overflow: hidden; background: var(--muted); }
+.journal-card-spotlight-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.journal-card-spotlight-image span { padding: 1rem; text-align: center; font-weight: 800; }
+.journal-card-spotlight-copy { display: flex; flex: 1; flex-direction: column; padding: .85rem; }
+.journal-card-spotlight-copy .journal-eyebrow { font-size: .56rem; }
+.journal-card-spotlight-copy h3 { margin: .45rem 0 0; font-size: 1rem; line-height: 1.25; font-weight: 900; }
+.journal-card-spotlight-copy p:not(.journal-eyebrow) { margin: .65rem 0 0; font-size: .75rem; line-height: 1.55; color: var(--muted-foreground); }
+.journal-card-spotlight-copy a { margin-top: auto; padding-top: .75rem; font-size: .68rem; font-weight: 800; }
+@media (max-width: 900px) {
+  .journal-card-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .journal-card-gallery { margin-inline: -.25rem; padding: .85rem; }
+  .journal-card-gallery-heading { display: block; }
+  .journal-card-gallery-heading > p { margin-top: .75rem; }
+  .journal-card-gallery-grid { gap: .7rem; }
+  .journal-card-spotlight-copy { padding: .65rem; }
+  .journal-card-spotlight-copy h3 { font-size: .88rem; }
+  .journal-card-spotlight-copy p:not(.journal-eyebrow) { font-size: .68rem; }
+}
