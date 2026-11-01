@@ -9,6 +9,9 @@ import { detectInventoryDeckCompletions } from '@/lib/inventoryDeckCompletion';
 import { slugify } from '@/hooks/useCommanderDeck';
 import { LOCAL_WORKSPACE_CHANGED_EVENT } from '@/lib/localWorkspace';
 import preconColorIdentities from '@/data/preconColorIdentities.json';
+import { buildPreconOwnershipGraph, summarizePreconOwnershipGraph } from '@/lib/preconOwnershipGraph';
+import { loadPrintingReviewQueue } from '@/lib/printingReviewQueue';
+import { loadUpgradeLedger, summarizeUpgradeLedger } from '@/lib/upgradeLedger';
 
 const GAP_CATEGORIES = ['SIMIC-UG', 'DIMIR-UB', 'ORZHOV-WB'];
 const GAP_LABELS: Record<string, string> = { 'SIMIC-UG': 'Simic', 'DIMIR-UB': 'Dimir', 'ORZHOV-WB': 'Orzhov' };
@@ -42,6 +45,8 @@ export default function PreconCollectionCommandCenter() {
   const { decks, loading } = useCommanderArchive();
   const [ownedPrecons, setOwnedPrecons] = useState<OwnedPreconEntry[]>(() => loadOwnedPrecons());
   const [cards, setCards] = useState<OwnedCard[]>(() => loadOwnedCollection());
+  const [reviewQueueCount, setReviewQueueCount] = useState(() => loadPrintingReviewQueue().filter((item) => item.status === 'pending').length);
+  const [ledgerEntries, setLedgerEntries] = useState(() => loadUpgradeLedger());
   const [refreshing, setRefreshing] = useState(false);
 
   const refresh = () => {
@@ -49,6 +54,8 @@ export default function PreconCollectionCommandCenter() {
     window.requestAnimationFrame(() => {
       setOwnedPrecons(loadOwnedPrecons());
       setCards(loadOwnedCollection());
+      setReviewQueueCount(loadPrintingReviewQueue().filter((item) => item.status === 'pending').length);
+      setLedgerEntries(loadUpgradeLedger());
       setRefreshing(false);
     });
   };
@@ -63,6 +70,9 @@ export default function PreconCollectionCommandCenter() {
   const ownedSlugs = useMemo(() => new Set(ownedPrecons.map((entry) => entry.deckSlug.toLowerCase())), [ownedPrecons]);
   const completeDecks = useMemo(() => deckList.filter((deck) => coverage.get(slugify(deck.name).toLowerCase())?.complete), [coverage, deckList]);
   const cardPool = useMemo(() => ownedByName(cards), [cards]);
+  const ownershipGraph = useMemo(() => buildPreconOwnershipGraph(ownedPrecons, deckList, cards, slugify), [cards, deckList, ownedPrecons]);
+  const ownershipSummary = useMemo(() => summarizePreconOwnershipGraph(ownershipGraph), [ownershipGraph]);
+  const ledgerSummary = useMemo(() => summarizeUpgradeLedger(ledgerEntries), [ledgerEntries]);
 
   const stats = useMemo(() => {
     const totalCopies = cards.reduce((sum, card) => sum + card.quantity, 0);
@@ -103,6 +113,12 @@ export default function PreconCollectionCommandCenter() {
     </header>
 
     <section className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5" aria-label="Collection health"><Stat label="Sealed inventory" value={`${ownedPrecons.length}`} detail={`${ownedPrecons.reduce((sum, entry) => sum + (entry.quantity || 1), 0)} product units tracked`} /><Stat label="Acquisition cost" value={`$${stats.costBasis.toFixed(0)}`} detail="Recorded cost basis only" /><Stat label="Scanned cards" value={`${stats.totalCopies}`} detail={`${cards.length} exact-printing entries`} /><Stat label="Full deck matches" value={`${completeDecks.length}`} detail="Automatically covered by scans" tone="text-emerald-700" /><Stat label="75%+ ready" value={`${stats.nearComplete}`} detail="Decks close to playable" tone="text-amber-700" /></section>
+
+    <section className="mt-6 grid gap-3 md:grid-cols-3" aria-label="Ecosystem foundation status">
+      <div className="border-2 border-border bg-card p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Ownership graph</p><h2 className="mt-2 text-xl font-black">Sealed → reconciled</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">{ownershipSummary.reconciledNodes} reconciled · {ownershipSummary.partialNodes} partial · {ownershipSummary.sealedUnits} sealed units tracked.</p><p className="mt-3 border-t border-border pt-3 text-xs text-muted-foreground">The product ledger remains separate from scanned card ownership.</p></div>
+      <div className="border-2 border-border bg-card p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-amber-700">Printing review</p><h2 className="mt-2 text-xl font-black">{reviewQueueCount} pending decisions</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">Ambiguous names, scans, and incomplete printing metadata should be confirmed before affecting value or transfers.</p><Link href="/collection" className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline">Open collection import <ArrowRight className="h-3.5 w-3.5" /></Link></div>
+      <div className="border-2 border-border bg-card p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-violet-700">Upgrade ledger</p><h2 className="mt-2 text-xl font-black">{ledgerSummary.planned} planned / {ledgerSummary.applied} applied</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">{ledgerSummary.borrowed} active borrowed cards · {ledgerSummary.reverted} reverted changes. Every move can remain auditable and reversible.</p><Link href="/precon-command-center#transfer-lab" className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline">Review transfer lab <ArrowRight className="h-3.5 w-3.5" /></Link></div>
+    </section>
 
     <section className="mt-6 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
       <div className="border-2 border-border bg-card p-5 sm:p-7"><div className="flex items-center gap-2"><Target className="h-5 w-5 text-primary" /><h2 className="text-2xl font-black">Buy next, based on your collection</h2></div><p className="mt-2 text-sm leading-6 text-muted-foreground">Recommendations favor your current color gaps, then reward decks where existing cards reduce the amount you need to buy.</p><div className="mt-5 grid gap-3 sm:grid-cols-2">{loading ? <p className="text-sm text-muted-foreground">Loading Commander archive…</p> : recommendations.map(({ deck, status, category }) => <Link key={deck.name} href={`/deck/${deck.set_code.toLowerCase()}/${slugify(deck.name)}`} className="group border border-border bg-background p-4 hover:border-primary"><div className="flex items-start justify-between gap-3"><div><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">{GAP_LABELS[category] || category}</p><h3 className="mt-1 font-black group-hover:text-primary">{deck.name}</h3></div><ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary" /></div><p className="mt-2 text-xs leading-5 text-muted-foreground">{status?.coveragePercent || 0}% of the indexed list is already in the scanned pool.</p><ProgressBar value={status?.coveragePercent || 0} /></Link>)}</div></div>

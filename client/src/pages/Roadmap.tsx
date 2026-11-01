@@ -110,6 +110,21 @@ const plannedItems = [
   },
 ];
 
+const ecosystemBuildQueue = [
+  { title: "Sealed precon ownership graph", detail: "Connect sealed product records to expected deck contents, then track sealed, opened, partially reconciled, and fully reconciled states without conflating them with scanned ownership." },
+  { title: "Exact-printing confidence queue", detail: "Route ambiguous scans and name-only imports through a review queue that records set, collector number, finish, language, condition, and confidence before committing a card identity." },
+  { title: "Owned-aware upgrade planner", detail: "Label recommendations as already owned, in another deck, inside sealed product, missing, or candidate, then calculate incremental purchase cost rather than replacement cost." },
+  { title: "Physical transfer optimizer", detail: "Allocate copies among decks, binders, trade, sale, and precon-derived stock while protecting only copies and preserving reversible transfer history." },
+  { title: "Market and decision audit trail", detail: "Attach source, timestamp, exact printing, freshness, confidence, and user overrides to prices, signals, recommendations, and prediction outcomes." },
+  { title: "Progressive inventory workspace", detail: "Keep the first view focused on owned, missing, sealed, scanned, allocated, and next action; reveal printing, location, condition, and provenance only when expanded." },
+  { title: "Scanner-agnostic intake hub", detail: "Support ManaBox, Dragon Shield, Delver Lens, TCGplayer, CSV, text, and decklist inputs through previewable adapters with parse, duplicate, and metadata-loss reports." },
+  { title: "Precon upgrade and substitution ledger", detail: "Version upgrade plans against a specific product and inventory snapshot, tracking added, cut, borrowed, substituted, purchased, returned, and reverted cards." },
+  { title: "Transfer-first procurement planner", detail: "Check internal copies, inactive decks, duplicates, and unopened products before producing marketplace purchase links or seller/cart comparisons." },
+  { title: "Privacy-aware sharing and export", detail: "Offer read-only deck, precon, inventory, missing-card, and research links with controls for hiding quantity, location, acquisition cost, and valuation." },
+  { title: "Three-ledger portfolio views", detail: "Keep acquisition cost, estimated current value, and deck/precon replacement cost visibly separate, with exact versus unresolved printing filters." },
+  { title: "Import interoperability test harness", detail: "Show parsed, resolved, ambiguous, rejected, duplicate, and metadata-lost records for every supported source before the user commits an import." },
+];
+
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">
@@ -375,6 +390,20 @@ export default function Roadmap() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="ecosystem-build-heading" className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-8">
+          <div className="mb-4 flex items-center gap-3">
+            <Sparkles className="h-5 w-5 text-primary" />
+            <div>
+              <SectionLabel>New build queue · ecosystem expansion</SectionLabel>
+              <h2 id="ecosystem-build-heading" className="mt-1 text-2xl font-black">The twelve-part ownership layer</h2>
+            </div>
+          </div>
+          <p className="mb-5 max-w-4xl text-sm leading-6 text-muted-foreground">These are now the tracked build items for the broader ecosystem program. The first vertical slice—ownership graph, printing review queue, upgrade ledger, and transfer optimizer foundation—is in progress; later slices will land behind the same local-first privacy boundary.</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {ecosystemBuildQueue.map((item, index) => <article key={item.title} className="border border-border bg-card p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">ECO-{String(index + 1).padStart(2, '0')}</p><h3 className="mt-2 font-black">{item.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{item.detail}</p></article>)}
           </div>
         </section>
 
