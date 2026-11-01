@@ -1,0 +1,67 @@
+name: Daily Official Spoiler and Precon Announcement Watch
+on:
+  schedule:
+    - cron: "20 11 * * *" # 11:20 UTC, after the release-calendar sync
+  workflow_dispatch:
+concurrency:
+  group: spoiler-precon-announcement-watch
+  cancel-in-progress: false
+permissions:
+  contents: write
+env:
+  NODE_VERSION: "22"
+jobs:
+  sync-announcements:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Sync official DailyMTG announcements
+        run: node scripts/sync-spoiler-announcements.mjs
+      - name: Validate generated announcement feed and journal entries
+        run: |
+          set -euo pipefail
+          git diff --check
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const feed = JSON.parse(fs.readFileSync('data/releases/spoiler-announcement-feed.json', 'utf8'));
+          const clientFeed = JSON.parse(fs.readFileSync('client/src/data/spoilerAnnouncementFeed.json', 'utf8'));
+          const articles = JSON.parse(fs.readFileSync('client/src/data/automatedSpoilerArticles.json', 'utf8'));
+          if (feed.schemaVersion !== 1 || !Array.isArray(feed.records) || feed.asOf !== clientFeed.asOf) throw new Error('Invalid spoiler announcement feed schema');
+          if (!Array.isArray(articles) || articles.some(article => !article.slug || !article.title || !article.body)) throw new Error('Invalid automated journal article registry');
+          console.log(`Validated ${feed.records.length} source records and ${articles.length} generated articles.`);
+          NODE
+      - name: Commit generated announcement records
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'MTG Announcement Watch Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- \
+            data/releases/spoiler-announcement-feed.json \
+            client/src/data/spoilerAnnouncementFeed.json \
+            client/src/data/automatedSpoilerArticles.json
+          if git diff --cached --quiet; then
+            echo 'No official announcement changes detected.'
+            exit 0
+          fi
+          git diff --cached --check
+          git commit -m 'chore(data): refresh official spoiler and precon watch [skip ci]'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            if [[ "$attempt" -lt 3 ]]; then
+              git fetch origin main
+              git rebase origin/main
+            fi
+          done
+          echo 'Unable to publish the announcement refresh.' >&2
+          exit 1

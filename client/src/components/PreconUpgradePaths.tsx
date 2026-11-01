@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, ChevronDown, Sparkles } from 'lucide-react';
 import type { OwnedCard } from '@/lib/manaboxParser';
 import { getCommanderPreconUpgradeGuide, getUpgradeOwnership, upgradeResearchComplete } from '@/data/commanderPreconUpgradeGuides';
+import { PreconUpgradeBridges } from '@/components/PreconUpgradeBridges';
 
 function slugify(value: string) {
   return value.toLocaleLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -126,6 +127,8 @@ export function PreconUpgradePaths({
           </li>)}
         </ul> : <p className="mt-2 text-sm leading-5 text-muted-foreground">No source-supported alternate path is listed for this deck.</p>}
       </div>
+
+      <PreconUpgradeBridges setCode={setCode} deckName={deckName} ownedCards={ownedCards} />
 
       <div className="mt-5 flex flex-wrap items-start justify-between gap-3 border-t border-border pt-4">
         <p className="max-w-3xl text-xs leading-5 text-muted-foreground">Ownership is matched only against the collection stored in this browser; cards not found remain unknown. Prices change; check current prices and playgroup fit before buying. Ownership counts do not reserve copies already used in other decks.</p>

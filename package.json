@@ -14,6 +14,7 @@
     "market:range-sim": "python3 scripts/simulate-prediction-ranges.py",
     "audit:market": "node scripts/audit-market-categories.mjs",
     "release:calendar": "node scripts/sync-release-calendar.mjs",
+    "release:announcements": "node scripts/sync-spoiler-announcements.mjs",
     "market:meta-watch": "node scripts/build-market-meta-watch.mjs",
     "market:preorder-volatility": "node scripts/build-preorder-volatility-alert.mjs",
     "market:preorder-products": "node scripts/sync-preorder-products.mjs",

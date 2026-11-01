@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "official-spoiler-announcement-feed",
+  "asOf": "2026-11-01",
+  "sourceUrl": "https://magic.wizards.com/en/news",
+  "records": [
+    {
+      "id": "en-news-feature-star-trek-prerelease-guide",
+      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
+      "kind": "product-release",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-card-preview-star-trek-tokens-and-art-cards",
+      "title": "Magic: The Gathering® | Star Trek™ Tokens and Art Cards",
+      "url": "https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards",
+      "kind": "spoiler",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-announcements-star-trek-commander-decklists",
+      "title": "Magic: The Gathering® | Star Trek™ Commander Decklists",
+      "url": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "kind": "commander-announcement",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-feature-star-trek-release-notes",
+      "title": "Magic: The Gathering® | Star Trek™ Release Notes",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-release-notes",
+      "kind": "product-release",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-card-preview",
+      "title": "Card Preview",
+      "url": "https://magic.wizards.com/en/news/card-preview",
+      "kind": "spoiler",
+      "source": "DailyMTG"
+    }
+  ],
+  "previousRecordCount": 0
+}
