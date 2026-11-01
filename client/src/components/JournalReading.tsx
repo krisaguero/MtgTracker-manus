@@ -50,6 +50,12 @@ const features = {
     takeaways: ['Eight practical construction briefs rather than copied decklists.', 'Opening-hand tests, closing plans, and failure modes for every commander.', 'Use the briefs as a starting point, then tune for your collection and table.'],
     action: 'Start in the Commander Library', target: '/commander',
   },
+  'invisible-woman-build-the-wall': {
+    label: 'Fantastic Four upgrade desk', icon: Layers3, card: 'Invisible Woman',
+    href: '/card/Invisible%20Woman',
+    takeaways: ['Build Invisible Woman as defensive spellslinger tokens, not generic four-color value.', 'Start with cheap interaction, token engines, and High Alert before premium doublers.', 'Import the full ManaBox export before treating any card as a confirmed buy.'],
+    action: 'Open the Commander Library', target: '/commander',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }

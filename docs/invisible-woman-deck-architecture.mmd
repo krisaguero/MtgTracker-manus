@@ -1,0 +1,77 @@
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Inter, Arial, sans-serif", "primaryTextColor": "#f8fafc", "lineColor": "#64748b", "clusterBkg": "#0f172a", "clusterBorder": "#334155"}}}%%
+flowchart TB
+  START["INVISIBLE WOMAN\nDefensive spellslinger tokens"]
+
+  subgraph CORE["COMMANDER ENGINE"]
+    TRIGGER["Cast a noncreature spell\nbefore combat"]
+    WALL["Invisible Woman creates\n0/3 Wall token"]
+    ATTACK["Combat payoff\nprotect, evade, amplify"]
+    TRIGGER --> WALL --> ATTACK
+  end
+
+  START --> TRIGGER
+
+  subgraph SPELLS["SPELL VELOCITY — KEEP THE ENGINE ONLINE"]
+    RAMP["Early fixing\nNature's Lore · Farseek · Cultivate\nThree Visits · Arcane Signet"]
+    INTERACTION["Cheap interaction\nSwords to Plowshares · Counterspell\nBeast Within · An Offer You Can't Refuse"]
+    PROTECT["Protection\nHeroic Intervention · Swiftfoot Boots\nPropaganda · Clever Concealment"]
+    RAMP --> TRIGGER
+    INTERACTION --> TRIGGER
+    PROTECT --> TRIGGER
+  end
+
+  subgraph TOKENS["TOKEN / WALL PAYOFFS — MULTIPLY EACH SPELL"]
+    ENGINES["Token engines\nShark Typhoon · Monastery Mentor\nThird Path Iconoclast · Young Pyromancer"]
+    SCALE["Scale the board\nCaretaker's Talent · Parallel Lives\nAdrix and Nev · Cryptolith Rite"]
+    ENGINES --> SCALE
+    SCALE --> ATTACK
+  end
+
+  subgraph WALLS["DEFENSIVE BOARD → LETHAL BOARD"]
+    HIGH["High-toughness package\nHigh Alert · Assault Formation\nAxebane Guardian · Arcades"]
+    DAMAGE["Noncombat pressure\nImpact Tremors"]
+    HIGH --> ATTACK
+    DAMAGE --> ATTACK
+  end
+
+  subgraph VALUE["CARD ADVANTAGE / TRIGGER VALUE"]
+    DRAW["Refill\nArchmage Emeritus · Caretaker's Talent"]
+    COPY["Premium value\nLithoform Engine"]
+    RECUR["Recover engines\nRestorative Technique"]
+    DRAW --> TRIGGER
+    COPY --> ATTACK
+    RECUR --> TRIGGER
+  end
+
+  subgraph WIN["CLOSE THE GAME"]
+    COMBAT["Wide protected board\nWall + token swarm + evasion"]
+    BURN["Impact Tremors\nrepeated token-entry damage"]
+    BIGSPELL["Big spell turn\nCryptolith Rite pays for activations"]
+  end
+
+  ATTACK --> COMBAT
+  DAMAGE --> BURN
+  SCALE --> BIGSPELL
+
+  subgraph ORDER["RECOMMENDED BUY ORDER"]
+    ONE["1 · Consistency\ninteraction + protection"]
+    TWO["2 · Engines\nShark Typhoon + token makers"]
+    THREE["3 · Payoffs\nHigh Alert + Impact Tremors"]
+    FOUR["4 · Multipliers\nCryptolith Rite + Parallel Lives"]
+    FIVE["5 · Premium\nFierce Guardianship + Deflecting Swat"]
+    ONE --> TWO --> THREE --> FOUR --> FIVE
+  end
+
+  classDef commander fill:#172554,stroke:#60a5fa,stroke-width:3px,color:#f8fafc;
+  classDef engine fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ecfdf5;
+  classDef support fill:#3f1d0b,stroke:#fb923c,stroke-width:2px,color:#fff7ed;
+  classDef defense fill:#312e81,stroke:#a5b4fc,stroke-width:2px,color:#eef2ff;
+  classDef win fill:#581c87,stroke:#d8b4fe,stroke-width:2px,color:#faf5ff;
+  classDef order fill:#1f2937,stroke:#94a3b8,stroke-width:2px,color:#f8fafc;
+
+  class START,TRIGGER,WALL,ATTACK commander;
+  class ENGINES,SCALE,DRAW,COPY,RECUR engine;
+  class RAMP,INTERACTION,PROTECT support;
+  class HIGH,DAMAGE defense;
+  class COMBAT,BURN,BIGSPELL win;
+  class ONE,TWO,THREE,FOUR,FIVE order;
