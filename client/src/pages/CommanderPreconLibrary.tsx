@@ -779,13 +779,16 @@ export default function CommanderPreconLibrary() {
                   <button
                     type="button"
                     onClick={() => handleToggleOwned(deck)}
+                    aria-pressed={isManuallyOwned}
+                    aria-label={isManuallyOwned ? `Remove sealed ownership flag for ${deck.name}` : `Mark ${deck.name} sealed precon as owned`}
+                    title={isManuallyOwned ? 'Remove sealed precon ownership flag' : 'Quick-toggle sealed precon ownership'}
                     className={`border-2 py-2 text-center font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 ${
                       isManuallyOwned
                         ? 'border-emerald-600 bg-emerald-600 text-white'
                         : 'border-border bg-card text-foreground hover:border-emerald-500 hover:text-emerald-600'
                     }`}
                   >
-                    <Check className="h-3.5 w-3.5" /> {isManuallyOwned ? 'In Inventory' : 'Mark Owned'}
+                    <Check className="h-3.5 w-3.5" /> {isManuallyOwned ? 'Sealed Owned · Toggle Off' : 'Quick-Mark Sealed Owned'}
                   </button>
                   <button type="button" onClick={() => beginAcquisition(deck)} className="col-span-2 border border-primary/60 bg-primary/5 py-2 text-center font-mono text-[10px] font-bold uppercase tracking-wider text-primary hover:bg-primary/10">{ownedPrecons.some((owned) => owned.deckSlug.toLowerCase() === deck.slug.toLowerCase() && owned.costBasisUsd !== undefined) ? 'Update acquisition / gain' : 'Track acquisition cost'}</button>
                   <div className="col-span-2 grid grid-cols-2 gap-2 border-t border-border pt-3 sm:grid-cols-4">
