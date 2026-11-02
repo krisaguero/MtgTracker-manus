@@ -94,26 +94,83 @@ export function journalCardImage(slug: string) {
   return battle ? { imageUrl: battle.image_uris?.normal, artUrl: battle.image_uris?.normal?.replace('/normal/', '/art_crop/') } : undefined;
 }
 
-const invisibleWomanSpotlights = [
-  { name: 'Invisible Woman', label: 'Commander engine', reason: 'Cast a noncreature spell before combat, then turn the resulting Wall into a real board plan.' },
-  { name: 'Shark Typhoon', label: 'Spell-to-token engine', reason: 'Cycles as a cheap trigger or turns every later noncreature spell into an evasive threat.' },
-  { name: 'Third Path Iconoclast', label: 'Budget token maker', reason: 'Makes the interaction and cantrips already in the deck produce additional bodies.' },
-  { name: 'High Alert', label: 'Wall conversion', reason: 'Turns the deck’s high-toughness defensive board into a legitimate attacking force.' },
-  { name: 'Impact Tremors', label: 'Noncombat finisher', reason: 'Lets repeated token production close games without exposing every creature to combat.' },
-  { name: 'Parallel Lives', label: 'Token multiplier', reason: 'Doubles Walls, Sharks, Monks, and other tokens after the engine is already online.' },
-  { name: 'Cryptolith Rite', label: 'Token-to-mana bridge', reason: 'Turns a wide board into the colored mana needed for a large spell or activation turn.' },
-  { name: 'Aetherflux Reservoir', label: 'High-power alternate win', reason: 'Converts a protected chain of cheap noncreature spells into a noncombat table finish.' },
-];
+const editorialSpotlights: Record<string, { heading: string; description: string; cards: { name: string; label: string; reason: string }[] }> = {
+  'commanders-100-percent-worth-building-around': {
+    heading: 'Commanders from the Commander’s Quarters feature',
+    description: 'Representative current printings for the seven build-around chapters. Images identify the cards; they are not ownership or edition claims.',
+    cards: [
+      { name: 'Sakiko, Mother of Summer', label: 'Combat-to-mana engine', reason: 'Turns successful combat into a mana reserve for the next main phase.' },
+      { name: 'Meria, Scholar of Antiquity', label: 'Artifact resource engine', reason: 'Makes ordinary artifacts useful as either mana or cards.' },
+      { name: 'Alaundo the Seer', label: 'Time-counter engine', reason: 'Builds delayed card advantage around creatures and time counters.' },
+      { name: 'Valduk, Keeper of the Flame', label: 'Temporary-equipment pressure', reason: 'Converts equipped creatures into a burst of attacking Elementals.' },
+      { name: 'Memnarch', label: 'Artifact control project', reason: 'Uses blue mana and artifacts to take over a long game.' },
+      { name: 'Denry Klin, Editor in Chief', label: 'Counter distribution', reason: 'Turns counters into a board-development engine instead of a single threat.' },
+      { name: 'Nikya of the Old Ways', label: 'Creature-only constraint', reason: 'Trades noncreature flexibility for explosive creature-based mana.' },
+    ],
+  },
+  'simple-builds-that-dominate-your-playgroup': {
+    heading: 'Commanders from the simple-build showcase',
+    description: 'The feature’s eight commanders, shown as a quick visual index before the strategy chapters.',
+    cards: [
+      { name: 'Jasmine Boreal of the Seven', label: 'Vanilla evasion', reason: 'Makes ability-free creatures into a focused evasive threat package.' },
+      { name: 'Yargle and Multani', label: 'Commander damage', reason: 'Treats a 18-power commander as a problem to protect and connect.' },
+      { name: 'Arcades, the Strategist', label: 'Defender tempo', reason: 'Turns high-toughness defenders into cards and attacking bodies.' },
+      { name: 'Edric, Spymaster of Trest', label: 'Evasive card draw', reason: 'Rewards small creatures that can reliably hit an opponent.' },
+      { name: 'Ovika, Enigma Goliath', label: 'Spells-to-Goblins', reason: 'Converts noncreature spells into a hasty token army.' },
+      { name: 'Omnath, Locus of Mana', label: 'Mana-bank Voltron', reason: 'Stores green mana and turns it into a growing threat.' },
+      { name: 'Mr. Orfeo, the Boulder', label: 'Power doubling', reason: 'Doubles a creature’s power and turns the combat step into damage.' },
+      { name: 'Ruric Thar, the Unbowed', label: 'Spell punishment', reason: 'Makes noncreature spells painful for opponents to cast.' },
+    ],
+  },
+  'eight-simple-commander-deck-blueprints': {
+    heading: 'Visual index of the eight blueprints',
+    description: 'Each card anchors one budget-aware shell in the companion build guide.',
+    cards: [
+      { name: 'Jasmine Boreal of the Seven', label: 'Vanilla evasion midrange', reason: 'Efficient creatures, protection, and ability-free payoffs.' },
+      { name: 'Yargle and Multani', label: 'Commander-damage Voltron', reason: 'Pump, evasion, and protection built around one huge body.' },
+      { name: 'Arcades, the Strategist', label: 'Defender tempo', reason: 'Defenders become mana, cards, and attackers.' },
+      { name: 'Edric, Spymaster of Trest', label: 'Evasive tempo', reason: 'Small evasive creatures become the deck’s draw engine.' },
+      { name: 'Ovika, Enigma Goliath', label: 'Hasty Phyrexians', reason: 'Noncreature spells create pressure without giving up interaction.' },
+      { name: 'Omnath, Locus of Mana', label: 'Mana-bank Voltron', reason: 'Land ramp feeds a protected, oversized commander.' },
+      { name: 'Mr. Orfeo, the Boulder', label: 'Fling and combat damage', reason: 'Power doubling supports both attacks and sacrifice finishes.' },
+      { name: 'Ruric Thar, the Unbowed', label: 'Creature-heavy punishment', reason: 'The deck minimizes its own noncreature exposure.' },
+    ],
+  },
+  'brawlternative-shelf-roundup': {
+    heading: 'The three finished Brawlternative proposals',
+    description: 'Representative commanders for the three fully revised shelf entries.',
+    cards: [
+      { name: 'The Wise Mothman', label: 'Counters and radiation', reason: 'A graveyard and counter plan with a clear first test.' },
+      { name: 'Rakdos, Lord of Riots', label: 'Life-loss sequencing', reason: 'A theatrical creature plan that depends on getting the order right.' },
+      { name: 'Karlov of the Ghost Council', label: 'Life-gain pressure', reason: 'Small life-gain events become a large commander and a resilient board.' },
+    ],
+  },
+  'invisible-woman-build-the-wall': {
+    heading: 'Cards that change the deck’s posture',
+    description: 'Representative current printings from Scryfall for the Invisible Woman Wall conversion.',
+    cards: [
+      { name: 'Invisible Woman', label: 'Commander engine', reason: 'Cast a noncreature spell before combat, then turn the resulting Wall into a real board plan.' },
+      { name: 'Shark Typhoon', label: 'Spell-to-token engine', reason: 'Cycles as a cheap trigger or turns later noncreature spells into evasive threats.' },
+      { name: 'Third Path Iconoclast', label: 'Budget token maker', reason: 'Makes the interaction and cantrips already in the deck produce additional bodies.' },
+      { name: 'High Alert', label: 'Wall conversion', reason: 'Turns the deck’s high-toughness defensive board into a legitimate attacking force.' },
+      { name: 'Impact Tremors', label: 'Noncombat finisher', reason: 'Lets repeated token production close games without exposing every creature to combat.' },
+      { name: 'Parallel Lives', label: 'Token multiplier', reason: 'Doubles Walls, Sharks, Monks, and other tokens after the engine is online.' },
+      { name: 'Cryptolith Rite', label: 'Token-to-mana bridge', reason: 'Turns a wide board into the colored mana needed for a large spell or activation turn.' },
+      { name: 'Aetherflux Reservoir', label: 'High-power alternate win', reason: 'Converts a protected chain of cheap noncreature spells into a noncombat table finish.' },
+    ],
+  },
+};
 
 type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string };
 
 export function CardSpotlightGallery({ slug }: { slug: string }) {
   const [cards, setCards] = useState<SpotlightCard[]>([]);
+  const spotlightSet = editorialSpotlights[slug];
   useEffect(() => {
-    if (slug !== 'invisible-woman-build-the-wall') return;
+    if (!spotlightSet) return;
     let cancelled = false;
     const load = async () => {
-      const results = await Promise.all(invisibleWomanSpotlights.map(async (spotlight) => {
+      const results = await Promise.all(spotlightSet.cards.map(async (spotlight) => {
         try {
           const response = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
           if (!response.ok) return spotlight;
@@ -127,10 +184,10 @@ export function CardSpotlightGallery({ slug }: { slug: string }) {
     };
     void load();
     return () => { cancelled = true; };
-  }, [slug]);
-  if (slug !== 'invisible-woman-build-the-wall' || !cards.length) return null;
-  return <section className="journal-card-gallery" aria-label="Invisible Woman highlighted cards">
-    <div className="journal-card-gallery-heading"><div><p className="journal-eyebrow">Card desk · visual upgrade map</p><h2>Cards that change the deck’s posture</h2></div><p>Representative current printings from Scryfall. Images identify the card; they are not ownership or edition claims.</p></div>
+  }, [slug, spotlightSet]);
+  if (!spotlightSet || !cards.length) return null;
+  return <section className="journal-card-gallery" aria-label={`${spotlightSet.heading} card imagery`}>
+    <div className="journal-card-gallery-heading"><div><p className="journal-eyebrow">Card desk · featurettes</p><h2>{spotlightSet.heading}</h2></div><p>{spotlightSet.description}</p></div>
     <div className="journal-card-gallery-grid">{cards.map(card => <article key={card.name} className="journal-card-spotlight">
       <div className="journal-card-spotlight-image">{card.imageUrl ? <img src={card.imageUrl} alt={`${card.name} card art`} loading="lazy" /> : <span>{card.name}</span>}</div>
       <div className="journal-card-spotlight-copy"><p className="journal-eyebrow">{card.label}</p><h3>{card.name}</h3><p>{card.reason}</p>{card.scryfallUri && <a href={card.scryfallUri} target="_blank" rel="noopener noreferrer">Verify printing on Scryfall →</a>}</div>
