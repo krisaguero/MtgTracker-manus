@@ -10,6 +10,7 @@ import {
 import { Link } from "wouter";
 import rawFeed from "@/data/marketResearchFeed.json";
 import rawLedger from "@/data/marketPredictionLedger.json";
+import rawBacklog from "@/data/marketWatchBacklog.json";
 import rawSourceMarketWatch from "@/data/notionMarketWatchSnapshot.json";
 import { MarketCardPreview } from "@/components/MarketCardPreview";
 import { VerifiedHistoricalEvidence } from "@/components/VerifiedHistoricalEvidence";
@@ -59,6 +60,10 @@ type FeedPost = {
 const feed = rawFeed as {
   posts: FeedPost[];
   schedule: { daily: string; topicExpansion: string; biweeklyTop10: string };
+};
+const backlog = rawBacklog as {
+  dailyPosts: Array<{ dateKey: string; title: string; cards: FeedCard[]; fullCardCount: number; summary: string; label: string }>;
+  weekly: Array<{ week: string; label: string; posts: number; cards: FeedCard[] }>;
 };
 const ledger = rawLedger as {
   records: Array<{
@@ -508,8 +513,10 @@ export default function MarketResearchFeed() {
       ? new URLSearchParams(window.location.search).get("date")
       : null;
   const latest = posts.find(post => post.dateKey === requestedDate) || posts[0];
-  const visibleCards = latest?.cards.slice(0, 5) || [];
-  const additionalCards = latest?.cards.slice(5) || [];
+  const latestWithCards = latest?.cards.length ? latest : posts.find(post => post.cards.length > 0);
+  const visibleCards = latestWithCards?.cards.slice(0, 3) || [];
+  const additionalCards = latestWithCards?.cards.slice(3) || [];
+  const weeklyDigest = backlog.weekly[0];
   const isHistorical = Boolean(
     latest && latest.dateKey < new Date().toISOString().slice(0, 10)
   );
@@ -586,6 +593,21 @@ export default function MarketResearchFeed() {
             </span>
           </div>
         </section>
+        {weeklyDigest && (
+          <section className="border-2 border-border bg-card p-5 sm:p-6" aria-label="Weekly movers digest">
+            <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-4">
+              <div>
+                <p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Weekly movers desk</p>
+                <h2 className="mt-2 text-3xl font-black">{weeklyDigest.label}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">A compact roll-up of the strongest exact-printing signals across {weeklyDigest.posts} recovered daily research posts. Repeated appearance is a reason to verify, not proof of durable demand.</p>
+              </div>
+              <span className="border border-border px-3 py-2 font-mono text-[10px] font-black uppercase">{weeklyDigest.cards.length} ranked cards</span>
+            </div>
+            <div className="mt-5 grid gap-4 lg:grid-cols-2">
+              {weeklyDigest.cards.slice(0, 5).map(card => <FeedCardView key={`weekly-${card.setCode}-${card.name}`} card={card} />)}
+            </div>
+          </section>
+        )}
         {latest && (
           <section className="border border-border bg-card p-4 sm:p-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
@@ -618,6 +640,9 @@ export default function MarketResearchFeed() {
                 {latest.label}
               </span>
             </div>
+            {latest.cards.length === 0 && latestWithCards && (
+              <p className="mt-4 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">The {formatDate(latest.dateKey)} scan established a flat baseline with no non-zero movers. The three cards below are the most recent non-zero comparative cards from {formatDate(latestWithCards.dateKey)} so the daily desk remains useful without inventing movement for the flat day.</p>
+            )}
             <div className="mt-6 grid gap-4 lg:grid-cols-2">
               {visibleCards.map(card => (
                 <FeedCardView

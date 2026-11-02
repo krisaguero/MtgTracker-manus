@@ -75,6 +75,9 @@ jobs:
       - name: Build daily Market Watch research feed
         run: pnpm market:research-feed
 
+      - name: Build daily Market Watch backlog and weekly digest
+        run: pnpm market:watch-backlog
+
       - name: Validate generated data and application types
         run: |
           git diff --check
@@ -95,6 +98,7 @@ jobs:
             client/src/data/dailyMoverHistory.json \
             client/src/data/marketPredictionLedger.json \
             client/src/data/marketResearchFeed.json \
+            client/src/data/marketWatchBacklog.json \
             client/src/data/dailyResearchContext.json \
             client/src/data/marketSignalAudit.json \
             data/market/daily \
@@ -108,7 +112,7 @@ jobs:
           while IFS= read -r path; do
             [[ -z "$path" ]] && continue
             case "$path" in
-              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/dailyMoverHistory.json|client/src/data/dailyResearchContext.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|client/src/data/marketSignalAudit.json|data/market/category-signal-audit.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
+              client/public/mtg-movers.json|client/src/data/commanderCardPriceMeta.json|client/src/data/commanderCardPriceSnapshot.json|client/src/data/dailyMarketSnapshot.json|client/src/data/dailyMoverHistory.json|client/src/data/dailyResearchContext.json|client/src/data/marketPredictionLedger.json|client/src/data/marketResearchFeed.json|client/src/data/marketSignalAudit.json|client/src/data/marketWatchBacklog.json|data/market/category-signal-audit.json|data/market/daily-movers-history.json|data/market/prediction-ledger.json)
                 ;;
               data/market/daily/*|data/market/research/*|data/market/research-context/*)
                 ;;
