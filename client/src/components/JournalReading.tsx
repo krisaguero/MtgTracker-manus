@@ -159,9 +159,19 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'Aetherflux Reservoir', label: 'High-power alternate win', reason: 'Converts a protected chain of cheap noncreature spells into a noncombat table finish.' },
     ],
   },
+  'remote-play-shuffle-tests': {
+    heading: 'The Wise Mothman · visual deck desk',
+    description: 'A representative commander image and current Scryfall USD reference for the remote-play guide’s featured deck.',
+    cards: [{ name: 'The Wise Mothman', label: 'Counters and radiation', reason: 'A visual anchor for the counter, mill, and radiation test described in the remote-play guide.' }],
+  },
+  'battle-box-october-17-recap': {
+    heading: 'Battle Box · featured deck desk',
+    description: 'A representative card image and current Scryfall USD reference for the Battle Box recap’s first featured deck.',
+    cards: [{ name: 'Goblin Rabblemaster', label: 'Fast pressure', reason: 'A representative threat for the Goblin Cavalcade matchup and its short combat clock.' }],
+  },
 };
 
-type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string };
+type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string; usd?: string | null; usdFoil?: string | null };
 
 export function CardSpotlightGallery({ slug }: { slug: string }) {
   const [cards, setCards] = useState<SpotlightCard[]>([]);
@@ -174,8 +184,8 @@ export function CardSpotlightGallery({ slug }: { slug: string }) {
         try {
           const response = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
           if (!response.ok) return spotlight;
-          const card = await response.json() as { image_uris?: { normal?: string }; scryfall_uri?: string };
-          return { ...spotlight, imageUrl: card.image_uris?.normal, scryfallUri: card.scryfall_uri };
+          const card = await response.json() as { image_uris?: { normal?: string }; scryfall_uri?: string; prices?: { usd?: string | null; usd_foil?: string | null } };
+          return { ...spotlight, imageUrl: card.image_uris?.normal, scryfallUri: card.scryfall_uri, usd: card.prices?.usd, usdFoil: card.prices?.usd_foil };
         } catch {
           return spotlight;
         }
@@ -190,7 +200,7 @@ export function CardSpotlightGallery({ slug }: { slug: string }) {
     <div className="journal-card-gallery-heading"><div><p className="journal-eyebrow">Card desk · featurettes</p><h2>{spotlightSet.heading}</h2></div><p>{spotlightSet.description}</p></div>
     <div className="journal-card-gallery-grid">{cards.map(card => <article key={card.name} className="journal-card-spotlight">
       <div className="journal-card-spotlight-image">{card.imageUrl ? <img src={card.imageUrl} alt={`${card.name} card art`} loading="lazy" /> : <span>{card.name}</span>}</div>
-      <div className="journal-card-spotlight-copy"><p className="journal-eyebrow">{card.label}</p><h3>{card.name}</h3><p>{card.reason}</p>{card.scryfallUri && <a href={card.scryfallUri} target="_blank" rel="noopener noreferrer">Verify printing on Scryfall →</a>}</div>
+      <div className="journal-card-spotlight-copy"><p className="journal-eyebrow">{card.label}</p><h3>{card.name}</h3><p>{card.reason}</p><div className="journal-price-widget" aria-label={`Current price reference for ${card.name}`}><span>Current Scryfall USD</span><strong>{card.usd ? `$${card.usd}` : 'Unavailable'}</strong>{card.usdFoil && <small>Foil ${card.usdFoil}</small>}<em>Reference only · not a quote or ownership record</em></div>{card.scryfallUri && <a href={card.scryfallUri} target="_blank" rel="noopener noreferrer">Verify printing and prices on Scryfall →</a>}</div>
     </article>)}</div>
   </section>;
 }

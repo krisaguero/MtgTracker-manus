@@ -131,6 +131,11 @@
 .journal-card-spotlight-copy h3 { margin: .45rem 0 0; font-size: 1rem; line-height: 1.25; font-weight: 900; }
 .journal-card-spotlight-copy p:not(.journal-eyebrow) { margin: .65rem 0 0; font-size: .75rem; line-height: 1.55; color: var(--muted-foreground); }
 .journal-card-spotlight-copy a { margin-top: auto; padding-top: .75rem; font-size: .68rem; font-weight: 800; }
+.journal-price-widget { display: grid; grid-template-columns: 1fr auto; gap: .2rem .5rem; margin-top: .75rem; padding: .55rem; border-left: 2px solid var(--primary); background: var(--journal-soft); }
+.journal-price-widget span { grid-column: 1 / -1; font: 700 .55rem ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
+.journal-price-widget strong { font: 900 .95rem ui-monospace, monospace; color: var(--primary); }
+.journal-price-widget small { align-self: end; font: 700 .62rem ui-monospace, monospace; color: var(--muted-foreground); }
+.journal-price-widget em { grid-column: 1 / -1; font-size: .55rem; line-height: 1.35; color: var(--muted-foreground); }
 @media (max-width: 900px) {
   .journal-card-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
