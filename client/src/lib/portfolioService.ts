@@ -5,17 +5,19 @@ export type MissionStep = { id: string; label: string; complete: boolean };
 export type SavedBuild = { id: string; deckSlug: string; label: string; budget: number; mode: string; createdAt: number };
 export type Reservation = { identity: string; name: string; deckSlug: string; quantity: number; updatedAt: number };
 export type AcquisitionEstimate = { deckSlug: string; currentValueUsd: number; updatedAt: number };
+export type ImportAction = 'added' | 'merged' | 'flagged' | 'rejected';
+export type ImportPreviewRow = { card: OwnedCard; action: ImportAction; reason: string; approved: boolean };
 export type PortfolioServiceState = {
   missions: Record<string, MissionStep[]>;
   savedBuilds: SavedBuild[];
   reservations: Reservation[];
   acquisitionEstimates: AcquisitionEstimate[];
+  transferApprovals: string[];
   lastImportReport?: CollectionImportReport;
 };
 
 const STORAGE_KEY = 'mtg_tracker_portfolio_service_v1';
-
-const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [] };
+const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], transferApprovals: [] };
 
 export function loadPortfolioServiceState(): PortfolioServiceState {
   try {
@@ -25,6 +27,7 @@ export function loadPortfolioServiceState(): PortfolioServiceState {
       savedBuilds: Array.isArray(parsed?.savedBuilds) ? parsed.savedBuilds : [],
       reservations: Array.isArray(parsed?.reservations) ? parsed.reservations : [],
       acquisitionEstimates: Array.isArray(parsed?.acquisitionEstimates) ? parsed.acquisitionEstimates : [],
+      transferApprovals: Array.isArray(parsed?.transferApprovals) ? parsed.transferApprovals : [],
       lastImportReport: parsed?.lastImportReport,
     };
   } catch {
@@ -37,14 +40,6 @@ export function savePortfolioServiceState(state: PortfolioServiceState): void {
   window.dispatchEvent(new Event('mtg-tracker-local-workspace-changed'));
 }
 
-export function toggleMissionStep(state: PortfolioServiceState, missionId: string, step: MissionStep): PortfolioServiceState {
-  const current = state.missions[missionId] || [];
-  const next = current.some(item => item.id === step.id && item.complete)
-    ? current.map(item => item.id === step.id ? { ...item, complete: false } : item)
-    : [...current.filter(item => item.id !== step.id), { ...step, complete: true }];
-  return { ...state, missions: { ...state.missions, [missionId]: next } };
-}
-
 export function reserveCard(state: PortfolioServiceState, card: OwnedCard, deckSlug: string, quantity = 1): PortfolioServiceState {
   const identity = collectionIdentity(card);
   const existing = state.reservations.find(item => item.identity === identity && item.deckSlug === deckSlug);
@@ -52,6 +47,25 @@ export function reserveCard(state: PortfolioServiceState, card: OwnedCard, deckS
     ? state.reservations.map(item => item === existing ? { ...item, quantity: item.quantity + quantity, updatedAt: Date.now() } : item)
     : [...state.reservations, { identity, name: card.name, deckSlug, quantity, updatedAt: Date.now() }];
   return { ...state, reservations };
+}
+
+export function reservedQuantity(state: PortfolioServiceState, identity: string): number {
+  return state.reservations.filter(item => item.identity === identity).reduce((sum, item) => sum + item.quantity, 0);
+}
+
+export function availableQuantity(state: PortfolioServiceState, card: OwnedCard): number {
+  return Math.max(0, card.quantity - reservedQuantity(state, collectionIdentity(card)));
+}
+
+export function tryReserveCard(state: PortfolioServiceState, card: OwnedCard, deckSlug: string, quantity = 1): { state: PortfolioServiceState; accepted: boolean; available: number; reason?: string } {
+  const amount = Math.max(1, Math.floor(quantity));
+  const available = availableQuantity(state, card);
+  if (amount > available) return { state, accepted: false, available, reason: `Only ${available} unreserved ${card.name} copy${available === 1 ? '' : 'ies'} available.` };
+  return { state: reserveCard(state, card, deckSlug, amount), accepted: true, available: available - amount };
+}
+
+export function approveTransfer(state: PortfolioServiceState, missionId: string): PortfolioServiceState {
+  return state.transferApprovals.includes(missionId) ? state : { ...state, transferApprovals: [...state.transferApprovals, missionId] };
 }
 
 export function saveBuild(state: PortfolioServiceState, build: Omit<SavedBuild, 'id' | 'createdAt'>): PortfolioServiceState {
@@ -63,15 +77,19 @@ export function saveBuild(state: PortfolioServiceState, build: Omit<SavedBuild, 
 export function reconcileImport(existing: OwnedCard[], incoming: OwnedCard[]) {
   const existingIdentities = new Set(existing.map(collectionIdentity));
   const incomingIdentities = new Set<string>();
-  const preview = incoming.map(card => {
+  const preview: ImportPreviewRow[] = incoming.map(card => {
     const identity = collectionIdentity(card);
     const duplicateInFile = incomingIdentities.has(identity);
     const exists = existingIdentities.has(identity);
     incomingIdentities.add(identity);
     const unresolved = !card.setCode || !card.collectorNumber;
-    return { card, action: unresolved ? 'flagged' : duplicateInFile || exists ? 'merged' : 'added', reason: unresolved ? 'Missing exact set or collector number' : duplicateInFile ? 'Duplicate inside this import' : exists ? 'Exact printing already exists' : 'New exact printing' } as const;
+    return { card, action: unresolved ? 'flagged' : duplicateInFile || exists ? 'merged' : 'added', approved: !unresolved, reason: unresolved ? 'Missing exact set or collector number' : duplicateInFile ? 'Duplicate inside this import' : exists ? 'Exact printing already exists' : 'New exact printing' };
   });
   return { preview, counts: { added: preview.filter(row => row.action === 'added').length, merged: preview.filter(row => row.action === 'merged').length, flagged: preview.filter(row => row.action === 'flagged').length, rejected: 0 } };
+}
+
+export function setImportRowDecision(rows: ImportPreviewRow[], index: number, approved: boolean): ImportPreviewRow[] {
+  return rows.map((row, rowIndex) => rowIndex === index && row.action !== 'flagged' ? { ...row, approved } : row);
 }
 
 export function applyImportReport(state: PortfolioServiceState, report: CollectionImportReport): PortfolioServiceState {
