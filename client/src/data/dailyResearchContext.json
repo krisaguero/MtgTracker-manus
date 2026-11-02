@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T00:25:55.645Z",
+  "generatedAt": "2026-11-02T18:03:01.085Z",
   "pricingDate": "2026-11-02",
   "dataWindow": "2026-10-10 through 2026-11-02",
   "marketStatus": [
@@ -8,57 +8,75 @@
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 1784,
-  "negativeSignals": 2222,
+  "positiveSignals": 2629,
+  "negativeSignals": 3164,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 83,
-    "multiSourceSignals": 12428,
+    "singleSourceSignals": 70,
+    "multiSourceSignals": 12441,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 36,
-      "positiveSignals": 36,
+      "cards": 93,
+      "positiveSignals": 93,
       "negativeSignals": 0,
-      "averagePctChange": 25.63
+      "averagePctChange": 25.88
     },
     {
       "category": "commander-picks",
-      "cards": 12446,
-      "positiveSignals": 1748,
-      "negativeSignals": 2193,
-      "averagePctChange": -0.14
+      "cards": 12313,
+      "positiveSignals": 2536,
+      "negativeSignals": 3059,
+      "averagePctChange": -0.17
     },
     {
       "category": "reprint-squashes",
-      "cards": 29,
+      "cards": 105,
       "positiveSignals": 0,
-      "negativeSignals": 29,
-      "averagePctChange": -27.29
+      "negativeSignals": 105,
+      "averagePctChange": -25.07
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-02; 1784 rose and 2222 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +25.63% across 36 cards.",
-    "83 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "29 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-02; 2629 rose and 3164 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +25.88% across 93 cards.",
+    "70 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "105 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
+        "name": "Yahenni, Undying Partisan",
+        "setCode": "soc",
+        "collectorNumber": "232",
+        "currentUsd": 0.65,
+        "percentChange": 160,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
         "name": "Reality Shift",
         "setCode": "drc",
         "collectorNumber": "39",
-        "currentUsd": 0.6,
-        "percentChange": 114.29,
+        "currentUsd": 0.59,
+        "percentChange": 110.71,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Hour of Reckoning",
+        "setCode": "tdc",
+        "collectorNumber": "120",
+        "currentUsd": 0.61,
+        "percentChange": 103.33,
         "sourceCount": 2,
         "category": "penny-risers"
       },
@@ -66,46 +84,46 @@
         "name": "Sunpetal Grove",
         "setCode": "msc",
         "collectorNumber": "272",
-        "currentUsd": 0.65,
-        "percentChange": 80.56,
+        "currentUsd": 0.64,
+        "percentChange": 77.78,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Gift of Immortality",
-        "setCode": "msc",
-        "collectorNumber": "134",
-        "currentUsd": 0.52,
-        "percentChange": 52.94,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Arixmethes, Slumbering Isle",
-        "setCode": "dsc",
-        "collectorNumber": "211",
-        "currentUsd": 1.21,
-        "percentChange": 34.44,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Soul of New Phyrexia",
-        "setCode": "moc",
+        "name": "Path of Ancestry",
+        "setCode": "tdc",
         "collectorNumber": "382",
-        "currentUsd": 1.19,
-        "percentChange": 33.71,
+        "currentUsd": 0.38,
+        "percentChange": 72.73,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
+        "name": "Path of Ancestry",
+        "setCode": "lcc",
+        "collectorNumber": "346",
+        "currentUsd": 0.15,
+        "percentChange": -68.09,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Temple of Silence",
+        "setCode": "ncc",
+        "collectorNumber": "435",
+        "currentUsd": 0.25,
+        "percentChange": -56.14,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
         "name": "Orzhov Basilica",
         "setCode": "drc",
         "collectorNumber": "164",
-        "currentUsd": 0.29,
-        "percentChange": -53.97,
+        "currentUsd": 0.3,
+        "percentChange": -52.38,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
@@ -113,35 +131,17 @@
         "name": "Path of Ancestry",
         "setCode": "blc",
         "collectorNumber": "322",
-        "currentUsd": 0.34,
-        "percentChange": -49.25,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Woe Strider",
-        "setCode": "tdc",
-        "collectorNumber": "201",
         "currentUsd": 0.32,
-        "percentChange": -47.54,
+        "percentChange": -52.24,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Goblin Electromancer",
-        "setCode": "tdc",
-        "collectorNumber": "99",
-        "currentUsd": 0.34,
-        "percentChange": -46.03,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Pearl-Ear, Imperial Advisor",
-        "setCode": "soc",
-        "collectorNumber": "160",
-        "currentUsd": 0.38,
-        "percentChange": -44.93,
+        "name": "Rootbound Crag",
+        "setCode": "drc",
+        "collectorNumber": "168",
+        "currentUsd": 0.33,
+        "percentChange": -49.23,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,17 +153,6 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "observations": 21,
-        "firstDate": "2026-10-10",
-        "lastDate": "2026-11-02",
-        "totalPctChange": -13.86,
-        "positiveDays": 4,
-        "negativeDays": 2
-      },
-      {
         "name": "Idol of Oblivion",
         "setCode": "plst",
         "collectorNumber": "BLC-277",
@@ -173,6 +162,17 @@
         "totalPctChange": 12.5,
         "positiveDays": 5,
         "negativeDays": 0
+      },
+      {
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "collectorNumber": "269",
+        "observations": 21,
+        "firstDate": "2026-10-10",
+        "lastDate": "2026-11-02",
+        "totalPctChange": -1.98,
+        "positiveDays": 5,
+        "negativeDays": 2
       },
       {
         "name": "Island",
@@ -192,7 +192,7 @@
         "observations": 14,
         "firstDate": "2026-10-20",
         "lastDate": "2026-11-02",
-        "totalPctChange": 277.32,
+        "totalPctChange": 270.1,
         "positiveDays": 10,
         "negativeDays": 0
       },
@@ -203,9 +203,9 @@
         "observations": 14,
         "firstDate": "2026-10-20",
         "lastDate": "2026-11-02",
-        "totalPctChange": 233.33,
+        "totalPctChange": 224.24,
         "positiveDays": 4,
-        "negativeDays": 6
+        "negativeDays": 7
       }
     ],
     "predictionsDue": [],

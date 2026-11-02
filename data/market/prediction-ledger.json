@@ -1,7 +1,137 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T00:25:56.292Z",
+  "updatedAt": "2026-11-02T18:03:01.504Z",
   "records": [
+    {
+      "id": "2026-11-02-precon-sealed-economics:1:soc:232",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Yahenni, Undying Partisan (SOC 232) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Yahenni, Undying Partisan",
+      "setCode": "soc",
+      "collectorNumber": "232",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 160.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:3:tdc:120",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Hour of Reckoning (TDC 120) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hour of Reckoning",
+      "setCode": "tdc",
+      "collectorNumber": "120",
+      "entryUsd": 0.61,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:5:tdc:382",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Path of Ancestry (TDC 382) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "tdc",
+      "collectorNumber": "382",
+      "entryUsd": 0.38,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 72.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:6:lcc:346",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Path of Ancestry (LCC 346) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "lcc",
+      "collectorNumber": "346",
+      "entryUsd": 0.15,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 68.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:7:ncc:435",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Temple of Silence (NCC 435) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Temple of Silence",
+      "setCode": "ncc",
+      "collectorNumber": "435",
+      "entryUsd": 0.25,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 56.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-02-precon-sealed-economics:1:drc:39",
       "dateKey": "2026-11-02",
