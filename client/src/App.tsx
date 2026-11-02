@@ -16,6 +16,7 @@ const PreconCatalog = lazy(() => import('@/pages/PreconCatalog'));
 const CommanderLibrary = lazy(() => import('@/pages/CommanderLibrary'));
 const CommanderPreconLibrary = lazy(() => import('@/pages/CommanderPreconLibrary'));
 const PreconCommandCenter = lazy(() => import('@/pages/PreconCommandCenter'));
+const PreconStudio = lazy(() => import('@/pages/PreconStudio'));
 const PreconCollectionCommandCenter = lazy(() => import('@/pages/PreconCollectionCommandCenter'));
 const PreconPortfolioWorkspace = lazy(() => import('@/pages/PreconPortfolioWorkspace'));
 const InvisibleWomanFocusedPlan = lazy(() => import('@/pages/InvisibleWomanFocusedPlan'));
@@ -70,6 +71,7 @@ function Router() {
         <Route path={'/'} component={Home} />
         <Route path={'/commander'} component={CommanderLibrary} />
         <Route path={'/precons'} component={CommanderPreconLibrary} />
+        <Route path={'/precon-studio'} component={PreconStudio} />
         <Route path={'/precon-command-center'} component={PreconCommandCenter} />
         <Route path={'/precon-collection'} component={PreconCollectionCommandCenter} />
         <Route path={'/precon-portfolio/plan/invisible-woman-focused'} component={InvisibleWomanFocusedPlan} />

@@ -19,11 +19,10 @@ const navigation: SiteItem[] = [
     links: [
       { href: '/commander', label: 'Commander archive' },
       { href: '/commander-market', label: 'Commander demand index' },
-      { href: '/precon-command-center', label: 'Precon command center' },
+      { href: '/precon-studio', label: 'Precon Studio' },
       { href: '/deck-workshop', label: 'Build & check a deck' },
     ],
   },
-  { type: 'link', href: '/precons', label: 'Precons' },
   {
     type: 'group',
     id: 'play-collect',

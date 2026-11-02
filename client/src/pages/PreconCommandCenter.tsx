@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { ArrowRight, BarChart3, BookOpen, Boxes, Compass, Layers3, Library, Radar as RadarIcon, Sparkles, WandSparkles } from 'lucide-react';
 
 const destinations = [
-  { href: '/precon-collection', icon: Boxes, eyebrow: 'Decide', title: 'Collection Command Center', text: 'Unify sealed ownership, ManaBox coverage, color gaps, buy-next recommendations, and transfer opportunities.', accent: 'text-primary' },
+      { href: '/precon-studio', icon: Boxes, eyebrow: 'Start here', title: 'Precon Studio', text: 'Unified browse, collect, upgrade, buy-next, and execution workflows for the precon portfolio.', accent: 'text-primary' },
   { href: '/precons', icon: Library, eyebrow: 'Browse', title: 'Precon Library', text: 'Search, sort, paginate, inspect commanders, track acquisitions, and compare regular versus collector editions.', accent: 'text-cyan-600' },
   { href: '/precons#precon-color-barometer', icon: Compass, eyebrow: 'Understand', title: 'Color Barometer', text: 'See pair coverage separately from mono-color, tri-color, four-color, five-color, partner, and colorless identities.', accent: 'text-emerald-600' },
   { href: '/collection', icon: Boxes, eyebrow: 'Connect', title: 'Collection & Inventory', text: 'Use acquired precons and ManaBox cards as two layers: sealed ownership plus card-level deck completion.', accent: 'text-amber-600' },
