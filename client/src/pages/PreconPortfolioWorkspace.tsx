@@ -10,6 +10,8 @@ import { slugify } from '@/hooks/useCommanderDeck';
 import { LOCAL_WORKSPACE_CHANGED_EVENT } from '@/lib/localWorkspace';
 import preconColorIdentities from '@/data/preconColorIdentities.json';
 import { BridgeTransferPlanner } from '@/components/BridgeTransferPlanner';
+import { DeckDiffBuilder } from '@/components/DeckDiffBuilder';
+import { planBridgeTransfers } from '@/lib/bridgeTransferPlanning';
 
 const budgetTiers = [25, 50, 100, 250] as const;
 type Budget = typeof budgetTiers[number];
@@ -82,7 +84,9 @@ export default function PreconPortfolioWorkspace() {
   useEffect(() => { window.addEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh); return () => window.removeEventListener(LOCAL_WORKSPACE_CHANGED_EVENT, refresh); }, []);
 
   const deckList = decks || [];
+  const fantasticFour = useMemo(() => deckList.find(deck => deck.name.toLowerCase() === 'the fantastic four' && deck.set_code.toLowerCase() === 'msc'), [deckList]);
   const abzanArmor = useMemo(() => deckList.find(deck => deck.name.toLowerCase() === 'abzan armor' && deck.set_code.toLowerCase() === 'tdc'), [deckList]);
+  const wallTransferRows = useMemo(() => planBridgeTransfers(cards, abzanArmor), [abzanArmor, cards]);
   const ownedSlugs = useMemo(() => new Set(ownedPrecons.map(entry => entry.deckSlug.toLowerCase())), [ownedPrecons]);
   const owned = useMemo(() => ownedMap(cards), [cards]);
   const coverage = useMemo(() => detectInventoryDeckCompletions(deckList, cards, slugify), [cards, deckList]);
@@ -132,6 +136,7 @@ export default function PreconPortfolioWorkspace() {
 
     <section className="mt-6 border-2 border-border bg-card p-5 sm:p-7"><SectionHeader eyebrow="Phase 2 · ecosystem bridges" title="Where do my decks overlap?" detail="This heatmap-style view surfaces shared card names across the decks most relevant to your current projects. Use it to decide whether to transfer, buy a duplicate, or keep a card reserved." icon={Layers3} /><div className="mt-5 grid gap-3 md:grid-cols-2">{overlapRows.length ? overlapRows.map(row => <div key={`${row.left}-${row.right}`} className="border border-border bg-background p-4"><div className="flex items-center justify-between gap-3"><div><p className="font-black">{row.left}</p><p className="text-xs text-muted-foreground">↔ {row.right}</p></div><span className="font-mono text-sm font-black text-primary">{row.overlap} shared</span></div><p className="mt-3 text-xs leading-5 text-muted-foreground">{row.shared.length ? row.shared.join(' · ') : 'No sampled shared cards in the indexed lists.'}</p><button type="button" className="mt-3 font-mono text-[10px] font-black uppercase text-primary underline">Reserve transfer package</button></div>) : <p className="text-sm text-muted-foreground">The focused deck names are not yet present in this archive slice. Import the full ManaBox export to unlock exact transfer packages.</p>}</div><div className="mt-5 border-t border-border pt-4"><Link href="/precon-command-center#transfer-lab" className="inline-flex items-center gap-2 text-sm font-bold text-primary underline">Open full transfer lab <ArrowRight className="h-4 w-4" /></Link></div></section>
     <BridgeTransferPlanner inventory={cards} sourceDeck={abzanArmor} />
+    <DeckDiffBuilder deck={fantasticFour} transferRows={wallTransferRows} />
 
     <section className="mt-6 grid gap-5 lg:grid-cols-[1fr_1fr]"><div className="border-2 border-border bg-card p-5 sm:p-7"><SectionHeader eyebrow="Phase 3 · playgroup calibration" title="Choose the deck’s job" detail="Power mode changes the recommendation language, not the ownership facts. Keep this explicit so a premium card does not quietly turn a precon into a different deck." icon={Zap} /><div className="mt-5 space-y-2">{powerModes.map(item => <div key={item.id} className={`border p-3 ${mode === item.id ? 'border-primary bg-primary/5' : 'border-border bg-background'}`}><div className="flex justify-between gap-3"><strong>{item.label}</strong><span className="font-mono text-[10px] font-black uppercase text-primary">{item.target}</span></div><p className="mt-1 text-xs leading-5 text-muted-foreground">{item.detail}</p></div>)}</div></div><div className="border-2 border-border bg-card p-5 sm:p-7"><SectionHeader eyebrow="Phase 3 · collection missions" title="Close the gaps deliberately" detail="A mission is a measurable reason to buy, not a generic completionist checklist." icon={Crosshair} /><div className="mt-5 space-y-3">{gapMissions.map((mission, index) => <div key={mission.category} className="border border-border bg-background p-4"><div className="flex items-center justify-between gap-3"><div><h3 className="font-black">{mission.label}</h3><p className="font-mono text-[10px] uppercase text-muted-foreground">{mission.category}</p></div><span className={`font-mono text-xs font-black uppercase ${index === 0 ? 'text-rose-700' : 'text-muted-foreground'}`}>{mission.count ? `${mission.count} represented` : 'Open mission'}</span></div><p className="mt-2 text-xs leading-5 text-muted-foreground">Candidate shells: {mission.candidates.length ? mission.candidates.join(' · ') : 'Archive candidates pending'}</p></div>)}</div></div></section>
 
