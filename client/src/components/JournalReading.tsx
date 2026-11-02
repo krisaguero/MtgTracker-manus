@@ -56,6 +56,12 @@ const features = {
     takeaways: ['Build Invisible Woman as defensive spellslinger tokens, not generic four-color value.', 'Start with cheap interaction, token engines, and High Alert before premium doublers.', 'Import the full ManaBox export before treating any card as a confirmed buy.'],
     action: 'Open the Commander Library', target: '/commander',
   },
+  'typa-restock-alerts-reality-fracture': {
+    label: 'Restock desk · FOMO control', icon: MonitorPlay, card: 'TYPA restock alerts',
+    href: 'https://apps.apple.com/app/id6744125469', imageUrl: '/manus-storage/typa-today-restocks_7979f879.png',
+    takeaways: ['Use a small, budget-approved watchlist instead of tracking every trending product.', 'A restock alert is an availability signal, not proof that the price is good.', 'The Reality Fracture bundle example shows how a focused alert can turn into a real find.'],
+    action: 'Open TYPA on the App Store', target: 'https://apps.apple.com/app/id6744125469',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -70,11 +76,11 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
   const ref = journalCardImage(slug);
   if (!ref?.imageUrl) return null;
   const artOnly = slug === 'battle-box-october-17-recap';
+  const external = feature.href.startsWith('https://');
+  const image = <img src={artOnly ? ref.artUrl : ref.imageUrl} alt={artOnly ? `Representative artwork for Goblin Cavalcade` : feature.card} width={artOnly ? '626' : '488'} height={artOnly ? '457' : '680'} loading={compact ? 'lazy' : 'eager'} />;
   return <figure className={`journal-cover ${compact ? 'journal-cover--compact' : ''} ${artOnly ? 'journal-cover--art' : 'journal-cover--commander'}`}>
-    <Link href={feature.href} aria-label={`Explore ${feature.card}`} className="journal-cover-link">
-      <img src={artOnly ? ref.artUrl : ref.imageUrl} alt={artOnly ? `Representative artwork for Goblin Cavalcade` : feature.card} width={artOnly ? '626' : '488'} height={artOnly ? '457' : '680'} loading={compact ? 'lazy' : 'eager'} />
-    </Link>
-    <figcaption><span>{artOnly ? 'Representative deck artwork' : 'Primary commander · full card'}</span><Link href={feature.href}>{artOnly ? 'Goblin Cavalcade' : feature.card} <ArrowRight size={14} aria-hidden="true" /></Link>{!artOnly && cardReference(feature.card)?.oracleText && <p className="journal-cover-oracle"><strong>Oracle text</strong><br />{cardReference(feature.card)!.oracleText}</p>}<small>Card art{artOnly ? '' : ' and Oracle text'} via Scryfall · © Wizards of the Coast</small></figcaption>
+    {external ? <a href={feature.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${feature.card}`} className="journal-cover-link">{image}</a> : <Link href={feature.href} aria-label={`Explore ${feature.card}`} className="journal-cover-link">{image}</Link>}
+    <figcaption><span>{artOnly ? 'Representative deck artwork' : external ? 'User-supplied app evidence' : 'Primary commander · full card'}</span>{external ? <a href={feature.href} target="_blank" rel="noopener noreferrer">{feature.card} <ArrowRight size={14} aria-hidden="true" /></a> : <Link href={feature.href}>{feature.card} <ArrowRight size={14} aria-hidden="true" /></Link>}{!artOnly && !external && cardReference(feature.card)?.oracleText && <p className="journal-cover-oracle"><strong>Oracle text</strong><br />{cardReference(feature.card)!.oracleText}</p>}<small>{external ? 'Screenshot supplied by the author · app details linked to the App Store' : `Card art${artOnly ? '' : ' and Oracle text'} via Scryfall · © Wizards of the Coast`}</small></figcaption>
   </figure>;
 }
 
@@ -136,9 +142,10 @@ export function ReadingOverview({ article }: { article: ReadingArticle }) {
   const feature = readingFeature(article.slug);
   const sections = articleSections(article.body);
   const Icon = feature?.icon ?? BookOpen;
+  const externalTarget = feature?.target.startsWith('https://');
   return <aside className="journal-overview" aria-label="Article overview">
     {feature && <div className="journal-takeaways"><p className="journal-eyebrow"><Icon size={18} aria-hidden="true" /> The short version</p><ul>{feature.takeaways.map(item => <li key={item}><Check size={16} aria-hidden="true" /><span>{item}</span></li>)}</ul>
-      <Link href={feature.target} className="journal-primary-link">{feature.action}<ArrowRight size={17} aria-hidden="true" /></Link>
+      {externalTarget ? <a href={feature.target} target="_blank" rel="noopener noreferrer" className="journal-primary-link">{feature.action}<ArrowRight size={17} aria-hidden="true" /></a> : <Link href={feature.target} className="journal-primary-link">{feature.action}<ArrowRight size={17} aria-hidden="true" /></Link>}
     </div>}
     <nav aria-label="On this page" className="journal-toc"><p className="journal-eyebrow"><List size={18} aria-hidden="true" /> In this article</p><ol>{sections.map((section, index) => <li key={section.id}><a href={`#${section.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{section.title}</a></li>)}</ol>{feature?.target === '#deck-library' && <a className="journal-toc-library" href="#deck-library">Jump to the deck cards <ArrowRight size={14} aria-hidden="true" /></a>}</nav>
   </aside>;
