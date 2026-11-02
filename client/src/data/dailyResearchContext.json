@@ -1,44 +1,151 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T14:52:21.819Z",
-  "pricingDate": "2026-11-01",
-  "dataWindow": "2026-10-09 through 2026-11-01",
+  "generatedAt": "2026-11-02T00:25:55.645Z",
+  "pricingDate": "2026-11-02",
+  "dataWindow": "2026-10-10 through 2026-11-02",
   "marketStatus": [
+    "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 0,
-  "negativeSignals": 0,
+  "positiveSignals": 1784,
+  "negativeSignals": 2222,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 76,
-    "multiSourceSignals": 12435,
+    "singleSourceSignals": 83,
+    "multiSourceSignals": 12428,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
-      "category": "commander-picks",
-      "cards": 12511,
-      "positiveSignals": 0,
+      "category": "penny-risers",
+      "cards": 36,
+      "positiveSignals": 36,
       "negativeSignals": 0,
-      "averagePctChange": 0
+      "averagePctChange": 25.63
+    },
+    {
+      "category": "commander-picks",
+      "cards": 12446,
+      "positiveSignals": 1748,
+      "negativeSignals": 2193,
+      "averagePctChange": -0.14
+    },
+    {
+      "category": "reprint-squashes",
+      "cards": 29,
+      "positiveSignals": 0,
+      "negativeSignals": 29,
+      "averagePctChange": -27.29
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-01; 0 rose and 0 fell in the latest snapshot.",
-    "commander-picks has the strongest latest average movement at +0% across 12511 cards.",
-    "76 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "No reprint-floor observations were present in the latest snapshot.",
+    "12511 exact-printing price observations were screened for 2026-11-02; 1784 rose and 2222 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +25.63% across 36 cards.",
+    "83 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "29 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
-    "topGainers": [],
-    "topDecliners": [],
+    "topGainers": [
+      {
+        "name": "Reality Shift",
+        "setCode": "drc",
+        "collectorNumber": "39",
+        "currentUsd": 0.6,
+        "percentChange": 114.29,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Sunpetal Grove",
+        "setCode": "msc",
+        "collectorNumber": "272",
+        "currentUsd": 0.65,
+        "percentChange": 80.56,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Gift of Immortality",
+        "setCode": "msc",
+        "collectorNumber": "134",
+        "currentUsd": 0.52,
+        "percentChange": 52.94,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Arixmethes, Slumbering Isle",
+        "setCode": "dsc",
+        "collectorNumber": "211",
+        "currentUsd": 1.21,
+        "percentChange": 34.44,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Soul of New Phyrexia",
+        "setCode": "moc",
+        "collectorNumber": "382",
+        "currentUsd": 1.19,
+        "percentChange": 33.71,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      }
+    ],
+    "topDecliners": [
+      {
+        "name": "Orzhov Basilica",
+        "setCode": "drc",
+        "collectorNumber": "164",
+        "currentUsd": 0.29,
+        "percentChange": -53.97,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Path of Ancestry",
+        "setCode": "blc",
+        "collectorNumber": "322",
+        "currentUsd": 0.34,
+        "percentChange": -49.25,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Woe Strider",
+        "setCode": "tdc",
+        "collectorNumber": "201",
+        "currentUsd": 0.32,
+        "percentChange": -47.54,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Goblin Electromancer",
+        "setCode": "tdc",
+        "collectorNumber": "99",
+        "currentUsd": 0.34,
+        "percentChange": -46.03,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Pearl-Ear, Imperial Advisor",
+        "setCode": "soc",
+        "collectorNumber": "160",
+        "currentUsd": 0.38,
+        "percentChange": -44.93,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      }
+    ],
     "snapshotWarnings": []
   },
   "historicalSignalCheck": {
@@ -46,34 +153,34 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Idol of Oblivion",
-        "setCode": "plst",
-        "collectorNumber": "BLC-277",
-        "observations": 21,
-        "firstDate": "2026-10-09",
-        "lastDate": "2026-11-01",
-        "totalPctChange": 14.23,
-        "positiveDays": 5,
-        "negativeDays": 0
-      },
-      {
         "name": "Command Tower",
         "setCode": "cmd",
         "collectorNumber": "269",
         "observations": 21,
-        "firstDate": "2026-10-09",
-        "lastDate": "2026-11-01",
-        "totalPctChange": -13,
+        "firstDate": "2026-10-10",
+        "lastDate": "2026-11-02",
+        "totalPctChange": -13.86,
         "positiveDays": 4,
         "negativeDays": 2
+      },
+      {
+        "name": "Idol of Oblivion",
+        "setCode": "plst",
+        "collectorNumber": "BLC-277",
+        "observations": 21,
+        "firstDate": "2026-10-10",
+        "lastDate": "2026-11-02",
+        "totalPctChange": 12.5,
+        "positiveDays": 5,
+        "negativeDays": 0
       },
       {
         "name": "Island",
         "setCode": "cm2",
         "collectorNumber": "291",
-        "observations": 13,
+        "observations": 14,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-01",
+        "lastDate": "2026-11-02",
         "totalPctChange": 390,
         "positiveDays": 1,
         "negativeDays": 0
@@ -82,20 +189,20 @@
         "name": "Bronzebeak Foragers",
         "setCode": "lcc",
         "collectorNumber": "69",
-        "observations": 13,
+        "observations": 14,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-01",
-        "totalPctChange": 258.76,
-        "positiveDays": 9,
+        "lastDate": "2026-11-02",
+        "totalPctChange": 277.32,
+        "positiveDays": 10,
         "negativeDays": 0
       },
       {
         "name": "Swamp",
         "setCode": "znr",
         "collectorNumber": "382",
-        "observations": 13,
+        "observations": 14,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-01",
+        "lastDate": "2026-11-02",
         "totalPctChange": 233.33,
         "positiveDays": 4,
         "negativeDays": 6

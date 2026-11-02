@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T14:52:22.438Z",
+  "updatedAt": "2026-11-02T00:25:56.292Z",
   "records": [
+    {
+      "id": "2026-11-02-precon-sealed-economics:1:drc:39",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Reality Shift (DRC 39) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 114.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:2:msc:272",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Sunpetal Grove (MSC 272) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sunpetal Grove",
+      "setCode": "msc",
+      "collectorNumber": "272",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 80.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:3:drc:164",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Orzhov Basilica (DRC 164) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Orzhov Basilica",
+      "setCode": "drc",
+      "collectorNumber": "164",
+      "entryUsd": 0.29,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 54.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:4:msc:134",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Gift of Immortality (MSC 134) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Gift of Immortality",
+      "setCode": "msc",
+      "collectorNumber": "134",
+      "entryUsd": 0.52,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 52.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:5:blc:322",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Path of Ancestry (BLC 322) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "blc",
+      "collectorNumber": "322",
+      "entryUsd": 0.34,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 49.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:6:tdc:201",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Woe Strider (TDC 201) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Woe Strider",
+      "setCode": "tdc",
+      "collectorNumber": "201",
+      "entryUsd": 0.32,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 47.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:7:tdc:99",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Goblin Electromancer (TDC 99) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Goblin Electromancer",
+      "setCode": "tdc",
+      "collectorNumber": "99",
+      "entryUsd": 0.34,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 46.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:8:soc:160",
+      "dateKey": "2026-11-02",
+      "postId": "2026-11-02-precon-sealed-economics",
+      "prompt": "Assess Pearl-Ear, Imperial Advisor (SOC 160) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Pearl-Ear, Imperial Advisor",
+      "setCode": "soc",
+      "collectorNumber": "160",
+      "entryUsd": 0.38,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 44.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-02",
+        "evaluationDate": "2026-11-16"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-10-31-collection-buy-list:1:c19:273",
       "dateKey": "2026-10-31",
