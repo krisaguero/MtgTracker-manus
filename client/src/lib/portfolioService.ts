@@ -6,6 +6,7 @@ export type SavedBuild = { id: string; deckSlug: string; label: string; budget: 
 export type Reservation = { identity: string; name: string; deckSlug: string; quantity: number; updatedAt: number };
 export type AcquisitionEstimate = { deckSlug: string; currentValueUsd: number; updatedAt: number };
 export type AcquisitionEvent = { id: string; date: string; kind: 'sealed' | 'singles' | 'upgrade' | 'sale'; label: string; amountUsd: number; deckSlug?: string; note?: string };
+export type PlanDecision = 'transfer' | 'buy' | 'defer';
 export type ImportAction = 'added' | 'merged' | 'flagged' | 'rejected';
 export type ImportPreviewRow = { card: OwnedCard; action: ImportAction; reason: string; approved: boolean };
 export type PortfolioServiceState = {
@@ -14,12 +15,13 @@ export type PortfolioServiceState = {
   reservations: Reservation[];
   acquisitionEstimates: AcquisitionEstimate[];
   acquisitionEvents: AcquisitionEvent[];
+  planDecisions: Partial<Record<string, PlanDecision>>;
   transferApprovals: string[];
   lastImportReport?: CollectionImportReport;
 };
 
 const STORAGE_KEY = 'mtg_tracker_portfolio_service_v1';
-const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], transferApprovals: [] };
+const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, transferApprovals: [] };
 
 export function loadPortfolioServiceState(): PortfolioServiceState {
   try {
@@ -30,6 +32,7 @@ export function loadPortfolioServiceState(): PortfolioServiceState {
       reservations: Array.isArray(parsed?.reservations) ? parsed.reservations : [],
       acquisitionEstimates: Array.isArray(parsed?.acquisitionEstimates) ? parsed.acquisitionEstimates : [],
       acquisitionEvents: Array.isArray(parsed?.acquisitionEvents) ? parsed.acquisitionEvents : [],
+      planDecisions: parsed?.planDecisions && typeof parsed.planDecisions === 'object' ? parsed.planDecisions : {},
       transferApprovals: Array.isArray(parsed?.transferApprovals) ? parsed.transferApprovals : [],
       lastImportReport: parsed?.lastImportReport,
     };
@@ -89,6 +92,10 @@ export function saveBuild(state: PortfolioServiceState, build: Omit<SavedBuild, 
 export function addAcquisitionEvent(state: PortfolioServiceState, event: Omit<AcquisitionEvent, 'id'>): PortfolioServiceState {
   const id = `${event.date}:${event.kind}:${event.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}:${Date.now()}`;
   return { ...state, acquisitionEvents: [{ ...event, id }, ...state.acquisitionEvents] };
+}
+
+export function setPlanDecision(state: PortfolioServiceState, identity: string, decision: PlanDecision): PortfolioServiceState {
+  return { ...state, planDecisions: { ...state.planDecisions, [identity]: decision } };
 }
 
 export function reconcileImport(existing: OwnedCard[], incoming: OwnedCard[]) {

@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { addAcquisitionEvent, availableQuantity, approveTransfer, reconcileImport, releaseReservation, tryReserveCard, type PortfolioServiceState } from './portfolioService';
+import { addAcquisitionEvent, availableQuantity, approveTransfer, reconcileImport, releaseReservation, setPlanDecision, tryReserveCard, type PortfolioServiceState } from './portfolioService';
 import type { OwnedCard } from './manaboxParser';
 
 const card: OwnedCard = { name: 'Wall of Denial', quantity: 2, setCode: 'arb', collectorNumber: '5' };
-const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], transferApprovals: [] };
+const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, transferApprovals: [] };
 
 describe('portfolio service hardening', () => {
   it('flags name-only rows and approves exact printings by default', () => {
@@ -34,5 +34,11 @@ describe('portfolio service hardening', () => {
     expect(availableQuantity(released, card)).toBe(1);
     const withEvent = addAcquisitionEvent(released, { date: '2026-11-01', kind: 'singles', label: 'Wall package', amountUsd: 12.5 });
     expect(withEvent.acquisitionEvents[0]?.amountUsd).toBe(12.5);
+  });
+
+  it('persists an explicit execution decision without changing reservations', () => {
+    const next = setPlanDecision(state, 'wall of denial', 'buy');
+    expect(next.planDecisions['wall of denial']).toBe('buy');
+    expect(next.reservations).toEqual([]);
   });
 });

@@ -18,6 +18,7 @@ const CommanderPreconLibrary = lazy(() => import('@/pages/CommanderPreconLibrary
 const PreconCommandCenter = lazy(() => import('@/pages/PreconCommandCenter'));
 const PreconCollectionCommandCenter = lazy(() => import('@/pages/PreconCollectionCommandCenter'));
 const PreconPortfolioWorkspace = lazy(() => import('@/pages/PreconPortfolioWorkspace'));
+const InvisibleWomanFocusedPlan = lazy(() => import('@/pages/InvisibleWomanFocusedPlan'));
 const CommanderMarketIndex = lazy(() => import('@/pages/CommanderMarketIndex'));
 const Collection = lazy(() => import('@/pages/Collection'));
 const CollectionSetDirectory = lazy(() => import('@/pages/CollectionSetDirectory'));
@@ -71,6 +72,7 @@ function Router() {
         <Route path={'/precons'} component={CommanderPreconLibrary} />
         <Route path={'/precon-command-center'} component={PreconCommandCenter} />
         <Route path={'/precon-collection'} component={PreconCollectionCommandCenter} />
+        <Route path={'/precon-portfolio/plan/invisible-woman-focused'} component={InvisibleWomanFocusedPlan} />
         <Route path={'/precon-portfolio'} component={PreconPortfolioWorkspace} />
         <Route path={'/commander-market'} component={CommanderMarketIndex} />
         <Route path={'/collection'} component={Collection} />
