@@ -15,6 +15,7 @@ import rawSourceMarketWatch from "@/data/notionMarketWatchSnapshot.json";
 import { MarketCardPreview } from "@/components/MarketCardPreview";
 import { VerifiedHistoricalEvidence } from "@/components/VerifiedHistoricalEvidence";
 import { MarketMetaWatchDashboard } from "@/components/MarketMetaWatchDashboard";
+import { MarketWatchTerminal } from "@/components/MarketWatchTerminal";
 import { TabletopPaperSpotlightTeaser } from "./TabletopPaperSpotlight";
 
 type FeedCard = {
@@ -593,6 +594,7 @@ export default function MarketResearchFeed() {
             </span>
           </div>
         </section>
+        <MarketWatchTerminal fallbackSignals={latest?.cards || []} generatedDate={latest?.dateKey} />
         {weeklyDigest && (
           <section className="border-2 border-border bg-card p-5 sm:p-6" aria-label="Weekly movers digest">
             <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-4">
@@ -608,7 +610,7 @@ export default function MarketResearchFeed() {
             </div>
           </section>
         )}
-        {latest && (
+        {latest && requestedDate && (
           <section className="border border-border bg-card p-4 sm:p-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
