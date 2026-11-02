@@ -2,7 +2,7 @@ import type { OwnedCard, CollectionImportReport } from './manaboxParser';
 import { collectionIdentity } from './manaboxParser';
 
 export type MissionStep = { id: string; label: string; complete: boolean };
-export type SavedBuild = { id: string; deckSlug: string; label: string; budget: number; mode: string; createdAt: number };
+export type SavedBuild = { id: string; deckSlug: string; label: string; budget: number; mode: string; additions: string[]; cuts: string[]; createdAt: number };
 export type Reservation = { identity: string; name: string; deckSlug: string; quantity: number; updatedAt: number };
 export type AcquisitionEstimate = { deckSlug: string; currentValueUsd: number; updatedAt: number };
 export type AcquisitionEvent = { id: string; date: string; kind: 'sealed' | 'singles' | 'upgrade' | 'sale'; label: string; amountUsd: number; deckSlug?: string; note?: string };
@@ -26,7 +26,7 @@ export function loadPortfolioServiceState(): PortfolioServiceState {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null') as Partial<PortfolioServiceState> | null;
     return {
       missions: parsed?.missions && typeof parsed.missions === 'object' ? parsed.missions : {},
-      savedBuilds: Array.isArray(parsed?.savedBuilds) ? parsed.savedBuilds : [],
+      savedBuilds: Array.isArray(parsed?.savedBuilds) ? parsed.savedBuilds.map(item => ({ ...item, additions: Array.isArray(item.additions) ? item.additions : [], cuts: Array.isArray(item.cuts) ? item.cuts : [] })) : [],
       reservations: Array.isArray(parsed?.reservations) ? parsed.reservations : [],
       acquisitionEstimates: Array.isArray(parsed?.acquisitionEstimates) ? parsed.acquisitionEstimates : [],
       acquisitionEvents: Array.isArray(parsed?.acquisitionEvents) ? parsed.acquisitionEvents : [],
