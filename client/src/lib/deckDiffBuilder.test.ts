@@ -24,7 +24,7 @@ describe('deck diff builder', () => {
     expect(result.balanced).toBe(false);
     expect(result.validation.totalCards).toBe(101);
     expect(result.validation.legalSize).toBe(false);
-    expect(result.validation.warnings).toContain('Expected 99 mainboard cards; diff contains 100.');
+    expect(result.validation.warnings).toContain('Expected 99 mainboard cards for 1 commander card; diff contains 100.');
   });
 
   it('allows basic land multiples but flags nonbasic singleton violations', () => {

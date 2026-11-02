@@ -54,10 +54,11 @@ export function validateCommanderDeck(commander: DeckDiffEntry[], mainboard: Dec
   const totalCards = commanderCards + mainboardCards;
   const duplicateViolations = mainboard.filter(card => card.count > 1 && !['basic land — plains', 'basic land — island', 'basic land — swamp', 'basic land — mountain', 'basic land — forest', 'plains', 'island', 'swamp', 'mountain', 'forest', 'wastes'].includes(card.name.toLowerCase())).map(card => `${card.name} (${card.count})`);
   const warnings: string[] = [];
-  if (commanderCards !== 1) warnings.push(`Expected 1 commander card; diff contains ${commanderCards}.`);
-  if (mainboardCards !== 99) warnings.push(`Expected 99 mainboard cards; diff contains ${mainboardCards}.`);
+  if (commanderCards < 1 || commanderCards > 2) warnings.push(`Expected 1 or 2 commander cards; diff contains ${commanderCards}.`);
+  const expectedMainboard = 100 - commanderCards;
+  if (mainboardCards !== expectedMainboard) warnings.push(`Expected ${expectedMainboard} mainboard cards for ${commanderCards} commander card${commanderCards === 1 ? '' : 's'}; diff contains ${mainboardCards}.`);
   if (duplicateViolations.length) warnings.push(`Singleton review required: ${duplicateViolations.join(', ')}.`);
-  return { totalCards, commanderCards, mainboardCards, legalSize: totalCards === 100, commanderCountValid: commanderCards === 1, duplicateViolations, warnings };
+  return { totalCards, commanderCards, mainboardCards, legalSize: totalCards === 100, commanderCountValid: commanderCards >= 1 && commanderCards <= 2, duplicateViolations, warnings };
 }
 
 export function buildDeckDiff(deck: RawCommanderDeck, additions: DeckDiffEntry[], cuts: DeckDiffEntry[]): DeckDiffResult {
