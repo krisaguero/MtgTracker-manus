@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { availableQuantity, approveTransfer, reconcileImport, tryReserveCard, type PortfolioServiceState } from './portfolioService';
+import { addAcquisitionEvent, availableQuantity, approveTransfer, reconcileImport, releaseReservation, tryReserveCard, type PortfolioServiceState } from './portfolioService';
 import type { OwnedCard } from './manaboxParser';
 
 const card: OwnedCard = { name: 'Wall of Denial', quantity: 2, setCode: 'arb', collectorNumber: '5' };
-const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], transferApprovals: [] };
+const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], transferApprovals: [] };
 
 describe('portfolio service hardening', () => {
   it('flags name-only rows and approves exact printings by default', () => {
@@ -26,5 +26,13 @@ describe('portfolio service hardening', () => {
     const next = approveTransfer(state, 'fantastic-four-wall-conversion');
     expect(next.transferApprovals).toEqual(['fantastic-four-wall-conversion']);
     expect(next.missions).toEqual({});
+  });
+
+  it('releases one reserved copy and records dated cash events', () => {
+    const reserved = tryReserveCard(state, card, 'abzan-armor', 2).state;
+    const released = releaseReservation(reserved, reserved.reservations[0]!.identity, 'abzan-armor');
+    expect(availableQuantity(released, card)).toBe(1);
+    const withEvent = addAcquisitionEvent(released, { date: '2026-11-01', kind: 'singles', label: 'Wall package', amountUsd: 12.5 });
+    expect(withEvent.acquisitionEvents[0]?.amountUsd).toBe(12.5);
   });
 });

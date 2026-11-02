@@ -5,6 +5,7 @@ export type MissionStep = { id: string; label: string; complete: boolean };
 export type SavedBuild = { id: string; deckSlug: string; label: string; budget: number; mode: string; createdAt: number };
 export type Reservation = { identity: string; name: string; deckSlug: string; quantity: number; updatedAt: number };
 export type AcquisitionEstimate = { deckSlug: string; currentValueUsd: number; updatedAt: number };
+export type AcquisitionEvent = { id: string; date: string; kind: 'sealed' | 'singles' | 'upgrade' | 'sale'; label: string; amountUsd: number; deckSlug?: string; note?: string };
 export type ImportAction = 'added' | 'merged' | 'flagged' | 'rejected';
 export type ImportPreviewRow = { card: OwnedCard; action: ImportAction; reason: string; approved: boolean };
 export type PortfolioServiceState = {
@@ -12,12 +13,13 @@ export type PortfolioServiceState = {
   savedBuilds: SavedBuild[];
   reservations: Reservation[];
   acquisitionEstimates: AcquisitionEstimate[];
+  acquisitionEvents: AcquisitionEvent[];
   transferApprovals: string[];
   lastImportReport?: CollectionImportReport;
 };
 
 const STORAGE_KEY = 'mtg_tracker_portfolio_service_v1';
-const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], transferApprovals: [] };
+const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], transferApprovals: [] };
 
 export function loadPortfolioServiceState(): PortfolioServiceState {
   try {
@@ -27,6 +29,7 @@ export function loadPortfolioServiceState(): PortfolioServiceState {
       savedBuilds: Array.isArray(parsed?.savedBuilds) ? parsed.savedBuilds : [],
       reservations: Array.isArray(parsed?.reservations) ? parsed.reservations : [],
       acquisitionEstimates: Array.isArray(parsed?.acquisitionEstimates) ? parsed.acquisitionEstimates : [],
+      acquisitionEvents: Array.isArray(parsed?.acquisitionEvents) ? parsed.acquisitionEvents : [],
       transferApprovals: Array.isArray(parsed?.transferApprovals) ? parsed.transferApprovals : [],
       lastImportReport: parsed?.lastImportReport,
     };
@@ -47,6 +50,15 @@ export function reserveCard(state: PortfolioServiceState, card: OwnedCard, deckS
     ? state.reservations.map(item => item === existing ? { ...item, quantity: item.quantity + quantity, updatedAt: Date.now() } : item)
     : [...state.reservations, { identity, name: card.name, deckSlug, quantity, updatedAt: Date.now() }];
   return { ...state, reservations };
+}
+
+export function releaseReservation(state: PortfolioServiceState, identity: string, deckSlug: string, quantity = 1): PortfolioServiceState {
+  const next = state.reservations.flatMap(item => {
+    if (item.identity !== identity || item.deckSlug !== deckSlug) return [item];
+    const remaining = item.quantity - Math.max(1, Math.floor(quantity));
+    return remaining > 0 ? [{ ...item, quantity: remaining, updatedAt: Date.now() }] : [];
+  });
+  return { ...state, reservations: next };
 }
 
 export function reservedQuantity(state: PortfolioServiceState, identity: string): number {
@@ -72,6 +84,11 @@ export function saveBuild(state: PortfolioServiceState, build: Omit<SavedBuild, 
   const id = `${build.deckSlug}:${build.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
   const next = { ...build, id, createdAt: Date.now() };
   return { ...state, savedBuilds: [next, ...state.savedBuilds.filter(item => item.id !== id)] };
+}
+
+export function addAcquisitionEvent(state: PortfolioServiceState, event: Omit<AcquisitionEvent, 'id'>): PortfolioServiceState {
+  const id = `${event.date}:${event.kind}:${event.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}:${Date.now()}`;
+  return { ...state, acquisitionEvents: [{ ...event, id }, ...state.acquisitionEvents] };
 }
 
 export function reconcileImport(existing: OwnedCard[], incoming: OwnedCard[]) {
