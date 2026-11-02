@@ -5,6 +5,7 @@ import {
   Cloud,
   Database,
   FileSpreadsheet,
+  GitBranch,
   HardDrive,
   LockKeyhole,
   ShieldCheck,
@@ -125,6 +126,63 @@ const ecosystemBuildQueue = [
   { title: "Import interoperability test harness", detail: "Show parsed, resolved, ambiguous, rejected, duplicate, and metadata-lost records for every supported source before the user commits an import." },
 ];
 
+const buildTimeline = [
+  {
+    date: "Oct 31",
+    commit: "94820ec → 00f97a1",
+    title: "Collection intelligence became the foundation",
+    detail: "Cross-precon coverage, conflict-aware workspace sync, automatic full-deck detection, and authoritative color identities turned the tracker from a card catalog into a collection-aware operating system.",
+    status: "Shipped",
+    href: "/precon-collection",
+    label: "Open collection command center",
+  },
+  {
+    date: "Nov 1",
+    commit: "1937593 → e2d3151",
+    title: "Invisible Woman became a real upgrade project",
+    detail: "The Fantastic Four work gained a detailed Wall conversion path, card spotlight imagery, budget lanes, and an editorial explanation of why Invisible Woman wants toughness-based pressure rather than generic goodstuff.",
+    status: "Shipped",
+    href: "/blog/invisible-woman-build-the-wall",
+    label: "Read the Invisible Woman article",
+  },
+  {
+    date: "Nov 1",
+    commit: "10d068b → 61ab8cb",
+    title: "Transfers and announcements became repeatable workflows",
+    detail: "The Simic/Dimir transfer optimizer, spoiler/precon announcement watcher, and cross-deck upgrade bridges established the next-action layer: move cards internally before buying more.",
+    status: "Shipped",
+    href: "/precon-portfolio",
+    label: "Open the portfolio workspace",
+  },
+  {
+    date: "Nov 2",
+    commit: "dc36d49 → d6e6cc6",
+    title: "Market Watch was compressed into a decision terminal",
+    detail: "Recovered daily reports now feed weekly digests and a compact 25-mover terminal, replacing a long text wall with a surface for sorting, scanning, and drilling into history.",
+    status: "Shipped",
+    href: "/market-watch",
+    label: "Open Market Watch",
+  },
+  {
+    date: "Nov 2",
+    commit: "c9e541b → 16b7a6a",
+    title: "The deck-change loop reached testable 100-card diffs",
+    detail: "The bridge planner now reserves source-deck copies, the final diff builder validates one- and two-commander products, and synthetic swaps can be run across the archived precon universe before a physical import.",
+    status: "Shipped",
+    href: "/precon-portfolio",
+    label: "Run a deck diff simulation",
+  },
+  {
+    date: "Next",
+    commit: "Roadmap ECO-06",
+    title: "Finish the scanner-agnostic intake hub",
+    detail: "The next high-impact build is a single import preview for ManaBox and other deck/collection exports, with parse errors, duplicate handling, metadata-loss reporting, and exact-printing review before commit.",
+    status: "Next build",
+    href: "/collection",
+    label: "Open collection intake",
+  },
+];
+
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">
@@ -139,7 +197,7 @@ export default function Roadmap() {
       <header className="border-b-2 border-border bg-card">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8 sm:py-12">
           <SectionLabel>
-            Product roadmap · reviewed October 23, 2026
+            Product roadmap · build history through November 2, 2026
           </SectionLabel>
           <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,1fr)_310px] lg:items-end">
             <div>
@@ -186,6 +244,20 @@ export default function Roadmap() {
       </header>
 
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-6 sm:space-y-10 sm:px-8 sm:py-10">
+        <section aria-labelledby="timeline-heading" className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-8">
+          <div className="mb-5 flex items-center gap-3">
+            <GitBranch className="h-5 w-5 text-primary" />
+            <div>
+              <SectionLabel>History · GitHub-backed milestones</SectionLabel>
+              <h2 id="timeline-heading" className="mt-1 text-2xl font-black sm:text-3xl">How the tracker got here</h2>
+            </div>
+          </div>
+          <p className="mb-6 max-w-4xl text-sm leading-6 text-muted-foreground">This is the working history behind the current product—not a list of disconnected ideas. Each milestone points to the live surface or article that explains what changed, while the final entry turns the next unfinished roadmap item into a concrete action.</p>
+          <div className="relative space-y-4 border-l-2 border-primary/25 pl-5 sm:pl-7">
+            {buildTimeline.map(item => <article key={`${item.date}-${item.title}`} className="relative border border-border bg-card p-4 sm:p-5"><span className="absolute -left-[29px] top-5 h-3 w-3 border-2 border-primary bg-background sm:-left-[37px]" aria-hidden="true" /><div className="flex flex-wrap items-center gap-2 font-mono text-[10px] font-black uppercase tracking-widest"><span className="text-primary">{item.date}</span><span className="text-muted-foreground">{item.commit}</span><span className={`border px-2 py-1 ${item.status === 'Shipped' ? 'border-emerald-600/40 bg-emerald-600/5 text-emerald-700' : 'border-amber-600/40 bg-amber-600/5 text-amber-700'}`}>{item.status}</span></div><h3 className="mt-3 text-lg font-black sm:text-xl">{item.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{item.detail}</p><Link href={item.href} className="mt-4 inline-flex items-center gap-2 border border-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary hover:bg-primary hover:text-primary-foreground">{item.label} <ArrowRight className="h-3.5 w-3.5" /></Link></article>)}
+          </div>
+        </section>
+
         <section aria-labelledby="implemented-heading">
           <div className="mb-4 flex items-center gap-3">
             <CheckCircle2 className="h-5 w-5 text-emerald-600" />
