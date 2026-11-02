@@ -178,16 +178,18 @@ export function CardSpotlightGallery({ slug }: { slug: string }) {
   const spotlightSet = editorialSpotlights[slug];
   useEffect(() => {
     if (!spotlightSet) return;
+    const localCards = spotlightSet.cards.map(spotlight => ({ ...spotlight, imageUrl: cardReference(spotlight.name)?.imageUrl ?? undefined }));
+    setCards(localCards);
     let cancelled = false;
     const load = async () => {
       const results = await Promise.all(spotlightSet.cards.map(async (spotlight) => {
         try {
           const response = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
-          if (!response.ok) return spotlight;
+          if (!response.ok) return { ...spotlight, imageUrl: cardReference(spotlight.name)?.imageUrl ?? undefined };
           const card = await response.json() as { image_uris?: { normal?: string }; scryfall_uri?: string; prices?: { usd?: string | null; usd_foil?: string | null } };
           return { ...spotlight, imageUrl: card.image_uris?.normal, scryfallUri: card.scryfall_uri, usd: card.prices?.usd, usdFoil: card.prices?.usd_foil };
         } catch {
-          return spotlight;
+          return { ...spotlight, imageUrl: cardReference(spotlight.name)?.imageUrl ?? undefined };
         }
       }));
       if (!cancelled) setCards(results);
