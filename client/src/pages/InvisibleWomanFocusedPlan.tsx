@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 import { invisibleWomanUpgrades } from './PreconPortfolioWorkspace';
 import { collectionIdentity, loadOwnedCollection, type OwnedCard } from '@/lib/manaboxParser';
 import { loadPortfolioServiceState, markPurchasePriceAlertsRead, releaseReservation, reserveCard, savePortfolioServiceState, setPlanDecision, syncPurchasePriceWatches, type PlanDecision, type PortfolioServiceState } from '@/lib/portfolioService';
-import { resolveCardPrice, useMarketPriceIndex } from '@/lib/marketPriceIndex';
+import { fetchPurchasePrices } from '@/lib/purchasePriceTracker';
 
 type RowStatus = 'owned' | 'conflict' | 'missing' | 'buy' | 'defer' | 'transfer';
 const TARGET_DECK = 'msc/the-fantastic-four';
@@ -29,7 +29,9 @@ export default function InvisibleWomanFocusedPlan() {
   const [cards, setCards] = useState<OwnedCard[]>(() => loadOwnedCollection());
   const [state, setState] = useState<PortfolioServiceState>(() => loadPortfolioServiceState());
   const [message, setMessage] = useState('');
-  const { ready: marketReady, loading: marketLoading } = useMarketPriceIndex();
+  const [livePrices, setLivePrices] = useState<Record<string, number | null>>({});
+  const [priceLoading, setPriceLoading] = useState(false);
+  const [priceCheckedAt, setPriceCheckedAt] = useState('');
   const lastPriceSyncKey = useRef('');
   const ownedByName = useMemo(() => new Map(cards.map(card => [card.name.toLowerCase(), card])), [cards]);
   const saveState = (next: PortfolioServiceState) => { setState(next); savePortfolioServiceState(next); };
@@ -46,12 +48,27 @@ export default function InvisibleWomanFocusedPlan() {
   const unresolvedRows = rows.filter(row => ['missing', 'conflict'].includes(row.status));
   const spend = buyRows.reduce((sum, row) => sum + row.card.price, 0);
   const priceObservations = useMemo(() => buyRows.map(row => {
-    const resolved = resolveCardPrice(row.card.name);
-    return { identity: row.identity, name: row.card.name, deckSlug: TARGET_DECK, targetUsd: row.card.price, latestUsd: resolved?.usd ?? null };
-  }), [buyRows]);
+    return { identity: row.identity, name: row.card.name, deckSlug: TARGET_DECK, targetUsd: row.card.price, latestUsd: livePrices[row.identity] ?? null };
+  }), [buyRows, livePrices]);
+  const basketKey = buyRows.map(row => `${row.identity}:${row.card.name}`).join('|');
+  useEffect(() => {
+    if (!basketKey) return;
+    const controller = new AbortController();
+    setPriceLoading(true);
+    void fetchPurchasePrices(buyRows.map(row => ({ identity: row.identity, name: row.card.name })), controller.signal)
+      .then(results => {
+        if (controller.signal.aborted) return;
+        setLivePrices(Object.fromEntries(results.map(result => [result.identity, result.usd])));
+        setPriceCheckedAt(results[0]?.checkedAt ?? '');
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setPriceLoading(false);
+      });
+    return () => controller.abort();
+  }, [basketKey]);
   const priceSyncKey = priceObservations.map(observation => `${observation.identity}:${observation.latestUsd ?? 'unpriced'}`).join('|');
   useEffect(() => {
-    if (!marketReady || !priceSyncKey || priceSyncKey === lastPriceSyncKey.current) return;
+    if (priceLoading || !priceSyncKey || priceSyncKey === lastPriceSyncKey.current) return;
     lastPriceSyncKey.current = priceSyncKey;
     const next = syncPurchasePriceWatches(state, priceObservations);
     const freshAlerts = next.priceAlerts.filter(alert => !state.priceAlerts.some(previous => previous.id === alert.id));
@@ -61,7 +78,7 @@ export default function InvisibleWomanFocusedPlan() {
       if (alert.kind === 'rise') toast.warning(`${alert.name} rose ${(alert.changePct ?? 0).toFixed(1)}%`);
       if (alert.kind === 'recovered') toast(`${alert.name} has a new indexed price`);
     });
-  }, [marketReady, priceObservations, priceSyncKey]);
+  }, [priceLoading, priceObservations, priceSyncKey]);
   const choose = (name: string, decision: PlanDecision) => { saveState(setPlanDecision(state, name.toLowerCase(), decision)); setMessage(`${name}: ${decision} selected.`); };
   const resolveTransfer = (row: typeof rows[number]) => {
     if (!row.owned) { choose(row.card.name, 'defer'); return; }
@@ -88,7 +105,7 @@ export default function InvisibleWomanFocusedPlan() {
 
     <Panel title="Purchase basket"><div className="flex flex-wrap items-end justify-between gap-3"><p className="max-w-2xl text-sm text-muted-foreground">Only cards explicitly marked Buy another or Mark to buy appear here. Links search by card name and do not claim a specific printing or price.</p><strong className="font-mono text-2xl text-primary">${spend.toFixed(2)}</strong></div><div className="mt-4 divide-y divide-border border-y border-border">{buyRows.length ? buyRows.map(row => { const observation = priceObservations.find(item => item.identity === row.identity); return <div key={row.card.name} className="flex flex-wrap items-center justify-between gap-3 py-3"><span><b>{row.card.name}</b><small className="ml-2 text-muted-foreground">{row.card.lane}</small><small className="ml-2 font-mono text-muted-foreground">{observation?.latestUsd == null ? 'index unavailable' : `$${observation.latestUsd.toFixed(2)} indexed`}</small></span><span className="flex flex-wrap gap-2">{cardLinks(row.card.name).slice(1).map(link => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 border border-border px-2 py-1 text-xs font-bold">{link.label}<ExternalLink className="h-3 w-3" /></a>)}</span></div>; }) : <p className="py-4 text-sm text-muted-foreground">No purchase cards selected.</p>}</div></Panel>
 
-    <Panel title="Automated price watch"><div className="flex flex-wrap items-start justify-between gap-4"><p className="max-w-2xl text-sm text-muted-foreground">The basket is checked against the loaded exact-printing price index whenever this page opens or the basket changes. Default alerts fire at a 10% move between checks. This is a reference index, not a guaranteed live sale quote.</p><div className="flex items-center gap-2 border border-border px-3 py-2 font-mono text-xs font-black uppercase">{marketLoading ? 'Loading index' : marketReady ? 'Index checked' : 'Index unavailable'} <Bell className="h-4 w-4" /></div></div>{state.priceAlerts.length > 0 && <div className="mt-4 flex items-center justify-between border border-amber-600/40 bg-amber-500/5 p-3"><span className="text-sm font-bold">{state.priceAlerts.filter(alert => !alert.read).length} unread alert{state.priceAlerts.filter(alert => !alert.read).length === 1 ? '' : 's'}</span><button type="button" onClick={() => saveState(markPurchasePriceAlertsRead(state))} className="border border-border px-3 py-1 font-mono text-[10px] font-black uppercase">Mark alerts read</button></div>}<div className="mt-4 space-y-2">{state.priceAlerts.slice(0, 8).map(alert => <div key={alert.id} className={`flex flex-wrap items-center justify-between gap-3 border p-3 ${alert.read ? 'border-border bg-background' : 'border-primary/50 bg-primary/5'}`}><span className="flex items-center gap-2 text-sm font-bold">{alert.kind === 'drop' ? <TrendingDown className="h-4 w-4 text-emerald-700" /> : <TrendingUp className="h-4 w-4 text-amber-700" />}{alert.name}</span><span className="font-mono text-xs uppercase text-muted-foreground">{alert.kind === 'missing' ? 'No indexed price' : alert.kind === 'recovered' ? 'Price recovered' : `${alert.changePct && alert.changePct > 0 ? '+' : ''}${alert.changePct?.toFixed(1)}%`}</span></div>)}{state.priceAlerts.length === 0 && <p className="text-sm text-muted-foreground">No threshold alerts yet. Price watches are armed for the current basket.</p>}</div></Panel>
+    <Panel title="Automated price watch"><div className="flex flex-wrap items-start justify-between gap-4"><p className="max-w-2xl text-sm text-muted-foreground">The basket checks Scryfall’s named-card USD reference whenever this page opens or the basket changes. Default alerts fire at a 10% move between checks. This is a reference index, not a guaranteed live sale quote.</p><div className="flex items-center gap-2 border border-border px-3 py-2 font-mono text-xs font-black uppercase">{priceLoading ? 'Checking Scryfall' : priceCheckedAt ? `Checked ${priceCheckedAt.slice(0, 10)}` : 'Waiting for check'} <Bell className="h-4 w-4" /></div></div>{state.priceAlerts.length > 0 && <div className="mt-4 flex items-center justify-between border border-amber-600/40 bg-amber-500/5 p-3"><span className="text-sm font-bold">{state.priceAlerts.filter(alert => !alert.read).length} unread alert{state.priceAlerts.filter(alert => !alert.read).length === 1 ? '' : 's'}</span><button type="button" onClick={() => saveState(markPurchasePriceAlertsRead(state))} className="border border-border px-3 py-1 font-mono text-[10px] font-black uppercase">Mark alerts read</button></div>}<div className="mt-4 space-y-2">{state.priceAlerts.slice(0, 8).map(alert => <div key={alert.id} className={`flex flex-wrap items-center justify-between gap-3 border p-3 ${alert.read ? 'border-border bg-background' : 'border-primary/50 bg-primary/5'}`}><span className="flex items-center gap-2 text-sm font-bold">{alert.kind === 'drop' ? <TrendingDown className="h-4 w-4 text-emerald-700" /> : <TrendingUp className="h-4 w-4 text-amber-700" />}{alert.name}</span><span className="font-mono text-xs uppercase text-muted-foreground">{alert.kind === 'missing' ? 'No indexed price' : alert.kind === 'recovered' ? 'Price recovered' : `${alert.changePct && alert.changePct > 0 ? '+' : ''}${alert.changePct?.toFixed(1)}%`}</span></div>)}{state.priceAlerts.length === 0 && <p className="text-sm text-muted-foreground">No threshold alerts yet. Price watches are armed for the current basket.</p>}</div></Panel>
 
     <Panel title="Completion gate"><div className="flex flex-wrap items-center justify-between gap-4"><div><p className="text-sm text-muted-foreground">The plan is execution-ready when every card is owned, transferred, or deliberately deferred.</p><p className="mt-2 font-mono text-sm font-black uppercase">{rows.length - unresolvedRows.length}/{rows.length} resolved</p></div>{unresolvedRows.length === 0 ? <span className="inline-flex items-center gap-2 border border-emerald-600/50 bg-emerald-600/5 px-3 py-2 font-mono text-xs font-black uppercase text-emerald-800"><Check className="h-4 w-4" /> Plan resolved</span> : <span className="border border-amber-600/50 bg-amber-600/5 px-3 py-2 font-mono text-xs font-black uppercase text-amber-800">{unresolvedRows.length} decisions remaining</span>}</div></Panel>
   </main>;
