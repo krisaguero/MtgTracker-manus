@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "source": "MTGJSON",
-  "sourceBuildDate": "2026-11-01",
-  "sourceVersion": "5.3.0+20261101",
+  "sourceBuildDate": "2026-11-02",
+  "sourceVersion": "5.3.0+20261102",
   "sourceUrls": {
     "deckList": "https://mtgjson.com/api/v5/DeckList.json",
     "setList": "https://mtgjson.com/api/v5/SetList.json"
   },
-  "scanTimestamp": "2026-11-01T19:25:51.494Z",
+  "scanTimestamp": "2026-11-02T23:01:51.340Z",
   "statistics": {
     "upstreamCommanderDecks": 198,
     "existingLocalDecks": 173,
@@ -26,7 +26,7 @@
       "fileName": "CallingAllAngels_FDC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/CallingAllAngels_FDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/foundations-commander-decklists",
       "totalCardCopies": 100,
@@ -41,7 +41,7 @@
       "fileName": "KeenEngineering_FDC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/KeenEngineering_FDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/foundations-commander-decklists",
       "totalCardCopies": 100,
@@ -56,7 +56,7 @@
       "fileName": "MultiverseReforged_FRC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/MultiverseReforged_FRC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/reality-fracture-multiverse-reforged-commander-decklist",
       "totalCardCopies": 100,
@@ -71,7 +71,7 @@
       "fileName": "ReignOfDragons_FDC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/ReignOfDragons_FDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/foundations-commander-decklists",
       "totalCardCopies": 100,
@@ -86,7 +86,7 @@
       "fileName": "TramplesaurusRex_FDC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/TramplesaurusRex_FDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/foundations-commander-decklists",
       "totalCardCopies": 100,
@@ -101,7 +101,7 @@
       "fileName": "WretchedRanks_FDC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/WretchedRanks_FDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/foundations-commander-decklists",
       "totalCardCopies": 100,
@@ -116,7 +116,7 @@
       "fileName": "OddsAndEnds_SLD",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/OddsAndEnds_SLD.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/secret-lair-commander-deck-odds-and-ends-decklist",
       "totalCardCopies": 100,
@@ -131,7 +131,7 @@
       "fileName": "HatsuneMiku_SLD",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/HatsuneMiku_SLD.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/secret-lair-commander-deck-hatsune-miku-decklist",
       "totalCardCopies": 100,
@@ -146,7 +146,7 @@
       "fileName": "AvengersAssembleCollectorSEdition_MSC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/AvengersAssembleCollectorSEdition_MSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/marvel-super-heroes-commander-decklists",
       "totalCardCopies": 100,
@@ -161,7 +161,7 @@
       "fileName": "DoomPrevailsCollectorSEdition_MSC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/DoomPrevailsCollectorSEdition_MSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/marvel-super-heroes-commander-decklists",
       "totalCardCopies": 100,
@@ -176,7 +176,7 @@
       "fileName": "TheFantasticFourCollectorSEdition_MSC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/TheFantasticFourCollectorSEdition_MSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/marvel-super-heroes-commander-decklists",
       "totalCardCopies": 100,
@@ -191,7 +191,7 @@
       "fileName": "WakandaForeverCollectorSEdition_MSC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/WakandaForeverCollectorSEdition_MSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/marvel-super-heroes-commander-decklists",
       "totalCardCopies": 100,
@@ -206,7 +206,7 @@
       "fileName": "CounterBlitzCollectorSEditionFinalFantasyX_FIC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/CounterBlitzCollectorSEditionFinalFantasyX_FIC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/final-fantasy-commander-decklists",
       "totalCardCopies": 100,
@@ -221,7 +221,7 @@
       "fileName": "LimitBreakCollectorSEditionFinalFantasyVii_FIC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/LimitBreakCollectorSEditionFinalFantasyVii_FIC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/final-fantasy-commander-decklists",
       "totalCardCopies": 100,
@@ -236,7 +236,7 @@
       "fileName": "RevivalTranceCollectorSEditionFinalFantasyVi_FIC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/RevivalTranceCollectorSEditionFinalFantasyVi_FIC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/final-fantasy-commander-decklists",
       "totalCardCopies": 100,
@@ -251,7 +251,7 @@
       "fileName": "ScionsSpellcraftCollectorSEditionFinalFantasyXiv_FIC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/ScionsSpellcraftCollectorSEditionFinalFantasyXiv_FIC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/final-fantasy-commander-decklists",
       "totalCardCopies": 100,
@@ -266,7 +266,7 @@
       "fileName": "CreativeEnergyCollectorSEdition_M3C",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/CreativeEnergyCollectorSEdition_M3C.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/modern-horizons-3-commander-decklists",
       "totalCardCopies": 100,
@@ -281,7 +281,7 @@
       "fileName": "EldraziIncursionCollectorSEdition_M3C",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/EldraziIncursionCollectorSEdition_M3C.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/modern-horizons-3-commander-decklists",
       "totalCardCopies": 100,
@@ -296,7 +296,7 @@
       "fileName": "GraveyardOverdriveCollectorSEdition_M3C",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/GraveyardOverdriveCollectorSEdition_M3C.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/modern-horizons-3-commander-decklists",
       "totalCardCopies": 100,
@@ -311,7 +311,7 @@
       "fileName": "TrickyTerrainCollectorSEdition_M3C",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/TrickyTerrainCollectorSEdition_M3C.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/news/announcements/modern-horizons-3-commander-decklists",
       "totalCardCopies": 100,
@@ -326,7 +326,7 @@
       "fileName": "MishraSBurnishedBanner_BRC",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/MishraSBurnishedBanner_BRC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/articles/archive/news/brothers-war-commander-decklists-2022-10-28",
       "totalCardCopies": 100,
@@ -341,7 +341,7 @@
       "fileName": "ForcesOfTheImperiumCollectorSEdition_40K",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/ForcesOfTheImperiumCollectorSEdition_40K.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/articles/archive/news/warhammer-40000-commander-decklists",
       "totalCardCopies": 100,
@@ -356,7 +356,7 @@
       "fileName": "NecronDynastiesCollectorSEdition_40K",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/NecronDynastiesCollectorSEdition_40K.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/articles/archive/news/warhammer-40000-commander-decklists",
       "totalCardCopies": 100,
@@ -371,7 +371,7 @@
       "fileName": "TheRuinousPowersCollectorSEdition_40K",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/TheRuinousPowersCollectorSEdition_40K.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/articles/archive/news/warhammer-40000-commander-decklists",
       "totalCardCopies": 100,
@@ -386,7 +386,7 @@
       "fileName": "TyranidSwarmCollectorSEdition_40K",
       "sourceUrl": "https://mtgjson.com/api/v5/decks/TyranidSwarmCollectorSEdition_40K.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/DeckList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "status": "complete",
       "upstreamSourceUrl": "https://magic.wizards.com/en/articles/archive/news/warhammer-40000-commander-decklists",
       "totalCardCopies": 100,
@@ -401,7 +401,7 @@
       "releaseDate": "2027-04-09",
       "sourceUrl": "https://mtgjson.com/api/v5/MDC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -431,7 +431,7 @@
       "releaseDate": "2027-04-09",
       "sourceUrl": "https://mtgjson.com/api/v5/MDD.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -615,7 +615,7 @@
       "releaseDate": "2027-02-05",
       "sourceUrl": "https://mtgjson.com/api/v5/NAU.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -630,7 +630,7 @@
       "releaseDate": "2027-01-01",
       "sourceUrl": "https://mtgjson.com/api/v5/PF27.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -645,7 +645,7 @@
       "releaseDate": "2027-01-01",
       "sourceUrl": "https://mtgjson.com/api/v5/PW27.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -660,7 +660,7 @@
       "releaseDate": "2026-11-13",
       "sourceUrl": "https://mtgjson.com/api/v5/TRK.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -693,7 +693,7 @@
           "previewSourceUrl": "https://bsky.app/profile/luastardust.com/post/3myg5zzvunk22",
           "scryfallUrl": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
-          "priceUsd": 3.89
+          "priceUsd": 3.35
         },
         {
           "id": "a4d339a5-198c-49bd-845e-2632476746e0",
@@ -707,7 +707,7 @@
           "previewSourceUrl": "https://www.youtube.com/shorts/gsPG4tyABcA",
           "scryfallUrl": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
-          "priceUsd": 1.61
+          "priceUsd": 1.34
         },
         {
           "id": "853bf74d-0b61-43df-9018-0b40b624a9d1",
@@ -721,7 +721,7 @@
           "previewSourceUrl": "https://x.com/mtgjp/status/2113182317476987013",
           "scryfallUrl": "https://scryfall.com/card/trk/9/command-subadjunct?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/8/5/853bf74d-0b61-43df-9018-0b40b624a9d1.jpg?1792753641",
-          "priceUsd": 1.62
+          "priceUsd": 1.53
         },
         {
           "id": "f91755d7-6fb9-4caf-b4b4-f21ed5572d52",
@@ -735,7 +735,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1261844213847293953",
           "scryfallUrl": "https://scryfall.com/card/trk/10/conquest-mission?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/f/9/f91755d7-6fb9-4caf-b4b4-f21ed5572d52.jpg?1792750872",
-          "priceUsd": 1.87
+          "priceUsd": 1.42
         },
         {
           "id": "1a027761-84e7-4cbf-a629-ae9bd3d8467b",
@@ -749,7 +749,7 @@
           "previewSourceUrl": "https://x.com/Brewers_Kitchen/status/2114763271807119632",
           "scryfallUrl": "https://scryfall.com/card/trk/11/deanna-troi-psychic-counsel?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/1/a/1a027761-84e7-4cbf-a629-ae9bd3d8467b.jpg?1793100632",
-          "priceUsd": 3.51
+          "priceUsd": 2.34
         },
         {
           "id": "5626c58f-9245-437a-9844-b023320cf709",
@@ -763,7 +763,7 @@
           "previewSourceUrl": "https://article.hareruyamtg.com/article/117161/",
           "scryfallUrl": "https://scryfall.com/card/trk/18/federation-resupply?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/5/6/5626c58f-9245-437a-9844-b023320cf709.jpg?1793273787",
-          "priceUsd": null
+          "priceUsd": 2.17
         },
         {
           "id": "02d29047-a7b8-43fb-8b90-b35ba34da5f9",
@@ -847,7 +847,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1261875137653768196",
           "scryfallUrl": "https://scryfall.com/card/trk/39/test-of-conviction?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/8/3/837d7cec-f3f8-4555-86f2-c5ea1849d7d1.jpg?1792668317",
-          "priceUsd": 2.98
+          "priceUsd": 1.9
         },
         {
           "id": "8dd7e0c6-84f6-4570-af93-4c64e78c2868",
@@ -875,7 +875,7 @@
           "previewSourceUrl": "https://www.instagram.com/zbexx/reel/De98GNmsdqm/",
           "scryfallUrl": "https://scryfall.com/card/trk/44/uss-excelsior-cutting-edge?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/d/e/de62b452-3780-4eeb-8163-f44176495615.jpg?1793100663",
-          "priceUsd": null
+          "priceUsd": 1.81
         },
         {
           "id": "6f4b2476-8f93-4d4e-b664-233e82fcf212",
@@ -889,7 +889,7 @@
           "previewSourceUrl": "https://www.ign.com/articles/exclusive-see-7-new-cards-from-magic-the-gathering-star-trek-including-1-that-remembers-the-most-iconic-drink-of-tng",
           "scryfallUrl": "https://scryfall.com/card/trk/45/vexing-drone?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/6/f/6f4b2476-8f93-4d4e-b664-233e82fcf212.jpg?1793361221",
-          "priceUsd": null
+          "priceUsd": 1.5
         },
         {
           "id": "93b458aa-a928-48ef-b685-1306cc65ad06",
@@ -903,7 +903,7 @@
           "previewSourceUrl": "https://www.derstandard.de/story/3000000345741/magic-the-gathering-exklusive-kartenpreview-im-universum-von-star-trek",
           "scryfallUrl": "https://scryfall.com/card/trk/46/anthropological-mission?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/9/3/93b458aa-a928-48ef-b685-1306cc65ad06.jpg?1793012962",
-          "priceUsd": 1.8
+          "priceUsd": 1.43
         },
         {
           "id": "a8dc7ecd-e6f0-4050-9d5b-8436f60a1395",
@@ -945,7 +945,7 @@
           "previewSourceUrl": "https://www.youtube.com/shorts/0G5qQWPW3O8",
           "scryfallUrl": "https://scryfall.com/card/trk/57/ensign-pavel-chekov?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/a/4/a441c12e-1a2f-4b04-83dd-407bf6040efe.jpg?1792753698",
-          "priceUsd": null
+          "priceUsd": 0.56
         },
         {
           "id": "385638fe-cafb-4541-ba37-19bc57520c48",
@@ -1001,7 +1001,7 @@
           "previewSourceUrl": "https://www.tcgplayer.com/content/article/Check-Out-Our-EXCLUSIVE-Magic-The-Gathering-Star-Trek-Preview-Card/de3e6d42-6b71-4f66-bdb7-014fb3426462/",
           "scryfallUrl": "https://scryfall.com/card/trk/79/scotty-miracle-worker?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/4/2/42f77f9e-5e56-45ac-aa93-36353c92bca9.jpg?1793013054",
-          "priceUsd": 8.79
+          "priceUsd": 8.77
         },
         {
           "id": "16bc9660-2bef-4926-b0e6-f49b22817bea",
@@ -1071,7 +1071,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1262973496088068099",
           "scryfallUrl": "https://scryfall.com/card/trk/85/test-of-priorities?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/8/9/89e3ec23-e4dc-4d58-aeda-9f73ed4504a5.jpg?1793013095",
-          "priceUsd": 1.99
+          "priceUsd": 1.41
         },
         {
           "id": "44280b43-b07e-43a4-9ae3-2eac0baeb918",
@@ -1127,7 +1127,7 @@
           "previewSourceUrl": "https://bsky.app/profile/luastardust.com/post/3myg5zzvunk22",
           "scryfallUrl": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
-          "priceUsd": 19.76
+          "priceUsd": 17.46
         },
         {
           "id": "bd04c738-b4e3-481e-9a68-d257524bf40e",
@@ -1169,7 +1169,7 @@
           "previewSourceUrl": "https://www.instagram.com/p/De2lNxlGVav",
           "scryfallUrl": "https://scryfall.com/card/trk/116/impossible-choice?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/6/c/6c5a87cf-7790-4335-8497-ff793bbdcb05.jpg?1793013157",
-          "priceUsd": null
+          "priceUsd": 0.55
         },
         {
           "id": "17a7b0a8-baaf-4e6a-8536-f511c796a713",
@@ -1197,7 +1197,7 @@
           "previewSourceUrl": "https://www.instagram.com/sol4r1s/p/De8zLpzCKVj/",
           "scryfallUrl": "https://scryfall.com/card/trk/122/overflow-submatrix?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/7/e/7e5654a7-ce83-4801-8978-7294a39dbef8.jpg?1793100705",
-          "priceUsd": 5.7
+          "priceUsd": 4.41
         },
         {
           "id": "23166580-9676-4025-916b-864568c2e59d",
@@ -1225,7 +1225,7 @@
           "previewSourceUrl": "https://www.facebook.com/MagicTheGathering.jp/posts/pfbid0jfuaE2zZ7KphcvJETsoj3Aj7BntxGk57gT2XcBWxkTUgtsjY5HD3GBaQCxva3E1Vl",
           "scryfallUrl": "https://scryfall.com/card/trk/136/vengeance-mission?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/0/5/059e3331-43bc-43a8-90e9-86fef37e032a.jpg?1793187091",
-          "priceUsd": null
+          "priceUsd": 1.6
         },
         {
           "id": "3a0d33cd-f81c-4950-81ed-9536061eca8a",
@@ -1309,7 +1309,7 @@
           "previewSourceUrl": "https://www.youtube.com/watch?v=g5OL_rHOQFU",
           "scryfallUrl": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819",
-          "priceUsd": null
+          "priceUsd": 9.79
         },
         {
           "id": "19bf2f2f-4be2-4958-bfab-eb46c9ca1995",
@@ -1323,7 +1323,7 @@
           "previewSourceUrl": "https://www.youtube.com/shorts/QBK9-rr6cis",
           "scryfallUrl": "https://scryfall.com/card/trk/157/lwaxana-troi-charming-guest?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/1/9/19bf2f2f-4be2-4958-bfab-eb46c9ca1995.jpg?1793013189",
-          "priceUsd": 6.73
+          "priceUsd": 6.26
         },
         {
           "id": "8eeb471b-412d-4ea1-bec0-d7dd0a557d76",
@@ -1365,7 +1365,7 @@
           "previewSourceUrl": "https://collider.com/star-trek-magic-the-gathering-sarek-cards-images/",
           "scryfallUrl": "https://scryfall.com/card/trk/174/tal-shiar-analyst?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/6/6/66daae4f-8024-4d87-b42f-e5271d29e646.jpg?1793361345",
-          "priceUsd": null
+          "priceUsd": 1.5
         },
         {
           "id": "eabc4252-cf58-48c3-9483-7862450e03d0",
@@ -1393,7 +1393,7 @@
           "previewSourceUrl": "https://www.screenhub.com.au/news/games/magic-the-gathering-star-trek-exclusive-preview-card-2709700/",
           "scryfallUrl": "https://scryfall.com/card/trk/176/tasha-yar-out-of-time?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/5/f/5f6cbe6c-5cd8-4eec-82b7-25d5bf5641c0.jpg?1793100738",
-          "priceUsd": null
+          "priceUsd": 1.66
         },
         {
           "id": "41644f06-d08f-406c-a56a-47e1b5273982",
@@ -1435,7 +1435,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1262988412473835528",
           "scryfallUrl": "https://scryfall.com/card/trk/185/branching-timeline?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/4/a/4a2231ff-677d-4041-9413-b8d683846920.jpg?1793013249",
-          "priceUsd": null
+          "priceUsd": 1.24
         },
         {
           "id": "962752f7-5c94-41e4-ab7d-3e8741c7a502",
@@ -1463,7 +1463,7 @@
           "previewSourceUrl": "https://www.instagram.com/p/DfA4TlDko_8",
           "scryfallUrl": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-          "priceUsd": 9.68
+          "priceUsd": 9.55
         },
         {
           "id": "acfaf5f3-a4f5-418a-a29a-211b33bf18ee",
@@ -1477,7 +1477,7 @@
           "previewSourceUrl": "https://news.denfaminicogamer.jp/kikakuthetower/261027c",
           "scryfallUrl": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
-          "priceUsd": 1.1
+          "priceUsd": 1.17
         },
         {
           "id": "6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e",
@@ -1505,7 +1505,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1263004054766747672",
           "scryfallUrl": "https://scryfall.com/card/trk/204/jadzia-dax-living-legacy?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/b/d/bd342f8b-9072-487d-8a33-b1bb149f1502.jpg?1793013267",
-          "priceUsd": 21.61
+          "priceUsd": 18.49
         },
         {
           "id": "9e47c6b6-f99b-46be-98a1-92c98416aefe",
@@ -1547,7 +1547,7 @@
           "previewSourceUrl": "https://www.threads.com/@goodgamesmorley/post/DfDq0kgkvt_",
           "scryfallUrl": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
-          "priceUsd": null
+          "priceUsd": 9.01
         },
         {
           "id": "445de44d-8af9-4ea3-b165-9e8eb8939820",
@@ -1575,7 +1575,7 @@
           "previewSourceUrl": "https://x.com/BasedDeckDept/status/2115564884939403649",
           "scryfallUrl": "https://scryfall.com/card/trk/214/species-8472?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/b/3/b3d74723-4c9e-4fe7-8276-05d5f1b7ba0c.jpg?1793273864",
-          "priceUsd": null
+          "priceUsd": 1.9
         },
         {
           "id": "fe6e03b5-cd96-430b-9c74-96eca0212a81",
@@ -1617,7 +1617,7 @@
           "previewSourceUrl": "https://bsky.app/profile/kesswylie.kess.co/post/3mygjjmxxkk22",
           "scryfallUrl": "https://scryfall.com/card/trk/220/test-of-courage?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/2/9/291b9b6b-54bf-4e71-98f1-cb9301ea0727.jpg?1792668501",
-          "priceUsd": 1.99
+          "priceUsd": 1.41
         },
         {
           "id": "fe5dda31-159c-49c7-962e-a04b771256ea",
@@ -1631,7 +1631,7 @@
           "previewSourceUrl": "https://www.polygon.com/magic-the-gathering-star-trek-exclusive-reveal/",
           "scryfallUrl": "https://scryfall.com/card/trk/226/all-good-things?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/f/e/fe5dda31-159c-49c7-962e-a04b771256ea.jpg?1792753779",
-          "priceUsd": null
+          "priceUsd": 0.39
         },
         {
           "id": "f2fe4663-eaaf-42c3-90f9-07e68129352c",
@@ -1673,7 +1673,7 @@
           "previewSourceUrl": "https://www.ign.com/articles/exclusive-see-7-new-cards-from-magic-the-gathering-star-trek-including-1-that-remembers-the-most-iconic-drink-of-tng",
           "scryfallUrl": "https://scryfall.com/card/trk/248/mirror-universe-intrusion?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/3/5/3507f99b-15fb-4f66-9484-8e8115e7f5de.jpg?1792668526",
-          "priceUsd": 8.94
+          "priceUsd": 6.66
         },
         {
           "id": "94ad9063-9663-49d8-b7ba-05be865bd20a",
@@ -1771,7 +1771,7 @@
           "previewSourceUrl": "https://www.ign.com/articles/exclusive-see-7-new-cards-from-magic-the-gathering-star-trek-including-1-that-remembers-the-most-iconic-drink-of-tng",
           "scryfallUrl": "https://scryfall.com/card/trk/274/warp-core?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/d/e/de8e2bde-b368-4d10-8409-86f5da6997f6.jpg?1793361423",
-          "priceUsd": null
+          "priceUsd": 1.5
         },
         {
           "id": "7dfead74-0625-4f6a-b66b-6d5d363a387c",
@@ -1785,7 +1785,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1264472733857611778",
           "scryfallUrl": "https://scryfall.com/card/trk/276/artificial-anomaly?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/7/d/7dfead74-0625-4f6a-b66b-6d5d363a387c.jpg?1793273918",
-          "priceUsd": 1.99
+          "priceUsd": 1.28
         },
         {
           "id": "e6974579-7e88-4d7f-9b05-93d08167cb17",
@@ -1799,7 +1799,7 @@
           "previewSourceUrl": "https://www.mkaugaming.com/all-review-list/magic-the-gathering-star-trek-gaseous-anomaly-card-preview/",
           "scryfallUrl": "https://scryfall.com/card/trk/284/gaseous-anomaly?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/e/6/e6974579-7e88-4d7f-9b05-93d08167cb17.jpg?1793361441",
-          "priceUsd": null
+          "priceUsd": 1.28
         },
         {
           "id": "a785dcd0-2df5-4d31-a01a-61fa7a1f1806",
@@ -1813,7 +1813,7 @@
           "previewSourceUrl": "https://www.bilibili.com/opus/1264457271996317715/",
           "scryfallUrl": "https://scryfall.com/card/trk/287/nivar-science-academy?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/a/7/a785dcd0-2df5-4d31-a01a-61fa7a1f1806.jpg?1793273928",
-          "priceUsd": null
+          "priceUsd": 3.26
         },
         {
           "id": "ca1e60f1-11a9-4bb8-9f6e-5b652b49c517",
@@ -1827,7 +1827,7 @@
           "previewSourceUrl": "https://www.ign.com/articles/exclusive-see-7-new-cards-from-magic-the-gathering-star-trek-including-1-that-remembers-the-most-iconic-drink-of-tng",
           "scryfallUrl": "https://scryfall.com/card/trk/303/unexplored-territory?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/c/a/ca1e60f1-11a9-4bb8-9f6e-5b652b49c517.jpg?1793361459",
-          "priceUsd": null
+          "priceUsd": 1.5
         },
         {
           "id": "86ba5cb2-f124-4947-9780-43fc24f37699",
@@ -1925,7 +1925,7 @@
           "previewSourceUrl": "https://x.com/Brewers_Kitchen/status/2114763271807119632",
           "scryfallUrl": "https://scryfall.com/card/trk/365/deanna-troi-psychic-counsel?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/4/c/4c8ee48d-d0bc-4b5c-ab82-066cd8bbf317.jpg?1793100657",
-          "priceUsd": 2.17
+          "priceUsd": 2.24
         },
         {
           "id": "07b3f211-1ff1-47c3-9063-9a1ac0fd814c",
@@ -1967,7 +1967,7 @@
           "previewSourceUrl": "https://www.instagram.com/sol4r1s/p/De8zLpzCKVj/",
           "scryfallUrl": "https://scryfall.com/card/trk/377/overflow-submatrix?utm_source=api",
           "imageUrl": "https://cards.scryfall.io/normal/front/3/3/33af9300-c477-4b47-9501-ebe03aa5a806.jpg?1793100712",
-          "priceUsd": 2.2
+          "priceUsd": 2.19
         },
         {
           "id": "51602acb-62f6-4d38-8a0e-f73497c8f512",
@@ -2272,7 +2272,7 @@
       "releaseDate": "2026-11-13",
       "sourceUrl": "https://mtgjson.com/api/v5/ATRK.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2287,7 +2287,7 @@
       "releaseDate": "2026-11-13",
       "sourceUrl": "https://mtgjson.com/api/v5/TRC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2331,7 +2331,7 @@
       "releaseDate": "2026-11-13",
       "sourceUrl": "https://mtgjson.com/api/v5/ATRC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2346,7 +2346,7 @@
       "releaseDate": "2026-11-13",
       "sourceUrl": "https://mtgjson.com/api/v5/SDS.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2361,7 +2361,7 @@
       "releaseDate": "2026-10-19",
       "sourceUrl": "https://mtgjson.com/api/v5/MBC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2376,7 +2376,7 @@
       "releaseDate": "2026-10-13",
       "sourceUrl": "https://mtgjson.com/api/v5/YFRA.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2391,7 +2391,7 @@
       "releaseDate": "2026-10-02",
       "sourceUrl": "https://mtgjson.com/api/v5/FRA.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2406,7 +2406,7 @@
       "releaseDate": "2026-10-02",
       "sourceUrl": "https://mtgjson.com/api/v5/AFRA.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2421,7 +2421,7 @@
       "releaseDate": "2026-10-02",
       "sourceUrl": "https://mtgjson.com/api/v5/FRC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 1,
       "completeDeckCount": 1,
       "pendingDeckCount": 0,
@@ -2436,7 +2436,7 @@
       "releaseDate": "2026-10-02",
       "sourceUrl": "https://mtgjson.com/api/v5/PFRA.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2451,7 +2451,7 @@
       "releaseDate": "2026-09-02",
       "sourceUrl": "https://mtgjson.com/api/v5/SLZ.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2466,7 +2466,7 @@
       "releaseDate": "2026-08-14",
       "sourceUrl": "https://mtgjson.com/api/v5/HOB.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2481,7 +2481,7 @@
       "releaseDate": "2026-08-14",
       "sourceUrl": "https://mtgjson.com/api/v5/AHOB.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2496,7 +2496,7 @@
       "releaseDate": "2026-08-14",
       "sourceUrl": "https://mtgjson.com/api/v5/HOC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2511,7 +2511,7 @@
       "releaseDate": "2026-08-14",
       "sourceUrl": "https://mtgjson.com/api/v5/AHOC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2526,7 +2526,7 @@
       "releaseDate": "2026-06-26",
       "sourceUrl": "https://mtgjson.com/api/v5/MSH.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2541,7 +2541,7 @@
       "releaseDate": "2026-06-26",
       "sourceUrl": "https://mtgjson.com/api/v5/AMSH.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2556,7 +2556,7 @@
       "releaseDate": "2026-06-26",
       "sourceUrl": "https://mtgjson.com/api/v5/MSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 8,
       "completeDeckCount": 8,
       "pendingDeckCount": 0,
@@ -2571,7 +2571,7 @@
       "releaseDate": "2026-06-26",
       "sourceUrl": "https://mtgjson.com/api/v5/FMSC.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
@@ -2586,7 +2586,7 @@
       "releaseDate": "2026-05-19",
       "sourceUrl": "https://mtgjson.com/api/v5/YSOS.json",
       "metadataSourceUrl": "https://mtgjson.com/api/v5/SetList.json",
-      "scanTimestamp": "2026-11-01T19:25:51.494Z",
+      "scanTimestamp": "2026-11-02T23:01:51.340Z",
       "commanderDeckCount": 0,
       "completeDeckCount": 0,
       "pendingDeckCount": 0,
