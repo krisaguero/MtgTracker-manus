@@ -7,6 +7,8 @@ export type Reservation = { identity: string; name: string; deckSlug: string; qu
 export type AcquisitionEstimate = { deckSlug: string; currentValueUsd: number; updatedAt: number };
 export type AcquisitionEvent = { id: string; date: string; kind: 'sealed' | 'singles' | 'upgrade' | 'sale'; label: string; amountUsd: number; deckSlug?: string; note?: string };
 export type PlanDecision = 'transfer' | 'buy' | 'defer';
+export type PurchasePriceWatch = { identity: string; name: string; deckSlug: string; targetUsd: number; latestUsd: number | null; previousUsd: number | null; lastCheckedAt: string; dropAlertPct: number; riseAlertPct: number; enabled: boolean };
+export type PurchasePriceAlert = { id: string; identity: string; name: string; kind: 'drop' | 'rise' | 'missing' | 'recovered'; previousUsd: number | null; latestUsd: number | null; changePct: number | null; createdAt: string; read: boolean };
 export type ImportAction = 'added' | 'merged' | 'flagged' | 'rejected';
 export type ImportPreviewRow = { card: OwnedCard; action: ImportAction; reason: string; approved: boolean };
 export type PortfolioServiceState = {
@@ -16,12 +18,14 @@ export type PortfolioServiceState = {
   acquisitionEstimates: AcquisitionEstimate[];
   acquisitionEvents: AcquisitionEvent[];
   planDecisions: Partial<Record<string, PlanDecision>>;
+  priceWatches: PurchasePriceWatch[];
+  priceAlerts: PurchasePriceAlert[];
   transferApprovals: string[];
   lastImportReport?: CollectionImportReport;
 };
 
 const STORAGE_KEY = 'mtg_tracker_portfolio_service_v1';
-const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, transferApprovals: [] };
+const blankState: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, priceWatches: [], priceAlerts: [], transferApprovals: [] };
 
 export function loadPortfolioServiceState(): PortfolioServiceState {
   try {
@@ -33,6 +37,8 @@ export function loadPortfolioServiceState(): PortfolioServiceState {
       acquisitionEstimates: Array.isArray(parsed?.acquisitionEstimates) ? parsed.acquisitionEstimates : [],
       acquisitionEvents: Array.isArray(parsed?.acquisitionEvents) ? parsed.acquisitionEvents : [],
       planDecisions: parsed?.planDecisions && typeof parsed.planDecisions === 'object' ? parsed.planDecisions : {},
+      priceWatches: Array.isArray(parsed?.priceWatches) ? parsed.priceWatches : [],
+      priceAlerts: Array.isArray(parsed?.priceAlerts) ? parsed.priceAlerts : [],
       transferApprovals: Array.isArray(parsed?.transferApprovals) ? parsed.transferApprovals : [],
       lastImportReport: parsed?.lastImportReport,
     };
@@ -96,6 +102,39 @@ export function addAcquisitionEvent(state: PortfolioServiceState, event: Omit<Ac
 
 export function setPlanDecision(state: PortfolioServiceState, identity: string, decision: PlanDecision): PortfolioServiceState {
   return { ...state, planDecisions: { ...state.planDecisions, [identity]: decision } };
+}
+
+export type PurchasePriceObservation = { identity: string; name: string; deckSlug: string; targetUsd: number; latestUsd: number | null };
+
+export function syncPurchasePriceWatches(state: PortfolioServiceState, observations: PurchasePriceObservation[], checkedAt = new Date().toISOString()): PortfolioServiceState {
+  const existing = new Map(state.priceWatches.map(watch => [watch.identity, watch]));
+  const alerts = [...state.priceAlerts];
+  const watches = observations.map(observation => {
+    const prior = existing.get(observation.identity);
+    const previousUsd = prior?.latestUsd ?? null;
+    const latestUsd = observation.latestUsd;
+    const changePct = previousUsd && latestUsd ? ((latestUsd - previousUsd) / previousUsd) * 100 : null;
+    const dropAlertPct = prior?.dropAlertPct ?? 10;
+    const riseAlertPct = prior?.riseAlertPct ?? 10;
+    const changed = previousUsd !== null && latestUsd !== null && previousUsd !== latestUsd;
+    if (changed && changePct !== null && (changePct <= -dropAlertPct || changePct >= riseAlertPct)) {
+      const kind = changePct <= -dropAlertPct ? 'drop' : 'rise';
+      const alertId = `${observation.identity}:${checkedAt}:${kind}`;
+      if (!alerts.some(alert => alert.id === alertId)) alerts.unshift({ id: alertId, identity: observation.identity, name: observation.name, kind, previousUsd, latestUsd, changePct: Number(changePct.toFixed(2)), createdAt: checkedAt, read: false });
+    } else if (prior && previousUsd === null && latestUsd === null) {
+      const alertId = `${observation.identity}:${checkedAt}:missing`;
+      if (!alerts.some(alert => alert.identity === observation.identity && alert.kind === 'missing')) alerts.unshift({ id: alertId, identity: observation.identity, name: observation.name, kind: 'missing', previousUsd: null, latestUsd: null, changePct: null, createdAt: checkedAt, read: false });
+    } else if (previousUsd === null && latestUsd !== null && prior) {
+      const alertId = `${observation.identity}:${checkedAt}:recovered`;
+      if (!alerts.some(alert => alert.identity === observation.identity && alert.kind === 'recovered' && !alert.read)) alerts.unshift({ id: alertId, identity: observation.identity, name: observation.name, kind: 'recovered', previousUsd: null, latestUsd, changePct: null, createdAt: checkedAt, read: false });
+    }
+    return { identity: observation.identity, name: observation.name, deckSlug: observation.deckSlug, targetUsd: observation.targetUsd, latestUsd, previousUsd, lastCheckedAt: checkedAt, dropAlertPct, riseAlertPct, enabled: prior?.enabled ?? true };
+  });
+  return { ...state, priceWatches: watches, priceAlerts: alerts.slice(0, 100) };
+}
+
+export function markPurchasePriceAlertsRead(state: PortfolioServiceState): PortfolioServiceState {
+  return { ...state, priceAlerts: state.priceAlerts.map(alert => ({ ...alert, read: true })) };
 }
 
 export function reconcileImport(existing: OwnedCard[], incoming: OwnedCard[]) {

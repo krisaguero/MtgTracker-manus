@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { addAcquisitionEvent, availableQuantity, approveTransfer, reconcileImport, releaseReservation, setPlanDecision, tryReserveCard, type PortfolioServiceState } from './portfolioService';
+import { addAcquisitionEvent, availableQuantity, approveTransfer, reconcileImport, releaseReservation, setPlanDecision, syncPurchasePriceWatches, tryReserveCard, type PortfolioServiceState } from './portfolioService';
 import type { OwnedCard } from './manaboxParser';
 
 const card: OwnedCard = { name: 'Wall of Denial', quantity: 2, setCode: 'arb', collectorNumber: '5' };
-const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, transferApprovals: [] };
+const state: PortfolioServiceState = { missions: {}, savedBuilds: [], reservations: [], acquisitionEstimates: [], acquisitionEvents: [], planDecisions: {}, priceWatches: [], priceAlerts: [], transferApprovals: [] };
 
 describe('portfolio service hardening', () => {
   it('flags name-only rows and approves exact printings by default', () => {
@@ -40,5 +40,13 @@ describe('portfolio service hardening', () => {
     const next = setPlanDecision(state, 'wall of denial', 'buy');
     expect(next.planDecisions['wall of denial']).toBe('buy');
     expect(next.reservations).toEqual([]);
+  });
+
+  it('creates one threshold alert when a watched basket price moves', () => {
+    const armed = syncPurchasePriceWatches(state, [{ identity: 'plan:wall', name: 'Wall of Denial', deckSlug: 'msc/the-fantastic-four', targetUsd: 2, latestUsd: 2 }], '2026-11-02T00:00:00.000Z');
+    const moved = syncPurchasePriceWatches(armed, [{ identity: 'plan:wall', name: 'Wall of Denial', deckSlug: 'msc/the-fantastic-four', targetUsd: 2, latestUsd: 1.7 }], '2026-11-03T00:00:00.000Z');
+    expect(moved.priceAlerts).toHaveLength(1);
+    expect(moved.priceAlerts[0]?.kind).toBe('drop');
+    expect(moved.priceAlerts[0]?.changePct).toBe(-15);
   });
 });
