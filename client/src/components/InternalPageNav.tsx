@@ -42,6 +42,7 @@ const navigation: SiteItem[] = [
     id: 'markets',
     label: 'Markets',
     links: [
+      { href: '/market-desk', label: 'Market Desk index' },
       { href: '/movers', label: 'Dated market movers' },
       { href: '/market-reports', label: 'Report archive' },
       { href: '/market-watch', label: 'Market watch feed' },

@@ -61,6 +61,7 @@ const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
+const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
 const TabletopPaperSpotlight = lazy(() => import('@/pages/TabletopPaperSpotlight'));
 const BlogJournal = lazy(() => import('@/pages/BlogJournal'));
 
@@ -83,6 +84,7 @@ function Router() {
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
         <Route path={'/limited'} component={Limited} />
         <Route path={'/markets'} component={MarketHub} />
+        <Route path={'/market-desk'} component={MarketDesk} />
         <Route path={'/roadmap'} component={Roadmap} />
         <Route path="/market-report" component={MarketReport} />
         <Route path="/blog/:slug" component={BlogJournal} />
