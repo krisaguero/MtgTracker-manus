@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T18:03:01.504Z",
+  "updatedAt": "2026-11-03T16:00:20.890Z",
   "records": [
+    {
+      "id": "2026-11-03-bulk-collection-triage:1:cm2:279",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Plains (CM2 279) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Plains",
+      "setCode": "cm2",
+      "collectorNumber": "279",
+      "entryUsd": 0.49,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 133.3% since the prior saved observation across 1 available price source.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:2:blc:299",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Cinder Glade (BLC 299) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Cinder Glade",
+      "setCode": "blc",
+      "collectorNumber": "299",
+      "entryUsd": 0.6,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 106.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:3:drc:156",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Fetid Pools (DRC 156) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Fetid Pools",
+      "setCode": "drc",
+      "collectorNumber": "156",
+      "entryUsd": 0.61,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:4:msc:241",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Exotic Orchard (MSC 241) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Exotic Orchard",
+      "setCode": "msc",
+      "collectorNumber": "241",
+      "entryUsd": 0.67,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:5:m3c:321",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Battlefield Forge (M3C 321) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Battlefield Forge",
+      "setCode": "m3c",
+      "collectorNumber": "321",
+      "entryUsd": 0.64,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:6:tmc:69",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Hinterland Harbor (TMC 69) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hinterland Harbor",
+      "setCode": "tmc",
+      "collectorNumber": "69",
+      "entryUsd": 0.62,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:7:who:86",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess The Flux (WHO 86) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "The Flux",
+      "setCode": "who",
+      "collectorNumber": "86",
+      "entryUsd": 0.66,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 94.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:8:cma:206",
+      "dateKey": "2026-11-03",
+      "postId": "2026-11-03-bulk-collection-triage",
+      "prompt": "Assess Selesnya Guildmage (CMA 206) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Selesnya Guildmage",
+      "setCode": "cma",
+      "collectorNumber": "206",
+      "entryUsd": 0.4,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 90.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-03",
+        "evaluationDate": "2026-11-17"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-02-precon-sealed-economics:1:soc:232",
       "dateKey": "2026-11-02",
@@ -2704,7 +2912,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 15.12,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:2:pip:147",
@@ -2730,7 +2944,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -31,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:3:ncc:287",
@@ -2756,7 +2976,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 5.67,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:4:c21:19",
@@ -2782,7 +3008,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -8,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:5:fic:281",
@@ -2808,7 +3040,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 7,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:6:c17:50",
@@ -2834,7 +3072,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 4.68,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:7:cmm:900",
@@ -2860,7 +3104,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 16.05,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-20-bulk-collection-triage:8:c15:48",
@@ -2886,7 +3136,13 @@
         "openedAt": "2026-10-20",
         "evaluationDate": "2026-11-03"
       },
-      "outcome": null
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -0.67,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
