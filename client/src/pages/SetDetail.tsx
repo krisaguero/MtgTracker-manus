@@ -5,6 +5,7 @@ import { useSetDetail, isNewCard, ScryfallCard } from '@/hooks/useSetDetail';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CardImageZoom } from '@/components/CardImageZoom';
+import { CardIndexLink, CardMediaFrame } from '@/components/CardIndexLink';
 import { PreconSection } from '@/components/PreconSection';
 import { Link } from 'wouter';
 import { addOwnedCard, loadOwnedCollection } from '@/lib/manaboxParser';
@@ -405,9 +406,9 @@ export default function SetDetail() {
                         </span>
                       )}
                     </div>
-                    <div className="aspect-[5/7] w-full overflow-hidden bg-muted border border-border relative">
+                    <CardMediaFrame className="border border-border relative">
                       <CardImageZoom src={normalImg} alt={card.name} className="h-full w-full object-cover pointer-events-none" />
-                    </div>
+                    </CardMediaFrame>
                     <Link href={`/card/${encodeURIComponent(card.name)}`} className="mt-3 block">
                       <p className="font-bold text-xs truncate group-hover:text-primary" title={card.name}>{card.name}</p>
                       <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground mt-1">
@@ -418,9 +419,12 @@ export default function SetDetail() {
                         {printingPrice.sourceLabel}{printingPrice.updatedAt ? ` · ${printingPrice.updatedAt.slice(0, 10)}` : ''}
                       </p>
                     </Link>
-                    <button type="button" onClick={() => addCardToInventory(card)} className={`mt-3 inline-flex min-h-9 w-full items-center justify-center border px-2 py-1 font-mono text-[10px] font-bold uppercase transition-colors ${ownedQty > 0 ? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20' : 'border-primary bg-primary text-primary-foreground hover:bg-primary/90'}`}>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <CardIndexLink name={card.name} compact className="flex-1 justify-center" />
+                      <button type="button" onClick={() => addCardToInventory(card)} className={`min-h-9 flex-1 border px-2 py-1 font-mono text-[10px] font-bold uppercase transition-colors ${ownedQty > 0 ? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20' : 'border-primary bg-primary text-primary-foreground hover:bg-primary/90'}`}>
                       {ownedQty > 0 ? `In inventory · ${ownedQty}` : 'Add to inventory'}
-                    </button>
+                      </button>
+                    </div>
                   </div>
                 );
               })}

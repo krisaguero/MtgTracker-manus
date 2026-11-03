@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import { CardImageZoom } from '@/components/CardImageZoom';
+import { CardIndexLink, CardMediaFrame } from '@/components/CardIndexLink';
 import { brawlDeckPath, cardImage, cardImageFallback, cardRecord, cardReference, cardPrintingLabel, type BrawlBoxDeck, type BrawlBoxGroup } from '@/lib/brawlDecks';
 
 export type BrawlDeckView = 'list' | 'visual';
@@ -28,8 +29,8 @@ export function BrawlDeckCard({ deck, detail = false, initialView }: { deck: Bra
       {deck.publicationStatus === 'work-in-progress' && <p className="mt-4 border-2 border-amber-600 bg-amber-500/10 p-4 text-sm font-bold text-amber-900 dark:text-amber-200" role="status">{deck.reviewStatus}</p>}
       <div className="mt-5 grid items-start gap-5 sm:grid-cols-[160px_minmax(0,1fr)]">
         <figure className={detail ? "w-32 sm:w-40" : "w-full max-w-60 sm:w-40"}>
-          <div className="aspect-[488/680]"><CardImageZoom src={cardImage(deck.commander)} fallbackSrc={cardImageFallback(deck.commander)} alt={deck.commander} /></div>
-          <figcaption className="mt-2 text-[10px] leading-4 text-muted-foreground"><a href={cardRecord(deck.commander)} target="_blank" rel="noopener noreferrer" className="underline">Scryfall · {cardPrintingLabel(deck.commander)}</a></figcaption>
+          <CardMediaFrame><CardImageZoom src={cardImage(deck.commander)} fallbackSrc={cardImageFallback(deck.commander)} alt={deck.commander} /></CardMediaFrame>
+          <figcaption className="mt-2 flex flex-wrap items-center gap-2 text-[10px] leading-4 text-muted-foreground"><CardIndexLink name={deck.commander} compact /><a href={cardRecord(deck.commander)} target="_blank" rel="noopener noreferrer" className="underline">Scryfall · {cardPrintingLabel(deck.commander)}</a></figcaption>
         </figure>
         <div className="min-w-0">
           <Heading className="text-2xl font-black tracking-tight sm:text-3xl">{deck.title}</Heading>
@@ -108,15 +109,15 @@ function BrawlDeckGroups({ groups, deck, view, sideboard = false }: { groups: Br
       <div className="flex items-start justify-between gap-3 border-b border-border pb-3"><h3 className="text-lg font-black leading-6"><span className="mr-2 font-mono text-xs text-primary">{String(groupIndex + 1).padStart(2, '0')}</span>{group.label}</h3><span className="shrink-0 border border-border px-2 py-1 font-mono text-[10px] font-bold">{group.cards.reduce((total, card) => total + card.quantity, 0)} cards</span></div>
       {group.intro && <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">{group.intro}</p>}
       <ul className={visual ? 'mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4' : 'mt-3 divide-y divide-border/70'}>{group.cards.map((card, index) => <li key={`${card.name}-${index}`} className={visual ? 'min-w-0 border border-border bg-card p-2' : 'flex min-w-0 items-start gap-3 py-3 text-xs'}>
-        <div className={visual ? 'aspect-[488/680]' : 'aspect-[488/680] w-14 shrink-0'}>{card.verificationStatus === 'unresolved' ? <div className="flex h-full items-center justify-center border-2 border-dashed border-amber-600 bg-amber-500/5 p-2 text-center text-[10px] leading-4" role="img" aria-label={`${card.name} — unresolved submitted name`}>{visual ? 'Unresolved submitted name. No card image or identity assumed.' : 'Art not assumed'}</div> : <CardImageZoom src={cardImage(card.name)} fallbackSrc={cardImageFallback(card.name)} alt={card.name} />}</div>
+        <div className={visual ? '' : 'w-14 shrink-0'}>{card.verificationStatus === 'unresolved' ? <div className="flex aspect-[488/680] h-full items-center justify-center border-2 border-dashed border-amber-600 bg-amber-500/5 p-2 text-center text-[10px] leading-4" role="img" aria-label={`${card.name} — unresolved submitted name`}>{visual ? 'Unresolved submitted name. No card image or identity assumed.' : 'Art not assumed'}</div> : <CardMediaFrame><CardImageZoom src={cardImage(card.name)} fallbackSrc={cardImageFallback(card.name)} alt={card.name} /></CardMediaFrame>}</div>
         <div className={visual ? 'mt-2 min-w-0' : 'min-w-0 flex-1'}>
-        <div className="text-xs font-semibold leading-5"><span className="mr-2 font-mono font-bold text-muted-foreground">{card.quantity}×</span><a href={cardRecord(card.name)} target="_blank" rel="noopener noreferrer" className="break-words hover:text-primary hover:underline">{card.name}</a>
+        <div className="text-xs font-semibold leading-5"><span className="mr-2 font-mono font-bold text-muted-foreground">{card.quantity}×</span><Link href={`/card/${encodeURIComponent(card.name)}`} className="break-words hover:text-primary hover:underline">{card.name}</Link>
           {offColor.has(card.name) && <span className="ml-2 inline-block border border-amber-700/40 bg-amber-500/10 px-1 py-0.5 font-mono text-[8px] font-black uppercase text-amber-800 dark:text-amber-300" title={`Card identity: ${(card.colorIdentity ?? []).map(colorName).join(', ')}`}>Off identity</span>}
           {card.verificationStatus === 'unresolved' && <span className="ml-2 inline-block border border-amber-600 bg-amber-500/10 px-1 py-0.5 font-mono text-[9px] font-black uppercase">Unresolved name · identity & legality unknown</span>}
         </div>
         {card.role && <p className="mt-2 text-xs leading-5"><strong className="text-primary">Role:</strong> {card.role}</p>}
         {card.note && <details className="mt-2 text-xs leading-5 text-muted-foreground"><summary className="min-h-8 cursor-pointer content-center font-semibold">Rules & list note</summary><p className="mt-1">{card.note}</p></details>}
-        {cardReference(card.name) && <p className="mt-2 text-[10px] leading-4 text-muted-foreground"><a href={cardRecord(card.name)} target="_blank" rel="noopener noreferrer" className="break-words underline">Scryfall · {cardPrintingLabel(card.name)}</a>{cardReference(card.name)?.artist && <span className="block">Art: {cardReference(card.name)!.artist}</span>}</p>}
+        {cardReference(card.name) && <p className="mt-2 flex flex-wrap items-center gap-2 text-[10px] leading-4 text-muted-foreground"><CardIndexLink name={card.name} compact /><a href={cardRecord(card.name)} target="_blank" rel="noopener noreferrer" className="break-words underline">Scryfall · {cardPrintingLabel(card.name)}</a>{cardReference(card.name)?.artist && <span>Art: {cardReference(card.name)!.artist}</span>}</p>}
         </div>
       </li>)}</ul>
     </section>)}

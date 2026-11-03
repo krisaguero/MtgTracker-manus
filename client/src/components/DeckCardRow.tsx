@@ -4,6 +4,7 @@ import type { ScryfallCard } from '@/hooks/useSetDetail';
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { CheckCircle2, ExternalLink, Flame } from 'lucide-react';
 import { Link } from 'wouter';
+import { CardIndexLink } from '@/components/CardIndexLink';
 import { resolveCardPrice } from '@/lib/marketPriceIndex';
 import { moversForCard } from '@/lib/marketMoverLinks';
 
@@ -40,7 +41,7 @@ export function DeckCardRow({ entry, refreshKey: _refreshKey = 0, arenaMode: _ar
       <div className="flex min-w-0 items-center gap-3">
         <span className="w-6 shrink-0 font-mono text-xs font-bold text-primary">{quantity}x</span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium">{card.name}</p>
+            <Link href={`/card/${encodeURIComponent(card.name)}`} className="block truncate text-sm font-medium hover:text-primary hover:underline">{card.name}</Link>
           <div className="mt-0.5 flex flex-wrap items-center gap-2">
             <span className="font-mono text-[10px] uppercase text-muted-foreground">{card.set} #{card.collector_number}</span>
             {isOwned ? (
@@ -54,6 +55,7 @@ export function DeckCardRow({ entry, refreshKey: _refreshKey = 0, arenaMode: _ar
       </div>
 
       <div className="flex shrink-0 flex-col items-end gap-0.5">
+        <CardIndexLink name={card.name} compact />
         <span className={`font-mono text-xs font-bold ${unitPrice === null ? 'text-muted-foreground' : 'text-foreground'}`}>{unitPrice === null ? 'Unpriced' : `$${unitPrice.toFixed(2)}`}</span>
         <span className="max-w-[150px] truncate font-mono text-[9px] uppercase text-muted-foreground" title={indexedPrice?.source || 'No current indexed price'}>{indexedPrice?.source || 'No current indexed price'}</span>
       </div>

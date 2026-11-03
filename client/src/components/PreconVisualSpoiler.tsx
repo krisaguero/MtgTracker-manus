@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Check, Info, LayoutGrid, List, Plus } from "lucide-react";
 import { CardImageZoom } from "@/components/CardImageZoom";
+import { CardIndexLink, CardMediaFrame } from "@/components/CardIndexLink";
 import type { ScryfallCard } from "@/hooks/useSetDetail";
 import type { DecklistEntry } from "@/hooks/useCommanderDeck";
 import type { DeckEntryLike } from "@/lib/preconStrategyEvidence";
@@ -233,9 +234,9 @@ function VisualCard({ entry, collection, onAdd }: { entry: DeckEntryLike; collec
       data-source-row={`${card.set}:${card.collector_number}:${card.name}`}
       className="min-w-0 border border-border bg-card"
     >
-      <div className="aspect-[488/680] bg-muted">
+      <CardMediaFrame>
         <CardImageZoom src={imageFor(card)} alt={card.name} />
-      </div>
+      </CardMediaFrame>
       <div className="min-w-0 p-3">
         <div className="flex flex-wrap gap-1.5 text-[10px] font-bold">
           <span className="border border-border px-1.5 py-0.5">
@@ -248,6 +249,7 @@ function VisualCard({ entry, collection, onAdd }: { entry: DeckEntryLike; collec
         <h4 className="mt-2 break-words text-sm font-black leading-5">
           {card.name}
         </h4>
+        <CardIndexLink name={card.name} compact className="mt-2" />
         <p className="mt-2 text-xs leading-6 text-muted-foreground">
           {cardExplanation(entry)}
         </p>

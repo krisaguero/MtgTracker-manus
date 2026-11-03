@@ -4,6 +4,7 @@ import { MoverCard } from '@/lib/dailyMoversEngine';
 import { isMarketCardWatched, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
 import { marketMoverArticleHref } from '@/lib/marketMoverHref';
 import { Link } from 'wouter';
+import { CardIndexLink, CardMediaFrame } from '@/components/CardIndexLink';
 
 interface MarketCardItemProps {
   mover: MoverCard;
@@ -60,7 +61,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
       </div>
 
       {/* Hero Card Image Display - Clean, Non-Overlaid, with Border & Subtle Hover Zoom */}
-      <div className="relative mx-auto w-full max-w-[240px] aspect-[5/7] overflow-hidden border-2 border-border bg-[#171a24] shadow-md">
+      <CardMediaFrame className="relative mx-auto max-w-[240px] border-2 border-border bg-[#171a24] shadow-md">
         {!imageLoaded && !imageFailed && (
           <div className="absolute inset-0 bg-muted flex flex-col items-center justify-center p-4">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/40 to-transparent animate-[shimmer_1.5s_infinite]" />
@@ -88,7 +89,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
           decoding="async"
           fetchPriority="low"
         />
-      </div>
+      </CardMediaFrame>
 
       {/* Card Details & Metadata - Arranged Below the Image */}
       <div className="mt-4 flex-1 flex flex-col justify-between">
@@ -118,9 +119,7 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
           </div>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-border pt-3">
-          <Link href={`/card/${encodeURIComponent(cleanName)}`} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-primary hover:underline">
-            Card profile <ExternalLink className="h-3 w-3" />
-          </Link>
+          <span onClick={(e) => e.stopPropagation()}><CardIndexLink name={cleanName} compact /></span>
           <span className="text-muted-foreground">·</span>
           <Link href={marketMoverArticleHref(cleanName)} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase text-primary hover:underline">
             <Flame className="h-3 w-3" /> Mover post
