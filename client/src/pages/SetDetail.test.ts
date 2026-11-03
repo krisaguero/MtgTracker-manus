@@ -44,4 +44,13 @@ describe('SetDetail loading resilience', () => {
     expect(source).toContain('Reset filters');
     expect(source).toContain('aria-label="Filter cards by rarity"');
   });
+
+  it('uses one spoiler-first priority catalog instead of a separate spoiler module', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain("useState<'priority' | 'main' | 'precons' | 'all'>('priority')");
+    expect(source).toContain("Spoilers first ({verifiedSpoilerCards.length})");
+    expect(source).toContain("const priorityCards = useMemo");
+    expect(source).toContain("sortMode === 'spoilers'");
+    expect(source).not.toContain('VerifiedSpoilerGallery');
+  });
 });

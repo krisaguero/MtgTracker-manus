@@ -15,7 +15,6 @@ import { resolveSetPrintingPrice, summarizeSetPricing } from '@/lib/setCatalogPr
 import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
 import { useCommanderArchive } from '@/lib/commanderArchive';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
-import { VerifiedSpoilerGallery } from '@/components/VerifiedSpoilerGallery';
 
 export default function SetDetail() {
   // App.tsx registers set pages at /:setCode, so keep this matcher aligned with every SetCard link.
@@ -30,11 +29,11 @@ export default function SetDetail() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterRarity, setFilterRarity] = useState<string>('');
   const [showNewOnly, setShowNewOnly] = useState(false);
-  const [sortMode, setSortMode] = useState<'collector' | 'name' | 'price'>('collector');
-  const [viewMode, setViewMode] = useState<'main' | 'precons' | 'all'>('main');
+  const [sortMode, setSortMode] = useState<'spoilers' | 'collector' | 'name' | 'price'>('spoilers');
+  const [viewMode, setViewMode] = useState<'priority' | 'main' | 'precons' | 'all'>('priority');
   const [hideOwned, setHideOwned] = useState(false);
 
-  const changeViewMode = (nextViewMode: 'main' | 'precons' | 'all') => {
+  const changeViewMode = (nextViewMode: 'priority' | 'main' | 'precons' | 'all') => {
     setViewMode(nextViewMode);
     // Rarity and new-release filters only apply to the main-set catalog. Clear
     // them when changing views so a filter cannot silently reappear later.
@@ -47,10 +46,10 @@ export default function SetDetail() {
     setSearchQuery('');
     setFilterRarity('');
     setShowNewOnly(false);
-    setSortMode('collector');
+    setSortMode('spoilers');
     setHideOwned(false);
   };
-  const hasActiveCardFilters = Boolean(searchQuery || filterRarity || showNewOnly || hideOwned || sortMode !== 'collector');
+  const hasActiveCardFilters = Boolean(searchQuery || filterRarity || showNewOnly || hideOwned || sortMode !== 'spoilers');
 
   const [ownedCollection, setOwnedCollection] = useState(() => loadOwnedCollection());
   const ownedNamesMap = useMemo(() => {
@@ -132,21 +131,49 @@ export default function SetDetail() {
 
   const { setCode: code, setName, releasedAt, cards, precons } = data;
   const releaseCatalogEntry = mtgjsonPreconCatalog.setReleases.find((set) => set.code.toLowerCase() === code.toLowerCase());
-  const isUpcomingCatalogSet = Boolean(releaseCatalogEntry && releaseCatalogEntry.releaseDate > new Date().toISOString().slice(0, 10));
-  const verifiedSpoilerIds = new Set(isUpcomingCatalogSet ? releaseCatalogEntry?.spoilerCards.map((card) => card.id) || [] : []);
+  const verifiedSpoilerIds = new Set(releaseCatalogEntry?.spoilerCards.map((card) => card.id) || []);
   const setMarketMovers = moversForSet(code);
   const hotSetMovers = setMarketMovers.filter((mover) => mover.percentChange > 0).slice(0, 6);
   const suppliedSetSignals = suppliedSignalsForSet(code);
 
-  const activeCards = viewMode === 'precons' ? preconCardsList : viewMode === 'all' ? [...cards, ...preconCardsList] : cards;
+  const verifiedSpoilerCards = useMemo<ScryfallCard[]>(() => (releaseCatalogEntry?.spoilerCards || []).map((spoiler) => ({
+    id: spoiler.id,
+    name: spoiler.name,
+    type_line: 'Verified preview',
+    colors: [],
+    color_identity: [],
+    rarity: spoiler.rarity || 'rare',
+    set: spoiler.setCode || code,
+    collector_number: spoiler.collectorNumber || 'P',
+    released_at: releasedAt || '2099-01-01',
+    layout: 'normal',
+    scryfall_uri: spoiler.scryfallUrl,
+    image_uris: spoiler.imageUrl ? { normal: spoiler.imageUrl, small: spoiler.imageUrl, png: spoiler.imageUrl, art_crop: spoiler.imageUrl, border_crop: spoiler.imageUrl } : undefined,
+    prices: spoiler.priceUsd == null ? { usd: null } : { usd: spoiler.priceUsd.toFixed(2) },
+  })), [releaseCatalogEntry, releasedAt, code]);
+  const spoilerIds = useMemo(() => new Set(verifiedSpoilerCards.map((card) => card.id)), [verifiedSpoilerCards]);
+  const priorityCards = useMemo(() => {
+    const seen = new Set<string>();
+    return [...verifiedSpoilerCards, ...cards].filter((card) => {
+      const key = card.id || `${card.name}-${card.collector_number}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [cards, verifiedSpoilerCards]);
+  const activeCards = viewMode === 'precons' ? preconCardsList : viewMode === 'all' ? [...priorityCards, ...preconCardsList] : viewMode === 'main' ? cards : priorityCards;
 
   const filteredCards = activeCards.filter((card: ScryfallCard) => {
     if (hideOwned && (ownedNamesMap.get(card.name.toLowerCase()) || 0) > 0) return false;
     if (filterRarity && card.rarity !== filterRarity && viewMode !== 'precons') return false;
-    if (showNewOnly && !isNewCard(card) && viewMode !== 'precons') return false;
+    if (showNewOnly && !isNewCard(card) && !spoilerIds.has(card.id) && viewMode !== 'precons') return false;
     if (searchQuery.trim() && !card.name.toLowerCase().includes(searchQuery.trim().toLowerCase())) return false;
     return true;
   }).sort((a: ScryfallCard, b: ScryfallCard) => {
+    if (sortMode === 'spoilers') {
+      const spoilerOrder = Number(spoilerIds.has(b.id)) - Number(spoilerIds.has(a.id));
+      if (spoilerOrder !== 0) return spoilerOrder;
+    }
     if (sortMode === 'name') return a.name.localeCompare(b.name);
     if (sortMode === 'price') {
       const priceA = resolveSetPrintingPrice(a).usd ?? 0;
@@ -201,52 +228,6 @@ export default function SetDetail() {
           </div>
         </div>
 
-        {releaseCatalogEntry && isUpcomingCatalogSet && (
-          <VerifiedSpoilerGallery set={releaseCatalogEntry} />
-        )}
-
-        {hotSetMovers.length > 0 && (
-          <section className="border-2 border-amber-500/70 bg-amber-500/5 p-4 sm:p-5" aria-labelledby="set-hot-watch-heading">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-500/30 pb-3">
-              <div className="flex items-center gap-2">
-                <Flame className="h-4 w-4 text-amber-500" />
-                <h2 id="set-hot-watch-heading" className="font-mono text-xs font-black uppercase tracking-[0.18em] text-amber-500">Hot market watch · {hotSetMovers.length} signal{hotSetMovers.length === 1 ? '' : 's'}</h2>
-              </div>
-              <span className="font-mono text-[10px] uppercase text-muted-foreground">Snapshot-linked research, not a guarantee</span>
-            </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {hotSetMovers.map((mover) => (
-                <Link key={`${mover.setCode}-${mover.name}`} href={mover.articleHref} className="border-2 border-amber-500/60 bg-background p-3 transition-colors hover:border-amber-500">
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="font-bold text-sm leading-snug">{mover.name}</span>
-                    <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[10px] font-black text-emerald-500"><TrendingUp className="h-3 w-3" /> +{mover.percentChange.toFixed(1)}% · {mover.lastUpdated.slice(0, 10)}</span>
-                  </div>
-                  <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{mover.reason}</p>
-                  <span className="mt-3 inline-flex font-mono text-[10px] font-bold uppercase text-primary">Read mover post →</span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {suppliedSetSignals.length > 0 && (
-          <section className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-5" aria-labelledby="supplied-market-watch-heading">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-primary/20 pb-3">
-              <h2 id="supplied-market-watch-heading" className="font-mono text-xs font-black uppercase tracking-[0.18em] text-primary">Supplied market-watch notes</h2>
-              <span className="font-mono text-[10px] uppercase text-muted-foreground">User-provided matrix · {suppliedSetSignals[0].asOf}</span>
-            </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {suppliedSetSignals.map((signal) => (
-                <div key={`${signal.setCode}-${signal.cardName}`} className="border border-border bg-background p-3">
-                  <div className="flex items-start justify-between gap-2"><span className="font-bold text-sm">{signal.cardName}</span><span className="font-mono text-[10px] uppercase text-primary">{signal.trendType.replace('-', ' ')}</span></div>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{signal.summary}</p>
-                  <div className="mt-3 flex flex-wrap gap-3 border-t border-border pt-3 font-mono text-[10px] uppercase"><Link href={signal.articleHref} className="font-bold text-primary hover:underline">Read article →</Link><a href={signal.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary">{signal.sourceLabel} <ExternalLink className="h-3 w-3" /></a></div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* View Mode Toggle Bar */}
         <div className="border-2 border-border bg-card p-3 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground px-2">
@@ -255,12 +236,21 @@ export default function SetDetail() {
           <div className="flex flex-wrap gap-2 items-center">
             <button
               type="button"
+              onClick={() => changeViewMode('priority')}
+              className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
+                viewMode === 'priority' ? 'border-amber-500 bg-amber-500 text-black' : 'border-border bg-background text-foreground hover:border-amber-500'
+              }`}
+            >
+              Spoilers first ({verifiedSpoilerCards.length})
+            </button>
+            <button
+              type="button"
               onClick={() => changeViewMode('main')}
               className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'main' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
             >
-              Main Set Cards ({cards.length})
+              Main Set ({cards.length})
             </button>
             <button
               type="button"
@@ -269,7 +259,7 @@ export default function SetDetail() {
                 viewMode === 'precons' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
             >
-              Commander Precon Cards ({preconCardsList.length})
+              Commander Precons ({preconCardsList.length})
             </button>
             <button
               type="button"
@@ -278,7 +268,7 @@ export default function SetDetail() {
                 viewMode === 'all' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
             >
-              All Cards Combined ({cards.length + preconCardsList.length})
+              All Combined ({priorityCards.length + preconCardsList.length})
             </button>
 
             <button
@@ -310,7 +300,7 @@ export default function SetDetail() {
         <div className="space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-border pb-4">
             <h2 className="text-2xl font-bold capitalize">
-              {viewMode === 'main' ? 'Main Set Card Catalog' : viewMode === 'precons' ? 'Commander Precon Card Catalog' : 'Combined Set & Precon Catalog'} ({filteredCards.length} showing)
+              {viewMode === 'priority' ? 'Priority Catalog · verified spoilers first' : viewMode === 'main' ? 'Main Set Card Catalog' : viewMode === 'precons' ? 'Commander Precon Card Catalog' : 'Combined Set & Precon Catalog'} ({filteredCards.length} showing)
             </h2>
             <div className="flex flex-wrap items-center gap-3">
               <div className="relative w-full sm:w-64">
@@ -358,6 +348,7 @@ export default function SetDetail() {
                 onChange={(e) => setSortMode(e.target.value as any)}
                 className="bg-background border-2 border-border px-3 py-2 font-mono text-xs uppercase focus:border-primary focus:outline-none"
               >
+                <option value="spoilers">Spoilers first</option>
                 <option value="collector">Collector #</option>
                 <option value="name">Name (A-Z)</option>
                 <option value="price">Price (High-Low)</option>
@@ -431,6 +422,45 @@ export default function SetDetail() {
             </div>
           )}
         </div>
+
+        {hotSetMovers.length > 0 && (
+          <section className="border-2 border-amber-500/70 bg-amber-500/5 p-4 sm:p-5" aria-labelledby="set-hot-watch-heading">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-500/30 pb-3">
+              <div className="flex items-center gap-2">
+                <Flame className="h-4 w-4 text-amber-500" />
+                <h2 id="set-hot-watch-heading" className="font-mono text-xs font-black uppercase tracking-[0.18em] text-amber-500">Hot market watch · {hotSetMovers.length} signal{hotSetMovers.length === 1 ? '' : 's'}</h2>
+              </div>
+              <span className="font-mono text-[10px] uppercase text-muted-foreground">Snapshot-linked research, not a guarantee</span>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {hotSetMovers.map((mover) => (
+                <Link key={`${mover.setCode}-${mover.name}`} href={mover.articleHref} className="border-2 border-amber-500/60 bg-background p-3 transition-colors hover:border-amber-500">
+                  <div className="flex items-start justify-between gap-2"><span className="font-bold text-sm leading-snug">{mover.name}</span><span className="inline-flex shrink-0 items-center gap-1 font-mono text-[10px] font-black text-emerald-500"><TrendingUp className="h-3 w-3" /> +{mover.percentChange.toFixed(1)}% · {mover.lastUpdated.slice(0, 10)}</span></div>
+                  <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{mover.reason}</p>
+                  <span className="mt-3 inline-flex font-mono text-[10px] font-bold uppercase text-primary">Read mover post →</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {suppliedSetSignals.length > 0 && (
+          <section className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-5" aria-labelledby="supplied-market-watch-heading">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-primary/20 pb-3">
+              <h2 id="supplied-market-watch-heading" className="font-mono text-xs font-black uppercase tracking-[0.18em] text-primary">Supplied market-watch notes</h2>
+              <span className="font-mono text-[10px] uppercase text-muted-foreground">User-provided matrix · {suppliedSetSignals[0].asOf}</span>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {suppliedSetSignals.map((signal) => (
+                <div key={`${signal.setCode}-${signal.cardName}`} className="border border-border bg-background p-3">
+                  <div className="flex items-start justify-between gap-2"><span className="font-bold text-sm">{signal.cardName}</span><span className="font-mono text-[10px] uppercase text-primary">{signal.trendType.replace('-', ' ')}</span></div>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{signal.summary}</p>
+                  <div className="mt-3 flex flex-wrap gap-3 border-t border-border pt-3 font-mono text-[10px] uppercase"><Link href={signal.articleHref} className="font-bold text-primary hover:underline">Read article →</Link><a href={signal.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary">{signal.sourceLabel} <ExternalLink className="h-3 w-3" /></a></div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );
