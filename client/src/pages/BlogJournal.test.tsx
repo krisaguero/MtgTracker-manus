@@ -4,7 +4,9 @@ import { Router, Route } from 'wouter';
 import { describe, expect, it } from 'vitest';
 import BlogJournal from './BlogJournal';
 import articles from '@/data/journalArticles.json';
+import automatedArticles from '@/data/automatedSpoilerArticles.json';
 import marketReports from '@/data/marketJournalReports.json';
+import marketBacklog from '@/data/marketWatchBacklog.json';
 import { brawlDecks, brawlProposedDecks } from '@/lib/brawlDecks';
 import { retroBattleBoxDecks } from '@/lib/retroBattleBox';
 import { BuyOnlinePanel } from '@/components/BuyOnlinePanel';
@@ -13,17 +15,28 @@ function page(path: string) { return renderToStaticMarkup(<Router ssrPath={path}
 function headingId(text: string) { return text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-'); }
 function prose(html: string) { return html.match(/<article class="journal-prose"[\s\S]*?<\/article>/)?.[0] ?? ''; }
 describe('published journal', () => {
-  it('separates text posts from charts and preserves every verified posted report date', () => {
+  it('promotes weekly desks and collapses the daily evidence archive', () => {
     const html = page('/blog');
     expect(html).toContain('Published article / journal');
     expect(html).toContain('October 18, 2026 · Published');
     expect(html).not.toContain('Local review draft');
     expect(html).not.toContain('not published');
-    expect(html).toContain('Chronological daily Market Watch articles');
+    expect(html).toContain('Daily Market Watch evidence archive');
+    expect(html).toContain('Weekly Market Desk');
+    expect(html).toContain('market-week-');
     expect(html).toContain('Separate chart dashboards');
     for (const date of ['2026-09-14','2026-10-05','2026-10-11','2026-10-15','2026-10-16']) expect(html).toContain(date);
     for (const report of marketReports) expect(html).toContain(`href="/blog/market-watch-${report.date}"`);
+    for (const desk of marketBacklog.weekly) expect(html).toContain(`href="/blog/market-week-${desk.week}"`);
+    expect(html).toContain('<details>');
     expect(html).not.toContain('href="/market-watch?date=');
+  });
+
+  it.each(marketBacklog.weekly)('renders weekly desk $week as a journal route', desk => {
+    const html = page(`/blog/market-week-${desk.week}`);
+    expect(html.match(/<h1\b/g)).toHaveLength(1);
+    expect(html).toContain(desk.label);
+    expect(html).toContain('Market Watch terminal');
   });
   it.each(articles)('renders complete prose and one title for $slug', article => {
     const html = page(`/blog/${article.slug}`);
@@ -75,7 +88,7 @@ describe('published journal', () => {
   });
   it('keeps the hub illustrated and article pages connected by related links', () => {
     const hub = page('/blog');
-    expect(hub.match(/<img\b/g)).toHaveLength(articles.length);
+    expect(hub.match(/<img\b/g)).toHaveLength(articles.length + automatedArticles.length + marketBacklog.weekly.length);
     for (const article of articles) {
       const html = page(`/blog/${article.slug}`);
       expect(html).toContain('aria-label="Keep reading"');
