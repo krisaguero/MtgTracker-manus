@@ -35,4 +35,13 @@ describe('SetDetail loading resilience', () => {
     expect(source).toContain('printingPrice.sourceLabel');
     expect(source).toContain('printingPrice.updatedAt.slice(0, 10)');
   });
+
+  it('prevents view-scoped filters from becoming silently stale', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain('const changeViewMode =');
+    expect(source).toContain("setFilterRarity('');");
+    expect(source).toContain('const resetCardFilters =');
+    expect(source).toContain('Reset filters');
+    expect(source).toContain('aria-label="Filter cards by rarity"');
+  });
 });

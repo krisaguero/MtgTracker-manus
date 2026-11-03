@@ -33,6 +33,24 @@ export default function SetDetail() {
   const [viewMode, setViewMode] = useState<'main' | 'precons' | 'all'>('main');
   const [hideOwned, setHideOwned] = useState(false);
 
+  const changeViewMode = (nextViewMode: 'main' | 'precons' | 'all') => {
+    setViewMode(nextViewMode);
+    // Rarity and new-release filters only apply to the main-set catalog. Clear
+    // them when changing views so a filter cannot silently reappear later.
+    if (nextViewMode === 'precons') {
+      setFilterRarity('');
+      setShowNewOnly(false);
+    }
+  };
+  const resetCardFilters = () => {
+    setSearchQuery('');
+    setFilterRarity('');
+    setShowNewOnly(false);
+    setSortMode('collector');
+    setHideOwned(false);
+  };
+  const hasActiveCardFilters = Boolean(searchQuery || filterRarity || showNewOnly || hideOwned || sortMode !== 'collector');
+
   const [ownedCollection, setOwnedCollection] = useState(() => loadOwnedCollection());
   const ownedNamesMap = useMemo(() => {
     const map = new Map<string, number>();
@@ -236,7 +254,7 @@ export default function SetDetail() {
           <div className="flex flex-wrap gap-2 items-center">
             <button
               type="button"
-              onClick={() => setViewMode('main')}
+              onClick={() => changeViewMode('main')}
               className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'main' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
@@ -245,7 +263,7 @@ export default function SetDetail() {
             </button>
             <button
               type="button"
-              onClick={() => setViewMode('precons')}
+              onClick={() => changeViewMode('precons')}
               className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'precons' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
@@ -254,7 +272,7 @@ export default function SetDetail() {
             </button>
             <button
               type="button"
-              onClick={() => setViewMode('all')}
+              onClick={() => changeViewMode('all')}
               className={`border-2 px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
                 viewMode === 'all' ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background text-foreground hover:border-primary'
               }`}
@@ -297,6 +315,7 @@ export default function SetDetail() {
               <div className="relative w-full sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
+                  aria-label="Filter cards by name"
                   type="text"
                   placeholder="Filter cards by name..."
                   value={searchQuery}
@@ -307,6 +326,7 @@ export default function SetDetail() {
 
               {viewMode !== 'precons' && (
                 <select
+                  aria-label="Filter cards by rarity"
                   value={filterRarity}
                   onChange={(e) => setFilterRarity(e.target.value)}
                   className="bg-background border-2 border-border px-3 py-2 font-mono text-xs uppercase focus:border-primary focus:outline-none"
@@ -331,7 +351,8 @@ export default function SetDetail() {
                 </button>
               )}
 
-              <select
+                <select
+                  aria-label="Sort cards"
                 value={sortMode}
                 onChange={(e) => setSortMode(e.target.value as any)}
                 className="bg-background border-2 border-border px-3 py-2 font-mono text-xs uppercase focus:border-primary focus:outline-none"
@@ -340,6 +361,15 @@ export default function SetDetail() {
                 <option value="name">Name (A-Z)</option>
                 <option value="price">Price (High-Low)</option>
               </select>
+              {hasActiveCardFilters && (
+                <button
+                  type="button"
+                  onClick={resetCardFilters}
+                  className="border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-bold uppercase text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  Reset filters
+                </button>
+              )}
             </div>
           </div>
 
