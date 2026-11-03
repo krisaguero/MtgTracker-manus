@@ -97,6 +97,32 @@ export default function SetDetail() {
     () => summarizeSetPricing(data?.cards || []),
     [data?.cards],
   );
+  const releaseCatalogEntry = mtgjsonPreconCatalog.setReleases.find((set) => set.code.toLowerCase() === resolvedSetCode.toLowerCase());
+  const verifiedSpoilerCards = useMemo<ScryfallCard[]>(() => (releaseCatalogEntry?.spoilerCards || []).map((spoiler) => ({
+    id: spoiler.id,
+    name: spoiler.name,
+    type_line: 'Verified preview',
+    colors: [],
+    color_identity: [],
+    rarity: spoiler.rarity || 'rare',
+    set: spoiler.setCode || resolvedSetCode,
+    collector_number: spoiler.collectorNumber || 'P',
+    released_at: resolvedReleasedAt,
+    layout: 'normal',
+    scryfall_uri: spoiler.scryfallUrl,
+    image_uris: spoiler.imageUrl ? { normal: spoiler.imageUrl, small: spoiler.imageUrl, png: spoiler.imageUrl, art_crop: spoiler.imageUrl, border_crop: spoiler.imageUrl } : undefined,
+    prices: spoiler.priceUsd == null ? { usd: null } : { usd: spoiler.priceUsd.toFixed(2) },
+  })), [releaseCatalogEntry, resolvedReleasedAt, resolvedSetCode]);
+  const spoilerIds = useMemo(() => new Set(verifiedSpoilerCards.map((card) => card.id)), [verifiedSpoilerCards]);
+  const priorityCards = useMemo(() => {
+    const seen = new Set<string>();
+    return [...verifiedSpoilerCards, ...(data?.cards || [])].filter((card) => {
+      const key = card.id || `${card.name}-${card.collector_number}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [data?.cards, verifiedSpoilerCards]);
 
   if (loading) {
     return (
@@ -130,37 +156,11 @@ export default function SetDetail() {
   }
 
   const { setCode: code, setName, releasedAt, cards, precons } = data;
-  const releaseCatalogEntry = mtgjsonPreconCatalog.setReleases.find((set) => set.code.toLowerCase() === code.toLowerCase());
   const verifiedSpoilerIds = new Set(releaseCatalogEntry?.spoilerCards.map((card) => card.id) || []);
   const setMarketMovers = moversForSet(code);
   const hotSetMovers = setMarketMovers.filter((mover) => mover.percentChange > 0).slice(0, 6);
   const suppliedSetSignals = suppliedSignalsForSet(code);
 
-  const verifiedSpoilerCards = useMemo<ScryfallCard[]>(() => (releaseCatalogEntry?.spoilerCards || []).map((spoiler) => ({
-    id: spoiler.id,
-    name: spoiler.name,
-    type_line: 'Verified preview',
-    colors: [],
-    color_identity: [],
-    rarity: spoiler.rarity || 'rare',
-    set: spoiler.setCode || code,
-    collector_number: spoiler.collectorNumber || 'P',
-    released_at: releasedAt || '2099-01-01',
-    layout: 'normal',
-    scryfall_uri: spoiler.scryfallUrl,
-    image_uris: spoiler.imageUrl ? { normal: spoiler.imageUrl, small: spoiler.imageUrl, png: spoiler.imageUrl, art_crop: spoiler.imageUrl, border_crop: spoiler.imageUrl } : undefined,
-    prices: spoiler.priceUsd == null ? { usd: null } : { usd: spoiler.priceUsd.toFixed(2) },
-  })), [releaseCatalogEntry, releasedAt, code]);
-  const spoilerIds = useMemo(() => new Set(verifiedSpoilerCards.map((card) => card.id)), [verifiedSpoilerCards]);
-  const priorityCards = useMemo(() => {
-    const seen = new Set<string>();
-    return [...verifiedSpoilerCards, ...cards].filter((card) => {
-      const key = card.id || `${card.name}-${card.collector_number}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  }, [cards, verifiedSpoilerCards]);
   const activeCards = viewMode === 'precons' ? preconCardsList : viewMode === 'all' ? [...priorityCards, ...preconCardsList] : viewMode === 'main' ? cards : priorityCards;
 
   const filteredCards = activeCards.filter((card: ScryfallCard) => {
