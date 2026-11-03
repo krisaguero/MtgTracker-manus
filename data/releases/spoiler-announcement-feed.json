@@ -1,28 +1,14 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-03",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
-    {
-      "id": "en-news-announcements-secret-lair-countdown-kit-marvels-history-of-heroes",
-      "title": "Secret Lair Countdown Kit: Marvel's History of Heroes",
-      "url": "https://magic.wizards.com/en/news/announcements/secret-lair-countdown-kit-marvels-history-of-heroes",
-      "kind": "product-release",
-      "source": "DailyMTG"
-    },
     {
       "id": "en-news-card-preview-star-trek-tokens-and-art-cards",
       "title": "Magic: The Gathering® | Star Trek™ Tokens and Art Cards",
       "url": "https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards",
       "kind": "spoiler",
-      "source": "DailyMTG"
-    },
-    {
-      "id": "en-news-feature-star-trek-prerelease-guide",
-      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
-      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
-      "kind": "product-release",
       "source": "DailyMTG"
     },
     {
@@ -40,12 +26,12 @@
       "source": "DailyMTG"
     },
     {
-      "id": "en-news-card-preview",
-      "title": "Card Preview",
-      "url": "https://magic.wizards.com/en/news/card-preview",
-      "kind": "spoiler",
+      "id": "en-news-feature-star-trek-prerelease-guide",
+      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
+      "kind": "product-release",
       "source": "DailyMTG"
     }
   ],
-  "previousRecordCount": 5
+  "previousRecordCount": 6
 }
