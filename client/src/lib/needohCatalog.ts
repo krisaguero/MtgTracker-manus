@@ -16,7 +16,7 @@ export interface ProductChecklistItem {
   category: string;
   texture: string;
   note?: string;
-  source: 'NeeDoh' | 'Speks alternative';
+  source: 'NeeDoh' | 'Speks alternative' | 'Non-NeeDoh alternative';
 }
 
 const style = (name: string, category: NeeDohCategory, texture: string, variants: string[] = [], note?: string): NeeDohStyle => ({
@@ -173,6 +173,16 @@ const alternative = (family: string, name: string, category: string, texture: st
   source: 'Speks alternative',
 });
 
+const nonNeeDoh = (family: string, name: string, category: string, texture: string, note: string): ProductChecklistItem => ({
+  id: `non-needoh--${family}-${name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+  name,
+  family,
+  category,
+  texture,
+  note,
+  source: 'Non-NeeDoh alternative',
+});
+
 /** Attached Speks collector guide, kept separate from the official NeeDoh ledger. */
 export const needohAlternatives: ProductChecklistItem[] = [
   ...['Mini', 'Original', 'Jumbo'].flatMap((size) => ['Dew', 'Sea Glass', 'Moon Jelly', 'Mist', 'Dusk', 'Coral'].map((color) => alternative('Gump Ball', `${size} Gump Ball — ${color}`, 'Memory gel', 'Velvety silicone shell with slow-rebound memory gel core'))),
@@ -184,6 +194,21 @@ export const needohAlternatives: ProductChecklistItem[] = [
   alternative('Gump Novelty Shapes', 'Gump Heart', 'Memory gel', 'Heart-shaped memory gel squeezable'),
   ...['Lime', 'Green', 'Blue', 'Purple', 'Pink', 'Orange'].map((color) => alternative('Blur Focus Putty', `Blur Focus Putty — ${color}`, 'Putty', 'Non-drying velvety silicone-foam putty', '40g twist-top travel container; matte, buttery, soft-stretch resistance.')),
   ...['Blue', 'Evergreen', 'Mulberry'].map((color) => alternative('Fleks Magnetic Silicone', `Fleks — ${color}`, 'Magnetic silicone', 'Smooth matte rubber with magnetic structural resistance', 'Set of six soft-touch silicone magnetic pieces with steel building base.')),
+  nonNeeDoh('RMS Dumpling', 'RMS Original Mystery Dumpling', 'Blind-box dumpling', 'Cellulose gel; rare water/glitter variations', '$9–$12 reference range · Walmart and Target. Collector notes in the supplied guide include Pork Bun, Shark Edition, and Teal Ribbon.'),
+  nonNeeDoh('Dumpling alternatives', "Surprise Squishy Dumplin'", 'Blind-box dumpling', 'Standard TPR gel', '$5–$10 reference range · Circle K and boutiques.'),
+  nonNeeDoh('TABASQUISHY', 'TABASQUISHY Dumplings', 'Blind-box dumpling', 'Food-grade silicone with sticky, soft taba texture', '$12–$19 reference range · online and specialty retailers.'),
+  nonNeeDoh('Dumpling alternatives', 'Mini Kawaii Dumplings — 4-pack', 'Blind-box dumpling', 'Jiggly mochi-style TPR gel', '$5–$8 reference range · Amazon and specialty retailers.'),
+  nonNeeDoh('Sugar Squish', 'Sugar Squish Cubes', 'Sugar / malt gel', 'Dense maltose sugar center with tactile crunch', '$10–$13 reference range · Target and Amazon.'),
+  nonNeeDoh('Top Trenz', 'Super Duper Sugar Squisher', 'Sugar / malt gel', 'Maltose gel with embedded sprinkles', '$11–$13 reference range · Amazon and boutiques. Cupcake and donut shapes are called out in the supplied guide.'),
+  nonNeeDoh('Scrunchems', 'Sugar Drop / Cupcake', 'Sugar / malt gel', 'Slow-flow gel with floating confetti', '$6–$9 reference range · Circle K and toy stores.'),
+  nonNeeDoh('Toymendous', 'Jumbo Game Controller', 'Jumbo character / novelty', 'Air-filled soft TPR with tactile buttons', '$6–$8 reference range · Walmart.'),
+  nonNeeDoh('Toymendous / Sunny Days', 'Jumbo Squeezy Butter Stick', 'Jumbo character / novelty', '10-inch slow-rise memory foam', '$6–$10 reference range · Walmart and Target.'),
+  nonNeeDoh('Hamee Sanrio', 'Jumbo Cinnamoroll Squishy', 'Character squishy', 'Scented slow-rising premium PU foam', '$25 reference price · Target and Amazon.'),
+  nonNeeDoh('Orb Curiosities', 'Sugar Swaps Bubble Cubes', 'Budget hunt', 'Sugar-like microbeads and maltose gel', '$1.25 reference price · Dollar Tree.'),
+  nonNeeDoh('Zorbitz / Dollar Tree', 'Sports Ball Squishies — soccer, basketball, football', 'Budget hunt', 'TPR rubber shell with firm gel core', '$1.25–$5 reference range · Dollar Tree and Circle K.'),
+  nonNeeDoh('Five Below', 'Neon Super Gummy Ball', 'Budget hunt', 'Ultra-stretchy goopy elastomer rubber', '$3–$5 reference range · Five Below.'),
+  nonNeeDoh('Streamline / Aerie', "Cheese Squishy / Dumplin' Babies", 'Budget character squishy', 'Slow-rise memory foam', '$5–$7 reference range · American Eagle / Aerie.'),
+  nonNeeDoh('Minecraft', 'Minecraft character squishies', 'Licensed character squishy', 'Character-dependent foam or gel squish', 'Track exact character, size, and retailer separately; the handoff identifies Minecraft as a hot-find family rather than one single SKU.'),
 ];
 
 export const alternativeCategories = ['All', ...Array.from(new Set(needohAlternatives.map((item) => item.category)))];
