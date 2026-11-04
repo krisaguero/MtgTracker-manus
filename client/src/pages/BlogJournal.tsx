@@ -19,8 +19,10 @@ type JournalArticle = { slug: string; category: string; title: string; dateLabel
 type WeeklyDesk = { week: string; label: string; posts: number; cards: Array<{ name: string; setCode: string; percentChange: number; currentUsd: number | null; category: string; thesis: string; risk: string; action: string; appearances?: number }> };
 const weeklyDesks: JournalArticle[] = (marketBacklog.weekly as WeeklyDesk[]).map((desk) => {
   const topCards = desk.cards.slice(0, 10);
+  const cardEmbeds = topCards.map(card => `\`\`\`mtg-card\n${JSON.stringify({ name: card.name, setCode: card.setCode, sourceDate: desk.week })}\n\`\`\``).join('\n\n');
   const body = [
     `This weekly desk consolidates ${desk.posts} daily research post${desk.posts === 1 ? '' : 's'} into a ranked, source-aware watchlist. It is a reading layer over the underlying evidence log—not a claim that every percentage move represents durable demand.`,
+    cardEmbeds,
     `## What stood out`,
     topCards.length ? topCards.map((card, index) => `${index + 1}. **${card.name}** (${card.setCode.toUpperCase()}) — ${card.percentChange >= 0 ? '+' : ''}${card.percentChange.toFixed(1)}%${card.currentUsd == null ? '' : ` at $${card.currentUsd.toFixed(2)}`}. **${card.action.replaceAll('_', ' ')}.** ${card.thesis}`).join('\n') : 'No ranked cards were promoted for this week.',
     `## How to use this desk`,

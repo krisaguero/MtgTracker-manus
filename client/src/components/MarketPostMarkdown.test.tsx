@@ -48,6 +48,13 @@ describe('MarketPostMarkdown', () => {
     expect(markup).toContain('After');
   });
 
+  it('adds a preview gallery for bold card mentions that do not have an explicit embed', () => {
+    const markup = renderToStaticMarkup(<MarketPostMarkdown body={'## Signals\n\n**Ink-Treader Nephilim** moved higher after the spoiler.'} />);
+    expect(markup).toContain('Card imagery for cards mentioned in this report');
+    expect(markup).toContain('Ink-Treader Nephilim');
+    expect(markup).toContain('/card/Ink-Treader%20Nephilim');
+  });
+
   it('ignores unsafe URL fields while retaining valid name, set, and date fields', () => {
     const parsed = parseMarketCardEmbed(JSON.stringify({
       name: 'Apostrophe/漢 Card',

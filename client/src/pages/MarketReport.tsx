@@ -9,6 +9,7 @@ import { clearDigestDeliveryLog, loadDigestDeliveryLog, recordDigestDelivery, ty
 import { loadOwnedCollection } from '@/lib/manaboxParser';
 import { toast } from 'sonner';
 import { MarketCardSkeleton, PreconGridSkeleton } from '@/components/PageSkeletons';
+import { MarketCardPreview } from '@/components/MarketCardPreview';
 import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
 import { useCommanderArchive } from '@/lib/commanderArchive';
 export default function MarketReport() {
@@ -226,6 +227,9 @@ export default function MarketReport() {
                       </div>
                     )}
                     <div className="flex items-start justify-between gap-2 pr-20">
+                      <div className="w-24 shrink-0 sm:w-28" aria-label={`${spike.cardName} card preview`}>
+                        <MarketCardPreview name={spike.cardName} setCode={spike.setCode} size="md" />
+                      </div>
                       <div>
                         <div className="flex items-center gap-2"><span className="border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{spike.setCode.toUpperCase()}</span><span className="font-mono text-[10px] font-bold uppercase tracking-wider text-primary">{spike.format}</span></div>
                         <h3 className="mt-2 font-bold leading-snug">{spike.cardName}</h3>
