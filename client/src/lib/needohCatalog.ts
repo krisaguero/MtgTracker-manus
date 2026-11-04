@@ -9,6 +9,16 @@ export interface NeeDohStyle {
   note?: string;
 }
 
+export interface ProductChecklistItem {
+  id: string;
+  name: string;
+  family: string;
+  category: string;
+  texture: string;
+  note?: string;
+  source: 'NeeDoh' | 'Speks alternative';
+}
+
 const style = (name: string, category: NeeDohCategory, texture: string, variants: string[] = [], note?: string): NeeDohStyle => ({
   id: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''), name, category, texture, variants, note,
 });
@@ -133,3 +143,47 @@ export const needohStyles: NeeDohStyle[] = [
 
 export const needohCategories = ['All', ...Array.from(new Set(needohStyles.map((item) => item.category)))];
 export const needohTextures = ['All', ...Array.from(new Set(needohStyles.map((item) => item.texture)))];
+
+/**
+ * Flatten family records into practical checklist rows. A family with named
+ * variants becomes one row per variant; a family without variants remains one
+ * row. This preserves the original catalog while allowing collectors to mark
+ * individual colors, expressions, and characters.
+ */
+export const needohChecklistItems: ProductChecklistItem[] = needohStyles.flatMap((item) => {
+  const variants = item.variants.length ? item.variants : ['Core style'];
+  return variants.map((variant) => ({
+    id: `${item.id}--${variant.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`,
+    name: item.variants.length ? `${item.name} — ${variant}` : item.name,
+    family: item.name,
+    category: item.category,
+    texture: item.texture,
+    note: item.note,
+    source: 'NeeDoh' as const,
+  }));
+});
+
+const alternative = (family: string, name: string, category: string, texture: string, note?: string): ProductChecklistItem => ({
+  id: `speks--${family}-${name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+  name,
+  family,
+  category,
+  texture,
+  note,
+  source: 'Speks alternative',
+});
+
+/** Attached Speks collector guide, kept separate from the official NeeDoh ledger. */
+export const needohAlternatives: ProductChecklistItem[] = [
+  ...['Mini', 'Original', 'Jumbo'].flatMap((size) => ['Dew', 'Sea Glass', 'Moon Jelly', 'Mist', 'Dusk', 'Coral'].map((color) => alternative('Gump Ball', `${size} Gump Ball — ${color}`, 'Memory gel', 'Velvety silicone shell with slow-rebound memory gel core'))),
+  ...['Mini', 'Standard', 'Jumbo'].flatMap((size) => ['Dew', 'Sea Glass', 'Moon Jelly', 'Mist'].map((color) => alternative('Gump Loop', `${size} Gump Loop — ${color}`, 'Memory gel', 'Velvety loop-shaped memory gel', 'Torus form with center opening for looping and stretching.'))),
+  ...['Quilt', 'Scale', 'Burst', 'Edge'].flatMap((texture) => {
+    const color = ({ Quilt: 'Moon Jelly', Scale: 'Mist', Burst: 'Dew', Edge: 'Sea Glass' } as Record<string, string>)[texture];
+    return [alternative('Gump Surface', `Gump Surface — ${texture} / ${color}`, 'Textured memory gel', 'Raised tactile geometric or organic surface')];
+  }),
+  alternative('Gump Novelty Shapes', 'Gump Heart', 'Memory gel', 'Heart-shaped memory gel squeezable'),
+  ...['Lime', 'Green', 'Blue', 'Purple', 'Pink', 'Orange'].map((color) => alternative('Blur Focus Putty', `Blur Focus Putty — ${color}`, 'Putty', 'Non-drying velvety silicone-foam putty', '40g twist-top travel container; matte, buttery, soft-stretch resistance.')),
+  ...['Blue', 'Evergreen', 'Mulberry'].map((color) => alternative('Fleks Magnetic Silicone', `Fleks — ${color}`, 'Magnetic silicone', 'Smooth matte rubber with magnetic structural resistance', 'Set of six soft-touch silicone magnetic pieces with steel building base.')),
+];
+
+export const alternativeCategories = ['All', ...Array.from(new Set(needohAlternatives.map((item) => item.category)))];
