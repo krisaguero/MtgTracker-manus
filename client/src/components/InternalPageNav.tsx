@@ -29,6 +29,7 @@ const navigation: SiteItem[] = [
     label: 'Play & collect',
     links: [
       { href: '/collection', label: 'Collection goals & imports' },
+      { href: '/needoh', label: 'NeeDoh browser collection' },
       { href: '/dupe-decks', label: 'Themed 60-card decks' },
       { href: '/brawl/mazirek', label: 'Mazirek Brawl lab' },
       { href: '/limited', label: 'Sealed & draft pool' },
