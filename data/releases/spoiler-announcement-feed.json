@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-03",
+  "asOf": "2026-11-04",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
     {
-      "id": "en-news-card-preview-star-trek-tokens-and-art-cards",
-      "title": "Magic: The Gathering® | Star Trek™ Tokens and Art Cards",
-      "url": "https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards",
-      "kind": "spoiler",
+      "id": "en-news-feature-star-trek-prerelease-guide",
+      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
+      "kind": "product-release",
       "source": "DailyMTG"
     },
     {
@@ -26,12 +26,12 @@
       "source": "DailyMTG"
     },
     {
-      "id": "en-news-feature-star-trek-prerelease-guide",
-      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
-      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
-      "kind": "product-release",
+      "id": "en-news-card-preview-star-trek-tokens-and-art-cards",
+      "title": "Magic: The Gathering® | Star Trek™ Tokens and Art Cards",
+      "url": "https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards",
+      "kind": "spoiler",
       "source": "DailyMTG"
     }
   ],
-  "previousRecordCount": 6
+  "previousRecordCount": 4
 }
