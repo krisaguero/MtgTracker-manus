@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T16:04:45.103Z",
-  "pricingDate": "2026-11-04",
-  "dataWindow": "2026-10-12 through 2026-11-04",
+  "generatedAt": "2026-11-05T16:19:03.872Z",
+  "pricingDate": "2026-11-05",
+  "dataWindow": "2026-10-13 through 2026-11-05",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 1970,
-  "negativeSignals": 2134,
+  "positiveSignals": 1953,
+  "negativeSignals": 1972,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 79,
-    "multiSourceSignals": 12432,
+    "singleSourceSignals": 90,
+    "multiSourceSignals": 12421,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 65,
-      "positiveSignals": 65,
+      "cards": 48,
+      "positiveSignals": 48,
       "negativeSignals": 0,
-      "averagePctChange": 24.27
+      "averagePctChange": 29.49
     },
     {
       "category": "commander-picks",
-      "cards": 12414,
+      "cards": 12433,
       "positiveSignals": 1905,
-      "negativeSignals": 2102,
-      "averagePctChange": -0.02
+      "negativeSignals": 1942,
+      "averagePctChange": 0.02
     },
     {
       "category": "reprint-squashes",
-      "cards": 32,
+      "cards": 30,
       "positiveSignals": 0,
-      "negativeSignals": 32,
-      "averagePctChange": -25.64
+      "negativeSignals": 30,
+      "averagePctChange": -26.27
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-04; 1970 rose and 2134 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +24.27% across 65 cards.",
-    "79 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "32 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-05; 1953 rose and 1972 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +29.49% across 48 cards.",
+    "90 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "30 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Axebane Guardian",
-        "setCode": "tdc",
-        "collectorNumber": "248",
-        "currentUsd": 0.64,
-        "percentChange": 88.24,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Awakening Zone",
+        "name": "Atsushi, the Blazing Sky",
         "setCode": "soc",
-        "collectorNumber": "262",
-        "currentUsd": 0.74,
-        "percentChange": 76.19,
+        "collectorNumber": "236",
+        "currentUsd": 0.68,
+        "percentChange": 94.29,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Exotic Orchard",
-        "setCode": "tdc",
-        "collectorNumber": "360",
-        "currentUsd": 0.39,
-        "percentChange": 69.57,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Soul Foundry",
-        "setCode": "c19",
-        "collectorNumber": "223",
-        "currentUsd": 0.78,
-        "percentChange": 62.5,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Archmage Emeritus",
+        "name": "Sunscorch Regent",
         "setCode": "fic",
-        "collectorNumber": "261",
-        "currentUsd": 1.48,
-        "percentChange": 45.1,
+        "collectorNumber": "255",
+        "currentUsd": 0.65,
+        "percentChange": 91.18,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Epic Experiment",
+        "setCode": "c21",
+        "collectorNumber": "216",
+        "currentUsd": 0.69,
+        "percentChange": 81.58,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Terminate",
+        "setCode": "msc",
+        "collectorNumber": "189",
+        "currentUsd": 0.67,
+        "percentChange": 81.08,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Terramorphic Expanse",
+        "setCode": "tdc",
+        "collectorNumber": "408",
+        "currentUsd": 0.34,
+        "percentChange": 54.55,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Stoneshock Giant",
-        "setCode": "c15",
-        "collectorNumber": "165",
-        "currentUsd": 0.01,
-        "percentChange": -90,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Choked Estuary",
-        "setCode": "scd",
-        "collectorNumber": "293",
-        "currentUsd": 0.32,
-        "percentChange": -48.39,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Yavimaya Coast",
-        "setCode": "c19",
-        "collectorNumber": "287",
+        "name": "Gift of Immortality",
+        "setCode": "soc",
+        "collectorNumber": "147",
         "currentUsd": 0.39,
-        "percentChange": -44.29,
+        "percentChange": -45.07,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Sunpetal Grove",
-        "setCode": "msc",
-        "collectorNumber": "272",
-        "currentUsd": 0.37,
-        "percentChange": -43.94,
+        "name": "Blight Mound",
+        "setCode": "soc",
+        "collectorNumber": "208",
+        "currentUsd": 0.38,
+        "percentChange": -44.93,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Glacial Fortress",
+        "name": "Out of Time",
         "setCode": "who",
-        "collectorNumber": "285",
+        "collectorNumber": "209",
+        "currentUsd": 0.37,
+        "percentChange": -44.78,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Forest",
+        "setCode": "c14",
+        "collectorNumber": "334",
+        "currentUsd": 0.15,
+        "percentChange": -44.44,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Exotic Orchard",
+        "setCode": "msc",
+        "collectorNumber": "241",
         "currentUsd": 0.4,
-        "percentChange": -43.66,
+        "percentChange": -42.86,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,34 +153,34 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Idol of Oblivion",
-        "setCode": "plst",
-        "collectorNumber": "BLC-277",
-        "observations": 21,
-        "firstDate": "2026-10-12",
-        "lastDate": "2026-11-04",
-        "totalPctChange": 12.5,
-        "positiveDays": 4,
-        "negativeDays": 0
-      },
-      {
         "name": "Command Tower",
         "setCode": "cmd",
         "collectorNumber": "269",
         "observations": 21,
-        "firstDate": "2026-10-12",
-        "lastDate": "2026-11-04",
-        "totalPctChange": -2.94,
-        "positiveDays": 4,
+        "firstDate": "2026-10-13",
+        "lastDate": "2026-11-05",
+        "totalPctChange": 15.12,
+        "positiveDays": 3,
         "negativeDays": 2
+      },
+      {
+        "name": "Idol of Oblivion",
+        "setCode": "plst",
+        "collectorNumber": "BLC-277",
+        "observations": 21,
+        "firstDate": "2026-10-13",
+        "lastDate": "2026-11-05",
+        "totalPctChange": 5.69,
+        "positiveDays": 4,
+        "negativeDays": 0
       },
       {
         "name": "Island",
         "setCode": "cm2",
         "collectorNumber": "291",
-        "observations": 16,
+        "observations": 17,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-04",
+        "lastDate": "2026-11-05",
         "totalPctChange": 390,
         "positiveDays": 1,
         "negativeDays": 0
@@ -189,20 +189,20 @@
         "name": "Bronzebeak Foragers",
         "setCode": "lcc",
         "collectorNumber": "69",
-        "observations": 16,
+        "observations": 17,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-04",
-        "totalPctChange": 270.1,
-        "positiveDays": 11,
+        "lastDate": "2026-11-05",
+        "totalPctChange": 274.23,
+        "positiveDays": 12,
         "negativeDays": 1
       },
       {
         "name": "Swamp",
         "setCode": "znr",
         "collectorNumber": "382",
-        "observations": 16,
+        "observations": 17,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-04",
+        "lastDate": "2026-11-05",
         "totalPctChange": 230.3,
         "positiveDays": 5,
         "negativeDays": 8
@@ -210,52 +210,52 @@
     ],
     "predictionsDue": [
       {
-        "name": "Swamp",
-        "setCode": "znr",
-        "collectorNumber": "382",
-        "evaluationDate": "2026-11-04"
+        "name": "Temple of Triumph",
+        "setCode": "tdc",
+        "collectorNumber": "407",
+        "evaluationDate": "2026-11-05"
       },
       {
-        "name": "Magmatic Force",
-        "setCode": "scd",
-        "collectorNumber": "150",
-        "evaluationDate": "2026-11-04"
+        "name": "Sulfur Falls",
+        "setCode": "soc",
+        "collectorNumber": "408",
+        "evaluationDate": "2026-11-05"
       },
       {
-        "name": "Shadowblood Ridge",
-        "setCode": "otc",
-        "collectorNumber": "317",
-        "evaluationDate": "2026-11-04"
+        "name": "Hammer of Purphoros",
+        "setCode": "eoc",
+        "collectorNumber": "88",
+        "evaluationDate": "2026-11-05"
       },
       {
-        "name": "Bastion of Remembrance",
+        "name": "Reality Shift",
+        "setCode": "drc",
+        "collectorNumber": "39",
+        "evaluationDate": "2026-11-05"
+      },
+      {
+        "name": "Goblin Electromancer",
+        "setCode": "tdc",
+        "collectorNumber": "99",
+        "evaluationDate": "2026-11-05"
+      },
+      {
+        "name": "Octomancer",
+        "setCode": "blc",
+        "collectorNumber": "37",
+        "evaluationDate": "2026-11-05"
+      },
+      {
+        "name": "Loyal Apprentice",
         "setCode": "pip",
-        "collectorNumber": "182",
-        "evaluationDate": "2026-11-04"
+        "collectorNumber": "190",
+        "evaluationDate": "2026-11-05"
       },
       {
-        "name": "Forest",
-        "setCode": "c13",
-        "collectorNumber": "354",
-        "evaluationDate": "2026-11-04"
-      },
-      {
-        "name": "Plains",
-        "setCode": "c15",
-        "collectorNumber": "325",
-        "evaluationDate": "2026-11-04"
-      },
-      {
-        "name": "Taunt from the Rampart",
-        "setCode": "msc",
-        "collectorNumber": "188",
-        "evaluationDate": "2026-11-04"
-      },
-      {
-        "name": "Rootborn Defenses",
-        "setCode": "scd",
-        "collectorNumber": "32",
-        "evaluationDate": "2026-11-04"
+        "name": "Guttersnipe",
+        "setCode": "c19",
+        "collectorNumber": "145",
+        "evaluationDate": "2026-11-05"
       }
     ],
     "predictionsResolved": [],
