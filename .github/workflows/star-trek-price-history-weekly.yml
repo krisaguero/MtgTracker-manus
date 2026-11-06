@@ -1,0 +1,73 @@
+name: Weekly Star Trek Commander Price History
+
+on:
+  schedule:
+    - cron: "20 8 * * 1" # Mondays at 8:20 AM UTC
+  workflow_dispatch:
+
+concurrency:
+  group: star-trek-price-history
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  refresh-star-trek-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync with latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Refresh Star Trek card-price history
+        run: node scripts/refresh-star-trek-price-history.mjs
+
+      - name: Validate generated history and application types
+        run: |
+          git diff --check
+          pnpm exec tsc --noEmit --pretty false
+
+      - name: Commit and push weekly history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'MTG Market Data Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add client/src/data/starTrekPriceHistory.json
+          if git diff --cached --quiet; then
+            echo 'No Star Trek price changes detected.'
+            exit 0
+          fi
+          git diff --cached --check
+          git commit -m 'chore(market): refresh Star Trek weekly price history [skip ci]'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo 'Unable to publish Star Trek history after three attempts.' >&2
+          exit 1

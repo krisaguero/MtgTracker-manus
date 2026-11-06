@@ -19,6 +19,7 @@
     "market:meta-watch": "node scripts/build-market-meta-watch.mjs",
     "market:preorder-volatility": "node scripts/build-preorder-volatility-alert.mjs",
     "market:preorder-products": "node scripts/sync-preorder-products.mjs",
+    "market:star-trek-weekly": "node scripts/refresh-star-trek-price-history.mjs",
     "market:q4-brief": "node scripts/build-q4-release-brief.mjs",
     "commander:index": "tsx scripts/build-commander-deck-index.ts",
     "format": "prettier --write .",

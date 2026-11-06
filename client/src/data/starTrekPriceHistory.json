@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-06T04:09:30.660Z",
+  "source": "Weekly Scryfall refresh for Star Trek Commander signal baskets; sealed product quotes remain separate and null until sourced.",
+  "snapshots": [
+    {
+      "date": "2026-11-05",
+      "source": "Editorial Star Trek market brief",
+      "sealedPricesUsd": {},
+      "collectorSealedPricesUsd": {},
+      "signalBasketUsd": {
+        "federation-fleet": 38.82,
+        "landing-party": 28.31,
+        "klingon-fury": 40.6,
+        "we-are-the-borg": 13.79
+      },
+      "cardPricesUsd": {
+        "Captain Jean-Luc Picard": 17.99,
+        "Sarek, Federation Ambassador": 1.33,
+        "Dr. Beverly Crusher": 19.5,
+        "Starfleet Academy": 8.47,
+        "Hallowed Fountain": 19.84,
+        "Khan, Vengeful Heart": 12.1,
+        "Miles O'Brien, Transporter Ops": 9.5,
+        "The Holodeck": 19,
+        "Quark, Humble Proprietor": 13.79
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "source": "Scryfall card prices; sealed product quotes intentionally not inferred",
+      "sealedPricesUsd": {},
+      "collectorSealedPricesUsd": {},
+      "signalBasketUsd": {
+        "federation-fleet": 52.239999999999995,
+        "landing-party": 15.24,
+        "klingon-fury": 22.91,
+        "we-are-the-borg": 11.07
+      },
+      "cardPricesUsd": {
+        "Captain Jean-Luc Picard": 24.59,
+        "Sarek, Federation Ambassador": 0.36,
+        "Dr. Beverly Crusher": 27.29,
+        "Starfleet Academy": 7.46,
+        "Hallowed Fountain": 7.78,
+        "Khan, Vengeful Heart": 15.66,
+        "Miles O'Brien, Transporter Ops": 1.38,
+        "The Holodeck": 5.87,
+        "Quark, Humble Proprietor": 11.07
+      },
+      "resolution": {
+        "cardsRequested": 9,
+        "cardsResolved": 9,
+        "unresolvedCards": []
+      }
+    }
+  ]
+}

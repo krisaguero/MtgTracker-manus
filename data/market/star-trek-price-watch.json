@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sourcePolicy": "Sealed deck market quotes are not inferred from singles. signalBasketUsd is an editorial basket of priced Star Trek singles associated with each deck and is shown separately from MSRP.",
+  "products": [
+    { "id": "federation-fleet", "name": "Federation Fleet", "identity": "Blue · Red · White", "msrpUsd": 74.99, "collectorMsrpUsd": 159.99, "cards": ["Captain Jean-Luc Picard", "Sarek, Federation Ambassador", "Dr. Beverly Crusher"] },
+    { "id": "landing-party", "name": "Landing Party", "identity": "Green · White · Blue", "msrpUsd": 74.99, "collectorMsrpUsd": 159.99, "cards": ["Starfleet Academy", "Hallowed Fountain"] },
+    { "id": "klingon-fury", "name": "Klingon Fury", "identity": "Red · White · Black", "msrpUsd": 74.99, "collectorMsrpUsd": 159.99, "cards": ["Khan, Vengeful Heart", "Miles O'Brien, Transporter Ops", "The Holodeck"] },
+    { "id": "we-are-the-borg", "name": "We Are the Borg", "identity": "White · Blue · Black", "msrpUsd": 74.99, "collectorMsrpUsd": 159.99, "cards": ["Quark, Humble Proprietor"] }
+  ],
+  "cards": [
+    { "name": "Captain Jean-Luc Picard", "setCode": "trk", "priceUsd": 17.99 },
+    { "name": "Sarek, Federation Ambassador", "setCode": "trk", "priceUsd": 1.33 },
+    { "name": "Dr. Beverly Crusher", "setCode": "trk", "priceUsd": 19.50 },
+    { "name": "Starfleet Academy", "setCode": "trk", "priceUsd": 8.47 },
+    { "name": "Hallowed Fountain", "setCode": "trk", "priceUsd": 19.84 },
+    { "name": "Khan, Vengeful Heart", "setCode": "trk", "priceUsd": 12.10 },
+    { "name": "Miles O'Brien, Transporter Ops", "setCode": "trk", "priceUsd": 9.50 },
+    { "name": "The Holodeck", "setCode": "trk", "priceUsd": 19.00 },
+    { "name": "Quark, Humble Proprietor", "setCode": "trk", "priceUsd": 13.79 }
+  ]
+}

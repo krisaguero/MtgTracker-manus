@@ -6,6 +6,57 @@ import {
   starTrekProductWatch,
   type StarTrekMarketSignal,
 } from "@/data/starTrekMarketWatch";
+import starTrekPriceHistory from "@/data/starTrekPriceHistory.json";
+
+type StarTrekTab = "watch" | "history";
+
+function StarTrekPriceHistoryPanel() {
+  const snapshots = [...starTrekPriceHistory.snapshots].reverse();
+  const products = starTrekProductWatch.decks.map((deck, index) => ({
+    ...deck,
+    id: ["federation-fleet", "landing-party", "klingon-fury", "we-are-the-borg"][index],
+  }));
+
+  return (
+    <div className="mt-5 border border-border bg-card">
+      <div className="border-b border-border p-4">
+        <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Weekly historical desk</p>
+        <h3 className="mt-1 text-xl font-black">Commander deck price trends</h3>
+        <p className="mt-2 max-w-3xl text-xs leading-5 text-muted-foreground">
+          The signal basket is the sum of tracked Star Trek singles associated with each deck. It is not a sealed-deck valuation. MSRP is shown as a baseline until a verified sealed-product quote source is connected.
+        </p>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[720px] border-collapse text-left">
+          <thead>
+            <tr className="border-b border-border font-mono text-[9px] uppercase tracking-wide text-muted-foreground">
+              <th className="p-3">Deck</th><th className="p-3">Identity</th><th className="p-3">MSRP</th>
+              {snapshots.slice(0, 6).map(snapshot => <th key={snapshot.date} className="p-3">{snapshot.date}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {products.map(product => (
+              <tr key={product.id} className="border-b border-border last:border-0">
+                <td className="p-3 font-bold">{product.name}</td>
+                <td className="p-3 text-xs text-muted-foreground">{product.identity}</td>
+                <td className="p-3 font-mono text-xs">${starTrekProductWatch.commanderDeckMsrp.toFixed(2)}</td>
+                {snapshots.slice(0, 6).map(snapshot => {
+                  const value = snapshot.signalBasketUsd[product.id as keyof typeof snapshot.signalBasketUsd];
+                  return <td key={snapshot.date} className="p-3 font-mono text-xs font-bold">{typeof value === "number" ? `$${value.toFixed(2)}` : "—"}</td>;
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="grid gap-px border-t border-border bg-border sm:grid-cols-3">
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Snapshots retained</p><p className="mt-1 text-xl font-black">{starTrekPriceHistory.snapshots.length}</p></div>
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Latest observation</p><p className="mt-1 font-mono text-sm font-black">{starTrekPriceHistory.snapshots.at(-1)?.date ?? "—"}</p></div>
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Sealed quotes</p><p className="mt-1 text-sm font-black text-amber-700">Awaiting verified source</p></div>
+      </div>
+    </div>
+  );
+}
 
 const filters = [
   ["all", "All watch rows"],
@@ -102,6 +153,7 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
 
 export function StarTrekMarketPanel() {
   const [filter, setFilter] = useState<(typeof filters)[number][0]>("all");
+  const [tab, setTab] = useState<StarTrekTab>("watch");
   const visible = useMemo(
     () => filter === "all" ? starTrekMarketSignals : starTrekMarketSignals.filter(signal => signal.category === filter),
     [filter]
@@ -130,15 +182,19 @@ export function StarTrekMarketPanel() {
           <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Deck MSRP / Collector's</p><p className="mt-1 font-mono text-lg font-black">${starTrekProductWatch.commanderDeckMsrp} / ${starTrekProductWatch.collectorsEditionMsrp}</p></div>
         </div>
         <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Star Trek market watch filters">
+          <button type="button" onClick={() => setTab("watch")} aria-pressed={tab === "watch"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "watch" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Current watch</button>
+          <button type="button" onClick={() => setTab("history")} aria-pressed={tab === "history"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "history" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Historical trends</button>
+        </div>
+        {tab === "watch" && <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Star Trek market watch filters">
           {filters.map(([value, label]) => (
             <button key={value} type="button" onClick={() => setFilter(value)} aria-pressed={filter === value} className={`border px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${filter === value ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>
               {label}
             </button>
           ))}
-        </div>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        </div>}
+        {tab === "watch" ? <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visible.map(signal => <WatchCard key={signal.id} signal={signal} />)}
-        </div>
+        </div> : <StarTrekPriceHistoryPanel />}
         <p className="mt-5 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">
           Buying posture: do not chase early Star Trek singles before November 13. Recheck completed sales, EDHREC adoption, and listing depth 3–7 days after release. Prices above are the supplied brief’s reference values, not live quotes or financial advice.
         </p>
