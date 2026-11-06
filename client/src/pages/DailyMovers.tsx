@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { MarketMoversTable } from "@/components/MarketMoversTable";
 import { MarketCardItem } from "@/components/MarketCardItem";
+import { StarTrekMarketPanel } from "@/components/StarTrekMarketPanel";
 import { MOVER_CATEGORIES, type MoverCard } from "@/lib/dailyMoversEngine";
 import { NavigationSearch } from "@/components/NavigationSearch";
 import {
@@ -562,6 +563,8 @@ export function DailyMovers() {
           </div>
         </div>
       </header>
+
+      <StarTrekMarketPanel />
 
       {/* Main Container */}
       <main className="flex-1 mx-auto max-w-7xl w-full px-4 py-8 sm:px-8">
