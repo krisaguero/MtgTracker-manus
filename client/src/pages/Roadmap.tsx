@@ -244,6 +244,22 @@ export default function Roadmap() {
       </header>
 
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-6 sm:space-y-10 sm:px-8 sm:py-10">
+        <section aria-labelledby="progress-heading" className="border-2 border-border bg-card p-4 sm:p-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <SectionLabel>Progress snapshot · source of truth</SectionLabel>
+              <h2 id="progress-heading" className="mt-1 text-2xl font-black">What is live, next, and still being designed</h2>
+            </div>
+            <Link href="#implemented-heading" className="inline-flex items-center gap-2 border border-primary px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">Browse shipped work <ArrowRight className="h-3.5 w-3.5" /></Link>
+          </div>
+          <div className="mt-5 grid gap-px border border-border bg-border sm:grid-cols-3">
+            <div className="bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-emerald-700 dark:text-emerald-400">Shipped surfaces</p><p className="mt-1 text-3xl font-black">{shippedItems.length}</p><p className="mt-1 text-xs text-muted-foreground">Available in production</p></div>
+            <div className="bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-amber-700 dark:text-amber-400">Next proposals</p><p className="mt-1 text-3xl font-black">{plannedItems.length}</p><p className="mt-1 text-xs text-muted-foreground">Not promised or silently active</p></div>
+            <div className="bg-background p-4"><p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">Ecosystem queue</p><p className="mt-1 text-3xl font-black">{ecosystemBuildQueue.length}</p><p className="mt-1 text-xs text-muted-foreground">Tracked ownership-layer items</p></div>
+          </div>
+          <p className="mt-4 text-sm leading-6 text-muted-foreground">The footer is intentionally quiet now. This page is where progress, implementation boundaries, history, privacy notes, and future work belong.</p>
+        </section>
+
         <section aria-labelledby="timeline-heading" className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-8">
           <div className="mb-5 flex items-center gap-3">
             <GitBranch className="h-5 w-5 text-primary" />
