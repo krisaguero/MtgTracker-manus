@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-06",
+  "asOf": "2026-11-07",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
     {
@@ -40,5 +40,5 @@
       "source": "DailyMTG"
     }
   ],
-  "previousRecordCount": 4
+  "previousRecordCount": 5
 }
