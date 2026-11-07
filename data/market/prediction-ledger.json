@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T15:48:19.196Z",
+  "updatedAt": "2026-11-07T14:47:48.419Z",
   "records": [
     {
       "id": "2026-11-06-penny-watch:1:soc:231",
@@ -2704,7 +2704,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -11.54,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:2:m3c:251",
@@ -2730,7 +2736,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -1.72,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:3:c13:156",
@@ -2756,7 +2768,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 30,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:4:m3c:182",
@@ -2782,7 +2800,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 4.84,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:5:soc:155",
@@ -2808,7 +2832,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -44.12,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:6:m3c:180",
@@ -2834,7 +2864,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 3.23,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:7:m3c:51",
@@ -2860,7 +2896,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 5.97,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-24-collection-buy-list:8:otc:188",
@@ -2886,7 +2928,13 @@
         "openedAt": "2026-10-24",
         "evaluationDate": "2026-11-07"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-10-23-penny-watch:1:msc:263",

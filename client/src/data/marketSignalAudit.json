@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T15:48:16.955Z",
-  "pricingDate": "2026-11-06",
-  "snapshotCount": 70,
+  "generatedAt": "2026-11-07T14:47:45.786Z",
+  "pricingDate": "2026-11-07",
+  "snapshotCount": 71,
   "configuredCategories": [
     {
       "id": "all",
@@ -33,16 +33,16 @@
       "label": "2. Penny Risers & Buyout Targets",
       "observedInDailyFeed": true,
       "observationCount": 1023,
-      "latestCount": 43,
+      "latestCount": 0,
       "lastObservedDate": "2026-11-06"
     },
     {
       "id": "commander-picks",
       "label": "3. Commander Format Staples",
       "observedInDailyFeed": true,
-      "observationCount": 223760,
-      "latestCount": 12431,
-      "lastObservedDate": "2026-11-06"
+      "observationCount": 236271,
+      "latestCount": 12511,
+      "lastObservedDate": "2026-11-07"
     },
     {
       "id": "rule-watchers",
@@ -97,7 +97,7 @@
       "label": "10. Reprint Floor Squashes",
       "observedInDailyFeed": true,
       "observationCount": 745,
-      "latestCount": 37,
+      "latestCount": 0,
       "lastObservedDate": "2026-11-06"
     },
     {
@@ -118,32 +118,16 @@
     "reprint-squashes"
   ],
   "latestDailyCategories": [
-    "commander-picks",
-    "penny-risers",
-    "reprint-squashes"
+    "commander-picks"
   ],
   "unconfiguredObservedCategories": [],
   "categoryMomentum": [
     {
-      "category": "penny-risers",
-      "cards": 43,
-      "averagePctChange": 33.32,
-      "positiveSignals": 34,
-      "negativeSignals": 4
-    },
-    {
       "category": "commander-picks",
-      "cards": 12431,
-      "averagePctChange": 0.05,
-      "positiveSignals": 3861,
-      "negativeSignals": 4314
-    },
-    {
-      "category": "reprint-squashes",
-      "cards": 37,
-      "averagePctChange": -21.71,
-      "positiveSignals": 6,
-      "negativeSignals": 30
+      "cards": 12511,
+      "averagePctChange": 0.1,
+      "positiveSignals": 3901,
+      "negativeSignals": 4348
     }
   ],
   "reprintSquashesTrend": [
@@ -17753,22 +17737,22 @@
       "format": "Commander",
       "category": "commander-picks",
       "currentUsd": 0.6,
-      "previousUsd": 0.59,
-      "percentChange": 1.69,
-      "trend": "up",
+      "previousUsd": 0.6,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.6,
       "cardKingdomUsd": 0.59,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Yahenni%2C%20Undying%20Partisan&format=image&version=normal",
-      "reason": "Commander decklist; rose 1.7% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
-      "priceDelta": 0.01,
-      "pctDelta": 1.69,
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": 0.35,
       "sevenDayPctChange": 140,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "827d41fe-358c-59c7-844f-795236376ca4",
@@ -17791,12 +17775,12 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 1 available price source.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": 0.28,
       "sevenDayPctChange": 133.33,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "9f8ac95a-ae93-5eec-8fa4-c46bcaf786ef",
@@ -17807,24 +17791,24 @@
       "collectorNumber": "403",
       "rarity": "rare",
       "format": "Commander",
-      "category": "penny-risers",
+      "category": "commander-picks",
       "currentUsd": 0.63,
-      "previousUsd": 0.32,
-      "percentChange": 96.88,
-      "trend": "up",
+      "previousUsd": 0.63,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.63,
       "cardKingdomUsd": 0.59,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Hinterland%20Harbor&format=image&version=normal",
-      "reason": "Commander decklist; rose 96.9% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
-      "isCatalyst": true,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
-      "priceDelta": 0.31,
-      "pctDelta": 96.88,
+      "isCatalyst": false,
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": 0.35,
       "sevenDayPctChange": 125,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "48baebe8-22a8-548b-898e-ec1282b35f88",
@@ -17835,24 +17819,24 @@
       "collectorNumber": "272",
       "rarity": "rare",
       "format": "Commander",
-      "category": "penny-risers",
+      "category": "commander-picks",
       "currentUsd": 0.66,
-      "previousUsd": 0.34,
-      "percentChange": 94.12,
-      "trend": "up",
+      "previousUsd": 0.66,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.66,
       "cardKingdomUsd": 0.49,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Drownyard%20Temple&format=image&version=normal",
-      "reason": "Commander decklist; rose 94.1% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
-      "isCatalyst": true,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
-      "priceDelta": 0.32,
-      "pctDelta": 94.12,
+      "isCatalyst": false,
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": 0.36,
       "sevenDayPctChange": 120,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "46b29e0e-cb8e-57e8-8e43-c7875befded3",
@@ -17863,24 +17847,24 @@
       "collectorNumber": "226",
       "rarity": "uncommon",
       "format": "Commander",
-      "category": "penny-risers",
+      "category": "commander-picks",
       "currentUsd": 0.59,
-      "previousUsd": 0.27,
-      "percentChange": 118.52,
-      "trend": "up",
+      "previousUsd": 0.59,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.59,
       "cardKingdomUsd": 0.35,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Nyx%20Weaver&format=image&version=normal",
-      "reason": "Commander decklist; rose 118.5% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
-      "isCatalyst": true,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
-      "priceDelta": 0.32,
-      "pctDelta": 118.52,
+      "isCatalyst": false,
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": 0.32,
       "sevenDayPctChange": 118.52,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     }
   ],
   "topDecliners": [
@@ -17905,12 +17889,12 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": -0.09,
       "sevenDayPctChange": -90,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "0b4202f9-eb96-523f-95a5-9fe4576de393",
@@ -17933,12 +17917,12 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": -0.12,
       "sevenDayPctChange": -60,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "67814a63-4556-57bd-bc00-195866159dfb",
@@ -17949,24 +17933,24 @@
       "collectorNumber": "107",
       "rarity": "common",
       "format": "Commander",
-      "category": "penny-risers",
+      "category": "commander-picks",
       "currentUsd": 0.13,
-      "previousUsd": 0.11,
-      "percentChange": 18.18,
-      "trend": "up",
+      "previousUsd": 0.13,
+      "percentChange": 0,
+      "trend": "flat",
       "tcgplayerMarketUsd": 0.13,
       "cardKingdomUsd": 0.69,
       "sourceCount": 2,
       "imageUrl": "https://api.scryfall.com/cards/named?exact=Command%20Tower&format=image&version=normal",
-      "reason": "Commander decklist; rose 18.2% since the prior saved observation across 2 available price sources.",
+      "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
-      "priceDelta": 0.02,
-      "pctDelta": 18.18,
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
+      "priceDelta": 0,
+      "pctDelta": 0,
       "sevenDayPriceDelta": -0.18,
       "sevenDayPctChange": -58.06,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "d701d7d9-3fb5-5aae-b6db-646a998fc9b3",
@@ -17989,12 +17973,12 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": -0.4,
       "sevenDayPctChange": -57.97,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     },
     {
       "id": "dd6ab369-8090-5f59-8096-74e99c7e6ba9",
@@ -18017,22 +18001,22 @@
       "reason": "Commander decklist; held flat 0.0% since the prior saved observation across 2 available price sources.",
       "source": "MTGJSON",
       "isCatalyst": false,
-      "lastUpdated": "2026-11-06T15:48:04.873Z",
+      "lastUpdated": "2026-11-07T14:47:36.413Z",
       "priceDelta": 0,
       "pctDelta": 0,
       "sevenDayPriceDelta": -0.33,
       "sevenDayPctChange": -57.89,
-      "firstObservedDate": "2026-10-31"
+      "firstObservedDate": "2026-11-01"
     }
   ],
   "findings": [
-    "The latest feed is dated 2026-11-06 and contains 12511 signals across 3 observed categories; seven-day momentum is used when the latest file is flat.",
-    "penny-risers is the strongest latest category by average observed change (33.32%).",
+    "The latest feed is dated 2026-11-07 and contains 12511 signals across 1 observed categories; seven-day momentum is used when the latest file is flat.",
+    "commander-picks is the strongest latest category by average observed change (0.1%).",
     "Counterspell is the only card currently driving Reprint Squashes: 52 observations, $3.04 to $3.55 (16.78%), with a maximum daily drop of -28.41%.",
     "Yahenni, Undying Partisan is the strongest seven-day gainer at 140.00%. Verify liquidity before treating it as a trend.",
     "Stoneshock Giant is the sharpest seven-day decliner at -90.00%, making reprint or demand exhaustion a risk to investigate.",
     "All observed daily categories are represented in the configured site tabs."
   ],
-  "moverPrompt": "Act as an MTG market analyst. Using only the attached site snapshot, explain the strongest market signals without treating a single low-liquidity print as proof of durable demand. Prioritize: (1) category momentum, (2) cards with repeat observations, (3) price direction and absolute move, (4) reprint or variant risk, and (5) what evidence would invalidate the thesis. Cite the pricing date 2026-11-06 and distinguish observed data from speculation.",
+  "moverPrompt": "Act as an MTG market analyst. Using only the attached site snapshot, explain the strongest market signals without treating a single low-liquidity print as proof of durable demand. Prioritize: (1) category momentum, (2) cards with repeat observations, (3) price direction and absolute move, (4) reprint or variant risk, and (5) what evidence would invalidate the thesis. Cite the pricing date 2026-11-07 and distinguish observed data from speculation.",
   "methodology": "Computed from repository daily market snapshots. Latest changes compare the two most recent dated files; seven-day momentum compares the first and last observation for each signal in the most recent seven dated files."
 }
