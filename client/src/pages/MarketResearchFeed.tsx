@@ -16,6 +16,7 @@ import { MarketCardPreview } from "@/components/MarketCardPreview";
 import { VerifiedHistoricalEvidence } from "@/components/VerifiedHistoricalEvidence";
 import { MarketMetaWatchDashboard } from "@/components/MarketMetaWatchDashboard";
 import { MarketWatchTerminal } from "@/components/MarketWatchTerminal";
+import { StarTrekMarketPanel } from "@/components/StarTrekMarketPanel";
 import { TabletopPaperSpotlightTeaser } from "./TabletopPaperSpotlight";
 
 type FeedCard = {
@@ -550,11 +551,37 @@ export default function MarketResearchFeed() {
             >
               Quarterly comparison
             </Link>
+            <Link
+              href="/market-report/star-trek-market-watch-2026-11-07"
+              className="border border-primary/60 bg-primary/5 px-3 py-2 font-mono text-[10px] font-black uppercase text-primary hover:border-primary"
+            >
+              Star Trek watch · Nov. 7
+            </Link>
+            <Link
+              href="/market-report/november-06-30-signal-brief"
+              className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary"
+            >
+              Daily brief · Nov. 6
+            </Link>
           </div>
         </div>
       </header>
       <main className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-8">
         {!requestedDate && <TabletopPaperSpotlightTeaser />}
+        <section className="border-2 border-primary/40 bg-primary/[0.035] p-4 sm:p-5" aria-label="New dated market posts">
+          <p className="font-mono text-[10px] font-black uppercase tracking-widest text-primary">New dated posts</p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <Link href="/market-report/star-trek-market-watch-2026-11-07" className="border border-border bg-card p-4 transition-colors hover:border-primary">
+              <h2 className="font-bold">Star Trek before launch: early movers, wide swings</h2>
+              <p className="mt-2 text-xs leading-5 text-muted-foreground">Nov. 7 snapshot, release timing, top reported moves, and the completed-sales caveat.</p>
+            </Link>
+            <Link href="/market-report/november-06-30-signal-brief" className="border border-border bg-card p-4 transition-colors hover:border-primary">
+              <h2 className="font-bold">Daily MTG Market Movers — Nov. 6 brief</h2>
+              <p className="mt-2 text-xs leading-5 text-muted-foreground">The full supplied 30-signal source brief, kept separate from the later Star Trek snapshot.</p>
+            </Link>
+          </div>
+        </section>
+        <StarTrekMarketPanel />
         <details className="border border-border bg-card">
           <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
             Historical evidence and source snapshot

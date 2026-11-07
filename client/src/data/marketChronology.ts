@@ -37,6 +37,33 @@ const importedEntries: MarketChronologyEntry[] = importedMarketReports.map(
 
 const briefEntries: MarketChronologyEntry[] = [
   {
+    id: "star-trek-market-watch-2026-11-07",
+    dateKey: "2026-11-07",
+    title: "Star Trek Before Launch: Early Movers, Wide Swings",
+    href: "/market-report/star-trek-market-watch-2026-11-07",
+    source: "MTGGoldfish Daily Change + Wizards product schedule",
+    kind: "market watch",
+    verification:
+      "Source page checked Nov. 7; no separate as-of timestamp or completed-sale verification",
+    dataWindow:
+      "MTGGoldfish Star Trek paper movers page read November 7, 2026; prerelease Nov. 6–12, tabletop release Nov. 13",
+    caveat:
+      "Daily listing moves are not completed sales; low-dollar and pre-release prices can swing sharply as supply arrives.",
+  },
+  {
+    id: "brief-2026-11-06",
+    dateKey: "2026-11-06",
+    title: "Daily MTG Market Movers — 30-Signal Brief",
+    href: "/market-report/november-06-30-signal-brief",
+    source: "User-supplied source-dated catalyst brief",
+    kind: "catalyst brief",
+    verification:
+      "Brief uses a weekly snapshot; same-day completed sales and card-level daily moves are not independently verified",
+    dataWindow: "November 5, 2026 / most recent verified weekly market snapshot",
+    caveat:
+      "Some figures are weekly rather than 24-hour moves; exact printings, completed sales, and buylist changes are missing for several cards.",
+  },
+  {
     id: "quarterly-comparison-2026-10-22",
     dateKey: "2026-10-22",
     title: "October vs. Historical Quarterly Market Trends",

@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUp, ChevronDown, Search, SlidersHorizontal } from "luci
 import { Link } from "wouter";
 import dailyMarketSnapshotUrl from "@/data/dailyMarketSnapshot.json?url";
 import { MarketCardPreview } from "@/components/MarketCardPreview";
+import { MarketMoverCardArt } from "@/components/MarketMoverCardArt";
 
 type SnapshotSignal = {
   id?: string;
@@ -157,7 +158,8 @@ export function MarketWatchTerminal({ fallbackSignals = [], generatedDate }: Pro
           return <div key={signal.key} className="bg-card">
             <button type="button" onClick={() => setExpanded(isExpanded ? null : signal.key)} className="grid w-full grid-cols-[2rem_minmax(0,1fr)_auto_auto_auto] items-center gap-3 px-4 py-3 text-left hover:bg-primary/5 sm:grid-cols-[2.5rem_2.5rem_minmax(0,1fr)_8rem_6rem_7rem] sm:px-5">
               <span className="font-mono text-xs font-black text-muted-foreground">{index + 1}</span>
-              <span className="hidden sm:block"><MarketCardPreview name={signal.name} setCode={signal.setCode} size="sm" /></span>
+              <span className="sm:hidden"><MarketMoverCardArt name={signal.name} setCode={signal.setCode} /></span>
+              <span className="hidden sm:block"><MarketMoverCardArt name={signal.name} setCode={signal.setCode} size="small" /></span>
               <span className="min-w-0"><strong className="block truncate text-sm font-black">{signal.name}</strong><span className="block truncate font-mono text-[10px] uppercase text-muted-foreground">{signal.setCode} · {signal.collectorNumber || "printing unresolved"}</span></span>
               <span className="hidden font-mono text-xs text-muted-foreground sm:block">{formatUsd(signal.currentUsd)}</span>
               <span className={`font-mono text-sm font-black ${isUp ? "text-emerald-600" : signal.percentChange < 0 ? "text-destructive" : "text-muted-foreground"}`}>{isUp ? <ArrowUp className="mr-1 inline h-3 w-3" /> : signal.percentChange < 0 ? <ArrowDown className="mr-1 inline h-3 w-3" /> : null}{formatMove(signal.percentChange)}</span>

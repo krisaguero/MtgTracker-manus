@@ -31,11 +31,11 @@ describe('application route map', () => {
     expect(readFileSync(resolve(process.cwd(), 'client/src/pages/TodayMarketBrief.tsx'), 'utf8')).toContain('getChronologicalMarketPosts');
   });
 
-  it('serves the October 5, 11, and 15 historical reports separately from dated price-report routes', () => {
+  it('serves dated market articles separately from the generic date-key report route', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const genericReportRoute = source.indexOf('path="/market-report/:dateKey"');
     expect(genericReportRoute).toBeGreaterThan(-1);
-    for (const route of ['/market-report/october-05-daily-market-movers', '/market-report/october-11-daily-market-movers', '/market-report/october-15-30-signal-brief']) {
+    for (const route of ['/market-report/october-05-daily-market-movers', '/market-report/october-11-daily-market-movers', '/market-report/october-15-30-signal-brief', '/market-report/november-06-30-signal-brief', '/market-report/star-trek-market-watch-2026-11-07']) {
       const routeIndex = source.indexOf(`path="${route}"`);
       expect(routeIndex).toBeGreaterThan(-1);
       expect(routeIndex).toBeLessThan(genericReportRoute);

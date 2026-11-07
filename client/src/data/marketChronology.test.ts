@@ -7,6 +7,8 @@ import {
 describe("chronological market hub", () => {
   it("lists every source record newest first without merging report contents", () => {
     expect(chronologicalMarketEntries.map(entry => entry.dateKey)).toEqual([
+      "2026-11-07",
+      "2026-11-06",
       "2026-10-22",
       "2026-10-17",
       "2026-10-17",
@@ -60,9 +62,9 @@ describe("chronological market hub", () => {
 
   it("keeps latest watch cards separate from imported price snapshots", () => {
     expect(latestMarketWatchEntries.map(entry => entry.dateKey)).toEqual([
+      "2026-11-07",
       "2026-10-22",
       "2026-10-16",
-      "2026-10-15",
     ]);
     expect(
       latestMarketWatchEntries.every(entry => entry.kind === "market watch")
@@ -72,5 +74,14 @@ describe("chronological market hub", () => {
         entry => entry.kind === "price snapshot"
       )
     ).toHaveLength(5);
+  });
+
+  it("keeps the Star Trek watch and Nov. 6 supplied brief separately dated and caveated", () => {
+    const watch = chronologicalMarketEntries.find(entry => entry.id === "star-trek-market-watch-2026-11-07");
+    const brief = chronologicalMarketEntries.find(entry => entry.id === "brief-2026-11-06");
+    expect(watch?.href).toBe("/market-report/star-trek-market-watch-2026-11-07");
+    expect(watch?.caveat).toContain("not completed sales");
+    expect(brief?.href).toBe("/market-report/november-06-30-signal-brief");
+    expect(brief?.dataWindow).toContain("November 5, 2026");
   });
 });

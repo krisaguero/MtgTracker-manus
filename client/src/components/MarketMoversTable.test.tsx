@@ -216,7 +216,23 @@ describe("MarketMoversTable filtering and loading state", () => {
     expect(markup).toContain("Demonic Tutor");
     expect(markup).toContain("Snapshot");
     expect(markup).toContain("Reported move");
+    expect(markup).toContain('alt="Demonic Tutor card art"');
     expect(markup).not.toContain("scroll horizontally on mobile");
+  });
+
+  it("shows card artwork in the desktop table as well as the mobile stack", () => {
+    const markup = renderToStaticMarkup(
+      <MarketMoversTable
+        data={[sampleMover]}
+        title="Daily Movers Table"
+        description="Table artwork test"
+        forceDesktop
+      />
+    );
+    const table = markup.slice(markup.indexOf("<table"));
+
+    expect(table).toContain('alt="Demonic Tutor card art"');
+    expect(table).toContain("api.scryfall.com/cards/named");
   });
 
   it("renders accessible skeleton rows while market data is loading", () => {

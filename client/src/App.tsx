@@ -32,6 +32,8 @@ const October11MarketReport = lazy(() => import('@/pages/October11MarketReport')
 const October15MarketBrief = lazy(() => import('@/pages/October15MarketBrief').then((module) => ({ default: module.October15MarketBrief })));
 const October16MarketBrief = lazy(() => import('@/pages/October16MarketBrief').then((module) => ({ default: module.October16MarketBrief })));
 const October17MarketBrief = lazy(() => import('@/pages/October17MarketBrief').then((module) => ({ default: module.October17MarketBrief })));
+const November06MarketBrief = lazy(() => import('@/pages/November06MarketBrief').then((module) => ({ default: module.November06MarketBrief })));
+const StarTrekMarketWatchArticle = lazy(() => import('@/pages/StarTrekMarketWatchArticle').then((module) => ({ default: module.StarTrekMarketWatchArticle })));
 const MarketSignalAudit = lazy(() => import('@/pages/MarketSignalAudit'));
 const DailyMovers = lazy(() => import('@/pages/DailyMovers').then((module) => ({ default: module.DailyMovers })));
 const MarketWatchArticle = lazy(() => import('@/pages/MarketWatchArticle').then((module) => ({ default: module.MarketWatchArticle })));
@@ -115,6 +117,8 @@ function Router() {
         <Route path="/market-report/october-15-30-signal-brief" component={October15MarketBrief} />
         <Route path="/market-report/october-16-30-signal-brief" component={October16MarketBrief} />
         <Route path="/market-report/october-17-30-signal-brief" component={October17MarketBrief} />
+        <Route path="/market-report/november-06-30-signal-brief" component={November06MarketBrief} />
+        <Route path="/market-report/star-trek-market-watch-2026-11-07" component={StarTrekMarketWatchArticle} />
         <Route path="/market-report/quarterly-trend-comparison-2026-10-22" component={QuarterlyMarketTrendArticle} />
         <Route path="/market-report/tabletop-paper-company-spotlight" component={TabletopPaperSpotlight} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />
