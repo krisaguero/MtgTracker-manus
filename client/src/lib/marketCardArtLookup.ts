@@ -1,5 +1,5 @@
 const COLLECTION_ENDPOINT = "https://api.scryfall.com/cards/collection";
-const STORAGE_KEY = "mtg-market-card-art-v1";
+const STORAGE_KEY = "mtg-market-card-art-v2";
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 const DEFAULT_BATCH_WINDOW_MS = 80;
 const DEFAULT_REQUEST_GAP_MS = 550;
@@ -46,14 +46,26 @@ export interface MarketCardArtLookupOptions {
   now?: () => number;
 }
 
+function normalizeSearchPunctuation(name: string) {
+  return name
+    .replace(/[\u2018\u2019\u201B]/g, "'")
+    .replace(/[\u201C\u201D]/g, '\"')
+    .replace(/[\u2010-\u2015\u2212]/g, "-");
+}
+
 function cleanCardName(name: string) {
-  return name.replace(/\s*\([^)]*\)/g, "").trim();
+  return normalizeSearchPunctuation(name).replace(/\s*\([^)]*\)/g, "").trim();
 }
 
 function frontFaceName(name: string) {
   const cleaned = cleanCardName(name);
   return cleaned.split(/\s*\/\/\s*/)[0]?.trim() || cleaned;
 }
+
+// Wizards lists "Loki's Double" as Spark Double's alternate name in MSC #279.
+const CARD_NAME_ALIASES: Record<string, { name: string; setCode: string; collectorNumber: string }> = {
+  "loki's double": { name: "Spark Double", setCode: "msc", collectorNumber: "279" },
+};
 
 function normalizedSetCode(value?: string) {
   const code = value?.trim().toLowerCase();
@@ -62,8 +74,9 @@ function normalizedSetCode(value?: string) {
     : undefined;
 }
 
-function cacheKey(name: string, setCode?: string) {
-  return `${setCode || "*"}|${frontFaceName(name).toLowerCase()}`;
+function cacheKey(name: string, setCode?: string, collectorNumber?: string | number | null) {
+  const collector = collectorNumber == null ? "*" : String(collectorNumber);
+  return `${setCode || "*"}|${collector}|${frontFaceName(name).toLowerCase()}`;
 }
 
 function getDefaultStorage(): CacheStorage | null {
@@ -258,9 +271,13 @@ export function createMarketCardArtLookup(options: MarketCardArtLookupOptions = 
     setCode?: string,
     collectorNumber?: string | number | null,
   ): Promise<MarketCardImageUrls | null> {
-    const lookupName = frontFaceName(name);
-    const set = normalizedSetCode(setCode);
-    const key = cacheKey(lookupName, set);
+    const requestedName = frontFaceName(name);
+    const alias = CARD_NAME_ALIASES[requestedName.toLowerCase()];
+    const lookupName = alias?.name || requestedName;
+    const set = normalizedSetCode(setCode) || alias?.setCode;
+    const resolvedCollectorNumber =
+      collectorNumber ?? (set === alias?.setCode ? alias?.collectorNumber : undefined);
+    const key = cacheKey(lookupName, set, resolvedCollectorNumber);
     const cached = cache.get(key);
     if (cache.has(key)) return Promise.resolve(cached || null);
 
@@ -279,7 +296,8 @@ export function createMarketCardArtLookup(options: MarketCardArtLookupOptions = 
         lookupName,
         nameKey: lookupName.toLowerCase(),
         setCode: set,
-        collectorNumber: collectorNumber == null ? undefined : String(collectorNumber),
+        collectorNumber:
+          resolvedCollectorNumber == null ? undefined : String(resolvedCollectorNumber),
         resolvers: [resolve],
       });
       scheduleFlush();

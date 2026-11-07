@@ -99,6 +99,61 @@ describe("market card-art lookup", () => {
     expect(result?.small).toBe("https://cards.scryfall.io/small/khan.jpg");
   });
 
+  it("normalizes typographic apostrophes and resolves a Marvel alternate name to its exact printing", async () => {
+    vi.useFakeTimers();
+    const fetcher = vi.fn<Fetcher>(async () =>
+      jsonResponse([
+        {
+          name: "Ajani's Welcome",
+          set: "m19",
+          collector_number: "6",
+          image_uris: { small: "https://cards.scryfall.io/small/ajani.jpg" },
+        },
+        {
+          name: "Spark Double",
+          set: "msc",
+          collector_number: "279",
+          image_uris: { small: "https://cards.scryfall.io/small/loki-279.jpg" },
+        },
+        {
+          name: "Spark Double",
+          set: "msc",
+          collector_number: "337",
+          image_uris: { small: "https://cards.scryfall.io/small/loki-337.jpg" },
+        },
+      ]),
+    );
+    const lookup = createMarketCardArtLookup({
+      fetcher,
+      batchWindowMs: 10,
+      requestGapMs: 0,
+      storage: null,
+    });
+
+    const ajaniPromise = lookup("Ajani’s Welcome");
+    const lokiPromise = lookup("Loki’s Double");
+    const otherPrintingPromise = lookup("Spark Double", "msc", "337");
+    await vi.runAllTimersAsync();
+    const [ajani, loki, otherPrinting] = await Promise.all([
+      ajaniPromise,
+      lokiPromise,
+      otherPrintingPromise,
+    ]);
+
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    const request = fetcher.mock.calls[0]?.[1];
+    expect(JSON.parse(String(request?.body))).toEqual({
+      identifiers: [
+        { name: "Ajani's Welcome" },
+        { set: "msc", collector_number: "279" },
+        { set: "msc", collector_number: "337" },
+      ],
+    });
+    expect(ajani?.small).toBe("https://cards.scryfall.io/small/ajani.jpg");
+    expect(loki?.small).toBe("https://cards.scryfall.io/small/loki-279.jpg");
+    expect(otherPrinting?.small).toBe("https://cards.scryfall.io/small/loki-337.jpg");
+  });
+
   it("deduplicates repeated lookups and caches successful images for the session", async () => {
     vi.useFakeTimers();
     const fetcher = vi.fn<Fetcher>(async () =>
