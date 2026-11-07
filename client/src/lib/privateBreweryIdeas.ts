@@ -23,7 +23,13 @@ const THEME_SIGNALS: Array<{ label: string; terms: RegExp; frame: string }> = [
   { label: 'control / tempo', terms: /\b(control|tempo|counterspell|removal|flash)\b/i, frame: 'trade efficiently early, choose one compact finisher, and avoid filling every slot with answers that do not advance the clock' },
 ];
 
-function themeRead(deck: DeckboxSourceRecord): { label: string; frame: string } {
+export interface PrivateDeckThemeRead {
+  label: string;
+  frame: string;
+  evidence: string;
+}
+
+export function readPrivateDeckTheme(deck: DeckboxSourceRecord): PrivateDeckThemeRead {
   const rows = [...deck.main, ...deck.sideboard];
   const title = deck.name.toLocaleLowerCase();
   const cardNames = rows.map((card) => card.name.toLocaleLowerCase());
@@ -35,8 +41,16 @@ function themeRead(deck: DeckboxSourceRecord): { label: string; frame: string } 
     .filter((hit) => hit.titleHit || hit.rowHits >= 2)
     .sort((a, b) => Number(b.titleHit) - Number(a.titleHit) || b.rowHits - a.rowHits)[0];
   return match
-    ? { label: match.signal.label, frame: match.signal.frame }
-    : { label: 'one signature-card package', frame: 'choose one memorable interaction already suggested by the list, then give it a setup, payoff, and a backup plan' };
+    ? {
+      label: match.signal.label,
+      frame: match.signal.frame,
+      evidence: 'A generated title/card-name pattern only; verify against current card type lines and Oracle text.',
+    }
+    : {
+      label: 'one signature-card package',
+      frame: 'choose one memorable interaction already suggested by the list, then give it a setup, payoff, and a backup plan',
+      evidence: 'No strong theme pattern was detected from the title and card names; this is not a full card-text review.',
+    };
 }
 
 function mainCopies(deck: DeckboxSourceRecord): number {
@@ -57,7 +71,7 @@ function targetNote(deck: DeckboxSourceRecord, target: number, label: string): s
 }
 
 export function buildPrivateBreweryIdeas(deck: DeckboxSourceRecord): PrivateBreweryIdea[] {
-  const theme = themeRead(deck);
+  const theme = readPrivateDeckTheme(deck);
   const lands = typeof deck.mainLandCopies === 'number' ? deck.mainLandCopies : null;
   const landNote = lands === null ? 'Review the mana base only after the final color identity and curve are chosen.'
     : lands === 0 ? 'No lands are listed in the source main; settle the colors and curve before drafting a mana base.'

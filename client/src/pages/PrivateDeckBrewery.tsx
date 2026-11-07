@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, ArrowRight, BadgeCheck, BookOpenText, FileUp, LockKeyhole, Search, ShieldCheck } from 'lucide-react';
 import { Link, useParams } from 'wouter';
 import { Button } from '@/components/ui/button';
+import { PrivateDeckReviewTemplate } from '@/components/PrivateDeckReviewTemplate';
 import { getPrivateDeckStatusLabel, buildPrivateBreweryIdeas } from '@/lib/privateBreweryIdeas';
 import {
   consumePrivateBreweryAuthRedirect,
@@ -265,14 +266,7 @@ function DeckDetail({ deck, manifest }: { deck: DeckboxSourceRecord; manifest: P
           ))}
         </div>
       </section>
-      {referenceUrl && (
-        <section className="mt-6 rounded-2xl border border-sky-600/25 bg-sky-50 p-5 dark:bg-sky-950/20" aria-label="Optional EDHREC reference">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-800 dark:text-sky-300">Optional comparison · separate from your source</p>
-          <h2 className="mt-2 text-lg font-semibold">EDHREC planning reference</h2>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">This is a heuristic starting point, not your stated intent; no average-deck cards have been copied into this list.</p>
-          <a className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline" href={referenceUrl} target="_blank" rel="noopener noreferrer">Open the saved EDHREC reference <ArrowRight size={15} /></a>
-        </section>
-      )}
+      <PrivateDeckReviewTemplate deck={deck} edhrecUrl={referenceUrl} />
       <div className="mt-8 grid gap-4">
         <SourceCardRows cards={deck.main} label="Original main list · source order preserved" />
         <SourceCardRows cards={deck.sideboard} label="Original sideboard · kept separate" />
