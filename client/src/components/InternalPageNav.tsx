@@ -19,6 +19,9 @@ const navigation: SiteItem[] = [
     links: [
       { href: '/commander', label: 'Commander archive' },
       { href: '/deck-matrix', label: 'Deck Matrix' },
+      { href: '/deck-gallery', label: 'Deck Gallery' },
+      { href: '/deck-gallery/wip', label: 'WIP & Offbeat decks' },
+      { href: '/deck-gallery/robogles', label: 'Robert “Robogles” showcase' },
       { href: '/commander-market', label: 'Commander demand index' },
       { href: '/deck-brewery', label: 'Private Deck Brewery' },
       { href: '/precon-studio', label: 'Precon Studio' },

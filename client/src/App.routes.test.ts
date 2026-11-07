@@ -71,6 +71,21 @@ describe('application route map', () => {
     expect(matrixIndex).toBeLessThan(dynamicSetIndex);
   });
 
+  it('registers the public Deck Gallery, WIP, and Robogles routes before the dynamic set route', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    for (const route of ['/deck-gallery', '/deck-gallery/wip', '/deck-gallery/robogles']) {
+      const routeIndex = source.indexOf(`path={'${route}'}`);
+      expect(routeIndex).toBeGreaterThan(-1);
+      expect(routeIndex).toBeLessThan(dynamicSetIndex);
+    }
+    expect(source).toContain("const DeckGallery = lazy(() => import('@/pages/DeckGallery'))");
+    const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
+    expect(navigation).toContain("href: '/deck-gallery', label: 'Deck Gallery'");
+    expect(navigation).toContain("href: '/deck-gallery/wip', label: 'WIP & Offbeat decks'");
+    expect(navigation).toContain("href: '/deck-gallery/robogles', label: 'Robert “Robogles” showcase'");
+  });
+
   it('registers the retro Battle Box output and its separate method article', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");

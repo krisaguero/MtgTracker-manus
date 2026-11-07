@@ -64,6 +64,9 @@ const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const DeckBrewery = lazy(() => import('@/pages/DeckBrewery'));
 const PrivateDeckBrewery = lazy(() => import('@/pages/PrivateDeckBrewery'));
 const DeckMatrix = lazy(() => import('@/pages/DeckMatrix'));
+const DeckGallery = lazy(() => import('@/pages/DeckGallery'));
+const DeckGalleryWip = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.DeckGalleryWip })));
+const RoboglesDeckShowcase = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.RoboglesDeckShowcase })));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
 const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
@@ -89,6 +92,9 @@ function Router() {
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
         <Route path={'/deck-brewery'} component={DeckBrewery} />
         <Route path={'/deck-matrix'} component={DeckMatrix} />
+        <Route path={'/deck-gallery'} component={DeckGallery} />
+        <Route path={'/deck-gallery/wip'} component={DeckGalleryWip} />
+        <Route path={'/deck-gallery/robogles'} component={RoboglesDeckShowcase} />
         <Route path="/private-deck-brewery/:deckboxId" component={PrivateDeckBrewery} />
         <Route path="/private-deck-brewery" component={PrivateDeckBrewery} />
         <Route path={'/limited'} component={Limited} />
