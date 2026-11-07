@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { waitForMarketMoverImageSlot } from "@/lib/marketMoverImageQueue";
+import { getMarketCardImageUrls } from "@/lib/marketCardArtLookup";
 
 type MarketMoverCardArtProps = {
   name: string;
   setCode?: string;
+  collectorNumber?: string | number | null;
   size?: "thumb" | "small";
   className?: string;
 };
@@ -20,60 +21,47 @@ function lookupCardName(name: string) {
   return fullName.split(/\s*\/\/\s*/)[0]?.trim() || fullName;
 }
 
-function usableSetCode(value?: string) {
-  const code = value?.trim().toLowerCase();
-  return code && !["all", "unknown", "—", "-", "n/a"].includes(code)
-    ? code
-    : undefined;
-}
-
 export function MarketMoverCardArt({
   name,
   setCode,
+  collectorNumber,
   size = "thumb",
   className = "",
 }: MarketMoverCardArtProps) {
   const cardName = cleanCardName(name);
   const lookupName = lookupCardName(name);
-  const hintedSet = usableSetCode(setCode);
-  const [useNameOnlyFallback, setUseNameOnlyFallback] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
-  const [readyImageSrc, setReadyImageSrc] = useState<string | null>(null);
-
-  useEffect(() => {
-    setUseNameOnlyFallback(false);
-    setFailed(false);
-  }, [cardName, hintedSet, size]);
-
-  const imageSrc = useMemo(() => {
-    const params = new URLSearchParams({
-      fuzzy: lookupName,
-      format: "image",
-      version: size === "small" ? "normal" : "small",
-    });
-    if (hintedSet && !useNameOnlyFallback) params.set("set", hintedSet);
-    return `https://api.scryfall.com/cards/named?${params.toString()}`;
-  }, [hintedSet, lookupName, size, useNameOnlyFallback]);
 
   useEffect(() => {
     let active = true;
-    setReadyImageSrc(null);
-    void waitForMarketMoverImageSlot().then(() => {
-      if (active) setReadyImageSrc(imageSrc);
+    setImageUrl(null);
+    setFailed(false);
+    void getMarketCardImageUrls(cardName, setCode, collectorNumber).then(urls => {
+      if (!active) return;
+      const preferred = size === "small" ? urls?.normal : urls?.small;
+      const fallback = size === "small" ? urls?.small : urls?.normal;
+      const nextUrl = preferred || fallback || null;
+      if (nextUrl) setImageUrl(nextUrl);
+      else setFailed(true);
     });
     return () => {
       active = false;
     };
-  }, [imageSrc]);
+  }, [cardName, collectorNumber, setCode, size]);
 
   const dimensions = size === "small" ? "h-24 w-16" : "h-14 w-10";
-  const imageIsQueued = readyImageSrc !== imageSrc;
+  const imageIsLoading = !failed && !imageUrl;
+  const title = useMemo(
+    () => `Representative card art for ${cardName}; the exact printing may differ`,
+    [cardName],
+  );
 
   return (
     <div
       className={`relative ${dimensions} shrink-0 overflow-hidden border border-border bg-muted shadow-sm ${className}`}
-      title={`Representative card art for ${cardName}; the exact printing may differ`}
-      aria-busy={!failed && imageIsQueued}
+      title={title}
+      aria-busy={imageIsLoading}
     >
       {failed ? (
         <div
@@ -85,20 +73,15 @@ export function MarketMoverCardArt({
         </div>
       ) : (
         <img
-          src={imageIsQueued ? TRANSPARENT_PIXEL : imageSrc}
-          data-scryfall-src={imageSrc}
+          src={imageUrl || TRANSPARENT_PIXEL}
+          data-card-art-query={lookupName}
           alt={`${cardName} card art`}
           loading="lazy"
           decoding="async"
           referrerPolicy="no-referrer"
-          className={`h-full w-full object-contain ${imageIsQueued ? "opacity-0" : ""}`}
+          className={`h-full w-full object-contain ${imageIsLoading ? "opacity-0" : ""}`}
           onError={() => {
-            if (imageIsQueued) return;
-            if (hintedSet && !useNameOnlyFallback) {
-              setUseNameOnlyFallback(true);
-              return;
-            }
-            setFailed(true);
+            if (imageUrl) setFailed(true);
           }}
         />
       )}

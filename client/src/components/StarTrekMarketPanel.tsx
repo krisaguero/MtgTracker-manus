@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ExternalLink, TrendingDown, TrendingUp } from "lucide-react";
 import { CardIndexLink, CardMediaFrame } from "@/components/CardIndexLink";
+import { getMarketCardImageUrls } from "@/lib/marketCardArtLookup";
 import {
   starTrekDailyMovers,
   starTrekMarketSignals,
@@ -77,10 +78,22 @@ const statusLabel: Record<StarTrekMarketSignal["status"], string> = {
 };
 
 function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
-  const [imageSrc, setImageSrc] = useState(
-    `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(signal.name)}&set=${encodeURIComponent(signal.setCode)}&format=image&version=normal`
-  );
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    let active = true;
+    setImageSrc(null);
+    setFailed(false);
+    void getMarketCardImageUrls(signal.name, signal.setCode, signal.collectorNumber).then(urls => {
+      if (!active) return;
+      const nextUrl = urls?.normal || urls?.small || null;
+      if (nextUrl) setImageSrc(nextUrl);
+      else setFailed(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, [signal.collectorNumber, signal.name, signal.setCode]);
   const positive = signal.moveUsd !== undefined && signal.moveUsd > 0;
   const negative = signal.moveUsd !== undefined && signal.moveUsd < 0;
   const tone = positive
@@ -91,25 +104,23 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
 
   return (
     <article className="border border-border bg-card p-3">
-      <CardMediaFrame className="mx-auto max-w-[180px] border-2 border-border bg-[#171a24]">
+      <CardMediaFrame className="relative mx-auto max-w-[180px] border-2 border-border bg-[#171a24]">
         {!failed ? (
-          <img
-            src={imageSrc}
-            alt={`${signal.name} card art`}
-            className="h-full w-full object-contain"
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            onError={() => {
-              if (imageSrc.includes("&set=")) {
-                setImageSrc(
-                  `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(signal.name)}&format=image&version=normal`
-                );
-              } else {
-                setFailed(true);
-              }
-            }}
-          />
+          <>
+            <img
+              src={imageSrc || "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+              data-card-art-query={signal.name}
+              alt={`${signal.name} card art`}
+              className="h-full w-full object-contain"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              onError={() => {
+                if (imageSrc) setFailed(true);
+              }}
+            />
+            {!imageSrc && <div className="absolute inset-0 flex items-center justify-center bg-muted/80 font-mono text-[9px] font-bold uppercase text-muted-foreground">Loading art</div>}
+          </>
         ) : (
           <div className="flex h-full items-center justify-center p-4 text-center font-mono text-[10px] uppercase text-muted-foreground">
             Art unavailable

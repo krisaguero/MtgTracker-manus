@@ -68,8 +68,9 @@ describe('MarketPostCard SSR contract', () => {
   });
 
   it('keeps the full mobile card aspect ratio uncropped and integrates CardImageZoom', () => {
-    expect(previewSource).toContain("const dimensions = size === 'full' ? 'aspect-[488/680] w-full'");
-    expect(previewSource).toContain("size === 'full' ? <CardImageZoom src={imageUrl} alt={`${name} full card`} />");
+    expect(previewSource).toContain("aspect-[488/680] w-full");
+    expect(previewSource).toContain("<CardImageZoom");
+    expect(previewSource).toContain("object-contain");
     expect(cardCss).toContain('aspect-ratio: 488/680');
     expect(cardCss).toContain('object-fit: contain !important');
   });

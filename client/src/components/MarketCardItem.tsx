@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ExternalLink, Star, TrendingUp, TrendingDown, Flame } from 'lucide-react';
 import { MoverCard } from '@/lib/dailyMoversEngine';
 import { isMarketCardWatched, type MarketWatchlistEntry } from '@/lib/marketWatchlist';
 import { marketMoverArticleHref } from '@/lib/marketMoverHref';
 import { Link } from 'wouter';
 import { CardIndexLink, CardMediaFrame } from '@/components/CardIndexLink';
+import { getMarketCardImageUrls } from '@/lib/marketCardArtLookup';
+
+const TRANSPARENT_PIXEL = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
 interface MarketCardItemProps {
   mover: MoverCard;
@@ -15,11 +18,32 @@ interface MarketCardItemProps {
 
 export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }: MarketCardItemProps) {
   const cleanName = mover.name.replace(/\s*\([^)]*\)/g, '').trim();
-  const scryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&set=${encodeURIComponent(mover.setCode.toLowerCase())}&format=image&version=normal`;
-  const fallbackScryfallImageUrl = `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(cleanName)}&format=image&version=normal`;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
-  const [imageSrc, setImageSrc] = useState(scryfallImageUrl);
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const fallbackImageSrc = useMemo(() => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="336" viewBox="0 0 240 336"><rect fill="#1e293b" width="240" height="336"/><text x="120" y="168" font-family="monospace" font-size="14" fill="#cbd5e1" text-anchor="middle">${mover.setCode.toUpperCase()}</text></svg>`;
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+  }, [mover.setCode]);
+
+  useEffect(() => {
+    let active = true;
+    setImageLoaded(false);
+    setImageFailed(false);
+    setImageSrc(null);
+    void getMarketCardImageUrls(cleanName, mover.setCode).then(urls => {
+      if (!active) return;
+      const nextUrl = urls?.normal || urls?.small || null;
+      if (nextUrl) setImageSrc(nextUrl);
+      else {
+        setImageFailed(true);
+        setImageSrc(fallbackImageSrc);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [cleanName, fallbackImageSrc, mover.setCode]);
 
   const isPositive = mover.percentChange > 0;
   const isNegative = mover.percentChange < 0;
@@ -71,17 +95,16 @@ export function MarketCardItem({ mover, watchlist, onSelect, onToggleWatchlist }
         )}
 
         <img
-          src={imageSrc}
+          src={imageSrc || TRANSPARENT_PIXEL}
           alt={mover.name}
-          onLoad={() => setImageLoaded(true)}
-          onError={(e) => {
-            if (imageSrc !== fallbackScryfallImageUrl) {
-              setImageSrc(fallbackScryfallImageUrl);
-              return;
-            }
+          data-card-art-query={cleanName}
+          onLoad={() => {
+            if (imageSrc) setImageLoaded(true);
+          }}
+          onError={() => {
             setImageFailed(true);
             setImageLoaded(true);
-            (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="336" viewBox="0 0 240 336"><rect fill="%231e293b" width="240" height="336"/><text x="120" y="158" font-family="monospace" font-size="14" fill="%23cbd5e1" text-anchor="middle">MTG Spike Art</text><text x="120" y="182" font-family="monospace" font-size="11" fill="%2394a3b8" text-anchor="middle">' + mover.setCode.toUpperCase() + '</text></svg>';
+            if (imageSrc !== fallbackImageSrc) setImageSrc(fallbackImageSrc);
           }}
           referrerPolicy="no-referrer"
           className={`h-full w-full object-contain transition-transform duration-300 group-hover/card:scale-[1.02] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}

@@ -70,7 +70,7 @@ function MoverColumn({ title, cards }: { title: string; cards: typeof snapshotCa
           const up = (card.moveUsd ?? 0) > 0;
           return (
             <li key={card.id} className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3 py-3 sm:grid-cols-[auto_minmax(0,1fr)_auto]">
-              <MarketMoverCardArt name={card.name} setCode={card.setCode} />
+              <MarketMoverCardArt name={card.name} setCode={card.setCode} collectorNumber={card.collectorNumber} />
               <div className="min-w-0"><p className="font-bold">{card.name}</p><p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">TRK · #{card.collectorNumber} · ${card.priceUsd?.toFixed(2)}</p></div>
               <p className={`col-start-2 inline-flex items-center gap-1 font-mono text-xs font-black sm:col-start-auto ${up ? "text-emerald-700 dark:text-emerald-400" : "text-destructive"}`}>{up ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}{card.moveLabel}</p>
             </li>

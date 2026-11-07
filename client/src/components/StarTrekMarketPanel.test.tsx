@@ -13,6 +13,8 @@ describe("Star Trek market-watch panel", () => {
     );
     expect(html).toContain("Daily movers · Nov. 7");
     expect(html).toContain("Mr. Spock, Science Officer");
+    expect(html).toContain('alt="Khaaaaaaaaaaaannn! card art"');
+    expect(html).not.toContain("api.scryfall.com/cards/named");
     expect(html).toContain("Earlier editorial watch · Nov. 5");
     expect(html).toContain("Historical trends");
     expect(html).toContain("no separate as-of timestamp");

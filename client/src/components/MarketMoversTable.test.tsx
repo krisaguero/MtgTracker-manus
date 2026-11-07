@@ -232,7 +232,8 @@ describe("MarketMoversTable filtering and loading state", () => {
     const table = markup.slice(markup.indexOf("<table"));
 
     expect(table).toContain('alt="Demonic Tutor card art"');
-    expect(table).toContain("api.scryfall.com/cards/named");
+    expect(table).toContain('data-card-art-query="Demonic Tutor"');
+    expect(table).not.toContain("api.scryfall.com/cards/named");
   });
 
   it("renders accessible skeleton rows while market data is loading", () => {
