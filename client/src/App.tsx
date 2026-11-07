@@ -60,6 +60,7 @@ const QuarterlyMarketTrendArticle = lazy(() => import('@/pages/QuarterlyMarketTr
 const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const DeckBrewery = lazy(() => import('@/pages/DeckBrewery'));
+const PrivateDeckBrewery = lazy(() => import('@/pages/PrivateDeckBrewery'));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
 const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
@@ -84,6 +85,8 @@ function Router() {
         <Route path={'/collection/sets/:setCode'} component={CollectionSetDirectory} />
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
         <Route path={'/deck-brewery'} component={DeckBrewery} />
+        <Route path="/private-deck-brewery/:deckboxId" component={PrivateDeckBrewery} />
+        <Route path="/private-deck-brewery" component={PrivateDeckBrewery} />
         <Route path={'/limited'} component={Limited} />
         <Route path={'/markets'} component={MarketHub} />
         <Route path={'/market-desk'} component={MarketDesk} />
