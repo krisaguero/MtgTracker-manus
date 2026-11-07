@@ -52,6 +52,16 @@ describe('application route map', () => {
     }
   });
 
+  it('registers the private Deck Brewery route and navigation link', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    const breweryIndex = source.indexOf("path={'/deck-brewery'}");
+    expect(breweryIndex).toBeGreaterThan(-1);
+    expect(breweryIndex).toBeLessThan(dynamicSetIndex);
+    const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
+    expect(navigation).toContain("href: '/deck-brewery', label: 'Private Deck Brewery'");
+  });
+
   it('registers the retro Battle Box output and its separate method article', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
