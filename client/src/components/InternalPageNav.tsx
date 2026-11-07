@@ -18,6 +18,7 @@ const navigation: SiteItem[] = [
     label: 'Commander',
     links: [
       { href: '/commander', label: 'Commander archive' },
+      { href: '/deck-matrix', label: 'Deck Matrix' },
       { href: '/commander-market', label: 'Commander demand index' },
       { href: '/deck-brewery', label: 'Private Deck Brewery' },
       { href: '/precon-studio', label: 'Precon Studio' },
