@@ -62,6 +62,15 @@ describe('application route map', () => {
     expect(navigation).toContain("href: '/deck-brewery', label: 'Private Deck Brewery'");
   });
 
+  it('registers the public Deck Matrix as a lazy route before the dynamic set route', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    expect(source).toContain("const DeckMatrix = lazy(() => import('@/pages/DeckMatrix'))");
+    const matrixIndex = source.indexOf("path={'/deck-matrix'}");
+    expect(matrixIndex).toBeGreaterThan(-1);
+    expect(matrixIndex).toBeLessThan(dynamicSetIndex);
+  });
+
   it('registers the retro Battle Box output and its separate method article', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
