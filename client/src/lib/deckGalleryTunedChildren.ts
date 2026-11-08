@@ -29,6 +29,7 @@ export type DeckGalleryTunedChild = {
   ownershipStatus: string;
   attributionNote: string;
   sourceNote: string;
+  sourceCompletenessNote?: string;
   edhrecContext: string | Record<string, unknown>;
   plan: {
     commanderPlan: string;
@@ -129,6 +130,8 @@ export function validateDeckGalleryTunedChildrenPayload(
     slugs.add(child.childSlug as string);
     if (child.format !== "Commander" || child.played !== false || child.hypothetical !== true)
       throw new Error(`Tuned child ${child.childSlug} must remain a hypothetical, unplayed Commander proposal.`);
+    if (child.sourceCompletenessNote !== undefined && typeof child.sourceCompletenessNote !== "string")
+      throw new Error(`Tuned child ${child.childSlug} has a malformed source-completeness note.`);
     if (child.relatedBuildsNote !== undefined && typeof child.relatedBuildsNote !== "string")
       throw new Error(`Tuned child ${child.childSlug} has a malformed tracker-build note.`);
     if (!Array.isArray(child.main) || !Array.isArray(child.commanders))

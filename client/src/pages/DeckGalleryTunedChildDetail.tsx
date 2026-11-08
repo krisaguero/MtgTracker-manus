@@ -57,6 +57,12 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
             <p className="mt-2 text-xs leading-5 text-muted-foreground">
               Visible parent source counts: {child.visibleSourceCounts.mainCopies} main copies and {child.visibleSourceCounts.sideboardCopies} sideboard copies.
             </p>
+            {child.sourceCompletenessNote && (
+              <div className="mt-3 border-l-4 border-amber-500 bg-amber-50 p-3 dark:bg-amber-950/20">
+                <h3 className="text-xs font-black uppercase tracking-wide">Visible-source completeness</h3>
+                <p className="mt-2 text-xs leading-5 text-amber-950 dark:text-amber-100">{child.sourceCompletenessNote}</p>
+              </div>
+            )}
           </div>
           <div className="p-5 sm:p-6">
             <h2 className="text-sm font-black">Status and attribution</h2>

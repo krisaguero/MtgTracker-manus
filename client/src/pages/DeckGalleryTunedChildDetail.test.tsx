@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(16);
+    expect(childPayload.children).toHaveLength(24);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -77,6 +77,32 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(html).toContain("missing or hidden content is not reconstructed");
     expect(html).toContain(`href="${incomplete.parentHref}"`);
     expect(incomplete.sourceNote).not.toMatch(/Deckbox ID|archive id|private source/i);
+  });
+
+  it("shows batch-3 source completeness and hypothetical completion details", () => {
+    const titles = ["Black - Sworn To Darkness", "Brago Energy V2", "Brago Energy V3", "Brago, King Eternal", "Breed Lethality - Commander 2016", "Breya Facts", "Brion's Giants", "Brionline"];
+    for (const title of titles) {
+      const child = childPayload.children.find(candidate => candidate.sourceTitle === title);
+      expect(child, title).toBeDefined();
+      expect(child?.hypothetical).toBe(true);
+      expect(child?.sourceCompletenessNote).toBeTruthy();
+    }
+
+    const bragoV2 = childPayload.children.find(child => child.sourceTitle === "Brago Energy V2");
+    const note = bragoV2?.sourceCompletenessNote ?? "";
+    expect(note).toContain("68 public main copies");
+    expect(note).toContain("Missing original rows are not reconstructed");
+    if (bragoV2) {
+      const html = page(bragoV2);
+      expect(html).toContain("Visible-source completeness");
+      expect(html).toContain(escapeHtml(note));
+    }
+
+    const precon = childPayload.children.find(child => child.sourceTitle === "Breed Lethality - Commander 2016");
+    expect(precon?.commanders[0]?.name).toBe("Atraxa, Praetors' Voice");
+    expect(precon?.sourceCompletenessNote).toContain("exactly 86 copies");
+    const oversized = childPayload.children.find(child => child.sourceTitle === "Brionline");
+    expect(oversized?.sourceCompletenessNote).toContain("cuts 8 visible copies");
   });
 
   it("renders exact swaps, role estimates, evidence, and related tracker context", () => {
