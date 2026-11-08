@@ -7,6 +7,7 @@ import {
   type DeckGalleryTunedChildChange,
 } from "@/lib/deckGalleryTunedChildren";
 import { CardIndexLink, CardMediaFrame, cardIndexHref } from "@/components/CardIndexLink";
+import { CardImageZoom } from "@/components/CardImageZoom";
 import { getPublicCardImageUri } from "@/lib/deckGalleryImageUris";
 
 export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedChild }) {
@@ -80,129 +81,60 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
       </header>
 
       <div className="mx-auto mt-7 grid max-w-6xl gap-6">
-        <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="edhrec-heading">
-          <SectionHeading id="edhrec-heading">EDHREC themes and aggregate context</SectionHeading>
-          <ContextBlock context={child.edhrecContext} />
-          <p className="mt-3 text-xs leading-5 text-muted-foreground">Aggregates guide the plan; they are not proof of ownership, playtesting, legality, or a requirement to copy another list.</p>
-        </section>
-
-        {(child.relatedPublicBuilds.length > 0 || child.relatedBuildsNote) && (
-          <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="tracker-context-heading">
-            <SectionHeading id="tracker-context-heading">Related public tracker builds and context</SectionHeading>
-            {child.relatedBuildsNote && <p className="mt-4 border-l-4 border-primary bg-muted/40 p-4 text-sm leading-6">{child.relatedBuildsNote}</p>}
-            {child.relatedPublicBuilds.length > 0 && (
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {child.relatedPublicBuilds.map(build => (
-                  <article key={build.publicHref} className="border border-border bg-background p-4">
-                    <Link href={build.publicHref} className="font-bold text-primary underline-offset-4 hover:underline">{build.title}</Link>
-                    <p className="mt-1 text-xs font-semibold text-muted-foreground">{build.format}</p>
-                    <p className="mt-2 text-sm leading-6">{build.relation}</p>
-                  </article>
-                ))}
-              </div>
-            )}
-          </section>
-        )}
-
-        <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="plan-heading">
-          <SectionHeading id="plan-heading">How the child plays</SectionHeading>
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <PlanCard title="Subthemes and package roles"><Subthemes value={child.plan.subthemes} /></PlanCard>
-            <PlanCard title="Curve and tempo">{child.plan.curveTempo}</PlanCard>
-            <PlanCard title="Interaction">{child.plan.interaction}</PlanCard>
-            <PlanCard title="Card advantage">{child.plan.cardAdvantage}</PlanCard>
-            <PlanCard title="Mana plan">{child.plan.mana}</PlanCard>
-            <PlanCard title="Closing plan">{child.plan.closingPlan}</PlanCard>
+        <section className="border-2 border-primary/30 bg-primary/5 p-5 sm:p-7" aria-labelledby="build-thesis-heading">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <div>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">Tuned child · proposed upgrade</p>
+              <SectionHeading id="build-thesis-heading">Build thesis</SectionHeading>
+            </div>
+            <span className="font-mono text-xs font-bold text-primary">{child.validation.totalCount} cards · {child.validation.scryfallLandCount} lands</span>
           </div>
-          <div className="mt-4 border-l-4 border-primary bg-muted/40 p-4">
-            <h3 className="text-sm font-black">Why this is a more coherent tuned-casual build</h3>
-            <p className="mt-2 text-sm leading-6">{child.plan.coherence}</p>
+          <p className="mt-4 max-w-4xl text-base leading-7">{child.plan.commanderPlan} {child.plan.closingPlan} {child.plan.coherence}</p>
+          <div className="mt-5 border-t border-primary/20 pt-5">
+            <h3 className="text-sm font-black uppercase tracking-wide">Themes and signature cards</h3>
+            <div className="mt-4"><Subthemes value={child.plan.subthemes} /></div>
           </div>
         </section>
 
-        <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="roles-heading">
-          <SectionHeading id="roles-heading">Estimated role mix</SectionHeading>
-          <p className="mt-2 text-xs leading-5 text-muted-foreground">Each main-deck card has one exclusive primary role; counts are estimates for this child revision.</p>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(child.roleEstimates).map(([role, count]) => (
-              <div key={role} className="flex items-center justify-between gap-3 border border-border bg-background px-3 py-2">
-                <span className="text-xs font-semibold">{labelRole(role)}</span>
-                <span className="font-mono text-sm font-bold tabular-nums">{count}</span>
-              </div>
+        <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="list-heading">
+          <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-border pb-4">
+            <div>
+              <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">The proposed revision</p>
+              <SectionHeading id="list-heading">Upgraded Commander decklist</SectionHeading>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">The final 100-card child list is shown first. These are the cards to build; the source cuts and exact swap logic follow below.</p>
+            </div>
+            <div className="flex gap-2 text-xs font-bold"><Badge>{child.validation.mainCount} main</Badge><Badge>{child.validation.commanderCount} command</Badge></div>
+          </div>
+          <div className="mt-5 border-2 border-primary/30 bg-primary/5 p-4 sm:p-5">
+            <h3 className="text-sm font-black uppercase tracking-wide">Command zone</h3>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:max-w-3xl">{child.commanders.map(card => <VisualChildCard key={card.name} name={card.name} quantity={card.quantity} />)}</div>
+          </div>
+          <div className="mt-7 space-y-8">
+            {groupMainByRole(child.main).map(([role, cards]) => (
+              <section key={role} aria-labelledby={`role-${role}`}>
+                <div className="flex items-baseline justify-between border-b border-border pb-3"><h3 id={`role-${role}`} className="text-2xl font-black">{labelRole(role)}</h3><span className="font-mono text-xs text-primary">{cards.reduce((sum, card) => sum + card.quantity, 0)} copies · {cards.length} cards</span></div>
+                <div className="mt-4 grid grid-cols-2 items-start gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">{cards.map(card => <VisualChildCard key={card.name} name={card.name} quantity={card.quantity} />)}</div>
+              </section>
             ))}
           </div>
         </section>
 
         <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="changes-heading">
-          <SectionHeading id="changes-heading">Exact source cuts and replacements</SectionHeading>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">
-            Counts are card copies. Each row below is an exact cut → replacement pairing; any remaining cuts or additions are listed separately. Commander-zone moves are shown apart from main-deck changes.
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            <Stat label="Cut copies" value={`${copyTotal(child.exactChanges.cuts)}`} detail={`${child.exactChanges.cuts.length} source cards`} />
-            <Stat label="Added copies" value={`${copyTotal(child.exactChanges.adds)}`} detail={`${child.exactChanges.adds.length} added cards`} />
-            <Stat label="Paired swaps" value={`${child.exactChanges.swaps.length}`} detail="Exact cut → replacement rows" />
+          <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-border pb-4"><div><p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">Make these changes</p><SectionHeading id="changes-heading">Cuts and upgrade swaps</SectionHeading><p className="mt-2 text-sm leading-6 text-muted-foreground">Exact source cuts and replacements. The visual list above is the destination; use this section as the cut sheet from the original build.</p></div><div className="flex gap-2"><Badge>{copyTotal(child.exactChanges.cuts)} cuts</Badge><Badge>{copyTotal(child.exactChanges.adds)} adds</Badge></div></div>
+          <div className="mt-5 grid gap-5 lg:grid-cols-2">
+            {unpairedCuts.length > 0 && <ChangeList title="Cut from the source build" rows={unpairedCuts} />}
+            {unpairedAdds.length > 0 && <ChangeList title="Add to the tuned build" rows={unpairedAdds} />}
           </div>
-          {child.exactChanges.zoneMoves.length > 0 && (
-            <div className="mt-5 border-l-4 border-primary bg-muted/40 p-4">
-              <h3 className="text-sm font-black">Commander-zone move(s)</h3>
-              <ul className="mt-2 space-y-2 text-sm leading-6">
-                {child.exactChanges.zoneMoves.map((move, index) => (
-                  <li key={`${move.name}-${index}`} className="flex flex-wrap items-center gap-3"><CardMention name={move.name} quantity={move.quantity} compact /><span className="min-w-0 flex-1">{zoneLabel(move.from)} → {zoneLabel(move.to)}. {move.reason}</span></li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {child.exactChanges.swaps.length > 0 && (
-            <details className="mt-5 border border-border bg-background">
-              <summary className="cursor-pointer px-4 py-3 text-sm font-bold">Show all {child.exactChanges.swaps.length} exact cut → replacement mappings</summary>
-              <div className="overflow-x-auto border-t border-border">
-                <table className="w-full min-w-[42rem] border-collapse text-left text-xs">
-                  <thead className="bg-muted/60 font-mono uppercase tracking-wide text-muted-foreground">
-                    <tr><th className="px-3 py-3">Cut</th><th className="px-3 py-3">Replacement + estimated role</th><th className="px-3 py-3">Why</th></tr>
-                  </thead>
-                  <tbody>
-                    {child.exactChanges.swaps.map((swap, index) => (
-                      <tr key={`${swap.cut.name}-${swap.replacement.name}-${index}`} className="border-t border-border align-top">
-                        <td className="px-3 py-3"><CardMention name={swap.cut.name} quantity={swap.cut.quantity} compact /></td>
-                        <td className="px-3 py-3"><CardMention name={swap.replacement.name} quantity={swap.replacement.quantity} compact />{swap.replacement.role && <span className="mt-1 block text-muted-foreground">Role: {labelRole(swap.replacement.role)}</span>}</td>
-                        <td className="px-3 py-3 leading-5 text-muted-foreground">{swap.reason}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </details>
-          )}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {unpairedCuts.length > 0 && <ChangeList title="Additional cuts without a paired replacement" rows={unpairedCuts} />}
-            {unpairedAdds.length > 0 && <ChangeList title="Additional additions without a paired cut" rows={unpairedAdds} />}
-          </div>
+          {child.exactChanges.swaps.length > 0 && <details className="mt-5 border border-border bg-background"><summary className="cursor-pointer px-4 py-3 text-sm font-bold">Show all {child.exactChanges.swaps.length} exact cut → replacement mappings</summary><div className="grid gap-4 border-t border-border p-4 sm:grid-cols-2 lg:grid-cols-3">{child.exactChanges.swaps.map((swap, index) => <article key={`${swap.cut.name}-${swap.replacement.name}-${index}`} className="border border-border bg-card p-3"><div className="grid grid-cols-2 gap-2"><VisualChildCard name={swap.cut.name} quantity={swap.cut.quantity} compact /><VisualChildCard name={swap.replacement.name} quantity={swap.replacement.quantity} compact /></div>{swap.replacement.role && <p className="mt-2 text-[10px] font-bold uppercase tracking-wide text-primary">Role: {labelRole(swap.replacement.role)}</p>}<p className="mt-3 text-xs leading-5 text-muted-foreground">{swap.reason}</p></article>)}</div></details>}
         </section>
 
-        <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="list-heading">
-          <SectionHeading id="list-heading">Full proposed Commander list</SectionHeading>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">The command zone is separate. The main list totals {child.validation.mainCount} cards; the proposed child is not a change to the linked parent list.</p>
-          <div className="mt-4 border-l-4 border-primary bg-muted/40 p-4">
-            <h3 className="text-sm font-black">Command zone</h3>
-            <ul className="mt-2 space-y-1 text-sm">
-              {child.commanders.map(card => <li key={card.name}><CardMention name={card.name} quantity={card.quantity} /></li>)}
-            </ul>
+        <details className="border-2 border-border bg-card p-5 sm:p-7">
+          <summary className="cursor-pointer text-xl font-black">Research context, role mix, and validation</summary>
+          <div className="mt-5 grid gap-6 lg:grid-cols-2">
+            <div><h3 className="text-sm font-black uppercase tracking-wide">EDHREC context</h3><ContextBlock context={child.edhrecContext} /></div>
+            <div><h3 className="text-sm font-black uppercase tracking-wide">Estimated role mix</h3><div className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(child.roleEstimates).map(([role, count]) => <div key={role} className="flex items-center justify-between border border-border bg-background px-3 py-2 text-xs"><span>{labelRole(role)}</span><b>{count}</b></div>)}</div>{(child.relatedBuildsNote || child.relatedPublicBuilds.length > 0) && <><h3 className="mt-6 text-sm font-black uppercase tracking-wide">Related public tracker builds</h3>{child.relatedBuildsNote && <p className="mt-3 border-l-4 border-primary bg-muted/40 p-3 text-xs leading-5">{child.relatedBuildsNote}</p>}{child.relatedPublicBuilds.length > 0 && <div className="mt-4 space-y-2">{child.relatedPublicBuilds.map(build => <Link key={build.publicHref} href={build.publicHref} className="block border border-border bg-background p-3 text-xs hover:border-primary"><span className="font-bold text-primary">{build.title}</span><span className="mt-1 block text-muted-foreground">{build.format} · {build.relation}</span></Link>)}</div>}</>}</div>
           </div>
-          <details className="mt-4 border border-border bg-background">
-            <summary className="cursor-pointer px-4 py-3 text-sm font-bold">Show the full 99-card main list by estimated role</summary>
-            <div className="grid gap-5 border-t border-border p-4 md:grid-cols-2">
-              {groupMainByRole(child.main).map(([role, cards]) => (
-                <div key={role}>
-                  <h3 className="font-mono text-xs font-black uppercase tracking-[0.14em] text-primary">{labelRole(role)}</h3>
-                  <ul className="mt-2 divide-y divide-border border border-border">
-                    {cards.map(card => <li key={card.name} className="border-t border-border px-3 py-3 first:border-t-0"><CardMention name={card.name} quantity={card.quantity} compact /></li>)}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </details>
-        </section>
+        </details>
 
         <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="validation-heading">
           <SectionHeading id="validation-heading">Checks actually performed</SectionHeading>
@@ -310,6 +242,22 @@ function ChangeList({ title, rows }: { title: string; rows: DeckGalleryTunedChil
 
 function PlanCard({ title, children }: { title: string; children: React.ReactNode }) {
   return <article className="border border-border bg-background p-4"><h3 className="text-xs font-black uppercase tracking-wide">{title}</h3><div className="mt-2 text-sm leading-6">{children}</div></article>;
+}
+
+function VisualChildCard({ name, quantity, compact = false }: { name: string; quantity?: number; compact?: boolean }) {
+  const imageUri = getPublicCardImageUri(name, "normal");
+  return (
+    <article className="min-w-0 border border-border bg-card">
+      <CardMediaFrame className={compact ? "" : "bg-muted/40"}>
+        {imageUri ? <CardImageZoom src={imageUri} alt={name} /> : <div className="flex h-full items-center justify-center p-3 text-center text-xs font-bold text-muted-foreground">{name}<br />Artwork unavailable</div>}
+      </CardMediaFrame>
+      <div className="min-w-0 p-2.5 sm:p-3">
+        <div className="flex flex-wrap gap-1.5"><span className="border border-border px-1.5 py-0.5 text-[10px] font-bold">{quantity ?? 1}×</span></div>
+        <h4 className="mt-2 break-words text-sm font-black leading-5">{name}</h4>
+        <CardIndexLink name={name} compact className="mt-2" />
+      </div>
+    </article>
+  );
 }
 
 function CardMention({ name, quantity, compact = false }: { name: string; quantity?: number; compact?: boolean }) {
