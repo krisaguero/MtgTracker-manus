@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(8);
+    expect(childPayload.children).toHaveLength(16);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -51,11 +51,13 @@ describe("public Deckbox tuned-child revisions", () => {
       expect(child.sourceTitle).toBe(parent.title);
       expect(child.visibleSourceCounts.mainCopies).toBe(parent.mainCopies);
       expect(child.visibleSourceCounts.sideboardCopies).toBe(parent.sideboardCopies);
-      expect(child.validation.mainCount).toBe(99);
-      expect(child.validation.commanderCount).toBe(1);
+      const mainCount = child.main.reduce((sum, card) => sum + card.quantity, 0);
+      const commanderCount = child.commanders.reduce((sum, card) => sum + card.quantity, 0);
+      expect(child.validation.mainCount).toBe(mainCount);
+      expect(child.validation.commanderCount).toBe(commanderCount);
       expect(child.validation.totalCount).toBe(100);
-      expect(child.main.reduce((sum, card) => sum + card.quantity, 0)).toBe(99);
-      expect(Object.values(child.roleEstimates).reduce((sum, count) => sum + count, 0)).toBe(99);
+      expect(mainCount + commanderCount).toBe(100);
+      expect(Object.values(child.roleEstimates).reduce((sum, count) => sum + count, 0)).toBe(mainCount);
       expect(child.validation.colorIdentityCheck).toBe("pass");
       expect(child.validation.commanderLegalityCheck).toBe("pass");
       expect(child.validation.singletonCheck).toBe("pass");
@@ -88,6 +90,27 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(html).toContain("Related public tracker builds");
     expect(html).toContain('href="/brawl-box/araumi-of-the-dead-tide"');
     expect(html).toContain('href="/brawl-box/marchesa-the-black-rose"');
+  });
+
+  it("preserves batch-2 tracker links and shows why no close comparator was used", () => {
+    const marchesa = childPayload.children.find(child =>
+      child.commanders.some(commander => commander.name === "Marchesa, the Black Rose") &&
+      child.relatedPublicBuilds.some(build => build.publicHref === "/brawl-box/marchesa-the-black-rose")
+    );
+    expect(marchesa).toBeDefined();
+    if (marchesa) {
+      const html = page(marchesa);
+      expect(html).toContain('href="/brawl-box/marchesa-the-black-rose"');
+      expect(html).toContain("Useful flavor and theft/sacrifice direction only");
+      expect(html).toContain("not a 100-card Commander deck");
+    }
+
+    const noMatch = childPayload.children.find(child =>
+      child.commanders.some(commander => commander.name === "Sigarda, Heron's Grace")
+    );
+    expect(noMatch?.relatedPublicBuilds).toHaveLength(0);
+    expect(noMatch?.relatedBuildsNote).toContain("custom 60-card Brawlalternative/Commander previews");
+    if (noMatch?.relatedBuildsNote) expect(page(noMatch)).toContain(escapeHtml(noMatch.relatedBuildsNote));
   });
 
   it("keeps every child separate and safeguards any Robogles title-credit source", () => {

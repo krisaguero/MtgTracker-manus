@@ -78,18 +78,21 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
           <p className="mt-3 text-xs leading-5 text-muted-foreground">Aggregates guide the plan; they are not proof of ownership, playtesting, legality, or a requirement to copy another list.</p>
         </section>
 
-        {child.relatedPublicBuilds.length > 0 && (
+        {(child.relatedPublicBuilds.length > 0 || child.relatedBuildsNote) && (
           <section className="border-2 border-border bg-card p-5 sm:p-7" aria-labelledby="tracker-context-heading">
-            <SectionHeading id="tracker-context-heading">Related public tracker builds</SectionHeading>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {child.relatedPublicBuilds.map(build => (
-                <article key={build.publicHref} className="border border-border bg-background p-4">
-                  <Link href={build.publicHref} className="font-bold text-primary underline-offset-4 hover:underline">{build.title}</Link>
-                  <p className="mt-1 text-xs font-semibold text-muted-foreground">{build.format}</p>
-                  <p className="mt-2 text-sm leading-6">{build.relation}</p>
-                </article>
-              ))}
-            </div>
+            <SectionHeading id="tracker-context-heading">Related public tracker builds and context</SectionHeading>
+            {child.relatedBuildsNote && <p className="mt-4 border-l-4 border-primary bg-muted/40 p-4 text-sm leading-6">{child.relatedBuildsNote}</p>}
+            {child.relatedPublicBuilds.length > 0 && (
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {child.relatedPublicBuilds.map(build => (
+                  <article key={build.publicHref} className="border border-border bg-background p-4">
+                    <Link href={build.publicHref} className="font-bold text-primary underline-offset-4 hover:underline">{build.title}</Link>
+                    <p className="mt-1 text-xs font-semibold text-muted-foreground">{build.format}</p>
+                    <p className="mt-2 text-sm leading-6">{build.relation}</p>
+                  </article>
+                ))}
+              </div>
+            )}
           </section>
         )}
 

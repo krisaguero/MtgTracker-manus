@@ -65,6 +65,7 @@ export type DeckGalleryTunedChild = {
     publicHref: string;
     relation: string;
   }[];
+  relatedBuildsNote?: string;
   evidence: { label: string; url: string; usedFor: string }[];
   validation: {
     status: "pass";
@@ -128,6 +129,8 @@ export function validateDeckGalleryTunedChildrenPayload(
     slugs.add(child.childSlug as string);
     if (child.format !== "Commander" || child.played !== false || child.hypothetical !== true)
       throw new Error(`Tuned child ${child.childSlug} must remain a hypothetical, unplayed Commander proposal.`);
+    if (child.relatedBuildsNote !== undefined && typeof child.relatedBuildsNote !== "string")
+      throw new Error(`Tuned child ${child.childSlug} has a malformed tracker-build note.`);
     if (!Array.isArray(child.main) || !Array.isArray(child.commanders))
       throw new Error(`Tuned child ${child.childSlug} is missing its card zones.`);
     let mainCount = 0;
