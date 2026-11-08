@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import type { DeckGalleryPayload } from "@/lib/deckGallery";
+import type { DeckGalleryTunedChildrenPayload } from "@/lib/deckGalleryTunedChildren";
 import { DeckGalleryCardPresentation } from "@/components/DeckGalleryRoleReading";
 import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
 import { DeckGalleryDetailView } from "./DeckGalleryDetail";
@@ -19,6 +20,12 @@ const payload = JSON.parse(
     "utf8"
   )
 ) as DeckGalleryPayload;
+const tunedChildPayload = JSON.parse(
+  readFileSync(
+    resolve(process.cwd(), "client/public/data/deckbox-tuned-children.json"),
+    "utf8"
+  )
+) as DeckGalleryTunedChildrenPayload;
 const entry = (title: string) => {
   const match = payload.entries.find(candidate => candidate.title === title);
   if (!match) throw new Error(`Missing public deck entry: ${title}`);
@@ -30,10 +37,13 @@ function quantityMap(rows: { name: string; quantity: number }[]) {
   for (const row of rows) result.set(row.name, (result.get(row.name) || 0) + row.quantity);
   return Array.from(result.entries()).sort(([left], [right]) => left.localeCompare(right));
 }
-const page = (deck: DeckGalleryPayload["entries"][number]) =>
+const page = (
+  deck: DeckGalleryPayload["entries"][number],
+  tunedChildren: DeckGalleryTunedChildrenPayload["children"] = []
+) =>
   renderToStaticMarkup(
     <Router ssrPath={`/deck-gallery/${deck.id}`}>
-      <DeckGalleryDetailView entry={deck} />
+      <DeckGalleryDetailView entry={deck} tunedChildren={tunedChildren} />
     </Router>
   );
 
@@ -131,6 +141,22 @@ describe("individual public Deck Gallery pages", () => {
         savedOrderHtml.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
       );
     }
+  });
+
+  it("links a separate tuned child from its read-only parent source page", () => {
+    const child = tunedChildPayload.children[0];
+    const deck = payload.entries.find(
+      candidate => candidate.id === child.parentHref.split("/").pop()
+    );
+    if (!deck) throw new Error(`Missing public parent for ${child.childSlug}`);
+    const originalRows = JSON.stringify({ main: deck.main, sideboard: deck.sideboard });
+    const html = page(deck, [child]);
+    expect(html).toContain("Separate tuned child revision");
+    expect(html).toContain(`href="/deck-gallery/child/${child.childSlug}"`);
+    expect(html).toContain("Proposed · unplayed");
+    expect(JSON.stringify({ main: deck.main, sideboard: deck.sideboard })).toBe(originalRows);
+    expect(deck.main.reduce((sum, card) => sum + card.quantity, 0)).toBe(deck.mainCopies);
+    expect(deck.sideboard.reduce((sum, card) => sum + card.quantity, 0)).toBe(deck.sideboardCopies);
   });
 
   it("shows official precon support and flags a commander absent from the export", () => {

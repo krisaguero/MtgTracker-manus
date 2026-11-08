@@ -10,6 +10,10 @@ import {
   loadDeckGallery,
   type DeckGalleryEntry,
 } from "@/lib/deckGallery";
+import {
+  loadDeckGalleryTunedChildren,
+  type DeckGalleryTunedChild,
+} from "@/lib/deckGalleryTunedChildren";
 
 function galleryIndexHref(entry: DeckGalleryEntry): string {
   if (entry.group === "robert_title_credit") return "/deck-gallery/robogles";
@@ -17,7 +21,13 @@ function galleryIndexHref(entry: DeckGalleryEntry): string {
   return "/deck-gallery";
 }
 
-export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
+export function DeckGalleryDetailView({
+  entry,
+  tunedChildren = [],
+}: {
+  entry: DeckGalleryEntry;
+  tunedChildren?: DeckGalleryTunedChild[];
+}) {
   const meta = getDeckGalleryDisplayMeta(entry);
   const isRobert = entry.group === "robert_title_credit";
   const backHref = galleryIndexHref(entry);
@@ -130,6 +140,37 @@ export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
       <div className="mx-auto max-w-7xl">
         <DeckGalleryRoleReading entry={entry} />
 
+        {tunedChildren.length > 0 && (
+          <section
+            aria-label="Separate tuned child revisions"
+            className="mt-8 border-2 border-primary bg-card p-5 sm:p-7"
+          >
+            <h2 className="text-xl font-black tracking-tight sm:text-2xl">
+              Separate tuned child revision{tunedChildren.length === 1 ? "" : "s"}
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+              These are proposed, unplayed tuned-casual builds. They do not edit
+              this parent’s saved list, and no collection or ownership match is
+              claimed.
+            </p>
+            <ul className="mt-4 grid gap-3">
+              {tunedChildren.map(child => (
+                <li key={child.childSlug} className="border border-border bg-background p-4">
+                  <Link
+                    href={`/deck-gallery/child/${child.childSlug}`}
+                    className="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-primary underline-offset-4 hover:underline"
+                  >
+                    {child.title} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {child.validation.mainCount} main + {child.validation.commanderCount} command-zone card · Proposed · unplayed
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <footer className="mt-8 border-t-2 border-border pt-4 text-xs leading-5 text-muted-foreground">
           Representative card images are loaded from{" "}
           <a
@@ -200,15 +241,25 @@ export default function DeckGalleryDetail({
   params: { deckId: string };
 }) {
   const [entries, setEntries] = useState<DeckGalleryEntry[] | null>(null);
+  const [tunedChildren, setTunedChildren] = useState<DeckGalleryTunedChild[]>([]);
   const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
     const previousTitle = document.title;
     document.title = "Loading deck page · Deck Gallery | MTG Tracker";
+    setTunedChildren([]);
     let active = true;
-    loadDeckGallery()
-      .then(payload => {
-        if (active) setEntries(payload.entries);
+    Promise.all([
+      loadDeckGallery(),
+      loadDeckGalleryTunedChildren()
+        .then(payload => payload.children)
+        .catch(() => [] as DeckGalleryTunedChild[]),
+    ])
+      .then(([payload, children]) => {
+        if (active) {
+          setEntries(payload.entries);
+          setTunedChildren(children);
+        }
       })
       .catch((reason: unknown) => {
         if (active) {
@@ -277,5 +328,12 @@ export default function DeckGalleryDetail({
       </main>
     );
   }
-  return <DeckGalleryDetailView entry={entry} />;
+  return (
+    <DeckGalleryDetailView
+      entry={entry}
+      tunedChildren={tunedChildren.filter(
+        child => child.parentHref === `/deck-gallery/${params.deckId}`
+      )}
+    />
+  );
 }

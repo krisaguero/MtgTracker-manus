@@ -73,6 +73,8 @@ const DeckGallery = lazy(() => import('@/pages/DeckGallery'));
 const DeckGalleryWip = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.DeckGalleryWip })));
 const RoboglesDeckShowcase = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.RoboglesDeckShowcase })));
 const DeckGalleryDetail = lazy(() => import('@/pages/DeckGalleryDetail'));
+const DeckGalleryTunedChildren = lazy(() => import('@/pages/DeckGalleryTunedChildren'));
+const DeckGalleryTunedChildDetail = lazy(() => import('@/pages/DeckGalleryTunedChildDetail'));
 const Limited = lazy(() => import('@/pages/Limited'));
 const MarketHub = lazy(() => import('@/pages/MarketHub'));
 const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
@@ -105,6 +107,8 @@ function Router() {
         <Route path={'/deck-gallery'} component={DeckGallery} />
         <Route path={'/deck-gallery/wip'} component={DeckGalleryWip} />
         <Route path={'/deck-gallery/robogles'} component={RoboglesDeckShowcase} />
+        <Route path={'/deck-gallery/children'} component={DeckGalleryTunedChildren} />
+        <Route path="/deck-gallery/child/:childSlug" component={DeckGalleryTunedChildDetail} />
         <Route path="/deck-gallery/:deckId" component={DeckGalleryDetail} />
         <Route path="/private-deck-brewery/:deckboxId" component={PrivateDeckBrewery} />
         <Route path="/private-deck-brewery" component={PrivateDeckBrewery} />

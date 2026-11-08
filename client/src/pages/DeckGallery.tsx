@@ -107,6 +107,12 @@ function RouteTabs({ mode }: { mode: GalleryMode }) {
           {item.label}
         </Link>
       ))}
+      <Link
+        href="/deck-gallery/children"
+        className="inline-flex min-h-10 items-center border-2 border-border bg-background px-4 text-xs font-black text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      >
+        Tuned children
+      </Link>
     </nav>
   );
 }
