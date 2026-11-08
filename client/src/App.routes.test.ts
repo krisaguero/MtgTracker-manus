@@ -55,11 +55,19 @@ describe('application route map', () => {
   it('registers the private Deck Brewery route and navigation link', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    const publicBreweryIndex = source.indexOf("path={'/deck-brewery/reviews'}");
+    const publicBreweryDetailIndex = source.indexOf('path="/deck-brewery/reviews/:reviewSlug"');
     const breweryIndex = source.indexOf("path={'/deck-brewery'}");
+    expect(publicBreweryIndex).toBeGreaterThan(-1);
+    expect(publicBreweryIndex).toBeLessThan(breweryIndex);
+    expect(publicBreweryDetailIndex).toBeGreaterThan(-1);
+    expect(publicBreweryDetailIndex).toBeLessThan(breweryIndex);
+    expect(publicBreweryDetailIndex).toBeLessThan(dynamicSetIndex);
     expect(breweryIndex).toBeGreaterThan(-1);
     expect(breweryIndex).toBeLessThan(dynamicSetIndex);
     const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
-    expect(navigation).toContain("href: '/deck-brewery', label: 'Private Deck Brewery'");
+    expect(navigation).toContain("href: '/deck-brewery/reviews', label: 'Public Deck Brewery reviews'");
+    expect(navigation).toContain("href: '/deck-brewery', label: 'Private local Brewery workspace'");
   });
 
   it('registers the public Deck Matrix as a lazy route before the dynamic set route', () => {

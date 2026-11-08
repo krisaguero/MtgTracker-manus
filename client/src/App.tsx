@@ -62,6 +62,8 @@ const QuarterlyMarketTrendArticle = lazy(() => import('@/pages/QuarterlyMarketTr
 const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
 const DeckBrewery = lazy(() => import('@/pages/DeckBrewery'));
+const DeckBreweryReviews = lazy(() => import('@/pages/DeckBreweryReviews'));
+const DeckBreweryReviewDetail = lazy(() => import('@/pages/DeckBreweryReviews').then((module) => ({ default: module.DeckBreweryReviewDetail })));
 const PrivateDeckBrewery = lazy(() => import('@/pages/PrivateDeckBrewery'));
 const DeckMatrix = lazy(() => import('@/pages/DeckMatrix'));
 const DeckGallery = lazy(() => import('@/pages/DeckGallery'));
@@ -91,6 +93,8 @@ function Router() {
         <Route path={'/collection/sets'} component={CollectionSetIndex} />
         <Route path={'/collection/sets/:setCode'} component={CollectionSetDirectory} />
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
+        <Route path={'/deck-brewery/reviews'} component={DeckBreweryReviews} />
+        <Route path="/deck-brewery/reviews/:reviewSlug" component={DeckBreweryReviewDetail} />
         <Route path={'/deck-brewery'} component={DeckBrewery} />
         <Route path={'/deck-matrix'} component={DeckMatrix} />
         <Route path={'/deck-gallery'} component={DeckGallery} />
