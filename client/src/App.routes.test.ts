@@ -57,16 +57,24 @@ describe('application route map', () => {
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
     const publicBreweryIndex = source.indexOf("path={'/deck-brewery/reviews'}");
     const publicBreweryDetailIndex = source.indexOf('path="/deck-brewery/reviews/:reviewSlug"');
+    const showdownsIndex = source.indexOf("path={'/deck-brewery/matchups'}");
+    const showdownsDetail = source.indexOf('path="/deck-brewery/matchups/:matchupSlug"');
     const breweryIndex = source.indexOf("path={'/deck-brewery'}");
     expect(publicBreweryIndex).toBeGreaterThan(-1);
     expect(publicBreweryIndex).toBeLessThan(breweryIndex);
     expect(publicBreweryDetailIndex).toBeGreaterThan(-1);
     expect(publicBreweryDetailIndex).toBeLessThan(breweryIndex);
     expect(publicBreweryDetailIndex).toBeLessThan(dynamicSetIndex);
+    expect(showdownsIndex).toBeGreaterThan(-1);
+    expect(showdownsIndex).toBeLessThan(breweryIndex);
+    expect(showdownsDetail).toBeGreaterThan(-1);
+    expect(showdownsDetail).toBeLessThan(breweryIndex);
+    expect(showdownsDetail).toBeLessThan(dynamicSetIndex);
     expect(breweryIndex).toBeGreaterThan(-1);
     expect(breweryIndex).toBeLessThan(dynamicSetIndex);
     const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
     expect(navigation).toContain("href: '/deck-brewery/reviews', label: 'Public Deck Brewery reviews'");
+    expect(navigation).toContain("href: '/deck-brewery/matchups', label: 'Public Brewery matchups & combo lab'");
     expect(navigation).toContain("href: '/deck-brewery', label: 'Private local Brewery workspace'");
   });
 

@@ -92,12 +92,19 @@ export default function BrawlDeckDetail({ params }: { params: { deckId: string }
           </div>
         </div>
       </details>}
+      {deck.archiveSource && <section className="border-2 border-primary/40 bg-primary/5 p-5 sm:p-6" aria-label="Public source and child relationship">
+        <h2 className="text-xl font-black">Public source and child relationship</h2>
+        <p className="mt-3 text-sm leading-6"><strong>Public source list:</strong> <Link href={deck.archiveSource.galleryHref} className="text-primary underline">{deck.archiveSource.title}</Link> · {deck.archiveSource.mainCopies} main copies and {deck.archiveSource.sideboardCopies} sideboard copies.</p>
+        <p className="mt-2 text-sm leading-6"><strong>Public review branch:</strong> <Link href={deck.archiveSource.reviewHref} className="text-primary underline">Open the separate review and proposed command-zone choice</Link>.</p>
+        <p className="mt-2 text-sm leading-6">{deck.archiveSource.relationshipNote}</p>
+        <p className="mt-2 text-sm leading-6"><strong>Child scope:</strong> The 60-card child selects only from the public source main list. It does not edit or replace the original source rows or its separate review.</p>
+      </section>}
       <section className="border-2 border-border bg-card p-5 text-sm leading-6" aria-label="Sources and format caveats">
         <h2 className="text-xl font-black">About this list</h2>
         <p className="mt-3">{brawlBoxData.officialBrawlWarning}</p>
-        <p className="mt-3"><strong>Deck source:</strong> User-supplied decklist, preserved with the source-list audit above. When shown, the proposed list is a separate published editorial revision; it does not rewrite or overwrite the original source.</p>
-        <p className="mt-3"><strong>Strategy notes:</strong> Groups and card roles are editorial explanations. Proposal edits change only the separately labeled proposed selection; the original source list, quantities, notes, and audits remain available in Source-list history. WIP, unresolved-name, missing-card and color-identity warnings still apply.</p>
-        <p className="mt-3"><strong>Card data:</strong> {brawlBoxData.cardDataSource} Card links and representative images are provided by <a href="https://scryfall.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Scryfall</a>. Each image links to its displayed printing, labeled with set and collector number. These are representative editions, not a claim about the submitted edition or ownership. Card imagery © Wizards of the Coast.</p>
+        <p className="mt-3"><strong>Deck source:</strong> {deck.archiveSource ? 'This is a separate public Deck Brewery child experiment, not a user-submitted source list or a replacement for the parent.' : 'User-supplied decklist, preserved with the source-list audit above. When shown, the proposed list is a separate published editorial revision; it does not rewrite or overwrite the original source.'}</p>
+        <p className="mt-3"><strong>Strategy notes:</strong> {deck.archiveSource ? 'Groups and card roles are editorial explanations for this untested child. The public parent source and its separate proposal remain unchanged.' : 'Groups and card roles are editorial explanations. Proposal edits change only the separately labeled proposed selection; the original source list, quantities, notes, and audits remain available in Source-list history. WIP, unresolved-name, missing-card and color-identity warnings still apply.'}</p>
+        <p className="mt-3"><strong>Card data:</strong> {deck.archiveSource ? `Scryfall card identities and format-status fields checked ${deck.archiveSource.cardDataAsOf}. ` : brawlBoxData.cardDataSource + ' ' }Card links and representative images are provided by <a href="https://scryfall.com/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Scryfall</a>. Each image links to its displayed printing, labeled with set and collector number. These are representative editions, not a claim about the submitted edition or ownership. Card imagery © Wizards of the Coast.</p>
       </section>
       <nav aria-label="Explore Brawlternatives" className="border-t-2 border-border pt-5">
         <h2 className="text-xl font-black">Explore the shelf</h2>

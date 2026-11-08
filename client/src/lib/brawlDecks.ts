@@ -3,6 +3,8 @@ import referenceData from '@/data/brawlCardReference.json';
 import madisonAraumi from '@/data/brawlStrategyMadisonAraumi.json';
 import marchesaMothman from '@/data/brawlStrategyMarchesaMothman.json';
 import rakdosKarlovTaigam from '@/data/brawlStrategyRakdosKarlovTaigam.json';
+import breweryGisaChild from '@/data/brawlDeckBreweryGisaChild.json';
+import breweryGisaReferences from '@/data/brawlCardReferenceBrewery.json';
 
 export type BrawlBoxCard = { name: string; quantity: number; colorIdentity: string[] | null; commanderLegal: boolean | null; verificationStatus?: string; note?: string; role?: string };
 export type BrawlBoxGroup = { label: string; intro?: string; cards: BrawlBoxCard[] };
@@ -39,6 +41,7 @@ export type BrawlBoxDeck = {
   sourceLinks?: { label: string; url: string }[];
   upgradeOptions?: { title: string; cardsIn: string[]; cardsOut: string[]; rationale: string; tradeoff: string; sourceUrls?: string[] }[];
   proposalRationale?: string[];
+  archiveSource?: { title: string; galleryHref: string; reviewHref: string; mainCopies: number; sideboardCopies: number; cardDataAsOf: string; relationshipNote: string };
 };
 
 type StrategyGroup = { label: string; intro: string; cards: { name: string; role: string }[] };
@@ -61,7 +64,7 @@ function strategyGroups(source: BrawlBoxGroup[], strategy: StrategyGroup[]): Bra
   if (remaining.length) throw new Error(`Strategy omitted submitted cards: ${remaining.map((card) => card.name).join(', ')}`);
   return result;
 }
-export const brawlDecks: BrawlBoxDeck[] = (brawlBoxData.decks as BrawlBoxDeck[]).map((deck) => {
+export const brawlDecks: BrawlBoxDeck[] = ([...(brawlBoxData.decks as BrawlBoxDeck[]), breweryGisaChild as BrawlBoxDeck]).map((deck) => {
   const strategy = strategies[deck.id];
   if (!strategy) return deck;
   return {
@@ -89,7 +92,10 @@ export type BrawlCardReference = {
   set: string; setName: string; collectorNumber: string; artist: string | null;
   oracleText: string; typeLine: string; colorIdentity: string[];
 };
-export const brawlCardReferences = referenceData as Record<string, BrawlCardReference>;
+export const brawlCardReferences = {
+  ...(referenceData as Record<string, BrawlCardReference>),
+  ...(breweryGisaReferences as Record<string, BrawlCardReference>),
+};
 export const cardReference = (name: string) => brawlCardReferences[name];
 export const cardImage = (name: string) => cardReference(name)?.imageUrl ?? undefined;
 export const cardRecord = (name: string) => cardReference(name)?.scryfallUrl ?? cardSearch(name);

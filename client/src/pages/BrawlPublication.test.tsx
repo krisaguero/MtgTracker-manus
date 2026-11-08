@@ -1,9 +1,13 @@
 import React from 'react';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Router } from 'wouter';
 import { describe, expect, it } from 'vitest';
 import { BrawlDeckCard } from '@/components/BrawlDeckCard';
-import { brawlDecks, findBrawlDeck } from '@/lib/brawlDecks';
+import { brawlDecks, cardReference, findBrawlDeck } from '@/lib/brawlDecks';
+import BrawlBox from './BrawlBox';
+import BrawlDeckDetail from './BrawlDeckDetail';
 const taigamSource = `1 Taigam, Sidisi's Hand
 1 Go for the Throat
 1 Hero's Downfall
@@ -66,8 +70,8 @@ describe('approved Brawlternative publication', () => {
     expect(cards[0].note).toContain('Skip your draw step');
     expect(cards[0].note).toContain('exiling X cards');
   });
-  it('marks exactly the three newly approved drafts public WIP', () => {
-    expect(brawlDecks.filter((deck) => deck.publicationStatus === 'work-in-progress').map((deck) => deck.id)).toEqual(['the-wise-mothman', 'rakdos-lord-of-riots', 'karlov-of-the-ghost-council']);
+  it('marks the reviewed drafts and separate archive child as public WIP', () => {
+    expect(brawlDecks.filter((deck) => deck.publicationStatus === 'work-in-progress').map((deck) => deck.id)).toEqual(['the-wise-mothman', 'rakdos-lord-of-riots', 'karlov-of-the-ghost-council', 'deck-gisa-and-geralf-graveyard-mashup-preview']);
     for (const deck of brawlDecks.filter((entry) => entry.publicationStatus)) {
       expect(deck.reviewStatus).toContain('PUBLIC WORK IN PROGRESS');
       expect(deck.reviewStatus).not.toMatch(/Not published|LOCAL REVIEW DRAFT/);
@@ -83,11 +87,60 @@ describe('approved Brawlternative publication', () => {
     const unresolved = cards.filter((card) => card.verificationStatus === 'unresolved');
     expect(unresolved.map((card) => card.name)).toEqual(['Harold and Bob, First City', 'Strong, the Brutish Companion', 'Piper Wright, Public Reporter']);
     expect(unresolved.every((card) => card.colorIdentity === null && card.commanderLegal === null)).toBe(true);
-    const html = renderToStaticMarkup(<Router><BrawlDeckCard deck={deck} detail initialView="visual" /></Router>);
+    const html = renderToStaticMarkup(<Router ssrPath="/brawl-box/the-wise-mothman"><BrawlDeckCard deck={deck} detail initialView="visual" /></Router>);
     expect(html).toContain('Unresolved name · identity &amp; legality unknown');
     expect(html).toContain('Optional upgrade proposals · not applied');
     expect(html).toContain('What changed · review notes');
     expect(html).toContain('Off identity');
+  });
+  it('keeps the Gisa child source-main-only, exactly 60 cards, identity-checked, and visibly untested', () => {
+    const deck = findBrawlDeck('deck-gisa-and-geralf-graveyard-mashup-preview')!;
+    const sourceInfo = deck.archiveSource!;
+    const cards = deck.groups.flatMap((group) => group.cards);
+    const total = cards.reduce((sum, card) => sum + card.quantity, 0);
+    const gallery = JSON.parse(readFileSync(resolve(process.cwd(), 'client/public/data/deck-gallery.json'), 'utf8')) as {
+      entries: Array<{ id: string; title: string; main: Array<{ name: string; quantity: number }>; sideboard: Array<{ name: string; quantity: number }> }>;
+    };
+    const source = gallery.entries.find((entry) => entry.id === sourceInfo.galleryHref.split('/').pop())!;
+    const sourceMain = new Map<string, number>();
+    for (const card of source.main) sourceMain.set(card.name, (sourceMain.get(card.name) ?? 0) + card.quantity);
+    expect(source.title).toBe(sourceInfo.title);
+    expect(sourceInfo.mainCopies).toBe(110);
+    expect(sourceInfo.sideboardCopies).toBe(33);
+    expect(deck.sourceStatedTotal).toBe(110);
+    expect(deck.publicationStatus).toBe('work-in-progress');
+    expect(deck.reviewStatus).toContain('Untested');
+    expect(deck.sourceIssues.join(' ')).toContain('not official Magic Brawl');
+    expect(deck.commander).toBe('Gisa and Geralf');
+    expect(sourceInfo.relationshipNote).toContain('does not establish a commander');
+    expect(deck.offColorCards).toEqual([]);
+    expect(cards).toHaveLength(36);
+    expect(total).toBe(60);
+    expect(cards.find((card) => card.name === 'Island')?.quantity).toBe(9);
+    expect(cards.find((card) => card.name === 'Swamp')?.quantity).toBe(17);
+    expect(cards.filter((card) => !['Island', 'Swamp'].includes(card.name))).toHaveLength(34);
+    expect(cards.filter((card) => !['Island', 'Swamp'].includes(card.name)).every((card) => card.quantity === 1)).toBe(true);
+    expect(cards.every((card) => (card.colorIdentity ?? []).every((color) => deck.commanderColorIdentity.includes(color)))).toBe(true);
+    expect(cards.every((card) => card.commanderLegal)).toBe(true);
+    expect(cards.every((card) => sourceMain.get(card.name)! >= card.quantity)).toBe(true);
+    expect(cards.every((card) => !source.sideboard.some((sideboardCard) => sideboardCard.name === card.name) || sourceMain.has(card.name))).toBe(true);
+    expect(cardReference('Gisa and Geralf')?.imageUrl).toBeTruthy();
+    expect(cardReference('Cryptbreaker')?.imageUrl).toBeTruthy();
+    expect(JSON.stringify(deck)).not.toMatch(/"(?:owned|ownedCount|proxyCount|proxyNeeded|purchaseGap|scanMatches|deckboxRecordId|privateSourceUrl)"|\[PROXY\]|100% owned|zero proxies/i);
+    const html = renderToStaticMarkup(<Router ssrPath={`/brawl-box/${deck.id}`}><BrawlDeckDetail params={{ deckId: deck.id }} /></Router>);
+    expect(html).toContain('Public source and child relationship');
+    expect(html).toContain('href="/deck-gallery/deck-gisa-and-geralf-graveyard-mashup"');
+    expect(html).toContain('href="/deck-brewery/reviews/gisa-and-geralf-graveyard-mashup"');
+    expect(html).toContain('The saved Gallery record does not establish an original commander');
+    expect(html).toContain('Scryfall card identities and format-status fields checked 2026-11-07');
+    expect(html).toContain('Scryfall card-level Brawl status: not_legal');
+  });
+  it('shows the child in its separate public Deck Brewery offshoot tile shelf', () => {
+    const html = renderToStaticMarkup(<Router ssrPath="/brawl-box"><BrawlBox /></Router>);
+    expect(html).toContain('Deck Brewery offshoots');
+    expect(html).toContain('60-card custom Commander preview · separate from source');
+    expect(html).toContain('Public child · untested WIP');
+    expect(html).toContain('href="/brawl-box/deck-gisa-and-geralf-graveyard-mashup-preview"');
   });
   it('retains approved Karlov corrections and all published lists without private inventory fields', () => {
     const cards = findBrawlDeck('karlov-of-the-ghost-council')!.groups.flatMap((group) => group.cards);

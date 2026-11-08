@@ -1,0 +1,456 @@
+{
+  "id": "deck-gisa-and-geralf-graveyard-mashup-preview",
+  "rank": 99,
+  "title": "Gisa and Geralf - Graveyard Mashup — custom 60-card Commander-preview Brawlternative",
+  "subtitle": "A separate, untested 60-card Zombie-tribal and graveyard Commander-preview child. It selects cards from the public source main list only; the original source and its review remain unchanged.",
+  "commander": "Gisa and Geralf",
+  "commanderColorIdentityLabel": "Blue-Black",
+  "commanderColorIdentity": [
+    "B",
+    "U"
+  ],
+  "commanderCommanderLegal": true,
+  "commanderBrawlLegal": true,
+  "targetSize": 60,
+  "sourceStatedTotal": 110,
+  "visibleTotal": 60,
+  "sourceStatedCuts": 0,
+  "sourceCountNote": "Parent source is Vintage-labeled with 110 main card copies and a separate 33-card sideboard. This is a new 60-card child selected from the source main list only; the original source is not rebalanced or rewritten.",
+  "sourceIssues": [
+    "The parent source is Vintage-labeled and oversized: 110 main copies plus 33 sideboard copies. This child is a separate 60-card experiment selected only from source main; the parent remains unchanged.",
+    "The saved Gallery record does not establish an original commander. This child separately adopts Gisa and Geralf from its public review branch’s proposed command-zone choice; it does not confirm the parent commander.",
+    "This child is untested, not a final or legality-certified deck, and not official Magic Brawl. The commander card’s Scryfall status does not certify the full 60-card list.",
+    "No ownership, authorship, playtest, or endorsement claim is made by this separate child."
+  ],
+  "offColorCards": [],
+  "groups": [
+    {
+      "label": "Commander, tribal engines, and payoffs",
+      "intro": "The command-zone choice and core Zombie engines establish the graveyard plan, tribal pressure, and sacrifice-oriented value.",
+      "cards": [
+        {
+          "name": "Gisa and Geralf",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "chosen command-zone card; Zombie recursion"
+        },
+        {
+          "name": "Cryptbreaker",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie token engine and card draw"
+        },
+        {
+          "name": "Diregraf Captain",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie lord and death-trigger attrition"
+        },
+        {
+          "name": "Diregraf Colossus",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie body and graveyard scaling"
+        },
+        {
+          "name": "Ghoulcaller Gisa",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "sacrifice-to-Zombie token engine"
+        },
+        {
+          "name": "Grimgrin, Corpse-Born",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "sacrifice outlet and removal threat"
+        },
+        {
+          "name": "Rooftop Storm",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie cost-reduction engine",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Necromancer's Stockpile",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie discard-and-draw engine",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        }
+      ]
+    },
+    {
+      "label": "Zombie bodies and graveyard payoffs",
+      "intro": "These creatures stock and exploit the graveyard while supplying recursive threats, tutoring, sacrifice value, and attrition.",
+      "cards": [
+        {
+          "name": "Armored Skaab",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "self-mill and defensive Zombie body",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Army of the Damned",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "large Zombie token finisher"
+        },
+        {
+          "name": "Blood Scrivener",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "hellbent card advantage"
+        },
+        {
+          "name": "Cemetery Recruitment",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie recursion and card draw"
+        },
+        {
+          "name": "Corpse Connoisseur",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "creature graveyard tutor",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Custodi Lich",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "edict effect and monarchy pressure",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Drunau Corpse Trawler",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie token generation and graveyard scaling"
+        },
+        {
+          "name": "Fleshbag Marauder",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "edict effect and sacrifice value"
+        },
+        {
+          "name": "Geralf's Mindcrusher",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "large Zombie and mill pressure",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Grave Titan",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "repeatable Zombie token production"
+        },
+        {
+          "name": "Gray Merchant of Asphodel",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "devotion-based life-drain finisher"
+        },
+        {
+          "name": "Havengul Runebinder",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "graveyard exiling and Zombie lord effect"
+        },
+        {
+          "name": "Scourge of Nel Toth",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "recursive flying threat",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Sidisi, Undead Vizier",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "exploit-based tutor"
+        },
+        {
+          "name": "Stitcher Geralf",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "self-mill and Zombie token payoff",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Unbreathing Horde",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "graveyard-scaled Zombie body",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Undead Alchemist",
+          "quantity": 1,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie mill and token conversion",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        }
+      ]
+    },
+    {
+      "label": "Recursion, milling, and attrition spells",
+      "intro": "The spell package converts graveyard volume into interaction, reanimation, card selection, and a wide Zombie payoff.",
+      "cards": [
+        {
+          "name": "Dread Return",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "graveyard reanimation with flashback",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        },
+        {
+          "name": "Forbidden Alchemy",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "instant-speed selection and self-mill"
+        },
+        {
+          "name": "Victimize",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "two-for-one creature reanimation"
+        },
+        {
+          "name": "Graf Harvest",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Zombie evasion and graveyard utility"
+        },
+        {
+          "name": "Zombie Apocalypse",
+          "quantity": 1,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "mass Zombie recursion and creature sweep",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        }
+      ]
+    },
+    {
+      "label": "Artifacts, ramp, and tribal scaling",
+      "intro": "Colorless and Dimir artifacts support acceleration, card advantage, and broad tribal scaling without adding off-color identity.",
+      "cards": [
+        {
+          "name": "Ashnod's Altar",
+          "quantity": 1,
+          "colorIdentity": [],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "sacrifice outlet and colorless mana"
+        },
+        {
+          "name": "Dimir Signet",
+          "quantity": 1,
+          "colorIdentity": [
+            "B",
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "Dimir ramp and fixing"
+        },
+        {
+          "name": "Door of Destinies",
+          "quantity": 1,
+          "colorIdentity": [],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "tribal anthem and growth engine"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "colorIdentity": [],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "early acceleration",
+          "note": "Scryfall card-level Brawl status: not_legal. This custom Commander-preview is not official Brawl."
+        }
+      ]
+    },
+    {
+      "label": "Basic mana",
+      "intro": "The required basic split supplies the blue-black mana base while preserving the exact 60-copy target.",
+      "cards": [
+        {
+          "name": "Island",
+          "quantity": 9,
+          "colorIdentity": [
+            "U"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "basic blue mana"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 17,
+          "colorIdentity": [
+            "B"
+          ],
+          "commanderLegal": true,
+          "verificationStatus": "verified-scryfall",
+          "role": "basic black mana"
+        }
+      ]
+    }
+  ],
+  "plan": "Use self-mill and card selection to stock the graveyard, then turn Zombie density into recursion, token production, and attrition. Gisa and Geralf, Cemetery Recruitment, Dread Return, Victimize, Scourge of Nel Toth, and Zombie Apocalypse reuse creatures; Cryptbreaker, Diregraf Captain, Diregraf Colossus, Rooftop Storm, and Door of Destinies turn that volume into pressure.",
+  "deckType": "custom-non-precon",
+  "formatNote": "Custom Commander-preview only, not official Magic Brawl. Individual Scryfall status is a card-level reference, not a certification of this 60-card deck.",
+  "publicationStatus": "work-in-progress",
+  "reviewStatus": "PUBLIC WORK IN PROGRESS · Untested 60-card child, not a final or legality-certified deck. Its public parent is Vintage-labeled (110 main + 33 sideboard), and its original commander is unconfirmed. This child separately adopts the review’s proposed Gisa and Geralf command-zone card; it is not official Brawl.",
+  "comparisonNotes": [
+    "This is an independent child experiment; it does not edit the public source rows or replace the separate review proposal.",
+    "All 60 card copies come from the parent source main list; all 33 parent sideboard copies stay outside the child.",
+    "The parent’s Vintage label and oversized 110-main/33-sideboard counts remain visible rather than being treated as corrected."
+  ],
+  "proposalRationale": [
+    "The list contains exactly 60 copies: one command-zone card, 33 other singleton nonbasics, 9 Islands, and 17 Swamps.",
+    "All 34 nonbasic card names were selected from the parent source main, and every checked identity fits Gisa and Geralf’s blue-black identity.",
+    "The groupings explain a Zombie and graveyard plan; they are editorial organization, not proof of testing or strength.",
+    "The source commander remains unconfirmed. Gisa and Geralf is only the separate review branch’s suggested commander for this child."
+  ],
+  "archiveSource": {
+    "title": "*Gisa and Geralf - Graveyard Mashup*",
+    "galleryHref": "/deck-gallery/deck-gisa-and-geralf-graveyard-mashup",
+    "reviewHref": "/deck-brewery/reviews/gisa-and-geralf-graveyard-mashup",
+    "mainCopies": 110,
+    "sideboardCopies": 33,
+    "cardDataAsOf": "2026-11-07",
+    "relationshipNote": "The public Gallery source does not establish a commander. This child separately adopts Gisa and Geralf from the untested review branch; this does not change or confirm the source list."
+  }
+}

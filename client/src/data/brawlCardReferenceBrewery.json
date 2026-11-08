@@ -1,0 +1,421 @@
+{
+  "Gisa and Geralf": {
+    "name": "Gisa and Geralf",
+    "id": "bce9bf8d-4d22-4967-bd9e-27fe444ef3f6",
+    "scryfallUrl": "https://scryfall.com/card/inr/237/gisa-and-geralf?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/b/c/bce9bf8d-4d22-4967-bd9e-27fe444ef3f6.jpg?1783908077",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/b/c/bce9bf8d-4d22-4967-bd9e-27fe444ef3f6.jpg?1783908077",
+    "set": "inr",
+    "setName": "Innistrad Remastered",
+    "collectorNumber": "237",
+    "artist": "Karla Ortiz",
+    "oracleText": "When Gisa and Geralf enters, mill four cards.\nOnce during each of your turns, you may cast a Zombie creature spell from your graveyard.",
+    "typeLine": "Legendary Creature — Human Wizard",
+    "colorIdentity": [
+      "B",
+      "U"
+    ]
+  },
+  "Cryptbreaker": {
+    "name": "Cryptbreaker",
+    "id": "629e37d1-c0f3-44f2-926e-41eb3687c1d9",
+    "scryfallUrl": "https://scryfall.com/card/emn/86/cryptbreaker?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/6/2/629e37d1-c0f3-44f2-926e-41eb3687c1d9.jpg?1783937487",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/6/2/629e37d1-c0f3-44f2-926e-41eb3687c1d9.jpg?1783937487",
+    "set": "emn",
+    "setName": "Eldritch Moon",
+    "collectorNumber": "86",
+    "artist": "Darek Zabrocki",
+    "oracleText": "{1}{B}, {T}, Discard a card: Create a 2/2 black Zombie creature token.\nTap three untapped Zombies you control: You draw a card and lose 1 life.",
+    "typeLine": "Creature — Zombie",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Diregraf Captain": {
+    "name": "Diregraf Captain",
+    "id": "158407ad-35a9-40e1-9762-1c0572b56ecb",
+    "scryfallUrl": "https://scryfall.com/card/mic/148/diregraf-captain?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/1/5/158407ad-35a9-40e1-9762-1c0572b56ecb.jpg?1783925325",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/1/5/158407ad-35a9-40e1-9762-1c0572b56ecb.jpg?1783925325",
+    "set": "mic",
+    "setName": "Midnight Hunt Commander",
+    "collectorNumber": "148",
+    "artist": "Slawomir Maniak",
+    "oracleText": "Deathtouch\nOther Zombie creatures you control get +1/+1.\nWhenever another Zombie you control dies, target opponent loses 1 life.",
+    "typeLine": "Creature — Zombie Soldier",
+    "colorIdentity": [
+      "B",
+      "U"
+    ]
+  },
+  "Diregraf Colossus": {
+    "name": "Diregraf Colossus",
+    "id": "02351d67-2d73-43e3-82f7-5277c532d7ac",
+    "scryfallUrl": "https://scryfall.com/card/mic/112/diregraf-colossus?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/0/2/02351d67-2d73-43e3-82f7-5277c532d7ac.jpg?1783925341",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/0/2/02351d67-2d73-43e3-82f7-5277c532d7ac.jpg?1783925341",
+    "set": "mic",
+    "setName": "Midnight Hunt Commander",
+    "collectorNumber": "112",
+    "artist": "Vincent Proce",
+    "oracleText": "This creature enters with a +1/+1 counter on it for each Zombie card in your graveyard.\nWhenever you cast a Zombie spell, create a tapped 2/2 black Zombie creature token.",
+    "typeLine": "Creature — Zombie Giant",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Ghoulcaller Gisa": {
+    "name": "Ghoulcaller Gisa",
+    "id": "44d7906e-8a89-4644-acb5-46fbe97ab39f",
+    "scryfallUrl": "https://scryfall.com/card/cmm/161/ghoulcaller-gisa?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/4/4/44d7906e-8a89-4644-acb5-46fbe97ab39f.jpg?1783915675",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/4/4/44d7906e-8a89-4644-acb5-46fbe97ab39f.jpg?1783915675",
+    "set": "cmm",
+    "setName": "Commander Masters",
+    "collectorNumber": "161",
+    "artist": "Karla Ortiz",
+    "oracleText": "{B}, {T}, Sacrifice another creature: Create X 2/2 black Zombie creature tokens, where X is the sacrificed creature's power.",
+    "typeLine": "Legendary Creature — Human Wizard",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Grimgrin, Corpse-Born": {
+    "name": "Grimgrin, Corpse-Born",
+    "id": "3c257fe6-1038-4167-ae78-90309974b925",
+    "scryfallUrl": "https://scryfall.com/card/inr/239/grimgrin-corpse-born?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/3/c/3c257fe6-1038-4167-ae78-90309974b925.jpg?1783908076",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/3/c/3c257fe6-1038-4167-ae78-90309974b925.jpg?1783908076",
+    "set": "inr",
+    "setName": "Innistrad Remastered",
+    "collectorNumber": "239",
+    "artist": "Chris Rallis",
+    "oracleText": "Grimgrin enters tapped and doesn't untap during your untap step.\nSacrifice another creature: Untap Grimgrin and put a +1/+1 counter on it.\nWhenever Grimgrin attacks, destroy target creature defending player controls, then put a +1/+1 counter on Grimgrin.",
+    "typeLine": "Legendary Creature — Zombie Warrior",
+    "colorIdentity": [
+      "B",
+      "U"
+    ]
+  },
+  "Rooftop Storm": {
+    "name": "Rooftop Storm",
+    "id": "31146f03-cb5e-4f33-aad7-ce970b914d90",
+    "scryfallUrl": "https://scryfall.com/card/inr/83/rooftop-storm?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/3/1/31146f03-cb5e-4f33-aad7-ce970b914d90.jpg?1783908155",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/3/1/31146f03-cb5e-4f33-aad7-ce970b914d90.jpg?1783908155",
+    "set": "inr",
+    "setName": "Innistrad Remastered",
+    "collectorNumber": "83",
+    "artist": "John Stanko",
+    "oracleText": "You may pay {0} rather than pay the mana cost for Zombie creature spells you cast.",
+    "typeLine": "Enchantment",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Necromancer's Stockpile": {
+    "name": "Necromancer's Stockpile",
+    "id": "2ba07e86-fdef-4f51-808e-7780883eefe3",
+    "scryfallUrl": "https://scryfall.com/card/m15/108/necromancers-stockpile?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/2/b/2ba07e86-fdef-4f51-808e-7780883eefe3.jpg?1783939181",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/2/b/2ba07e86-fdef-4f51-808e-7780883eefe3.jpg?1783939181",
+    "set": "m15",
+    "setName": "Magic 2015",
+    "collectorNumber": "108",
+    "artist": "Seb McKinnon",
+    "oracleText": "{1}{B}, Discard a creature card: Draw a card. If the discarded card was a Zombie card, create a tapped 2/2 black Zombie creature token.",
+    "typeLine": "Enchantment",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Armored Skaab": {
+    "name": "Armored Skaab",
+    "id": "ce4d00f2-30e6-41d5-b997-c66350fe783c",
+    "scryfallUrl": "https://scryfall.com/card/isd/43/armored-skaab?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/c/e/ce4d00f2-30e6-41d5-b997-c66350fe783c.jpg?1783940980",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/c/e/ce4d00f2-30e6-41d5-b997-c66350fe783c.jpg?1783940980",
+    "set": "isd",
+    "setName": "Innistrad",
+    "collectorNumber": "43",
+    "artist": "Volkan Baǵa",
+    "oracleText": "When this creature enters, mill four cards.",
+    "typeLine": "Creature — Zombie Warrior",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Army of the Damned": {
+    "name": "Army of the Damned",
+    "id": "b46b0818-cd87-41b4-85d2-c474b995d4c0",
+    "scryfallUrl": "https://scryfall.com/card/j25/399/army-of-the-damned?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/b/4/b46b0818-cd87-41b4-85d2-c474b995d4c0.jpg?1783908742",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/b/4/b46b0818-cd87-41b4-85d2-c474b995d4c0.jpg?1783908742",
+    "set": "j25",
+    "setName": "Foundations Jumpstart",
+    "collectorNumber": "399",
+    "artist": "Ryan Pancoast",
+    "oracleText": "Create thirteen tapped 2/2 black Zombie creature tokens.\nFlashback {7}{B}{B}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "typeLine": "Sorcery",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Blood Scrivener": {
+    "name": "Blood Scrivener",
+    "id": "9ea8179a-d3c9-4cdc-a5b5-68cc73279050",
+    "scryfallUrl": "https://scryfall.com/card/dgm/22/blood-scrivener?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/9/e/9ea8179a-d3c9-4cdc-a5b5-68cc73279050.jpg?1783940040",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/9/e/9ea8179a-d3c9-4cdc-a5b5-68cc73279050.jpg?1783940040",
+    "set": "dgm",
+    "setName": "Dragon's Maze",
+    "collectorNumber": "22",
+    "artist": "Peter Mohrbacher",
+    "oracleText": "If you would draw a card while you have no cards in hand, instead you draw two cards and you lose 1 life.",
+    "typeLine": "Creature — Zombie Wizard",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Cemetery Recruitment": {
+    "name": "Cemetery Recruitment",
+    "id": "34a80873-86d7-44a9-894b-65e8f77dd2ea",
+    "scryfallUrl": "https://scryfall.com/card/fdn/517/cemetery-recruitment?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/3/4/34a80873-86d7-44a9-894b-65e8f77dd2ea.jpg?1783908959",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/3/4/34a80873-86d7-44a9-894b-65e8f77dd2ea.jpg?1783908959",
+    "set": "fdn",
+    "setName": "Foundations",
+    "collectorNumber": "517",
+    "artist": "Kieran Yanner",
+    "oracleText": "Return target creature card from your graveyard to your hand. If it's a Zombie card, draw a card.",
+    "typeLine": "Sorcery",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Corpse Connoisseur": {
+    "name": "Corpse Connoisseur",
+    "id": "3f4ef04b-5434-480e-82a1-118ed1ff551f",
+    "scryfallUrl": "https://scryfall.com/card/mm3/61/corpse-connoisseur?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/3/f/3f4ef04b-5434-480e-82a1-118ed1ff551f.jpg?1783936660",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/3/f/3f4ef04b-5434-480e-82a1-118ed1ff551f.jpg?1783936660",
+    "set": "mm3",
+    "setName": "Modern Masters 2017",
+    "collectorNumber": "61",
+    "artist": "Mark Hyzer",
+    "oracleText": "When this creature enters, you may search your library for a creature card, put that card into your graveyard, then shuffle.\nUnearth {3}{B} ({3}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+    "typeLine": "Creature — Zombie Wizard",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Custodi Lich": {
+    "name": "Custodi Lich",
+    "id": "5d77f50f-f63d-47bd-8bf9-01febee315fd",
+    "scryfallUrl": "https://scryfall.com/card/ncc/244/custodi-lich?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/5/d/5d77f50f-f63d-47bd-8bf9-01febee315fd.jpg?1783923270",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/5/d/5d77f50f-f63d-47bd-8bf9-01febee315fd.jpg?1783923270",
+    "set": "ncc",
+    "setName": "New Capenna Commander",
+    "collectorNumber": "244",
+    "artist": "Bastien L. Deharme",
+    "oracleText": "When this creature enters, you become the monarch.\nWhenever you become the monarch, target player sacrifices a creature of their choice.",
+    "typeLine": "Creature — Zombie Cleric",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Drunau Corpse Trawler": {
+    "name": "Drunau Corpse Trawler",
+    "id": "11b29a06-c1e1-4d81-ac50-906c94617abe",
+    "scryfallUrl": "https://scryfall.com/card/inr/63/drunau-corpse-trawler?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/1/1/11b29a06-c1e1-4d81-ac50-906c94617abe.jpg?1783908164",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/1/1/11b29a06-c1e1-4d81-ac50-906c94617abe.jpg?1783908164",
+    "set": "inr",
+    "setName": "Innistrad Remastered",
+    "collectorNumber": "63",
+    "artist": "Dave Kendall",
+    "oracleText": "When this creature enters, create a 2/2 black Zombie creature token.\n{2}{B}: Target Zombie gains deathtouch until end of turn.",
+    "typeLine": "Creature — Zombie",
+    "colorIdentity": [
+      "B",
+      "U"
+    ]
+  },
+  "Geralf's Mindcrusher": {
+    "name": "Geralf's Mindcrusher",
+    "id": "68ac8b5f-4d95-43fc-bf23-10247986a746",
+    "scryfallUrl": "https://scryfall.com/card/dka/37/geralfs-mindcrusher?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/6/8/68ac8b5f-4d95-43fc-bf23-10247986a746.jpg?1783940843",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/6/8/68ac8b5f-4d95-43fc-bf23-10247986a746.jpg?1783940843",
+    "set": "dka",
+    "setName": "Dark Ascension",
+    "collectorNumber": "37",
+    "artist": "Steven Belledin",
+    "oracleText": "When this creature enters, target player mills five cards.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
+    "typeLine": "Creature — Zombie Horror",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Havengul Runebinder": {
+    "name": "Havengul Runebinder",
+    "id": "cbd27e6f-24e5-4e90-9612-27d8dcd29325",
+    "scryfallUrl": "https://scryfall.com/card/mic/101/havengul-runebinder?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/c/b/cbd27e6f-24e5-4e90-9612-27d8dcd29325.jpg?1783925344",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/c/b/cbd27e6f-24e5-4e90-9612-27d8dcd29325.jpg?1783925344",
+    "set": "mic",
+    "setName": "Midnight Hunt Commander",
+    "collectorNumber": "101",
+    "artist": "Bud Cook",
+    "oracleText": "{2}{U}, {T}, Exile a creature card from your graveyard: Create a 2/2 black Zombie creature token, then put a +1/+1 counter on each Zombie creature you control.",
+    "typeLine": "Creature — Human Wizard",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Scourge of Nel Toth": {
+    "name": "Scourge of Nel Toth",
+    "id": "8b39ee60-c467-4145-8ca7-123eef01791e",
+    "scryfallUrl": "https://scryfall.com/card/jmp/274/scourge-of-nel-toth?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/8/b/8b39ee60-c467-4145-8ca7-123eef01791e.jpg?1783930409",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/8/b/8b39ee60-c467-4145-8ca7-123eef01791e.jpg?1783930409",
+    "set": "jmp",
+    "setName": "Jumpstart",
+    "collectorNumber": "274",
+    "artist": "Mark Winters",
+    "oracleText": "Flying\nYou may cast this creature from your graveyard by paying {B}{B} and sacrificing two creatures rather than paying its mana cost.",
+    "typeLine": "Creature — Zombie Dragon",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Sidisi, Undead Vizier": {
+    "name": "Sidisi, Undead Vizier",
+    "id": "6ea5dbba-6114-4d97-9363-817ab9e896d3",
+    "scryfallUrl": "https://scryfall.com/card/dtk/120/sidisi-undead-vizier?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/6/e/6ea5dbba-6114-4d97-9363-817ab9e896d3.jpg?1783938593",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/6/e/6ea5dbba-6114-4d97-9363-817ab9e896d3.jpg?1783938593",
+    "set": "dtk",
+    "setName": "Dragons of Tarkir",
+    "collectorNumber": "120",
+    "artist": "Min Yum",
+    "oracleText": "Deathtouch\nExploit (When this creature enters, you may sacrifice a creature.)\nWhen Sidisi exploits a creature, you may search your library for a card, put it into your hand, then shuffle.",
+    "typeLine": "Legendary Creature — Zombie Snake",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Stitcher Geralf": {
+    "name": "Stitcher Geralf",
+    "id": "a4ce6c30-a301-4a8a-ac3a-abacaf358a56",
+    "scryfallUrl": "https://scryfall.com/card/cmm/121/stitcher-geralf?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/a/4/a4ce6c30-a301-4a8a-ac3a-abacaf358a56.jpg?1783915689",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/a/4/a4ce6c30-a301-4a8a-ac3a-abacaf358a56.jpg?1783915689",
+    "set": "cmm",
+    "setName": "Commander Masters",
+    "collectorNumber": "121",
+    "artist": "Karla Ortiz",
+    "oracleText": "{2}{U}, {T}: Each player mills three cards. Exile up to two creature cards put into graveyards this way. Create an X/X blue Zombie creature token, where X is the total power of the cards exiled this way.",
+    "typeLine": "Legendary Creature — Human Wizard",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Unbreathing Horde": {
+    "name": "Unbreathing Horde",
+    "id": "dd119aa8-8414-4942-9a28-3e68a9a52a8e",
+    "scryfallUrl": "https://scryfall.com/card/ddq/66/unbreathing-horde?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/d/d/dd119aa8-8414-4942-9a28-3e68a9a52a8e.jpg?1783937836",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/d/d/dd119aa8-8414-4942-9a28-3e68a9a52a8e.jpg?1783937836",
+    "set": "ddq",
+    "setName": "Duel Decks: Blessed vs. Cursed",
+    "collectorNumber": "66",
+    "artist": "Dave Kendall",
+    "oracleText": "This creature enters with a +1/+1 counter on it for each other Zombie you control and each Zombie card in your graveyard.\nIf this creature would be dealt damage, prevent that damage and remove a +1/+1 counter from it.",
+    "typeLine": "Creature — Zombie",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Undead Alchemist": {
+    "name": "Undead Alchemist",
+    "id": "b7231a1c-f3aa-4346-9eb1-63e35ab3001c",
+    "scryfallUrl": "https://scryfall.com/card/mic/105/undead-alchemist?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/b/7/b7231a1c-f3aa-4346-9eb1-63e35ab3001c.jpg?1783925343",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/b/7/b7231a1c-f3aa-4346-9eb1-63e35ab3001c.jpg?1783925343",
+    "set": "mic",
+    "setName": "Midnight Hunt Commander",
+    "collectorNumber": "105",
+    "artist": "Michael C. Hayes",
+    "oracleText": "If a Zombie you control would deal combat damage to a player, instead that player mills that many cards.\nWhenever a creature card is put into an opponent's graveyard from their library, exile that card and create a 2/2 black Zombie creature token.",
+    "typeLine": "Creature — Zombie",
+    "colorIdentity": [
+      "U"
+    ]
+  },
+  "Forbidden Alchemy": {
+    "name": "Forbidden Alchemy",
+    "id": "04def7e3-10e4-4733-8c19-8fa6e4469086",
+    "scryfallUrl": "https://scryfall.com/card/tdc/152/forbidden-alchemy?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/0/4/04def7e3-10e4-4733-8c19-8fa6e4469086.jpg?1783907107",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/0/4/04def7e3-10e4-4733-8c19-8fa6e4469086.jpg?1783907107",
+    "set": "tdc",
+    "setName": "Tarkir: Dragonstorm Commander",
+    "collectorNumber": "152",
+    "artist": "David Rapoza",
+    "oracleText": "Look at the top four cards of your library. Put one of them into your hand and the rest into your graveyard.\nFlashback {6}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "typeLine": "Instant",
+    "colorIdentity": [
+      "B",
+      "U"
+    ]
+  },
+  "Graf Harvest": {
+    "name": "Graf Harvest",
+    "id": "fbc17697-9db9-41d4-aacf-b2f2e6ff80cf",
+    "scryfallUrl": "https://scryfall.com/card/emn/90/graf-harvest?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/f/b/fbc17697-9db9-41d4-aacf-b2f2e6ff80cf.jpg?1783937482",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/f/b/fbc17697-9db9-41d4-aacf-b2f2e6ff80cf.jpg?1783937482",
+    "set": "emn",
+    "setName": "Eldritch Moon",
+    "collectorNumber": "90",
+    "artist": "Lake Hurwitz",
+    "oracleText": "Zombies you control have menace. (They can't be blocked except by two or more creatures.)\n{3}{B}, Exile a creature card from your graveyard: Create a 2/2 black Zombie creature token.",
+    "typeLine": "Enchantment",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Zombie Apocalypse": {
+    "name": "Zombie Apocalypse",
+    "id": "854ae40d-ee52-434e-8fe0-1b5a0d4ea58b",
+    "scryfallUrl": "https://scryfall.com/card/mic/131/zombie-apocalypse?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/8/5/854ae40d-ee52-434e-8fe0-1b5a0d4ea58b.jpg?1783925332",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/8/5/854ae40d-ee52-434e-8fe0-1b5a0d4ea58b.jpg?1783925332",
+    "set": "mic",
+    "setName": "Midnight Hunt Commander",
+    "collectorNumber": "131",
+    "artist": "Volkan Baǵa",
+    "oracleText": "Return all Zombie creature cards from your graveyard to the battlefield tapped, then destroy all Humans.",
+    "typeLine": "Sorcery",
+    "colorIdentity": [
+      "B"
+    ]
+  },
+  "Door of Destinies": {
+    "name": "Door of Destinies",
+    "id": "e571a82f-812d-4eaf-bf87-9179018d0faf",
+    "scryfallUrl": "https://scryfall.com/card/trc/489/door-of-destinies?utm_source=api",
+    "imageUrl": "https://cards.scryfall.io/normal/front/e/5/e571a82f-812d-4eaf-bf87-9179018d0faf.jpg?1793021145",
+    "artUrl": "https://cards.scryfall.io/art_crop/front/e/5/e571a82f-812d-4eaf-bf87-9179018d0faf.jpg?1793021145",
+    "set": "trc",
+    "setName": "Star Trek Commander",
+    "collectorNumber": "489",
+    "artist": "Nadia Hurianova",
+    "oracleText": "As this artifact enters, choose a creature type.\nWhenever you cast a spell of the chosen type, put a charge counter on this artifact.\nCreatures you control of the chosen type get +1/+1 for each charge counter on this artifact.",
+    "typeLine": "Artifact",
+    "colorIdentity": []
+  }
+}

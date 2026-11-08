@@ -92,6 +92,14 @@ export function DeckBreweryReviewIndexView({ payload }: { payload: BreweryReview
       </header>
 
       <main className="mx-auto max-w-7xl space-y-6 px-4 py-6 sm:px-8 sm:py-9">
+        <section className="flex flex-wrap items-center justify-between gap-4 border-2 border-primary/35 bg-primary/[0.035] p-4" aria-label="Public Brewery matchups and combos">
+          <div><p className="font-mono text-[9px] font-black uppercase tracking-widest text-primary">A different way into the shelf</p><h2 className="mt-1 text-lg font-black">Matchups & combo lab</h2><p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">Three lore-aware pairings and three card-interaction spotlights, with source counts, exact titles, and caveats kept visible.</p></div>
+          <Link href="/deck-brewery/matchups" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-[10px] font-black uppercase tracking-wider text-primary-foreground hover:opacity-90">Open Showdowns <ArrowRight className="h-4 w-4" /></Link>
+        </section>
+        <section className="flex flex-wrap items-center justify-between gap-4 border-2 border-amber-600/40 bg-amber-500/5 p-4" aria-label="Separate public Brawlternative child">
+          <div><p className="font-mono text-[9px] font-black uppercase tracking-widest text-amber-800 dark:text-amber-300">Separate public child · untested WIP</p><h2 className="mt-1 text-lg font-black">Gisa and Geralf — Graveyard Mashup</h2><p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">A custom 60-card Commander-preview child using only the public source main. Its Vintage-labeled parent remains 110 main + 33 sideboard, and the source commander is unconfirmed; this child’s Gisa and Geralf choice is separate.</p></div>
+          <Link href="/brawl-box/deck-gisa-and-geralf-graveyard-mashup-preview" className="inline-flex min-h-11 items-center gap-2 border-2 border-amber-700/50 bg-background px-4 py-2 font-mono text-[10px] font-black uppercase tracking-wider hover:border-primary">Open the 60-card child <ArrowRight className="h-4 w-4" /></Link>
+        </section>
         <section className="grid gap-3 border-2 border-primary/30 bg-primary/[0.035] p-4 md:grid-cols-3" aria-label="Proposal handling notes">
           <div className="flex gap-3"><ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><p className="text-xs leading-5 text-muted-foreground"><strong className="text-foreground">Original lists stay unchanged.</strong> These are separate proposal children, not source-list edits.</p></div>
           <div className="flex gap-3"><CircleAlert className="mt-0.5 h-5 w-5 shrink-0 text-amber-700 dark:text-amber-300" /><p className="text-xs leading-5 text-muted-foreground"><strong className="text-foreground">Not final or legally certified.</strong> Count balance is not a complete legality check, and none of these proposals has been playtested.</p></div>

@@ -28,6 +28,9 @@ describe('public Deck Brewery pages', () => {
     expect(html).toContain('source lists with a review page');
     expect(html).toContain('>166</strong>');
     expect(html).toContain('href="/deck-brewery/reviews/xenagos-budget-edh"');
+    expect(html).toContain('Gisa and Geralf — Graveyard Mashup');
+    expect(html).toContain('110 main + 33 sideboard');
+    expect(html).toContain('href="/brawl-box/deck-gisa-and-geralf-graveyard-mashup-preview"');
     expect(html).toContain('Search a title, card, role, or status');
     expect(html).not.toMatch(/\/home\/ubuntu|private_source|archive_id|owned_cards_checked/i);
   });

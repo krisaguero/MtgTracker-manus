@@ -4,6 +4,9 @@ import { Link } from 'wouter';
 import { BrawlCommanderGallery } from '@/components/BrawlCommanderGallery';
 import { brawlDecks as decks } from '@/lib/brawlDecks';
 
+const personalDecks = decks.filter((deck) => !deck.archiveSource);
+const publicArchiveDecks = decks.filter((deck) => Boolean(deck.archiveSource));
+
 export default function BrawlBox() {
   useEffect(() => {
     document.title = 'Brawlternatives · Custom Brawl Alternatives | MTG Sets Tracker';
@@ -33,7 +36,11 @@ export default function BrawlBox() {
       </div>
     </header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-7 sm:px-8 sm:py-10">
-      <BrawlCommanderGallery decks={decks} />
+      <BrawlCommanderGallery decks={personalDecks} />
+      {publicArchiveDecks.length > 0 && <section id="public-archive-children" className="space-y-5 border-t-2 border-primary/40 pt-6" aria-label="Public archive-derived Brawlternative children">
+        <div className="max-w-4xl"><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Separate public shelf · work in progress</p><h2 className="mt-2 text-2xl font-black">Deck Brewery offshoots</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">These are independent, untested Commander-preview children built from public Deck Gallery lists. They do not edit the source lists or establish an unconfirmed original commander. They are not official Brawl or legally verified decks.</p></div>
+        <BrawlCommanderGallery decks={publicArchiveDecks} />
+      </section>}
       <section className="border-t-2 border-border pt-5">
         <h2 className="text-xl font-black">Keep the boxes distinct</h2>
         <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">Brawlternatives holds personal, precon-themed and custom non-precon Commander-preview experiments as an alternative to official Brawl. The Retro Battle Box is still the separate, shared non-Commander duel set. Use the Battle Box’s local inventory queue for its nine public lists; this page does not publish scan-derived ownership or proxy flags.</p>

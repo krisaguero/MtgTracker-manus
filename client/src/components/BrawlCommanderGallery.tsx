@@ -10,7 +10,7 @@ function CommanderCard({ deck }: { deck: BrawlBoxDeck }) {
   return <li id={deck.id} className="w-full scroll-mt-20">
     <Link
       href={brawlDeckPath(deck.id)}
-      aria-label={`Explore ${deck.commander}${wip ? ' · work in progress' : ''}`}
+      aria-label={`Explore ${deck.archiveSource ? deck.title : deck.commander}${wip ? ' · work in progress' : ''}`}
       className="relative block rounded-xl transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-primary"
     >
       {fallbackFailed ? <div role="img" aria-label={deck.commander} className="flex aspect-[488/680] items-center justify-center rounded-xl border-2 border-border bg-card p-6 text-center text-xl font-black">{deck.commander}</div> : <img
@@ -25,6 +25,7 @@ function CommanderCard({ deck }: { deck: BrawlBoxDeck }) {
       />}
       {wip && <span className="absolute right-2 top-2 border-2 border-amber-600 bg-background px-2 py-1 font-mono text-[10px] font-black uppercase text-foreground">WIP</span>}
     </Link>
+    {deck.archiveSource && <div className="mt-3 border border-border bg-card p-3"><p className="font-mono text-[9px] font-black uppercase tracking-widest text-primary">Public child · untested WIP</p><h3 className="mt-1 text-sm font-black leading-5">{deck.title}</h3><p className="mt-1 text-[10px] leading-4 text-muted-foreground">60-card custom Commander preview · separate from source</p></div>}
   </li>;
 }
 

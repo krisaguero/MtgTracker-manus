@@ -23,6 +23,7 @@ const navigation: SiteItem[] = [
       { href: '/deck-gallery/wip', label: 'WIP & Offbeat decks' },
       { href: '/deck-gallery/robogles', label: 'Robert “Robogles” showcase' },
       { href: '/deck-brewery/reviews', label: 'Public Deck Brewery reviews' },
+      { href: '/deck-brewery/matchups', label: 'Public Brewery matchups & combo lab' },
       { href: '/commander-market', label: 'Commander demand index' },
       { href: '/deck-brewery', label: 'Private local Brewery workspace' },
       { href: '/precon-studio', label: 'Precon Studio' },
