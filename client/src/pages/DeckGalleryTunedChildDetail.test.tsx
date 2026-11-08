@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(32);
+    expect(childPayload.children).toHaveLength(36);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -152,6 +152,38 @@ describe("public Deckbox tuned-child revisions", () => {
       if (typeof context === "object" && context !== null && typeof context.summary === "string") {
         expect(html).toContain(escapeHtml(context.summary));
       }
+    }
+  });
+
+  it("includes the four official precon children with exact tuned upgrades", () => {
+    const expected = [
+      ["Entropic Uprising - Commander 2016 Precon", 10],
+      ["EXQUISITE INVENTION - C18 Precon", 10],
+      ["Feline Ferocity - Commander 2017 Precon", 12],
+      ["Green - Commander 2014 - Guided by Nature", 15],
+    ] as const;
+    for (const [sourceTitle, swapCount] of expected) {
+      const child = childPayload.children.find(candidate => candidate.sourceTitle === sourceTitle);
+      expect(child, sourceTitle).toBeDefined();
+      if (!child) continue;
+      expect(child.status).toBe("Proposed · unplayed");
+      expect(child.hypothetical).toBe(true);
+      expect(child.played).toBe(false);
+      expect(child.exactChanges.swaps).toHaveLength(swapCount);
+      expect(child.exactChanges.cuts.reduce((sum, row) => sum + row.quantity, 0)).toBe(swapCount);
+      expect(child.exactChanges.adds.reduce((sum, row) => sum + row.quantity, 0)).toBe(swapCount);
+      expect(child.validation.totalCount).toBe(100);
+      expect(child.plan.commanderPlan).not.toBe("Not provided.");
+      expect(child.plan.closingPlan).not.toBe("Not provided.");
+      expect(child.evidence.some(item => item.url.startsWith("https://edhrec.com/"))).toBe(true);
+    }
+
+    const saheeli = childPayload.children.find(child => child.sourceTitle === "EXQUISITE INVENTION - C18 Precon");
+    expect(saheeli?.plan.coherence).toMatch(/artifact|token/i);
+    const freyalise = childPayload.children.find(child => child.sourceTitle === "Green - Commander 2014 - Guided by Nature");
+    expect(freyalise?.attributionNote).toContain("separate AI/curator child revision");
+    if (freyalise?.parentGroup === "robert_title_credit") {
+      expect(freyalise.attributionNote).toContain("not authored or endorsed by Robert");
     }
   });
 

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "batchValidationSummary": {
     "status": "pass",
-    "childrenValidated": 32,
-    "scryfallCardNamesRequested": 1990,
+    "childrenValidated": 36,
+    "scryfallCardNamesRequested": 2285,
     "scryfallNamesUnresolved": 0,
     "scryfallApiErrors": 0,
     "checkedAsOf": "2026-11-07",
@@ -32486,6 +32486,3375 @@
         "commanderEligibilityCheck": "pass",
         "singletonCheck": "pass",
         "scryfallLandCount": 39,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-07",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-entropic-uprising-commander-2016-precon-tuned-child-yidris-cascade-wheels",
+      "title": "Entropic Uprising — Yidris Cascade-and-Wheels Tuned Casual Child",
+      "sourceTitle": "Entropic Uprising - Commander 2016 Precon",
+      "parentHref": "/deck-gallery/deck-entropic-uprising-commander-2016-precon",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Yidris, Maelstrom Wielder",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "The source list visibly contains the complete 100-copy main list and 0 sideboard copies for the official precon; no source rows were omitted or reconstructed. Yidris moves from parent main to child command, ten visible cards are cut, ten EDHREC-informed additions are proposed, resulting in 99 main plus one commander = 100.",
+      "edhrecContext": {
+        "summary": "EDHREC aggregates and package observations guide the remix; no EDHREC or third-party decklist was copied, and EDHREC does not establish ownership or playtesting.",
+        "aggregateDeckCount": 10422,
+        "popularTags": {
+          "cascade": 1110,
+          "chaos": 189,
+          "spellslinger": 136,
+          "wheels": 133,
+          "combo": 130,
+          "storm": 127,
+          "ramp": 82,
+          "aggro": 76
+        },
+        "recommendationExamples": [
+          "Averna, the Chaos Bloom (38% added)",
+          "Maelstrom Wanderer (41% added)",
+          "Imoti, Celebrant of Bounty (26% added)",
+          "Farseek (25% added)",
+          "Shardless Agent (21% added)",
+          "Lightning Greaves (17% added)"
+        ],
+        "themeNotes": [
+          {
+            "title": "Average-deck observation",
+            "summary": "Current average composition shown is 24 creatures, 9 instants, 13 sorceries, 10 artifacts, 6 enchantments, 1 planeswalker and 36 lands. Representative cards include Averna, Maelstrom Wanderer, Imoti, Shardless Agent, Farseek, Cultivate, Kodama's Reach, Rampant Growth, Lightning Greaves and…",
+            "url": "https://edhrec.com/commanders/yidris-maelstrom-wielder/average-deck"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Yidris rewards connecting in combat: give him evasion/protection, then use cascade on increasingly expensive spells to chain value.",
+        "subthemes": "Cascade/value creatures; wheels and graveyard/spell recursion; four-color ramp and commander protection; token and high-impact spell finishers.",
+        "curveTempo": "The parent has 39 lands and many expensive sorceries. This child keeps 39 lands, replacing the narrowest top-end/reset effects with four ramp spells, two cascade creatures and two protection pieces. Tuned casual, not cEDH.",
+        "interaction": "Chaos Warp, Rakdos Charm, Bituminous Blast, Curtains' Call, Decimate, Evacuation and Volcanic Vision provide removal and sweepers; cuts reduce redundant high-cost resets.",
+        "cardAdvantage": "Windfall, Wheel of Fate, Whispering Madness, Reforge the Soul, Treasure Cruise, Ancient Excavation, Parting Thoughts, Coiling Oracle and Wall of Blossoms supply draw; Averna, Imoti and Shardless Agent add cascade-linked material.",
+        "mana": "39 lands are retained, including the precon basics and multicolor lands. Sol Ring, Fellwar Stone, Rakdos Signet, Simic Signet, Chromatic Lantern, Commander's Sphere, Burgeoning, Far Wanderings, Farseek, Cultivate, Kodama's Reach and Rampant Growth provide casual acceleration and fixing; not playtested.",
+        "closingPlan": "Attack safely with Yidris, chain cascade through Averna, Imoti, Shardless Agent and Maelstrom Wanderer, then convert wheel/spell volume into a wide board, graveyard recasts or high-impact threats such as Blood Tyrant, Consuming Aberration, Runehorn Hellkite and Spellheart Chimera.",
+        "coherence": "The child moves the assigned commander, removes ten narrow/slow or high-variance cards, and adds focused cascade bodies, land ramp and protection without reconstructing hidden cards, improving early development and connected Yidris-trigger value while preserving the precon chaos/wheels identity."
+      },
+      "roleEstimates": {
+        "land": 39,
+        "ramp": 12,
+        "card_advantage": 13,
+        "interaction": 7,
+        "protection": 3,
+        "engine": 9,
+        "theme_support": 9,
+        "threat_finisher": 6,
+        "tutor": 0,
+        "other": 1
+      },
+      "main": [
+        {
+          "name": "Ancient Excavation",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Ash Barrens",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Averna, the Chaos Bloom",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Bituminous Blast",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Blood Tyrant",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Bloodbraid Elf",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Burgeoning",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Chaos Warp",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Chromatic Lantern",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Coiling Oracle",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Commander's Sphere",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Consuming Aberration",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Cruel Entertainment",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Crumbling Necropolis",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Cultivate",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Curtains' Call",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Decimate",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Dismal Backwater",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Dragon Mage",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Etherium-Horn Sorcerer",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Evacuation",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Exotic Orchard",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Far Wanderings",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Farseek",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Fellwar Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Forest",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Frenzied Fugue",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Frontier Bivouac",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Gamekeeper",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Ghastly Conscription",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Glint-Eye Nephilim",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Goblin Spymaster",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Grave Upheaval",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Horizon Chimera",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Imoti, Celebrant of Bounty",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Island",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Jungle Hollow",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Kodama's Reach",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Kydele, Chosen of Kruphix",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Lightning Greaves",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Maelstrom Wanderer",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mountain",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Nath of the Gilt-Leaf",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Opulent Palace",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Parting Thoughts",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Past in Flames",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Rakdos Carnarium",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Rakdos Charm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Rakdos Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Rampant Growth",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Reforge the Soul",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Reliquary Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Rugged Highlands",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Runehorn Hellkite",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Rupture Spire",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sangromancer",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Satyr Wayfinder",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Savage Lands",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Shadowblood Ridge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Shardless Agent",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Simic Growth Chamber",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Simic Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Spellheart Chimera",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Spelltwine",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Swiftwater Cliffs",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thornwood Falls",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thrasios, Triton Hero",
+          "quantity": 1,
+          "role": "other"
+        },
+        {
+          "name": "Treasure Cruise",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Vial Smasher the Fierce",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Volcanic Vision",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Wall of Blossoms",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Waste Not",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Wheel of Fate",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Whispering Madness",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Whispersilk Cloak",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Windfall",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Worm Harvest",
+          "quantity": 1,
+          "role": "engine"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Yidris, Maelstrom Wielder",
+            "quantity": 1,
+            "from": "parent main",
+            "to": "child command zone",
+            "reason": "Official Commander 2016 decklist and packet assignment identify Yidris as commander; zone move is not a cut."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Academy Elite",
+            "quantity": 1,
+            "reason": "Narrow high-cost draw body is less reliable than repeatable cascade value."
+          },
+          {
+            "name": "Aeon Chronicler",
+            "quantity": 1,
+            "reason": "Suspend/forecast plan is slower and less connected to cascade and wheels."
+          },
+          {
+            "name": "Boompile",
+            "quantity": 1,
+            "reason": "Random artifact sweeper is inconsistent interaction."
+          },
+          {
+            "name": "Chain of Vapor",
+            "quantity": 1,
+            "reason": "One-shot tempo bounce is less useful than broader permanent answers."
+          },
+          {
+            "name": "Devastation Tide",
+            "quantity": 1,
+            "reason": "Seven-mana miracle reset is redundant and costly for tempo."
+          },
+          {
+            "name": "Whims of the Fates",
+            "quantity": 1,
+            "reason": "High-variance multiplayer reset does not advance the primary plan."
+          },
+          {
+            "name": "Treacherous Terrain",
+            "quantity": 1,
+            "reason": "Expensive land-count damage spell is not a core Yidris payoff."
+          },
+          {
+            "name": "Army of the Damned",
+            "quantity": 1,
+            "reason": "Nine-mana sorcery is a slow standalone finisher."
+          },
+          {
+            "name": "In Garruk's Wake",
+            "quantity": 1,
+            "reason": "Nine-mana sweeper is too top-heavy beside existing mass removal."
+          },
+          {
+            "name": "Guiltfeeder",
+            "quantity": 1,
+            "reason": "Combat-dependent graveyard threat is less coherent than cascade payoffs."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Averna, the Chaos Bloom",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Maelstrom Wanderer",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Imoti, Celebrant of Bounty",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Shardless Agent",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Farseek",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Cultivate",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Kodama's Reach",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Rampant Growth",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Lightning Greaves",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Observed on the cited EDHREC commander/precon pages as a Yidris cascade, ramp, or protection package card.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Academy Elite",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Averna, the Chaos Bloom",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace a narrow high-cost draw body with Averna to turn Yidris cascade triggers into land drops and sustained card advantage."
+          },
+          {
+            "cut": {
+              "name": "Aeon Chronicler",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Maelstrom Wanderer",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace slow suspend/forecast value with Maelstrom Wanderer, a high-impact cascade payoff that advances the Yidris plan."
+          },
+          {
+            "cut": {
+              "name": "Boompile",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Imoti, Celebrant of Bounty",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace inconsistent random artifact sweeping with Imoti, whose cost reduction and cascade support improve interaction-to-value sequencing."
+          },
+          {
+            "cut": {
+              "name": "Chain of Vapor",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Shardless Agent",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace one-shot tempo bounce with Shardless Agent, adding another efficient cascade body and reliable card velocity."
+          },
+          {
+            "cut": {
+              "name": "Devastation Tide",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Farseek",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace the costly miracle reset with Farseek, improving early fixing and making Yidris cascade turns more consistent."
+          },
+          {
+            "cut": {
+              "name": "Whims of the Fates",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Cultivate",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace the high-variance multiplayer reset with Cultivate, strengthening ramp and color access for the cascade-and-wheels plan."
+          },
+          {
+            "cut": {
+              "name": "Treacherous Terrain",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Kodama's Reach",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace the expensive land-count damage spell with Kodama’s Reach, a dependable ramp spell that supports five-color Yidris turns."
+          },
+          {
+            "cut": {
+              "name": "Army of the Damned",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Rampant Growth",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace the slow standalone finisher with Rampant Growth, lowering the curve and increasing the mana needed for chained cascade spells."
+          },
+          {
+            "cut": {
+              "name": "In Garruk's Wake",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Lightning Greaves",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Replace the top-heavy sweeper with Lightning Greaves, protecting Yidris and other engines so combat damage can enable cascade."
+          },
+          {
+            "cut": {
+              "name": "Guiltfeeder",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Swiftfoot Boots",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Replace the combat-dependent graveyard threat with Swiftfoot Boots, giving Yidris reliable protection and preserving the core engine."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "Official Commander 2016 decklists",
+          "url": "https://magic.wizards.com/en/news/announcements/commander-2016-edition-decklists-2016-10-28",
+          "usedFor": "Official Commander format and Yidris assignment."
+        },
+        {
+          "label": "EDHREC Yidris commander aggregate",
+          "url": "https://edhrec.com/commanders/yidris-maelstrom-wielder",
+          "usedFor": "Current aggregate count, tags and brackets."
+        },
+        {
+          "label": "EDHREC Yidris average deck",
+          "url": "https://edhrec.com/commanders/yidris-maelstrom-wielder/average-deck",
+          "usedFor": "Current average composition and role context."
+        },
+        {
+          "label": "EDHREC Yidris cascade theme",
+          "url": "https://edhrec.com/commanders/yidris-maelstrom-wielder/cascade",
+          "usedFor": "Cascade aggregate and package observations."
+        },
+        {
+          "label": "EDHREC Yidris wheels theme",
+          "url": "https://edhrec.com/commanders/yidris-maelstrom-wielder/wheels",
+          "usedFor": "Wheels aggregate and package observations."
+        },
+        {
+          "label": "EDHREC Entropic Uprising precon",
+          "url": "https://edhrec.com/precons/entropic-uprising/yidris-maelstrom-wielder",
+          "usedFor": "Precon aggregate and common additions."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 84,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "B",
+          "G",
+          "R",
+          "U"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 39,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-07",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-exquisite-invention-c18-precon-tuned-child-saheeli-artifacts",
+      "title": "Saheeli, the Gifted — Artifact Tokens Tuned Casual Child",
+      "sourceTitle": "EXQUISITE INVENTION - C18 Precon",
+      "parentHref": "/deck-gallery/deck-exquisite-invention-c18-precon",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Saheeli, the Gifted",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "The source list visibly contains the complete 100-copy official precon main and no sideboard; no original rows are missing or reconstructed.",
+      "edhrecContext": {
+        "summary": "EDHREC aggregates, tags and package observations guide the role plan only. No EDHREC decklist or third-party build is copied; the child contains only visible parent rows.",
+        "aggregateDeckCount": 2126,
+        "popularTags": {
+          "artifacts": 390,
+          "tokens": 107,
+          "affinity": 61,
+          "big_mana": 28,
+          "combo": 27,
+          "ramp": 26,
+          "planeswalkers": 15
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC theme",
+            "summary": "The artifact-filter aggregate is 395 decks; prominent package examples include Sai, Master Thopterist, Thopter Spy Network, Etherium Sculptor, Myr Battlesphere, Brudiclad, Unwinding Clock, Retrofitter Foundry and Saheeli's Artistry.",
+            "aggregateDeckCount": 395,
+            "url": "https://edhrec.com/commanders/saheeli-the-gifted/artifacts"
+          },
+          {
+            "title": "EDHREC theme",
+            "summary": "The token-filter aggregate is 105 decks; top examples include Sai, Thopter Spy Network, Myr Battlesphere, Brudiclad, Thopter Engineer, Retrofitter Foundry and Saheeli's Artistry. The filtered page also exposes new-card examples but those were not used as a card source.",
+            "aggregateDeckCount": 105,
+            "url": "https://edhrec.com/commanders/saheeli-the-gifted/tokens"
+          },
+          {
+            "title": "Average-deck observation",
+            "summary": "The current average deck emphasizes artifact mana and cost reduction (Sol Ring, Arcane Signet, Izzet Signet, Mind Stone, Worn Powerstone), token/artifact engines (Myr Battlesphere, Sai, Master Thopterist, Thopter Spy Network, Brudiclad, Retrofitter Foundry), and a denser counter/removal package…",
+            "url": "https://edhrec.com/commanders/saheeli-the-gifted/average-deck"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Saheeli discounts artifact spells and creates thopters; the tuned child turns those bodies into improvise mana, copied value, card draw and a decisive combat or artifact-trigger finish.",
+        "subthemes": "Artifact tokens and thopters; artifact cost reduction and improvise; artifact-copy/value engines; protection and flexible interaction; go-wide combat plus artifact-entry damage.",
+        "curveTempo": "Tuned casual, not cEDH: 38 lands and 11 ramp-role cards support Saheeli and six-to-eight-mana artifact threats, while cheap cost reduction and token makers improve early sequencing without fast-mana or deterministic combo.",
+        "interaction": "Blasphemous Act, Chaos Warp, Duplicant, Into the Roil, Magmaquake, Scrabbling Claws and Vandalblast answer creature boards, permanents or graveyards; Padeem adds resilience.",
+        "cardAdvantage": "Coveted Jewel, Endless Atlas, Reverse Engineer, Thirst for Knowledge, Thought Monitor and Shimmer Dragon keep cards flowing; Sai and Padeem add artifact-matters value.",
+        "mana": "The child has 38 lands (27 basic Islands/Mountains plus 11 nonbasics) and 11 ramp-role cards, including Arcane Signet, Inspiring Statuary, Etherium Sculptor, Izzet Signet, Sol Ring, Mind Stone, Prismatic Lens, Worn Powerstone, Magnifying Glass, Hedron Archive and Vessel of Endless Rest.",
+        "closingPlan": "Build thopter/artifact mass, use Sai, Efficient Construction, Brudiclad, Sharding Sphinx and Whirler Rogue for evasive pressure, then close through Hellkite Igniter, Myr Battlesphere, Reckless Fireweaver triggers, Scuttling Doom Engine, Steel Hellkite or a large Saheeli-powered board.",
+        "coherence": "The ten swaps replace slow, narrow or off-plan cards with EDHREC-supported Saheeli artifact/token patterns: artifact mana, thopter multiplication, board protection, artifact-density draw, and artifact-entry damage. The result is focused and interactive while remaining tuned casual rather than cEDH."
+      },
+      "roleEstimates": {
+        "interaction": 7,
+        "threat_finisher": 11,
+        "ramp": 11,
+        "land": 38,
+        "card_advantage": 6,
+        "engine": 9,
+        "theme_support": 14,
+        "other": 1,
+        "protection": 2
+      },
+      "main": [
+        {
+          "name": "Ancient Stone Idol",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Blasphemous Act",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Bosh, Iron Golem",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Brudiclad, Telchor Engineer",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Buried Ruin",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Chaos Warp",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Chief of the Foundry",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Commander's Sphere",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Coveted Jewel",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Darksteel Citadel",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Darksteel Juggernaut",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Duplicant",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Echo Storm",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Endless Atlas",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Etherium Sculptor",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Forge of Heroes",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Foundry of the Consuls",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Great Furnace",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Hedron Archive",
+          "quantity": 1,
+          "role": "other"
+        },
+        {
+          "name": "Hellkite Igniter",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Highland Lake",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Inkwell Leviathan",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Into the Roil",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Island",
+          "quantity": 15,
+          "role": "land"
+        },
+        {
+          "name": "Izzet Boilerworks",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Izzet Guildgate",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Izzet Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Loyal Apprentice",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Loyal Drake",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Magmaquake",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Magnifying Glass",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Maverick Thopterist",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Mimic Vat",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mind Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Mirrorworks",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mountain",
+          "quantity": 12,
+          "role": "land"
+        },
+        {
+          "name": "Myr Battlesphere",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Prismatic Lens",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Prototype Portal",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Psychosis Crawler",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Retrofitter Foundry",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Reverse Engineer",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Saheeli's Artistry",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Saheeli's Directive",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Scrabbling Claws",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Scuttling Doom Engine",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Seat of the Synod",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sharding Sphinx",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Steel Hellkite",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Swiftwater Cliffs",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Tawnos, Urza's Apprentice",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Thirst for Knowledge",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Thopter Assembly",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Thopter Engineer",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Thopter Spy Network",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Treasure Nabber",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Unwinding Clock",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Vedalken Humiliator",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vessel of Endless Rest",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Whirler Rogue",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Worn Powerstone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Sai, Master Thopterist",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Efficient Construction",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Inspiring Statuary",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Padeem, Consul of Innovation",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Thought Monitor",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Shimmer Dragon",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Vandalblast",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Reckless Fireweaver",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Mystic Forge",
+          "quantity": 1,
+          "role": "engine"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Saheeli, the Gifted",
+            "quantity": 1,
+            "from": "parent main",
+            "to": "child command zone",
+            "reason": "Official Exquisite Invention commander; this is a zone move rather than a cut."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Aether Gale",
+            "quantity": 1,
+            "reason": "Replace a broad bounce reset with more reliable, focused interaction."
+          },
+          {
+            "name": "Blinkmoth Urn",
+            "quantity": 1,
+            "reason": "Symmetrical mana often helps opponents and does not immediately advance the token engine."
+          },
+          {
+            "name": "Dreamstone Hedron",
+            "quantity": 1,
+            "reason": "Six-mana ramp is slow; cheaper cost reduction and artifact-matters mana are better."
+          },
+          {
+            "name": "Enchanter's Bane",
+            "quantity": 1,
+            "reason": "Narrow enchantment interaction is less useful than flexible artifact-board interaction."
+          },
+          {
+            "name": "Geode Golem",
+            "quantity": 1,
+            "reason": "Combat-dependent body neither creates artifacts nor scales with the token plan."
+          },
+          {
+            "name": "Pilgrim's Eye",
+            "quantity": 1,
+            "reason": "One-shot basic-land tutoring is low impact beside stronger artifact ramp."
+          },
+          {
+            "name": "Soul of New Phyrexia",
+            "quantity": 1,
+            "reason": "Seven-mana protection is too expensive for protecting the engine early."
+          },
+          {
+            "name": "Tidings",
+            "quantity": 1,
+            "reason": "Five-mana sorcery draw is clunky beside artifact-costed and repeatable draw."
+          },
+          {
+            "name": "Unstable Obelisk",
+            "quantity": 1,
+            "reason": "Seven total mana for removal is inefficient in a focused artifact shell."
+          },
+          {
+            "name": "Varchild, Betrayer of Kjeldor",
+            "quantity": 1,
+            "reason": "Nonartifact Survivors can empower opponents without feeding Saheeli or Brudiclad."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Cheap two-mana fixing accelerates Saheeli and artifact engines.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sai, Master Thopterist",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Each noncreature artifact cast makes a thopter, while spare artifacts become cards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Efficient Construction",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Every artifact spell adds a thopter, increasing cost reduction and go-wide pressure.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Inspiring Statuary",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Artifact tokens become improvise mana for fair acceleration into expensive artifacts.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Padeem, Consul of Innovation",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Protects the highest-cost artifact and supplies draw with high artifact density.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Thought Monitor",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Artifact affinity makes this efficient two-card draw with an artifact body.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Shimmer Dragon",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Turns spare thopters into repeatable draw and is a resilient midgame value engine.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Vandalblast",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Answers opposing mana rocks and artifact boards with a fair overload option.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Reckless Fireweaver",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Every artifact entering pings opponents, scaling with each token wave.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Mystic Forge",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Top-of-library artifact casting improves sequencing without a deterministic combo.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Aether Gale",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Arcane Signet replaces broad bounce with cheap Izzet fixing, helping Saheeli come down early and leaving mana for artifact-token development."
+          },
+          {
+            "cut": {
+              "name": "Blinkmoth Urn",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sai, Master Thopterist",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Sai, Master Thopterist turns each noncreature artifact into a Thopter and converts spare artifacts to cards, directly multiplying Saheeli and Brudiclad token value."
+          },
+          {
+            "cut": {
+              "name": "Dreamstone Hedron",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Efficient Construction",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Efficient Construction rewards every artifact spell with a Thopter, making Saheeli’s cost-reduction plan translate into a wider artifact-token board."
+          },
+          {
+            "cut": {
+              "name": "Enchanter's Bane",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Inspiring Statuary",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Inspiring Statuary lets Saheeli’s artifact tokens improvise expensive artifact spells, converting a go-wide board into the mana needed for the deck’s top end."
+          },
+          {
+            "cut": {
+              "name": "Geode Golem",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Padeem, Consul of Innovation",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Padeem protects the deck’s key artifacts and draws from the high artifact count, preserving Saheeli’s token engine against removal while replenishing cards."
+          },
+          {
+            "cut": {
+              "name": "Pilgrim's Eye",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Thought Monitor",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Thought Monitor uses the growing artifact count for a low-cost two-card refill and adds another artifact body for Saheeli’s reduction and token synergies."
+          },
+          {
+            "cut": {
+              "name": "Soul of New Phyrexia",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Shimmer Dragon",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Shimmer Dragon turns expendable Thopters into repeatable card draw, giving Saheeli’s artifact tokens a resilient value role beyond attacking."
+          },
+          {
+            "cut": {
+              "name": "Tidings",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Vandalblast",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Vandalblast supplies efficient interaction against opposing mana rocks and artifact boards while keeping the deck’s own Saheeli-generated tokens intact."
+          },
+          {
+            "cut": {
+              "name": "Unstable Obelisk",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Reckless Fireweaver",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Reckless Fireweaver converts every artifact, including Saheeli’s tokens, into damage, rewarding repeated token creation without relying on combat."
+          },
+          {
+            "cut": {
+              "name": "Varchild, Betrayer of Kjeldor",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Mystic Forge",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Mystic Forge lets the artifact-dense deck cast from the top of the library, improving Saheeli-era sequencing and maintaining pressure without a deterministic combo."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "Official Commander format rules",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "99-card main plus 1 commander structure, singleton, color identity and command zone."
+        },
+        {
+          "label": "MTGJSON Exquisite Invention precon evidence",
+          "url": "https://mtgjson.com/api/v5/decks/ExquisiteInvention_C18.json",
+          "usedFor": "Official precon context and Saheeli commander assignment supplied in the packet."
+        },
+        {
+          "label": "EDHREC Saheeli commander aggregate",
+          "url": "https://edhrec.com/commanders/saheeli-the-gifted",
+          "usedFor": "Current deck aggregate, tags and Izzet identity."
+        },
+        {
+          "label": "EDHREC Saheeli average deck",
+          "url": "https://edhrec.com/commanders/saheeli-the-gifted/average-deck",
+          "usedFor": "Current average-package observations."
+        },
+        {
+          "label": "EDHREC Saheeli artifacts theme",
+          "url": "https://edhrec.com/commanders/saheeli-the-gifted/artifacts",
+          "usedFor": "Current artifact aggregate and prominent examples."
+        },
+        {
+          "label": "EDHREC Saheeli tokens theme",
+          "url": "https://edhrec.com/commanders/saheeli-the-gifted/tokens",
+          "usedFor": "Current token aggregate and prominent examples."
+        },
+        {
+          "label": "Public parent",
+          "url": "https://mtg-tracker-manus-current.vercel.app/deck-gallery/deck-exquisite-invention-c18-precon",
+          "usedFor": "Public parent link only; visible packet rows supplied the source list."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 75,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "R",
+          "U"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 38,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-07",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-feline-ferocity-commander-2017-precon-tuned-child",
+      "title": "Arahbo, Roar of the World — Feline Ferocity Cats Tuned Casual Child",
+      "sourceTitle": "Feline Ferocity - Commander 2017 Precon",
+      "parentHref": "/deck-gallery/deck-feline-ferocity-commander-2017-precon",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Arahbo, Roar of the World",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "",
+      "edhrecContext": {
+        "summary": "EDHREC aggregates and theme pages informed role selection and package density only. No EDHREC decklist was copied; the child is a separate curator/AI remix of the visible parent.",
+        "aggregateDeckCount": 11814,
+        "popularTags": {
+          "Kaheera Companion": 2180,
+          "Cats": 1130,
+          "+1/+1 Counters": 318,
+          "Equipment": 293
+        },
+        "recommendationExamples": [
+          "Regal Caracal",
+          "King of the Pride",
+          "Feline Sovereign",
+          "Kutzil, Malamet Exemplar",
+          "Arahbo, the First Fang",
+          "Swords to Plowshares"
+        ],
+        "themeNotes": [
+          {
+            "title": "EDHREC theme",
+            "summary": "The Cats-filtered aggregate contains 1,125 decks; representative package cards shown include Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, Malamet Exemplar, King of the Pride, Arahbo, the First Fang, Qasali Slingers, Leonin Warleader, Pride Sovereign and Swords to Plowshares.",
+            "aggregateDeckCount": 1125,
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world/cats"
+          },
+          {
+            "title": "EDHREC theme",
+            "summary": "Equipment is a meaningful secondary theme at 293 decks, supporting retention of Hammer of Nazahn, Bloodforged Battle-Axe, Skullclamp, Lightning Greaves, Swiftfoot Boots, Sword of the Animist and Nazahn.",
+            "aggregateDeckCount": 293,
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world/equipment"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Arahbo supplies an eminence combat boost while in the command zone and a late-game trampling pump ability. The child focuses on attacking with a dense Cat board, then converts wide combat into lethal damage through tribal lords and equipment.",
+        "subthemes": "Cat typal; Equipment; +1/+1-counter-adjacent combat scaling; token production; creature-based draw and protection.",
+        "curveTempo": "The original precon is top-heavy and artifact-heavy. Twelve cuts remove slow, narrow, or weakly connected effects; Arcane Signet, Nature's Lore, cheaper Cats, and efficient interaction improve turns two through five without turning the deck into cEDH.",
+        "interaction": "Swords to Plowshares, Beast Within, Condemn, Wing Shards, Rout, Relic Crush, Crushing Vines, Qasali Pridemage, Qasali Slingers, Leonin Relic-Warder and Aura Shards cover creatures, permanents, and go-wide boards.",
+        "cardAdvantage": "Guardian Project, Kutzil, Skullclamp, Harmonize, Soul's Majesty, Hunter's Prowess, Staff of Nin replacement via creature draw, and Abundance replacement via a denser creature plan keep cards flowing.",
+        "mana": "37 lands are retained, with Sol Ring, Arcane Signet, Cultivate, Nature's Lore, Nissa's Pilgrimage, Sword of the Animist, Oreskos Explorer and Traverse the Outlands providing acceleration. The count is intentionally casual and supports Arahbo's five-mana body plus equipment turns; colored-source balance was not playtested.",
+        "closingPlan": "Build a critical mass of Cats, use Regal Caracal, King of the Pride, Feline Sovereign and Arahbo's eminence to make attacks large, then finish with an equipped trampling attacker, Jazal Goldmane, Mirari's Wake, White Sun's Zenith or a wide-board combat step.",
+        "coherence": "The child preserves the parent's Cats-and-Equipment identity, moves the official commander to the correct zone, increases early ramp and unconditional interaction, adds tribal lords and creature draw, and trims expensive cards that neither advance Cats nor efficiently protect the plan."
+      },
+      "roleEstimates": {
+        "interaction": 12,
+        "threat_finisher": 10,
+        "land": 37,
+        "ramp": 11,
+        "other": 0,
+        "engine": 8,
+        "card_advantage": 6,
+        "theme_support": 8,
+        "tutor": 3,
+        "protection": 4
+      },
+      "main": [
+        {
+          "name": "Alms Collector",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Argentum Armor",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Balan, Wandering Knight",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Behemoth Sledge",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Blighted Woodland",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Bloodforged Battle-Axe",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Blossoming Sands",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Condemn",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Crushing Vines",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Cultivate",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Curse of Bounty",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Elfhame Palace",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Fleecemane Lion",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Forest",
+          "quantity": 6,
+          "role": "land"
+        },
+        {
+          "name": "Grasslands",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Graypelt Refuge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Hammer of Nazahn",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Harmonize",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Hedron Archive",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Heirloom Blade",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Herald's Horn",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Hero's Blade",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Hungry Lynx",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Hunter's Prowess",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Jazal Goldmane",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Kemba, Kha Regent",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Kindred Summons",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Krosan Verge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Leonin Relic-Warder",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Leonin Shikari",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Lightning Greaves",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Loxodon Warhammer",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Mirari's Wake",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mirri, Weatherlight Duelist",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mosswort Bridge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Myriad Landscape",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Nazahn, Revered Bladesmith",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Nissa's Pilgrimage",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Opal Palace",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Oreskos Explorer",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Path of Ancestry",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Plains",
+          "quantity": 7,
+          "role": "land"
+        },
+        {
+          "name": "Qasali Pridemage",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Qasali Slingers",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Raksha Golden Cub",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Relic Crush",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Rogue's Passage",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Rout",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Saltcrusted Steppe",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Secluded Steppe",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Seht's Tiger",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Selesnya Guildgate",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Selesnya Sanctuary",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Soul's Majesty",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Spirit of the Hearth",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Stalking Leonin",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Stirring Wildwood",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sunspear Shikari",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sword of the Animist",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Taj-Nar Swordsmith",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Temple of the False God",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Temur Sabertooth",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Tranquil Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Tranquil Thicket",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Traverse the Outlands",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Vivid Grove",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Vivid Meadow",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "White Sun's Zenith",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Wing Shards",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Zendikar Resurgent",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Nature's Lore",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Three Visits",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Swords to Plowshares",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Beast Within",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Aura Shards",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Regal Caracal",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "King of the Pride",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Feline Sovereign",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Kutzil, Malamet Exemplar",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Arahbo, the First Fang",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Guardian Project",
+          "quantity": 1,
+          "role": "card_advantage"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Arahbo, Roar of the World",
+            "quantity": 1,
+            "from": "parent main",
+            "to": "child command zone",
+            "reason": "Official Feline Ferocity commander; zone move is not a cut."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Abundance",
+            "quantity": 1,
+            "reason": "Low-impact selection is less reliable than direct draw in this creature-heavy shell."
+          },
+          {
+            "name": "Curse of Vitality",
+            "quantity": 1,
+            "reason": "Political life-gain is low impact and does not advance Cats or Equipment."
+          },
+          {
+            "name": "Divine Reckoning",
+            "quantity": 1,
+            "reason": "Symmetrical and inconsistent compared with efficient spot interaction."
+          },
+          {
+            "name": "Dreamstone Hedron",
+            "quantity": 1,
+            "reason": "Six-mana ramp is too slow for a tuned-casual curve."
+          },
+          {
+            "name": "Grappling Hook",
+            "quantity": 1,
+            "reason": "Seven-mana equipment with limited payoff is replaced by denser tribal support."
+          },
+          {
+            "name": "Jareth, Leonine Titan",
+            "quantity": 1,
+            "reason": "Expensive defensive body is less synergistic than additional Cats."
+          },
+          {
+            "name": "Jedit Ojanen of Efrava",
+            "quantity": 1,
+            "reason": "Seven-mana threat is slow and does not provide enough tribal value."
+          },
+          {
+            "name": "Leonin Arbiter",
+            "quantity": 1,
+            "reason": "Its symmetrical land-search tax conflicts with the deck’s own ramp plan."
+          },
+          {
+            "name": "Phantom Nishoba",
+            "quantity": 1,
+            "reason": "Large lifelink body lacks the tribal or equipment payoff needed here."
+          },
+          {
+            "name": "Quietus Spike",
+            "quantity": 1,
+            "reason": "High equip cost and conditional damage are below the deck’s other equipment."
+          },
+          {
+            "name": "Staff of Nin",
+            "quantity": 1,
+            "reason": "Six-mana draw engine is slower than lower-cost creature-based advantage."
+          },
+          {
+            "name": "Sword of Vengeance",
+            "quantity": 1,
+            "reason": "Redundant equipment slot; the child prioritizes tribal payoffs and protection."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Two-mana fixing improves early Arahbo and equipment turns.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Nature's Lore",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Efficient land ramp improves the three-to-five mana tempo window.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Three Visits",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "A second efficient land-ramp spell raises early consistency without adding fast-combo pressure.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Swords to Plowshares",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Efficient unconditional creature interaction.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Beast Within",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Flexible answer to any permanent type.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Aura Shards",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Cat-heavy creature entries turn into repeatable artifact/enchantment interaction.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Regal Caracal",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Cat lord plus two bodies supports go-wide pressure and eminence.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "King of the Pride",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Low-cost Cat lord compounds the typal plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Feline Sovereign",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Cat payoff and artifact/enchantment pressure in one creature.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Kutzil, Malamet Exemplar",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Protects the board while rewarding the creature plan with cards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Arahbo, the First Fang",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Creates Cats and rewards a wide Cat board.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Guardian Project",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Sustained draw for a singleton creature-heavy Commander deck.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Abundance",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace Abundance with Arcane Signet: Two-mana fixing improves early Arahbo and equipment turns."
+          },
+          {
+            "cut": {
+              "name": "Curse of Vitality",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Nature's Lore",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace Curse of Vitality with Nature's Lore: Efficient land ramp improves the three-to-five mana tempo window."
+          },
+          {
+            "cut": {
+              "name": "Divine Reckoning",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Three Visits",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace Divine Reckoning with Three Visits: A second efficient land-ramp spell raises early consistency without adding fast-combo pressure."
+          },
+          {
+            "cut": {
+              "name": "Dreamstone Hedron",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Swords to Plowshares",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace Dreamstone Hedron with Swords to Plowshares: Efficient unconditional creature interaction."
+          },
+          {
+            "cut": {
+              "name": "Grappling Hook",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Beast Within",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace Grappling Hook with Beast Within: Flexible answer to any permanent type."
+          },
+          {
+            "cut": {
+              "name": "Jareth, Leonine Titan",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Aura Shards",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace Jareth, Leonine Titan with Aura Shards: Cat-heavy creature entries turn into repeatable artifact/enchantment interaction."
+          },
+          {
+            "cut": {
+              "name": "Jedit Ojanen of Efrava",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Regal Caracal",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Replace Jedit Ojanen of Efrava with Regal Caracal: Cat lord plus two bodies supports go-wide pressure and eminence."
+          },
+          {
+            "cut": {
+              "name": "Leonin Arbiter",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "King of the Pride",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Replace Leonin Arbiter with King of the Pride: Low-cost Cat lord compounds the typal plan."
+          },
+          {
+            "cut": {
+              "name": "Phantom Nishoba",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Feline Sovereign",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Replace Phantom Nishoba with Feline Sovereign: Cat payoff and artifact/enchantment pressure in one creature."
+          },
+          {
+            "cut": {
+              "name": "Quietus Spike",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Kutzil, Malamet Exemplar",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace Quietus Spike with Kutzil, Malamet Exemplar: Protects the board while rewarding the creature plan with cards."
+          },
+          {
+            "cut": {
+              "name": "Staff of Nin",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arahbo, the First Fang",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace Staff of Nin with Arahbo, the First Fang: Creates Cats and rewards a wide Cat board."
+          },
+          {
+            "cut": {
+              "name": "Sword of Vengeance",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Guardian Project",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace Sword of Vengeance with Guardian Project: Sustained draw for a singleton creature-heavy Commander deck."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "EDHREC Arahbo commander aggregate page",
+          "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world",
+          "usedFor": "Commander aggregate counts and Cat, Equipment, and combat-counter theme signals."
+        },
+        {
+          "label": "EDHREC Arahbo Cats theme page",
+          "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world/cats",
+          "usedFor": "Cat-typal package density and representative additions."
+        },
+        {
+          "label": "EDHREC Feline Ferocity Arahbo precon page",
+          "url": "https://edhrec.com/precon/feline-ferocity/arahbo-roar-of-the-world",
+          "usedFor": "Exact precon context and visible common-change navigation."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 89,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "G",
+          "W"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 37,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-07",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-green-commander-2014-guided-by-nature-tuned-child",
+      "title": "Freyalise, Llanowar's Fury — Guided by Nature Elves Tuned Casual Child",
+      "sourceTitle": "Green - Commander 2014 - Guided by Nature",
+      "parentHref": "/deck-gallery/deck-green-commander-2014-guided-by-nature",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Freyalise, Llanowar's Fury",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "The source list visibly contains the complete source sections: 100 main-deck copies and 0 sideboard copies. Freyalise is visible in parent main and is moved to the child command zone; 15 visible copies are cut and 15 curator additions are made to reach 99 main plus 1 commander = 100. No omitted or hidden source rows were reconstructed.",
+      "edhrecContext": {
+        "summary": "EDHREC aggregates and tags informed package selection and role balance only; no third-party decklist was copied, and EDHREC does not establish ownership, legality checks, or playtesting.",
+        "aggregateDeckCount": 3002,
+        "popularTags": {
+          "elves": 240,
+          "ramp": 80,
+          "tokens": 80,
+          "+1/+1 counters": 56,
+          "aggro": 31,
+          "combo": 18,
+          "druids": 15,
+          "midrange": 14
+        },
+        "recommendationExamples": [
+          "Arcane Signet",
+          "Beast Whisperer",
+          "Elvish Warmaster",
+          "Growing Rites of Itlimoc",
+          "Nykthos, Shrine to Nyx",
+          "Return of the Wildspeaker"
+        ],
+        "themeNotes": [
+          {
+            "title": "EDHREC theme",
+            "summary": "The filtered Elves aggregate is 245 decks. Its top-card and high-lift observations emphasize Elvish Archdruid, Priest of Titania, Llanowar Elves, Elvish Mystic, Imperious Perfect, Marwyn, Reclamation Sage, Beast Whisperer, Ezuri, Elvish Warmaster, Circle of Dreams Druid, Realmwalker, and…",
+            "aggregateDeckCount": 245,
+            "url": "https://edhrec.com/commanders/freyalise-llanowars-fury/elves"
+          },
+          {
+            "title": "Average-deck observation",
+            "summary": "The current average deck shown by EDHREC is a 33-land shell with 26 Forests and highlights Arcane Signet, Emerald Medallion, Lifecrafter’s Bestiary, Skullclamp, Sol Ring, Swiftfoot Boots, Vanquisher’s Banner, Nykthos, Wirewood Lodge, Yavimaya, Beast Whisperer, Circle of Dreams Druid, Elvish…",
+            "url": "https://edhrec.com/commanders/freyalise-llanowars-fury/average-deck"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Freyalise supplies repeatable Elf and Saproling bodies, artifact/enchantment removal, and a planeswalker-based draw mode; the child protects her long enough to convert mana into board presence.",
+        "subthemes": "Elf typal ramp and tribal payoffs; Freyalise/Saproling tokens; creature-based card advantage; land-and-devotion scaling; overrun-style combat finishes.",
+        "curveTempo": "The source is battlecruiser-leaning, so the child trims seven-mana removal, slow colorless/storage lands, and narrow artifacts for one- to four-mana elves, a two-mana rock, and efficient draw. It remains tuned casual rather than cEDH.",
+        "interaction": "Reclamation Sage, Song of the Dryads, Terastodon, Silklash Spider, Elvish Skysweeper, Thornweald Archer, Beast Within, and Freyalise’s removal mode cover artifacts, enchantments, large permanents, and flyers; Heroic Intervention and Boots protect the board.",
+        "cardAdvantage": "Collective Unconscious, Primordial Sage, Soul of the Harvest, Skullclamp, Elvish Visionary, Masked Admirers, Beast Whisperer, Leaf-Crowned Visionary, and Return of the Wildspeaker keep a wide creature board from running out of cards.",
+        "mana": "The final main deck has 36 lands, including 25 Forests and 11 nonbasics. Sol Ring, Arcane Signet, Emerald Medallion, Moss Diamond, the one-mana elves, Priest of Titania, Farhaven Elf, Wood Elves, Circle of Dreams Druid, Harrow, and Growing Rites accelerate into the five- and six-mana payoffs. Nykthos, Wirewood Lodge, and Yavimaya improve late-game scaling and creature mana without making a cEDH claim.",
+        "closingPlan": "Make a wide board through Freyalise, Hunting Triad, Sylvan Offering, Wolfbriar Elemental, Imperious Perfect, Lys Alana Huntmaster, and Wren’s Run Packmaster; then use Beastmaster Ascension, Overrun, Overwhelming Stampede, Thunderfoot Baloth, Creeperhulk, or a large Joraga Warcaller to close.",
+        "coherence": "The visible precon already has a strong elf/token identity. These changes reduce slow colorless mana, expensive low-synergy spells, and narrow artifacts while adding the most relevant connective tissue: more early elf mana, creature-based draw, tribal density, protection, and a small set of high-value mono-green lands. The result has clearer sequencing from mana creatures to Freyalise and tribal engines to a board-wide finish."
+      },
+      "roleEstimates": {
+        "land": 36,
+        "ramp": 14,
+        "card_advantage": 9,
+        "interaction": 7,
+        "protection": 3,
+        "engine": 15,
+        "theme_support": 8,
+        "threat_finisher": 6,
+        "tutor": 0,
+        "other": 1
+      },
+      "main": [
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Beast Whisperer",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Beast Within",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Beastmaster Ascension",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Circle of Dreams Druid",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Collective Unconscious",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Commander's Sphere",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Creeperhulk",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Drove of Elves",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Elvish Archdruid",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Elvish Mystic",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Elvish Skysweeper",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Elvish Visionary",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Elvish Warmaster",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Emerald Medallion",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Essence Warden",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Ezuri, Renegade Leader",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Farhaven Elf",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Forest",
+          "quantity": 25,
+          "role": "land"
+        },
+        {
+          "name": "Fresh Meat",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Fyndhorn Elves",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Ghost Quarter",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Growing Rites of Itlimoc",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Harrow",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Haunted Fengraf",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Heroic Intervention",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Hunting Triad",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Immaculate Magistrate",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Imperious Perfect",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Joraga Warcaller",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Leaf-Crowned Visionary",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Lifeblood Hydra",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Llanowar Elves",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Lys Alana Huntmaster",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Marwyn, the Nurturer",
+          "quantity": 1,
+          "role": "other"
+        },
+        {
+          "name": "Masked Admirers",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Moss Diamond",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Myriad Landscape",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Nykthos, Shrine to Nyx",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Oran-Rief, the Vastwood",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Overrun",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Overwhelming Stampede",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Praetor's Counsel",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Priest of Titania",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Primordial Sage",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Rampaging Baloths",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Realmwalker",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Reclamation Sage",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Return of the Wildspeaker",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Siege Behemoth",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Silklash Spider",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Slippery Karst",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Song of the Dryads",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Soul of the Harvest",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sylvan Offering",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Sylvan Ranger",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Sylvan Safekeeper",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Terastodon",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thornweald Archer",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Thunderfoot Baloth",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Timberwatch Elf",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Titania, Protector of Argoth",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Tranquil Thicket",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Wellwisher",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Wirewood Lodge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Wolfbriar Elemental",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Wolfcaller's Howl",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Wood Elves",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Wren's Run Packmaster",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Yavimaya, Cradle of Growth",
+          "quantity": 1,
+          "role": "land"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Freyalise, Llanowar's Fury",
+            "quantity": 1,
+            "from": "parent main",
+            "to": "child command zone",
+            "reason": "Commander format places the assigned Freyalise commander in the command zone; this is not a cut."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Assault Suit",
+            "quantity": 1,
+            "reason": "Narrow equipment with no central role in the elf/token plan."
+          },
+          {
+            "name": "Crystal Vein",
+            "quantity": 1,
+            "reason": "Colorless, enters a resource tradeoff, and is weaker than a stable green source."
+          },
+          {
+            "name": "Desert Twister",
+            "quantity": 1,
+            "reason": "Six-mana sorcery-speed removal is too slow for tuned casual play."
+          },
+          {
+            "name": "Gargoyle Castle",
+            "quantity": 1,
+            "reason": "Colorless utility land is less useful than a high-synergy green land."
+          },
+          {
+            "name": "Grave Sifter",
+            "quantity": 1,
+            "reason": "Five-mana recursion is situational and not needed with the tighter creature engine."
+          },
+          {
+            "name": "Grim Flowering",
+            "quantity": 1,
+            "reason": "Seven-mana graveyard draw is inconsistent in this creature-forward shell."
+          },
+          {
+            "name": "Havenwood Battleground",
+            "quantity": 1,
+            "reason": "Slow storage land costs tempo in an elf-ramp deck."
+          },
+          {
+            "name": "Jungle Basin",
+            "quantity": 1,
+            "reason": "Bounce land is a tempo liability here."
+          },
+          {
+            "name": "Loreseeker's Stone",
+            "quantity": 1,
+            "reason": "Six-mana draw artifact is slower than creature-based draw."
+          },
+          {
+            "name": "Predator, Flagship",
+            "quantity": 1,
+            "reason": "Very expensive artifact threat that does not advance the core plan."
+          },
+          {
+            "name": "Seer's Sundial",
+            "quantity": 1,
+            "reason": "Landfall draw is too mana-intensive and under-supported."
+          },
+          {
+            "name": "Titania's Chosen",
+            "quantity": 1,
+            "reason": "Low-impact body without enough counter support compared with dedicated elf payoffs."
+          },
+          {
+            "name": "Tornado Elemental",
+            "quantity": 1,
+            "reason": "Seven-mana finisher is less focused than the retained overrun effects."
+          },
+          {
+            "name": "Wave of Vitriol",
+            "quantity": 1,
+            "reason": "Sweeper is asymmetrical but too costly and disruptive for this plan."
+          },
+          {
+            "name": "Whirlwind",
+            "quantity": 1,
+            "reason": "Narrow anti-flying sweeper; Beast Within and existing reach cover more situations."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Beast Whisperer",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Fyndhorn Elves",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Marwyn, the Nurturer",
+            "quantity": 1,
+            "role": "other",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Elvish Warmaster",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Leaf-Crowned Visionary",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Realmwalker",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Circle of Dreams Druid",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Growing Rites of Itlimoc",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Nykthos, Shrine to Nyx",
+            "quantity": 1,
+            "role": "land",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Wirewood Lodge",
+            "quantity": 1,
+            "role": "land",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Yavimaya, Cradle of Growth",
+            "quantity": 1,
+            "role": "land",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Beast Within",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Heroic Intervention",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Return of the Wildspeaker",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "EDHREC-informed addition to improve the stated elf-ramp, draw, protection, or land-engine plan; not copied from a third-party decklist.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Assault Suit",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a narrow equipment with two-mana acceleration that improves early Freyalise and elf sequencing."
+          },
+          {
+            "cut": {
+              "name": "Crystal Vein",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Beast Whisperer",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Trade a colorless resource tradeoff for repeatable creature-based draw in the elf-heavy shell."
+          },
+          {
+            "cut": {
+              "name": "Desert Twister",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Fyndhorn Elves",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace six-mana sorcery-speed removal with a one-mana elf that accelerates the tuned-casual curve."
+          },
+          {
+            "cut": {
+              "name": "Gargoyle Castle",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Marwyn, the Nurturer",
+              "quantity": 1,
+              "role": "other"
+            },
+            "reason": "Turn a low-synergy colorless land slot into an elf that scales mana with the tribal board."
+          },
+          {
+            "cut": {
+              "name": "Grave Sifter",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Elvish Warmaster",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace situational five-mana recursion with a low-cost elf that creates tokens and supports the go-wide plan."
+          },
+          {
+            "cut": {
+              "name": "Grim Flowering",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Leaf-Crowned Visionary",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Exchange inconsistent seven-mana graveyard draw for efficient repeatable elf card advantage."
+          },
+          {
+            "cut": {
+              "name": "Havenwood Battleground",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Realmwalker",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace a tempo-costing storage land with tribal card selection and cast-from-library value."
+          },
+          {
+            "cut": {
+              "name": "Jungle Basin",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Circle of Dreams Druid",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Trade bounce-land tempo loss for a creature that converts a wide board into substantial mana."
+          },
+          {
+            "cut": {
+              "name": "Loreseeker's Stone",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Growing Rites of Itlimoc",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a six-mana draw artifact with a lower-cost land-engine that becomes a powerful creature-mana source."
+          },
+          {
+            "cut": {
+              "name": "Predator, Flagship",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Nykthos, Shrine to Nyx",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Swap an expensive off-plan artifact threat for devotion-based mana scaling in mono-green."
+          },
+          {
+            "cut": {
+              "name": "Seer's Sundial",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Wirewood Lodge",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Replace mana-intensive conditional draw with an untap land that amplifies key elf mana engines."
+          },
+          {
+            "cut": {
+              "name": "Titania's Chosen",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Yavimaya, Cradle of Growth",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Trade a low-impact counter body for reliable land support that improves every green source and utility land."
+          },
+          {
+            "cut": {
+              "name": "Tornado Elemental",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Beast Within",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a seven-mana finisher with flexible instant-speed interaction for any problematic permanent."
+          },
+          {
+            "cut": {
+              "name": "Wave of Vitriol",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Heroic Intervention",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Trade a costly disruptive sweeper for efficient protection that preserves the developed elf board."
+          },
+          {
+            "cut": {
+              "name": "Whirlwind",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Return of the Wildspeaker",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace narrow anti-flying removal with scalable draw or a game-closing pump effect for the creature plan."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "EDHREC Freyalise commander aggregate",
+          "url": "https://edhrec.com/commanders/freyalise-llanowars-fury",
+          "usedFor": "Current aggregate deck count, tags, mono-green identity, and commander package context."
+        },
+        {
+          "label": "EDHREC Freyalise average deck",
+          "url": "https://edhrec.com/commanders/freyalise-llanowars-fury/average-deck",
+          "usedFor": "Current average-deck land, ramp, draw, protection, tribal, and finisher observations."
+        },
+        {
+          "label": "EDHREC Freyalise Elves aggregate",
+          "url": "https://edhrec.com/commanders/freyalise-llanowars-fury/elves",
+          "usedFor": "Filtered Elves aggregate count and prominent elf package observations."
+        },
+        {
+          "label": "Official Commander format",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "99-card main plus one commander structure, singleton, color identity, and command-zone rules."
+        },
+        {
+          "label": "MTGJSON Guided by Nature precon evidence",
+          "url": "https://mtgjson.com/api/v5/decks/GuidedByNature_C14.json",
+          "usedFor": "Packet-supplied official-precon evidence supporting Freyalise as the assigned commander."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 76,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "G"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 36,
         "exactSourceDiffCheck": "pass",
         "checkedAsOf": "2026-11-07",
         "references": [
