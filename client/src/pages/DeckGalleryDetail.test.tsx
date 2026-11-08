@@ -6,6 +6,7 @@ import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import type { DeckGalleryPayload } from "@/lib/deckGallery";
 import { DeckGalleryDetailView } from "./DeckGalleryDetail";
+import { getDeckGalleryRoleReading } from "@/lib/deckGalleryRoles";
 
 const payload = JSON.parse(
   readFileSync(
@@ -42,6 +43,13 @@ describe("individual public Deck Gallery pages", () => {
       const html = page(deck);
       const helmArtCount =
         deck.helm.commanders.length + (deck.helm.separateChildGuess ? 1 : 0);
+      const roleReading = getDeckGalleryRoleReading(deck.id);
+      const roleArtCount = roleReading
+        ? [...roleReading.main, ...roleReading.sideboard].reduce(
+            (count, group) => count + group.cards.length,
+            0
+          )
+        : 0;
       expect(html.match(/<h1\b/g)).toHaveLength(1);
       expect(html).toContain(escapeHtml(deck.title));
       expect(html).toContain(escapeHtml(deck.helm.label));
@@ -49,8 +57,10 @@ describe("individual public Deck Gallery pages", () => {
       expect(html).toContain("Exact text list · main and sideboard");
       expect(html).toContain("Source order preserved");
       expect(html.match(/<img\b/g) ?? []).toHaveLength(
-        deck.main.length + deck.sideboard.length + helmArtCount
+        deck.main.length + deck.sideboard.length + helmArtCount + roleArtCount
       );
+      expect(html).toContain("Precon-style card categories");
+      expect(html).toContain("not categories supplied by the Deckbox list’s author");
 
       for (const card of [...deck.main, ...deck.sideboard]) {
         expect(html).toContain(escapeHtml(card.name));
@@ -61,8 +71,17 @@ describe("individual public Deck Gallery pages", () => {
         expect(html).toContain(escapeHtml(imageUrl));
       }
       if (deck.main.length > 1) {
-        expect(html.indexOf(escapeHtml(deck.main[0].name))).toBeLessThan(
-          html.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
+        const sourceStart = html.indexOf('<section aria-label="Main deck"');
+        const sideboardStart = html.indexOf(
+          '<section aria-label="Sideboard"',
+          sourceStart
+        );
+        const sourceOrderHtml = html.slice(
+          sourceStart,
+          sideboardStart < 0 ? undefined : sideboardStart
+        );
+        expect(sourceOrderHtml.indexOf(escapeHtml(deck.main[0].name))).toBeLessThan(
+          sourceOrderHtml.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
         );
       }
       if (deck.sideboard.length) {

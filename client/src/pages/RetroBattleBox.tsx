@@ -19,6 +19,7 @@ import {
   type RetroBattleBoxDeck,
 } from '@/lib/retroBattleBox';
 import { battleBoxReferences } from '@/lib/battleBoxStrategy';
+import DeckboxBattleBoxLibrary from '@/components/DeckboxBattleBoxLibrary';
 
 const colorHex: Record<string, string> = { W: '#c8b879', U: '#4e81b6', B: '#52506d', R: '#b95542', G: '#56836b' };
 const colorName: Record<string, string> = { W: 'white', U: 'blue', B: 'black', R: 'red', G: 'green' };
@@ -174,10 +175,11 @@ export default function RetroBattleBox() {
           <div>
             <p className="font-mono text-xs font-black uppercase tracking-[0.22em] text-primary">Non-Commander · casual 1v1 · nine-deck library</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl">2026 Retro Battle Box</h1>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">Nine ready-to-sleeve deck concepts spanning swarm, attrition, burn, ramp, control, tempo, and mono-white lifegain. Browse the visual layouts, inspect every card, then use a private local inventory queue to plan what to pull, order, or proxy.</p>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">Nine curated deck concepts span swarm, attrition, burn, ramp, control, tempo, and mono-white lifegain. A separate section adds six reviewed, 60-card non-Commander Deckbox source lists. The archive references keep their saved lists and credit separate from the curated decks and their local inventory queue.</p>
             <p className="mt-3 max-w-3xl border-l-2 border-primary pl-3 text-sm leading-6 text-muted-foreground"><strong className="text-foreground">Site creator &amp; curator: Kris Aguero.</strong> These are static shared lists—the same for every visitor, not tied to a sign-in or local account.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#deck-library" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Browse decks <ArrowRight className="h-4 w-4" /></a>
+              <a href="#deckbox-60-card-archive" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Deckbox 60-card lists <ArrowRight className="h-4 w-4" /></a>
               <a href="#inventory-queue" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary"><FolderOpen className="h-4 w-4" /> Order / proxy queue</a>
               <Link href="/battle-box-method" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">How this was built <ArrowRight className="h-4 w-4" /></Link>
             </div>
@@ -219,6 +221,8 @@ export default function RetroBattleBox() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{visibleDecks.map((deck) => <DeckLayout key={deck.id} deck={deck} deckNumber={retroBattleBoxDecks.indexOf(deck) + 1} onDownload={() => downloadFile(deckListText(deck), `${deck.id}.txt`)} />)}</div>
         {visibleDecks.length === 0 && <p className="mt-4 border border-border bg-card p-5 text-sm text-muted-foreground">No deck or card matches that search.</p>}
       </section>
+
+      <DeckboxBattleBoxLibrary />
 
       <section id="inventory-queue" className="scroll-mt-20 border-2 border-border bg-card p-4 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-4">

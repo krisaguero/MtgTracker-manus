@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
 import { CardImageZoom } from "@/components/CardImageZoom";
+import { DeckGalleryRoleReading } from "@/components/DeckGalleryRoleReading";
 import {
   getDeckGalleryDisplayMeta,
   isDeckGalleryWip,
@@ -232,6 +233,7 @@ export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
       </header>
 
       <div className="mx-auto max-w-7xl">
+        <DeckGalleryRoleReading entry={entry} />
         <CardGallery
           heading="Main deck"
           cards={entry.main}
