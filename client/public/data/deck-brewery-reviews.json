@@ -4101,7 +4101,20 @@
         "label": "Commander not confirmed",
         "commanders": [],
         "note": "The source is an incomplete, ambiguous dragon list with no verified command-zone choice; Atarka is only a possible theme card, so no helm is assigned.",
-        "evidence": []
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Atarka, World Render",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Atarka is a plausible Gruul dragon-tribal helm for a hypothetical Commander-facing child because the source contains Atarka and dragon support. This 65-card Vintage-labeled incomplete list has no lands or command-zone field, so Atarka is not assigned to the source and this does not complete the list.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Atarka, World Render",
+              "url": "https://edhrec.com/commanders/atarka-world-render"
+            }
+          ]
+        }
       }
     },
     {
@@ -5261,7 +5274,20 @@
         "label": "Commander not confirmed",
         "commanders": [],
         "note": "This Vintage/MTGO list has a Commander-like count, but the source does not identify a commander or command zone; no helm is assigned.",
-        "evidence": []
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Krenko, Mob Boss",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Krenko is the strongest hypothetical child pick: the title mentions Grenzo and “Krekno,” while Krenko is present in the mono-red Goblin source and Grenzo is not. The archive labels this Vintage/MTGO and gives no command-zone choice, so this remains a separate child idea, not a Commander reclassification.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Krenko, Mob Boss",
+              "url": "https://edhrec.com/commanders/krenko-mob-boss"
+            }
+          ]
+        }
       }
     },
     {
@@ -5635,7 +5661,15 @@
         "label": "Commander not confirmed",
         "commanders": [],
         "note": "Jeleva appears in the list, but the source does not identify her as commander and remains an incomplete archive list.",
-        "evidence": []
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Jeleva, Nephalia's Scourge",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Jeleva is named in the title and present in the source rows, making her the clearest hypothetical Commander-facing child helm. The archive keeps this as an incomplete 74-card Vintage-labeled list with no verified command zone.",
+          "evidence": []
+        }
       }
     },
     {
@@ -7177,7 +7211,24 @@
         "label": "Commander not confirmed",
         "commanders": [],
         "note": "Marath is absent from both saved sections, and this is not the exact official precon list; no commander is assigned.",
-        "evidence": []
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Marath, Will of the Wild",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "not_in_source",
+          "proposedZoneMove": false,
+          "note": "The title names Marath, but Marath is absent from both saved sections and this is not the exact official Nature of the Beast precon list. Keep the Vintage-labeled source unchanged; this is only a hypothetical child choice, not an official-precon or source-commander claim.",
+          "evidence": [
+            {
+              "label": "Official 2013 Commander precon context · Wizards",
+              "url": "https://magic.wizards.com/en/news/making-magic/all-five-commander-decklists-2013-10-18"
+            },
+            {
+              "label": "Nature of the Beast decklist reference · MTGJSON",
+              "url": "https://mtgjson.com/api/v5/decks/NatureOfTheBeast_C13.json"
+            }
+          ]
+        }
       }
     },
     {
@@ -7232,7 +7283,20 @@
         "label": "Commander not confirmed",
         "commanders": [],
         "note": "The title names Marisi, but the saved source has no main or sideboard rows to corroborate a helm.",
-        "evidence": []
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Marisi, Breaker of the Coil",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "not_in_source",
+          "proposedZoneMove": false,
+          "note": "The title explicitly names Marisi and says EDH, so Marisi is the title-based hypothetical child helm. The saved source is an empty WIP with zero main and sideboard rows; this does not establish a built Commander deck, and no cards are inferred or added.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Marisi, Breaker of the Coil",
+              "url": "https://edhrec.com/commanders/marisi-breaker-of-the-coil"
+            }
+          ]
+        }
       }
     },
     {

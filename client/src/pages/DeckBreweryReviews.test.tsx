@@ -117,6 +117,32 @@ describe("public Deck Brewery pages", () => {
     expect(html).toContain("Breya, Etherium Shaper");
   });
 
+  it("keeps ambiguous source-format candidates separate from Brewery proposals", () => {
+    const candidates = [
+      { title: "DRAGONS MF", name: "Atarka, World Render" },
+      { title: "Grenzo / Krekno Goblin MTGO", name: "Krenko, Mob Boss" },
+      { title: "Jeleva's Exile", name: "Jeleva, Nephalia's Scourge" },
+      { title: "Marath Juiced (PRECON)", name: "Marath, Will of the Wild" },
+      {
+        title: "Marisi, Breaker of the Coil EDH",
+        name: "Marisi, Breaker of the Coil",
+      },
+    ];
+    for (const candidate of candidates) {
+      const review = entry(candidate.title);
+      const html = page(review);
+      expect(review.helm.status, candidate.title).toBe("unconfirmed");
+      expect(review.helm.commanders, candidate.title).toEqual([]);
+      expect(review.helm.separateChildGuess?.name).toBe(candidate.name);
+      expect(review.proposal.commander, candidate.title).toBeNull();
+      expect(html).toContain("Commander not confirmed");
+      expect(html).toContain(
+        "Separate hypothetical child guess · not assigned to this source"
+      );
+      expect(html).toContain(escapeHtml(candidate.name));
+    }
+  });
+
   it("keeps all 166 review helms synchronized with their Gallery source pages", () => {
     const galleryById = new Map(
       gallery.entries.map(candidate => [candidate.id, candidate])

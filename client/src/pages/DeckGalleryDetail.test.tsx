@@ -138,6 +138,57 @@ describe("individual public Deck Gallery pages", () => {
     );
   });
 
+  it("keeps ambiguous Vintage and empty WIP choices as separate child guesses", () => {
+    const candidates = [
+      { title: "DRAGONS MF", name: "Atarka, World Render", location: "main" },
+      {
+        title: "Grenzo / Krekno Goblin MTGO",
+        name: "Krenko, Mob Boss",
+        location: "main",
+      },
+      {
+        title: "Jeleva's Exile",
+        name: "Jeleva, Nephalia's Scourge",
+        location: "main",
+      },
+      {
+        title: "Marath Juiced (PRECON)",
+        name: "Marath, Will of the Wild",
+        location: "not_in_source",
+      },
+      {
+        title: "Marisi, Breaker of the Coil EDH",
+        name: "Marisi, Breaker of the Coil",
+        location: "not_in_source",
+      },
+    ] as const;
+
+    for (const candidate of candidates) {
+      const deck = entry(candidate.title);
+      const html = page(deck);
+      expect(deck.helm.status, candidate.title).toBe("unconfirmed");
+      expect(deck.helm.commanders, candidate.title).toEqual([]);
+      expect(deck.helm.separateChildGuess).toEqual(
+        expect.objectContaining({
+          name: candidate.name,
+          sourceLocation: candidate.location,
+          proposedZoneMove: candidate.location !== "not_in_source",
+        })
+      );
+      expect(html).toContain("Commander not confirmed");
+      expect(html).toContain(
+        "Separate hypothetical child guess · not assigned to this source"
+      );
+      expect(html).toContain(escapeHtml(candidate.name));
+      if (candidate.location === "not_in_source")
+        expect(html).toContain("Not present in source list");
+      else
+        expect(html).toContain(
+          "Hypothetical child only: proposed move from Main to command zone"
+        );
+    }
+  });
+
   it("provides a guess or a separate child guess for all 18 Robogles-titled entries", () => {
     const robogles = payload.entries.filter(
       deck => deck.group === "robert_title_credit"
