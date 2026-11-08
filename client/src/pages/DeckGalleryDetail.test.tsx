@@ -6,6 +6,7 @@ import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import type { DeckGalleryPayload } from "@/lib/deckGallery";
 import { DeckGalleryCardPresentation } from "@/components/DeckGalleryRoleReading";
+import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
 import { DeckGalleryDetailView } from "./DeckGalleryDetail";
 import {
   getDeckGalleryRemainderCards,
@@ -65,14 +66,17 @@ describe("individual public Deck Gallery pages", () => {
       expect(html.match(/<img\b/g) ?? []).toHaveLength(
         distinctSourceCards + helmArtCount
       );
+      expect(html).not.toContain("api.scryfall.com/cards/named");
+      expect(html).toContain("https://cards.scryfall.io/normal/");
       expect(html).toContain("not categories supplied by the Deckbox list’s author");
 
       for (const card of [...deck.main, ...deck.sideboard]) {
         expect(html).toContain(escapeHtml(card.name));
       }
       if (deck.main.length) {
-        const imageUrl = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(deck.main[0].name)}&format=image&version=normal`;
-        expect(html).toContain(escapeHtml(imageUrl));
+        const imageUrl = getDeckGalleryCardImageUri(deck.main[0].name, "normal");
+        expect(imageUrl).toBeDefined();
+        if (imageUrl) expect(html).toContain(escapeHtml(imageUrl));
       }
       if (deck.sideboard.length) {
         expect(html).toContain('aria-label="Sideboard"');
@@ -160,9 +164,10 @@ describe("individual public Deck Gallery pages", () => {
     );
     expect(html).toContain("Assigned · partner pair");
     expect(html).toContain("Proposed zone move: Main → command zone");
-    expect(html).toContain(
-      "api.scryfall.com/cards/named?exact=Akiri%2C%20Line-Slinger&amp;format=image&amp;version=art_crop"
-    );
+    const helmImage = getDeckGalleryCardImageUri("Akiri, Line-Slinger", "art_crop");
+    expect(helmImage).toBeDefined();
+    if (helmImage) expect(html).toContain(escapeHtml(helmImage));
+    expect(html).not.toContain("api.scryfall.com/cards/named");
   });
 
   it("does not turn Historic Brawl or draft lists into Commander decks", () => {

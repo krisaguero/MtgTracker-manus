@@ -12,27 +12,29 @@ const cardImageUrl = (name: string) =>
 function CardArt({
   name,
   className = "",
+  imageUriForName,
 }: {
   name: string;
   className?: string;
+  imageUriForName?: (name: string) => string | undefined;
 }) {
   const [failed, setFailed] = useState(false);
+  const imageUri = imageUriForName ? imageUriForName(name) : cardImageUrl(name);
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-amber-500/20 ${className}`}
       role="img"
       aria-label={`${name} card art`}
     >
-      {!failed && (
+      {!failed && imageUri ? (
         <img
-          src={cardImageUrl(name)}
+          src={imageUri}
           alt=""
           loading="lazy"
           className="h-full w-full object-cover"
           onError={() => setFailed(true)}
         />
-      )}
-      {failed && (
+      ) : (
         <div className="flex h-full items-center justify-center p-3 text-center font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
           {name}
         </div>
@@ -67,7 +69,13 @@ function statusClass(helm: DeckGalleryHelm) {
   return "border-amber-700/40 bg-amber-500/10 text-amber-900 dark:text-amber-200";
 }
 
-function SeparateChildGuess({ guess }: { guess: DeckGalleryChildGuess }) {
+function SeparateChildGuess({
+  guess,
+  imageUriForName,
+}: {
+  guess: DeckGalleryChildGuess;
+  imageUriForName?: (name: string) => string | undefined;
+}) {
   return (
     <section
       className="mt-4 border-l-4 border-amber-600 bg-amber-500/[0.06] p-3"
@@ -77,7 +85,11 @@ function SeparateChildGuess({ guess }: { guess: DeckGalleryChildGuess }) {
         {guess.label}
       </p>
       <div className="mt-2 grid grid-cols-[5rem_minmax(0,1fr)] gap-3">
-        <CardArt name={guess.name} className="aspect-[488/330] w-20" />
+        <CardArt
+          name={guess.name}
+          className="aspect-[488/330] w-20"
+          imageUriForName={imageUriForName}
+        />
         <div className="min-w-0">
           <p className="break-words text-sm font-black">{guess.name}</p>
           <p className="mt-1 text-[10px] leading-4 text-muted-foreground">
@@ -110,9 +122,11 @@ function SeparateChildGuess({ guess }: { guess: DeckGalleryChildGuess }) {
 export function CommanderHelmPanel({
   helm,
   className = "",
+  imageUriForName,
 }: {
   helm: DeckGalleryHelm;
   className?: string;
+  imageUriForName?: (name: string) => string | undefined;
 }) {
   return (
     <section
@@ -139,7 +153,11 @@ export function CommanderHelmPanel({
               key={card.name}
               className="min-w-0 border border-border bg-background p-2"
             >
-              <CardArt name={card.name} className="aspect-[488/330] w-full" />
+              <CardArt
+                name={card.name}
+                className="aspect-[488/330] w-full"
+                imageUriForName={imageUriForName}
+              />
               <p className="mt-2 break-words text-sm font-black leading-5">
                 {card.name}
               </p>
@@ -189,7 +207,10 @@ export function CommanderHelmPanel({
       )}
 
       {helm.separateChildGuess && (
-        <SeparateChildGuess guess={helm.separateChildGuess} />
+        <SeparateChildGuess
+          guess={helm.separateChildGuess}
+          imageUriForName={imageUriForName}
+        />
       )}
       <p className="mt-3 border-t border-border pt-2 text-[10px] leading-4 text-muted-foreground">
         This helm panel is separate from the saved list; no source card row was

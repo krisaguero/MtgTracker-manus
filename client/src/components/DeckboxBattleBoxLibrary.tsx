@@ -2,11 +2,34 @@ import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { getDeckGalleryRoleReading } from "@/lib/deckGalleryRoles";
+import { getDeckboxBattleBoxTileImageUri } from "@/lib/deckboxBattleBoxTileImageUris";
 import { getDeckboxBattleBoxEntries, type DeckboxBattleBoxEntry } from "@/lib/deckboxBattleBox";
 import { loadDeckGallery } from "@/lib/deckGallery";
 
-function cardImageUrl(name: string): string {
-  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
+function DeckboxBattleBoxTileArt({ name }: { name: string }) {
+  const [failed, setFailed] = useState(false);
+  const imageUri = getDeckboxBattleBoxTileImageUri(name);
+
+  if (!imageUri || failed) {
+    return (
+      <div className="flex h-full items-center justify-center p-4 text-center text-xs text-muted-foreground">
+        Card art unavailable
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={imageUri}
+      alt=""
+      aria-hidden="true"
+      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+      loading="lazy"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+    />
+  );
 }
 
 export function DeckboxBattleBoxTiles({ entries }: { entries: DeckboxBattleBoxEntry[] }) {
@@ -45,15 +68,7 @@ export function DeckboxBattleBoxTiles({ entries }: { entries: DeckboxBattleBoxEn
                 >
                   <div className="relative aspect-[488/680] overflow-hidden bg-muted">
                     {featureCard ? (
-                      <img
-                        src={cardImageUrl(featureCard.name)}
-                        alt=""
-                        aria-hidden="true"
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                        loading="lazy"
-                        decoding="async"
-                        referrerPolicy="no-referrer"
-                      />
+                      <DeckboxBattleBoxTileArt name={featureCard.name} />
                     ) : (
                       <div className="flex h-full items-center justify-center p-4 text-center text-xs text-muted-foreground">
                         Card art unavailable

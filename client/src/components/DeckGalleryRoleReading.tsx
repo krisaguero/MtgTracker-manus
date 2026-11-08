@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CardImageZoom } from "@/components/CardImageZoom";
+import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
 import {
   getDeckGalleryRoleReading,
   getDeckGalleryRemainderCards,
@@ -14,10 +15,6 @@ type DeckSourceView = Pick<
   "id" | "main" | "sideboard" | "mainCopies" | "sideboardCopies"
 >;
 type ViewMode = "categories" | "saved-order";
-
-function cardImageUrl(name: string): string {
-  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
-}
 
 function CardGrid({
   cards,
@@ -38,7 +35,7 @@ function CardGrid({
         >
           <div className="aspect-[488/680] overflow-hidden bg-muted">
             <CardImageZoom
-              src={cardImageUrl(card.name)}
+              src={getDeckGalleryCardImageUri(card.name, "normal")}
               alt={`${card.name} representative card image`}
               className="h-full w-full"
             />

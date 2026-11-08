@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
 import { DeckGalleryRoleReading } from "@/components/DeckGalleryRoleReading";
+import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
 import {
   getDeckGalleryDisplayMeta,
   isDeckGalleryWip,
@@ -106,6 +107,7 @@ export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
             <CommanderHelmPanel
               helm={entry.helm}
               className="border-0 bg-transparent p-0"
+              imageUriForName={name => getDeckGalleryCardImageUri(name, "art_crop")}
             />
           </div>
         </div>

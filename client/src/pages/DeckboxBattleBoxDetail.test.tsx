@@ -122,6 +122,8 @@ describe("Deckbox 60-card Battle Box references", () => {
     expect(html.match(/<img\b/g) ?? []).toHaveLength(
       distinctSourceCards
     );
+    expect(html).not.toContain("api.scryfall.com/cards/named");
+    expect(html).toContain("https://cards.scryfall.io/normal/");
 
     for (const card of [...entry.main, ...entry.sideboard]) {
       expect(html).toContain(escapeHtml(card.name));
@@ -153,6 +155,8 @@ describe("Deckbox 60-card Battle Box references", () => {
         <DeckboxBattleBoxTiles entries={entries} />
       </Router>
     );
+    expect(html).not.toContain("api.scryfall.com/cards/named");
+    expect(html).toContain("https://cards.scryfall.io/normal/");
     expect(html).toContain("Deckbox 60-card Battle Box references");
     expect(html).toContain("6 saved lists");
     for (const entry of entries) {
