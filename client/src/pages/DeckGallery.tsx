@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Search } from "lucide-react";
+import { ArrowRight, ChevronDown, Search } from "lucide-react";
 import { Link } from "wouter";
 import {
   getDeckGalleryDisplayMeta,
@@ -315,13 +315,22 @@ function DeckCard({
             {entry.title}
           </h3>
         </div>
-        <a
-          href={`#${entry.id}`}
-          className="inline-flex min-h-9 items-center border border-border px-3 text-xs font-semibold text-muted-foreground hover:border-primary hover:text-primary"
-          aria-label={`Direct link to ${entry.title}`}
-        >
-          Direct link
-        </a>
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href={`/deck-gallery/${entry.id}`}
+            className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 text-xs font-bold text-primary-foreground hover:opacity-90"
+            aria-label={`Open visual deck page for ${entry.title}`}
+          >
+            Visual deck page <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+          <a
+            href={`#${entry.id}`}
+            className="inline-flex min-h-9 items-center border border-border px-3 text-xs font-semibold text-muted-foreground hover:border-primary hover:text-primary"
+            aria-label={`Direct link to ${entry.title}`}
+          >
+            Direct link
+          </a>
+        </div>
       </div>
 
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">

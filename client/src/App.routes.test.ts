@@ -74,12 +74,17 @@ describe('application route map', () => {
   it('registers the public Deck Gallery, WIP, and Robogles routes before the dynamic set route', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    const detailRouteIndex = source.indexOf('path="/deck-gallery/:deckId"');
     for (const route of ['/deck-gallery', '/deck-gallery/wip', '/deck-gallery/robogles']) {
       const routeIndex = source.indexOf(`path={'${route}'}`);
       expect(routeIndex).toBeGreaterThan(-1);
+      expect(routeIndex).toBeLessThan(detailRouteIndex);
       expect(routeIndex).toBeLessThan(dynamicSetIndex);
     }
+    expect(detailRouteIndex).toBeGreaterThan(-1);
+    expect(detailRouteIndex).toBeLessThan(dynamicSetIndex);
     expect(source).toContain("const DeckGallery = lazy(() => import('@/pages/DeckGallery'))");
+    expect(source).toContain("const DeckGalleryDetail = lazy(() => import('@/pages/DeckGalleryDetail'))");
     const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
     expect(navigation).toContain("href: '/deck-gallery', label: 'Deck Gallery'");
     expect(navigation).toContain("href: '/deck-gallery/wip', label: 'WIP & Offbeat decks'");
