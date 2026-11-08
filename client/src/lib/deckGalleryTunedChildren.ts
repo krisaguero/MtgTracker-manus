@@ -17,7 +17,7 @@ export type DeckGalleryTunedChild = {
   title: string;
   sourceTitle: string;
   parentHref: string;
-  parentGroup: "owner_archive_list" | "robert_title_credit";
+  parentGroup: "owner_archive_list" | "owner_wip_offbeat" | "robert_title_credit";
   parentSectionsOmitted: boolean;
   visibleSourceCounts: { mainCopies: number; sideboardCopies: number };
   commanders: { name: string; quantity: number; zone: "command zone" }[];

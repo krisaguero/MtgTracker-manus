@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(24);
+    expect(childPayload.children).toHaveLength(32);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -105,6 +105,56 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(oversized?.sourceCompletenessNote).toContain("cuts 8 visible copies");
   });
 
+  it("shows batch-4 children as proposed, unplayed, source-aware Commander builds", () => {
+    const titles = ["Built from Scratch - Red Commander 2014 Precon", "Call the Spirits - 2015 EDH", "Daghatar", "Daghatar +1", "Daxos Enchants", "Daxos XP", "Draconic Domination - C17 Precon", "DRagon upgrades"];
+    for (const title of titles) {
+      const child = childPayload.children.find(candidate => candidate.sourceTitle === title);
+      expect(child, title).toBeDefined();
+      if (!child) continue;
+      expect(child.hypothetical).toBe(true);
+      expect(child.played).toBe(false);
+      expect(child.status).toBe("Proposed · unplayed");
+      expect(child.ownershipStatus.toLowerCase()).toContain("unknown");
+      expect(child.sourceCompletenessNote).toBeTruthy();
+      expect(child.validation.mainCount + child.validation.commanderCount).toBe(100);
+      expect(child.validation.scryfallLandCount).toBeLessThanOrEqual(40);
+      expect(child.plan.commanderPlan).not.toBe("Not provided.");
+      expect(child.plan.closingPlan).not.toBe("Not provided.");
+      const context = child.edhrecContext;
+      expect(typeof context).toBe("object");
+      if (typeof context !== "object" || context === null) continue;
+      expect(context.summary).not.toBe("EDHREC theme and aggregate evidence informed this proposed child; the short notes below summarize the public sources.");
+      const themes = context.themeNotes;
+      expect(Array.isArray(themes)).toBe(true);
+      if (Array.isArray(themes)) expect(themes.length).toBeGreaterThan(0);
+    }
+
+    const completePrecon = childPayload.children.find(child => child.sourceTitle === "Built from Scratch - Red Commander 2014 Precon");
+    expect(completePrecon?.sourceCompletenessNote?.toLowerCase()).toContain("complete");
+    expect(completePrecon?.validation.scryfallLandCount).toBe(39);
+
+    const daghatarPlusOne = childPayload.children.find(child => child.sourceTitle === "Daghatar +1");
+    expect(daghatarPlusOne?.exactChanges.swaps).toHaveLength(6);
+    expect(daghatarPlusOne?.validation.scryfallLandCount).toBe(36);
+
+    const dragonUpgrades = childPayload.children.find(child => child.sourceTitle === "DRagon upgrades");
+    expect(dragonUpgrades?.validation.scryfallLandCount).toBe(39);
+    expect(dragonUpgrades?.parentGroup).toBe("owner_wip_offbeat");
+    expect(dragonUpgrades?.attributionNote).toContain("separate AI/curator child revision");
+
+    const daretti = childPayload.children.find(child => child.sourceTitle === "Built from Scratch - Red Commander 2014 Precon");
+    if (daretti) {
+      const html = page(daretti);
+      expect(html).toContain(escapeHtml(daretti.plan.commanderPlan));
+      expect(html).toContain(escapeHtml(daretti.plan.closingPlan));
+      const context = daretti.edhrecContext;
+      expect(typeof context).toBe("object");
+      if (typeof context === "object" && context !== null && typeof context.summary === "string") {
+        expect(html).toContain(escapeHtml(context.summary));
+      }
+    }
+  });
+
   it("renders normalized EDHREC aggregates and themes without raw list-shaped context", () => {
     const allowed = new Set(["summary", "aggregateDeckCount", "popularTags", "recommendationExamples", "themeNotes"]);
     for (const child of childPayload.children) {
@@ -112,10 +162,14 @@ describe("public Deckbox tuned-child revisions", () => {
       if (typeof child.edhrecContext !== "object" || child.edhrecContext === null) continue;
       expect(Array.isArray(child.edhrecContext)).toBe(false);
       expect(Object.keys(child.edhrecContext).every(key => allowed.has(key))).toBe(true);
+      expect(child.plan.subthemes).toBeTruthy();
+      expect(child.plan.coherence).not.toBe("The proposal narrows the list around its commander plan and tuned-casual roles.");
+      expect(child.edhrecContext.summary).not.toBe("EDHREC theme and aggregate evidence informed this proposed child; the short notes below summarize the public sources.");
       const examples = child.edhrecContext.recommendationExamples;
       const themes = child.edhrecContext.themeNotes;
       expect(Array.isArray(examples) ? examples.length : 0).toBeLessThanOrEqual(6);
       expect(Array.isArray(themes) ? themes.length : 0).toBeLessThanOrEqual(6);
+      expect(Array.isArray(themes) ? themes.length : 0).toBeGreaterThan(0);
     }
 
     const brionline = childPayload.children.find(child => child.sourceTitle === "Brionline");
