@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
-import { CardImageZoom } from "@/components/CardImageZoom";
 import { DeckGalleryRoleReading } from "@/components/DeckGalleryRoleReading";
 import {
   getDeckGalleryDisplayMeta,
   isDeckGalleryWip,
   loadDeckGallery,
-  type DeckGalleryCard as GalleryCard,
   type DeckGalleryEntry,
 } from "@/lib/deckGallery";
 
@@ -16,111 +14,6 @@ function galleryIndexHref(entry: DeckGalleryEntry): string {
   if (entry.group === "robert_title_credit") return "/deck-gallery/robogles";
   if (isDeckGalleryWip(entry)) return "/deck-gallery/wip";
   return "/deck-gallery";
-}
-
-function cardImageUrl(name: string): string {
-  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
-}
-
-function CardGallery({
-  heading,
-  cards,
-  copies,
-}: {
-  heading: string;
-  cards: GalleryCard[];
-  copies: number;
-}) {
-  return (
-    <section aria-label={heading} className="mt-8">
-      <div className="flex flex-wrap items-end justify-between gap-2 border-b-2 border-border pb-3">
-        <div>
-          <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">
-            Source order preserved
-          </p>
-          <h2 className="mt-1 text-2xl font-black tracking-tight">{heading}</h2>
-        </div>
-        <p className="text-xs text-muted-foreground">
-          {copies} copies · {cards.length} rows
-        </p>
-      </div>
-      {cards.length ? (
-        <ol className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-          {cards.map((card, index) => (
-            <li
-              key={`${card.name}-${index}`}
-              className="min-w-0 border-2 border-border bg-card p-2 shadow-sm"
-            >
-              <div className="aspect-[488/680] overflow-hidden bg-muted">
-                <CardImageZoom
-                  src={cardImageUrl(card.name)}
-                  alt={`${card.name} representative card image`}
-                  className="h-full w-full"
-                />
-              </div>
-              <div className="mt-2 flex items-start justify-between gap-2 text-xs leading-5">
-                <span className="min-w-0 break-words font-semibold">
-                  {card.name}
-                </span>
-                <span className="shrink-0 font-mono tabular-nums text-muted-foreground">
-                  {card.quantity}×
-                </span>
-              </div>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <p className="mt-4 border-2 border-dashed border-border p-5 text-sm text-muted-foreground">
-          No exported rows in this section.
-        </p>
-      )}
-    </section>
-  );
-}
-
-function ExactTextList({ entry }: { entry: DeckGalleryEntry }) {
-  const rows = (heading: string, cards: GalleryCard[]) => (
-    <section aria-label={heading}>
-      <h3 className="font-mono text-xs font-black uppercase tracking-[0.16em] text-primary">
-        {heading}
-      </h3>
-      <ol className="mt-2 divide-y divide-border border-2 border-border bg-background">
-        {cards.map((card, index) => (
-          <li
-            key={`${card.name}-${index}`}
-            className="flex items-start justify-between gap-4 px-3 py-2 text-sm"
-          >
-            <span className="min-w-0 break-words">{card.name}</span>
-            <span className="shrink-0 font-mono text-xs tabular-nums text-muted-foreground">
-              {card.quantity}×
-            </span>
-          </li>
-        ))}
-        {!cards.length && (
-          <li className="px-3 py-3 text-sm text-muted-foreground">
-            No exported rows.
-          </li>
-        )}
-      </ol>
-    </section>
-  );
-
-  return (
-    <details className="mt-8 border-2 border-border bg-card p-4 sm:p-5">
-      <summary className="min-h-11 cursor-pointer content-center text-lg font-black">
-        Exact text list · main and sideboard
-      </summary>
-      <div className="mt-4 grid gap-5 border-t-2 border-border pt-5 lg:grid-cols-2">
-        {rows(`Main · ${entry.mainCopies} copies`, entry.main)}
-        {rows(`Sideboard · ${entry.sideboardCopies} copies`, entry.sideboard)}
-        <p className="text-xs leading-5 text-muted-foreground lg:col-span-2">
-          Card rows follow the saved source order. Printings are not pinned as
-          specific physical copies. Contextual count labels are not legality or
-          completion checks.
-        </p>
-      </div>
-    </details>
-  );
 }
 
 export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
@@ -234,17 +127,6 @@ export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
 
       <div className="mx-auto max-w-7xl">
         <DeckGalleryRoleReading entry={entry} />
-        <CardGallery
-          heading="Main deck"
-          cards={entry.main}
-          copies={entry.mainCopies}
-        />
-        <CardGallery
-          heading="Sideboard"
-          cards={entry.sideboard}
-          copies={entry.sideboardCopies}
-        />
-        <ExactTextList entry={entry} />
 
         <footer className="mt-8 border-t-2 border-border pt-4 text-xs leading-5 text-muted-foreground">
           Representative card images are loaded from{" "}

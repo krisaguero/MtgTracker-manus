@@ -5,9 +5,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import type { DeckGalleryPayload } from "@/lib/deckGallery";
+import { DeckGalleryCardPresentation } from "@/components/DeckGalleryRoleReading";
 import metadata from "@/data/deckboxBattleBoxMetadata.json";
 import { getDeckboxBattleBoxEntries } from "@/lib/deckboxBattleBox";
-import { getDeckGalleryRoleReading } from "@/lib/deckGalleryRoles";
+import {
+  getDeckGalleryRemainderCards,
+  getDeckGalleryRoleReading,
+} from "@/lib/deckGalleryRoles";
 import { DeckboxBattleBoxTiles } from "@/components/DeckboxBattleBoxLibrary";
 import { DeckboxBattleBoxDetailView } from "./DeckboxBattleBoxDetail";
 
@@ -75,57 +79,71 @@ describe("Deckbox 60-card Battle Box references", () => {
     );
   });
 
-  it("groups every public Deck Gallery source row exactly once without changing its count", () => {
+  it("keeps categories exclusive and reconciles every public source section with its remainder", () => {
     for (const source of payload.entries) {
       const reading = getDeckGalleryRoleReading(source.id);
       expect(reading, source.id).toBeDefined();
       if (!reading) continue;
-      for (const [section, sourceRows, expectedCopies] of [
-        ["main", source.main, source.mainCopies],
-        ["sideboard", source.sideboard, source.sideboardCopies],
+      const allCategoryCards = [...reading.main, ...reading.sideboard].flatMap(group => group.cards);
+      expect(new Set(allCategoryCards.map(card => card.name)).size).toBe(allCategoryCards.length);
+      expect([...reading.main, ...reading.sideboard].every(group =>
+        !/^(lands|ramp|draw|interaction|engines|combat|threats|support)$/.test(group.id)
+      )).toBe(true);
+      for (const [section, rows, copies, groups] of [
+        ["main", source.main, source.mainCopies, reading.main],
+        ["sideboard", source.sideboard, source.sideboardCopies, reading.sideboard],
       ] as const) {
-        const groups = reading[section];
+        const categoryRows = groups.flatMap(group => group.cards);
+        const remainder = getDeckGalleryRemainderCards(rows, groups);
+        const visibleRows = [...categoryRows, ...remainder];
         expect(groups.every(group => group.title && group.description)).toBe(true);
-        expect(groups.reduce((sum, group) => sum + group.copies, 0)).toBe(expectedCopies);
-        expect(groups.flatMap(group => group.cards).reduce((sum, card) => sum + card.quantity, 0)).toBe(expectedCopies);
-        expect(quantityMap(groups.flatMap(group => group.cards))).toEqual(quantityMap(sourceRows));
+        expect(new Set(categoryRows.map(card => card.name)).size).toBe(categoryRows.length);
+        expect(quantityMap(visibleRows), `${source.id} ${section}`).toEqual(quantityMap(rows));
+        expect(visibleRows.reduce((sum, card) => sum + card.quantity, 0), `${source.id} ${section}`).toBe(copies);
       }
     }
   });
 
   it.each(entries)("renders a source-credited, image-rich, anonymous detail page for $sourceTitle", entry => {
     const html = renderDetail(entry);
-    const roleReading = getDeckGalleryRoleReading(entry.id);
-    const roleRows = roleReading
-      ? [...roleReading.main, ...roleReading.sideboard].reduce(
-          (count, group) => count + group.cards.length,
-          0
-        )
-      : 0;
+    const distinctSourceCards =
+      new Set(entry.main.map(card => card.name)).size +
+      new Set(entry.sideboard.map(card => card.name)).size;
     expect(html).toContain(escapeHtml(entry.sourceTitle));
     expect(html).toContain(escapeHtml(entry.sourceCredit));
     expect(html).toContain(escapeHtml(entry.formatStatus));
     expect(html).toContain(escapeHtml(entry.strategySummary));
     expect(html).toContain("60-card constructed list");
     expect(html).toContain("Non-Commander");
-    expect(html).toContain("Precon-style card categories");
+    expect(html).toContain("Categories");
+    expect(html).toContain("Show exact saved-order list");
+    expect(html).not.toContain("Exact saved-order list · Main deck");
     expect(html).toContain("not categories supplied by the Deckbox list’s author");
-    expect(html).toContain("Original saved order");
-    expect(html).toContain("Exact text list · Main deck · 60 copies");
-    expect(html).toContain(`Sideboard · ${entry.sideboardCopies} copies`);
     expect(html.match(/<img\b/g) ?? []).toHaveLength(
-      entry.main.length + entry.sideboard.length + roleRows
+      distinctSourceCards
     );
 
-    const originalOrderSection = html.slice(html.indexOf("Original saved order"));
-    if (entry.main.length > 1) {
-      expect(originalOrderSection.indexOf(escapeHtml(entry.main[0].name))).toBeLessThan(
-        originalOrderSection.indexOf(escapeHtml(entry.main[entry.main.length - 1].name))
-      );
-    }
     for (const card of [...entry.main, ...entry.sideboard]) {
       expect(html).toContain(escapeHtml(card.name));
-      expect(html).toContain(`>${card.quantity}×</span>`);
+    }
+  });
+
+  it("renders the complete source order only when the alternate view is selected", () => {
+    const entry = entries[0];
+    const html = renderToStaticMarkup(
+      <DeckGalleryCardPresentation
+        entry={entry}
+        reading={getDeckGalleryRoleReading(entry.id)}
+        view="saved-order"
+      />
+    );
+    expect(html).toContain(`Main deck · ${entry.mainCopies} copies`);
+    expect(html).toContain(`Sideboard · ${entry.sideboardCopies} copies`);
+    expect(html).not.toContain("data-gallery-card-view=");
+    if (entry.main.length > 1) {
+      expect(html.indexOf(escapeHtml(entry.main[0].name))).toBeLessThan(
+        html.indexOf(escapeHtml(entry.main[entry.main.length - 1].name))
+      );
     }
   });
 

@@ -5,8 +5,12 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import type { DeckGalleryPayload } from "@/lib/deckGallery";
+import { DeckGalleryCardPresentation } from "@/components/DeckGalleryRoleReading";
 import { DeckGalleryDetailView } from "./DeckGalleryDetail";
-import { getDeckGalleryRoleReading } from "@/lib/deckGalleryRoles";
+import {
+  getDeckGalleryRemainderCards,
+  getDeckGalleryRoleReading,
+} from "@/lib/deckGalleryRoles";
 
 const payload = JSON.parse(
   readFileSync(
@@ -20,6 +24,11 @@ const entry = (title: string) => {
   return match;
 };
 const escapeHtml = (value: string) => renderToStaticMarkup(<>{value}</>);
+function quantityMap(rows: { name: string; quantity: number }[]) {
+  const result = new Map<string, number>();
+  for (const row of rows) result.set(row.name, (result.get(row.name) || 0) + row.quantity);
+  return Array.from(result.entries()).sort(([left], [right]) => left.localeCompare(right));
+}
 const page = (deck: DeckGalleryPayload["entries"][number]) =>
   renderToStaticMarkup(
     <Router ssrPath={`/deck-gallery/${deck.id}`}>
@@ -38,54 +47,34 @@ const samples = [
 
 describe("individual public Deck Gallery pages", () => {
   it.each(samples)(
-    "renders the helm status and exact source list for $id",
+    "renders the helm status and exclusive category/remainder view for $id",
     deck => {
       const html = page(deck);
       const helmArtCount =
         deck.helm.commanders.length + (deck.helm.separateChildGuess ? 1 : 0);
-      const roleReading = getDeckGalleryRoleReading(deck.id);
-      const roleArtCount = roleReading
-        ? [...roleReading.main, ...roleReading.sideboard].reduce(
-            (count, group) => count + group.cards.length,
-            0
-          )
-        : 0;
+      const distinctSourceCards =
+        new Set(deck.main.map(card => card.name)).size +
+        new Set(deck.sideboard.map(card => card.name)).size;
       expect(html.match(/<h1\b/g)).toHaveLength(1);
       expect(html).toContain(escapeHtml(deck.title));
       expect(html).toContain(escapeHtml(deck.helm.label));
       expect(html).toContain(escapeHtml(deck.creditLine));
-      expect(html).toContain("Exact text list · main and sideboard");
-      expect(html).toContain("Source order preserved");
+      expect(html).toContain("Show exact saved-order list");
+      expect(html).toContain("Categories");
+      expect(html).not.toContain("Exact saved-order list · Main deck");
       expect(html.match(/<img\b/g) ?? []).toHaveLength(
-        deck.main.length + deck.sideboard.length + helmArtCount + roleArtCount
+        distinctSourceCards + helmArtCount
       );
-      expect(html).toContain("Precon-style card categories");
       expect(html).toContain("not categories supplied by the Deckbox list’s author");
 
       for (const card of [...deck.main, ...deck.sideboard]) {
         expect(html).toContain(escapeHtml(card.name));
-        expect(html).toContain(`>${card.quantity}×</span>`);
       }
       if (deck.main.length) {
         const imageUrl = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(deck.main[0].name)}&format=image&version=normal`;
         expect(html).toContain(escapeHtml(imageUrl));
       }
-      if (deck.main.length > 1) {
-        const sourceStart = html.indexOf('<section aria-label="Main deck"');
-        const sideboardStart = html.indexOf(
-          '<section aria-label="Sideboard"',
-          sourceStart
-        );
-        const sourceOrderHtml = html.slice(
-          sourceStart,
-          sideboardStart < 0 ? undefined : sideboardStart
-        );
-        expect(sourceOrderHtml.indexOf(escapeHtml(deck.main[0].name))).toBeLessThan(
-          sourceOrderHtml.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
-        );
-      }
       if (deck.sideboard.length) {
-        expect(html).toContain(`Sideboard · ${deck.sideboardCopies} copies`);
         expect(html).toContain('aria-label="Sideboard"');
       }
       expect(html).toContain(
@@ -93,6 +82,52 @@ describe("individual public Deck Gallery pages", () => {
       );
     }
   );
+
+  it("reconciles every approved source count without duplicate category names or category/remainder overlap", () => {
+    expect(payload.entries).toHaveLength(166);
+    for (const deck of payload.entries) {
+      const reading = getDeckGalleryRoleReading(deck.id);
+      expect(reading, deck.id).toBeDefined();
+      if (!reading) continue;
+      const allCategoryCards = [...reading.main, ...reading.sideboard].flatMap(group => group.cards);
+      expect(new Set(allCategoryCards.map(card => card.name)).size).toBe(allCategoryCards.length);
+      expect([...reading.main, ...reading.sideboard].every(group =>
+        !/^(lands|ramp|draw|interaction|engines|combat|threats|support)$/.test(group.id)
+      )).toBe(true);
+
+      for (const [section, sourceRows, categories, expectedCopies] of [
+        ["main", deck.main, reading.main, deck.mainCopies],
+        ["sideboard", deck.sideboard, reading.sideboard, deck.sideboardCopies],
+      ] as const) {
+        const categoryCards = categories.flatMap(group => group.cards);
+        const remainder = getDeckGalleryRemainderCards(sourceRows, categories);
+        const visibleCards = [...categoryCards, ...remainder];
+        expect(new Set(categoryCards.map(card => card.name)).size, `${deck.id} ${section} categories`).toBe(categoryCards.length);
+        expect(new Set(visibleCards.map(card => card.name)).size, `${deck.id} ${section} view`).toBe(visibleCards.length);
+        expect(quantityMap(visibleCards), `${deck.id} ${section} quantity map`).toEqual(quantityMap(sourceRows));
+        expect(visibleCards.reduce((total, card) => total + card.quantity, 0), `${deck.id} ${section} copies`).toBe(expectedCopies);
+      }
+    }
+  });
+
+  it("shows the exact source order only in the alternate view", () => {
+    const deck = entry("Akiri-Silas Tokens");
+    const savedOrderHtml = renderToStaticMarkup(
+      <DeckGalleryCardPresentation
+        entry={deck}
+        reading={getDeckGalleryRoleReading(deck.id)}
+        view="saved-order"
+      />
+    );
+    expect(savedOrderHtml).toContain(`Main deck · ${deck.mainCopies} copies`);
+    expect(savedOrderHtml).toContain(`Sideboard · ${deck.sideboardCopies} copies`);
+    expect(savedOrderHtml).not.toContain("data-gallery-card-view=");
+    if (deck.main.length > 1) {
+      expect(savedOrderHtml.indexOf(escapeHtml(deck.main[0].name))).toBeLessThan(
+        savedOrderHtml.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
+      );
+    }
+  });
 
   it("shows official precon support and flags a commander absent from the export", () => {
     const sworn = entry("Black - Sworn To Darkness");

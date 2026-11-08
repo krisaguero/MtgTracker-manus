@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build editorial role groups for public Deck Gallery entries.
+"""Build exclusive theme/package categories for approved public Deck Gallery lists.
 
-Uses only the already-public Deck Gallery lists plus a local Scryfall Oracle
-Cards JSONL snapshot. The groups are a presentation aid, not Deckbox author
-categories, legality checks, or ownership data.
+Only the public Gallery export and a local Scryfall Oracle snapshot are read.
+Categories are editorial groupings for directly related cards; they are not
+Deckbox author categories, format/legality checks, or ownership data. Cards that
+do not match an explicit theme/package stay in the visible deck remainder.
 """
 from __future__ import annotations
 
@@ -15,18 +16,6 @@ import sys
 import unicodedata
 from pathlib import Path
 from typing import Any
-
-ROLE_ORDER = [
-    ("lands", "Lands"),
-    ("ramp", "Ramp & mana rocks"),
-    ("draw", "Card draw & selection"),
-    ("interaction", "Removal & disruption"),
-    ("engines", "Key engines & payoffs"),
-    ("combat", "Combat tricks & protection"),
-    ("threats", "Creatures & threats"),
-    ("support", "Other spells & support"),
-]
-ROLE_INDEX = {role_id: index for index, (role_id, _) in enumerate(ROLE_ORDER)}
 
 
 def normalize(value: str) -> str:
@@ -72,185 +61,341 @@ def load_oracle_index(path: Path, requested: set[str]) -> dict[str, dict[str, An
     return {**face_names, **direct}
 
 
-def has_ramp(text: str, type_line: str) -> bool:
-    low = text.casefold()
-    return bool(
-        re.search(r"\badds?\s+(?:(?:an|one|two|three|four|\d+)\s+additional\s+)?(?:\{[wubrgc0-9xyz]+\}|one|two|three|four|\d+)", low)
-        or re.search(r"\bcreate\s+(?:one|a|two|three|\d+)?\s*treasure(?:\s+token)?s?\b", low)
-        or re.search(r"\bsearch your library for.{0,100}\bland card\b.{0,140}\bput (?:it|that card|them) onto the battlefield", low, re.S)
-        or re.search(r"\bput (?:a|one|up to \d+) land card from your hand onto the battlefield", low)
-        or re.search(r"\bplay an additional land", low)
-        or re.search(r"\bplay up to (?:one|two|three|\d+) (?:additional )?lands? this turn", low)
-        or re.search(r"\bplay (?:one|two|three|\d+) additional lands?\b", low)
-    )
+# A tribe is only enabled when the source title names it, or the assigned
+# commander identity clearly establishes it. Card membership requires the
+# creature type itself or Oracle text that directly names the tribe.
+TRIBES = [
+    ("dragons", "Dragons", r"\bdragons?\b", r"\bdragon\b"),
+    ("zombies", "Zombies", r"\bzombies?\b", r"\bzombie\b"),
+    ("elves", "Elves", r"\b(?:elf|elves)\b", r"\belf\b"),
+    ("cats", "Cats", r"\b(?:cats?|catz)\b", r"\bcat\b"),
+    ("humans", "Humans", r"\bhumans?\b", r"\bhuman\b"),
+    ("slivers", "Slivers", r"\bslivers?\b", r"\bsliver\b"),
+    ("goblins", "Goblins", r"\bgoblins?\b", r"\bgoblin\b"),
+    ("birds", "Birds", r"\bbirds?\b", r"\bbird\b"),
+    ("wizards", "Wizards", r"\bwizards?\b|\bwizardry\b", r"\bwizard\b"),
+    ("spirits", "Spirits", r"\bspirits?\b", r"\bspirit\b"),
+    ("vampires", "Vampires", r"\bvampir(?:e|es|ic)\b", r"\bvampire\b"),
+    ("eldrazi", "Eldrazi", r"\beldrazi\b", r"\beldrazi\b"),
+    ("giants", "Giants", r"\bgiants?\b", r"\bgiant\b"),
+    ("beasts", "Beasts", r"\bbeasts?\b", r"\bbeast\b"),
+    ("allies", "Allies", r"\ball(?:y|ies)\b", r"\ball(?:y|ies)\b"),
+    ("apes", "Apes", r"\bapes?\b", r"\bape\b"),
+    ("knights", "Knights", r"\bknights?\b", r"\bknight\b"),
+    ("rebels", "Rebels", r"\brebels?\b", r"\brebel\b"),
+    ("walls", "Walls", r"\bwalls?\b", r"\bwall\b"),
+    ("wolves", "Wolves", r"\b(?:wolf|wolves)\b", r"\bwolf\b"),
+    ("centaurs", "Centaurs", r"\bcentaurs?\b", r"\bcentaur\b"),
+    ("scorpions", "Scorpions", r"\bscorpions?\b", r"\bscorpion\b"),
+    ("elementals", "Elementals", r"\belementals?\b", r"\belemental\b"),
+]
+
+# Mechanic/package titles are deliberately specific. Generic labels such as
+# lands, ramp, draw, removal, threats, or support are never generated here.
+MECHANICS: dict[str, dict[str, Any]] = {
+    "tokens": {
+        "title": "Token package",
+        "title_patterns": [r"\btokens?\b", r"\blocust(?:'s)?\b"],
+        "commander_names": ["The Locust God", "Marath, Will of the Wild"],
+        "card_pattern": r"\btokens?\b|\binvestigate\b",
+        "description": "Cards that create, use, or directly reward tokens.",
+    },
+    "clues": {
+        "title": "Clue package",
+        "title_patterns": [r"\bclues?\b"],
+        "commander_names": [],
+        "card_pattern": r"\bclues?\b|\binvestigate\b",
+        "description": "Cards that investigate, create Clues, or directly use Clue tokens.",
+    },
+    "sacrifice": {
+        "title": "Sacrifice package",
+        "title_patterns": [r"\bsac(?:s)?\b", r"\bsacrific(?:e|es|ing)\b"],
+        "commander_names": ["Mazirek, Kraul Death Priest", "Meren of Clan Nel Toth", "Teysa Karlov", "Vaevictis Asmadi, the Dire"],
+        "card_pattern": r"\bsacrifice\b|\bcreature dies\b|\bpermanent dies\b|\bwhenever .* dies\b",
+        "description": "Cards whose text directly uses sacrifice or death triggers.",
+    },
+    "graveyard": {
+        "title": "Graveyard package",
+        "title_patterns": [r"\bgraveyard\w*\b", r"\bmilly?self\b"],
+        "commander_names": ["Alesha, Who Smiles at Death", "Gisa and Geralf", "Meren of Clan Nel Toth", "The Scarab God", "Daretti, Scrap Savant", "Kess, Dissident Mage"],
+        "card_pattern": r"\bgraveyard\b|\bmill(?:ed|ing)?\b|\bfrom your graveyard\b|\binto your graveyard\b",
+        "description": "Cards that mill, recur, or otherwise directly use a graveyard.",
+    },
+    "counters": {
+        "title": "+1/+1 counter package",
+        "title_patterns": [r"\+1\s*/\s*\+1", r"\bcounters?\b"],
+        "commander_names": ["Mazirek, Kraul Death Priest", "Atraxa, Praetors' Voice", "Daghatar the Adamant", "Karlov of the Ghost Council", "Vorel of the Hull Clade", "Marath, Will of the Wild"],
+        "card_pattern": r"\+1/\+1 counters?\b|\bproliferate\b|\bdouble the number of .{0,40} counters?\b",
+        "description": "Cards that add, move, multiply, or proliferate +1/+1 counters.",
+    },
+    "equipment": {
+        "title": "Equipment package",
+        "title_patterns": [r"\bequipment\b", r"\bgear\b", r"\barmadillo cloak\b"],
+        "commander_names": ["Akiri, Line-Slinger"],
+        "card_pattern": r"\bequip(?:ped|ment)?\b|\bequipment\b|\battach .* equipment\b",
+        "type_pattern": r"\bequipment\b",
+        "description": "Equipment and cards that directly equip, attach, or reward Equipment.",
+    },
+    "enchantments": {
+        "title": "Enchantment package",
+        "title_patterns": [r"\benchant(?:ment|ments|s)?\b", r"\bchants\b", r"\barmadillo cloak\b"],
+        "commander_names": ["Daxos the Returned", "Estrid, the Masked"],
+        "card_pattern": r"\benchantments?\b|\bconstellation\b|\b enchanted \b",
+        "type_pattern": r"\benchantment\b|\baura\b",
+        "description": "Enchantments, Auras, and cards that directly reward or use them.",
+    },
+    "artifacts": {
+        "title": "Artifact package",
+        "title_patterns": [r"\bartifact(?:s)?\b", r"\bfacts\b"],
+        "commander_names": ["Breya, Etherium Shaper", "Daretti, Scrap Savant", "Saheeli, the Gifted", "Silas Renn, Seeker Adept"],
+        "card_pattern": r"\bartifacts?\b|\bservo\b|\bthopter\b",
+        "type_pattern": r"\bartifact\b",
+        "description": "Artifacts and cards that directly create, recur, or reward artifacts.",
+    },
+    "lifegain": {
+        "title": "Lifegain package",
+        "title_patterns": [r"\blife\b", r"\blifegain\b", r"\blife gain\b"],
+        "commander_names": ["Licia, Sanguine Tribune", "Karlov of the Ghost Council"],
+        "card_pattern": r"\bgain(?:s)? life\b|\blifelink\b|\bwhenever you gain life\b|\bwhenever .* gains life\b",
+        "description": "Cards that gain life or directly reward lifegain.",
+    },
+    "energy": {
+        "title": "Energy package",
+        "title_patterns": [r"\benergy\b"],
+        "commander_names": [],
+        "card_pattern": r"\benergy counter\b|\benergy counters\b|\bpay .* energy\b|\bget .* energy\b",
+        "description": "Cards that generate, use, or directly reward energy counters.",
+    },
+    "landfall": {
+        "title": "Landfall package",
+        "title_patterns": [r"\blandfall\b", r"\bland ?drops?\b"],
+        "commander_names": [],
+        "card_pattern": r"\blandfall\b|\bland enters the battlefield\b|\bplay an additional land\b|\bplay .* additional lands?\b",
+        "description": "Cards that reward land entries or directly enable extra land plays.",
+    },
+    "blink": {
+        "title": "Blink & enter-the-battlefield package",
+        "title_patterns": [r"\bblink\b", r"\betb(?:ers?)?\b"],
+        "commander_names": ["Brago, King Eternal", "Inalla, Archmage Ritualist"],
+        "card_pattern": r"\benters? the battlefield\b|\breturn .* to the battlefield\b|\bexile .* then return\b|\bexile .* at the beginning of the next end step\b",
+        "description": "Cards with blink effects or enter-the-battlefield abilities that fit this package.",
+    },
+    "monarch": {
+        "title": "Monarch package",
+        "title_patterns": [r"\bmonarch\b"],
+        "commander_names": ["Queen Marchesa"],
+        "card_pattern": r"\bmonarch\b|\bbecome the monarch\b|\bthe monarch\b",
+        "description": "Cards that create, pass, or directly reward the monarch.",
+    },
+    "combat-damage": {
+        "title": "Unblocked & combat-damage package",
+        "title_patterns": [r"\bon hits?\b", r"\bstealer\b", r"\bsmackdown\b"],
+        "commander_names": ["Kaseto, Orochi Archmage"],
+        "card_pattern": r"\bcan't be blocked\b|\bcannot be blocked\b|\bdeals? combat damage\b|\bwhenever .* deals damage to a player\b|\bunblockable\b",
+        "description": "Cards that enable unblocked attacks or trigger directly from combat damage.",
+    },
+    "discard": {
+        "title": "Discard & empty-hand package",
+        "title_patterns": [r"\bdiscard\b", r"\bno cards\b", r"\bempty hand\b"],
+        "commander_names": ["Neheb, the Worthy"],
+        "card_pattern": r"\bdiscards?\b|\bhellbent\b|\bhand is empty\b|\bno cards in hand\b",
+        "description": "Cards that discard, reward an empty hand, or directly use discard.",
+    },
+    "stax": {
+        "title": "Stax package",
+        "title_patterns": [r"\bstax\b"],
+        "commander_names": [],
+        "card_pattern": r"\bcan't untap\b|\bdoesn't untap\b|\bcosts? \{1\} more\b|\bcan't cast more than\b|\bcan't attack\b|\beach opponent sacrifices\b",
+        "description": "Cards that directly tax, restrict, or lock opponents' actions.",
+    },
+    "fling": {
+        "title": "Fling & creature-toss package",
+        "title_patterns": [r"\bfling(?:ers?)?\b", r"\bchuckers?\b", r"\bquarterback\b"],
+        "commander_names": ["Brion Stoutarm"],
+        "card_pattern": r"\bsacrifice (?:another |a |one )?creature\b[\s\S]{0,180}\bdeals? damage\b|\bdeals? damage equal to .* power\b|\bthrow .* creature\b",
+        "description": "Cards that sacrifice or throw creatures to deal power-based damage.",
+    },
+    "pingers": {
+        "title": "Pinger package",
+        "title_patterns": [r"\bpingers?\b"],
+        "commander_names": [],
+        "card_pattern": r"\bdeals? one damage to\b|\bdeals? 1 damage to\b|\bdeals? damage to any target\b",
+        "description": "Cards that directly deal repeatable or targeted damage in the pinger package.",
+    },
+    "bounce": {
+        "title": "Bounce package",
+        "title_patterns": [r"\bbounce\b"],
+        "commander_names": [],
+        "card_pattern": r"\breturn target .{0,100} to (?:its|their|that card's) owner's hand\b|\breturn .* to its owner's hand\b",
+        "description": "Cards that return opposing permanents to their owners' hands.",
+    },
+    "counterspells": {
+        "title": "Counterspell package",
+        "title_patterns": [r"\bcounter(?:spells?)?\b"],
+        "commander_names": [],
+        "card_pattern": r"\bcounter target\b",
+        "description": "Cards that directly counter spells in the named package.",
+    },
+    "card-draw": {
+        "title": "Draw package",
+        "title_patterns": [r"\bdraw\b"],
+        "commander_names": [],
+        "card_pattern": r"\bdraw (?:a |one |two |three |four |\d+ |x |up to |equal to )?cards?\b",
+        "description": "Cards that directly draw cards in the named package.",
+    },
+    "noncreature-spells": {
+        "title": "Noncreature spell package",
+        "title_patterns": [r"\bnon ?creatures?\b"],
+        "commander_names": [],
+        "card_pattern": r"",
+        "exclude_type_pattern": r"\bcreature\b|\bland\b",
+        "description": "Noncreature, nonland cards in the source's explicitly named package.",
+    },
+    "mill": {
+        "title": "Mill package",
+        "title_patterns": [r"\bmill(?:ing)?\b"],
+        "commander_names": ["Phenax, God of Deception"],
+        "card_pattern": r"\bmill(?:s|ed|ing)?\b|\bputs? the top .* into .* graveyard\b|\btarget player puts the top\b",
+        "description": "Cards that mill or directly trigger from cards being put in graveyards.",
+    },
+    "theft": {
+        "title": "Creature-theft package",
+        "title_patterns": [r"\bsteal(?:er|ing)?\b", r"\bget over here\b"],
+        "commander_names": ["Olivia Voldaren", "Yasova Dragonclaw"],
+        "card_pattern": r"\bgain control of target creature\b|\bgain control of .* creature\b|\bcontrol of target creature\b",
+        "description": "Cards that take control of opposing creatures or directly support that plan.",
+    },
+    "spell-copy": {
+        "title": "Spell-copy package",
+        "title_patterns": [r"\bspell copy\b", r"\bspell-copy\b"],
+        "commander_names": ["Zada, Hedron Grinder"],
+        "card_pattern": r"\bcopy target (?:instant or sorcery )?spell\b|\bcopy that spell\b|\bcopy .* spell\b|\bcopy it\b",
+        "description": "Cards that copy spells or directly reward copied spells.",
+    },
+    "polymorph": {
+        "title": "Polymorph package",
+        "title_patterns": [r"\bpolymorph\b", r"\bconversions\b"],
+        "commander_names": ["Jalira, Master Polymorphist"],
+        "card_pattern": r"\bsacrifice .* creature\b[\s\S]{0,160}\breveal cards? from the top\b|\bmanifest\b|\bmorph\b|\bface down\b|\bface-down\b",
+        "description": "Cards that transform, manifest, or directly support the named polymorph plan.",
+    },
+}
 
 
-def has_draw(text: str) -> bool:
-    low = text.casefold()
-    return bool(
-        re.search(r"\bdraw\s+(?:a|one|two|three|four|\d+|x|up to|equal to)?\s*cards?\b", low)
-        or re.search(r"\blook at the top.{0,160}\bput (?:that card|those cards|one of them|it) into your hand", low, re.S)
-        or re.search(r"\bsurveil\b|\bscry\s+\d+", low)
-        or re.search(r"\bsearch your library for (?:a|an|one|up to \d+) card.{0,100}\bput (?:it|that card) into your hand", low, re.S)
-    )
+def build_theme_definitions() -> list[dict[str, Any]]:
+    result: list[dict[str, Any]] = []
+    for theme_id, title, title_pattern, tribe_pattern in TRIBES:
+        result.append({
+            "id": theme_id,
+            "title": title,
+            "title_patterns": [title_pattern],
+            "commander_names": [],
+            "card_pattern": tribe_pattern,
+            "type_pattern": tribe_pattern,
+            "description": f"Cards that are {title.lower()} or directly refer to them.",
+        })
+    result.extend({"id": theme_id, **theme} for theme_id, theme in MECHANICS.items())
+    return result
 
 
-def has_interaction(text: str) -> bool:
-    low = text.casefold()
-    patterns = [
-        r"\bdestroy (?:target|all|each)\b",
-        r"\bexile (?:target|all|each)\b",
-        r"\bcounter target\b",
-        r"\btarget (?:player|opponent) discards?\b",
-        r"\btarget (?:player|opponent) sacrifices?\b",
-        r"\btarget (?:player|opponent) (?:reveals|shows) [\s\S]{0,240}\bdiscard\b",
-        r"\blook at target (?:player|opponent)'s hand[\s\S]{0,200}\bdiscards?\b",
-        r"\btarget creature gets -[xyz\d+]+/-[xyz\d+]+\b",
-        r"\bcreatures? (?:target player|target opponent) controls? get -[xyz\d+]+/-[xyz\d+]+\b",
-        r"\bput a -[xyz\d+]+/-[xyz\d+]+ counter on target creature\b",
-        r"\breturn target .{0,70} to (?:its|their|that card's) owner's hand\b",
-        r"\bdeals? (?:one|two|three|\d+) damage to (?:any target|target (?:creature|player|opponent|planeswalker))\b",
-        r"\bdeals? (?:one|two|three|\d+) damage to each (?:creature|player|opponent)\b",
-        r"\bdeals? \d+ damage divided as you choose among\b",
-        r"\bdeals? damage equal to .{0,70} to (?:target|each) (?:creature|player|opponent)\b",
-        r"\bprevent all (?:combat )?damage\b",
-        r"\bcan't attack\b",
+THEMES = build_theme_definitions()
+
+
+def enabled_themes(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    title = normalize(entry.get("title", ""))
+    explicit = [
+        theme for theme in THEMES
+        if any(re.search(pattern, title, re.I) for pattern in theme.get("title_patterns", []))
     ]
-    return any(re.search(pattern, low) for pattern in patterns)
-
-
-def has_engine(text: str, type_line: str) -> bool:
-    low = (text + "\n" + type_line).casefold()
-    patterns = [
-        r"\bwhenever\b",
-        r"\bat the beginning of\b",
-        r"\bas long as\b",
-        r"\blandfall\b",
-        r"\bcreate (?:one|a|two|three|\d+)?\s*(?:[\w -]+ )?tokens?\b",
-        r"\bgraveyard\b",
-        r"\bsacrifice\b",
-        r"\+1/\+1 counters?\b",
-        r"\bproliferate\b",
-        r"\bwhenever you cast\b",
-        r"\bwhenever a creature dies\b",
-        r"\bsliver\b",
-        r"\bequipped creature\b|\bequipped creature gets\b",
-        r"\benchanted creature\b",
+    commander_names: set[str] = set()
+    helm = entry.get("helm") or {}
+    if helm.get("status") == "assigned":
+        commander_names = {normalize(card.get("name", "")) for card in helm.get("commanders", [])}
+    inferred = [
+        theme for theme in THEMES
+        if theme not in explicit
+        and any(normalize(name) in commander_names for name in theme.get("commander_names", []))
     ]
-    return any(re.search(pattern, low) for pattern in patterns)
+    return explicit + inferred
 
 
-def has_combat_role(text: str, type_line: str) -> bool:
-    low = text.casefold()
-    if re.search(r"\bcreature\b", type_line.casefold()):
+def matches_theme(card_meta: dict[str, Any] | None, theme: dict[str, Any]) -> bool:
+    if not card_meta:
         return False
-    patterns = [
-        r"\b(?:target|enchanted|equipped) creature\b.{0,100}\b(?:gets? \+|gains?|can't be blocked|haste|first strike|double strike|trample|flying|indestructible)\b",
-        r"\bcreatures you control get \+",
-        r"\bcan't be blocked\b",
-        r"\ball creatures able to block .{0,80} do so\b",
-        r"\bprevent all (?:combat )?damage\b",
-        r"\bprotection from\b",
-    ]
-    return any(re.search(pattern, low) for pattern in patterns)
+    text = normalize(text_for(card_meta))
+    type_line = normalize(type_for(card_meta))
+    if theme.get("exclude_type_pattern") and re.search(theme["exclude_type_pattern"], type_line, re.I):
+        return False
+    type_match = bool(theme.get("type_pattern") and re.search(theme["type_pattern"], type_line, re.I))
+    text_match = bool(theme.get("card_pattern") and re.search(theme["card_pattern"], text, re.I))
+    return type_match or text_match
 
 
-def role_for(card: dict[str, Any] | None) -> str:
-    if not card:
-        return "support"
-    text = text_for(card)
-    type_line = type_for(card)
-    low_type = type_line.casefold()
-    if re.search(r"\bland\b", low_type):
-        return "lands"
-    if has_interaction(text):
-        return "interaction"
-    if has_ramp(text, type_line):
-        return "ramp"
-    if has_draw(text):
-        return "draw"
-    if has_combat_role(text, type_line):
-        return "combat"
-    if has_engine(text, type_line):
-        return "engines"
-    if re.search(r"\b(creature|planeswalker|battle)\b", low_type):
-        return "threats"
-    return "support"
-
-
-def compact_names(cards: list[dict[str, Any]]) -> str:
-    names = list(dict.fromkeys(card["name"] for card in cards))
-    sample = names[:5]
-    if len(names) > 5:
-        sample.append("and other listed cards")
-    if not sample:
-        return "the listed cards"
-    if len(sample) == 1:
-        return sample[0]
-    return ", ".join(sample[:-1]) + ", and " + sample[-1]
-
-
-def engine_signals(cards: list[dict[str, Any]], oracle: dict[str, dict[str, Any]]) -> list[str]:
-    joined = "\n".join(text_for(oracle.get(normalize(card["name"]), {})) for card in cards).casefold()
-    signals = []
-    checks = [
-        ("sacrifice", r"\bsacrifice\b|\bcreature dies\b"),
-        ("graveyard recursion", r"\bgraveyard\b|\breturn .* from your graveyard\b"),
-        ("tokens", r"\btoken\b"),
-        ("+1/+1 counters", r"\+1/\+1 counter"),
-        ("discard", r"\bdiscard\b"),
-        ("landfall", r"\blandfall\b|\bland enters the battlefield\b"),
-        ("lifegain", r"\bgain life\b|\blifelink\b"),
-        ("Sliver synergy", r"\bsliver\b"),
-        ("equipment", r"\bequip\b|\bequipped\b"),
-        ("spellcasting", r"\binstant or sorcery\b|\bwhenever you cast\b"),
-    ]
-    for label, pattern in checks:
-        if re.search(pattern, joined):
-            signals.append(label)
-    return signals[:4]
-
-
-def explanation(role_id: str, cards: list[dict[str, Any]], oracle: dict[str, dict[str, Any]]) -> str:
-    names = compact_names(cards)
-    if role_id == "lands":
-        return f"The saved land rows ({names}) support the deck's mana base; quantities stay exactly as recorded."
-    if role_id == "ramp":
-        return f"Mana sources and acceleration in this group include {names}; their printed effects add mana, make Treasures, or put lands into play."
-    if role_id == "draw":
-        return f"Card flow or selection comes from {names}; their printed effects draw, filter, scry, surveil, or find cards."
-    if role_id == "interaction":
-        return f"Answers and disruption include {names}; their printed effects target opposing cards, counter spells, or pressure an opponent's hand or board."
-    if role_id == "engines":
-        signals = engine_signals(cards, oracle)
-        detail = f" Visible text cues include {', '.join(signals)}." if signals else " Their recurring or conditional text links cards to continuing value."
-        return f"Ongoing synergies and payoffs include {names}.{detail}"
-    if role_id == "combat":
-        return f"Combat support includes {names}; their printed effects pump, protect, or improve how creatures attack and block."
-    if role_id == "threats":
-        return f"Creature, planeswalker, and battle cards here include {names}; they provide bodies, combat pressure, and possible finishers."
-    return f"The remaining support cards include {names}; this is a practical role bucket, not a claim that these cards are less important."
-
-
-def group_rows(rows: list[dict[str, Any]], oracle: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
-    bucket: dict[str, list[dict[str, Any]]] = {role_id: [] for role_id, _ in ROLE_ORDER}
+def consolidated_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
     for card in rows:
-        role_id = role_for(oracle.get(normalize(card["name"])))
-        bucket[role_id].append({"name": card["name"], "quantity": card["quantity"]})
+        key = normalize(card["name"])
+        if key not in merged:
+            merged[key] = {"name": card["name"], "quantity": 0}
+            order.append(key)
+        merged[key]["quantity"] += int(card["quantity"])
+    return [merged[key] for key in order]
+
+
+def group_rows(
+    rows: list[dict[str, Any]],
+    oracle: dict[str, dict[str, Any]],
+    themes: list[dict[str, Any]],
+    already_categorized: set[str],
+) -> list[dict[str, Any]]:
+    buckets: dict[str, list[dict[str, Any]]] = {theme["id"]: [] for theme in themes}
+    used_names = set(already_categorized)
+    for card in consolidated_rows(rows):
+        key = normalize(card["name"])
+        if key in used_names:
+            continue
+        card_meta = oracle.get(key)
+        for theme in themes:
+            if matches_theme(card_meta, theme):
+                buckets[theme["id"]].append(card)
+                used_names.add(key)
+                break
     groups = []
-    for role_id, title in ROLE_ORDER:
-        cards = bucket[role_id]
+    for theme in themes:
+        cards = buckets[theme["id"]]
         if not cards:
             continue
         groups.append({
-            "id": role_id,
-            "title": title,
+            "id": theme["id"],
+            "title": theme["title"],
             "copies": sum(card["quantity"] for card in cards),
             "rows": len(cards),
-            "description": explanation(role_id, cards, oracle),
+            "description": theme["description"],
             "cards": cards,
         })
+    already_categorized.update(used_names)
     return groups
+
+
+def validate_reading(entry: dict[str, Any], reading: dict[str, Any]) -> None:
+    all_category_names: set[str] = set()
+    for section in ("main", "sideboard"):
+        source = consolidated_rows(entry.get(section, []))
+        source_counts = {normalize(card["name"]): card["quantity"] for card in source}
+        groups = reading[section]
+        for group in groups:
+            if group["copies"] != sum(card["quantity"] for card in group["cards"]):
+                raise ValueError(f"Category copy count mismatch: {entry['id']} / {section} / {group['id']}")
+            if group["rows"] != len(group["cards"]):
+                raise ValueError(f"Category row count mismatch: {entry['id']} / {section} / {group['id']}")
+            for card in group["cards"]:
+                key = normalize(card["name"])
+                if key not in source_counts or card["quantity"] > source_counts[key]:
+                    raise ValueError(f"Category card not reconciled to source: {entry['id']} / {card['name']}")
+                if key in all_category_names:
+                    raise ValueError(f"Card appears in more than one category: {entry['id']} / {card['name']}")
+                all_category_names.add(key)
 
 
 def main() -> None:
@@ -275,16 +420,27 @@ def main() -> None:
         raise SystemExit(2)
 
     output_entries = []
+    categorized_cards = 0
+    categorized_decks = 0
     for entry in entries:
-        output_entries.append({
+        themes = enabled_themes(entry)
+        used_names: set[str] = set()
+        reading = {
             "deckId": entry["id"],
-            "main": group_rows(entry.get("main", []), oracle),
-            "sideboard": group_rows(entry.get("sideboard", []), oracle),
-        })
-    result = {"schemaVersion": 1, "entries": output_entries}
+            "main": group_rows(entry.get("main", []), oracle, themes, used_names),
+            "sideboard": group_rows(entry.get("sideboard", []), oracle, themes, used_names),
+        }
+        validate_reading(entry, reading)
+        categorized_cards += sum(group["rows"] for group in reading["main"] + reading["sideboard"])
+        categorized_decks += bool(reading["main"] or reading["sideboard"])
+        output_entries.append(reading)
+
+    result = {"schemaVersion": 2, "entries": output_entries}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Generated roles for {len(output_entries)} decks; {len(names)} unique card names; {len(missing)} missing metadata records.")
+    print(f"Generated exclusive theme/package categories for {len(output_entries)} decks; "
+          f"{categorized_decks} decks have categories; {categorized_cards} unique card rows are categorized; "
+          f"{len(names)} unique source card names were checked; {len(missing)} metadata records are missing.")
     print(f"Output: {args.output}")
 
 

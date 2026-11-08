@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeft, Download } from "lucide-react";
 import { Link } from "wouter";
-import { CardImageZoom } from "@/components/CardImageZoom";
 import { DeckGalleryRoleReading } from "@/components/DeckGalleryRoleReading";
 import { getDeckboxBattleBoxEntries, type DeckboxBattleBoxEntry } from "@/lib/deckboxBattleBox";
 import { loadDeckGallery } from "@/lib/deckGallery";
-
-function cardImageUrl(name: string): string {
-  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=normal`;
-}
 
 function downloadSourceList(entry: DeckboxBattleBoxEntry) {
   const sections = [
@@ -29,79 +24,6 @@ function downloadSourceList(entry: DeckboxBattleBoxEntry) {
   anchor.download = `${entry.id}-saved-list.txt`;
   anchor.click();
   URL.revokeObjectURL(url);
-}
-
-function SavedListSection({
-  title,
-  sectionName,
-  cards,
-  copies,
-}: {
-  title: string;
-  sectionName: string;
-  cards: DeckboxBattleBoxEntry["main"];
-  copies: number;
-}) {
-  return (
-    <section className="mt-8 border-2 border-border bg-card p-4 sm:p-6" aria-label={sectionName}>
-      <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-border pb-3">
-        <div>
-          <p className="font-mono text-[10px] font-black uppercase tracking-[0.16em] text-muted-foreground">
-            Original saved order
-          </p>
-          <h2 className="mt-1 text-2xl font-black">{title}</h2>
-        </div>
-        <span className="border border-border bg-background px-3 py-2 font-mono text-xs font-bold">
-          {copies} copies · {cards.length} rows
-        </span>
-      </div>
-      <p className="mt-3 text-sm leading-6 text-muted-foreground">
-        This visual list follows the saved row order. Role groups above are a separate editorial view and do not reorder or edit these source rows.
-      </p>
-      {cards.length ? (
-        <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {cards.map((card, index) => (
-            <li key={`${card.name}-${index}`} className="min-w-0 border border-border bg-background p-2">
-              <div className="aspect-[488/680] overflow-hidden bg-muted">
-                <CardImageZoom
-                  src={cardImageUrl(card.name)}
-                  alt={`${card.name} card image in original saved order`}
-                  className="h-full w-full"
-                />
-              </div>
-              <div className="mt-2 flex items-start justify-between gap-1 text-[11px] leading-4">
-                <span className="min-w-0 break-words font-semibold">{card.name}</span>
-                <span className="shrink-0 font-mono tabular-nums text-muted-foreground">{card.quantity}×</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="mt-4 border border-dashed border-border p-4 text-sm text-muted-foreground">
-          No rows were saved in this section.
-        </p>
-      )}
-      <details className="mt-5 border border-border bg-background p-4">
-        <summary className="cursor-pointer font-mono text-xs font-bold">
-          Exact text list · {sectionName} · {copies} copies
-        </summary>
-        {cards.length ? (
-          <ol className="mt-3 grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2 lg:grid-cols-3">
-            {cards.map((card, index) => (
-              <li key={`${card.name}-${index}`} className="flex gap-2 py-1">
-                <span className="w-8 shrink-0 text-right font-mono tabular-nums text-muted-foreground">
-                  {card.quantity}×
-                </span>
-                <span>{card.name}</span>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="mt-3 text-sm text-muted-foreground">No saved rows.</p>
-        )}
-      </details>
-    </section>
-  );
 }
 
 export function DeckboxBattleBoxDetailView({ entry }: { entry: DeckboxBattleBoxEntry }) {
@@ -158,21 +80,9 @@ export function DeckboxBattleBoxDetailView({ entry }: { entry: DeckboxBattleBoxE
         </header>
 
         <DeckGalleryRoleReading entry={entry} />
-        <SavedListSection
-          title={`Main deck · ${entry.mainCopies} copies`}
-          sectionName="Main deck"
-          cards={entry.main}
-          copies={entry.mainCopies}
-        />
-        <SavedListSection
-          title={`Sideboard · ${entry.sideboardCopies} copies`}
-          sectionName="Sideboard"
-          cards={entry.sideboard}
-          copies={entry.sideboardCopies}
-        />
 
         <footer className="mt-8 border-t-2 border-border pt-4 text-xs leading-5 text-muted-foreground">
-          Card images are served by Scryfall; card imagery © Wizards of the Coast. Image art does not identify a specific printing. Role groupings are editorial and based on card types and Oracle text, not on source-author intent.
+          Card images are served by Scryfall; card imagery © Wizards of the Coast. Image art does not identify a specific printing. Categories are editorial theme/package groupings based on card types and Oracle text, not on source-author intent.
         </footer>
       </div>
     </main>
