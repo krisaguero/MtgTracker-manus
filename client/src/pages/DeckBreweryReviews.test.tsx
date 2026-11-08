@@ -55,6 +55,9 @@ describe("public Deck Brewery pages", () => {
     );
     expect(html).toContain("Search a title, card, role, or status");
     expect(html).toContain("Best-fit / inferred");
+    expect(html).toContain("Proposal · untested");
+    expect(html).toContain("Title credit");
+    expect(html).toContain("Helm inferred");
     expect(html).not.toMatch(
       /\/home\/ubuntu|private_source|archive_id|owned_cards_checked/i
     );
@@ -69,9 +72,9 @@ describe("public Deck Brewery pages", () => {
     expect(html).toContain("Not count-balanced");
     expect(html).toContain("Beast Within");
     expect(html).toContain("Brontotherium");
-    expect(html).toContain(
-      "api.scryfall.com/cards/named?exact=Beast%20Within&amp;format=image&amp;version=art_crop"
-    );
+    expect(html).toContain("https://cards.scryfall.io/art_crop/");
+    expect(html).not.toContain("api.scryfall.com/cards/named");
+    expect(html).toContain("Proposal · untested");
     expect(html).toContain(`href="${xenagos.sourceGalleryHref}"`);
     expect(html).toContain("not a final deck");
     expect(html).toContain("Xenagos, God of Revels");

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { CardImageZoom } from "@/components/CardImageZoom";
-import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
+import {
+  getDeckGalleryCardImageUri,
+  getPublicCardImageSrcSet,
+} from "@/lib/deckGalleryImageUris";
 import {
   getDeckGalleryRoleReading,
   getDeckGalleryRemainderCards,
@@ -34,9 +37,11 @@ function CardGrid({
           className="min-w-0 border border-border bg-background p-2"
         >
           <div className="aspect-[488/680] overflow-hidden bg-muted">
-            <CardImageZoom
-              src={getDeckGalleryCardImageUri(card.name, "normal")}
-              alt={`${card.name} representative card image`}
+              <CardImageZoom
+                src={getDeckGalleryCardImageUri(card.name, "normal")}
+                srcSet={getPublicCardImageSrcSet(card.name)}
+                sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                alt={`${card.name} representative card image`}
               className="h-full w-full"
             />
           </div>
@@ -125,6 +130,38 @@ function RemainderSection({
   );
 }
 
+function SectionCountReconciliation({
+  section,
+  sourceRows,
+  categories,
+}: {
+  section: "Main" | "Sideboard";
+  sourceRows: DeckSourceView["main"];
+  categories: DeckGalleryCategory[];
+}) {
+  const categoryCopies = categories.reduce(
+    (total, category) =>
+      total + category.cards.reduce((copies, card) => copies + card.quantity, 0),
+    0
+  );
+  const remainderCopies = getDeckGalleryRemainderCards(sourceRows, categories)
+    .reduce((total, card) => total + card.quantity, 0);
+  const sourceCopies = sourceRows.reduce((total, card) => total + card.quantity, 0);
+  const reconciled = categoryCopies + remainderCopies === sourceCopies;
+  return (
+    <p
+      data-count-reconciliation={section.toLocaleLowerCase()}
+      aria-label={`${section} category count reconciliation`}
+      className="mt-4 border border-border bg-background px-3 py-2 text-xs leading-5"
+    >
+      <strong>{section}:</strong> {categoryCopies} category copies + {remainderCopies} {section.toLocaleLowerCase()} uncategorized remainder = {sourceCopies} saved {section.toLocaleLowerCase()} copies
+      <span className={`ml-1 font-bold ${reconciled ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}`}>
+        {reconciled ? "· balances with saved list" : "· count mismatch"}
+      </span>
+    </p>
+  );
+}
+
 function ExactSavedOrderList({ entry }: { entry: DeckSourceView }) {
   const rows = (title: string, cards: DeckSourceView["main"]) => (
     <section aria-label={title}>
@@ -190,15 +227,25 @@ export function DeckGalleryCardPresentation({
           No clear theme or named package was identified for categories. The saved cards remain in the main-deck and sideboard sections below.
         </p>
       )}
-      <CategorySection title="Main deck categories" categories={mainCategories} />
-      <RemainderSection
-        title="Main deck"
+      <SectionCountReconciliation
+        section="Main"
         sourceRows={entry.main}
         categories={mainCategories}
       />
+      <CategorySection title="Main deck categories" categories={mainCategories} />
+      <RemainderSection
+        title="Main (uncategorized remainder)"
+        sourceRows={entry.main}
+        categories={mainCategories}
+      />
+      <SectionCountReconciliation
+        section="Sideboard"
+        sourceRows={entry.sideboard}
+        categories={sideboardCategories}
+      />
       <CategorySection title="Sideboard categories" categories={sideboardCategories} />
       <RemainderSection
-        title="Sideboard"
+        title="Sideboard (uncategorized remainder)"
         sourceRows={entry.sideboard}
         categories={sideboardCategories}
       />

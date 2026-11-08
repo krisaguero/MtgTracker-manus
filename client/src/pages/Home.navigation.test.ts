@@ -49,6 +49,24 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(home).toContain('"Build a sealed / draft deck"');
   });
 
+  it("puts public Commander discovery links on both the Home page and Commander archive", () => {
+    const home = read("client/src/pages/Home.tsx");
+    const commander = read("client/src/pages/CommanderLibrary.tsx");
+    for (const href of [
+      'href="/commander"',
+      'href="/deck-gallery"',
+      'href="/deck-brewery/reviews"',
+      'href="/deck-brewery/matchups"',
+    ]) {
+      expect(home).toContain(href);
+    }
+    expect(home).toContain('aria-label="Browse public Commander decks"');
+    expect(commander).toContain('aria-label="Public Commander deck shelves"');
+    expect(commander).toContain('href="/deck-gallery"');
+    expect(commander).toContain('href="/deck-brewery/reviews"');
+    expect(commander).toContain('href="/deck-brewery/matchups"');
+  });
+
   it("shares the lazy archive load with an expanded set and distinguishes archive loading, failure, and empty results", () => {
     const home = read("client/src/pages/Home.tsx");
     const setCard = read("client/src/components/SetCard.tsx");

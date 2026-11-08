@@ -625,6 +625,20 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mb-7 grid gap-4 border-2 border-primary/35 bg-primary/[0.035] p-4 sm:p-5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center" aria-label="Browse public Commander decks">
+          <div>
+            <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Public Commander deck discovery</p>
+            <h2 className="mt-1 text-lg font-black">Browse saved lists and new ideas</h2>
+            <p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">Open unchanged community title-credit lists in the Deck Gallery, separate Brewery proposals, or the Commander release archive. These public shelves do not expose collection scans or ownership.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <a href="/commander" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Commander archive <ArrowRight className="h-4 w-4" /></a>
+            <a href="/deck-gallery" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Deck Gallery <ArrowRight className="h-4 w-4" /></a>
+            <a href="/deck-brewery/reviews" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary-foreground hover:opacity-90">Brewery reviews <ArrowRight className="h-4 w-4" /></a>
+            <a href="/deck-brewery/matchups" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Showdowns <ArrowRight className="h-4 w-4" /></a>
+          </div>
+        </section>
+
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative min-w-0 flex-1 sm:max-w-xl">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

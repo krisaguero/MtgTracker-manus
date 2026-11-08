@@ -125,6 +125,11 @@ export default function CommanderLibrary() {
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">Commander archive / live Scryfall index</p>
               <h1 className="mt-2 text-3xl font-bold tracking-[-0.04em] sm:text-5xl">The Commander shelf, tracked over time.</h1>
               <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base">A chronological library of Commander releases from 2022 forward. Filter by release year, product family, live product records, or local decklist coverage without losing the art that makes each shelf distinct.</p>
+              <nav aria-label="Public Commander deck shelves" className="mt-4 flex flex-wrap gap-2">
+                <Link href="/deck-gallery" className="inline-flex min-h-10 items-center gap-2 border border-border bg-card px-3 py-2 text-xs font-bold hover:border-primary">Deck Gallery <ArrowRight className="h-4 w-4" /></Link>
+                <Link href="/deck-brewery/reviews" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 text-xs font-bold text-primary-foreground hover:opacity-90">Brewery reviews <ArrowRight className="h-4 w-4" /></Link>
+                <Link href="/deck-brewery/matchups" className="inline-flex min-h-10 items-center gap-2 border border-border bg-card px-3 py-2 text-xs font-bold hover:border-primary">Showdowns <ArrowRight className="h-4 w-4" /></Link>
+              </nav>
             </div>
             <div className="border-t border-border pt-3 text-xs leading-relaxed text-muted-foreground lg:border-l lg:border-t-0 lg:pl-5 lg:pt-0"><strong className="text-foreground">Archive rule.</strong> The release index comes from Scryfall; local decklists are labeled separately so imported collection matching never implies unsupported coverage.</div>
           </div>

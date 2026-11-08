@@ -5,6 +5,10 @@ import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
 import { DeckGalleryRoleReading } from "@/components/DeckGalleryRoleReading";
 import { getDeckGalleryCardImageUri } from "@/lib/deckGalleryImageUris";
 import {
+  buildPublicBrowseHref,
+  readPublicBrowseState,
+} from "@/lib/publicBrowseState";
+import {
   getDeckGalleryDisplayMeta,
   isDeckGalleryWip,
   loadDeckGallery,
@@ -31,6 +35,16 @@ export function DeckGalleryDetailView({
   const meta = getDeckGalleryDisplayMeta(entry);
   const isRobert = entry.group === "robert_title_credit";
   const backHref = galleryIndexHref(entry);
+  const browseState = readPublicBrowseState(
+    typeof window === "undefined" ? "" : window.location.search,
+    "status"
+  );
+  const backHrefWithState = buildPublicBrowseHref(backHref, browseState, "status");
+  const allGalleryHref = buildPublicBrowseHref(
+    "/deck-gallery",
+    browseState,
+    "status"
+  );
 
   return (
     <main className="container min-h-[75vh] py-8 sm:py-12">
@@ -39,7 +53,7 @@ export function DeckGalleryDetailView({
         className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 text-xs font-bold"
       >
         <Link
-          href={backHref}
+          href={backHrefWithState}
           className="inline-flex min-h-11 items-center gap-2 text-primary hover:underline"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
@@ -70,6 +84,11 @@ export function DeckGalleryDetailView({
               >
                 {isRobert ? "Robogles title credit" : "Kris archive"}
               </span>
+              {isRobert && (
+                <span className="border border-violet-400 bg-background px-2 py-1">
+                  Title credit
+                </span>
+              )}
               <span className="border border-border bg-background px-2 py-1">
                 {meta.displayStatus}
               </span>
@@ -192,7 +211,7 @@ export function DeckGalleryDetailView({
           className="mt-8 flex flex-wrap gap-3 border-t-2 border-border pt-5"
         >
           <Link
-            href={backHref}
+            href={backHrefWithState}
             className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-card px-4 py-2 text-xs font-bold hover:border-primary"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to{" "}
@@ -203,7 +222,7 @@ export function DeckGalleryDetailView({
                 : "Deck Gallery"}
           </Link>
           <Link
-            href="/deck-gallery"
+            href={allGalleryHref}
             className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-card px-4 py-2 text-xs font-bold hover:border-primary"
           >
             Browse all decks{" "}

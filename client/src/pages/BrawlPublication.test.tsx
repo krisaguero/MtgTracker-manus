@@ -138,6 +138,9 @@ describe('approved Brawlternative publication', () => {
   it('shows the child in its separate public Deck Brewery offshoot tile shelf', () => {
     const html = renderToStaticMarkup(<Router ssrPath="/brawl-box"><BrawlBox /></Router>);
     expect(html).toContain('Deck Brewery offshoots');
+    expect(html).toContain('href="#public-archive-children"');
+    expect(html).toContain('Jump to Deck Brewery offshoots');
+    expect(html).toContain('the untested Gisa and Geralf graveyard child');
     expect(html).toContain('60-card custom Commander preview · separate from source');
     expect(html).toContain('Public child · untested WIP');
     expect(html).toContain('href="/brawl-box/deck-gisa-and-geralf-graveyard-mashup-preview"');

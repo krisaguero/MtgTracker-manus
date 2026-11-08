@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { getPublicCardImageUri } from "@/lib/deckGalleryImageUris";
 import type {
   DeckGalleryChildGuess,
   DeckGalleryHelm,
   DeckGalleryHelmCard,
 } from "@/lib/deckGallery";
-
-const cardImageUrl = (name: string) =>
-  `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=art_crop`;
 
 function CardArt({
   name,
@@ -19,7 +17,9 @@ function CardArt({
   imageUriForName?: (name: string) => string | undefined;
 }) {
   const [failed, setFailed] = useState(false);
-  const imageUri = imageUriForName ? imageUriForName(name) : cardImageUrl(name);
+  const imageUri = imageUriForName
+    ? imageUriForName(name)
+    : getPublicCardImageUri(name, "art_crop");
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-amber-500/20 ${className}`}
@@ -31,6 +31,7 @@ function CardArt({
           src={imageUri}
           alt=""
           loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
           onError={() => setFailed(true)}
         />
@@ -128,6 +129,11 @@ export function CommanderHelmPanel({
   className?: string;
   imageUriForName?: (name: string) => string | undefined;
 }) {
+  const inferred =
+    helm.confidence === "best_fit_inferred" ||
+    helm.confidence === "strongly_supported_partner_pair" ||
+    helm.status === "unconfirmed" ||
+    Boolean(helm.separateChildGuess);
   return (
     <section
       className={`overflow-hidden border-2 border-border bg-card p-4 ${className}`}
@@ -137,6 +143,15 @@ export function CommanderHelmPanel({
         <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">
           At the helm
         </p>
+        {inferred && (
+          <span className="border border-amber-700/40 bg-amber-500/10 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-200">
+            {helm.separateChildGuess
+              ? "Helm inferred for child only"
+              : helm.status === "unconfirmed"
+                ? "Helm inferred · source unconfirmed"
+                : "Helm inferred"}
+          </span>
+        )}
         <span
           className={`inline-flex border px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider ${statusClass(helm)}`}
         >

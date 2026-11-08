@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, ExternalLink, FlaskConical, ShieldAlert, Swords } from 'lucide-react';
 import { Link } from 'wouter';
+import { getPublicCardImageUri } from '@/lib/deckGalleryImageUris';
 import {
   breweryReviewPath,
   breweryShowdownPath,
@@ -12,9 +13,6 @@ import {
   type ShowdownSource,
 } from '@/lib/deckBreweryShowdowns';
 import { loadDeckBreweryReviews, type BreweryReviewEntry, type BreweryReviewPayload } from '@/lib/deckBreweryReviews';
-
-const cardImageUrl = (name: string) =>
-  `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=art_crop`;
 
 type ReviewProps = { initialReviews?: BreweryReviewPayload; params?: Record<string, string | undefined> };
 
@@ -38,10 +36,10 @@ function useReviews(initialReviews?: BreweryReviewPayload) {
 }
 
 function CardArtwork({ name, className = '' }: { name: string; className?: string }) {
-  const [failed, setFailed] = useState(false);
+  const imageUri = getPublicCardImageUri(name, 'art_crop');
+  const [failed, setFailed] = useState(!imageUri);
   return <div className={`relative overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-amber-500/20 ${className}`} aria-label={`${name} card art`}>
-    {!failed && <img src={cardImageUrl(name)} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover" onError={() => setFailed(true)} />}
-    {failed && <div className="flex h-full items-center justify-center p-3 text-center font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">{name}</div>}
+    {imageUri && !failed ? <img src={imageUri} alt={name} loading="lazy" decoding="async" className="h-full w-full object-cover" onError={() => setFailed(true)} /> : <div className="flex h-full items-center justify-center p-3 text-center font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">{name}</div>}
   </div>;
 }
 
@@ -85,8 +83,11 @@ function SourceCard({ entry, cards }: { entry: BreweryReviewEntry; cards: Showdo
   return <article className="overflow-hidden border-2 border-border bg-card">
     <header className="border-b border-border bg-primary/[0.035] p-4 sm:p-5">
       <div className="flex flex-wrap gap-2">
+        <span className="border border-primary/40 bg-primary/5 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">Proposal · untested</span>
         <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">Saved tag: {entry.savedFormatLabel || 'Not specified'}</span>
         <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">{entry.proposal.statusLabel}</span>
+        {entry.titleCredit && <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">Title credit</span>}
+        {(entry.helm.confidence === 'best_fit_inferred' || entry.helm.confidence === 'strongly_supported_partner_pair' || entry.helm.status === 'unconfirmed' || entry.helm.separateChildGuess) && <span className="border border-amber-700/40 bg-amber-500/10 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-200">Helm inferred</span>}
       </div>
       <h3 className="mt-3 break-words text-xl font-black leading-snug">{entry.title}</h3>
       {entry.titleCredit && <p className="mt-2 border-l-2 border-primary pl-3 text-[11px] leading-5 text-muted-foreground">Exact source credit: <strong>{entry.titleCredit}</strong>. This is title-level credit only, not a separate authorship, playtest, or endorsement claim.</p>}

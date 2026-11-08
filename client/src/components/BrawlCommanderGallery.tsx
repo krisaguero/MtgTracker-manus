@@ -10,7 +10,7 @@ function CommanderCard({ deck }: { deck: BrawlBoxDeck }) {
   return <li id={deck.id} className="w-full scroll-mt-20">
     <Link
       href={brawlDeckPath(deck.id)}
-      aria-label={`Explore ${deck.archiveSource ? deck.title : deck.commander}${wip ? ' · work in progress' : ''}`}
+      aria-label={`Explore ${deck.commander}${wip ? ' · work in progress' : ''}`}
       className="relative block rounded-xl transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-primary"
     >
       {fallbackFailed ? <div role="img" aria-label={deck.commander} className="flex aspect-[488/680] items-center justify-center rounded-xl border-2 border-border bg-card p-6 text-center text-xl font-black">{deck.commander}</div> : <img

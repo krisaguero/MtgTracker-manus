@@ -72,6 +72,14 @@ describe("individual public Deck Gallery pages", () => {
       expect(html).toContain(escapeHtml(deck.creditLine));
       expect(html).toContain("Show exact saved-order list");
       expect(html).toContain("Categories");
+      expect(html).toContain('data-count-reconciliation="main"');
+      expect(html).toContain('data-count-reconciliation="sideboard"');
+      expect(html).toContain("uncategorized remainder");
+      expect(html).toContain(`${deck.mainCopies} saved main copies`);
+      expect(html).toContain(`${deck.sideboardCopies} saved sideboard copies`);
+      expect(html).toContain("balances with saved list");
+      if (deck.group === "robert_title_credit")
+        expect(html).toContain(">Title credit</span>");
       expect(html).not.toContain("Exact saved-order list · Main deck");
       expect(html.match(/<img\b/g) ?? []).toHaveLength(
         distinctSourceCards + helmArtCount
@@ -89,7 +97,7 @@ describe("individual public Deck Gallery pages", () => {
         if (imageUrl) expect(html).toContain(escapeHtml(imageUrl));
       }
       if (deck.sideboard.length) {
-        expect(html).toContain('aria-label="Sideboard"');
+        expect(html).toContain('aria-label="Sideboard (uncategorized remainder)"');
       }
       expect(html).toContain(
         `href="${deck.group === "robert_title_credit" ? "/deck-gallery/robogles" : deck.group.startsWith("owner_wip") ? "/deck-gallery/wip" : "/deck-gallery"}"`
@@ -293,7 +301,8 @@ describe("individual public Deck Gallery pages", () => {
       resolve(process.cwd(), "client/src/pages/DeckGallery.tsx"),
       "utf8"
     );
-    expect(catalog).toContain("href={`/deck-gallery/${entry.id}`}");
+    expect(catalog).toContain("detailHref={buildPublicBrowseHref(");
+    expect(catalog).toContain("`/deck-gallery/${entry.id}`");
     expect(catalog).toContain("Visual deck page");
     expect(payload.entries).toHaveLength(166);
     expect(payload.entries.every(deck => deck.helm)).toBe(true);

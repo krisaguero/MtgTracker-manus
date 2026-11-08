@@ -2,6 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, ChevronDown, Search } from "lucide-react";
 import { Link } from "wouter";
 import {
+  buildPublicBrowseHref,
+  readPublicBrowseState,
+  replacePublicBrowseState,
+} from "@/lib/publicBrowseState";
+import {
   getDeckGalleryDisplayMeta,
   isDeckGalleryWip,
   loadDeckGallery,
@@ -288,10 +293,12 @@ function CardRows({
 
 function DeckCard({
   entry,
+  detailHref,
   open,
   onToggle,
 }: {
   entry: DeckGalleryEntry;
+  detailHref: string;
   open: boolean;
   onToggle: () => void;
 }) {
@@ -323,7 +330,7 @@ function DeckCard({
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <Link
-            href={`/deck-gallery/${entry.id}`}
+            href={detailHref}
             className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 text-xs font-bold text-primary-foreground hover:opacity-90"
             aria-label={`Open visual deck page for ${entry.title}`}
           >
@@ -464,8 +471,18 @@ function SpotlightCards({ payload }: { payload: DeckGalleryPayload | null }) {
 function DeckGalleryPage({ mode }: { mode: GalleryMode }) {
   const [payload, setPayload] = useState<DeckGalleryPayload | null>(null);
   const [loadError, setLoadError] = useState("");
-  const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
+  const [search, setSearch] = useState(() =>
+    readPublicBrowseState(
+      typeof window === "undefined" ? "" : window.location.search,
+      "status"
+    ).query
+  );
+  const [statusFilter, setStatusFilter] = useState(() =>
+    readPublicBrowseState(
+      typeof window === "undefined" ? "" : window.location.search,
+      "status"
+    ).filter
+  );
   const [expandedIds, setExpandedIds] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
@@ -494,6 +511,10 @@ function DeckGalleryPage({ mode }: { mode: GalleryMode }) {
     };
   }, [mode]);
 
+  useEffect(() => {
+    replacePublicBrowseState({ query: search, filter: statusFilter }, "status");
+  }, [search, statusFilter, mode]);
+
   const baseEntries = useMemo(() => {
     const entries = payload?.entries ?? [];
     if (mode === "robogles") return entries.filter(isRobertEntry);
@@ -512,6 +533,11 @@ function DeckGalleryPage({ mode }: { mode: GalleryMode }) {
       ).sort((a, b) => a.localeCompare(b)),
     [baseEntries]
   );
+
+  useEffect(() => {
+    if (payload && statusFilter !== "all" && !statuses.includes(statusFilter))
+      setStatusFilter("all");
+  }, [payload, statusFilter, statuses]);
 
   const visibleEntries = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -628,6 +654,11 @@ function DeckGalleryPage({ mode }: { mode: GalleryMode }) {
               <DeckCard
                 key={entry.id}
                 entry={entry}
+                detailHref={buildPublicBrowseHref(
+                  `/deck-gallery/${entry.id}`,
+                  { query: search, filter: statusFilter },
+                  "status"
+                )}
                 open={expandedIds.has(entry.id)}
                 onToggle={() => toggleExpanded(entry.id)}
               />

@@ -11,6 +11,13 @@ import {
 } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
+import { getPublicCardImageUri } from "@/lib/deckGalleryImageUris";
+import {
+  buildPublicBrowseHref,
+  publicBrowseHrefFromSearch,
+  readPublicBrowseState,
+  replacePublicBrowseState,
+} from "@/lib/publicBrowseState";
 import {
   getReviewArtName,
   loadDeckBreweryReviews,
@@ -36,8 +43,14 @@ const statusClass: Record<string, string> = {
   "no-change": "border-border bg-background text-muted-foreground",
 };
 
-const cardImageUrl = (name: string) =>
-  `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=art_crop`;
+const REVIEW_FILTERS = [
+  "all",
+  "proposals",
+  "conditional",
+  "partial",
+  "count-balanced",
+  "references",
+];
 
 function CardArtwork({
   name,
@@ -46,22 +59,23 @@ function CardArtwork({
   name: string;
   className?: string;
 }) {
-  const [failed, setFailed] = useState(false);
+  const imageUri = getPublicCardImageUri(name, "art_crop");
+  const [failed, setFailed] = useState(!imageUri);
   return (
     <div
       className={`relative overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-amber-500/20 ${className}`}
       aria-label={`${name} card art`}
     >
-      {!failed && (
+      {imageUri && !failed ? (
         <img
-          src={cardImageUrl(name)}
+          src={imageUri}
           alt=""
           loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
           onError={() => setFailed(true)}
         />
-      )}
-      {failed && (
+      ) : (
         <div className="flex h-full items-center justify-center p-3 text-center font-mono text-[10px] font-black uppercase tracking-wider text-muted-foreground">
           {name}
         </div>
@@ -115,8 +129,23 @@ export function DeckBreweryReviewIndexView({
 }: {
   payload: BreweryReviewPayload;
 }) {
-  const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("all");
+  const [query, setQuery] = useState(() =>
+    readPublicBrowseState(
+      typeof window === "undefined" ? "" : window.location.search,
+      "filter",
+      REVIEW_FILTERS
+    ).query
+  );
+  const [filter, setFilter] = useState(() =>
+    readPublicBrowseState(
+      typeof window === "undefined" ? "" : window.location.search,
+      "filter",
+      REVIEW_FILTERS
+    ).filter
+  );
+  useEffect(() => {
+    replacePublicBrowseState({ query, filter }, "filter", REVIEW_FILTERS);
+  }, [query, filter]);
   const visibleEntries = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase();
     return payload.entries.filter(entry => {
@@ -350,7 +379,12 @@ export function DeckBreweryReviewIndexView({
             return (
               <Link
                 key={entry.slug}
-                href={`/deck-brewery/reviews/${entry.slug}`}
+                href={buildPublicBrowseHref(
+                  `/deck-brewery/reviews/${entry.slug}`,
+                  { query, filter },
+                  "filter",
+                  REVIEW_FILTERS
+                )}
                 className="group overflow-hidden border-2 border-border bg-card transition duration-200 hover:-translate-y-1 hover:border-primary/60 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 {artName ? (
@@ -362,7 +396,23 @@ export function DeckBreweryReviewIndexView({
                 )}
                 <div className="space-y-3 p-4">
                   <div className="flex flex-wrap items-center gap-2">
+                    <span className="border border-primary/40 bg-primary/5 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">
+                      Proposal · untested
+                    </span>
                     <StatusBadge proposal={entry.proposal} />
+                    {entry.titleCredit && (
+                      <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">
+                        Title credit
+                      </span>
+                    )}
+                    {(entry.helm.confidence === "best_fit_inferred" ||
+                      entry.helm.confidence === "strongly_supported_partner_pair" ||
+                      entry.helm.status === "unconfirmed" ||
+                      entry.helm.separateChildGuess) && (
+                      <span className="border border-amber-700/40 bg-amber-500/10 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-200">
+                        Helm inferred
+                      </span>
+                    )}
                     {entry.alternateV2 && (
                       <span className="border border-primary/30 bg-primary/[0.04] px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">
                         v2 available
@@ -716,21 +766,45 @@ export function DeckBreweryReviewDetailView({
 }: {
   entry: BreweryReviewEntry;
 }) {
+  const allReviewsHref = publicBrowseHrefFromSearch(
+    "/deck-brewery/reviews",
+    typeof window === "undefined" ? "" : window.location.search,
+    "filter",
+    REVIEW_FILTERS
+  );
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b-2 border-border bg-card">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-8 sm:py-9">
           <Link
-            href="/deck-brewery/reviews"
+            href={allReviewsHref}
             className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-widest text-primary hover:underline"
           >
             <ArrowLeft className="h-4 w-4" /> All Brewery reviews
           </Link>
           <div className="mt-5 flex flex-wrap items-start justify-between gap-4">
             <div className="max-w-3xl">
-              <p className="font-mono text-xs font-black uppercase tracking-widest text-primary">
-                Public Deck Brewery review · no sign-in
-              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="font-mono text-xs font-black uppercase tracking-widest text-primary">
+                  Public Deck Brewery review · no sign-in
+                </p>
+                <span className="border border-primary/40 bg-primary/5 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">
+                  Proposal · untested
+                </span>
+                {entry.titleCredit && (
+                  <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">
+                    Title credit
+                  </span>
+                )}
+                {(entry.helm.confidence === "best_fit_inferred" ||
+                  entry.helm.confidence === "strongly_supported_partner_pair" ||
+                  entry.helm.status === "unconfirmed" ||
+                  entry.helm.separateChildGuess) && (
+                  <span className="border border-amber-700/40 bg-amber-500/10 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-amber-900 dark:text-amber-200">
+                    Helm inferred
+                  </span>
+                )}
+              </div>
               <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-5xl">
                 {entry.title}
               </h1>
@@ -774,7 +848,10 @@ export function DeckBreweryReviewDetailView({
             are proposed changes only; they do not update the Gallery list.
           </p>
         </section>
-        <CommanderHelmPanel helm={entry.helm} />
+        <CommanderHelmPanel
+          helm={entry.helm}
+          imageUriForName={name => getPublicCardImageUri(name, "art_crop")}
+        />
         <ProposalPanel entry={entry} proposal={entry.proposal} />
         {entry.alternateV2 && (
           <div className="space-y-2">
@@ -786,7 +863,7 @@ export function DeckBreweryReviewDetailView({
         )}
         <div className="flex flex-wrap gap-2">
           <Link
-            href="/deck-brewery/reviews"
+            href={allReviewsHref}
             className="inline-flex min-h-10 items-center gap-2 border-2 border-border bg-card px-3 py-2 text-xs font-bold hover:border-primary"
           >
             <ArrowLeft className="h-4 w-4" /> All reviews

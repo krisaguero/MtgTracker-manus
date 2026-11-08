@@ -87,7 +87,8 @@ describe('Deck Brewery Showdowns', () => {
     expect(html).toContain('separate source sideboard; not in source main');
     expect(html).toContain('Repeatable tutor engine · not infinite');
     expect(html).toContain('Finite copy burst · not infinite');
-    expect(html).toContain('cards/named?exact=Gisa%20and%20Geralf');
+    expect(html).toContain('https://cards.scryfall.io/art_crop/');
+    expect(html).not.toContain('format=image');
   });
 
   it('keeps source commanders separate from suggested review command-zone choices and preserves Sedris count warning', () => {
@@ -96,6 +97,8 @@ describe('Deck Brewery Showdowns', () => {
     expect(html).toContain('Gisa and Geralf is proposed for the command zone');
     expect(html).toContain('still two cards short');
     expect(html).toContain('Vintage');
+    expect(html).toContain('Proposal · untested');
+    expect(html).toContain('Helm inferred');
     expect(html).not.toContain('At the helm · verified');
     expect(html).toContain('Gatherer — Sedris, the Traitor King');
   });
@@ -104,6 +107,7 @@ describe('Deck Brewery Showdowns', () => {
     const html = renderDetail('uprising-vs-coalition');
     expect(html).toContain('Tazri&#x27;s Allies @robogles');
     expect(html).toContain('Robogles title-level credit only');
+    expect(html).toContain('Title credit');
     expect(html).toContain('not a separate authorship, playtest, or endorsement claim');
     expect(html).toContain('proposed for the command zone');
   });
