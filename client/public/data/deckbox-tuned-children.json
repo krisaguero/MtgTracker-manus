@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "batchValidationSummary": {
     "status": "pass",
-    "childrenValidated": 45,
-    "scryfallCardNamesRequested": 2789,
+    "childrenValidated": 50,
+    "scryfallCardNamesRequested": 3114,
     "scryfallNamesUnresolved": 0,
     "scryfallApiErrors": 0,
-    "checkedAsOf": "2026-11-07",
+    "checkedAsOf": "2026-11-08",
     "scope": "100-card Commander count including command zone; source cut/add/zone-move reconciliation against visible public parent rows; Scryfall color identity, Commander legality, singleton, commander eligibility, and card type-line land count."
   },
   "children": [
@@ -37208,6 +37208,12 @@
       "edhrecContext": {
         "summary": "EDHREC's Krenko, Mob Boss page displays 45,158 total decks, mono-red identity, and the popular tags Goblins, Tokens, Aggro, and Combo. The opened filtered pages show Goblins as a 4,346-deck theme, Tokens as a 2,661-deck theme, and Aggro as a 1,858-deck theme; their visible Top Cards sections repeatedly surface Goblin Warchief, Skirk Prospector, Goblin Matron, Goblin Chieftain, Impact Tremors, Goblin Bombardment, Brightstone Ritual, Pashalik Mons, and related swarm payoffs. These are directional EDHREC signals…",
         "aggregateDeckCount": 45158,
+        "popularTags": {
+          "Goblins": "theme",
+          "Tokens": "theme",
+          "Aggro": "theme",
+          "Combo": "theme"
+        },
         "themeNotes": [
           {
             "title": "Goblins",
@@ -38483,10 +38489,16 @@
       "edhrecContext": {
         "summary": "The opened EDHREC commander page displays 17,170 total Kynaios and Tiro of Meletis decks and the visible popular tags Group Hug, Lands Matter, Wheels, and Card Draw; its Group Hug page displays 1,639 filtered decks. These signals support reading the child as a political group-hug engine with land/ramp, table-wide draw, and token pressure, while the exact card choices remain bounded to the source list and EDHREC is context rather than a copied list. No close 100-card Commander comparator is present in the source…",
         "aggregateDeckCount": 17170,
+        "popularTags": {
+          "Group Hug": "theme",
+          "Lands Matter": "theme",
+          "Wheels": "theme",
+          "Card Draw": "theme"
+        },
         "themeNotes": [
           {
-            "title": "EDHREC aggregate and theme context",
-            "summary": "The opened EDHREC commander page displays 17,170 total Kynaios and Tiro of Meletis decks and the visible popular tags Group Hug, Lands Matter, Wheels, and Card Draw; its Group Hug page displays 1,639 filtered decks. These signals support reading the child as a political group-hug engine with…",
+            "title": "EDHREC popular tags",
+            "summary": "Group Hug (theme), Lands Matter (theme), Wheels (theme), Card Draw (theme)",
             "url": "https://edhrec.com/commanders/kynaios-and-tiro-of-meletis"
           }
         ]
@@ -39237,6 +39249,12 @@
       "edhrecContext": {
         "summary": "EDHREC's Marath, Will of the Wild commander page displays 3,672 total decks and the popular tags +1/+1 Counters, Combo, Tokens, and Midrange; its opened +1/+1 Counters and Tokens pages show focused filtered populations of 494 and 180 decks. The Nature of the Beast precon page displays 42 total decks, with Marath, Will of the Wild listed at 42. These signals support the proposal's counters-and-token engine, but they are context only and no EDHREC decklist or card package was copied. No close Commander comparator…",
         "aggregateDeckCount": 3672,
+        "popularTags": {
+          "+1/+1 Counters": "theme",
+          "Combo": "theme",
+          "Tokens": "theme",
+          "Midrange": "theme"
+        },
         "themeNotes": [
           {
             "title": "+1/+1 Counters",
@@ -40259,6 +40277,12 @@
       "edhrecContext": {
         "summary": "On the opened Mayael the Anima commander page, EDHREC shows a Naya commander with 4,093 total decks and visible emphasis on Big Mana, Ramp, Stompy, and Good Stuff; these signals support the proposal's mana, large-creature, and midrange framing but do not supply or reproduce its card choices.",
         "aggregateDeckCount": 4093,
+        "popularTags": {
+          "Big Mana": 132,
+          "Ramp": 127,
+          "Stompy": 96,
+          "Good Stuff": 51
+        },
         "themeNotes": [
           {
             "title": "Big Mana",
@@ -41940,6 +41964,12 @@
       "edhrecContext": {
         "summary": "The opened EDHREC Mazirek commander page displays Golgari identity and the tagged themes +1/+1 Counters, Sacrifice, Aristocrats, and Tokens; those signals support this child’s token-fodder, sacrifice, counter-payoff, and recursion framing without treating EDHREC as a copied list. The visible average-deck page also presents an aggregate Mazirek shell with sacrifice outlets, token makers, counter support, recursion, ramp, interaction, and draw, which is context for the package roles rather than a template.",
         "aggregateDeckCount": 3766,
+        "popularTags": {
+          "+1/+1 Counters": 392,
+          "Sacrifice": 292,
+          "Aristocrats": 209,
+          "Tokens": 174
+        },
         "themeNotes": [
           {
             "title": "+1/+1 Counters",
@@ -42519,6 +42549,12 @@
       "edhrecContext": {
         "summary": "The opened EDHREC Mazirek commander page displays 3,766 total decks and frames the commander as Golgari; its visible popular tags are +1/+1 Counters (392), Sacrifice (292), Aristocrats (209), and Tokens (174). Those signals support this child’s existing counters-plus-sacrifice shell and its token and clue/value subpackages, but they are context for the trim rather than a copied EDHREC decklist.",
         "aggregateDeckCount": 3766,
+        "popularTags": {
+          "+1/+1 Counters": 392,
+          "Sacrifice": 292,
+          "Aristocrats": 209,
+          "Tokens": 174
+        },
         "themeNotes": [
           {
             "title": "+1/+1 Counters",
@@ -43516,6 +43552,4197 @@
           }
         ]
       }
+    },
+    {
+      "childSlug": "deck-meren-graveyardz-tuned-child-graveyard-aristocrats",
+      "title": "Meren - Graveyardz · Tuned Graveyard Aristocrats",
+      "sourceTitle": "Meren - Graveyardz",
+      "parentHref": "/deck-gallery/deck-meren-graveyardz",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 132,
+        "sideboardCopies": 4
+      },
+      "commanders": [
+        {
+          "name": "Meren of Clan Nel Toth",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "All 132 public main copies and 4 public sideboard copies are visible in the source list; source sections are not omitted. Although archived as Vintage, the title, visible commander row, oversized 132-copy singleton-like pool, and Meren graveyard structure support an oversized Commander reading. The visible Meren row—not an absent assignment—is moved to command.",
+      "edhrecContext": {
+        "summary": "Opened EDHREC reports 22,730 Meren decks; relevant tags are Reanimator 1.92K, Aristocrats 1.72K, Graveyard 705, and Sacrifice 500.",
+        "aggregateDeckCount": 22730,
+        "popularTags": {
+          "Reanimator": "theme",
+          "Aristocrats": "theme",
+          "Graveyard": "theme",
+          "Sacrifice": "theme"
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Reanimator (theme), Aristocrats (theme), Graveyard (theme), Sacrifice (theme)",
+            "url": "https://edhrec.com/commanders/meren-of-clan-nel-toth"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Meren converts creature deaths into experience and repeatable end-step recursion.",
+        "subthemes": "Aristocrats sacrifice outlets, graveyard self-mill/reanimation, ETB value, death triggers, and token fodder reinforce one another.",
+        "curveTempo": "Cuts remove slow seven/eight-mana bodies and redundant conditional spells; 38 lands and cheap creature ramp improve early setup.",
+        "interaction": "Putrefy, Golgari Charm, Shriekmaw, Acidic Slime, Viridian Zealot, Tribute to the Wild, edicts, and sweepers cover permanents and boards, with Meren recurring creature answers.",
+        "cardAdvantage": "Skullclamp, Phyrexian Arena, Corpse Augur, Disciple of Bolas, Wall of Blossoms, Wretched Confluence, Eternal Witness, and Grisly Salvage provide repeatable or burst advantage.",
+        "mana": "Exactly 38 lands remain, with Golgari creature ramp and artifact ramp supporting the four-mana commander and recursion curve.",
+        "closingPlan": "Avenger, Spider Spawning, Zombie Infestation, Eldrazi Monument, Mazirek, Jarad, and Overwhelming Stampede turn the sacrifice engine into lethal pressure.",
+        "coherence": "The child keeps the visible Meren core, removes exactly 32 excess/low-synergy copies, and reaches a legal singleton 99-card main without reconstructing hidden rows."
+      },
+      "roleEstimates": {
+        "land": 38,
+        "ramp": 14,
+        "card_advantage": 9,
+        "interaction": 8,
+        "protection": 1,
+        "engine": 8,
+        "theme_support": 9,
+        "threat_finisher": 9,
+        "tutor": 3,
+        "other": 0
+      },
+      "main": [
+        {
+          "name": "Acidic Slime",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Animate Dead",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Avenger of Zendikar",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Barter in Blood",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Black Sun's Zenith",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Blood Bairn",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Buried Alive",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Butcher of Malakir",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Centaur Vinecrasher",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Corpse Augur",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Darksteel Ingot",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Decree of Pain",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Diabolic Servitude",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Disciple of Bolas",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Eldrazi Monument",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Eternal Witness",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Exhume",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Forest",
+          "quantity": 12,
+          "role": "land"
+        },
+        {
+          "name": "Golgari Charm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Golgari Guildgate",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Golgari Rot Farm",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Golgari Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Grim Backwoods",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Grisly Salvage",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Harrow",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "High Market",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Jarad's Orders",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Jarad, Golgari Lich Lord",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Jungle Hollow",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Krosan Tusker",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Lightning Greaves",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Lotleth Troll",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Makeshift Mannequin",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mazirek, Kraul Death Priest",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Overwhelming Stampede",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Pattern of Rebirth",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Phyrexian Arena",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Polluted Mire",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Primal Growth",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Putrefy",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Putrid Imp",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Reanimate",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Sakura-Tribe Elder",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Satyr Wayfinder",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Scourge of Nel Toth",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Sepulchral Primordial",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Shriekmaw",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Skullwinder",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Slippery Karst",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Solemn Simulacrum",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Spider Spawning",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 13,
+          "role": "land"
+        },
+        {
+          "name": "Tainted Wood",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thief of Blood",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Thought Vessel",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Thran Dynamo",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Tribute to the Wild",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Verdant Force",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Veteran Explorer",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Victimize",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Viridian Emissary",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Viridian Zealot",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Viscera Seer",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Vivid Grove",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Vivid Marsh",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Vulturous Zombie",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Wall of Blossoms",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Wood Elves",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Wretched Confluence",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Yavimaya Elder",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Zombie Infestation",
+          "quantity": 1,
+          "role": "theme_support"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Meren of Clan Nel Toth",
+            "quantity": 1,
+            "from": "main",
+            "to": "command",
+            "reason": "Moves the one visible Meren row to the command zone."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Indrik Stomphowler",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Far Wanderings",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Avatar of Woe",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Bonehoard",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Rise from the Grave",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Terastodon",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Extractor Demon",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Mulch",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Mycoloth",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Korozda Guildmage",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Consuming Vapors",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Great Oak Guardian",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Necrogenesis",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Altar's Reap",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Stitch Together",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Eater of Hope",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Ambition's Cost",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Gaze of Granite",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Champion of Stray Souls",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Banshee of the Dread Choir",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Phyrexian Plaguelord",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Kessig Cagebreakers",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Sudden Reclamation",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Armillary Sphere",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Phyrexian Rager",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Dread Summons",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Cloudthresher",
+            "quantity": 1,
+            "reason": "Trimmed for a tighter Meren graveyard/sacrifice curve or singleton compliance."
+          },
+          {
+            "name": "Diabolic Servitude",
+            "quantity": 1,
+            "reason": "Removed one duplicate copy to enforce Commander singleton construction."
+          },
+          {
+            "name": "Golgari Signet",
+            "quantity": 1,
+            "reason": "Removed one duplicate copy to enforce Commander singleton construction."
+          },
+          {
+            "name": "Skullclamp",
+            "quantity": 1,
+            "reason": "Removed one duplicate copy to enforce Commander singleton construction."
+          },
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "reason": "Removed one duplicate copy to enforce Commander singleton construction."
+          },
+          {
+            "name": "Victimize",
+            "quantity": 1,
+            "reason": "Removed one duplicate copy to enforce Commander singleton construction."
+          }
+        ],
+        "adds": [],
+        "swaps": []
+      },
+      "relatedPublicBuilds": [
+        {
+          "title": "Araumi of the Dead Tide · graveyard & encore",
+          "commander": "Araumi of the Dead Tide",
+          "format": "Custom 60-card Brawlternative / Commander preview; adjacent context only, not a 100-card Commander template",
+          "publicHref": "/brawl-box/araumi-of-the-dead-tide",
+          "relation": "Graveyard/recursion comparator only."
+        }
+      ],
+      "evidence": [
+        {
+          "label": "EDHREC Meren commander page",
+          "url": "https://edhrec.com/commanders/meren-of-clan-nel-toth",
+          "usedFor": "Opened page shows 22,730 decks, Golgari, and Reanimator/Aristocrats/Graveyard/Sacrifice tags."
+        },
+        {
+          "label": "Official Commander rules",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "99 cards plus commander, singleton except basic lands, and color identity rules."
+        },
+        {
+          "label": "Scryfall Meren record",
+          "url": "https://scryfall.com/card/tdc/297/meren-of-clan-nel-toth",
+          "usedFor": "Meren type line, Golgari identity, and Commander Legal status."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 77,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "B",
+          "G"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 38,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-08",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      }
+    },
+    {
+      "childSlug": "deck-mirri-duelist-tuned-child-mirri-weatherlight-duelist-selesnya-cats-tokens-combat-control",
+      "title": "Mirri, Weatherlight Duelist — Selesnya Cats, Tokens & Combat Control",
+      "sourceTitle": "Mirri Duelist",
+      "parentHref": "/deck-gallery/deck-mirri-duelist",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 72,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Mirri, Weatherlight Duelist",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "The public parent exposes 72 main copies and no sideboard, with Mirri visibly listed in main and no omitted source sections indicated. The source is therefore treated as an incomplete Commander-shaped visible shell despite its archived Vintage label. This hypothetical child adds exactly 28 new cards; it does not reconstruct hidden or missing parent rows.",
+      "edhrecContext": {
+        "summary": "The opened EDHREC page identifies 2,297 Mirri decks, Selesnya identity, and popular Cats, Equipment, Voltron, and Kaheera Companion themes. Its top-card direction supports efficient removal, boots, ramp, Cat payoffs, protection, and Arahbo; this child uses those themes without copying an aggregate list.",
+        "aggregateDeckCount": 2297,
+        "popularTags": {
+          "Cats": 141,
+          "Equipment": 121,
+          "Voltron": 76,
+          "Kaheera Companion": 69
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Cats (141), Equipment (121), Voltron (76), Kaheera Companion (69)",
+            "url": "https://edhrec.com/commanders/mirri-weatherlight-duelist"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Mirri attacks to limit each opponent to one blocker, then remains a defensive combat-control piece when tapped; the child uses that geometry to make token attacks safer while protecting her with boots and instant-speed shields.",
+        "subthemes": "Selesnya Cats and token go-wide are the core packages: Regal Caracal, Arahbo, Feline Sovereign, King of the Pride, and Qasali Slingers build Cat density, while Anointed Procession, Avenger, From Beyond, Eyeless Watcher, and token lands supply bodies. Beastmaster Ascension, counters, and equipment convert the board into pressure.",
+        "curveTempo": "The added one- and two-mana ramp plus 37 lands smooth the opening, with three- and four-mana engines and interaction supporting a midgame board. Expensive cards are concentrated in a small finisher and stabilizer band rather than relying on the source list’s isolated top end.",
+        "interaction": "Swords, Path, Aura Mutation, Selesnya Charm, Beast Within, Generous Gift, Aura Shards, Return to Nature, Qasali Pridemage, Manglehorn, and the existing combat-tax effects cover creatures, problematic permanents, and artifacts/enchantments.",
+        "cardAdvantage": "Guardian Project, Toski, Skullclamp, and Welcoming Vampire add repeatable or burst draw; Growing Rites, From Beyond, and token production provide material advantage that Skullclamp and Toski can convert into cards.",
+        "mana": "The final main deck has exactly 37 lands. Existing Forests, Plains, utility lands, and duals are retained; Temple Garden, Sungrass Prairie, Canopy Vista, Gavony Township, Myriad Landscape, and Blighted Woodland improve color access, counter scaling, and late land development. Scryfall records checked the proposed cards as Commander-legal and within Mirri’s green-white identity or colorless.",
+        "closingPlan": "Build a protected wide board, grow Cats and tokens with anthems/counters, then finish with Craterhoof Behemoth, Overwhelming Stampede, Beastmaster Ascension, or a favorable Mirri-led combat step.",
+        "coherence": "The parent’s visible 72-card shell already points toward Selesnya tokens, Cats, and combat control. The exact 28-card completion adds the missing land density, redundant ramp, draw, flexible answers, protection, tribal payoffs, and two clean go-wide closers without changing any visible parent card."
+      },
+      "roleEstimates": {
+        "land": 37,
+        "ramp": 11,
+        "card_advantage": 4,
+        "interaction": 16,
+        "protection": 6,
+        "engine": 2,
+        "theme_support": 15,
+        "threat_finisher": 8,
+        "tutor": 0,
+        "other": 0
+      },
+      "main": [
+        {
+          "name": "Anointed Procession",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Aura Mutation",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Authority of the Consuls",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Avenger of Zendikar",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Bastion Protector",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Beastmaster Ascension",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Bellowing Aegisaur",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Broodhatch Nantuko",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Conduit of Ruin",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Court Street Denizen",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Cryptolith Rite",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Cultivate",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Dragonlord Dromoka",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Eyeless Watcher",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Forest",
+          "quantity": 10,
+          "role": "land"
+        },
+        {
+          "name": "From Beyond",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Haazda Snare Squad",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Hornet Nest",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Imposing Sovereign",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Karametra, God of Harvests",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Kodama's Reach",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Krosan Verge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Lightning Greaves",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Loxodon Gatekeeper",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Manglehorn",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Mosswort Bridge",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Mystic Barrier",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Oran-Rief, the Vastwood",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Plains",
+          "quantity": 10,
+          "role": "land"
+        },
+        {
+          "name": "Qasali Pridemage",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Rampant Growth",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Ranging Raptors",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Regal Caracal",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Rogue's Passage",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Saber Ants",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Selesnya Charm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Selesnya Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Sentinel of the Eternal Watch",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Spawning Bed",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Stuffy Doll",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Sunpetal Grove",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Swords to Plowshares",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Temple of the False God",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Territorial Hammerskull",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Thalia, Heretic Cathar",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Void Winnower",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Wastes",
+          "quantity": 2,
+          "role": "land"
+        },
+        {
+          "name": "Windbrisk Heights",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Temple Garden",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sungrass Prairie",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Canopy Vista",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Gavony Township",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Myriad Landscape",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Blighted Woodland",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Nature's Lore",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Three Visits",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Skyshroud Claim",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Guardian Project",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Toski, Bearer of Secrets",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Welcoming Vampire",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Path to Exile",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Beast Within",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Generous Gift",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Aura Shards",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Return to Nature",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Heroic Intervention",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Teferi's Protection",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Flawless Maneuver",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Feline Sovereign",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Arahbo, the First Fang",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Craterhoof Behemoth",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Overwhelming Stampede",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "King of the Pride",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Qasali Slingers",
+          "quantity": 1,
+          "role": "theme_support"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Mirri, Weatherlight Duelist",
+            "quantity": 1,
+            "from": "main",
+            "to": "command",
+            "reason": "The visible parent includes Mirri in main; this proposed Commander revision assigns that visible copy to the command zone."
+          }
+        ],
+        "cuts": [],
+        "adds": [
+          {
+            "name": "Temple Garden",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Improves untapped Selesnya access while increasing the complete Commander mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sungrass Prairie",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a reliable colored source for a two-color curve.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Canopy Vista",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a green-white dual that supports the 37-land, multiplayer mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Gavony Township",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Turns spare mana into team-wide counters, reinforcing tokens and combat.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Myriad Landscape",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Provides late-game land ramp and helps hit the six-plus mana finishers.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Blighted Woodland",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Converts a land drop into two basics when the deck needs to go wide and tall.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Nature's Lore",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Low-cost ramp that finds a Forest dual and accelerates Mirri or a token engine.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Three Visits",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Redundant two-mana land ramp improves early tempo and color consistency.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Skyshroud Claim",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "A four-mana burst of two lands supports the high-end token and finisher package.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Efficient color fixing that fills the gap between Sol Ring and the three-mana ramp spells.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Guardian Project",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Repeatable creature-entry cards keep a go-wide creature deck from running out of gas.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Toski, Bearer of Secrets",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Rewards Mirri’s favorable attacks and resilient token combat with repeatable draw.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Skullclamp",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Converts expendable tokens into cards and makes From Beyond and Avenger more valuable.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Welcoming Vampire",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Adds steady draw from the deck’s many small token and utility creatures.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Path to Exile",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Efficient exile removal complements Swords against a broad commander table.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Beast Within",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Flexible instant-speed answer to any permanent type.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Generous Gift",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Second flexible answer that prevents problematic noncreatures from stalling the combat plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Aura Shards",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Turns the deck’s creature and token production into repeatable artifact/enchantment interaction.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Return to Nature",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Low-cost graveyard, artifact, or enchantment interaction for common multiplayer problems.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Heroic Intervention",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Protects a developed board from sweepers while preserving the go-wide plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Teferi's Protection",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Premium one-card defense for Mirri, tokens, and the board at a critical turn.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Flawless Maneuver",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Often protects the board for zero mana while Mirri is in the command zone or battlefield.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Feline Sovereign",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Adds a Cat payoff that protects the tribe and pressures opposing artifacts and enchantments.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Arahbo, the First Fang",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Provides Cat token production and a combat counter package that complements Regal Caracal.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Craterhoof Behemoth",
+            "quantity": 1,
+            "role": "threat_finisher",
+            "reason": "Converts a wide token board into a decisive combat kill.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Overwhelming Stampede",
+            "quantity": 1,
+            "role": "threat_finisher",
+            "reason": "A second scalable overrun effect that uses Mirri’s favorable attack geometry.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "King of the Pride",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Efficient Cat lord that raises the floor of the tribal go-wide plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Qasali Slingers",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Cat tribal interaction that scales with the creature count and protects the board’s tempo.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": []
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "EDHREC commander page",
+          "url": "https://edhrec.com/commanders/mirri-weatherlight-duelist",
+          "usedFor": "Opened aggregate and recommendation evidence: 2,297 decks; Selesnya; Cats, Equipment, Voltron, and Kaheera Companion tags; top-card direction including Swords, Path, Swiftfoot Boots, Cultivate, Regal Caracal, Feline Sovereign, Heroic Intervention, Arahbo, and Rampant Growth."
+        },
+        {
+          "label": "EDHREC Cats theme page",
+          "url": "https://edhrec.com/commanders/mirri-weatherlight-duelist/cats",
+          "usedFor": "Relevant Cat package recommendations and theme direction."
+        },
+        {
+          "label": "Scryfall Mirri record",
+          "url": "https://scryfall.com/card/cmm/347/mirri-weatherlight-duelist",
+          "usedFor": "Commander identity and card record."
+        },
+        {
+          "label": "Official Commander rules",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "99-card main deck plus commander, singleton, and color-identity constraints."
+        },
+        {
+          "label": "Official Feline Ferocity precon context",
+          "url": "https://edhrec.com/precons/feline-ferocity/mirri-weatherlight-duelist",
+          "usedFor": "Mirri precon association and Commander context, not copied as a decklist."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 81,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "G",
+          "W"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 37,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-08",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-mirri-the-cursed-edh-tuned-child-mirri-the-cursed-cursed-vampire-voltron",
+      "title": "Mirri the Cursed — Cursed Vampire Voltron",
+      "sourceTitle": "Mirri the Cursed EDH",
+      "parentHref": "/deck-gallery/deck-mirri-the-cursed-edh",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Mirri the Cursed",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "Public parent visibly supplies 100 main copies, 99 named entries plus 36 Swamps quantity, no sideboard, and no omitted sections. Mirri is visible in main, but commander assignment is marked best-fit/inferred rather than explicit metadata; this child does not reconstruct hidden rows.",
+      "edhrecContext": {
+        "summary": "Opened EDHREC supports equipment/Voltron/Vampire/+1/+1-counter direction for Mirri and points to the principal upgrades used here.",
+        "aggregateDeckCount": 148,
+        "popularTags": {
+          "Equipment (12)": "theme",
+          "Voltron (11)": "theme",
+          "Vampires (5)": "theme",
+          "+1/+1 Counters (4)": "theme"
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Equipment (12) (theme), Voltron (11) (theme), Vampires (5) (theme), +1/+1 Counters (4) (theme)",
+            "url": "https://edhrec.com/commanders/mirri-the-cursed"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Cast Mirri on curve, protect her, and use flying, haste, first strike, and combat damage to creatures to grow counters while attacking.",
+        "subthemes": "Vampire lords/payoffs form the creature base; equipment and counters make Mirri the primary combat threat; Blood Artist, Falkenrath Noble, Grave Pact, and Sanguine Bond provide sacrifice/drain support.",
+        "curveTempo": "Cuts remove seven-mana Phthisis and conditional or low-impact bodies; additions improve early mana, protection, interaction, and equipment tempo for tuned casual play, not cEDH.",
+        "interaction": "Edicts, Doom Blade, Geth’s Verdict, Tragic Slip, Gatekeeper, and Profane Command are supplemented by Feed the Swarm, Go for the Throat, and Toxic Deluge.",
+        "cardAdvantage": "Phyrexian Arena, Sign in Blood, Skullclamp, Anowon, Bloodhusk Ritualist, and Skeletal Vampire supply repeatable or burst cards, with sacrifice triggers adding value.",
+        "mana": "Exactly 37 lands: 36 Swamps plus Bojuka Bog. Sol Ring, Arcane Signet, Charcoal Diamond, Wayfarer’s Bauble, rituals, Crypt Ghast, Nirkana Revenant, Pawn of Ulamog, and Solemn Simulacrum support the curve.",
+        "closingPlan": "Protect and enlarge Mirri with Lashwrithe, Nightmare Lash, Strata Scythe, Sword of Vengeance, Basilisk Collar, and Blackblade Reforged; Vampire lords widen the board and drain effects finish stalled games.",
+        "coherence": "Preserves the visible mono-black Vampire, Swamp-scaling, sacrifice/drain, and equipment strengths while exactly trading ten narrow, slow, or low-impact cards for acceleration, protection, flexible interaction, a wipe, a stronger equipment payoff, and a counter engine."
+      },
+      "roleEstimates": {
+        "land": 37,
+        "ramp": 11,
+        "card_advantage": 7,
+        "interaction": 11,
+        "protection": 3,
+        "engine": 6,
+        "theme_support": 15,
+        "threat_finisher": 8,
+        "tutor": 1,
+        "other": 0
+      },
+      "main": [
+        {
+          "name": "Adaptive Automaton",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Anowon, the Ruin Sage",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Ascendant Evincar",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Baron Sengir",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Basilisk Collar",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Blade of the Bloodchief",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Blood Artist",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Blood Seeker",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Bloodhusk Ritualist",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Bloodline Keeper // Lord of Lineage",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Bloodlord of Vaasgoth",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Bojuka Bog",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Butcher of Malakir",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Cabal Ritual",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Captivating Vampire",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Cruel Edict",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Crypt Ghast",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Culling the Weak",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Dark Ritual",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Darksteel Plate",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Diabolic Tutor",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Doom Blade",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Drana, Kalastria Bloodchief",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Falkenrath Noble",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Gatekeeper of Malakir",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Geth's Verdict",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Grave Pact",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Guul Draz Assassin",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Hero's Demise",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Kalastria Highborn",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Lashwrithe",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Malakir Bloodwitch",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Mephidross Vampire",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Necropolis Regent",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Nightmare Lash",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Nirkana Cutthroat",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Nirkana Revenant",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Pawn of Ulamog",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Phyrexian Arena",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Profane Command",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Sangromancer",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Sanguine Bond",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Sign in Blood",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Skeletal Vampire",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Solemn Simulacrum",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Strata Scythe",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 36,
+          "role": "land"
+        },
+        {
+          "name": "Sword of Vengeance",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Tragic Slip",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Tribute to Hunger",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Vampire Nighthawk",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vampire Nocturnus",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vampire Outcasts",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Charcoal Diamond",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Wayfarer's Bauble",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Feed the Swarm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Go for the Throat",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Toxic Deluge",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Blackblade Reforged",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Drana, Liberator of Malakir",
+          "quantity": 1,
+          "role": "theme_support"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Mirri the Cursed",
+            "quantity": 1,
+            "from": "main",
+            "to": "command",
+            "reason": "Visible Mirri is assigned best-fit as commander; moving it to command produces the required 99-card main."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Arrogant Bloodlord",
+            "quantity": 1,
+            "reason": "Low-impact body without the core Vampire, sacrifice, or Mirri-voltron role."
+          },
+          {
+            "name": "Balustrade Spy",
+            "quantity": 1,
+            "reason": "Four-mana creature with incidental mill is lower tempo than focused upgrades."
+          },
+          {
+            "name": "Devour in Shadow",
+            "quantity": 1,
+            "reason": "Four-mana removal is inefficient and costs life."
+          },
+          {
+            "name": "Feast of Blood",
+            "quantity": 1,
+            "reason": "Conditional two-Vampire removal is less reliable."
+          },
+          {
+            "name": "Phthisis",
+            "quantity": 1,
+            "reason": "Seven-mana sorcery is too slow for tuned casual tempo."
+          },
+          {
+            "name": "Quag Vampires",
+            "quantity": 1,
+            "reason": "Low-ceiling scalable body does not advance equipment/counters."
+          },
+          {
+            "name": "Terror",
+            "quantity": 1,
+            "reason": "Narrow removal misses black and artifact creatures."
+          },
+          {
+            "name": "Urge to Feed",
+            "quantity": 1,
+            "reason": "Conditional tribal combat trick is less useful than protection."
+          },
+          {
+            "name": "Vengeful Vampire",
+            "quantity": 1,
+            "reason": "Expensive body lacks immediate value."
+          },
+          {
+            "name": "Soul Collector",
+            "quantity": 1,
+            "reason": "Five-mana creature with conditional recursion is slow."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Early acceleration for Mirri and equipment.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Reliable two-mana mana rock.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Charcoal Diamond",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Early ramp for the four-mana commander.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Wayfarer's Bauble",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Basic-land ramp and better land development.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Feed the Swarm",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Flexible enchantment and creature interaction.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Go for the Throat",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Efficient instant-speed creature removal.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Toxic Deluge",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Scalable reset against wide boards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Haste and protection for Mirri.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Blackblade Reforged",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "High-impact equipment payoff for Swamp scaling.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Drana, Liberator of Malakir",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Vampire combat and +1/+1-counter engine.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Arrogant Bloodlord",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Early acceleration for Mirri and equipment."
+          },
+          {
+            "cut": {
+              "name": "Balustrade Spy",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Reliable two-mana mana rock."
+          },
+          {
+            "cut": {
+              "name": "Devour in Shadow",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Charcoal Diamond",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Early ramp for the four-mana commander."
+          },
+          {
+            "cut": {
+              "name": "Feast of Blood",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Wayfarer's Bauble",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Basic-land ramp and better land development."
+          },
+          {
+            "cut": {
+              "name": "Phthisis",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Feed the Swarm",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Flexible enchantment and creature interaction."
+          },
+          {
+            "cut": {
+              "name": "Quag Vampires",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Go for the Throat",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Efficient instant-speed creature removal."
+          },
+          {
+            "cut": {
+              "name": "Terror",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Toxic Deluge",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Scalable reset against wide boards."
+          },
+          {
+            "cut": {
+              "name": "Urge to Feed",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Swiftfoot Boots",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Haste and protection for Mirri."
+          },
+          {
+            "cut": {
+              "name": "Vengeful Vampire",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Blackblade Reforged",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "High-impact equipment payoff for Swamp scaling."
+          },
+          {
+            "cut": {
+              "name": "Soul Collector",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Drana, Liberator of Malakir",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Vampire combat and +1/+1-counter engine."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "EDHREC Mirri the Cursed commander page",
+          "url": "https://edhrec.com/commanders/mirri-the-cursed",
+          "usedFor": "Opened current page: 148 decks, mono-black, popular tags Equipment 12, Voltron 11, Vampires 5, +1/+1 Counters 4; top cards include Blackblade Reforged, Swiftfoot Boots, and Feed the Swarm."
+        },
+        {
+          "label": "Scryfall Mirri the Cursed record",
+          "url": "https://api.scryfall.com/cards/named?exact=Mirri%20the%20Cursed",
+          "usedFor": "Verified Legendary Creature — Vampire Cat, mono-black identity, and Commander legality."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 65,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "B"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 37,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-08",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-nahiri-s-gear-tuned-child-nahiri-s-gear-lithomancer-s-foundry",
+      "title": "Nahiri's Gear — Lithomancer's Foundry",
+      "sourceTitle": "Nahiri's Gear",
+      "parentHref": "/deck-gallery/deck-nahiri-s-gear",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 67,
+        "sideboardCopies": 2
+      },
+      "commanders": [
+        {
+          "name": "Nahiri, the Lithomancer",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "Public source list exposes 67 main and 2 sideboard copies; 66 noncommander main rows are retained and Nahiri is moved from its visible main row to command. No omitted sections are reported, but the source has only six identifiable lands and is 33 cards short. Additions are hypothetical, not ownership claims. The official precon is corroboration, not a claim that this parent was that list.",
+      "edhrecContext": {
+        "summary": "Opened EDHREC reports 924 total decks; visible popular tags are Equipment 139, Tokens 20, Voltron 20, Artifacts 15, Kor 8, Modified Creatures 6, Planeswalkers 5, Aggro 4.",
+        "aggregateDeckCount": 924,
+        "popularTags": {
+          "Equipment (139)": "theme",
+          "Tokens (20)": "theme",
+          "Voltron (20)": "theme",
+          "Artifacts (15)": "theme",
+          "Kor (8)": "theme",
+          "Modified Creatures (6)": "theme",
+          "Planeswalkers (5)": "theme",
+          "Aggro (4)": "theme"
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Equipment (139) (theme), Tokens (20) (theme), Voltron (20) (theme), Artifacts (15) (theme), Kor (8) (theme), Modified Creatures (6) (theme), Planeswalkers (5) (theme), Aggro (4) (theme)",
+            "url": "https://edhrec.com/commanders/nahiri-the-lithomancer"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Nahiri makes Kor bodies, attaches Equipment, and recurs Equipment from hand or graveyard; she is the central value engine.",
+        "subthemes": "Equipment/Voltron, Kor tokens, artifact ramp, recursion, and compact mono-white control/protection.",
+        "curveTempo": "The source is top-heavy; 37 lands and early mana artifacts support the five-mana commander and equip turns.",
+        "interaction": "Dispatch, Revoke Existence, Seal of Cleansing, Karmic Justice, Dispense Justice, Descend upon the Sinful, Aven Mindcensor, Ghostly Prison, and Blind Obedience cover board, artifact/enchantment, combat, and tutor interaction.",
+        "cardAdvantage": "Sram, Puresteel Paladin, Stone Haven Outfitter, Mentor, Skullclamp, War Room, and Reliquary Tower sustain cards from Equipment, tokens, and excess mana.",
+        "mana": "Exactly 37 lands: six visible lands plus 20 Plains and 11 added utility lands; this is within the tuned-casual 28–40 range.",
+        "closingPlan": "Protect an evasive equipped Kor or other attacker, then finish with Argentum Armor, Fireshrieker, Scytheclaw, Warhammer, or Nahiri’s Stoneforged Blade.",
+        "coherence": "Preserves all 66 visible noncommander rows, promotes both visible sideboard cards, and adds only a labeled mana/utility package; it does not reconstruct hidden rows."
+      },
+      "roleEstimates": {
+        "land": 37,
+        "ramp": 9,
+        "card_advantage": 5,
+        "interaction": 9,
+        "protection": 5,
+        "engine": 3,
+        "theme_support": 27,
+        "threat_finisher": 4,
+        "tutor": 0,
+        "other": 0
+      },
+      "main": [
+        {
+          "name": "Archetype of Courage",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Argentum Armor",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Armory Automaton",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Assault Suit",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Auriok Edgewright",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Avacynian Missionaries // Lunarch Inquisitors",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Avarice Amulet",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Aven Mindcensor",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Banshee's Blade",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Blind Obedience",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Bonehoard",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Brass Squire",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Buried Ruin",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Burnished Hart",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Caged Sun",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Chitinous Cloak",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Deathrender",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Descend upon the Sinful",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Desert of the True",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Dispatch",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Dispense Justice",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Empyrial Plate",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Everflowing Chalice",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Fireshrieker",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Ghostly Prison",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Gift of Estates",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Golem-Skin Gauntlets",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Gorgon Flail",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Haunted Plate Mail",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Hedron Archive",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Inquisitor's Flail",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Inventors' Fair",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Karmic Justice",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Kemba, Kha Regent",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Kor Duelist",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Lightning Greaves",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Loxodon Punisher",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Loxodon Warhammer",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Mask of Avacyn",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Mentor of the Meek",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Mind Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Myr Adapter",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Ogre's Cleaver",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Prowler's Helm",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Puresteel Paladin",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Revoke Existence",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Ring of Thune",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Rogue's Passage",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Scytheclaw",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Seal of Cleansing",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Secluded Steppe",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Selfless Squire",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sigil of Valor",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Slayer's Plate",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Solemn Simulacrum",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Sram, Senior Edificer",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Stone Haven Outfitter",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Sun Titan",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sword of the Animist",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Temple of the False God",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thran Dynamo",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Trailblazer's Boots",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vorrac Battlehorns",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Demonmail Hauberk",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Thunder Totem",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Plains",
+          "quantity": 20,
+          "role": "land"
+        },
+        {
+          "name": "Eiganjo Castle",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Emeria, the Sky Ruin",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Hall of Heliod's Generosity",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Mistveil Plains",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Myriad Landscape",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Reliquary Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sejiri Steppe",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Strip Mine",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "War Room",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Windbrisk Heights",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Plaza of Heroes",
+          "quantity": 1,
+          "role": "land"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Nahiri, the Lithomancer",
+            "quantity": 1,
+            "from": "main",
+            "to": "command",
+            "reason": "Visible Nahiri row is assigned as the best-fit inferred commander; it is moved to the legal command zone."
+          }
+        ],
+        "cuts": [],
+        "adds": [
+          {
+            "name": "Demonmail Hauberk",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Promotes the visible sideboard Equipment as a recursion/sacrifice utility piece.",
+            "sourceClass": "public_sideboard"
+          },
+          {
+            "name": "Thunder Totem",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Promotes the visible sideboard artifact as flexible ramp and a late creature body.",
+            "sourceClass": "public_sideboard"
+          },
+          {
+            "name": "Plains",
+            "quantity": 20,
+            "role": "land",
+            "reason": "Adds the missing basic-mana backbone for a five-mana commander and repeated equip costs.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Eiganjo Castle",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Emeria, the Sky Ruin",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Hall of Heliod's Generosity",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Mistveil Plains",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Myriad Landscape",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Reliquary Tower",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sejiri Steppe",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Strip Mine",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "War Room",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Windbrisk Heights",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Plaza of Heroes",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a white source or utility land to repair the underfilled public mana base.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": []
+      },
+      "relatedPublicBuilds": [
+        {
+          "title": "Dr. Madison Li · Fallout energy & artifacts",
+          "commander": "Dr. Madison Li",
+          "format": "Adjacent context only: custom 60-card Brawlternative / Commander preview, not a 100-card Commander template.",
+          "publicHref": "/brawl-box/dr-madison-li",
+          "relation": "Artifact/value framing only; not a decklist source."
+        }
+      ],
+      "evidence": [
+        {
+          "label": "EDHREC commander page",
+          "url": "https://edhrec.com/commanders/nahiri-the-lithomancer",
+          "usedFor": "Opened aggregate: 924 decks; mono-white; Equipment/Tokens/Voltron/Artifacts tags."
+        },
+        {
+          "label": "Scryfall card record",
+          "url": "https://api.scryfall.com/cards/named?exact=Nahiri%2C%20the%20Lithomancer",
+          "usedFor": "Commander-capable wording, W identity, type line, and Commander legality."
+        },
+        {
+          "label": "Forged in Stone precon data",
+          "url": "https://mtgjson.com/api/v5/decks/ForgedInStone_C14.json",
+          "usedFor": "Official-product lineage and Nahiri Commander evidence."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 81,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "W"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 37,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-08",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      }
+    },
+    {
+      "childSlug": "deck-olivia-edh-tuned-child-olivia-voldaren-blood-court-control",
+      "title": "Olivia Voldaren — Blood-Court Control",
+      "sourceTitle": "Olivia EDH",
+      "parentHref": "/deck-gallery/deck-olivia-edh",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Olivia Voldaren",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "The public parent exposes exactly 100 main copies, 0 sideboard copies, no omitted sections, and one visible Olivia Voldaren in main. Its archived format label is Vintage and display status is count-compatible but unverified; the visible singleton-heavy 100-card structure, title “Olivia EDH,” and assigned commander make a hypothetical Commander child responsible. Olivia is treated as a best-fit inferred commander and moved from the visible main to the command zone; the parent itself is unchanged. No hidden rows are reconstructed.",
+      "edhrecContext": {
+        "summary": "Opened EDHREC’s Olivia Voldaren page: 2,932 total decks, Rakdos, with visible popular tags Vampires, Theft, +1/+1 Counters, Control, Lifegain, Aggro, Aristocrats, and Voltron. The child emphasizes the strongest visible Vampire/Theft/Aristocrats/Control directions for tuned casual play.",
+        "aggregateDeckCount": 2932,
+        "popularTags": {
+          "Vampires (234)": "theme",
+          "Theft (79)": "theme",
+          "+1/+1 Counters (64)": "theme",
+          "Control (48)": "theme",
+          "Lifegain (46)": "theme",
+          "Aggro (25)": "theme",
+          "Aristocrats (23)": "theme",
+          "Voltron (20)": "theme"
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Vampires (234) (theme), Theft (79) (theme), +1/+1 Counters (64) (theme), Control (48) (theme), Lifegain (46) (theme), Aggro (25) (theme), Aristocrats (23) (theme), Voltron (20) (theme)",
+            "url": "https://edhrec.com/commanders/olivia-voldaren"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Olivia Voldaren is the repeatable removal-and-threat engine: use her first ability to steal small creatures, then sacrifice or convert them into value while her second ability grows her and pressures the table. The child protects her and supplies a broader vampire board so every activation matters.",
+        "subthemes": "Primary package is Rakdos Vampires: Captivating Vampire, Stromkirk Captain, Door of Destinies, Shared Animosity, Vanquisher’s Banner, Cordial Vampire, Socialite, Bloodchief effects, and tribal finishers. Secondary package is sacrifice/death value: Blood Artist, Falkenrath Noble, Grave Pact, Butcher of Malakir, Pawn of Ulamog, Deadly Dispute, Victimize, and Patriarch’s Bidding.",
+        "curveTempo": "The 36-land shell plus ten mana accelerants starts Olivia and tribal payoffs earlier, while cheap interaction and one-to-three-mana vampires avoid the parent’s concentration of expensive, narrow finishers. Sixteen basic lands and 20 utility/dual lands keep the mana functional without pretending this is cEDH.",
+        "interaction": "Spot removal is upgraded with Terminate, Bedevil, Chaos Warp, Go for the Throat, Feed the Swarm, Doom Blade, Hero’s Demise, Gatekeeper, and Rakdos Charm; Olivia herself adds repeatable creature control, while Grave Pact and Butcher punish opposing boards.",
+        "cardAdvantage": "Phyrexian Arena, Skullclamp, Anowon, Sangromancer, Spiteful Visions, Deadly Dispute, Victimize, Patriarch’s Bidding, Vanquisher’s Banner, and Olivia’s stolen creatures provide repeatable, burst, and graveyard-based advantage.",
+        "mana": "Exact final main-deck land total is 36: 20 nonbasic lands, 10 Swamps, and 6 Mountains. Sol Ring, Arcane Signet, Fellwar Stone, Wayfarer’s Bauble, Star Compass, Solemn Simulacrum, Crypt Ghast, Nirkana Revenant, and Pawn of Ulamog support a midrange curve. Scryfall card records should be checked again by centralized validation for names, types, identities, and current Commander legality.",
+        "closingPlan": "Close through a wide vampire attack enhanced by Shared Animosity, Door of Destinies, Stensia Masquerade, and Vampire Nocturnus; alternatively, assemble Blood Artist/Falkenrath Noble/Grave Pact attrition, Vito plus life swings, or repeated Olivia theft and commander damage.",
+        "coherence": "The parent’s visible 100-card pile already signals Vampires, sacrifice, counters, and black-mana scaling, but mixes one-shot rituals, narrow removal, and disconnected equipment. This child keeps the recognizable vampire identity, moves the inferred commander correctly, fixes the land count, adds efficient Rakdos interaction/ramp/tutors, and concentrates payoffs around Olivia’s theft, tribal combat, and death triggers."
+      },
+      "roleEstimates": {
+        "land": 36,
+        "ramp": 9,
+        "card_advantage": 9,
+        "interaction": 14,
+        "protection": 3,
+        "engine": 7,
+        "theme_support": 13,
+        "threat_finisher": 5,
+        "tutor": 3,
+        "other": 0
+      },
+      "main": [
+        {
+          "name": "Ancient Ziggurat",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Bojuka Bog",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Rupture Spire",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Tainted Peak",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Blood Crypt",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Dragonskull Summit",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Smoldering Marsh",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Luxury Suite",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sulfurous Springs",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Canyon Slough",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Path of Ancestry",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Unclaimed Territory",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Voldaren Estate",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Castle Locthwain",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Takenuma, Abandoned Mire",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sokenzan, Crucible of Defiance",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Temple of Malice",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 10,
+          "role": "land"
+        },
+        {
+          "name": "Mountain",
+          "quantity": 6,
+          "role": "land"
+        },
+        {
+          "name": "Adaptive Automaton",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Anowon, the Ruin Sage",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Basilisk Collar",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Blade of the Bloodchief",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Blood Artist",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Blood Seeker",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Bloodline Keeper // Lord of Lineage",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Butcher of Malakir",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Captivating Vampire",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Crypt Ghast",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Darksteel Plate",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Diabolic Tutor",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Doom Blade",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Door of Destinies",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Falkenrath Marauders",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Falkenrath Noble",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Gatekeeper of Malakir",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Grave Pact",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Hero's Demise",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Kalastria Highborn",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Markov Blademaster",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Mephidross Vampire",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Mindcrank",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Necropolis Regent",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Nirkana Revenant",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Pawn of Ulamog",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Phyrexian Arena",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Profane Command",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Rakdos Charm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Rakish Heir",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Sangromancer",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Solemn Simulacrum",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Spiteful Visions",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Star Compass",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Stromkirk Captain",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vampire Nighthawk",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Vampire Nocturnus",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Fellwar Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Wayfarer’s Bauble",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Patriarch’s Bidding",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Shared Animosity",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Vanquisher’s Banner",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Cordial Vampire",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Vampire Socialite",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Stromkirk Bloodthief",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Gifted Aetherborn",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Vito, Thorn of the Dusk Rose",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Sorin, Imperious Bloodlord",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Olivia’s Wrath",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Terminate",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Feed the Swarm",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Bedevil",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Chaos Warp",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Go for the Throat",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Malakir Rebirth // Malakir Mire",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Deadly Dispute",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Victimize",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Demonic Tutor",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Vampiric Tutor",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Stensia Masquerade",
+          "quantity": 1,
+          "role": "theme_support"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Olivia Voldaren",
+            "quantity": 1,
+            "from": "main",
+            "to": "command",
+            "reason": "Move the inferred commander out of the visible main into the command zone; the parent remains unchanged."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Bloodhusk Ritualist",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Brand",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Cabal Ritual",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Caged Sun",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Cauldron Dance",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Cruel Edict",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Culling the Weak",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Dark Ritual",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Darksteel Ingot",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Devour in Shadow",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Feast of Blood",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Geth's Verdict",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Guul Draz Assassin",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Lashwrithe",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Mirri the Cursed",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Nightmare Lash",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Phthisis",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Quag Vampires",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Sanguine Bond",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Shattering Spree",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Soul Collector",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Strata Scythe",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Swamp",
+            "quantity": 15,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Terror",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          },
+          {
+            "name": "Transguild Promenade",
+            "quantity": 1,
+            "reason": "Trim the parent’s slower or redundant one-of package to make room for a tighter Rakdos vampire-and-sacrifice curve."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Blood Crypt",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Dragonskull Summit",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Smoldering Marsh",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Luxury Suite",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sulfurous Springs",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Canyon Slough",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Path of Ancestry",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Unclaimed Territory",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Voldaren Estate",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Castle Locthwain",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Takenuma, Abandoned Mire",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sokenzan, Crucible of Defiance",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Temple of Malice",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Mountain",
+            "quantity": 2,
+            "role": "land",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sol Ring",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Fellwar Stone",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Wayfarer’s Bauble",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Patriarch’s Bidding",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Shared Animosity",
+            "quantity": 1,
+            "role": "threat_finisher",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Vanquisher’s Banner",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Cordial Vampire",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Vampire Socialite",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Stromkirk Bloodthief",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Gifted Aetherborn",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Vito, Thorn of the Dusk Rose",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sorin, Imperious Bloodlord",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Olivia’s Wrath",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Terminate",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Feed the Swarm",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Bedevil",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Chaos Warp",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Go for the Throat",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Malakir Rebirth // Malakir Mire",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Deadly Dispute",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Victimize",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Demonic Tutor",
+            "quantity": 1,
+            "role": "tutor",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Vampiric Tutor",
+            "quantity": 1,
+            "role": "tutor",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Stensia Masquerade",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Adds a legal Rakdos role-player that strengthens the tuned casual vampire, sacrifice, interaction, or mana plan.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Bloodhusk Ritualist",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Blood Crypt",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Bloodhusk Ritualist with the exact child addition of Blood Crypt: stable untapped Rakdos fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Brand",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Dragonskull Summit",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Brand with the exact child addition of Dragonskull Summit: reliable dual-color fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Cabal Ritual",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Smoldering Marsh",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Cabal Ritual with the exact child addition of Smoldering Marsh: fetchable Rakdos fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Caged Sun",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Luxury Suite",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Caged Sun with the exact child addition of Luxury Suite: premium untapped Rakdos fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Cauldron Dance",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sulfurous Springs",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Cauldron Dance with the exact child addition of Sulfurous Springs: early untapped Rakdos fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Cruel Edict",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Canyon Slough",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Cruel Edict with the exact child addition of Canyon Slough: cycling dual-land utility tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Culling the Weak",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Path of Ancestry",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Culling the Weak with the exact child addition of Path of Ancestry: tribal fixing and scry tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Dark Ritual",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Unclaimed Territory",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Dark Ritual with the exact child addition of Unclaimed Territory: tribal color fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Darksteel Ingot",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Voldaren Estate",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Darksteel Ingot with the exact child addition of Voldaren Estate: Vampire tribal fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Devour in Shadow",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Castle Locthwain",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Devour in Shadow with the exact child addition of Castle Locthwain: late-game card draw tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Feast of Blood",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Takenuma, Abandoned Mire",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Feast of Blood with the exact child addition of Takenuma, Abandoned Mire: legendary recursion tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Geth's Verdict",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sokenzan, Crucible of Defiance",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Geth's Verdict with the exact child addition of Sokenzan, Crucible of Defiance: late-game token production tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Guul Draz Assassin",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Temple of Malice",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Guul Draz Assassin with the exact child addition of Temple of Malice: scrying Rakdos fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Lashwrithe",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Mountain",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Lashwrithe with the exact child addition of Mountain: basic red-source consistency tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Mirri the Cursed",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Mountain",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Pair the public-parent cut of Mirri the Cursed with the exact child addition of Mountain: basic red-source consistency tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Nightmare Lash",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sol Ring",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Pair the public-parent cut of Nightmare Lash with the exact child addition of Sol Ring: efficient acceleration tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Phthisis",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Pair the public-parent cut of Phthisis with the exact child addition of Arcane Signet: color-fixing acceleration tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Quag Vampires",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Fellwar Stone",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Pair the public-parent cut of Quag Vampires with the exact child addition of Fellwar Stone: flexible two-mana ramp tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Sanguine Bond",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Wayfarer’s Bauble",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Pair the public-parent cut of Sanguine Bond with the exact child addition of Wayfarer’s Bauble: basic-land ramp and fixing tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Shattering Spree",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Patriarch’s Bidding",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Pair the public-parent cut of Shattering Spree with the exact child addition of Patriarch’s Bidding: tribal mass recursion tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Soul Collector",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Shared Animosity",
+              "quantity": 1,
+              "role": "threat_finisher"
+            },
+            "reason": "Pair the public-parent cut of Soul Collector with the exact child addition of Shared Animosity: decisive Vampire combat damage tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Strata Scythe",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Vanquisher’s Banner",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Pair the public-parent cut of Strata Scythe with the exact child addition of Vanquisher’s Banner: tribal draw and anthem tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Cordial Vampire",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Cordial Vampire: death-trigger counter scaling tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Vampire Socialite",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Vampire Socialite: Vampire counter support tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Stromkirk Bloodthief",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Stromkirk Bloodthief: repeatable +1/+1-counter support tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Gifted Aetherborn",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Gifted Aetherborn: efficient lifelink interaction tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Vito, Thorn of the Dusk Rose",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Vito, Thorn of the Dusk Rose: lifegain-to-damage conversion tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sorin, Imperious Bloodlord",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Sorin, Imperious Bloodlord: Vampire deployment and payoff tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Olivia’s Wrath",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Olivia’s Wrath: tribal-scaled sweeper tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Terminate",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Terminate: clean instant-speed creature removal tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Feed the Swarm",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Feed the Swarm: noncreature permanent interaction tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Bedevil",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Bedevil: flexible Rakdos removal tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Chaos Warp",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Chaos Warp: catch-all permanent answer tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Go for the Throat",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Go for the Throat: efficient creature removal tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Malakir Rebirth // Malakir Mire",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Malakir Rebirth // Malakir Mire: protection and recursion tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Deadly Dispute",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Deadly Dispute: sacrifice-based card advantage tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Swamp",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Victimize",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Pair the public-parent cut of Swamp with the exact child addition of Victimize: efficient creature recursion tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Talisman of Indulgence",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Demonic Tutor",
+              "quantity": 1,
+              "role": "tutor"
+            },
+            "reason": "Pair the public-parent cut of Talisman of Indulgence with the exact child addition of Demonic Tutor: unconditional tutoring tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Terror",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Vampiric Tutor",
+              "quantity": 1,
+              "role": "tutor"
+            },
+            "reason": "Pair the public-parent cut of Terror with the exact child addition of Vampiric Tutor: low-cost instant tutor tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          },
+          {
+            "cut": {
+              "name": "Transguild Promenade",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Stensia Masquerade",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Pair the public-parent cut of Transguild Promenade with the exact child addition of Stensia Masquerade: Vampire first-strike and madness synergy tightens Olivia Voldaren's Rakdos Vampire, theft, sacrifice, and control plan."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [],
+      "evidence": [
+        {
+          "label": "EDHREC Olivia Voldaren commander page (opened)",
+          "url": "https://edhrec.com/commanders/olivia-voldaren",
+          "usedFor": "Current aggregate of 2,932 decks, Rakdos identity, and visible tag counts; used as direction rather than a copied list."
+        },
+        {
+          "label": "Official MTG Commander format rules (opened)",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "100-card construction, 99-card main plus commander, singleton, color identity, and command-zone rules."
+        },
+        {
+          "label": "Scryfall Olivia Voldaren record",
+          "url": "https://scryfall.com/card/inr/246/olivia-voldaren",
+          "usedFor": "Commander identity, type line, and card text reference."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 86,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "B",
+          "R"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 36,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-08",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      },
+      "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
     }
   ]
 }

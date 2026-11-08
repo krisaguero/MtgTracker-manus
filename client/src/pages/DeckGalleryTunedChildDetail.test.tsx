@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(45);
+    expect(childPayload.children).toHaveLength(50);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -218,6 +218,62 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(inferredMazirek?.sourceCompletenessNote).toMatch(/best-fit\/inferred assignment/i);
     const clueMazirek = childPayload.children.find(child => child.sourceTitle === "Mazirek sacs n' clues");
     expect(clueMazirek?.parentSectionsOmitted).toBe(true);
+  });
+
+  it("covers batch-8 Commander children with exact changes, source boundaries, and EDHREC evidence", () => {
+    const expected = [
+      { title: "Meren - Graveyardz", commander: "Meren of Clan Nel Toth", sourceMain: 132, sourceSideboard: 4, lands: 38, cuts: 32, adds: 0, paired: 0 },
+      { title: "Mirri Duelist", commander: "Mirri, Weatherlight Duelist", sourceMain: 72, sourceSideboard: 0, lands: 37, cuts: 0, adds: 28, paired: 0 },
+      { title: "Mirri the Cursed EDH", commander: "Mirri the Cursed", sourceMain: 100, sourceSideboard: 0, lands: 37, cuts: 10, adds: 10, paired: 10 },
+      { title: "Nahiri's Gear", commander: "Nahiri, the Lithomancer", sourceMain: 67, sourceSideboard: 2, lands: 37, cuts: 0, adds: 33, paired: 0 },
+      { title: "Olivia EDH", commander: "Olivia Voldaren", sourceMain: 100, sourceSideboard: 0, lands: 36, cuts: 40, adds: 40, paired: 40 },
+    ] as const;
+
+    for (const item of expected) {
+      const child = childPayload.children.find(candidate => candidate.sourceTitle === item.title);
+      expect(child, item.title).toBeDefined();
+      if (!child) continue;
+      expect(child.commanders[0]?.name).toBe(item.commander);
+      expect(child.parentGroup).toBe("owner_archive_list");
+      expect(child.visibleSourceCounts).toEqual({ mainCopies: item.sourceMain, sideboardCopies: item.sourceSideboard });
+      const publicParentSlug = child.parentHref.split("/").pop() ?? "";
+      expect(child.childSlug.startsWith(`${publicParentSlug}-tuned-child`)).toBe(true);
+      expect(child.status).toBe("Proposed · unplayed");
+      expect(child.hypothetical).toBe(true);
+      expect(child.played).toBe(false);
+      expect(child.ownershipStatus.toLowerCase()).toContain("unknown");
+      expect(child.validation.totalCount).toBe(100);
+      expect(child.validation.scryfallLandCount).toBe(item.lands);
+      expect(child.validation.colorIdentityCheck).toBe("pass");
+      expect(child.validation.commanderLegalityCheck).toBe("pass");
+      expect(child.validation.singletonCheck).toBe("pass");
+      expect(child.validation.scryfallNamesUnresolved).toBe(0);
+      expect(child.exactChanges.zoneMoves.reduce((sum, row) => sum + row.quantity, 0)).toBe(1);
+      expect(child.exactChanges.cuts.reduce((sum, row) => sum + row.quantity, 0)).toBe(item.cuts);
+      expect(child.exactChanges.adds.reduce((sum, row) => sum + row.quantity, 0)).toBe(item.adds);
+      expect(child.exactChanges.swaps.reduce((sum, row) => sum + row.cut.quantity, 0)).toBe(item.paired);
+      expect(child.exactChanges.swaps.reduce((sum, row) => sum + row.replacement.quantity, 0)).toBe(item.paired);
+      for (const swap of child.exactChanges.swaps) expect(swap.reason).toBeTruthy();
+      if (item.sourceMain !== 100 || item.sourceSideboard !== 0) expect(child.sourceCompletenessNote).toBeTruthy();
+      expect(child.plan.commanderPlan.length).toBeGreaterThan(70);
+      expect(child.plan.curveTempo.length).toBeGreaterThan(70);
+      expect(child.plan.interaction.length).toBeGreaterThan(70);
+      expect(child.plan.cardAdvantage.length).toBeGreaterThan(70);
+      expect(child.plan.mana.length).toBeGreaterThan(70);
+      expect(child.plan.closingPlan.length).toBeGreaterThan(70);
+      expect(child.plan.coherence.length).toBeGreaterThan(80);
+      const context = child.edhrecContext as unknown as Record<string, unknown>;
+      expect(Number(context.aggregateDeckCount)).toBeGreaterThan(0);
+      expect(Array.isArray(context.themeNotes)).toBe(true);
+      expect((context.themeNotes as unknown[]).length).toBeGreaterThan(0);
+      expect(typeof context.popularTags).toBe("object");
+      if (typeof context.popularTags === "object" && context.popularTags !== null)
+        expect(Object.keys(context.popularTags)).not.toHaveLength(0);
+      expect(child.evidence.some(source => source.url.startsWith("https://edhrec.com/"))).toBe(true);
+    }
+
+    for (const title of ["Neheb Returns", "Nekusar, the Mindrazer - EDH", "New Grenz"])
+      expect(childPayload.children.some(child => child.sourceTitle === title)).toBe(false);
   });
 
   it("includes the six official precon children with exact tuned upgrades", () => {
