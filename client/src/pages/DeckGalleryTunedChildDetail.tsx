@@ -6,6 +6,8 @@ import {
   type DeckGalleryTunedChild,
   type DeckGalleryTunedChildChange,
 } from "@/lib/deckGalleryTunedChildren";
+import { CardIndexLink, CardMediaFrame, cardIndexHref } from "@/components/CardIndexLink";
+import { getPublicCardImageUri } from "@/lib/deckGalleryImageUris";
 
 export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedChild }) {
   const pairedCuts = new Map<string, number>();
@@ -146,7 +148,7 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
               <h3 className="text-sm font-black">Commander-zone move(s)</h3>
               <ul className="mt-2 space-y-2 text-sm leading-6">
                 {child.exactChanges.zoneMoves.map((move, index) => (
-                  <li key={`${move.name}-${index}`}><strong>{move.quantity}× {move.name}</strong>: {zoneLabel(move.from)} → {zoneLabel(move.to)}. {move.reason}</li>
+                  <li key={`${move.name}-${index}`} className="flex flex-wrap items-center gap-3"><CardMention name={move.name} quantity={move.quantity} compact /><span className="min-w-0 flex-1">{zoneLabel(move.from)} → {zoneLabel(move.to)}. {move.reason}</span></li>
                 ))}
               </ul>
             </div>
@@ -162,8 +164,8 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
                   <tbody>
                     {child.exactChanges.swaps.map((swap, index) => (
                       <tr key={`${swap.cut.name}-${swap.replacement.name}-${index}`} className="border-t border-border align-top">
-                        <td className="px-3 py-3 font-semibold">{swap.cut.quantity}× {swap.cut.name}</td>
-                        <td className="px-3 py-3"><span className="font-semibold">{swap.replacement.quantity}× {swap.replacement.name}</span>{swap.replacement.role && <span className="mt-1 block text-muted-foreground">Role: {labelRole(swap.replacement.role)}</span>}</td>
+                        <td className="px-3 py-3"><CardMention name={swap.cut.name} quantity={swap.cut.quantity} compact /></td>
+                        <td className="px-3 py-3"><CardMention name={swap.replacement.name} quantity={swap.replacement.quantity} compact />{swap.replacement.role && <span className="mt-1 block text-muted-foreground">Role: {labelRole(swap.replacement.role)}</span>}</td>
                         <td className="px-3 py-3 leading-5 text-muted-foreground">{swap.reason}</td>
                       </tr>
                     ))}
@@ -184,7 +186,7 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
           <div className="mt-4 border-l-4 border-primary bg-muted/40 p-4">
             <h3 className="text-sm font-black">Command zone</h3>
             <ul className="mt-2 space-y-1 text-sm">
-              {child.commanders.map(card => <li key={card.name}>{card.quantity}× {card.name}</li>)}
+              {child.commanders.map(card => <li key={card.name}><CardMention name={card.name} quantity={card.quantity} /></li>)}
             </ul>
           </div>
           <details className="mt-4 border border-border bg-background">
@@ -194,7 +196,7 @@ export function DeckGalleryTunedChildView({ child }: { child: DeckGalleryTunedCh
                 <div key={role}>
                   <h3 className="font-mono text-xs font-black uppercase tracking-[0.14em] text-primary">{labelRole(role)}</h3>
                   <ul className="mt-2 divide-y divide-border border border-border">
-                    {cards.map(card => <li key={card.name} className="flex justify-between gap-3 px-3 py-2 text-xs"><span>{card.name}</span><span className="shrink-0 font-mono tabular-nums">{card.quantity}×</span></li>)}
+                    {cards.map(card => <li key={card.name} className="border-t border-border px-3 py-3 first:border-t-0"><CardMention name={card.name} quantity={card.quantity} compact /></li>)}
                   </ul>
                 </div>
               ))}
@@ -255,7 +257,7 @@ function ContextBlock({ context }: { context: DeckGalleryTunedChild["edhrecConte
       <p className="mt-3 text-sm leading-7">{summary}</p>
       {aggregateLabel !== undefined && <p className="mt-2 text-xs font-semibold text-muted-foreground">EDHREC aggregate: {String(aggregateLabel)}</p>}
       {tagRows.length > 0 && <div className="mt-3 flex flex-wrap gap-2">{tagRows.map(([tag, count]) => <span key={tag} className="border border-border bg-background px-2 py-1 text-xs">{tag} · {count}</span>)}</div>}
-      {recs.length > 0 && <p className="mt-3 text-xs leading-5 text-muted-foreground"><strong>Card examples:</strong> {recs.filter((item): item is string => typeof item === "string").slice(0, 6).join(", ")}</p>}
+      {recs.length > 0 && <div className="mt-4"><p className="text-xs font-black uppercase tracking-wide text-muted-foreground">Card examples</p><div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">{recs.filter((item): item is string => typeof item === "string").slice(0, 6).map(name => <CardMention key={name} name={name} compact />)}</div></div>}
       {themeNotes.length > 0 && (
         <ul className="mt-3 space-y-3">
           {themeNotes.map((note, index) => {
@@ -286,9 +288,9 @@ function Subthemes({ value }: { value: DeckGalleryTunedChild["plan"]["subthemes"
         <li key={`${item}-${index}`}>{item}</li>
       ) : (
         <li key={`${item.name || "package"}-${index}`}>
-          {item.name && <strong className="block">{item.name}</strong>}
+          {item.name && <CardMention name={item.name} />}
           {item.role && <span>{item.role}</span>}
-          {item.cards?.length ? <span className="mt-1 block text-xs text-muted-foreground">Examples: {item.cards.join(", ")}</span> : null}
+          {item.cards?.length ? <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">{item.cards.map(card => <CardMention key={card} name={card} compact />)}</div> : null}
         </li>
       ))}
     </ul>
@@ -300,7 +302,7 @@ function ChangeList({ title, rows }: { title: string; rows: DeckGalleryTunedChil
     <div className="border border-border bg-background p-4">
       <h3 className="text-sm font-black">{title}</h3>
       <ul className="mt-3 divide-y divide-border">
-        {rows.map((row, index) => <li key={`${row.name}-${index}`} className="py-3 text-xs leading-5"><strong>{row.quantity}× {row.name}</strong>{row.role && <span className="ml-2 text-muted-foreground">· role: {labelRole(row.role)}</span>}{row.sourceClass && <span className="ml-2 text-muted-foreground">· {row.sourceClass === "public_sideboard" ? "promoted from visible public sideboard" : "new addition"}</span>}{row.reason && <p className="mt-1 text-muted-foreground">{row.reason}</p>}</li>)}
+        {rows.map((row, index) => <li key={`${row.name}-${index}`} className="py-3 text-xs leading-5"><CardMention name={row.name} quantity={row.quantity} compact />{row.role && <span className="ml-2 text-muted-foreground">· role: {labelRole(row.role)}</span>}{row.sourceClass && <span className="ml-2 text-muted-foreground">· {row.sourceClass === "public_sideboard" ? "promoted from visible public sideboard" : "new addition"}</span>}{row.reason && <p className="mt-1 text-muted-foreground">{row.reason}</p>}</li>)}
       </ul>
     </div>
   );
@@ -308,6 +310,23 @@ function ChangeList({ title, rows }: { title: string; rows: DeckGalleryTunedChil
 
 function PlanCard({ title, children }: { title: string; children: React.ReactNode }) {
   return <article className="border border-border bg-background p-4"><h3 className="text-xs font-black uppercase tracking-wide">{title}</h3><div className="mt-2 text-sm leading-6">{children}</div></article>;
+}
+
+function CardMention({ name, quantity, compact = false }: { name: string; quantity?: number; compact?: boolean }) {
+  const imageUri = getPublicCardImageUri(name, "normal");
+  return (
+    <span className={`inline-flex min-w-0 items-center gap-2 ${compact ? "text-xs" : "text-sm"}`}>
+      <a href={cardIndexHref(name)} className={`group block shrink-0 border border-border bg-muted shadow-sm transition-transform hover:-translate-y-0.5 hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${compact ? "w-10" : "w-14 sm:w-16"}`} aria-label={`Open ${name} card details`}>
+        <CardMediaFrame>
+          {imageUri ? <img src={imageUri} alt={`${name} card frame`} loading="lazy" decoding="async" className="h-full w-full object-cover" /> : <span className="flex h-full items-center justify-center p-1 text-center text-[8px] font-bold leading-tight text-muted-foreground">{name}</span>}
+        </CardMediaFrame>
+      </a>
+      <span className="min-w-0">
+        <span className="block font-semibold leading-5">{quantity ? `${quantity}× ` : ""}{name}</span>
+        <CardIndexLink name={name} compact className="mt-1" />
+      </span>
+    </span>
+  );
 }
 
 function Check({ label, value }: { label: string; value: string }) {
