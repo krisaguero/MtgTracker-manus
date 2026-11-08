@@ -4,6 +4,38 @@ export type DeckGalleryCard = {
   printing?: string;
 };
 
+export type DeckGalleryHelmCard = {
+  name: string;
+  sourceLocation: "main" | "sideboard" | "not_in_source";
+  proposedZoneMove: boolean;
+};
+
+export type DeckGalleryHelmEvidence = { label: string; url: string };
+
+export type DeckGalleryChildGuess = {
+  name: string;
+  label: string;
+  sourceLocation: "main" | "sideboard" | "not_in_source";
+  proposedZoneMove: boolean;
+  note: string;
+  evidence: DeckGalleryHelmEvidence[];
+};
+
+export type DeckGalleryHelm = {
+  status: "assigned" | "not_a_commander_deck" | "unconfirmed";
+  confidence:
+    | "official_precon"
+    | "strongly_supported_partner_pair"
+    | "best_fit_inferred"
+    | "not_applicable"
+    | "unconfirmed";
+  label: string;
+  commanders: DeckGalleryHelmCard[];
+  note: string;
+  evidence: DeckGalleryHelmEvidence[];
+  separateChildGuess?: DeckGalleryChildGuess;
+};
+
 export type DeckGalleryEntry = {
   id: string;
   title: string;
@@ -21,6 +53,7 @@ export type DeckGalleryEntry = {
   sideboardRows: number;
   contextualTarget: number | null;
   sourceSectionsOmitted: boolean;
+  helm: DeckGalleryHelm;
   main: DeckGalleryCard[];
   sideboard: DeckGalleryCard[];
 };

@@ -13,65 +13,146 @@ const payload = JSON.parse(
     "utf8"
   )
 ) as DeckGalleryPayload;
-const samples = [
-  payload.entries.find(
-    entry => entry.group === "owner_archive_list" && entry.main.length > 0
-  )!,
-  payload.entries.find(entry => entry.group === "robert_title_credit")!,
-  payload.entries.find(entry => entry.group === "owner_wip_offbeat")!,
-  payload.entries.find(entry => entry.group === "owner_wip_empty")!,
-];
+const entry = (title: string) => {
+  const match = payload.entries.find(candidate => candidate.title === title);
+  if (!match) throw new Error(`Missing public deck entry: ${title}`);
+  return match;
+};
 const escapeHtml = (value: string) => renderToStaticMarkup(<>{value}</>);
-const page = (entry: DeckGalleryPayload["entries"][number]) =>
+const page = (deck: DeckGalleryPayload["entries"][number]) =>
   renderToStaticMarkup(
-    <Router ssrPath={`/deck-gallery/${entry.id}`}>
-      <DeckGalleryDetailView entry={entry} />
+    <Router ssrPath={`/deck-gallery/${deck.id}`}>
+      <DeckGalleryDetailView entry={deck} />
     </Router>
   );
 
+const samples = [
+  entry("Black - Sworn To Darkness"),
+  entry("Akiri-Silas Tokens"),
+  entry("Goreclaw Arena hist brawl."),
+  entry("120 card winchester draft bones"),
+  entry("Breya Facts - Robogles Build"),
+  entry("DRAGONS MF"),
+];
+
 describe("individual public Deck Gallery pages", () => {
   it.each(samples)(
-    "shows a visual page for $id without inventing a commander",
-    entry => {
-      const html = page(entry);
+    "renders the helm status and exact source list for $id",
+    deck => {
+      const html = page(deck);
+      const helmArtCount =
+        deck.helm.commanders.length + (deck.helm.separateChildGuess ? 1 : 0);
       expect(html.match(/<h1\b/g)).toHaveLength(1);
-      expect(html).toContain(escapeHtml(entry.title));
-      expect(html).toContain("Commander not confirmed");
-      expect(html).toContain(
-        "No commander is named in this saved export. None has been assigned from the title or card list."
-      );
-      expect(html).toContain(escapeHtml(entry.creditLine));
+      expect(html).toContain(escapeHtml(deck.title));
+      expect(html).toContain(escapeHtml(deck.helm.label));
+      expect(html).toContain(escapeHtml(deck.creditLine));
       expect(html).toContain("Exact text list · main and sideboard");
       expect(html).toContain("Source order preserved");
       expect(html.match(/<img\b/g) ?? []).toHaveLength(
-        entry.main.length + entry.sideboard.length
+        deck.main.length + deck.sideboard.length + helmArtCount
       );
 
-      const allCards = [...entry.main, ...entry.sideboard];
-      for (const card of allCards) {
+      for (const card of [...deck.main, ...deck.sideboard]) {
         expect(html).toContain(escapeHtml(card.name));
         expect(html).toContain(`>${card.quantity}×</span>`);
       }
-      if (entry.main.length) {
-        const imageUrl = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(entry.main[0].name)}&format=image&version=normal`;
+      if (deck.main.length) {
+        const imageUrl = `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(deck.main[0].name)}&format=image&version=normal`;
         expect(html).toContain(escapeHtml(imageUrl));
       }
-      if (entry.main.length > 1) {
-        expect(html.indexOf(escapeHtml(entry.main[0].name))).toBeLessThan(
-          html.indexOf(escapeHtml(entry.main[entry.main.length - 1].name))
+      if (deck.main.length > 1) {
+        expect(html.indexOf(escapeHtml(deck.main[0].name))).toBeLessThan(
+          html.indexOf(escapeHtml(deck.main[deck.main.length - 1].name))
         );
       }
-      if (entry.sideboard.length) {
-        expect(html).toContain(`Sideboard · ${entry.sideboardCopies} copies`);
+      if (deck.sideboard.length) {
+        expect(html).toContain(`Sideboard · ${deck.sideboardCopies} copies`);
         expect(html).toContain('aria-label="Sideboard"');
       }
       expect(html).toContain(
-        `href="${entry.group === "robert_title_credit" ? "/deck-gallery/robogles" : entry.group.startsWith("owner_wip") ? "/deck-gallery/wip" : "/deck-gallery"}"`
+        `href="${deck.group === "robert_title_credit" ? "/deck-gallery/robogles" : deck.group.startsWith("owner_wip") ? "/deck-gallery/wip" : "/deck-gallery"}"`
       );
     }
   );
 
-  it("keeps the catalog’s individual-page link and does not change the public source data", () => {
+  it("shows official precon support and flags a commander absent from the export", () => {
+    const sworn = entry("Black - Sworn To Darkness");
+    const html = page(sworn);
+    expect(sworn.helm.status).toBe("assigned");
+    expect(sworn.helm.label).toBe("Assigned · official precon");
+    expect(sworn.helm.commanders).toEqual([
+      expect.objectContaining({
+        name: "Ob Nixilis of the Black Oath",
+        sourceLocation: "not_in_source",
+        proposedZoneMove: false,
+      }),
+    ]);
+    expect(html).toContain("Not present in source list");
+    expect(html).toContain("Precon decklist reference");
+  });
+
+  it("shows both partner commanders and flags their proposed moves without changing their rows", () => {
+    const partner = entry("Akiri-Silas Tokens");
+    const html = page(partner);
+    expect(partner.helm.commanders.map(card => card.name)).toEqual([
+      "Akiri, Line-Slinger",
+      "Silas Renn, Seeker Adept",
+    ]);
+    expect(
+      partner.helm.commanders.every(card => card.sourceLocation === "main")
+    ).toBe(true);
+    expect(partner.helm.commanders.every(card => card.proposedZoneMove)).toBe(
+      true
+    );
+    expect(html).toContain("Assigned · partner pair");
+    expect(html).toContain("Proposed zone move: Main → command zone");
+    expect(html).toContain(
+      "api.scryfall.com/cards/named?exact=Akiri%2C%20Line-Slinger&amp;format=image&amp;version=art_crop"
+    );
+  });
+
+  it("does not turn Historic Brawl or draft lists into Commander decks", () => {
+    const historicBrawl = entry("Goreclaw Arena hist brawl.");
+    const draft = entry("120 card winchester draft bones");
+    expect(historicBrawl.helm.label).toBe("Not a Commander deck");
+    expect(historicBrawl.helm.commanders).toEqual([]);
+    expect(historicBrawl.helm.note).toContain(
+      "Historic Brawl is not Commander"
+    );
+    expect(draft.helm.label).toBe("Not a Commander deck");
+    expect(draft.helm.commanders).toEqual([]);
+  });
+
+  it("keeps a Robogles constructed-list guess distinct as a hypothetical child helm", () => {
+    const breya = entry("Breya Facts - Robogles Build");
+    const html = page(breya);
+    expect(breya.helm.status).toBe("not_a_commander_deck");
+    expect(breya.helm.commanders).toEqual([]);
+    expect(breya.helm.separateChildGuess?.name).toBe("Breya, Etherium Shaper");
+    expect(html).toContain("Not a Commander deck");
+    expect(html).toContain(
+      "Separate hypothetical child guess · not assigned to this source"
+    );
+    expect(html).toContain(
+      "Hypothetical child only: proposed move from Main to command zone"
+    );
+  });
+
+  it("provides a guess or a separate child guess for all 18 Robogles-titled entries", () => {
+    const robogles = payload.entries.filter(
+      deck => deck.group === "robert_title_credit"
+    );
+    expect(robogles).toHaveLength(18);
+    expect(
+      robogles.every(
+        deck =>
+          deck.helm.commanders.length > 0 ||
+          Boolean(deck.helm.separateChildGuess)
+      )
+    ).toBe(true);
+  });
+
+  it("keeps the individual-page link and source card rows separate from helm metadata", () => {
     const catalog = readFileSync(
       resolve(process.cwd(), "client/src/pages/DeckGallery.tsx"),
       "utf8"
@@ -79,8 +160,13 @@ describe("individual public Deck Gallery pages", () => {
     expect(catalog).toContain("href={`/deck-gallery/${entry.id}`}");
     expect(catalog).toContain("Visual deck page");
     expect(payload.entries).toHaveLength(166);
-    expect(payload.entries.every(entry => !("commanderName" in entry))).toBe(
-      true
-    );
+    expect(payload.entries.every(deck => deck.helm)).toBe(true);
+    expect(
+      payload.entries.every(deck =>
+        [...deck.main, ...deck.sideboard].every(
+          card => !("helm" in card) && !("commander" in card)
+        )
+      )
+    ).toBe(true);
   });
 });

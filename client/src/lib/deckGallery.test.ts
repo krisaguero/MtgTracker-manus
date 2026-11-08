@@ -119,4 +119,58 @@ describe("approved public Deck Gallery payload", () => {
     ]);
     expect(payload.entries.every(entry => allowed.has(entry.group))).toBe(true);
   });
+
+  it("keeps helm metadata separate and accurately flags every source or child-only zone move", () => {
+    const statuses = new Set([
+      "assigned",
+      "not_a_commander_deck",
+      "unconfirmed",
+    ]);
+    for (const entry of payload.entries) {
+      expect(statuses.has(entry.helm.status), entry.title).toBe(true);
+      if (entry.helm.status === "not_a_commander_deck") {
+        expect(entry.helm.label, entry.title).toBe("Not a Commander deck");
+        expect(entry.helm.commanders, entry.title).toEqual([]);
+      }
+      if (entry.helm.status === "unconfirmed") {
+        expect(entry.helm.label, entry.title).toBe("Commander not confirmed");
+        expect(entry.helm.commanders, entry.title).toEqual([]);
+      }
+      if (entry.helm.status === "assigned")
+        expect(entry.helm.commanders.length, entry.title).toBeGreaterThan(0);
+
+      const checkLocation = (card: {
+        name: string;
+        sourceLocation: "main" | "sideboard" | "not_in_source";
+        proposedZoneMove: boolean;
+      }) => {
+        const inMain = entry.main.some(source => source.name === card.name);
+        const inSideboard = entry.sideboard.some(
+          source => source.name === card.name
+        );
+        const expectedLocation = inMain
+          ? "main"
+          : inSideboard
+            ? "sideboard"
+            : "not_in_source";
+        expect(card.sourceLocation, `${entry.title}: ${card.name}`).toBe(
+          expectedLocation
+        );
+        expect(card.proposedZoneMove, `${entry.title}: ${card.name}`).toBe(
+          inMain || inSideboard
+        );
+      };
+      entry.helm.commanders.forEach(checkLocation);
+      if (entry.helm.separateChildGuess)
+        checkLocation(entry.helm.separateChildGuess);
+
+      for (const sourceCard of [...entry.main, ...entry.sideboard]) {
+        expect(
+          Object.keys(sourceCard).every(key =>
+            ["name", "quantity", "printing"].includes(key)
+          )
+        ).toBe(true);
+      }
+    }
+  });
 });

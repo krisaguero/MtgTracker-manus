@@ -1,3 +1,5 @@
+import type { DeckGalleryHelm } from "./deckGallery";
+
 export type BreweryReviewAction = {
   name: string;
   quantity: number;
@@ -9,18 +11,18 @@ export type BreweryReviewMove = {
   quantity: number;
   from: string;
   to: string;
-  kind: 'section' | 'command-zone';
+  kind: "section" | "command-zone";
 };
 
 export type BreweryReviewStatus =
-  | 'conditional'
-  | 'count-balanced'
-  | 'partial'
-  | 'proposal'
-  | 'section-alignment'
-  | 'reference'
-  | 'needs-context'
-  | 'no-change';
+  | "conditional"
+  | "count-balanced"
+  | "partial"
+  | "proposal"
+  | "section-alignment"
+  | "reference"
+  | "needs-context"
+  | "no-change";
 
 export type BreweryReviewProposal = {
   version: number;
@@ -46,6 +48,7 @@ export type BreweryReviewProposal = {
 export type BreweryReviewEntry = {
   slug: string;
   title: string;
+  helm: DeckGalleryHelm;
   savedFormatLabel: string | null;
   reviewLens: string;
   sourceMainCopies: number;
@@ -62,25 +65,37 @@ export type BreweryReviewPayload = {
 };
 
 export async function loadDeckBreweryReviews(
-  fetcher: typeof fetch = fetch,
+  fetcher: typeof fetch = fetch
 ): Promise<BreweryReviewPayload> {
-  const response = await fetcher('/data/deck-brewery-reviews.json', {
-    headers: { Accept: 'application/json' },
+  const response = await fetcher("/data/deck-brewery-reviews.json", {
+    headers: { Accept: "application/json" },
   });
   if (!response.ok) {
-    throw new Error(`Deck Brewery review data request failed (${response.status}).`);
+    throw new Error(
+      `Deck Brewery review data request failed (${response.status}).`
+    );
   }
   const payload = (await response.json()) as BreweryReviewPayload;
   if (!payload || !Array.isArray(payload.entries)) {
-    throw new Error('Deck Brewery review data is not in the expected format.');
+    throw new Error("Deck Brewery review data is not in the expected format.");
   }
   return payload;
 }
 
-export function getReviewActions(proposal: BreweryReviewProposal): BreweryReviewAction[] {
+export function getReviewActions(
+  proposal: BreweryReviewProposal
+): BreweryReviewAction[] {
   return [...proposal.adds, ...proposal.cuts];
 }
 
-export function getReviewArtName(proposal: BreweryReviewProposal): string | null {
-  return proposal.adds[0]?.name ?? proposal.cuts[0]?.name ?? proposal.moves[0]?.name ?? proposal.commander ?? null;
+export function getReviewArtName(
+  proposal: BreweryReviewProposal
+): string | null {
+  return (
+    proposal.adds[0]?.name ??
+    proposal.cuts[0]?.name ??
+    proposal.moves[0]?.name ??
+    proposal.commander ??
+    null
+  );
 }

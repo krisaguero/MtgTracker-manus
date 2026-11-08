@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { CommanderHelmPanel } from "@/components/CommanderHelmPanel";
 import { CardImageZoom } from "@/components/CardImageZoom";
 import {
   getDeckGalleryDisplayMeta,
@@ -207,27 +208,12 @@ export function DeckGalleryDetailView({ entry }: { entry: DeckGalleryEntry }) {
               />
             </div>
           </div>
-          <aside
-            className="border-t-2 border-border bg-muted/40 p-5 sm:p-7 lg:border-l-2 lg:border-t-0"
-            aria-label="Commander at the helm"
-          >
-            <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-primary">
-              At the helm
-            </p>
-            <div className="mt-4 flex aspect-[488/330] items-center justify-center border-2 border-dashed border-border bg-background p-5 text-center">
-              <div>
-                <p className="text-lg font-black">Commander not confirmed</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  No commander is named in this saved export. None has been
-                  assigned from the title or card list.
-                </p>
-              </div>
-            </div>
-            <p className="mt-3 text-xs leading-5 text-muted-foreground">
-              Non-Commander, incomplete, and unconfirmed lists remain in their
-              saved form; this page does not turn them into Commander decks.
-            </p>
-          </aside>
+          <div className="border-t-2 border-border bg-muted/40 p-5 sm:p-7 lg:border-l-2 lg:border-t-0">
+            <CommanderHelmPanel
+              helm={entry.helm}
+              className="border-0 bg-transparent p-0"
+            />
+          </div>
         </div>
         {meta.formatNote && (
           <p className="border-t-2 border-amber-500 bg-amber-50 px-5 py-3 text-xs leading-5 text-amber-950 dark:bg-amber-950/20 dark:text-amber-100 sm:px-8">

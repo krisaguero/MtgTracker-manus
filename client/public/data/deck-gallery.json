@@ -847,7 +847,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": true
+      "sourceSectionsOmitted": true,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mazirek, Kraul Death Priest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mazirek, Kraul Death Priest",
+            "url": "https://edhrec.com/commanders/mazirek-kraul-death-priest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-v-the-dire-ramps",
@@ -1445,7 +1464,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Vaevictis Asmadi, the Dire",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Vaevictis Asmadi, the Dire",
+            "url": "https://edhrec.com/commanders/vaevictis-asmadi-the-dire"
+          }
+        ]
+      }
     },
     {
       "id": "deck-neheb-s-no-cards",
@@ -2188,7 +2226,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Neheb, the Worthy",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Neheb, the Worthy",
+            "url": "https://edhrec.com/commanders/neheb-the-worthy"
+          }
+        ]
+      }
     },
     {
       "id": "deck-alesha-modular-v1-0-build",
@@ -2716,7 +2773,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Alesha, Who Smiles at Death",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues; Alesha, Who Smiles at Death is not in the saved card rows, so no copy has been added. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Alesha, Who Smiles at Death",
+            "url": "https://edhrec.com/commanders/alesha-who-smiles-at-death"
+          }
+        ]
+      }
     },
     {
       "id": "deck-ruric-s-fangs",
@@ -3229,7 +3305,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Ruric Thar, the Unbowed",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Ruric Thar, the Unbowed",
+            "url": "https://edhrec.com/commanders/ruric-thar-the-unbowed"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brago-king-eternal",
@@ -4127,7 +4222,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brago, King Eternal",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brago, King Eternal",
+            "url": "https://edhrec.com/commanders/brago-king-eternal"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brion-stoutarm",
@@ -4925,7 +5039,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brion Stoutarm",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brion Stoutarm",
+            "url": "https://edhrec.com/commanders/brion-stoutarm"
+          }
+        ]
+      }
     },
     {
       "id": "deck-licia-s-life",
@@ -5723,7 +5856,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Licia, Sanguine Tribune",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Licia, Sanguine Tribune",
+            "url": "https://edhrec.com/commanders/licia-sanguine-tribune"
+          }
+        ]
+      }
     },
     {
       "id": "deck-marchesa-kris-retired",
@@ -6981,7 +7133,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Marchesa, the Black Rose",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Marchesa, the Black Rose",
+            "url": "https://edhrec.com/commanders/marchesa-the-black-rose"
+          }
+        ]
+      }
     },
     {
       "id": "deck-siguero-humans",
@@ -7644,7 +7815,21 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Sigarda, Heron's Grace",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-gisa-and-geralf-graveyard-mashup",
@@ -8247,7 +8432,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Gisa and Geralf",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Gisa and Geralf",
+            "url": "https://edhrec.com/commanders/gisa-and-geralf"
+          }
+        ]
+      }
     },
     {
       "id": "deck-queen-marchesa",
@@ -8940,7 +9144,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Queen Marchesa",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Queen Marchesa",
+            "url": "https://edhrec.com/commanders/queen-marchesa"
+          }
+        ]
+      }
     },
     {
       "id": "deck-120-card-winchester-draft-bones",
@@ -9192,7 +9415,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Standard / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-adaptive-enchantment-c2018",
@@ -9775,7 +10006,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Estrid, the Masked",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "The title matches the C18 Adaptive Enchantment precon, whose commander is Estrid. Tuvasa and Kestia also appear in the source rows, so the exact command-zone choice is not source-confirmed.",
+        "evidence": [
+          {
+            "label": "Official C18 Adaptive Enchantment context",
+            "url": "https://magic.wizards.com/en/news/feature/personalizing-commander-2018-adaptive-enchantment-2018-08-07"
+          }
+        ]
+      }
     },
     {
       "id": "deck-akiri-silas-tokens",
@@ -10102,7 +10352,31 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "strongly_supported_partner_pair",
+        "label": "Assigned · partner pair",
+        "commanders": [
+          {
+            "name": "Akiri, Line-Slinger",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          },
+          {
+            "name": "Silas Renn, Seeker Adept",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Both named Partner cards are present; the pair is strongly supported, though the source export does not mark a command zone.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Akiri, Line-Slinger",
+            "url": "https://edhrec.com/commanders/akiri-line-slinger-silas-renn-seeker-adept/tokens"
+          }
+        ]
+      }
     },
     {
       "id": "deck-arahbo-s-catz",
@@ -10554,7 +10828,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Arahbo, Roar of the World",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Arahbo, Roar of the World",
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world"
+          }
+        ]
+      }
     },
     {
       "id": "deck-arcane-wizardry-c17-precon",
@@ -10986,7 +11279,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Inalla, Archmage Ritualist",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/ArcaneWizardry_C17.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-artifact-deck",
@@ -11183,7 +11495,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-black-grave-delrach-sac",
@@ -11315,7 +11635,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-black-sworn-to-darkness",
@@ -11673,7 +12001,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Ob Nixilis of the Black Oath",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Ob Nixilis of the Black Oath, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/SwornToDarkness_C14.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-black-aggro-sinister-zombie",
@@ -11785,7 +12132,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-black-shadow-rack",
@@ -11897,7 +12252,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-black-blue-red",
@@ -12065,7 +12428,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Vintage / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-blue-black-tap-tap-tap",
@@ -12177,7 +12548,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-blue-black-fallen-wizards",
@@ -12284,7 +12663,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-blue-counter-draw-bounce",
@@ -12416,7 +12803,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-borborgy-online",
@@ -12728,7 +13123,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-brago-energy-v2",
@@ -13106,7 +13509,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brago, King Eternal",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brago, King Eternal",
+            "url": "https://edhrec.com/commanders/brago-king-eternal"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brago-energy-v3",
@@ -13448,7 +13870,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brago, King Eternal",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brago, King Eternal",
+            "url": "https://edhrec.com/commanders/brago-king-eternal/upgraded/energy"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brago-king-eternal-2",
@@ -13841,7 +14282,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brago, King Eternal",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brago, King Eternal",
+            "url": "https://edhrec.com/commanders/brago-king-eternal"
+          }
+        ]
+      }
     },
     {
       "id": "deck-breed-lethality-commander-2016",
@@ -14203,7 +14663,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Atraxa, Praetors' Voice",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Atraxa, Praetors' Voice, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/BreedLethality_C16.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-breya-facts",
@@ -14521,7 +15000,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Breya, Etherium Shaper",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Breya, Etherium Shaper",
+            "url": "https://edhrec.com/commanders/breya-etherium-shaper"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brion-s-giants",
@@ -14858,7 +15356,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brion Stoutarm",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brion Stoutarm",
+            "url": "https://edhrec.com/commanders/brion-stoutarm"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brionline",
@@ -15290,7 +15807,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brion Stoutarm",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brion Stoutarm",
+            "url": "https://edhrec.com/commanders/brion-stoutarm"
+          }
+        ]
+      }
     },
     {
       "id": "deck-built-from-scratch-red-commander-2014-precon",
@@ -15663,7 +16199,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Daretti, Scrap Savant",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Daretti, Scrap Savant, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/BuiltFromScratch_C14.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-call-the-spirits-2015-edh",
@@ -16065,7 +16620,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Daxos the Returned",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Daxos the Returned, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/CallTheSpirits_C15.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-daghatar",
@@ -16397,7 +16971,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Daghatar the Adamant",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Daghatar the Adamant",
+            "url": "https://edhrec.com/commanders/daghatar-the-adamant"
+          }
+        ]
+      }
     },
     {
       "id": "deck-daghatar-1",
@@ -17670,7 +18263,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Daghatar the Adamant",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Daghatar the Adamant",
+            "url": "https://edhrec.com/commanders/daghatar-the-adamant"
+          }
+        ]
+      }
     },
     {
       "id": "deck-daxos-enchants",
@@ -18007,7 +18619,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Daxos the Returned",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Daxos the Returned",
+            "url": "https://edhrec.com/commanders/daxos-the-returned"
+          }
+        ]
+      }
     },
     {
       "id": "deck-daxos-xp",
@@ -18349,7 +18980,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Daxos the Returned",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Daxos the Returned",
+            "url": "https://edhrec.com/commanders/daxos-the-returned"
+          }
+        ]
+      }
     },
     {
       "id": "deck-devastation-beasts-rg-precon",
@@ -18487,7 +19137,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-draconic-domination-c17-precon",
@@ -18939,7 +19597,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "The Ur-Dragon",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/DraconicDomination_C17.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-dragon-upgrades",
@@ -19391,7 +20068,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "The Ur-Dragon",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · The Ur-Dragon",
+            "url": "https://edhrec.com/commanders/the-ur-dragon"
+          }
+        ]
+      }
     },
     {
       "id": "deck-dragons-mf",
@@ -19733,7 +20429,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "The source is an incomplete, ambiguous dragon list with no verified command-zone choice; Atarka is only a possible theme card, so no helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-duel-decks-eldrazi",
@@ -19905,7 +20609,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-duel-decks-zendakir",
@@ -20102,7 +20814,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Modern / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-edgar-s-suckas",
@@ -20434,7 +21154,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Edgar Markov",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Edgar Markov",
+            "url": "https://edhrec.com/commanders/edgar-markov"
+          }
+        ]
+      }
     },
     {
       "id": "deck-entropic-uprising-commander-2016-precon",
@@ -20871,7 +21610,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Yidris, Maelstrom Wielder",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/EntropicUprising_C16.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-exquisite-invention-c18-precon",
@@ -21263,7 +22021,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Saheeli, the Gifted",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/ExquisiteInvention_C18.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-ezuri-face-down",
@@ -21605,7 +22382,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Ezuri, Claw of Progress",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Ezuri, Claw of Progress",
+            "url": "https://edhrec.com/commanders/ezuri-claw-of-progress"
+          }
+        ]
+      }
     },
     {
       "id": "deck-feline-ferocity-commander-2017-precon",
@@ -22067,7 +22863,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Arahbo, Roar of the World",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/FelineFerocity_C17.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-gaddazada",
@@ -22409,7 +23224,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Vintage / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-gisa-and-geralf-zombies",
@@ -22751,7 +23574,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Gisa and Geralf",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Gisa and Geralf",
+            "url": "https://edhrec.com/commanders/gisa-and-geralf"
+          }
+        ]
+      }
     },
     {
       "id": "deck-goreclaw-arena-hist-brawl",
@@ -23099,7 +23941,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "Historic Brawl is not Commander. Goreclaw remains the Brawl leader context; this page does not relabel it as a Commander helm.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-aggro-buff",
@@ -23226,7 +24076,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-aggro-elves-and-apes",
@@ -23348,7 +24206,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-commander-2014-guided-by-nature",
@@ -23745,7 +24611,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Freyalise, Llanowar's Fury",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/GuidedByNature_C14.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-green-baddies",
@@ -23777,7 +24662,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Standard / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-elves-titania-s-stream",
@@ -23909,7 +24802,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-enchanted-wombats",
@@ -24011,7 +24912,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-growth-cradle-guards-and-kraklins",
@@ -24133,7 +25042,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-wolf-elf-centaur",
@@ -24285,7 +25202,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-green-blue-black-ipa",
@@ -24412,7 +25337,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-grenzo-krekno-goblin-mtgo",
@@ -24779,7 +25712,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "This Vintage/MTGO list has a Commander-like count, but the source does not identify a commander or command zone; no helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-grenzo-s-chaos",
@@ -25126,7 +26067,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Grenzo, Havoc Raiser",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Grenzo, Havoc Raiser",
+            "url": "https://edhrec.com/commanders/grenzo-havoc-raiser"
+          }
+        ]
+      }
     },
     {
       "id": "deck-grenzo-s-pingers-flingers",
@@ -25463,7 +26423,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-gwu-treva-sissay",
@@ -25575,7 +26543,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-invent-superiority-commander-2016-precon",
@@ -26022,7 +26998,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Breya, Etherium Shaper",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/InventSuperiority_C16.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-jalira-conversions",
@@ -26399,7 +27394,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Vintage / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-jalira-pollys",
@@ -26747,7 +27750,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-jeleva-s-exile",
@@ -27134,7 +28145,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "Jeleva appears in the list, but the source does not identify her as commander and remains an incomplete archive list.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-k-t-s-passive-aggressives",
@@ -27447,7 +28466,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kynaios and Tiro of Meletis",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kynaios and Tiro of Meletis",
+            "url": "https://edhrec.com/commanders/kynaios-and-tiro-of-meletis"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kangee-bird-edh",
@@ -27889,7 +28927,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kangee, Aerie Keeper",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kangee, Aerie Keeper",
+            "url": "https://edhrec.com/commanders/kangee-aerie-keeper"
+          }
+        ]
+      }
     },
     {
       "id": "deck-karlovers-package",
@@ -28242,7 +29299,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Karlov of the Ghost Council",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Karlov of the Ghost Council",
+            "url": "https://edhrec.com/commanders/karlov-of-the-ghost-council"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kaseto-on-hits",
@@ -28579,7 +29655,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kaseto, Orochi Archmage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kaseto, Orochi Archmage",
+            "url": "https://edhrec.com/commanders/kaseto-orochi-archmage"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kasetoclancey",
@@ -28926,7 +30021,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-kasetoclancey-2",
@@ -29279,7 +30382,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kaseto, Orochi Archmage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kaseto, Orochi Archmage",
+            "url": "https://edhrec.com/commanders/kaseto-orochi-archmage"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kavu-ipa",
@@ -29295,7 +30417,15 @@
       "contextualTarget": 60,
       "main": [],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Standard / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-kavu-pauper",
@@ -29498,7 +30628,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-kess-them-zombies",
@@ -30366,7 +31504,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kess, Dissident Mage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kess, Dissident Mage",
+            "url": "https://edhrec.com/commanders/kess-dissident-mage"
+          }
+        ]
+      }
     },
     {
       "id": "deck-krav-and-rag",
@@ -31039,7 +32196,31 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "strongly_supported_partner_pair",
+        "label": "Assigned · partner pair",
+        "commanders": [
+          {
+            "name": "Krav, the Unredeemed",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          },
+          {
+            "name": "Regna, the Redeemer",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Krav and Regna both appear in the source and have the matching Partner with ability; this pair is strongly supported, but the source is still a WIP.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Krav, the Unredeemed",
+            "url": "https://edhrec.com/commanders/krav-the-unredeemed-regna-the-redeemer"
+          }
+        ]
+      }
     },
     {
       "id": "deck-krenko-edh",
@@ -31396,7 +32577,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Krenko, Mob Boss",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Krenko, Mob Boss",
+            "url": "https://edhrec.com/commanders/krenko-mob-boss"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kruphix",
@@ -31738,7 +32938,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-kynaios-and-tiro-no-budget",
@@ -32261,7 +33469,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kynaios and Tiro of Meletis",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kynaios and Tiro of Meletis",
+            "url": "https://edhrec.com/commanders/kynaios-and-tiro-of-meletis"
+          }
+        ]
+      }
     },
     {
       "id": "deck-kynaios-and-tiro-updated",
@@ -32864,7 +34091,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kynaios and Tiro of Meletis",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kynaios and Tiro of Meletis",
+            "url": "https://edhrec.com/commanders/kynaios-and-tiro-of-meletis"
+          }
+        ]
+      }
     },
     {
       "id": "deck-land-destruction",
@@ -32971,7 +34217,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-locust-brawl",
@@ -33209,7 +34463,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This is a 60-card Brawl/constructed list, not Commander. The Locust God is only a Brawl-leader/theme clue here.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-locust-s-brawl",
@@ -33532,7 +34794,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This is a 60-card Brawl/constructed list, not Commander. The Locust God is only a Brawl-leader/theme clue here.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-marath-edh-precon",
@@ -33985,7 +35255,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Marath, Will of the Wild",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Marath, Will of the Wild, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/NatureOfTheBeast_C13.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-marath-juiced-precon",
@@ -34553,7 +35842,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "Marath is absent from both saved sections, and this is not the exact official precon list; no commander is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-marisi-breaker-of-the-coil-edh",
@@ -34569,7 +35866,15 @@
       "contextualTarget": 100,
       "main": [],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "The title names Marisi, but the saved source has no main or sideboard rows to corroborate a helm.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-mayael-her-dragons",
@@ -35247,7 +36552,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": true
+      "sourceSectionsOmitted": true,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mayael the Anima",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mayael the Anima",
+            "url": "https://edhrec.com/commanders/mayael-the-anima"
+          }
+        ]
+      }
     },
     {
       "id": "deck-maziborn-v2",
@@ -35444,7 +36768,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mazirek, Kraul Death Priest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mazirek, Kraul Death Priest",
+            "url": "https://edhrec.com/commanders/mazirek-kraul-death-priest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-mazirek-beater-sac-revised",
@@ -36077,7 +37420,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mazirek, Kraul Death Priest",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues; Mazirek, Kraul Death Priest is not in the saved card rows, so no copy has been added. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mazirek, Kraul Death Priest",
+            "url": "https://edhrec.com/commanders/mazirek-kraul-death-priest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-mazirek-sacs-n-clues",
@@ -36915,7 +38277,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": true
+      "sourceSectionsOmitted": true,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mazirek, Kraul Death Priest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mazirek, Kraul Death Priest",
+            "url": "https://edhrec.com/commanders/mazirek-kraul-death-priest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-meren-graveyardz",
@@ -37473,7 +38854,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Meren of Clan Nel Toth",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Meren of Clan Nel Toth",
+            "url": "https://edhrec.com/commanders/meren-of-clan-nel-toth"
+          }
+        ]
+      }
     },
     {
       "id": "deck-mirri-duelist",
@@ -37755,7 +39155,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mirri, Weatherlight Duelist",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mirri, Weatherlight Duelist",
+            "url": "https://edhrec.com/commanders/mirri-weatherlight-duelist"
+          }
+        ]
+      }
     },
     {
       "id": "deck-mirri-the-cursed-edh",
@@ -38097,7 +39516,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Mirri the Cursed",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Mirri the Cursed",
+            "url": "https://edhrec.com/commanders/mirri-the-cursed"
+          }
+        ]
+      }
     },
     {
       "id": "deck-mono-white-rebel",
@@ -38214,7 +39652,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-nahiri-s-gear",
@@ -38577,7 +40023,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Nahiri, the Lithomancer",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Nahiri, the Lithomancer",
+            "url": "https://edhrec.com/commanders/nahiri-the-lithomancer"
+          }
+        ]
+      }
     },
     {
       "id": "deck-neheb-returns",
@@ -38920,7 +40385,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Neheb, the Eternal",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Both Neheb, the Eternal and Neheb, the Worthy are in the list; Neheb, the Eternal is the stronger mono-red Commander fit. The source does not mark the zone.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Neheb, the Eternal",
+            "url": "https://edhrec.com/commanders/neheb-the-eternal"
+          }
+        ]
+      }
     },
     {
       "id": "deck-nekusar-the-mindrazer-edh",
@@ -39583,7 +41067,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Nekusar, the Mindrazer",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Nekusar, the Mindrazer",
+            "url": "https://edhrec.com/commanders/nekusar-the-mindrazer"
+          }
+        ]
+      }
     },
     {
       "id": "deck-new-grenz",
@@ -39970,7 +41473,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Grenzo, Havoc Raiser",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Grenzo, Havoc Raiser",
+            "url": "https://edhrec.com/commanders/grenzo-havoc-raiser"
+          }
+        ]
+      }
     },
     {
       "id": "deck-olivia-edh",
@@ -40352,7 +41874,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Olivia Voldaren",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Olivia Voldaren",
+            "url": "https://edhrec.com/commanders/olivia-voldaren"
+          }
+        ]
+      }
     },
     {
       "id": "deck-omnath-landdrops",
@@ -40739,7 +42280,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Omnath, Locus of Rage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Omnath, Locus of Rage",
+            "url": "https://edhrec.com/commanders/omnath-locus-of-rage"
+          }
+        ]
+      }
     },
     {
       "id": "deck-omnath-super-sunday",
@@ -41056,7 +42616,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-omnath-super-sunday-2",
@@ -41383,7 +42951,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Omnath, Locus of Rage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Omnath, Locus of Rage",
+            "url": "https://edhrec.com/commanders/omnath-locus-of-rage"
+          }
+        ]
+      }
     },
     {
       "id": "deck-open-hostility-commander-2016-precon",
@@ -41840,7 +43427,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Saskia the Unyielding",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/OpenHostility_C16.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-peer-through-time-blue-commander-2014-precon",
@@ -42197,7 +43803,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Teferi, Temporal Archmage",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Teferi, Temporal Archmage, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/PeerThroughTime_C14.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-plunder-the-graves-commander-2015-precon",
@@ -42599,7 +44224,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Meren of Clan Nel Toth",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/PlunderTheGraves_C15.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-power-hungry-enhanced",
@@ -43112,7 +44756,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Prossh, Skyraider of Kher",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Official Wizards Commander precon context",
+            "url": "https://magic.wizards.com/en/news/making-magic/all-five-commander-decklists-2013-10-18"
+          }
+        ]
+      }
     },
     {
       "id": "deck-queen-marchesa-upgrades",
@@ -43159,7 +44822,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Queen Marchesa",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Best-fit inferred from the upgrade title; Queen Marchesa is not present in the saved card rows, and no copy has been added.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Queen Marchesa",
+            "url": "https://edhrec.com/commanders/queen-marchesa"
+          }
+        ]
+      }
     },
     {
       "id": "deck-queen-marchesa-equipment",
@@ -43527,7 +45209,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Queen Marchesa",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Queen Marchesa",
+            "url": "https://edhrec.com/commanders/queen-marchesa/upgraded/equipment"
+          }
+        ]
+      }
     },
     {
       "id": "deck-rgw-big-bad-multicolor-dragon-s-arch",
@@ -43744,7 +45445,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-ruric-thar-edh-mtgo",
@@ -44147,7 +45856,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Ruric Thar, the Unbowed",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Ruric Thar, the Unbowed",
+            "url": "https://edhrec.com/commanders/ruric-thar-the-unbowed"
+          }
+        ]
+      }
     },
     {
       "id": "deck-saskia",
@@ -44619,7 +46347,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Saskia the Unyielding",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Saskia the Unyielding",
+            "url": "https://edhrec.com/commanders/saskia-the-unyielding"
+          }
+        ]
+      }
     },
     {
       "id": "deck-scorpion-brawl",
@@ -44857,7 +46604,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Modern / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-sedris-etbers",
@@ -45199,7 +46954,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Sedris, the Traitor King",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Sedris, the Traitor King",
+            "url": "https://edhrec.com/commanders/sedris-the-traitor-king"
+          }
+        ]
+      }
     },
     {
       "id": "deck-seize-control-commander-2015-precon",
@@ -45591,7 +47365,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Mizzix of the Izmagnus",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/SeizeControl_C15.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-shu-2016",
@@ -45928,7 +47721,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Shu Yun, the Silent Tempest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Shu Yun, the Silent Tempest",
+            "url": "https://edhrec.com/commanders/shu-yun-the-silent-tempest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-shu-fu-budget",
@@ -46270,7 +48082,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Shu Yun, the Silent Tempest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Shu Yun, the Silent Tempest",
+            "url": "https://edhrec.com/commanders/shu-yun-the-silent-tempest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-shu-s-noncreatures",
@@ -46602,7 +48433,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Shu Yun, the Silent Tempest",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Shu Yun, the Silent Tempest",
+            "url": "https://edhrec.com/commanders/shu-yun-the-silent-tempest"
+          }
+        ]
+      }
     },
     {
       "id": "deck-sliver-blue-black",
@@ -46739,7 +48589,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-spirit-flames-precon",
@@ -46886,7 +48744,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Modern / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-stalwart-unity-commander-2016-precon",
@@ -47323,7 +49189,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Kynaios and Tiro of Meletis",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/StalwartUnity_C16.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-surrak-allies",
@@ -47651,7 +49536,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Surrak Dragonclaw",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Surrak Dragonclaw",
+            "url": "https://edhrec.com/commanders/surrak-dragonclaw"
+          }
+        ]
+      }
     },
     {
       "id": "deck-surrak-dragonclaw-edh",
@@ -48013,7 +49917,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Surrak Dragonclaw",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Surrak Dragonclaw",
+            "url": "https://edhrec.com/commanders/surrak-dragonclaw"
+          }
+        ]
+      }
     },
     {
       "id": "deck-swell-the-host-commander-2015-precon",
@@ -48415,7 +50338,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Ezuri, Claw of Progress",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/SwellTheHost_C15.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-tempest-dauthi",
@@ -48548,7 +50490,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-tempest-dauthi-pauper",
@@ -48630,7 +50580,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-teysa-karlov",
@@ -48662,7 +50620,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Modern / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-the-slivers-modified-precon",
@@ -48789,7 +50755,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-tidal-mastery-mm-precon",
@@ -48936,7 +50910,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-ub-bounce-draw",
@@ -49058,7 +51040,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-uril-the-miststalker-mtgo",
@@ -49531,7 +51521,21 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Uril, the Miststalker",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues; Uril, the Miststalker is not in the saved card rows, so no copy has been added. This is not a legality or completion check.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-vampiric-bloodlust-c17-precon",
@@ -49993,7 +51997,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Edgar Markov",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/VampiricBloodlust_C17.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-vorel-value",
@@ -50386,7 +52409,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Vorel of the Hull Clade",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Vorel of the Hull Clade",
+            "url": "https://edhrec.com/commanders/vorel-of-the-hull-clade"
+          }
+        ]
+      }
     },
     {
       "id": "deck-wade-into-battle-commander-2015-precon",
@@ -50788,7 +52830,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Kalemne, Disciple of Iroas",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Official precon context supports this pick. The source export does not separately mark the command zone; the original card row remains in its saved section.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/WadeIntoBattle_C15.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-wg-armadillo-cloak",
@@ -50890,7 +52951,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-white",
@@ -51057,7 +53126,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-white-commander-2014-forged-in-stone",
@@ -51415,7 +53492,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "official_precon",
+        "label": "Assigned · official precon",
+        "commanders": [
+          {
+            "name": "Nahiri, the Lithomancer",
+            "sourceLocation": "not_in_source",
+            "proposedZoneMove": false
+          }
+        ],
+        "note": "Official precon context supports Nahiri, the Lithomancer, but the card is not in the saved rows; no copy has been added. The source export does not separately mark the command zone.",
+        "evidence": [
+          {
+            "label": "Precon decklist reference · MTGJSON",
+            "url": "https://mtgjson.com/api/v5/decks/ForgedInStone_C14.json"
+          }
+        ]
+      }
     },
     {
       "id": "deck-white-knight",
@@ -51512,7 +53608,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-white-walls",
@@ -51639,7 +53743,15 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-winchester-draft-9-27-22",
@@ -52322,7 +54434,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Standard / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-xenagos-budget-edh",
@@ -52910,7 +55030,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Xenagos, God of Revels",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Xenagos, God of Revels",
+            "url": "https://edhrec.com/commanders/xenagos-god-of-revels"
+          }
+        ]
+      }
     },
     {
       "id": "deck-yasova-get-over-here",
@@ -53433,7 +55572,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Yasova Dragonclaw",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Yasova Dragonclaw",
+            "url": "https://edhrec.com/commanders/yasova-dragonclaw"
+          }
+        ]
+      }
     },
     {
       "id": "deck-yasova-stealer",
@@ -53901,7 +56059,15 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This entry is retained as a Legacy / constructed or reference list. No Commander helm is assigned.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-zurgo-hatsmasher",
@@ -54243,7 +56409,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Zurgo Helmsmasher",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Zurgo Helmsmasher",
+            "url": "https://edhrec.com/commanders/zurgo-helmsmasher"
+          }
+        ]
+      }
     },
     {
       "id": "deck-locust-s-locusts-robogles-build",
@@ -54581,7 +56766,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "The Locust God",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · The Locust God",
+            "url": "https://edhrec.com/commanders/the-locust-god"
+          }
+        ]
+      }
     },
     {
       "id": "deck-alesha-millyself-robogles-build",
@@ -54923,7 +57127,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Alesha, Who Smiles at Death",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Alesha, Who Smiles at Death",
+            "url": "https://edhrec.com/commanders/alesha-who-smiles-at-death"
+          }
+        ]
+      }
     },
     {
       "id": "deck-breya-facts-robogles-build",
@@ -55240,7 +57463,28 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "This is a custom 60-card WIP, not a Commander deck. Breya may be a separate child-build idea, but no Commander helm is assigned to this source.",
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Breya, Etherium Shaper",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Breya is the title/theme anchor for a hypothetical Commander-facing child. The 60-card source remains a non-Commander WIP; this guess does not reclassify or edit it.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Breya, Etherium Shaper",
+              "url": "https://edhrec.com/commanders/breya-etherium-shaper"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "deck-brion-quarterback-club-a-robogles-deck",
@@ -55637,7 +57881,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brion Stoutarm",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brion Stoutarm",
+            "url": "https://edhrec.com/commanders/brion-stoutarm"
+          }
+        ]
+      }
     },
     {
       "id": "deck-brion-s-chuckers-robogles",
@@ -55975,7 +58238,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Brion Stoutarm",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Brion Stoutarm",
+            "url": "https://edhrec.com/commanders/brion-stoutarm"
+          }
+        ]
+      }
     },
     {
       "id": "deck-daxos-s-chants-robogles",
@@ -56352,7 +58634,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Daxos the Returned",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Daxos the Returned",
+            "url": "https://edhrec.com/commanders/daxos-the-returned"
+          }
+        ]
+      }
     },
     {
       "id": "deck-grixis-s-evilnesss-robogles",
@@ -56684,7 +58985,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Nekusar, the Mindrazer",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Nekusar is the possible Grixis wheel theme anchor and the best-fit inference, not a source-confirmed commander; the list remains an incomplete WIP.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Nekusar, the Mindrazer",
+            "url": "https://edhrec.com/commanders/nekusar-the-mindrazer"
+          }
+        ]
+      }
     },
     {
       "id": "deck-karlov-s-lives-robogles",
@@ -57021,7 +59341,28 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "The source is classified as 60-card constructed/WIP, not Commander; Karlov is a theme card, not an assigned helm.",
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Karlov of the Ghost Council",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Karlov is the strongest theme fit for a hypothetical Commander-facing child. The saved constructed/WIP source remains without a Commander helm.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Karlov of the Ghost Council",
+              "url": "https://edhrec.com/commanders/karlov-of-the-ghost-council"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "deck-karlovers-package-a-robogles-brew",
@@ -57369,7 +59710,28 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "The source is classified as 60-card constructed/WIP/other. Karlov appears in the main list but is not promoted to a Commander helm.",
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Karlov of the Ghost Council",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Karlov is the strongest theme fit for a hypothetical Commander-facing child. The saved constructed/WIP source remains without a Commander helm.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Karlov of the Ghost Council",
+              "url": "https://edhrec.com/commanders/karlov-of-the-ghost-council"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "deck-kaseto-smackdown-robogles",
@@ -57937,7 +60299,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Kaseto, Orochi Archmage",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Kaseto, Orochi Archmage",
+            "url": "https://edhrec.com/commanders/kaseto-orochi-archmage/core"
+          }
+        ]
+      }
     },
     {
       "id": "deck-king-s-rides-robogles",
@@ -58279,7 +60660,28 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "unconfirmed",
+        "confidence": "unconfirmed",
+        "label": "Commander not confirmed",
+        "commanders": [],
+        "note": "King Macar is only a plausible theme candidate in this incomplete Legacy-labeled list; no command-zone choice is established.",
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "King Macar, the Gold-Cursed",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "King Macar fits the artifact/vehicle and tap/untap clues for a hypothetical Commander-facing child. The Legacy-labeled source remains unassigned.",
+          "evidence": [
+            {
+              "label": "EDHREC context · King Macar, the Gold-Cursed",
+              "url": "https://edhrec.com/commanders/king-macar-the-gold-cursed"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "deck-odric-s-abilities-robogles",
@@ -58646,7 +61048,28 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "not_a_commander_deck",
+        "confidence": "not_applicable",
+        "label": "Not a Commander deck",
+        "commanders": [],
+        "note": "The source is classified as constructed/WIP/other and not evidenced as Commander; Odric is a theme idea, not an assigned helm.",
+        "evidence": [],
+        "separateChildGuess": {
+          "name": "Odric, Lunarch Marshal",
+          "label": "Separate hypothetical child guess · not assigned to this source",
+          "sourceLocation": "main",
+          "proposedZoneMove": true,
+          "note": "Odric best matches the keyword-sharing theme for a hypothetical Commander-facing child. The constructed/WIP source remains without a Commander helm.",
+          "evidence": [
+            {
+              "label": "EDHREC context · Odric, Lunarch Marshal",
+              "url": "https://edhrec.com/commanders/odric-lunarch-marshal"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "deck-phenax-zombies-v2-robogles",
@@ -58999,7 +61422,26 @@
           "printing": "not pinned"
         }
       ],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Phenax, God of Deception",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Phenax, God of Deception",
+            "url": "https://edhrec.com/commanders/phenax-god-of-deception/zombies"
+          }
+        ]
+      }
     },
     {
       "id": "deck-scarab-s-shenanigans-robogles",
@@ -59341,7 +61783,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "The Scarab God",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · The Scarab God",
+            "url": "https://edhrec.com/commanders/the-scarab-god"
+          }
+        ]
+      }
     },
     {
       "id": "deck-sigarda-s-mans-robogles",
@@ -59723,7 +62184,21 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Sigarda, Heron's Grace",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": []
+      }
     },
     {
       "id": "deck-tazri-s-allies-robogles",
@@ -60130,7 +62605,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "General Tazri",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · General Tazri",
+            "url": "https://edhrec.com/commanders/general-tazri"
+          }
+        ]
+      }
     },
     {
       "id": "deck-zadamonored-robogles",
@@ -60467,7 +62961,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Zada, Hedron Grinder",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Zada, Hedron Grinder",
+            "url": "https://edhrec.com/commanders/zada-hedron-grinder"
+          }
+        ]
+      }
     },
     {
       "id": "deck-zurgo-s-sweet-gear-robogles",
@@ -60804,7 +63317,26 @@
         }
       ],
       "sideboard": [],
-      "sourceSectionsOmitted": false
+      "sourceSectionsOmitted": false,
+      "helm": {
+        "status": "assigned",
+        "confidence": "best_fit_inferred",
+        "label": "Best-fit / inferred",
+        "commanders": [
+          {
+            "name": "Zurgo Helmsmasher",
+            "sourceLocation": "main",
+            "proposedZoneMove": true
+          }
+        ],
+        "note": "Best-fit / inferred from the title and card-role clues. The source export does not identify the command zone; the original card row remains in its saved section. This is not a legality or completion check.",
+        "evidence": [
+          {
+            "label": "EDHREC context · Zurgo Helmsmasher",
+            "url": "https://edhrec.com/commanders/zurgo-helmsmasher"
+          }
+        ]
+      }
     }
   ]
 }
