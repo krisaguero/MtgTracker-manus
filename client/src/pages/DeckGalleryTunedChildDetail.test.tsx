@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(36);
+    expect(childPayload.children).toHaveLength(37);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -155,12 +155,13 @@ describe("public Deckbox tuned-child revisions", () => {
     }
   });
 
-  it("includes the four official precon children with exact tuned upgrades", () => {
+  it("includes the five official precon children with exact tuned upgrades", () => {
     const expected = [
       ["Entropic Uprising - Commander 2016 Precon", 10],
       ["EXQUISITE INVENTION - C18 Precon", 10],
       ["Feline Ferocity - Commander 2017 Precon", 12],
       ["Green - Commander 2014 - Guided by Nature", 15],
+      ["Invent Superiority - Commander 2016 Precon", 30],
     ] as const;
     for (const [sourceTitle, swapCount] of expected) {
       const child = childPayload.children.find(candidate => candidate.sourceTitle === sourceTitle);
@@ -178,6 +179,9 @@ describe("public Deckbox tuned-child revisions", () => {
       expect(child.evidence.some(item => item.url.startsWith("https://edhrec.com/"))).toBe(true);
     }
 
+    const breya = childPayload.children.find(child => child.sourceTitle === "Invent Superiority - Commander 2016 Precon");
+    expect(breya?.commanders[0]?.name).toBe("Breya, Etherium Shaper");
+    expect(breya?.parentGroup).toBe("owner_archive_list");
     const saheeli = childPayload.children.find(child => child.sourceTitle === "EXQUISITE INVENTION - C18 Precon");
     expect(saheeli?.plan.coherence).toMatch(/artifact|token/i);
     const freyalise = childPayload.children.find(child => child.sourceTitle === "Green - Commander 2014 - Guided by Nature");

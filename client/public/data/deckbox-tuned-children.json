@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "batchValidationSummary": {
     "status": "pass",
-    "childrenValidated": 36,
-    "scryfallCardNamesRequested": 2285,
+    "childrenValidated": 37,
+    "scryfallCardNamesRequested": 2371,
     "scryfallNamesUnresolved": 0,
     "scryfallApiErrors": 0,
     "checkedAsOf": "2026-11-07",
@@ -35869,6 +35869,1314 @@
         ]
       },
       "relatedBuildsNote": "No directly relevant public tracker build was used as a Commander comparator; adjacent 60-card Brawlalternative pages are context only, not 100-card deck templates."
+    },
+    {
+      "childSlug": "deck-invent-superiority-commander-2016-precon-tuned-child",
+      "title": "Invent Superiority — Breya Artifact Sacrifice (tuned-casual proposal)",
+      "sourceTitle": "Invent Superiority - Commander 2016 Precon",
+      "parentHref": "/deck-gallery/deck-invent-superiority-commander-2016-precon",
+      "parentGroup": "owner_archive_list",
+      "parentSectionsOmitted": false,
+      "visibleSourceCounts": {
+        "mainCopies": 100,
+        "sideboardCopies": 0
+      },
+      "commanders": [
+        {
+          "name": "Breya, Etherium Shaper",
+          "quantity": 1,
+          "zone": "command zone"
+        }
+      ],
+      "format": "Commander",
+      "tuningLevel": "Tuned casual · not cEDH",
+      "status": "Proposed · unplayed",
+      "hypothetical": true,
+      "played": false,
+      "ownershipStatus": "Unknown; not checked against any collection.",
+      "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
+      "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
+      "sourceCompletenessNote": "",
+      "edhrecContext": {
+        "summary": "Current aggregate/theme signals support an artifact-token sacrifice-value shell. Combo/cEDH pages were not used as a construction template; this remains tuned-casual.",
+        "aggregateDeckCount": 22856,
+        "popularTags": {
+          "Artifacts": 3310,
+          "Tokens": 1020,
+          "Combo": 993,
+          "Blink": 307,
+          "Thopters": 275,
+          "Affinity": 257,
+          "Aristocrats": 245,
+          "Control": 190
+        },
+        "themeNotes": [
+          {
+            "title": "EDHREC popular tags",
+            "summary": "Artifacts (3310), Tokens (1020), Combo (993), Blink (307), Thopters (275), Affinity (257), Aristocrats (245), Control (190)",
+            "url": "https://edhrec.com/commanders/breya-etherium-shaper"
+          }
+        ]
+      },
+      "plan": {
+        "commanderPlan": "Breya is the four-color artifact-token sacrifice engine. The child keeps her in the command zone and supplies expendable Thopters, Wellsprings, artifact lands, and recursion so her removal/damage/lifegain modes are repeatable without assuming a deterministic combo.",
+        "subthemes": "Primary: artifact tokens and Thopters. Secondary: sacrifice outlets, artifact ETB/death value, recursion, and artifact-land density. Thopter Foundry, Trading Post, Myr Battlesphere, Sai, Panharmonicon, Skullclamp, Ashnod's Altar, and Marionette Master create or monetize fodder.",
+        "curveTempo": "A 39-land count leaves six more nonland slots for low-cost mana rocks while retaining enough lands for Breya’s four-color costs and the deck’s six-to-eight-mana artifact payoffs. The revised rocks improve early tempo and color access; the build remains interactive and slower than cEDH. No playtesting is claimed.",
+        "interaction": "Use Breya, capsule effects, Dispatch, Swords, Anguished Unmaking, Wear // Tear, Counterspell, Whipflare, and Trading Post to answer creatures, permanents, and go-wide boards; Disk remains a reset button when the artifact board can rebuild.",
+        "cardAdvantage": "Baleful Strix, Etched Oracle, Ichor/Mycosynth Wellspring, Skullclamp, Thoughtcast, Reverse Engineer, Trading Post, Daretti, Silas Renn, and Open the Vaults provide incremental or burst advantage.",
+        "mana": "The 99-card main deck now contains exactly 39 lands: the parent’s artifact and fixing lands plus Ancient Den, Spire of Industry, City of Brass, and Mana Confluence; the six weakest added/slow utility land slots were converted into mana rocks. Arcane Signet, Mind Stone, three Talismans, Chromatic Lantern, Liquimetal Torque, Thought Vessel, Sol Ring, Everflowing Chalice, Commander’s Sphere, Fellwar Stone, Chief Engineer, Etherium Sculptor, Vedalken Engineer, Solemn Simulacrum, and the Wellsprings provide artifact ramp and fixing. City of Brass, Mana Confluence, Spire of Industry, Arcane Signet, the Talismans, Chromatic Lantern, Fellwar Stone, and the existing multicolor lands supply all four colors; the count and curve are a tuned-casual construction judgment, not a playtest result.",
+        "closingPlan": "Close through a wide Thopter/artifact board with Master of Etherium, Cranial Plating, Myr Battlesphere, Hellkite Tyrant, or through sacrifice reach from Breya, Marionette Master, Reckless Fireweaver, Trading Post, and artifact recursion. No deterministic combo or cEDH claim is made.",
+        "coherence": "The proposal preserves the exact visible parent identity and official precon commander while replacing low-impact, expensive, or weakly connected slots with mana, interaction, draw, and sacrifice payoffs. It uses visible rows only and adds no hidden source cards."
+      },
+      "roleEstimates": {
+        "theme_support": 5,
+        "land": 39,
+        "card_advantage": 7,
+        "ramp": 19,
+        "threat_finisher": 6,
+        "engine": 11,
+        "interaction": 7,
+        "protection": 4,
+        "tutor": 1
+      },
+      "main": [
+        {
+          "name": "Akiri, Line-Slinger",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Arcane Sanctum",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Ash Barrens",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Azorius Chancery",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Baleful Strix",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Boros Garrison",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Bruse Tarl, Boorish Herder",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Buried Ruin",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Chief Engineer",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Command Tower",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Commander's Sphere",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Cranial Plating",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Crumbling Necropolis",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Daretti, Scrap Savant",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Darksteel Citadel",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Dimir Aqueduct",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Dispeller's Capsule",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Etched Oracle",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Etherium Sculptor",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Everflowing Chalice",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Evolving Wilds",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Executioner's Capsule",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Exotic Orchard",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Fellwar Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Hellkite Tyrant",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Ichor Wellspring",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Island",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Master of Etherium",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Mountain",
+          "quantity": 4,
+          "role": "land"
+        },
+        {
+          "name": "Mycosynth Wellspring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Myr Battlesphere",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Myr Retriever",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Mystic Monastery",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Nomad Outpost",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Plains",
+          "quantity": 5,
+          "role": "land"
+        },
+        {
+          "name": "Rakdos Carnarium",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Rupture Spire",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sanctum Gargoyle",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Seat of the Synod",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Sharuum the Hegemon",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Shimmer Myr",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Silas Renn, Seeker Adept",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Skullclamp",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Slobad, Goblin Tinkerer",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sol Ring",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Solemn Simulacrum",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Swamp",
+          "quantity": 4,
+          "role": "land"
+        },
+        {
+          "name": "Swiftfoot Boots",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Sydri, Galvanic Genius",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Terramorphic Expanse",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Thopter Foundry",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Trading Post",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Trash for Treasure",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Trinket Mage",
+          "quantity": 1,
+          "role": "tutor"
+        },
+        {
+          "name": "Vedalken Engineer",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Arcane Signet",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Mind Stone",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Talisman of Progress",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Talisman of Indulgence",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Panharmonicon",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Sai, Master Thopterist",
+          "quantity": 1,
+          "role": "theme_support"
+        },
+        {
+          "name": "Marionette Master",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Reckless Fireweaver",
+          "quantity": 1,
+          "role": "threat_finisher"
+        },
+        {
+          "name": "Ashnod's Altar",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Krark-Clan Ironworks",
+          "quantity": 1,
+          "role": "engine"
+        },
+        {
+          "name": "Dispatch",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Swords to Plowshares",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Anguished Unmaking",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Wear // Tear",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Counterspell",
+          "quantity": 1,
+          "role": "interaction"
+        },
+        {
+          "name": "Thoughtcast",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Reverse Engineer",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Thought Monitor",
+          "quantity": 1,
+          "role": "card_advantage"
+        },
+        {
+          "name": "Darksteel Forge",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Padeem, Consul of Innovation",
+          "quantity": 1,
+          "role": "protection"
+        },
+        {
+          "name": "Ancient Den",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Spire of Industry",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "City of Brass",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Mana Confluence",
+          "quantity": 1,
+          "role": "land"
+        },
+        {
+          "name": "Chromatic Lantern",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Talisman of Dominance",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Talisman of Hierarchy",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Talisman of Conviction",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Liquimetal Torque",
+          "quantity": 1,
+          "role": "ramp"
+        },
+        {
+          "name": "Thought Vessel",
+          "quantity": 1,
+          "role": "ramp"
+        }
+      ],
+      "exactChanges": {
+        "zoneMoves": [
+          {
+            "name": "Breya, Etherium Shaper",
+            "quantity": 1,
+            "from": "public_main",
+            "to": "commander",
+            "reason": "Use the packet-assigned official Commander 2016 commander; Breya supplies Thopters and turns two sacrificed artifacts into removal, damage, or life."
+          }
+        ],
+        "cuts": [
+          {
+            "name": "Ancient Excavation",
+            "quantity": 1,
+            "reason": "Replace the five-mana conditional draw spell with Arcane Signet, a two-mana all-color accelerator that casts Breya and the artifact curve earlier."
+          },
+          {
+            "name": "Armory Automaton",
+            "quantity": 1,
+            "reason": "Replace a seven-mana equipment-dependent threat with Mind Stone, an early artifact rock that can later be cashed in for a card."
+          },
+          {
+            "name": "Bonehoard",
+            "quantity": 1,
+            "reason": "Replace a slow living-weapon finisher with Talisman of Progress, immediate blue-white fixing for Breya and interaction."
+          },
+          {
+            "name": "Coastal Breach",
+            "quantity": 1,
+            "reason": "Replace a high-cost mass-bounce spell with Talisman of Indulgence, reliable early black-red fixing that improves tempo."
+          },
+          {
+            "name": "Curse of Vengeance",
+            "quantity": 1,
+            "reason": "Replace a narrow curse with Panharmonicon, which multiplies Breya, Wellspring, Gargoyle, and Thopter ETB value."
+          },
+          {
+            "name": "Filigree Angel",
+            "quantity": 1,
+            "reason": "Replace the expensive life-total payoff with Sai, Master Thopterist, which makes sacrifice fodder while drawing from artifact deaths."
+          },
+          {
+            "name": "Godo, Bandit Warlord",
+            "quantity": 1,
+            "reason": "Replace an off-plan equipment tutor/attacker with Marionette Master, a direct artifact-sacrifice life-loss finisher."
+          },
+          {
+            "name": "Grave Upheaval",
+            "quantity": 1,
+            "reason": "Replace a seven-mana reanimation spell with Reckless Fireweaver, an inexpensive payoff for Breya and Thopter token production."
+          },
+          {
+            "name": "Grip of Phyresis",
+            "quantity": 1,
+            "reason": "Replace a situational aura theft effect with Ashnod's Altar, a repeatable sacrifice outlet that converts tokens into mana."
+          },
+          {
+            "name": "Hanna, Ship's Navigator",
+            "quantity": 1,
+            "reason": "Replace a slow recursion creature with Krark-Clan Ironworks, a scalable artifact-sacrifice engine for mana and combo-free value."
+          },
+          {
+            "name": "Jor Kadeen, the Prevailer",
+            "quantity": 1,
+            "reason": "Replace a combat-dependent anthem body with Dispatch, a one-mana answer that is routinely enabled by the artifact board."
+          },
+          {
+            "name": "Loxodon Warhammer",
+            "quantity": 1,
+            "reason": "Replace a mana-intensive equipment with Swords to Plowshares, efficient creature interaction that preserves tempo."
+          },
+          {
+            "name": "Magus of the Will",
+            "quantity": 1,
+            "reason": "Replace a delayed graveyard refill with Anguished Unmaking, flexible instant-speed removal for any nonland permanent."
+          },
+          {
+            "name": "Migratory Route",
+            "quantity": 1,
+            "reason": "Replace a five-mana token spell with Wear // Tear, efficient artifact/enchantment interaction with an optional two-for-one."
+          },
+          {
+            "name": "Parting Thoughts",
+            "quantity": 1,
+            "reason": "Replace a conditional sacrifice draw spell with Counterspell, protecting Breya and the artifact engine on the stack."
+          },
+          {
+            "name": "Read the Runes",
+            "quantity": 1,
+            "reason": "Replace a mana-hungry draw spell with Thoughtcast, cheap artifact-count card advantage that keeps the curve moving."
+          },
+          {
+            "name": "Soul of New Phyrexia",
+            "quantity": 1,
+            "reason": "Replace a six-mana defensive finisher with Reverse Engineer, additional artifact-costed card flow."
+          },
+          {
+            "name": "Trial // Error",
+            "quantity": 1,
+            "reason": "Replace a narrow split answer with Thought Monitor, a flying artifact that turns a developed board into two cards."
+          },
+          {
+            "name": "Whipflare",
+            "quantity": 1,
+            "reason": "Replace a symmetrical sweeper that can clear the deck’s own tokens with Darksteel Forge, durable protection for the artifact board."
+          },
+          {
+            "name": "Beacon of Unrest",
+            "quantity": 1,
+            "reason": "Replace a five-mana reanimation spell with Padeem, Consul of Innovation, ongoing protection and card advantage for key artifacts."
+          },
+          {
+            "name": "Blinkmoth Urn",
+            "quantity": 1,
+            "reason": "Replace a symmetrical high-cost mana burst with Ancient Den, an artifact land that supplies white mana and sacrifice/affinity density."
+          },
+          {
+            "name": "Ethersworn Adjudicator",
+            "quantity": 1,
+            "reason": "Replace a six-mana conditional removal creature with Spire of Industry, untapped four-color fixing that is reliable in an artifact deck."
+          },
+          {
+            "name": "Faerie Artisans",
+            "quantity": 1,
+            "reason": "Replace a fragile reactive creature with City of Brass, immediate access to any of Breya’s four colors."
+          },
+          {
+            "name": "Hellkite Igniter",
+            "quantity": 1,
+            "reason": "Replace a seven-mana finisher with Mana Confluence, painless-to-sequence color fixing for the four-color spell package."
+          },
+          {
+            "name": "Nevinyrral's Disk",
+            "quantity": 1,
+            "reason": "Replace a slow reset artifact with Chromatic Lantern, a proactive fixing/ramp piece that supports the curve every turn."
+          },
+          {
+            "name": "Open the Vaults",
+            "quantity": 1,
+            "reason": "Replace a seven-mana mass recursion spell with Talisman of Dominance, early acceleration and blue-black fixing."
+          },
+          {
+            "name": "Phyrexian Rebirth",
+            "quantity": 1,
+            "reason": "Replace a six-mana sweeper that resets the artifact board with Talisman of Hierarchy, early white-black fixing for Breya and answers."
+          },
+          {
+            "name": "Sphinx Summoner",
+            "quantity": 1,
+            "reason": "Replace a five-mana tutor body with Talisman of Conviction, early red-white fixing that improves casting consistency."
+          },
+          {
+            "name": "Temple of the False God",
+            "quantity": 1,
+            "reason": "Replace a land that is unreliable before five lands with Liquimetal Torque, unconditional early ramp plus an artifact-conversion utility mode."
+          },
+          {
+            "name": "Transguild Promenade",
+            "quantity": 1,
+            "reason": "Replace a tapped colorless-fixing land with Thought Vessel, untapped ramp that also supports large draw turns."
+          }
+        ],
+        "adds": [
+          {
+            "name": "Arcane Signet",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add low-cost color fixing so Breya and the artifact curve are cast on schedule.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Mind Stone",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add low-cost color fixing so Breya and the artifact curve are cast on schedule.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Talisman of Progress",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add low-cost color fixing so Breya and the artifact curve are cast on schedule.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add low-cost color fixing so Breya and the artifact curve are cast on schedule.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Panharmonicon",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Increase repeatable artifact sacrifice, ETB, recursion, or token value around Breya.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Sai, Master Thopterist",
+            "quantity": 1,
+            "role": "theme_support",
+            "reason": "Tighten the Thopter/artifact-token and sacrifice package.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Marionette Master",
+            "quantity": 1,
+            "role": "threat_finisher",
+            "reason": "Replace a low-impact threat with a board-dependent artifact/token closer.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Reckless Fireweaver",
+            "quantity": 1,
+            "role": "threat_finisher",
+            "reason": "Replace a low-impact threat with a board-dependent artifact/token closer.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Ashnod's Altar",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Increase repeatable artifact sacrifice, ETB, recursion, or token value around Breya.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Krark-Clan Ironworks",
+            "quantity": 1,
+            "role": "engine",
+            "reason": "Increase repeatable artifact sacrifice, ETB, recursion, or token value around Breya.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Dispatch",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Improve efficient answers while retaining a tuned-casual, non-cEDH posture.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Swords to Plowshares",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Improve efficient answers while retaining a tuned-casual, non-cEDH posture.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Anguished Unmaking",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Improve efficient answers while retaining a tuned-casual, non-cEDH posture.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Wear // Tear",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Improve efficient answers while retaining a tuned-casual, non-cEDH posture.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Counterspell",
+            "quantity": 1,
+            "role": "interaction",
+            "reason": "Improve efficient answers while retaining a tuned-casual, non-cEDH posture.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Thoughtcast",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Add reliable draw that converts expendable artifacts or artifact count into cards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Reverse Engineer",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Add reliable draw that converts expendable artifacts or artifact count into cards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Thought Monitor",
+            "quantity": 1,
+            "role": "card_advantage",
+            "reason": "Add reliable draw that converts expendable artifacts or artifact count into cards.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Darksteel Forge",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Protect the artifact board and commander from sweepers and spot removal.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Padeem, Consul of Innovation",
+            "quantity": 1,
+            "role": "protection",
+            "reason": "Protect the artifact board and commander from sweepers and spot removal.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Ancient Den",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Replace a slow or low-synergy slot with a real four-color land to support consistent early casting and artifact density.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Spire of Industry",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Replace a slow or low-synergy slot with a real four-color land to support consistent early casting and artifact density.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "City of Brass",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Replace a slow or low-synergy slot with a real four-color land to support consistent early casting and artifact density.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Mana Confluence",
+            "quantity": 1,
+            "role": "land",
+            "reason": "Replace a slow or low-synergy slot with a real four-color land to support consistent early casting and artifact density.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Chromatic Lantern",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add a three-mana artifact that turns the existing lands into all-color sources while also producing mana; this replaces a narrow land slot and supports Breya’s four-color costs.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Talisman of Dominance",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add an inexpensive blue-black mana rock that accelerates the early artifact curve and fixes two of Breya’s colors.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Talisman of Hierarchy",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add an inexpensive white-black mana rock that improves access to Breya and white interaction without requiring a land drop.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Talisman of Conviction",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add an inexpensive red-white mana rock that fixes the two colors most needed for Breya’s red damage and white answers.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Liquimetal Torque",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add a two-mana artifact mana rock that also turns a permanent into an artifact for sacrifice, affinity, and artifact-count synergies.",
+            "sourceClass": "new_addition"
+          },
+          {
+            "name": "Thought Vessel",
+            "quantity": 1,
+            "role": "ramp",
+            "reason": "Add a two-mana artifact rock that advances the commander curve and removes the maximum-hand-size constraint from the deck’s draw engines.",
+            "sourceClass": "new_addition"
+          }
+        ],
+        "swaps": [
+          {
+            "cut": {
+              "name": "Ancient Excavation",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Arcane Signet",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace the five-mana conditional draw spell with Arcane Signet, a two-mana all-color accelerator that casts Breya and the artifact curve earlier."
+          },
+          {
+            "cut": {
+              "name": "Armory Automaton",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Mind Stone",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a seven-mana equipment-dependent threat with Mind Stone, an early artifact rock that can later be cashed in for a card."
+          },
+          {
+            "cut": {
+              "name": "Bonehoard",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Talisman of Progress",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a slow living-weapon finisher with Talisman of Progress, immediate blue-white fixing for Breya and interaction."
+          },
+          {
+            "cut": {
+              "name": "Coastal Breach",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Talisman of Indulgence",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a high-cost mass-bounce spell with Talisman of Indulgence, reliable early black-red fixing that improves tempo."
+          },
+          {
+            "cut": {
+              "name": "Curse of Vengeance",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Panharmonicon",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace a narrow curse with Panharmonicon, which multiplies Breya, Wellspring, Gargoyle, and Thopter ETB value."
+          },
+          {
+            "cut": {
+              "name": "Filigree Angel",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Sai, Master Thopterist",
+              "quantity": 1,
+              "role": "theme_support"
+            },
+            "reason": "Replace the expensive life-total payoff with Sai, Master Thopterist, which makes sacrifice fodder while drawing from artifact deaths."
+          },
+          {
+            "cut": {
+              "name": "Godo, Bandit Warlord",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Marionette Master",
+              "quantity": 1,
+              "role": "threat_finisher"
+            },
+            "reason": "Replace an off-plan equipment tutor/attacker with Marionette Master, a direct artifact-sacrifice life-loss finisher."
+          },
+          {
+            "cut": {
+              "name": "Grave Upheaval",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Reckless Fireweaver",
+              "quantity": 1,
+              "role": "threat_finisher"
+            },
+            "reason": "Replace a seven-mana reanimation spell with Reckless Fireweaver, an inexpensive payoff for Breya and Thopter token production."
+          },
+          {
+            "cut": {
+              "name": "Grip of Phyresis",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Ashnod's Altar",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace a situational aura theft effect with Ashnod's Altar, a repeatable sacrifice outlet that converts tokens into mana."
+          },
+          {
+            "cut": {
+              "name": "Hanna, Ship's Navigator",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Krark-Clan Ironworks",
+              "quantity": 1,
+              "role": "engine"
+            },
+            "reason": "Replace a slow recursion creature with Krark-Clan Ironworks, a scalable artifact-sacrifice engine for mana and combo-free value."
+          },
+          {
+            "cut": {
+              "name": "Jor Kadeen, the Prevailer",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Dispatch",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a combat-dependent anthem body with Dispatch, a one-mana answer that is routinely enabled by the artifact board."
+          },
+          {
+            "cut": {
+              "name": "Loxodon Warhammer",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Swords to Plowshares",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a mana-intensive equipment with Swords to Plowshares, efficient creature interaction that preserves tempo."
+          },
+          {
+            "cut": {
+              "name": "Magus of the Will",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Anguished Unmaking",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a delayed graveyard refill with Anguished Unmaking, flexible instant-speed removal for any nonland permanent."
+          },
+          {
+            "cut": {
+              "name": "Migratory Route",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Wear // Tear",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a five-mana token spell with Wear // Tear, efficient artifact/enchantment interaction with an optional two-for-one."
+          },
+          {
+            "cut": {
+              "name": "Parting Thoughts",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Counterspell",
+              "quantity": 1,
+              "role": "interaction"
+            },
+            "reason": "Replace a conditional sacrifice draw spell with Counterspell, protecting Breya and the artifact engine on the stack."
+          },
+          {
+            "cut": {
+              "name": "Read the Runes",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Thoughtcast",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace a mana-hungry draw spell with Thoughtcast, cheap artifact-count card advantage that keeps the curve moving."
+          },
+          {
+            "cut": {
+              "name": "Soul of New Phyrexia",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Reverse Engineer",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace a six-mana defensive finisher with Reverse Engineer, additional artifact-costed card flow."
+          },
+          {
+            "cut": {
+              "name": "Trial // Error",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Thought Monitor",
+              "quantity": 1,
+              "role": "card_advantage"
+            },
+            "reason": "Replace a narrow split answer with Thought Monitor, a flying artifact that turns a developed board into two cards."
+          },
+          {
+            "cut": {
+              "name": "Whipflare",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Darksteel Forge",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Replace a symmetrical sweeper that can clear the deck’s own tokens with Darksteel Forge, durable protection for the artifact board."
+          },
+          {
+            "cut": {
+              "name": "Beacon of Unrest",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Padeem, Consul of Innovation",
+              "quantity": 1,
+              "role": "protection"
+            },
+            "reason": "Replace a five-mana reanimation spell with Padeem, Consul of Innovation, ongoing protection and card advantage for key artifacts."
+          },
+          {
+            "cut": {
+              "name": "Blinkmoth Urn",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Ancient Den",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Replace a symmetrical high-cost mana burst with Ancient Den, an artifact land that supplies white mana and sacrifice/affinity density."
+          },
+          {
+            "cut": {
+              "name": "Ethersworn Adjudicator",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Spire of Industry",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Replace a six-mana conditional removal creature with Spire of Industry, untapped four-color fixing that is reliable in an artifact deck."
+          },
+          {
+            "cut": {
+              "name": "Faerie Artisans",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "City of Brass",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Replace a fragile reactive creature with City of Brass, immediate access to any of Breya’s four colors."
+          },
+          {
+            "cut": {
+              "name": "Hellkite Igniter",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Mana Confluence",
+              "quantity": 1,
+              "role": "land"
+            },
+            "reason": "Replace a seven-mana finisher with Mana Confluence, painless-to-sequence color fixing for the four-color spell package."
+          },
+          {
+            "cut": {
+              "name": "Nevinyrral's Disk",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Chromatic Lantern",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a slow reset artifact with Chromatic Lantern, a proactive fixing/ramp piece that supports the curve every turn."
+          },
+          {
+            "cut": {
+              "name": "Open the Vaults",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Talisman of Dominance",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a seven-mana mass recursion spell with Talisman of Dominance, early acceleration and blue-black fixing."
+          },
+          {
+            "cut": {
+              "name": "Phyrexian Rebirth",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Talisman of Hierarchy",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a six-mana sweeper that resets the artifact board with Talisman of Hierarchy, early white-black fixing for Breya and answers."
+          },
+          {
+            "cut": {
+              "name": "Sphinx Summoner",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Talisman of Conviction",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a five-mana tutor body with Talisman of Conviction, early red-white fixing that improves casting consistency."
+          },
+          {
+            "cut": {
+              "name": "Temple of the False God",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Liquimetal Torque",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a land that is unreliable before five lands with Liquimetal Torque, unconditional early ramp plus an artifact-conversion utility mode."
+          },
+          {
+            "cut": {
+              "name": "Transguild Promenade",
+              "quantity": 1
+            },
+            "replacement": {
+              "name": "Thought Vessel",
+              "quantity": 1,
+              "role": "ramp"
+            },
+            "reason": "Replace a tapped colorless-fixing land with Thought Vessel, untapped ramp that also supports large draw turns."
+          }
+        ]
+      },
+      "relatedPublicBuilds": [
+        {
+          "title": "Dr. Madison Li · Fallout energy & artifacts",
+          "commander": "Dr. Madison Li",
+          "format": "Custom 60-card Brawlternative / Commander preview; not a 100-card Commander deck",
+          "publicHref": "/brawl-box/dr-madison-li",
+          "relation": "Related public tracker context only; not a card source."
+        },
+        {
+          "title": "Araumi of the Dead Tide · graveyard & encore",
+          "commander": "Araumi of the Dead Tide",
+          "format": "Custom 60-card Brawlternative / Commander preview; not a 100-card Commander deck",
+          "publicHref": "/brawl-box/araumi-of-the-dead-tide",
+          "relation": "Related public tracker context only; not a card source."
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Breya EDHREC commander aggregate and themes",
+          "url": "https://edhrec.com/commanders/breya-etherium-shaper",
+          "usedFor": "Current commander aggregate and broad card/theme patterns."
+        },
+        {
+          "label": "Breya EDHREC artifacts theme",
+          "url": "https://edhrec.com/commanders/breya-etherium-shaper/artifacts",
+          "usedFor": "Artifact package role and theme context."
+        },
+        {
+          "label": "Invent Superiority precon EDHREC page",
+          "url": "https://edhrec.com/precons/invent-superiority/breya-etherium-shaper",
+          "usedFor": "Precon-derived context for the Breya build."
+        },
+        {
+          "label": "MTGJSON Commander 2016 Invent Superiority list",
+          "url": "https://mtgjson.com/api/v5/decks/InventSuperiority_C16.json",
+          "usedFor": "Cross-check of the named official precon source list."
+        },
+        {
+          "label": "Wizards Commander format rules",
+          "url": "https://magic.wizards.com/en/formats/commander",
+          "usedFor": "Commander construction and color-identity rule reference."
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "mainCount": 99,
+        "commanderCount": 1,
+        "totalCount": 100,
+        "cardNamesResolved": 86,
+        "scryfallNamesUnresolved": 0,
+        "commanderColorIdentity": [
+          "B",
+          "R",
+          "U",
+          "W"
+        ],
+        "colorIdentityCheck": "pass",
+        "commanderLegalityCheck": "pass",
+        "commanderEligibilityCheck": "pass",
+        "singletonCheck": "pass",
+        "scryfallLandCount": 39,
+        "exactSourceDiffCheck": "pass",
+        "checkedAsOf": "2026-11-07",
+        "references": [
+          {
+            "label": "Wizards Commander format",
+            "url": "https://magic.wizards.com/en/formats/commander"
+          },
+          {
+            "label": "Scryfall card data documentation",
+            "url": "https://scryfall.com/docs/api/cards"
+          }
+        ]
+      }
     }
   ]
 }
