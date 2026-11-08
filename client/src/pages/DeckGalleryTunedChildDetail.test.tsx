@@ -42,7 +42,7 @@ function walkKeys(value: unknown, path = "$"): string[] {
 describe("public Deckbox tuned-child revisions", () => {
   it("validates the separate dataset and all 100-card Commander proposals", () => {
     expect(() => validateDeckGalleryTunedChildrenPayload(childPayload)).not.toThrow();
-    expect(childPayload.children).toHaveLength(37);
+    expect(childPayload.children).toHaveLength(45);
     for (const child of childPayload.children) {
       const parentId = child.parentHref.split("/").pop();
       const parent = galleryPayload.entries.find(entry => entry.id === parentId);
@@ -155,13 +155,79 @@ describe("public Deckbox tuned-child revisions", () => {
     }
   });
 
-  it("includes the five official precon children with exact tuned upgrades", () => {
+  it("covers batch-7 children with exact counts, source caveats, and specific EDHREC context", () => {
+    const expected = [
+      { title: "Krenko EDH", commander: "Krenko, Mob Boss", lands: 34, cuts: 8, adds: 8, paired: 8 },
+      { title: "Kynaios and Tiro - No Budget", commander: "Kynaios and Tiro of Meletis", lands: 40, cuts: 5, adds: 0, paired: 0 },
+      { title: "Kynaios and Tiro - Updated", commander: "Kynaios and Tiro of Meletis", lands: 39, cuts: 8, adds: 7, paired: 7 },
+      { title: "Marath EDH (PRECON)", commander: "Marath, Will of the Wild", lands: 39, cuts: 20, adds: 20, paired: 20 },
+      { title: "Mayael & Her Dragons", commander: "Mayael the Anima", lands: 36, cuts: 51, adds: 21, paired: 21 },
+      { title: "Maziborn v2", commander: "Mazirek, Kraul Death Priest", lands: 35, cuts: 1, adds: 36, paired: 1 },
+      { title: "Mazirek - Beater Sac Revised", commander: "Mazirek, Kraul Death Priest", lands: 31, cuts: 4, adds: 0, paired: 0 },
+      { title: "Mazirek sacs n' clues", commander: "Mazirek, Kraul Death Priest", lands: 32, cuts: 37, adds: 21, paired: 21 },
+    ] as const;
+
+    for (const item of expected) {
+      const child = childPayload.children.find(candidate => candidate.sourceTitle === item.title);
+      expect(child, item.title).toBeDefined();
+      if (!child) continue;
+      expect(child.commanders[0]?.name).toBe(item.commander);
+      expect(child.status).toBe("Proposed · unplayed");
+      expect(child.hypothetical).toBe(true);
+      expect(child.played).toBe(false);
+      expect(child.ownershipStatus.toLowerCase()).toContain("unknown");
+      expect(child.validation.totalCount).toBe(100);
+      expect(child.validation.scryfallLandCount).toBe(item.lands);
+      expect(child.sourceCompletenessNote).toBeTruthy();
+      expect(child.plan.commanderPlan).not.toBe("Not provided.");
+      expect(child.plan.curveTempo).not.toBe("Not provided.");
+      expect(child.plan.interaction).not.toBe("Not provided.");
+      expect(child.plan.cardAdvantage).not.toBe("Not provided.");
+      expect(child.plan.mana).not.toBe("Not provided.");
+      expect(child.plan.closingPlan).not.toBe("Not provided.");
+      expect(child.plan.coherence.length).toBeGreaterThan(80);
+      expect(child.plan.coherence).not.toMatch(/narrows the list around its commander plan and tuned-casual roles/i);
+      expect(child.exactChanges.cuts.reduce((sum, row) => sum + row.quantity, 0)).toBe(item.cuts);
+      expect(child.exactChanges.adds.reduce((sum, row) => sum + row.quantity, 0)).toBe(item.adds);
+      expect(child.exactChanges.swaps.reduce((sum, row) => sum + row.cut.quantity, 0)).toBe(item.paired);
+      expect(child.exactChanges.swaps.reduce((sum, row) => sum + row.replacement.quantity, 0)).toBe(item.paired);
+      for (const swap of child.exactChanges.swaps) expect(swap.reason).toBeTruthy();
+      const context = child.edhrecContext as unknown as Record<string, unknown>;
+      expect(typeof context.summary).toBe("string");
+      expect(context.summary).not.toBe("EDHREC theme and aggregate evidence informed this proposed child; the short notes below summarize the public sources.");
+      expect(context.summary).not.toBe("EDHREC themes and aggregates informed this proposed child.");
+      expect(Number(context.aggregateDeckCount)).toBeGreaterThan(0);
+      expect(Array.isArray(context.themeNotes)).toBe(true);
+      expect((context.themeNotes as unknown[]).length).toBeGreaterThan(0);
+      expect(child.evidence.some(item => item.url.startsWith("https://edhrec.com/"))).toBe(true);
+    }
+
+    const krenko = childPayload.children.find(child => child.sourceTitle === "Krenko EDH");
+    expect(krenko?.sourceCompletenessNote).toContain("Vintage saved-format label");
+    expect(krenko?.sourceCompletenessNote).toContain("not treated as Commander legality");
+    const kynaiosTrim = childPayload.children.find(child => child.sourceTitle === "Kynaios and Tiro - No Budget");
+    expect(kynaiosTrim?.relatedBuildsNote).toContain("not 100-card deck templates");
+    const marath = childPayload.children.find(child => child.sourceTitle === "Marath EDH (PRECON)");
+    expect(marath?.sourceCompletenessNote).toContain("absent from visible rows");
+    const mayael = childPayload.children.find(child => child.sourceTitle === "Mayael & Her Dragons");
+    expect(mayael?.parentSectionsOmitted).toBe(true);
+    const maziborn = childPayload.children.find(child => child.sourceTitle === "Maziborn v2");
+    expect(maziborn?.sourceCompletenessNote).toContain("65 public main copies");
+    expect(maziborn?.sourceCompletenessNote).toMatch(/not a claim that the original list was a complete Commander deck/i);
+    const inferredMazirek = childPayload.children.find(child => child.sourceTitle === "Mazirek - Beater Sac Revised");
+    expect(inferredMazirek?.sourceCompletenessNote).toMatch(/best-fit\/inferred assignment/i);
+    const clueMazirek = childPayload.children.find(child => child.sourceTitle === "Mazirek sacs n' clues");
+    expect(clueMazirek?.parentSectionsOmitted).toBe(true);
+  });
+
+  it("includes the six official precon children with exact tuned upgrades", () => {
     const expected = [
       ["Entropic Uprising - Commander 2016 Precon", 10],
       ["EXQUISITE INVENTION - C18 Precon", 10],
       ["Feline Ferocity - Commander 2017 Precon", 12],
       ["Green - Commander 2014 - Guided by Nature", 15],
       ["Invent Superiority - Commander 2016 Precon", 30],
+      ["Marath EDH (PRECON)", 20],
     ] as const;
     for (const [sourceTitle, swapCount] of expected) {
       const child = childPayload.children.find(candidate => candidate.sourceTitle === sourceTitle);
