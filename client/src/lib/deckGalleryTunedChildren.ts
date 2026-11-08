@@ -132,6 +132,8 @@ export function validateDeckGalleryTunedChildrenPayload(
       throw new Error(`Tuned child ${child.childSlug} must remain a hypothetical, unplayed Commander proposal.`);
     if (child.sourceCompletenessNote !== undefined && typeof child.sourceCompletenessNote !== "string")
       throw new Error(`Tuned child ${child.childSlug} has a malformed source-completeness note.`);
+    if (child.edhrecContext !== undefined && typeof child.edhrecContext !== "string" && !isRecord(child.edhrecContext))
+      throw new Error(`Tuned child ${child.childSlug} has unnormalized EDHREC context.`);
     if (child.relatedBuildsNote !== undefined && typeof child.relatedBuildsNote !== "string")
       throw new Error(`Tuned child ${child.childSlug} has a malformed tracker-build note.`);
     if (!Array.isArray(child.main) || !Array.isArray(child.commanders))

@@ -35,7 +35,7 @@
       "played": false,
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
-      "sourceNote": "The parent export marks one or more sections as unavailable. This child uses only rows visible on the public parent page; missing or hidden content is not reconstructed.",
+      "sourceNote": "The public parent omits one or more source sections. This child uses only visible rows; missing or hidden cards were not reconstructed.",
       "sourceCompletenessNote": "",
       "edhrecContext": {
         "summary": "Current EDHREC context shows approximately 3.8K Mazirek decks. Leading tags are +1/+1 Counters, Sacrifice, Aristocrats, and Tokens; the average-deck page reinforces sacrifice outlets, token engines, death-trigger draw, ramp, interaction, and protection. This is context only, not ownership or legality validation.",
@@ -52,11 +52,7 @@
           "Awakening Zone",
           "Hardened Scales",
           "Ashnod's Altar",
-          "Sol Ring",
-          "Mycoloth",
-          "Smothering Abomination",
-          "Rampant Growth",
-          "Victimize"
+          "Sol Ring"
         ]
       },
       "plan": {
@@ -1646,7 +1642,12 @@
       "sourceCompletenessNote": "",
       "edhrecContext": {
         "summary": "EDHREC currently highlights Chaos, Sacrifice, Primal Surge, and Ramp tags. Its Vaevictis recommendations include Rhythm of the Wild, Lightning Greaves, Aid from the Cowl, Swiftfoot Boots, Etali, Haunted Crossroads, Solemn Simulacrum, Mazirek, Wood Elves, Farhaven Elf, It That Betrays, and Overseer of the Damned. The EDHREC article emphasizes ramp, haste, top-deck manipulation, and permanent-heavy construction.",
-        "powerAssumption": "Used as recommendation context for tuned casual, not as a legality or ownership check."
+        "themeNotes": [
+          {
+            "title": "Power-level context",
+            "summary": "Used as recommendation context for tuned casual, not as a legality or ownership check."
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Attack with Vaevictis to sacrifice expendable permanents and cheat permanents from the top of the library; haste and protection make the attack trigger reliable.",
@@ -2706,7 +2707,9 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": "Current EDHREC aggregate context lists Minotaurs, Discard, Aggro, and Hellbent as prominent Neheb tags. Top recommendations include Kragma Warcaller, Rageblood Shaman, Ragemonger, Felhide Petrifier, Sethron, Deathbellow War Cry, Neheb the Eternal, Glint-Horn Buccaneer, and Fanatic of Mogis. The Minotaurs and self-discard pages also surface Bottomless Pit, Geths Grimoire, discard/value cards, and Rakdos interaction. EDHREC is recommendation context, not legality or power certification.",
+      "edhrecContext": {
+        "summary": "Current EDHREC aggregate context lists Minotaurs, Discard, Aggro, and Hellbent as prominent Neheb tags. Top recommendations include Kragma Warcaller, Rageblood Shaman, Ragemonger, Felhide Petrifier, Sethron, Deathbellow War Cry, Neheb the Eternal, Glint-Horn Buccaneer, and Fanatic of Mogis. The Minotaurs and self-discard pages also surface Bottomless Pit, Geths Grimoire, discard/value cards, and Rakdos interaction. EDHREC is recommendation context, not legality or power certification."
+      },
       "plan": {
         "commanderPlan": "Neheb attacks with a low-hand Minotaur board, applying discard pressure and rewarding hellbent combat.",
         "subthemes": [
@@ -4230,15 +4233,13 @@
           "Aggro": 250,
           "Combo": 155
         },
-        "recommendationContext": [
+        "recommendationExamples": [
           "Faithless Looting",
           "Karmic Guide",
           "Swords to Plowshares",
           "Buried Alive",
           "Viscera Seer",
-          "Welcoming Vampire",
-          "Mentor of the Meek",
-          "Reveillark"
+          "Welcoming Vampire"
         ]
       },
       "plan": {
@@ -5893,7 +5894,9 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": "Current EDHREC context is directional, not a legality or ownership check: the Ruric Thar page shows 7,227 total decks and tags including Aggro (220), Burn (153), Stax (117), Primal Surge (106), Ramp (95), Group Slug (71), Hatebears (55), and Stompy (55). The aggro filter shows 220 filtered decks; the group-slug filter shows 72. The average deck page presents a creature-heavy shell with 48 creatures, 35 lands, creature ramp, Eternal Witness, Reclamation Sage, Beast Within, Chaos Warp, Heroic Intervention, and combat/value engines. This child uses those aggregate themes as a sanity check while remaining limited to the packet public pool.",
+      "edhrecContext": {
+        "summary": "Current EDHREC context is directional, not a legality or ownership check: the Ruric Thar page shows 7,227 total decks and tags including Aggro (220), Burn (153), Stax (117), Primal Surge (106), Ramp (95), Group Slug (71), Hatebears (55), and Stompy (55). The aggro filter shows 220 filtered decks; the group-slug filter shows 72. The average deck page presents a creature-heavy shell with 48 creatures, 35 lands, creature ramp, Eternal Witness, Reclamation Sage, Beast Within, Chaos Warp, Heroic Intervention, and…"
+      },
       "plan": {
         "commanderPlan": "Use Ruric Thar as the top-end pressure engine: attack with a dense creature board while making opposing noncreature spells costly. The commander assignment is inferred, so the child remains hypothetical and unplayed; separate Scryfall checks confirmed commander eligibility, color identity, and Commander legality.",
         "subthemes": "Werewolf/tribal package supplies board presence and transformation payoffs; creature-based ramp accelerates into Ruric Thar and finishers; combat engines and anthems convert wide boards into lethal attacks; a compact interaction/protection suite preserves pressure.",
@@ -6439,7 +6442,9 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": "EDHREC currently shows Brago among a large aggregate commander population, with Blink the dominant tagged theme and ETB, Control, Combo, Tokens, Stax, and Artifacts as secondary signals. The filtered Blink page separates core/upgraded/optimized/CEDH brackets, while the optimized midrange view highlights Peregrine Drake, Aether Channeler, and Dovin's Veto among high-lift recommendations. These aggregates informed the blink/value and interaction emphasis, but additions are restricted to the supplied public sideboard unless otherwise noted.",
+      "edhrecContext": {
+        "summary": "EDHREC currently shows Brago among a large aggregate commander population, with Blink the dominant tagged theme and ETB, Control, Combo, Tokens, Stax, and Artifacts as secondary signals. The filtered Blink page separates core/upgraded/optimized/CEDH brackets, while the optimized midrange view highlights Peregrine Drake, Aether Channeler, and Dovin's Veto among high-lift recommendations. These aggregates informed the blink/value and interaction emphasis, but additions are restricted to the supplied public…"
+      },
       "plan": {
         "commanderPlan": "Connect Brago in combat, then blink nonlands after combat to reuse ETB effects, reset Reality Acid, generate artifact/token value, and repeatedly deploy protection or interaction. The child is hypothetical and tuned-casual, not cEDH.",
         "subthemes": "Primary blink/ETB value; secondary artifact recursion and token pressure (Blade Splicer, Myr Battlesphere, Mirrorworks, Thopter Spy Network); soft control through Stonehorn Dignitary and Rishadan creatures; limited combat-finisher package.",
@@ -7121,8 +7126,7 @@
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
       "edhrecContext": {
-        "summary": "EDHREC currently shows 3,937 Brion decks. Leading tags are Theft (181), Fling (140), Lifegain (107), and Burn (71). Its upgraded aggregate shows 281 decks and overlaps this pool on Captivating Crew, Feldon, Gisela, Gift of Immortality, Stalking Vengeance, Sun Titan, and Zealous Conscripts.",
-        "interpretation": "Recommendation context only; it does not establish ownership, exact legality, or a requirement to copy the average deck."
+        "summary": "EDHREC currently shows 3,937 Brion decks. Leading tags are Theft (181), Fling (140), Lifegain (107), and Burn (71). Its upgraded aggregate shows 281 decks and overlaps this pool on Captivating Crew, Feldon, Gisela, Gift of Immortality, Stalking Vengeance, Sun Titan, and Zealous Conscripts."
       },
       "plan": {
         "commanderPlan": "Cast Brion Stoutarm, temporarily steal opposing creatures, then sacrifice them to Brion or another outlet for player damage and lifegain. Recursive and disposable bodies become reach while Brion stabilizes life totals.",
@@ -7685,7 +7689,12 @@
       "sourceCompletenessNote": "",
       "edhrecContext": {
         "summary": "EDHREC currently shows 3,287 Licia, Sanguine Tribune decks. Its leading tags are Lifegain (579), Vampires (214), Self-Damage (116), and Voltron (62). Top-card context includes Swords to Plowshares, Vito, Thorn of the Dusk Rose, Sanguine Bond, Font of Agonies, Anguished Unmaking, Creeping Bloodsucker, Swiftfoot Boots, Twilight Prophet, and Vona, Butcher of Magan. The EDHREC aggregate is recommendation context, not proof of legality, ownership, or playtesting.",
-        "aggregateCaveat": "The source packet was saved as Vintage and lists 105 main copies plus 68 sideboard copies; those counts are preserved as source metadata, not treated as Commander validation."
+        "themeNotes": [
+          {
+            "title": "Aggregate caveat",
+            "summary": "The source source list was saved as Vintage and lists 105 main copies plus 68 sideboard copies; those counts are preserved as source metadata, not treated as Commander validation."
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Gain life before combat so Licia's generic cost reduction is meaningful, then use her lifelink and once-per-turn five-life payment to grow a protected first-strike threat. Drain payoffs turn the same life movement into reach.",
@@ -8827,38 +8836,41 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "finding": "The live Marchesa aggregate showed 14,397 total decks, with popular tags +1/+1 Counters (1.67K), Aristocrats (771), Reanimator (503), and Theft (389); top cards included Unspeakable Symbol, Blasphemous Act, Carrion Feeder, Flayer of the Hatebound, Ashnod's Altar, and Chasm Skulker.",
-          "url": "https://edhrec.com/commanders/marchesa-the-black-rose",
-          "supports": "Aggregate prevalence and core counter/sacrifice/recursion package."
-        },
-        {
-          "finding": "The live Theft theme page showed 393 tagged decks and listed Unspeakable Symbol, Carrion Feeder, Mark of Mutiny, Goblin Bombardment, Viscera Seer, Flayer of the Hatebound, Ashnod's Altar, Grim Haruspex, and Blasphemous Act among top cards; its interaction section included Act of Aggression, Cyclonic Rift, Reality Shift, Snuff Out, Swan Song, and Counterspell.",
-          "url": "https://edhrec.com/commanders/marchesa-the-black-rose/theft",
-          "supports": "Theft-to-sacrifice package and tuned interaction choices."
-        },
-        {
-          "finding": "The live +1/+1 Counters page showed about 1.68K tagged decks and surfaced Chasm Skulker, Blood Artist, Disciple of Bolas, Dack's Duplicate, Puppeteer Clique, and Zulaport Cutthroat alongside Counterspell, Cyclonic Rift, Reality Shift, Grim Haruspex, and Skullclamp.",
-          "url": "https://edhrec.com/commanders/marchesa-the-black-rose/plus-1-plus-1-counters",
-          "supports": "Counter, draw, recursion, and interaction cross-check."
-        },
-        {
-          "finding": "The Masters of Evil precon page exposed a Marchesa precon upgrade context and linked its primer and upgrade guide; the page decklist visibly included Sol Ring, Talisman of Dominance, Talisman of Indulgence, Lightning Greaves, Mind Stone, Snuff Out, and Blasphemous Act.",
-          "url": "https://edhrec.com/precons/masters-of-evil/marchesa-the-black-rose",
-          "supports": "Precon upgrade page cross-check for core mana/protection/removal staples."
-        },
-        {
-          "finding": "The Arcane Wizardry precon page showed four Marchesa-filtered decks and a Grixis list containing Marchesa, Puppeteer Clique, Crosis's Charm, Rakdos Charm, Reality Shift, Terminate, and related recursion/control cards.",
-          "url": "https://edhrec.com/precons/arcane-wizardry/marchesa-the-black-rose",
-          "supports": "Older precon-context cross-check for Grixis recursion and control."
-        },
-        {
-          "finding": "The EDH Benchwarmers article explicitly described sacrifice outlets, +1/+1 counter sources, recursion, theft effects, and card draw as the functional Marchesa engine, naming Ashnod's Altar, Carrion Feeder, Unspeakable Symbol, Dragon Blood, Simic Fluxmage, Rhystic Study, and threaten effects.",
-          "url": "https://edhrec.com/articles/edh-benchwarmers-marchesa-the-black-rose",
-          "supports": "Strategy rationale for the child’s package roles and plan."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "The live Marchesa aggregate showed 14,397 total decks, with popular tags +1/+1 Counters (1.67K), Aristocrats (771), Reanimator (503), and Theft (389); top cards included Unspeakable Symbol, Blasphemous Act, Carrion Feeder, Flayer of the Hatebound, Ashnod's Altar, and Chasm Skulker.",
+        "themeNotes": [
+          {
+            "title": "EDHREC evidence",
+            "summary": "The live Marchesa aggregate showed 14,397 total decks, with popular tags +1/+1 Counters (1.67K), Aristocrats (771), Reanimator (503), and Theft (389); top cards included Unspeakable Symbol, Blasphemous Act, Carrion Feeder, Flayer of the Hatebound, Ashnod's Altar, and Chasm Skulker.",
+            "url": "https://edhrec.com/commanders/marchesa-the-black-rose"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The live Theft theme page showed 393 tagged decks and listed Unspeakable Symbol, Carrion Feeder, Mark of Mutiny, Goblin Bombardment, Viscera Seer, Flayer of the Hatebound, Ashnod's Altar, Grim Haruspex, and Blasphemous Act among top cards; its interaction section included Act of Aggression…",
+            "url": "https://edhrec.com/commanders/marchesa-the-black-rose/theft"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The live +1/+1 Counters page showed about 1.68K tagged decks and surfaced Chasm Skulker, Blood Artist, Disciple of Bolas, Dack's Duplicate, Puppeteer Clique, and Zulaport Cutthroat alongside Counterspell, Cyclonic Rift, Reality Shift, Grim Haruspex, and Skullclamp.",
+            "url": "https://edhrec.com/commanders/marchesa-the-black-rose/plus-1-plus-1-counters"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The Masters of Evil precon page exposed a Marchesa precon upgrade context and linked its primer and upgrade guide; the page decklist visibly included Sol Ring, Talisman of Dominance, Talisman of Indulgence, Lightning Greaves, Mind Stone, Snuff Out, and Blasphemous Act.",
+            "url": "https://edhrec.com/precons/masters-of-evil/marchesa-the-black-rose"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The Arcane Wizardry precon page showed four Marchesa-filtered decks and a Grixis list containing Marchesa, Puppeteer Clique, Crosis's Charm, Rakdos Charm, Reality Shift, Terminate, and related recursion/control cards.",
+            "url": "https://edhrec.com/precons/arcane-wizardry/marchesa-the-black-rose"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The EDH Benchwarmers article explicitly described sacrifice outlets, +1/+1 counter sources, recursion, theft effects, and card draw as the functional Marchesa engine, naming Ashnod's Altar, Carrion Feeder, Unspeakable Symbol, Dragon Blood, Simic Fluxmage, Rhystic Study, and threaten effects.",
+            "url": "https://edhrec.com/articles/edh-benchwarmers-marchesa-the-black-rose"
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Marchesa grants dethrone and returns creatures that die with +1/+1 counters. The child builds around stealing or deploying expendable creatures, attacking to place counters, then sacrificing them for value before they return at end step.",
         "subthemes": "The core package is sacrifice outlets (Carrion Feeder, Bloodflow Connoisseur, Goblin Bombardment, Altar of Dementia), counter enablers (Unspeakable Symbol, Simic Fluxmage, Volt Charge, Sage of Fables), recursion/persist (Marchesa, Phyrexian Reclamation, Reanimate, Puppeteer Clique, Victimize), and threaten effects (Mark of Mutiny, Harness by Force, Act of Aggression).",
@@ -10058,9 +10070,17 @@
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
       "edhrecContext": {
-        "aggregate": "Live EDHREC aggregate page showed 364 decks, Selesnya identity, and visible tags Humans (33), +1/+1 Counters (25), Tokens (21), Angels (8), Lifegain (4), Clues (2), Midrange (2), and Populate (2). The page also showed bracket counts including Core 61, Upgraded 18, Optimized 5, and CEDH 1; this child follows the tuned-casual direction rather than the optimized/CEDH outlier.",
-        "averageDeck": "Live EDHREC average deck visibly listed 36 lands, 32 creatures, 8 instants, 7 sorceries, 7 artifacts, 8 enchantments, and 1 planeswalker, with visible recommendations including Abzan Falconer, Champion of Lambholt, Champion of the Parish, Heron's Grace Champion, Juniper Order Ranger, Mentor of the Meek, Mikaeus, Mother of Runes, Thalia's Lieutenant, Tireless Tracker, Cathars' Crusade, Inspiring Call, Cultivate, Kodama's Reach, Shamanic Revelation, Sol Ring, Selesnya Signet, and Swiftfoot Boots.",
-        "articles": "The EDHREC Commander 2020 Ruthless Regiment article explicitly describes Humans as the tribe and identifies Sigarda as the most popular Human commander in its visible discussion, while recommending go-wide Human support such as Archetype of Courage and discussing token/anthem closing patterns. The Archetune-Up article visibly starts from an average Sigarda list and emphasizes an aggressive list with Human creatures, protection, card advantage, anthems, and token/counter support; its visible sample includes Duskwatch Recruiter, Grand Abolisher, Mother of Runes, Tireless Tracker, Cathars' Crusade, Mirari's Wake, Shamanic Revelation, and Selesnya Signet."
+        "summary": "Live EDHREC aggregate page showed 364 decks, Selesnya identity, and visible tags Humans (33), +1/+1 Counters (25), Tokens (21), Angels (8), Lifegain (4), Clues (2), Midrange (2), and Populate (2). The page also showed bracket counts including Core 61, Upgraded 18, Optimized 5, and CEDH 1; this child follows the tuned-casual direction rather than the optimized/CEDH outlier.",
+        "themeNotes": [
+          {
+            "title": "Average-deck observation",
+            "summary": "Live EDHREC average deck visibly listed 36 lands, 32 creatures, 8 instants, 7 sorceries, 7 artifacts, 8 enchantments, and 1 planeswalker, with visible recommendations including Abzan Falconer, Champion of Lambholt, Champion of the Parish, Heron's Grace Champion, Juniper Order Ranger, Mentor of the…"
+          },
+          {
+            "title": "Article context",
+            "summary": "The EDHREC Commander 2020 Ruthless Regiment article explicitly describes Humans as the tribe and identifies Sigarda as the most popular Human commander in its visible discussion, while recommending go-wide Human support such as Archetype of Courage and discussing token/anthem closing patterns. The…"
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Sigarda, Heron's Grace anchors a Selesnya Human board: she protects Humans from opposing spells and creates 1/1 Human tokens when needed, letting a wide creature base become resilient without relying on a single combo piece.",
@@ -11349,28 +11369,31 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "url": "https://edhrec.com/commanders/gisa-and-geralf",
-          "finding": "Current aggregate showed about 8.1K decks, Dimir identity, and popular tags Zombies, Reanimator, Graveyard, and Tokens; top cards included Diregraf Captain, Gray Merchant of Asphodel, Rooftop Storm, Cryptbreaker, Fleshbag Marauder, Victimize, and Zombie Apocalypse.",
-          "usedFor": "Primary aggregate/theme and package direction."
-        },
-        {
-          "url": "https://edhrec.com/commanders/gisa-and-geralf/core/zombies",
-          "finding": "Current Core Zombies page showed 79 filtered decks and tags Reanimator, Zombies, Graveyard, and Mill; its utility/enchantment recommendations included Ashnod's Altar, Skullclamp, Kindred Discovery, Graf Harvest, and Necromancer's Stockpile.",
-          "usedFor": "Tuned-casual package cross-check."
-        },
-        {
-          "url": "https://edhrec.com/precons/undead-unleashed/gisa-and-geralf",
-          "finding": "Current Undead Unleashed upgrade page emphasized Champion of the Perished, Gray Merchant, Necroduality, Gravecrawler, Ghoulcaller Gisa, The Scarab God, Victimize, Noxious Ghoul, Vengeful Dead, Skullclamp, and lands such as Jwar Isle Refuge.",
-          "usedFor": "Upgrade priorities and sideboard promotions."
-        },
-        {
-          "url": "https://edhrec.com/articles/commander-showdown-gisa-and-geralf-vs-grimgrin",
-          "finding": "The article describes Gisa and Geralf as a committed Zombie-tribal commander whose mill and graveyard access support a gradual, resilient horde; it specifically discusses Unbreathing Horde, Forgotten Creation, Noosegraf Mob, Custodi Lich, Urza's Incubator, and Perpetual Timepiece.",
-          "usedFor": "Commander plan, resilience, and closing-plan rationale."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "Current aggregate showed about 8.1K decks, Dimir identity, and popular tags Zombies, Reanimator, Graveyard, and Tokens; top cards included Diregraf Captain, Gray Merchant of Asphodel, Rooftop Storm, Cryptbreaker, Fleshbag Marauder, Victimize, and Zombie Apocalypse.",
+        "themeNotes": [
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current aggregate showed about 8.1K decks, Dimir identity, and popular tags Zombies, Reanimator, Graveyard, and Tokens; top cards included Diregraf Captain, Gray Merchant of Asphodel, Rooftop Storm, Cryptbreaker, Fleshbag Marauder, Victimize, and Zombie Apocalypse.",
+            "url": "https://edhrec.com/commanders/gisa-and-geralf"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Core Zombies page showed 79 filtered decks and tags Reanimator, Zombies, Graveyard, and Mill; its utility/enchantment recommendations included Ashnod's Altar, Skullclamp, Kindred Discovery, Graf Harvest, and Necromancer's Stockpile.",
+            "url": "https://edhrec.com/commanders/gisa-and-geralf/core/zombies"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Undead Unleashed upgrade page emphasized Champion of the Perished, Gray Merchant, Necroduality, Gravecrawler, Ghoulcaller Gisa, The Scarab God, Victimize, Noxious Ghoul, Vengeful Dead, Skullclamp, and lands such as Jwar Isle Refuge.",
+            "url": "https://edhrec.com/precons/undead-unleashed/gisa-and-geralf"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The article describes Gisa and Geralf as a committed Zombie-tribal commander whose mill and graveyard access support a gradual, resilient horde; it specifically discusses Unbreathing Horde, Forgotten Creation, Noosegraf Mob, Custodi Lich, Urza's Incubator, and Perpetual Timepiece.",
+            "url": "https://edhrec.com/articles/commander-showdown-gisa-and-geralf-vs-grimgrin"
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Mill on entry, then cast one Zombie from the graveyard each turn; sequence self-mill and discard to keep a high-value Zombie available while rebuilding after removal.",
         "subthemes": "Zombie tribal lords and token makers provide board presence; self-mill, Buried Alive, and recursion stock the graveyard; Ashnod's Altar, Nantuko Husk, Fleshbag Marauder, and death payoffs turn creatures into value; Skullclamp, Kindred Discovery, and tribal bodies supply sustained cards.",
@@ -12326,32 +12349,31 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "page": "Queen Marchesa commander aggregate",
-          "url": "https://edhrec.com/commanders/queen-marchesa",
-          "findings": "Current aggregate showed 21,232 decks, Mardu identity, and popular tags Monarch, Aikido, Forced Combat, and Pillow Fort. Top cards included Swords to Plowshares, Ghostly Prison, Inkshield, Breena, Court of Grace, Mangara, Kardur, and Disrupt Decorum; high-lift cards included Custodi Lich, Protector of the Crown, Knights of the Black Rose, and Throne of the High City.",
-          "usedFor": "Primary theme selection and interaction/monarch package."
-        },
-        {
-          "page": "Queen Marchesa average deck",
-          "url": "https://edhrec.com/commanders/queen-marchesa/average-deck",
-          "findings": "The visible average list used 36 lands and showed a compact ramp suite with Arcane Signet, Boros/Orzhov/Rakdos Signets, Sol Ring, Fellwar Stone, and three Talismans, plus broad instant interaction and Court/Ghostly Prison/Marchesa’s Decree effects.",
-          "usedFor": "Exact land target, early ramp, and broad interaction benchmarks."
-        },
-        {
-          "page": "Challenge the Stats — Queen Marchesa",
-          "url": "https://edhrec.com/articles/challenge-the-stats-queen-marchesa",
-          "findings": "The article specifically recommends two-mana Signets/Talismans over slower three-mana rocks, calls Royal Assassin an underplayed deterrent, identifies card advantage as neglected, and highlights Orzhov Advokist, Brutal Hordechief, Mob Rule, and token/Assassin support as useful political tools.",
-          "usedFor": "Curve, card-advantage, deterrence, and forced-combat tuning decisions."
-        },
-        {
-          "page": "Legends’ Legacy Precon Queen Marchesa",
-          "url": "https://edhrec.com/precons/legends-legacy/queen-marchesa",
-          "findings": "The precon page exposed a Queen Marchesa upgrade context and land additions such as Akoum Refuge, Takenuma, Eiganjo, Sulfurous Springs, and Clifftop Retreat.",
-          "usedFor": "Mana-base upgrade choices and precon-era package context."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "Current aggregate showed 21,232 decks, Mardu identity, and popular tags Monarch, Aikido, Forced Combat, and Pillow Fort. Top cards included Swords to Plowshares, Ghostly Prison, Inkshield, Breena, Court of Grace, Mangara, Kardur, and Disrupt Decorum; high-lift cards included Custodi Lich…",
+        "themeNotes": [
+          {
+            "title": "Queen Marchesa commander aggregate",
+            "summary": "Current aggregate showed 21,232 decks, Mardu identity, and popular tags Monarch, Aikido, Forced Combat, and Pillow Fort. Top cards included Swords to Plowshares, Ghostly Prison, Inkshield, Breena, Court of Grace, Mangara, Kardur, and Disrupt Decorum; high-lift cards included Custodi Lich…",
+            "url": "https://edhrec.com/commanders/queen-marchesa"
+          },
+          {
+            "title": "Queen Marchesa average deck",
+            "summary": "The visible average list used 36 lands and showed a compact ramp suite with Arcane Signet, Boros/Orzhov/Rakdos Signets, Sol Ring, Fellwar Stone, and three Talismans, plus broad instant interaction and Court/Ghostly Prison/Marchesa’s Decree effects.",
+            "url": "https://edhrec.com/commanders/queen-marchesa/average-deck"
+          },
+          {
+            "title": "Challenge the Stats — Queen Marchesa",
+            "summary": "The article specifically recommends two-mana Signets/Talismans over slower three-mana rocks, calls Royal Assassin an underplayed deterrent, identifies card advantage as neglected, and highlights Orzhov Advokist, Brutal Hordechief, Mob Rule, and token/Assassin support as useful political tools.",
+            "url": "https://edhrec.com/articles/challenge-the-stats-queen-marchesa"
+          },
+          {
+            "title": "Legends’ Legacy Precon Queen Marchesa",
+            "summary": "The precon page exposed a Queen Marchesa upgrade context and land additions such as Akoum Refuge, Takenuma, Eiganjo, Sulfurous Springs, and Clifftop Retreat.",
+            "url": "https://edhrec.com/precons/legends-legacy/queen-marchesa"
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Cast Queen Marchesa early enough to establish monarch, then make reclaiming it unattractive with deathtouch Assassin pressure, attack taxes, and selective forced combat. Treat monarch as both the draw engine and the table-politics lever.",
         "subthemes": "Monarch and Courts supply the central engine; pillow-fort and attack-tax cards protect the crown; goad/forced-combat cards redirect damage; Ophiomancer, token makers, Skullclamp, Zulaport Cutthroat, and Etchings of the Chosen turn disposable bodies into value; Royal Assassin and deathtouch tokens create deterrence.",
@@ -14032,28 +14054,30 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "finding": "Current aggregate page shows 4,549 Estrid decks and tags Enchantress (545), Auras (416), Pillow Fort (70), and Planeswalkers (69).",
-          "evidenceUrl": "https://edhrec.com/commanders/estrid-the-masked",
-          "supports": "Aggregate popularity and the deck's chosen enchantress/Aura/planeswalker package."
-        },
-        {
-          "finding": "Current Adaptive Enchantment precon page lists Satyr Enchanter, Mesa Enchantress, Sphere of Safety, Sythis, Setessan Champion, Gift of Paradise, Oath of Teferi, Sanctum Weaver, and Swords to Plowshares among frequent additions.",
-          "evidenceUrl": "https://edhrec.com/precons/adaptive-enchantment/estrid-the-masked",
-          "supports": "Upgrade priorities for draw, ramp, pillow-fort, planeswalker value, and interaction."
-        },
-        {
-          "finding": "Current Estrid enchantment theme page highlights Fertile Ground, Wild Growth, Eidolon of Blossoms, Estrid's Invocation, Sanctum Weaver, Enchantress's Presence, Overgrowth, Setessan Champion, and Sphere of Safety, with high-lift planeswalker support including Teferi, Temporal Archmage, The Chain Veil, and Oath of Teferi.",
-          "evidenceUrl": "https://edhrec.com/commanders/estrid-the-masked/enchantments",
-          "supports": "Enchantment ramp/draw density and the restrained Estrid planeswalker subtheme."
-        },
-        {
-          "finding": "The official article describes Adaptive Enchantment as a Bant, defense-oriented enchantment deck and explicitly identifies tension between incremental-value control and Aura aggression; it favors leaning into incremental value.",
-          "evidenceUrl": "https://magic.wizards.com/en/news/feature/personalizing-commander-2018-adaptive-enchantment-2018-08-07",
-          "supports": "Strategic decision to keep a selective Aura package while making enchantress value the primary plan."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "Current aggregate page shows 4,549 Estrid decks and tags Enchantress (545), Auras (416), Pillow Fort (70), and Planeswalkers (69).",
+        "themeNotes": [
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current aggregate page shows 4,549 Estrid decks and tags Enchantress (545), Auras (416), Pillow Fort (70), and Planeswalkers (69).",
+            "url": "https://edhrec.com/commanders/estrid-the-masked"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Adaptive Enchantment precon page lists Satyr Enchanter, Mesa Enchantress, Sphere of Safety, Sythis, Setessan Champion, Gift of Paradise, Oath of Teferi, Sanctum Weaver, and Swords to Plowshares among frequent additions.",
+            "url": "https://edhrec.com/precons/adaptive-enchantment/estrid-the-masked"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Estrid enchantment theme page highlights Fertile Ground, Wild Growth, Eidolon of Blossoms, Estrid's Invocation, Sanctum Weaver, Enchantress's Presence, Overgrowth, Setessan Champion, and Sphere of Safety, with high-lift planeswalker support including Teferi, Temporal Archmage, The Chain…",
+            "url": "https://edhrec.com/commanders/estrid-the-masked/enchantments"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The official article describes Adaptive Enchantment as a Bant, defense-oriented enchantment deck and explicitly identifies tension between incremental-value control and Aura aggression; it favors leaning into incremental value."
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Estrid untaps enchanted permanents and creates totem armor Auras, letting the deck reuse enchantment-based ramp, protect key creatures, and generate incremental planeswalker value. Her ultimate remains a late-game refill rather than a combo requirement.",
         "subthemes": "Primary package is enchantress draw and cost reduction: Enchantress's Presence, Satyr Enchanter, Tuvasa, Kestia, Eidolon of Blossoms, Sythis, and Setessan Champion. Supporting packages are Aura-based protection/ramp, Estrid/Oath of Teferi planeswalker value, and token payoffs from Ajani's Chosen and Sigil of the Empty Throne.",
@@ -14936,9 +14960,17 @@
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
       "edhrecContext": {
-        "aggregate": "The current EDHREC Akiri/Silas Tokens page showed 50 filtered decks, with visible tags Artifacts (247), Equipment (90), Tokens (50), Voltron (50), Affinity (41), Vehicles (33), Combo (30), and Aggro (28). This supports an artifact-heavy token/voltron identity rather than a generic creature deck.",
-        "upgradedPackage": "The current upgraded/tokens page visibly listed Sai, Master Thopterist, Nettlecyst, Cranial Plating, Storm the Vault // Vault of Catlacan, Dispatch, Thopter Spy Network, Skullclamp, Smothering Tithe, Breya, Etherium Shaper, and Boros Charm as top cards; its high-lift list included Whispersilk Cloak, Shadowspear, The Reality Chip, Whirler Rogue, Swiftfoot Boots, Bronze Guardian, and related artifact payoffs. The child uses the package as directional evidence, not as a copied list.",
-        "articleFindings": "EDHREC Partner Focus — Akiri, Line-Slinger describes Akiri as a first-strike/vigilance artifact-count payoff, highlights artifact-token makers including Myr Battlesphere and Hangarback Walker, identifies Inspiring Statuary as an improvise payoff, and calls out Tamiyo's Journal/Magnifying Glass and Trail of Evidence as clue engines. Those observations support the retained token, artifact, clue, and equipment subthemes."
+        "summary": "The current EDHREC Akiri/Silas Tokens page showed 50 filtered decks, with visible tags Artifacts (247), Equipment (90), Tokens (50), Voltron (50), Affinity (41), Vehicles (33), Combo (30), and Aggro (28). This supports an artifact-heavy token/voltron identity rather than a generic creature deck.",
+        "themeNotes": [
+          {
+            "title": "Article findings",
+            "summary": "EDHREC Partner Focus — Akiri, Line-Slinger describes Akiri as a first-strike/vigilance artifact-count payoff, highlights artifact-token makers including Myr Battlesphere and Hangarback Walker, identifies Inspiring Statuary as an improvise payoff, and calls out Tamiyo's Journal/Magnifying Glass and…"
+          },
+          {
+            "title": "Upgraded package",
+            "summary": "The current upgraded/tokens page visibly listed Sai, Master Thopterist, Nettlecyst, Cranial Plating, Storm the Vault // Vault of Catlacan, Dispatch, Thopter Spy Network, Skullclamp, Smothering Tithe, Breya, Etherium Shaper, and Boros Charm as top cards; its high-lift list included Whispersilk…"
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Deploy the partner pair as complementary engines: Akiri turns a wide artifact board into a vigilant first-strike threat, while Silas converts safe combat damage into artifact recursion. The deck can play a token-heavy midrange game rather than relying on commander damage alone.",
@@ -16151,38 +16183,41 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "finding": "The current Arahbo aggregate page prominently lists Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, Malamet Exemplar, Arahbo, the First Fang, King of the Pride, Leonin Warleader, Pride Sovereign, Qasali Slingers, and Swords to Plowshares.",
-          "evidenceUrl": "https://edhrec.com/commanders/arahbo-roar-of-the-world",
-          "usedFor": "Supports the Cat-lord, token, utility, and efficient-removal core."
-        },
-        {
-          "finding": "The Cats theme page shows popular tags for Kaheera Companion, Cats, +1/+1 Counters, and Equipment, and its top cards include Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, King of the Pride, Arahbo, the First Fang, Qasali Slingers, Leonin Warleader, Pride Sovereign, and Swords to Plowshares.",
-          "evidenceUrl": "https://edhrec.com/commanders/arahbo-roar-of-the-world/cats",
-          "usedFor": "Supports the primary typal package and the restrained secondary equipment/counter themes."
-        },
-        {
-          "finding": "The current average deck page displays 30 creatures, 8 instants, 7 sorceries, 10 artifacts, 7 enchantments, 2 planeswalkers, and 35 lands, with common cards such as Arcane Signet, Hammer of Nazahn, Lightning Greaves, Sol Ring, Sword of the Animist, Aura Shards, Beastmaster Ascension, Guardian Project, Mirari's Wake, Akroma's Will, Beast Within, Generous Gift, Heroic Intervention, Path to Exile, Return of the Wildspeaker, and Swords to Plowshares.",
-          "evidenceUrl": "https://edhrec.com/commanders/arahbo-roar-of-the-world/average-deck",
-          "usedFor": "Provides a current aggregate composition reference for the 36-land, creature-heavy, interaction-and-draw tuning."
-        },
-        {
-          "finding": "The 2025 EDHREC Cat article describes Cat decks as commonly pairing lifegain and token generation, highlights King of the Pride and Brimaz, and identifies Arahbo as the leading Cat commander whose eminence pumps a Cat and whose battlefield ability doubles power and grants trample.",
-          "evidenceUrl": "https://edhrec.com/articles/20-best-cat-cards-for-commander",
-          "usedFor": "Supports the token/lord package and the combat-focused closing plan."
-        },
-        {
-          "finding": "The EDHREC Feline Ferocity upgrades article says Arahbo remains the commander, increases the Cat tribal emphasis, and minimizes the equipment side.",
-          "evidenceUrl": "https://edhrec.com/articles/dijital-llama-commander-arahbo-roar-of-the-world-feline-ferocity-upgrades-deck-tech-mtg",
-          "usedFor": "Supports making Cats the primary plan while keeping equipment as a support package."
-        },
-        {
-          "finding": "The EDHREC budget tune-up article describes upgrading an Arahbo Cat tribal deck into a potent creature-based tribal deck with the ability to win games.",
-          "evidenceUrl": "https://edhrec.com/articles/the-nitpicking-nerds-arahbo-roar-of-the-world-budget-commander-tune-ups-18",
-          "usedFor": "Supports a mature creature-based tribal posture rather than a scattered goodstuff list."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "The current Arahbo aggregate page prominently lists Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, Malamet Exemplar, Arahbo, the First Fang, King of the Pride, Leonin Warleader, Pride Sovereign, Qasali Slingers, and Swords to Plowshares.",
+        "themeNotes": [
+          {
+            "title": "EDHREC evidence",
+            "summary": "The current Arahbo aggregate page prominently lists Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, Malamet Exemplar, Arahbo, the First Fang, King of the Pride, Leonin Warleader, Pride Sovereign, Qasali Slingers, and Swords to Plowshares.",
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The Cats theme page shows popular tags for Kaheera Companion, Cats, +1/+1 Counters, and Equipment, and its top cards include Regal Caracal, Mirri, Weatherlight Duelist, Feline Sovereign, Kutzil, King of the Pride, Arahbo, the First Fang, Qasali Slingers, Leonin Warleader, Pride Sovereign, and…",
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world/cats"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The current average deck page displays 30 creatures, 8 instants, 7 sorceries, 10 artifacts, 7 enchantments, 2 planeswalkers, and 35 lands, with common cards such as Arcane Signet, Hammer of Nazahn, Lightning Greaves, Sol Ring, Sword of the Animist, Aura Shards, Beastmaster Ascension, Guardian…",
+            "url": "https://edhrec.com/commanders/arahbo-roar-of-the-world/average-deck"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The 2025 EDHREC Cat article describes Cat decks as commonly pairing lifegain and token generation, highlights King of the Pride and Brimaz, and identifies Arahbo as the leading Cat commander whose eminence pumps a Cat and whose battlefield ability doubles power and grants trample.",
+            "url": "https://edhrec.com/articles/20-best-cat-cards-for-commander"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The EDHREC Feline Ferocity upgrades article says Arahbo remains the commander, increases the Cat tribal emphasis, and minimizes the equipment side.",
+            "url": "https://edhrec.com/articles/dijital-llama-commander-arahbo-roar-of-the-world-feline-ferocity-upgrades-deck-tech-mtg"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The EDHREC budget tune-up article describes upgrading an Arahbo Cat tribal deck into a potent creature-based tribal deck with the ability to win games.",
+            "url": "https://edhrec.com/articles/the-nitpicking-nerds-arahbo-roar-of-the-world-budget-commander-tune-ups-18"
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Keep Arahbo in the command zone to provide the eminence pump, then cast it when the board can exploit the combat trigger and trample. Lead with efficient Cats, use the free power boost to make even small attackers matter, and reserve equipment for a compact support package rather than the primary plan.",
         "subthemes": "The primary package is Cat typal: Regal Caracal, Arahbo, the First Fang, King of the Pride, Feline Sovereign, Pride Sovereign, Qasali Slingers, and Kutzil build a wide board with lords and tribal utility. A secondary token package uses Brimaz, Kemba, Ocelot Pride, and Skullclamp. Equipment is a supporting package around Hammer of Nazahn, Sigarda's Aid, Swiftfoot Boots, Sword of the Animist, Taj-Nar Swordsmith, and a few combat tools.",
@@ -17236,33 +17271,36 @@
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "",
-      "edhrecContext": [
-        {
-          "url": "https://edhrec.com/commanders/inalla-archmage-ritualist",
-          "finding": "Current aggregate page displayed 14,897 Inalla decks; popular tags included Wizards (1.22K), Combo (574), Spellslinger (309), and Clones (219). The visible top-card list included Bloodline Necromancer, Archaeomancer, Azami, Dualcaster Mage, Counterspell, and Aether Channeler.",
-          "usedFor": "Supports the commander identity, Wizard/clone/ETB package, and inclusion of efficient interaction."
-        },
-        {
-          "url": "https://edhrec.com/commanders/inalla-archmage-ritualist/wizards",
-          "finding": "Current Wizard-filtered page displayed 1,247 filtered decks and retained Combo, Spellslinger, and Clones as visible related tags.",
-          "usedFor": "Supports treating Wizard tribal as the primary subtheme rather than a generic Grixis value deck."
-        },
-        {
-          "url": "https://edhrec.com/precons/arcane-wizardry",
-          "finding": "Current Arcane Wizardry page displayed 244 precon decks for Inalla and listed common additions including Naban, Dualcaster Mage, Counterspell, Docent of Perfection, Naru Meha, Harmonic Prodigy, Stonybrook Banneret, Panharmonicon, Ghostly Flicker, Aether Channeler, Step Through, Vedalken Aethermage, Venser, Reflections of Littjara, Cyclone Summoner, Kindred Discovery, and Spellseeker.",
-          "usedFor": "Supports the concrete upgrade package and card choices."
-        },
-        {
-          "url": "https://edhrec.com/precons/arcane-wizardry/cuts",
-          "finding": "Current cuts page showed high cut rates for Curse of Disturbance (70%), Opportunity (66%), Shifting Shadow (61%), Unstable Obelisk (55%), Curse of Verbosity (54%), Curse of Opulence (52%), Magus of the Mind (51%), Nivix Guildmage (50%), Magus of the Abyss (47%), and Taigam, Sidisi's Hand (46%); it also listed the original bounce/tapped lands among lands to cut.",
-          "usedFor": "Supports removing the least cohesive curses, slow effects, and conditional mana pieces."
-        },
-        {
-          "url": "https://edhrec.com/articles/rebuilding-inalla-archmage-ritualist-with-final-fantasy-cards",
-          "finding": "The June 17, 2025 article describes Inalla as a Wizard ETB-copy commander for control, aggro, and combo shells, and explicitly discusses Bloodline Necromancer plus Ashnod's Altar as a multi-card infinite mana/token line.",
-          "usedFor": "Supports the optional recursion/sacrifice engine and the overall Wizard ETB control plan."
-        }
-      ],
+      "edhrecContext": {
+        "summary": "Current aggregate page displayed 14,897 Inalla decks; popular tags included Wizards (1.22K), Combo (574), Spellslinger (309), and Clones (219). The visible top-card list included Bloodline Necromancer, Archaeomancer, Azami, Dualcaster Mage, Counterspell, and Aether Channeler.",
+        "themeNotes": [
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current aggregate page displayed 14,897 Inalla decks; popular tags included Wizards (1.22K), Combo (574), Spellslinger (309), and Clones (219). The visible top-card list included Bloodline Necromancer, Archaeomancer, Azami, Dualcaster Mage, Counterspell, and Aether Channeler.",
+            "url": "https://edhrec.com/commanders/inalla-archmage-ritualist"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Wizard-filtered page displayed 1,247 filtered decks and retained Combo, Spellslinger, and Clones as visible related tags.",
+            "url": "https://edhrec.com/commanders/inalla-archmage-ritualist/wizards"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current Arcane Wizardry page displayed 244 precon decks for Inalla and listed common additions including Naban, Dualcaster Mage, Counterspell, Docent of Perfection, Naru Meha, Harmonic Prodigy, Stonybrook Banneret, Panharmonicon, Ghostly Flicker, Aether Channeler, Step Through, Vedalken…",
+            "url": "https://edhrec.com/precons/arcane-wizardry"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "Current cuts page showed high cut rates for Curse of Disturbance (70%), Opportunity (66%), Shifting Shadow (61%), Unstable Obelisk (55%), Curse of Verbosity (54%), Curse of Opulence (52%), Magus of the Mind (51%), Nivix Guildmage (50%), Magus of the Abyss (47%), and Taigam, Sidisi's Hand (46%); it…",
+            "url": "https://edhrec.com/precons/arcane-wizardry/cuts"
+          },
+          {
+            "title": "EDHREC evidence",
+            "summary": "The June 17, 2025 article describes Inalla as a Wizard ETB-copy commander for control, aggro, and combo shells, and explicitly discusses Bloodline Necromancer plus Ashnod's Altar as a multi-card infinite mana/token line.",
+            "url": "https://edhrec.com/articles/rebuilding-inalla-archmage-ritualist-with-final-fantasy-cards"
+          }
+        ]
+      },
       "plan": {
         "commanderPlan": "Keep Inalla in the command zone to provide eminence copies whenever a nontoken Wizard enters. Cast her when the board and mana make the five-mana investment worthwhile; pay for the copy trigger on high-value ETB Wizards rather than every body.",
         "subthemes": "The primary package is Wizard tribal ETB value: Archaeomancer, Aether Channeler, Venser, Dualcaster Mage, Naru Meha, Bloodline Necromancer, and Sea Gate Oracle become stronger with Naban, Harmonic Prodigy, Panharmonicon, Reflections of Littjara, and Archmage of Echoes. Step Through, Vedalken Aethermage, and Spellseeker improve access to the right Wizard or interaction. Ashnod's Altar plus Bloodline Necromancer and Inalla is a multi-card infinite colorless-mana/token line, included as an optional tuned-casual ceiling rather than a cEDH shell.",
@@ -18563,42 +18601,24 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "The sanitized public packet visibly contains 97 main-deck copies (including 32 Swamps) and 2 public-sideboard copies, with no omitted source sections. This child preserves 70 visible parent main-deck copies, cuts 27 visible parent main-deck copies, promotes 2 visible public-sideboard copies, and adds 27 explicitly marked new additions to reach 99 main cards plus 1 commander (100 total). Missing original rows are not reconstructed; the parent remains unchanged.",
+      "sourceCompletenessNote": "The sanitized public source list visibly contains 97 main-deck copies (including 32 Swamps) and 2 public-sideboard copies, with no omitted source sections. This child preserves 70 visible parent main-deck copies, cuts 27 visible parent main-deck copies, promotes 2 visible public-sideboard copies, and adds 27 explicitly marked new additions to reach 99 main cards plus 1 commander (100 total). Missing original rows are not reconstructed; the parent remains unchanged.",
       "edhrecContext": {
-        "aggregateUrl": "https://edhrec.com/commanders/ob-nixilis-of-the-black-oath",
+        "summary": "The aggregate supports the existing Demon, mono-black mana, life-loss/lifegain, draw, and recursion identity. The child makes the sacrifice package denser so Ob's Demon-token and emblem modes have a coherent bridge to the existing precon cards. EDHREC frequency is guidance, not a claim of ownership or required inclusion.",
         "aggregateDeckCount": 712,
-        "popularTags": [
-          {
-            "tag": "Demons",
-            "count": 32
-          },
-          {
-            "tag": "Lifegain",
-            "count": 20
-          },
-          {
-            "tag": "Self-Damage",
-            "count": 10
-          },
-          {
-            "tag": "Devotion",
-            "count": 9
-          }
-        ],
-        "coreUrl": "https://edhrec.com/commanders/ob-nixilis-of-the-black-oath/core",
-        "coreCardsObserved": [
+        "popularTags": {
+          "Demons": 32,
+          "Lifegain": 20,
+          "Self-Damage": 10,
+          "Devotion": 9
+        },
+        "recommendationExamples": [
           "Gray Merchant of Asphodel",
           "Reaper from the Abyss",
           "Overseer of the Damned",
           "Sign in Blood",
           "Jet Medallion",
-          "Bloodgift Demon",
-          "Crypt Ghast",
-          "Mutilate",
-          "Magus of the Coffers",
-          "Dread Return"
-        ],
-        "interpretation": "The aggregate supports the existing Demon, mono-black mana, life-loss/lifegain, draw, and recursion identity. The child makes the sacrifice package denser so Ob's Demon-token and emblem modes have a coherent bridge to the existing precon cards. EDHREC frequency is guidance, not a claim of ownership or required inclusion."
+          "Bloodgift Demon"
+        ]
       },
       "plan": {
         "commanderPlan": "Ob Nixilis is a value commander: use +2 to stabilize life totals, make 5/5 Demon tokens with -2, and use the emblem as a long-game sacrifice-and-draw engine. The child leans into the token mode while making the life loss and sacrifice clauses productive.",
@@ -19737,12 +19757,23 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "The packet visibly supplies all 68 public main copies (including Brago) and 4 public sideboard copies, but the parent is incomplete for Commander. This child moves Brago to the command zone, cuts 15 visible main cards, and adds 47 cards (4 promoted public-sideboard cards plus 43 new additions, including 28 new lands) to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the parent remains unchanged.",
+      "sourceCompletenessNote": "The source list visibly supplies all 68 public main copies (including Brago) and 4 public sideboard copies, but the parent is incomplete for Commander. This child moves Brago to the command zone, cuts 15 visible main cards, and adds 47 cards (4 promoted public-sideboard cards plus 43 new additions, including 28 new lands) to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the parent remains unchanged.",
       "edhrecContext": {
-        "aggregate": "EDHREC live Brago aggregate showed 15,554 total decks; tags were Blink 1,787, Control 513, Combo 432, ETB 224, Tokens 188, Stax 157, Artifacts 108, Flying 64.",
-        "blinkPage": "The live Blink filter showed 1,787 filtered decks, with bracket counts 9 exhibition, 197 core, 419 upgraded, 321 optimized, and 39 cEDH; top cards included Peregrine Drake, Aether Channeler, Swords to Plowshares, Panharmonicon, Counterspell, Ephemerate, Wall of Omens, Archaeomancer, and Solemn Simulacrum.",
-        "optimizedPage": "The optimized/midrange page highlighted Peregrine Drake, Aether Channeler, Dovin's Veto, Counterspell, Reality Acid, Venser, Soulherder, Path, Swords, and Strionic Resonator. These are role signals, not ownership or a copied decklist.",
-        "adjacentContext": "Packet comparator pages are custom 60-card Brawlalternatives and are not used as Commander count or legality templates."
+        "summary": "EDHREC live Brago aggregate showed 15,554 total decks; tags were Blink 1,787, Control 513, Combo 432, ETB 224, Tokens 188, Stax 157, Artifacts 108, Flying 64.",
+        "themeNotes": [
+          {
+            "title": "Blink theme",
+            "summary": "The live Blink filter showed 1,787 filtered decks, with bracket counts 9 exhibition, 197 core, 419 upgraded, 321 optimized, and 39 cEDH; top cards included Peregrine Drake, Aether Channeler, Swords to Plowshares, Panharmonicon, Counterspell, Ephemerate, Wall of Omens, Archaeomancer, and Solemn…"
+          },
+          {
+            "title": "Optimized theme",
+            "summary": "The optimized/midrange page highlighted Peregrine Drake, Aether Channeler, Dovin's Veto, Counterspell, Reality Acid, Venser, Soulherder, Path, Swords, and Strionic Resonator. These are role signals, not ownership or a copied decklist."
+          },
+          {
+            "title": "Adjacent theme context",
+            "summary": "source list comparator pages are custom 60-card Brawlalternatives and are not used as Commander count or legality templates."
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Not provided.",
@@ -20741,11 +20772,19 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "Visible parent contains 65 main copies, including the inferred commander, and 0 sideboard copies. This hypothetical child adds 47 explicit new cards, cuts 12 visible parent cards, and moves 1 visible Brago to the command zone to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the child preserves only the visible rows listed in the packet.",
+      "sourceCompletenessNote": "Visible parent contains 65 main copies, including the inferred commander, and 0 sideboard copies. This hypothetical child adds 47 explicit new cards, cuts 12 visible parent cards, and moves 1 visible Brago to the command zone to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the child preserves only the visible rows listed in the source list.",
       "edhrecContext": {
-        "aggregate": "EDHREC Brago aggregate page showed 15,578 decks and Azorius identity at research time. Tags shown on the live upgraded-energy page included Blink 419, Control 113, Combo 104, Tokens 60, ETB 42, Artifacts 30, Lifegain 20, and Midrange 20; the energy-filtered upgraded view showed 1 filtered deck, so energy is treated as a subtheme rather than an aggregate template.",
-        "coreSignals": "The live filtered page surfaced Solemn Simulacrum and Aetherstorm Roc in its visible recommendations; the packet also points to the Brago energy core/average pages. These signals support blinkable ETB artifacts/creatures, draw, and artifact-energy value.",
-        "use": "EDHREC aggregate and theme pages informed roles only; no list is claimed copied."
+        "summary": "EDHREC aggregate and theme pages informed roles only; no list is claimed copied.",
+        "themeNotes": [
+          {
+            "title": "EDHREC aggregate",
+            "summary": "EDHREC Brago aggregate page showed 15,578 decks and Azorius identity at research time. Tags shown on the live upgraded-energy page included Blink 419, Control 113, Combo 104, Tokens 60, ETB 42, Artifacts 30, Lifegain 20, and Midrange 20; the energy-filtered upgraded view showed 1 filtered deck, so…"
+          },
+          {
+            "title": "Core card signals",
+            "summary": "The live filtered page surfaced Solemn Simulacrum and Aetherstorm Roc in its visible recommendations; the source list also points to the Brago energy core/average pages. These signals support blinkable ETB artifacts/creatures, draw, and artifact-energy value."
+          }
+        ]
       },
       "plan": {
         "commanderPlan": "Connect Brago in combat, then blink nonland permanents after combat to reuse ETB effects, reset artifacts and auras, and generate incremental energy/value. Aqueous Form, Rogue's Passage, and equipment support connection; this is value-control, not a fast combo deck.",
@@ -21811,11 +21850,11 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "The public packet visibly contains all 95 main copies and 5 public sideboard copies, including one Brago main row; no parent sections are omitted. This child moves Brago from main to commander, cuts 30 visible original main cards, promotes 5 visible public-sideboard cards, and adds 30 explicit new cards, yielding 99 main plus 1 commander = 100. Missing original rows are not reconstructed, and the parent list is unchanged.",
+      "sourceCompletenessNote": "The public source list visibly contains all 95 main copies and 5 public sideboard copies, including one Brago main row; no parent sections are omitted. This child moves Brago from main to commander, cuts 30 visible original main cards, promotes 5 visible public-sideboard cards, and adds 30 explicit new cards, yielding 99 main plus 1 commander = 100. Missing original rows are not reconstructed, and the parent list is unchanged.",
       "edhrecContext": {
-        "aggregateUrl": "https://edhrec.com/commanders/brago-king-eternal",
-        "aggregateDecks": 15554,
-        "tags": {
+        "summary": "Current aggregate and theme pages support a blink-first ETB/value plan with a smaller artifact support package. The proposal uses those roles but deliberately avoids cEDH combo concentration.",
+        "aggregateDeckCount": 15554,
+        "popularTags": {
           "Blink": 1780,
           "Control": 513,
           "Combo": 432,
@@ -21825,23 +21864,14 @@
           "Artifacts": 108,
           "Flying": 64
         },
-        "blinkUrl": "https://edhrec.com/commanders/brago-king-eternal/blink",
-        "blinkDecks": 1790,
-        "blinkCoreCards": [
+        "recommendationExamples": [
           "Peregrine Drake",
           "Aether Channeler",
           "Soulherder",
           "Swords to Plowshares",
           "Panharmonicon",
-          "Counterspell",
-          "Ephemerate",
-          "Wall of Omens",
-          "Archaeomancer",
-          "Solemn Simulacrum"
-        ],
-        "artifactsUrl": "https://edhrec.com/commanders/brago-king-eternal/artifacts",
-        "artifactsFilteredDecks": 111,
-        "use": "Current aggregate and theme pages support a blink-first ETB/value plan with a smaller artifact support package. The proposal uses those roles but deliberately avoids cEDH combo concentration."
+          "Counterspell"
+        ]
       },
       "plan": {
         "commanderPlan": "Resolve Brago around turn four, give him a safe combat connection with evasion/protection, then blink selected nonland permanents after damage. The child prioritizes repeatable value over fast infinite-combo lines.",
@@ -23094,9 +23124,9 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "The sanitized packet visibly contains 69 public main rows totaling exactly 86 copies and no public sideboard rows. This child adds 13 explicit new main-deck cards and assigns 1 commander-zone card, with 0 cuts, to reach 99 main plus 1 commander = 100 total. Missing original rows are not reconstructed, and the public parent remains unchanged.",
+      "sourceCompletenessNote": "The visible parent list visibly contains 69 public main rows totaling exactly 86 copies and no public sideboard rows. This child adds 13 explicit new main-deck cards and assigns 1 commander-zone card, with 0 cuts, to reach 99 main plus 1 commander = 100 total. Missing original rows are not reconstructed, and the public parent remains unchanged.",
       "edhrecContext": {
-        "aggregateUrl": "https://edhrec.com/commanders/atraxa-praetors-voice/core/proliferate",
+        "summary": "Current EDHREC aggregate supports counters/proliferate as the coherent lane; the child uses selected core additions but deliberately remains tuned-casual rather than copying infect or optimized/combo packages.",
         "aggregateDeckCount": 157,
         "popularTags": {
           "infect": 333,
@@ -23104,55 +23134,14 @@
           "proliferate": 157,
           "phyrexians": 68
         },
-        "preconUrl": "https://edhrec.com/precons/breed-lethality",
-        "preconDeckCount": 211,
-        "coreAdditionsObserved": [
-          {
-            "card": "Inexorable Tide",
-            "addedToDecksPercent": 36
-          },
-          {
-            "card": "Evolution Sage",
-            "addedToDecksPercent": 31
-          },
-          {
-            "card": "Winding Constrictor",
-            "addedToDecksPercent": 26
-          },
-          {
-            "card": "Tekuthal, Inquiry Dominus",
-            "addedToDecksPercent": 22
-          },
-          {
-            "card": "Fertilid",
-            "addedToDecksPercent": 20
-          },
-          {
-            "card": "Simic Ascendancy",
-            "addedToDecksPercent": 19
-          },
-          {
-            "card": "Swords to Plowshares",
-            "addedToDecksPercent": 16
-          },
-          {
-            "card": "Cultivate",
-            "addedToDecksPercent": 13
-          },
-          {
-            "card": "Brokers Ascendancy",
-            "addedToDecksPercent": 13
-          },
-          {
-            "card": "Counterspell",
-            "addedToDecksPercent": 11
-          },
-          {
-            "card": "Farseek",
-            "addedToDecksPercent": 10
-          }
-        ],
-        "interpretation": "Current EDHREC aggregate supports counters/proliferate as the coherent lane; the child uses selected core additions but deliberately remains tuned-casual rather than copying infect or optimized/combo packages."
+        "recommendationExamples": [
+          "Inexorable Tide",
+          "Evolution Sage",
+          "Winding Constrictor",
+          "Tekuthal, Inquiry Dominus",
+          "Fertilid",
+          "Simic Ascendancy"
+        ]
       },
       "plan": {
         "commanderPlan": "Atraxa supplies repeatable end-step proliferate while the deck establishes +1/+1 counters across creatures and selected permanents. The child is a fair four-color midrange shell, not an infect or cEDH combo build.",
@@ -23788,9 +23777,9 @@
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
       "sourceCompletenessNote": "Visible source is exactly 58 public-main copies (including Breya) plus 2 public-sideboard copies; no parent sections are omitted. The child moves Breya to commander, promotes the 2 public-sideboard cards to main, adds 40 hypothetical new copies, and makes 0 cuts to reach 99 main plus 1 commander = 100. Missing original rows are not reconstructed; only the 57 visible noncommander main rows, the 2 named public-sideboard rows, and explicit new additions appear here.",
       "edhrecContext": {
-        "aggregateUrl": "https://edhrec.com/commanders/breya-etherium-shaper",
+        "summary": "Current aggregate and artifact-tag signals support an artifact/token sacrifice-value shell. Combo and cEDH pages were not used as a construction template; the proposal is tuned-casual. Counts are page-displayed rounded values where EDHREC displays K notation.",
         "aggregateDeckCount": 22856,
-        "aggregateTags": {
+        "popularTags": {
           "Artifacts": 3310,
           "Tokens": 1020,
           "Combo": 993,
@@ -23799,10 +23788,7 @@
           "Affinity": 257,
           "Aristocrats": 245,
           "Control": 190
-        },
-        "artifactThemeUrl": "https://edhrec.com/commanders/breya-etherium-shaper/artifacts",
-        "artifactThemeDeckCount": 3282,
-        "use": "Current aggregate and artifact-tag signals support an artifact/token sacrifice-value shell. Combo and cEDH pages were not used as a construction template; the proposal is tuned-casual. Counts are page-displayed rounded values where EDHREC displays K notation."
+        }
       },
       "plan": {
         "commanderPlan": "Not provided.",
@@ -24500,10 +24486,11 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "Visible parent content contains 64 main copies (64 visible one-copy rows), 0 sideboard copies, and no omitted sections according to the packet; Brion Stoutarm is visibly among those rows. The child moves 1 Brion to the command zone, keeps the other 63 visible rows, and adds 36 explicit new cards (35 lands plus Skullclamp) to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the parent remains unchanged.",
+      "sourceCompletenessNote": "Visible parent content contains 64 main copies (64 visible one-copy rows), 0 sideboard copies, and no omitted sections according to the source list; Brion Stoutarm is visibly among those rows. The child moves 1 Brion to the command zone, keeps the other 63 visible rows, and adds 36 explicit new cards (35 lands plus Skullclamp) to reach 99 main + 1 commander = 100. Missing original rows are not reconstructed; the parent remains unchanged.",
       "edhrecContext": {
-        "aggregateDecks": 3937,
-        "tags": {
+        "summary": "Current aggregate counts/tags and theme-page recommendations guide the theft/fling/lifegain/Giants package; they are not ownership or purchase evidence.",
+        "aggregateDeckCount": 3937,
+        "popularTags": {
           "Theft": 181,
           "Fling": 140,
           "Lifegain": 107,
@@ -24513,30 +24500,26 @@
           "Sacrifice": 30,
           "Aristocrats": 20
         },
-        "themePages": [
+        "recommendationExamples": [
+          "Captivating Crew",
+          "Calamity Bearer",
+          "Mark of Mutiny",
+          "Feldon of the Third Path",
+          "Serra Avatar",
+          "Swiftfoot Boots"
+        ],
+        "themeNotes": [
           {
-            "theme": "Theft",
-            "filteredDecks": 181,
-            "topCards": [
-              "Captivating Crew",
-              "Calamity Bearer",
-              "Mark of Mutiny",
-              "Feldon of the Third Path",
-              "Serra Avatar",
-              "Swiftfoot Boots",
-              "Fling",
-              "Soul of Eternity",
-              "Mimic Vat",
-              "Zealous Conscripts"
-            ]
+            "title": "Theft",
+            "summary": "This EDHREC theme filter covers 181 submitted decks; aggregate signals informed the package.",
+            "aggregateDeckCount": 181
           },
           {
-            "theme": "Giants",
-            "filteredDecks": 55,
-            "context": "Supports retaining the packet's Giant density, cost reduction and tribal payoffs."
+            "title": "Giants",
+            "summary": "This EDHREC theme filter covers 55 submitted decks; aggregate signals informed the package.",
+            "aggregateDeckCount": 55
           }
-        ],
-        "use": "Current aggregate counts/tags and theme-page recommendations guide the theft/fling/lifegain/Giants package; they are not ownership or purchase evidence."
+        ]
       },
       "plan": {
         "commanderPlan": "Brion converts any large or temporarily stolen creature into direct player damage and lifegain. The child keeps the visible Giant tribal shell but gives it the lands needed to cast its top end and the card-flow/protection needed to repeatedly activate Brion.",
@@ -25404,40 +25387,41 @@
       "ownershipStatus": "Unknown; not checked against any collection.",
       "attributionNote": "This is a separate AI/curator child revision; the linked Deckbox parent remains unchanged.",
       "sourceNote": "The linked parent source list remains unchanged; this child is a separate revision.",
-      "sourceCompletenessNote": "The packet visibly contains 108 main-deck copies and 0 sideboard copies, including Brion Stoutarm in main; the child moves 1 Brion to command, cuts 8 visible copies, adds 0 cards, and reaches 99 main + 1 commander = 100. Missing original rows are not reconstructed, and no private archive, owner inventory, or collection data was accessed.",
+      "sourceCompletenessNote": "The source list visibly contains 108 main-deck copies and 0 sideboard copies, including Brion Stoutarm in main; the child moves 1 Brion to command, cuts 8 visible copies, adds 0 cards, and reaches 99 main + 1 commander = 100. Missing original rows are not reconstructed, and no private archive, owner inventory, or collection data was accessed.",
       "edhrecContext": {
-        "commanderAggregate": {
-          "url": "https://edhrec.com/commanders/brion-stoutarm",
-          "decks": 3937,
-          "tags": {
-            "theft": 181,
-            "fling": 140,
-            "lifegain": 107,
-            "burn": 71
-          }
+        "summary": "Aggregate tags and core roles guide the plan; no EDHREC list is copied, and EDHREC does not establish ownership or playtesting.",
+        "aggregateDeckCount": 3937,
+        "popularTags": {
+          "theft": 181,
+          "fling": 140,
+          "lifegain": 107,
+          "burn": 71
         },
-        "averageDeck": {
-          "url": "https://edhrec.com/commanders/brion-stoutarm/average-deck",
-          "observed": "Current average deck emphasizes Sol Ring, Boros Signet, Lightning Greaves, Swiftfoot Boots, Mimic Vat, Fling, Grab the Reins, Act of Treason, Mark of Mutiny, Zealous Conscripts, Feldon and large lifegain/damage threats."
-        },
-        "themePages": [
+        "themeNotes": [
           {
-            "url": "https://edhrec.com/commanders/brion-stoutarm/theft",
-            "decks": 181,
-            "observed": "Captivating Crew, Mark of Mutiny, Feldon, Serra Avatar and repeatable theft/fling roles are prominent."
+            "title": "EDHREC theme",
+            "summary": "Captivating Crew, Mark of Mutiny, Feldon, Serra Avatar and repeatable theft/fling roles are prominent.",
+            "aggregateDeckCount": 181,
+            "url": "https://edhrec.com/commanders/brion-stoutarm/theft"
           },
           {
-            "url": "https://edhrec.com/commanders/brion-stoutarm/fling",
-            "decks": 141,
-            "observed": "Fling, Feldon, Captivating Crew, Serra Avatar, Mimic Vat and Zealous Conscripts are prominent."
+            "title": "EDHREC theme",
+            "summary": "Fling, Feldon, Captivating Crew, Serra Avatar, Mimic Vat and Zealous Conscripts are prominent.",
+            "aggregateDeckCount": 141,
+            "url": "https://edhrec.com/commanders/brion-stoutarm/fling"
           },
           {
-            "url": "https://edhrec.com/commanders/brion-stoutarm/lifegain",
-            "decks": 108,
-            "observed": "Serra Avatar, Soul of Eternity, Feldon, Captivating Crew, Mimic Vat, Greaves, Fling and Swords to Plowshares are prominent."
+            "title": "EDHREC theme",
+            "summary": "Serra Avatar, Soul of Eternity, Feldon, Captivating Crew, Mimic Vat, Greaves, Fling and Swords to Plowshares are prominent.",
+            "aggregateDeckCount": 108,
+            "url": "https://edhrec.com/commanders/brion-stoutarm/lifegain"
+          },
+          {
+            "title": "Average-deck observation",
+            "summary": "Current average deck emphasizes Sol Ring, Boros Signet, Lightning Greaves, Swiftfoot Boots, Mimic Vat, Fling, Grab the Reins, Act of Treason, Mark of Mutiny, Zealous Conscripts, Feldon and large lifegain/damage threats.",
+            "url": "https://edhrec.com/commanders/brion-stoutarm/average-deck"
           }
-        ],
-        "use": "Aggregate tags and core roles guide the plan; no EDHREC list is copied, and EDHREC does not establish ownership or playtesting."
+        ]
       },
       "plan": {
         "commanderPlan": "Not provided.",

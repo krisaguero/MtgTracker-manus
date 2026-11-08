@@ -73,8 +73,8 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(incomplete).toBeDefined();
     if (!incomplete) return;
     const html = page(incomplete);
-    expect(html).toContain("parent export marks one or more sections as unavailable");
-    expect(html).toContain("missing or hidden content is not reconstructed");
+    expect(html).toContain("public parent omits one or more source sections");
+    expect(html).toContain("missing or hidden cards were not reconstructed");
     expect(html).toContain(`href="${incomplete.parentHref}"`);
     expect(incomplete.sourceNote).not.toMatch(/Deckbox ID|archive id|private source/i);
   });
@@ -103,6 +103,32 @@ describe("public Deckbox tuned-child revisions", () => {
     expect(precon?.sourceCompletenessNote).toContain("exactly 86 copies");
     const oversized = childPayload.children.find(child => child.sourceTitle === "Brionline");
     expect(oversized?.sourceCompletenessNote).toContain("cuts 8 visible copies");
+  });
+
+  it("renders normalized EDHREC aggregates and themes without raw list-shaped context", () => {
+    const allowed = new Set(["summary", "aggregateDeckCount", "popularTags", "recommendationExamples", "themeNotes"]);
+    for (const child of childPayload.children) {
+      expect(typeof child.edhrecContext).toBe("object");
+      if (typeof child.edhrecContext !== "object" || child.edhrecContext === null) continue;
+      expect(Array.isArray(child.edhrecContext)).toBe(false);
+      expect(Object.keys(child.edhrecContext).every(key => allowed.has(key))).toBe(true);
+      const examples = child.edhrecContext.recommendationExamples;
+      const themes = child.edhrecContext.themeNotes;
+      expect(Array.isArray(examples) ? examples.length : 0).toBeLessThanOrEqual(6);
+      expect(Array.isArray(themes) ? themes.length : 0).toBeLessThanOrEqual(6);
+    }
+
+    const brionline = childPayload.children.find(child => child.sourceTitle === "Brionline");
+    expect(brionline).toBeDefined();
+    if (!brionline) return;
+    const context = brionline.edhrecContext as Record<string, unknown>;
+    const html = page(brionline);
+    expect(typeof context.aggregateDeckCount).toBe("number");
+    expect((context.aggregateDeckCount as number) > 0).toBe(true);
+    expect(Array.isArray(context.themeNotes)).toBe(true);
+    expect(html).toContain("EDHREC aggregate:");
+    expect(html).toContain("Open EDHREC theme");
+    expect(html).toContain("not copied third-party decklists");
   });
 
   it("renders exact swaps, role estimates, evidence, and related tracker context", () => {

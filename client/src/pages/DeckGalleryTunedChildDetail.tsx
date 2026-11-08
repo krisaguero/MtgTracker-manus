@@ -242,24 +242,37 @@ function ContextBlock({ context }: { context: DeckGalleryTunedChild["edhrecConte
   const summary = typeof context.summary === "string" ? context.summary : "EDHREC recommendations and themes informed this child.";
   const aggregate = context.aggregateDeckCount;
   const tags = context.popularTags;
+  const aggregateLabel = typeof aggregate === "number" ? `${aggregate.toLocaleString()} decks` : aggregate;
   const tagRows = typeof tags === "object" && tags !== null && !Array.isArray(tags)
-    ? Object.entries(tags as Record<string, unknown>).filter((entry): entry is [string, number] => typeof entry[1] === "number")
+    ? Object.entries(tags as Record<string, unknown>).filter((entry): entry is [string, string | number] => typeof entry[1] === "number" || typeof entry[1] === "string")
     : [];
-  const recs = Array.isArray(context.recommendationExamples)
-    ? context.recommendationExamples
-    : Array.isArray(context.recommendationContext)
-      ? context.recommendationContext
-      : [];
-  const otherNotes = Object.entries(context).filter(([key, value]) =>
-    !["summary", "aggregateDeckCount", "popularTags", "recommendationExamples", "recommendationContext"].includes(key) && typeof value === "string"
-  );
+  const recs = Array.isArray(context.recommendationExamples) ? context.recommendationExamples : [];
+  const themeNotes = Array.isArray(context.themeNotes)
+    ? context.themeNotes.filter((item): item is Record<string, unknown> => typeof item === "object" && item !== null && !Array.isArray(item))
+    : [];
   return (
     <div>
       <p className="mt-3 text-sm leading-7">{summary}</p>
-      {aggregate !== undefined && <p className="mt-2 text-xs font-semibold text-muted-foreground">EDHREC aggregate: {String(aggregate)}</p>}
+      {aggregateLabel !== undefined && <p className="mt-2 text-xs font-semibold text-muted-foreground">EDHREC aggregate: {String(aggregateLabel)}</p>}
       {tagRows.length > 0 && <div className="mt-3 flex flex-wrap gap-2">{tagRows.map(([tag, count]) => <span key={tag} className="border border-border bg-background px-2 py-1 text-xs">{tag} · {count}</span>)}</div>}
-      {recs.length > 0 && <p className="mt-3 text-xs leading-5 text-muted-foreground"><strong>Recommendation examples:</strong> {recs.filter((item): item is string => typeof item === "string").join(", ")}</p>}
-      {otherNotes.map(([key, value]) => <p key={key} className="mt-2 text-xs leading-5 text-muted-foreground">{String(value)}</p>)}
+      {recs.length > 0 && <p className="mt-3 text-xs leading-5 text-muted-foreground"><strong>Card examples:</strong> {recs.filter((item): item is string => typeof item === "string").slice(0, 6).join(", ")}</p>}
+      {themeNotes.length > 0 && (
+        <ul className="mt-3 space-y-3">
+          {themeNotes.map((note, index) => {
+            const title = typeof note.title === "string" ? note.title : "EDHREC theme";
+            const noteSummary = typeof note.summary === "string" ? note.summary : "";
+            const count = note.aggregateDeckCount;
+            const countLabel = typeof count === "number" ? `${count.toLocaleString()} decks` : count;
+            const url = typeof note.url === "string" && note.url.startsWith("https://edhrec.com/") ? note.url : "";
+            return <li key={`${title}-${index}`} className="border-l-2 border-primary/50 pl-3 text-xs leading-5">
+              <p><strong>{title}</strong>{countLabel !== undefined && <> · {String(countLabel)}</>}</p>
+              {noteSummary && <p className="mt-1 text-muted-foreground">{noteSummary}</p>}
+              {url && <a href={url} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block font-semibold text-primary underline-offset-4 hover:underline">Open EDHREC theme</a>}
+            </li>;
+          })}
+        </ul>
+      )}
+      <p className="mt-3 text-xs text-muted-foreground">These are public aggregate themes and a few card examples, not copied third-party decklists.</p>
     </div>
   );
 }
