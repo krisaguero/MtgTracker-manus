@@ -1,5 +1,16 @@
 [
   {
+    "slug": "daily-spoiler-watch-2026-11-09",
+    "category": "Automated Spoiler & Precon Watch",
+    "title": "Daily Spoiler & Precon Watch — 2026-11-09",
+    "dateLabel": "2026-11-09 · Automated source scan",
+    "summary": "5 official DailyMTG announcement or spoiler records were matched, with 0 upcoming Commander products carried forward from the release calendar.",
+    "body": "# Daily Spoiler & Precon Watch — 2026-11-09\n\nThis automated journal entry records the official Wizards/DailyMTG pages found during the 2026-11-09 scan and the upcoming Commander products already present in the tracker’s structured release calendar. It is a source index, not a claim that every spoiler page represents a complete decklist.\n\n## What changed\n\nThe scan found **1 Commander/precon-related page**, **1 spoiler or card-preview page**, and **3 product/release pages**. New-to-Magic status, deck completeness, exact cards, and prices remain separate checks in the catalog refresh.\n\n### Commander and precon announcements\n\n- [Magic: The Gathering® | Star Trek™ Commander Decklists](https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists) — commander announcement\n\n### Spoilers and card previews\n\n- [Magic: The Gathering® | Star Trek™ Tokens and Art Cards](https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards) — spoiler\n\n### Upcoming Commander products already on the release radar\n\nNo upcoming Commander products were available in the structured calendar.\n\n## How to use this in the tracker\n\nUse the linked official page to confirm the announcement. Use the Commander Library to inspect a complete deck record when MTGJSON has one. Then open the deck’s upgrade paths to compare EDHREC-supported packages, your scanned copies, and cards that may be transferable from another owned precon. The automation does not infer ownership from an announcement.\n\n## Data notes\n\n- Official source index: [DailyMTG news](https://magic.wizards.com/en/news)\n- Structured product source: MTGJSON SetList and DeckList, refreshed separately by the daily catalog jobs.\n- Spoiler pages are evidence of an official page, not proof of a complete card list or a purchase recommendation.",
+    "sourceUrl": "https://magic.wizards.com/en/news",
+    "dataWindow": "Official DailyMTG page scan and structured release calendar checked 2026-11-09.",
+    "caveat": "Automated source index. Verify complete decklists, exact printings, release dates, and prices before acting."
+  },
+  {
     "slug": "daily-spoiler-watch-2026-11-08",
     "category": "Automated Spoiler & Precon Watch",
     "title": "Daily Spoiler & Precon Watch — 2026-11-08",

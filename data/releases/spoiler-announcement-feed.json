@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-08",
+  "asOf": "2026-11-09",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
-    {
-      "id": "en-news-feature-star-trek-prerelease-guide",
-      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
-      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
-      "kind": "product-release",
-      "source": "DailyMTG"
-    },
     {
       "id": "en-news-announcements-secret-lair-set-phasers-to-superdrop",
       "title": "Secret Lair: Set Phasers to Superdrop",
       "url": "https://magic.wizards.com/en/news/announcements/secret-lair-set-phasers-to-superdrop",
+      "kind": "product-release",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-feature-star-trek-prerelease-guide",
+      "title": "Magic: The Gathering® | Star Trek™ Prerelease Guide",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-prerelease-guide",
       "kind": "product-release",
       "source": "DailyMTG"
     },
