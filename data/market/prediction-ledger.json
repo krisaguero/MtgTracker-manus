@@ -1,7 +1,215 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T14:54:22.989Z",
+  "updatedAt": "2026-11-09T18:33:20.358Z",
   "records": [
+    {
+      "id": "2026-11-09-precon-sealed-economics:1:pip:312",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Temple of Triumph (PIP 312) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Temple of Triumph",
+      "setCode": "pip",
+      "collectorNumber": "312",
+      "entryUsd": 1.05,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 288.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:2:pip:31",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess James, Wandering Dad // Follow Him (PIP 31) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "James, Wandering Dad // Follow Him",
+      "setCode": "pip",
+      "collectorNumber": "31",
+      "entryUsd": 1.08,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 260.0% since the prior saved observation across 1 available price source.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:3:pip:254",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Buried Ruin (PIP 254) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Buried Ruin",
+      "setCode": "pip",
+      "collectorNumber": "254",
+      "entryUsd": 1.19,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 240.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:4:pip:307",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Temple of Malice (PIP 307) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Temple of Malice",
+      "setCode": "pip",
+      "collectorNumber": "307",
+      "entryUsd": 1.11,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 236.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:5:pip:161",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Hour of Reckoning (PIP 161) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Hour of Reckoning",
+      "setCode": "pip",
+      "collectorNumber": "161",
+      "entryUsd": 1.13,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 232.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:6:pip:243",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Talisman of Conviction (PIP 243) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Talisman of Conviction",
+      "setCode": "pip",
+      "collectorNumber": "243",
+      "entryUsd": 1.16,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 205.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:7:pip:172",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Single Combat (PIP 172) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Single Combat",
+      "setCode": "pip",
+      "collectorNumber": "172",
+      "entryUsd": 1.23,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 167.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:8:m3c:357",
+      "dateKey": "2026-11-09",
+      "postId": "2026-11-09-precon-sealed-economics",
+      "prompt": "Assess Mossfire Valley (M3C 357) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mossfire Valley",
+      "setCode": "m3c",
+      "collectorNumber": "357",
+      "entryUsd": 0.65,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 124.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-09",
+        "evaluationDate": "2026-11-23"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-08-spoiler-supply-watch:1:soc:219",
       "dateKey": "2026-11-08",
@@ -2496,7 +2704,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": 7.27,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:2:blc:322",
@@ -2522,7 +2736,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -44.07,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:3:fic:403",
@@ -2548,7 +2768,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -51.43,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:4:fic:27",
@@ -2574,7 +2800,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -49.23,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:5:blc:310",
@@ -2600,7 +2832,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -43.55,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:6:drc:139",
@@ -2626,7 +2864,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -52.46,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:7:lcc:346",
@@ -2652,7 +2896,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -46.15,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-26-precon-sealed-economics:8:pip:230",
@@ -2678,7 +2928,13 @@
         "openedAt": "2026-10-26",
         "evaluationDate": "2026-11-09"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -42.65,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-25-spoiler-supply-watch:1:cm2:291",

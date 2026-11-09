@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T14:54:22.444Z",
-  "pricingDate": "2026-11-08",
-  "dataWindow": "2026-10-16 through 2026-11-08",
+  "generatedAt": "2026-11-09T18:33:19.805Z",
+  "pricingDate": "2026-11-09",
+  "dataWindow": "2026-10-20 through 2026-11-09",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 1887,
-  "negativeSignals": 2121,
+  "positiveSignals": 2840,
+  "negativeSignals": 2902,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 89,
-    "multiSourceSignals": 12422,
+    "singleSourceSignals": 151,
+    "multiSourceSignals": 12360,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 44,
-      "positiveSignals": 44,
+      "cards": 130,
+      "positiveSignals": 130,
       "negativeSignals": 0,
-      "averagePctChange": 27.94
+      "averagePctChange": 37.27
     },
     {
       "category": "commander-picks",
-      "cards": 12437,
-      "positiveSignals": 1843,
-      "negativeSignals": 2091,
-      "averagePctChange": -0.03
+      "cards": 12303,
+      "positiveSignals": 2710,
+      "negativeSignals": 2824,
+      "averagePctChange": 0.06
     },
     {
       "category": "reprint-squashes",
-      "cards": 30,
+      "cards": 78,
       "positiveSignals": 0,
-      "negativeSignals": 30,
-      "averagePctChange": -27.49
+      "negativeSignals": 78,
+      "averagePctChange": -23.05
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-08; 1887 rose and 2121 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +27.94% across 44 cards.",
-    "89 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "30 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-09; 2840 rose and 2902 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +37.27% across 130 cards.",
+    "151 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "78 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Morbid Opportunist",
-        "setCode": "soc",
-        "collectorNumber": "219",
-        "currentUsd": 0.6,
-        "percentChange": 106.9,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Arcane Signet",
+        "name": "Temple of Triumph",
         "setCode": "pip",
-        "collectorNumber": "224",
-        "currentUsd": 1.38,
-        "percentChange": 105.97,
+        "collectorNumber": "312",
+        "currentUsd": 1.05,
+        "percentChange": 288.89,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Scavenging Ooze",
-        "setCode": "dsc",
-        "collectorNumber": "196",
-        "currentUsd": 0.62,
-        "percentChange": 93.75,
+        "name": "James, Wandering Dad // Follow Him",
+        "setCode": "pip",
+        "collectorNumber": "31",
+        "currentUsd": 1.08,
+        "percentChange": 260,
+        "sourceCount": 1,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Buried Ruin",
+        "setCode": "pip",
+        "collectorNumber": "254",
+        "currentUsd": 1.19,
+        "percentChange": 240,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Adarkar Wastes",
-        "setCode": "m3c",
-        "collectorNumber": "316",
-        "currentUsd": 0.74,
-        "percentChange": 72.09,
+        "name": "Temple of Malice",
+        "setCode": "pip",
+        "collectorNumber": "307",
+        "currentUsd": 1.11,
+        "percentChange": 236.36,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Command Tower",
-        "setCode": "tdc",
-        "collectorNumber": "107",
-        "currentUsd": 0.2,
-        "percentChange": 53.85,
+        "name": "Hour of Reckoning",
+        "setCode": "pip",
+        "collectorNumber": "161",
+        "currentUsd": 1.13,
+        "percentChange": 232.35,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Razorjaw Oni",
-        "setCode": "cma",
-        "collectorNumber": "63",
-        "currentUsd": 0.13,
-        "percentChange": -62.86,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Island",
-        "setCode": "c15",
-        "collectorNumber": "330",
-        "currentUsd": 0.1,
-        "percentChange": -54.55,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Extinguish All Hope",
-        "setCode": "cmm",
-        "collectorNumber": "157",
-        "currentUsd": 0.28,
-        "percentChange": -53.33,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Sulfur Falls",
+        "name": "Arcane Signet",
         "setCode": "pip",
-        "collectorNumber": "294",
-        "currentUsd": 0.33,
-        "percentChange": -48.44,
+        "collectorNumber": "224",
+        "currentUsd": 0.65,
+        "percentChange": -52.9,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Gruul Turf",
-        "setCode": "blc",
-        "collectorNumber": "310",
-        "currentUsd": 0.35,
-        "percentChange": -47.76,
+        "name": "Sunscorch Regent",
+        "setCode": "fic",
+        "collectorNumber": "255",
+        "currentUsd": 0.32,
+        "percentChange": -51.52,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
+        "currentUsd": 0.34,
+        "percentChange": -46.03,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Yahenni, Undying Partisan",
+        "setCode": "soc",
+        "collectorNumber": "232",
+        "currentUsd": 0.33,
+        "percentChange": -45.9,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Swamp",
+        "setCode": "cm2",
+        "collectorNumber": "294",
+        "currentUsd": 0.95,
+        "percentChange": -44.44,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,109 +153,109 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Idol of Oblivion",
-        "setCode": "plst",
-        "collectorNumber": "BLC-277",
-        "observations": 21,
-        "firstDate": "2026-10-16",
-        "lastDate": "2026-11-08",
-        "totalPctChange": 5.32,
-        "positiveDays": 3,
-        "negativeDays": 0
-      },
-      {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "observations": 21,
-        "firstDate": "2026-10-16",
-        "lastDate": "2026-11-08",
-        "totalPctChange": -1.96,
-        "positiveDays": 4,
-        "negativeDays": 1
-      },
-      {
         "name": "Island",
         "setCode": "cm2",
         "collectorNumber": "291",
-        "observations": 20,
+        "observations": 21,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-08",
+        "lastDate": "2026-11-09",
         "totalPctChange": 390,
         "positiveDays": 1,
         "negativeDays": 0
       },
       {
-        "name": "Bronzebeak Foragers",
-        "setCode": "lcc",
-        "collectorNumber": "69",
-        "observations": 20,
+        "name": "Temple of Triumph",
+        "setCode": "pip",
+        "collectorNumber": "312",
+        "observations": 21,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-08",
-        "totalPctChange": 261.86,
-        "positiveDays": 13,
-        "negativeDays": 2
+        "lastDate": "2026-11-09",
+        "totalPctChange": 337.5,
+        "positiveDays": 6,
+        "negativeDays": 3
       },
       {
         "name": "Swamp",
         "setCode": "znr",
         "collectorNumber": "382",
-        "observations": 20,
+        "observations": 21,
         "firstDate": "2026-10-20",
-        "lastDate": "2026-11-08",
-        "totalPctChange": 218.18,
-        "positiveDays": 5,
+        "lastDate": "2026-11-09",
+        "totalPctChange": 269.7,
+        "positiveDays": 6,
         "negativeDays": 9
+      },
+      {
+        "name": "James, Wandering Dad // Follow Him",
+        "setCode": "pip",
+        "collectorNumber": "31",
+        "observations": 21,
+        "firstDate": "2026-10-20",
+        "lastDate": "2026-11-09",
+        "totalPctChange": 260,
+        "positiveDays": 3,
+        "negativeDays": 3
+      },
+      {
+        "name": "Bronzebeak Foragers",
+        "setCode": "lcc",
+        "collectorNumber": "69",
+        "observations": 21,
+        "firstDate": "2026-10-20",
+        "lastDate": "2026-11-09",
+        "totalPctChange": 253.61,
+        "positiveDays": 13,
+        "negativeDays": 3
       }
     ],
     "predictionsDue": [
       {
-        "name": "Island",
-        "setCode": "cm2",
-        "collectorNumber": "291",
-        "evaluationDate": "2026-11-08"
+        "name": "Temple of Abandon",
+        "setCode": "blc",
+        "collectorNumber": "338",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Hedron Archive",
-        "setCode": "scd",
-        "collectorNumber": "266",
-        "evaluationDate": "2026-11-08"
+        "name": "Path of Ancestry",
+        "setCode": "blc",
+        "collectorNumber": "322",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Worn Powerstone",
-        "setCode": "scd",
-        "collectorNumber": "288",
-        "evaluationDate": "2026-11-08"
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Pearl-Ear, Imperial Advisor",
-        "setCode": "soc",
-        "collectorNumber": "160",
-        "evaluationDate": "2026-11-08"
+        "name": "Summon: Ixion",
+        "setCode": "fic",
+        "collectorNumber": "27",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Island",
-        "setCode": "cmd",
-        "collectorNumber": "306",
-        "evaluationDate": "2026-11-08"
+        "name": "Gruul Turf",
+        "setCode": "blc",
+        "collectorNumber": "310",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Convert to Slime",
-        "setCode": "dsc",
-        "collectorNumber": "37",
-        "evaluationDate": "2026-11-08"
+        "name": "Soul-Guide Lantern",
+        "setCode": "drc",
+        "collectorNumber": "139",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "Mind Stone",
-        "setCode": "soc",
-        "collectorNumber": "352",
-        "evaluationDate": "2026-11-08"
+        "name": "Path of Ancestry",
+        "setCode": "lcc",
+        "collectorNumber": "346",
+        "evaluationDate": "2026-11-09"
       },
       {
-        "name": "River Kelpie",
-        "setCode": "tdc",
-        "collectorNumber": "166",
-        "evaluationDate": "2026-11-08"
+        "name": "Everflowing Chalice",
+        "setCode": "pip",
+        "collectorNumber": "230",
+        "evaluationDate": "2026-11-09"
       }
     ],
     "predictionsResolved": [],
