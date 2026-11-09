@@ -9,8 +9,9 @@ import {
   type StarTrekMarketSignal,
 } from "@/data/starTrekMarketWatch";
 import starTrekPriceHistory from "@/data/starTrekPriceHistory.json";
+import { StarTrekUpgradeRadar } from "@/components/StarTrekUpgradeRadar";
 
-type StarTrekTab = "daily" | "watch" | "history";
+type StarTrekTab = "daily" | "watch" | "history" | "radar";
 
 function StarTrekPriceHistoryPanel() {
   const snapshots = [...starTrekPriceHistory.snapshots].reverse();
@@ -197,6 +198,7 @@ export function StarTrekMarketPanel() {
           <button type="button" onClick={() => setTab("daily")} aria-pressed={tab === "daily"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "daily" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Daily movers · Nov. 7</button>
           <button type="button" onClick={() => setTab("watch")} aria-pressed={tab === "watch"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "watch" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Earlier editorial watch · Nov. 5</button>
           <button type="button" onClick={() => setTab("history")} aria-pressed={tab === "history"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "history" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Historical trends</button>
+          <button type="button" onClick={() => setTab("radar")} aria-pressed={tab === "radar"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "radar" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Upgrade radar</button>
         </div>
         {tab === "watch" && <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Star Trek market watch filters">
           {filters.map(([value, label]) => (
@@ -215,6 +217,7 @@ export function StarTrekMarketPanel() {
           {visible.map(signal => <WatchCard key={signal.id} signal={signal} />)}
         </div>}
         {tab === "history" && <StarTrekPriceHistoryPanel />}
+        {tab === "radar" && <StarTrekUpgradeRadar />}
         <p className="mt-5 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">
           Buying posture: avoid chasing thin pre-release moves. Recheck completed sales, EDHREC adoption, and listing depth 3–7 days after the November 13 release. The earlier editorial watch keeps its own source dates; the Scryfall basket is not a sealed-deck valuation or financial advice.
         </p>
