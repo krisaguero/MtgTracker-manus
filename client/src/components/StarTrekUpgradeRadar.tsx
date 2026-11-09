@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { CardIndexLink, CardMediaFrame } from "@/components/CardIndexLink";
 import { CardImageZoom } from "@/components/CardImageZoom";
 import { getMarketCardImageUrls } from "@/lib/marketCardArtLookup";
+import { useMarketPriceIndex, type ResolvedCardPrice } from "@/lib/marketPriceIndex";
 
 const radarDecks = [
   {
@@ -94,7 +95,48 @@ function RadarCard({ name, role, status }: { name: string; role: string; status:
   );
 }
 
-function DeckRadar({ deck }: { deck: (typeof radarDecks)[number] }) {
+function money(value: number) {
+  return `$${value.toFixed(2)}`;
+}
+
+function UpgradeBudget({ deck, prices, loading }: { deck: (typeof radarDecks)[number]; prices: Map<string, ResolvedCardPrice>; loading: boolean }) {
+  const [cap, setCap] = useState(3);
+  const rows = useMemo(() => deck.upgrades.map(card => ({ ...card, price: prices.get(card.name) })), [deck.upgrades, prices]);
+  const priced = rows.filter(row => row.price);
+  const knownSubtotal = priced.reduce((sum, row) => sum + (row.price?.usd || 0), 0);
+  const underCap = priced.filter(row => (row.price?.usd || 0) <= cap);
+  const overCap = priced.filter(row => (row.price?.usd || 0) > cap);
+  const coverage = rows.length ? Math.round((priced.length / rows.length) * 100) : 0;
+  const provisionalCeiling = knownSubtotal + (rows.length - priced.length) * cap;
+  return (
+    <div className="mt-7 border-2 border-primary/30 bg-primary/5 p-4 sm:p-5" aria-label={`${deck.name} price tracking and budget breakdown`}>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div><p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Price tracking · snapshot index</p><h4 className="mt-1 text-xl font-black">Upgrade budget breakdown</h4></div>
+        <span className="border border-border bg-card px-2 py-1 font-mono text-[10px] font-bold uppercase">{loading ? "Loading prices" : `${priced.length}/${rows.length} priced · ${coverage}% coverage`}</span>
+      </div>
+      <div className="mt-4 grid gap-px border border-border bg-border sm:grid-cols-3">
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Indexed subtotal</p><p className="mt-1 text-2xl font-black text-primary">{money(knownSubtotal)}</p><p className="mt-1 text-[10px] text-muted-foreground">Known cards only</p></div>
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">At or under cap</p><p className="mt-1 text-2xl font-black">{underCap.length} cards</p><p className="mt-1 text-[10px] text-muted-foreground">{money(underCap.reduce((sum, row) => sum + (row.price?.usd || 0), 0))} indexed spend</p></div>
+        <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Planning ceiling</p><p className="mt-1 text-2xl font-black">{money(provisionalCeiling)}</p><p className="mt-1 text-[10px] text-muted-foreground">Unknown cards modeled at {money(cap)} each</p></div>
+      </div>
+      <div className="mt-4 flex flex-wrap items-center gap-2"><span className="font-mono text-[10px] font-black uppercase text-muted-foreground">Per-card cap</span>{[1, 3, 5, 10].map(value => <button key={value} type="button" onClick={() => setCap(value)} className={`border px-3 py-2 font-mono text-[10px] font-black ${cap === value ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card hover:border-primary"}`}>{money(value)}</button>)}</div>
+      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+        {rows.map(row => <div key={row.name} className="flex items-center justify-between gap-3 border border-border bg-card px-3 py-2 text-xs"><span className="min-w-0"><strong className="block truncate">{row.name}</strong><span className="font-mono text-[9px] uppercase text-muted-foreground">{row.role}</span></span><span className={`shrink-0 font-mono font-black ${row.price ? (row.price.usd <= cap ? "text-emerald-700 dark:text-emerald-400" : "text-amber-700 dark:text-amber-300") : "text-muted-foreground"}`}>{row.price ? money(row.price.usd) : "Unverified"}</span></div>)}
+      </div>
+      <p className="mt-3 text-[11px] leading-5 text-muted-foreground">{overCap.length} priced card{overCap.length === 1 ? "" : "s"} exceed the selected cap. Totals use the tracker’s indexed snapshot and exclude shipping, tax, finish differences, and unavailable prices; they are not live quotes.</p>
+    </div>
+  );
+}
+
+function DeckRadar({ deck, priceIndex }: { deck: (typeof radarDecks)[number]; priceIndex: ReturnType<typeof useMarketPriceIndex> }) {
+  const priceMap = useMemo(() => {
+    const map = new Map<string, ResolvedCardPrice>();
+    for (const card of deck.upgrades) {
+      const price = priceIndex.resolveCardPrice(card.name);
+      if (price) map.set(card.name, price);
+    }
+    return map;
+  }, [deck.upgrades, priceIndex.ready]);
   return (
     <section className="scroll-mt-24 border-2 border-border bg-card p-5 sm:p-7" id={`radar-${deck.id}`} aria-labelledby={`radar-${deck.id}-heading`}>
       <div className="flex flex-wrap items-end justify-between gap-4 border-b-2 border-border pb-4">
@@ -105,12 +147,14 @@ function DeckRadar({ deck }: { deck: (typeof radarDecks)[number] }) {
       <div className="mt-6 flex flex-wrap gap-2"><a href="#radar-watchlist" className="border border-primary bg-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary-foreground">Watch these upgrades</a><span className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-bold uppercase text-muted-foreground">Price status · unverified</span></div>
       <div className="mt-6 grid grid-cols-2 items-start gap-3 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4">{deck.upgrades.map(card => <RadarCard key={card.name} name={card.name} role={card.role} status={card.status} />)}</div>
       <div className="mt-7 border-t border-border pt-5"><div className="flex flex-wrap items-baseline justify-between gap-2"><h4 className="text-xl font-black">Direct upgrade cuts</h4><span className="font-mono text-[10px] uppercase text-muted-foreground">Verify against official list before purchase</span></div><div className="mt-4 grid gap-3 sm:grid-cols-2">{deck.upgrades.map(card => <div key={`${card.name}-cut`} className="border border-border bg-background p-3"><div className="flex items-center justify-between gap-3"><span className="text-xs font-black text-emerald-700 dark:text-emerald-400">ADD · {card.name}</span><span className="font-mono text-[9px] font-bold uppercase text-amber-700">{card.status}</span></div><p className="mt-1 text-[11px] leading-5 text-muted-foreground">{card.reason}</p><p className="mt-3 border-t border-border pt-2 text-xs font-bold text-destructive">CUT · {card.cut}</p></div>)}</div></div>
+      <UpgradeBudget deck={deck} prices={priceMap} loading={priceIndex.loading} />
       <div className="mt-5 border-l-4 border-amber-500 bg-amber-50 p-3 text-xs leading-5 text-amber-950 dark:bg-amber-950/20 dark:text-amber-100"><strong>Guide cut candidates:</strong> {deck.guideCuts.join(" · ")}</div>
     </section>
   );
 }
 
 export function StarTrekUpgradeRadar() {
+  const priceIndex = useMarketPriceIndex();
   return (
     <section className="mt-5 border-y-2 border-primary/40 bg-primary/5 px-4 py-6 sm:px-8" aria-labelledby="star-trek-upgrade-radar-heading">
       <div className="mx-auto max-w-7xl">
@@ -120,7 +164,7 @@ export function StarTrekUpgradeRadar() {
           <nav className="mt-6 flex flex-wrap gap-2" aria-label="Star Trek upgrade radar decks">{radarDecks.map(deck => <a key={deck.id} href={`#radar-${deck.id}`} className="border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary hover:text-primary">{deck.name}</a>)}</nav>
         </div>
         <div id="radar-watchlist" className="mt-5 border border-amber-500/60 bg-amber-50 p-4 dark:bg-amber-950/20"><p className="text-xs leading-5 text-amber-950 dark:text-amber-100"><strong>Evidence rule:</strong> EDHREC recommendations and guide cut candidates are not current prices, completed sales, or confirmed official cuts. Printing, condition, shipping, legality, and release-week supply still need verification.</p></div>
-        <div className="mt-6 grid gap-6">{radarDecks.map(deck => <DeckRadar key={deck.id} deck={deck} />)}</div>
+        <div className="mt-6 grid gap-6">{radarDecks.map(deck => <DeckRadar key={deck.id} deck={deck} priceIndex={priceIndex} />)}</div>
       </div>
     </section>
   );
