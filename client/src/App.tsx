@@ -34,6 +34,7 @@ const October16MarketBrief = lazy(() => import('@/pages/October16MarketBrief').t
 const October17MarketBrief = lazy(() => import('@/pages/October17MarketBrief').then((module) => ({ default: module.October17MarketBrief })));
 const November06MarketBrief = lazy(() => import('@/pages/November06MarketBrief').then((module) => ({ default: module.November06MarketBrief })));
 const StarTrekMarketWatchArticle = lazy(() => import('@/pages/StarTrekMarketWatchArticle').then((module) => ({ default: module.StarTrekMarketWatchArticle })));
+const StarTrekMarketUpdateNov08 = lazy(() => import('@/pages/StarTrekMarketUpdateNov08').then((module) => ({ default: module.StarTrekMarketUpdateNov08 })));
 const MarketSignalAudit = lazy(() => import('@/pages/MarketSignalAudit'));
 const DailyMovers = lazy(() => import('@/pages/DailyMovers').then((module) => ({ default: module.DailyMovers })));
 const MarketWatchArticle = lazy(() => import('@/pages/MarketWatchArticle').then((module) => ({ default: module.MarketWatchArticle })));
@@ -141,6 +142,7 @@ function Router() {
         <Route path="/market-report/october-17-30-signal-brief" component={October17MarketBrief} />
         <Route path="/market-report/november-06-30-signal-brief" component={November06MarketBrief} />
         <Route path="/market-report/star-trek-market-watch-2026-11-07" component={StarTrekMarketWatchArticle} />
+        <Route path="/market-report/star-trek-potential-movers-2026-11-08" component={StarTrekMarketUpdateNov08} />
         <Route path="/market-report/quarterly-trend-comparison-2026-10-22" component={QuarterlyMarketTrendArticle} />
         <Route path="/market-report/tabletop-paper-company-spotlight" component={TabletopPaperSpotlight} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />
