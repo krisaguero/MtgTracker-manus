@@ -74,7 +74,7 @@ describe("individual public Deck Gallery pages", () => {
       expect(html).toContain("Categories");
       expect(html).toContain('data-count-reconciliation="main"');
       expect(html).toContain('data-count-reconciliation="sideboard"');
-      expect(html).toContain("uncategorized remainder");
+      expect(html).not.toContain("uncategorized remainder");
       expect(html).toContain(`${deck.mainCopies} saved main copies`);
       expect(html).toContain(`${deck.sideboardCopies} saved sideboard copies`);
       expect(html).toContain("balances with saved list");
@@ -96,9 +96,6 @@ describe("individual public Deck Gallery pages", () => {
         expect(imageUrl).toBeDefined();
         if (imageUrl) expect(html).toContain(escapeHtml(imageUrl));
       }
-      if (deck.sideboard.length) {
-        expect(html).toContain('aria-label="Sideboard (uncategorized remainder)"');
-      }
       expect(html).toContain(
         `href="${deck.group === "robert_title_credit" ? "/deck-gallery/robogles" : deck.group.startsWith("owner_wip") ? "/deck-gallery/wip" : "/deck-gallery"}"`
       );
@@ -111,8 +108,10 @@ describe("individual public Deck Gallery pages", () => {
       const reading = getDeckGalleryRoleReading(deck.id);
       expect(reading, deck.id).toBeDefined();
       if (!reading) continue;
-      const allCategoryCards = [...reading.main, ...reading.sideboard].flatMap(group => group.cards);
-      expect(new Set(allCategoryCards.map(card => card.name)).size).toBe(allCategoryCards.length);
+      for (const [section, categories] of [["main", reading.main], ["sideboard", reading.sideboard]] as const) {
+        const categoryCards = categories.flatMap(group => group.cards);
+        expect(new Set(categoryCards.map(card => card.name)).size, `${deck.id} ${section} category names`).toBe(categoryCards.length);
+      }
       expect([...reading.main, ...reading.sideboard].every(group =>
         !/^(lands|ramp|draw|interaction|engines|combat|threats|support)$/.test(group.id)
       )).toBe(true);
