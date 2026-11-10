@@ -106,6 +106,7 @@ function RemainderSection({
   categories: DeckGalleryCategory[];
 }) {
   const cards = getDeckGalleryRemainderCards(sourceRows, categories);
+  if (!cards.length) return null;
   const copies = cards.reduce((total, card) => total + card.quantity, 0);
   return (
     <section aria-label={title} className="mt-7">
@@ -115,17 +116,7 @@ function RemainderSection({
           {copies} remaining copies · {cards.length} cards
         </p>
       </div>
-      {cards.length ? (
-        <CardGrid cards={cards} view="remainder" />
-      ) : sourceRows.length ? (
-        <p className="mt-3 border border-dashed border-border p-4 text-sm text-muted-foreground">
-          Every saved card in this section is already shown in a category.
-        </p>
-      ) : (
-        <p className="mt-3 border border-dashed border-border p-4 text-sm text-muted-foreground">
-          No saved rows in this section.
-        </p>
-      )}
+      <CardGrid cards={cards} view="remainder" />
     </section>
   );
 }
@@ -154,7 +145,7 @@ function SectionCountReconciliation({
       aria-label={`${section} category count reconciliation`}
       className="mt-4 border border-border bg-background px-3 py-2 text-xs leading-5"
     >
-      <strong>{section}:</strong> {categoryCopies} category copies + {remainderCopies} {section.toLocaleLowerCase()} uncategorized remainder = {sourceCopies} saved {section.toLocaleLowerCase()} copies
+      <strong>{section}:</strong> {categoryCopies} functional category copies + {remainderCopies} {section.toLocaleLowerCase()} fallback copies = {sourceCopies} saved {section.toLocaleLowerCase()} copies
       <span className={`ml-1 font-bold ${reconciled ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}`}>
         {reconciled ? "· balances with saved list" : "· count mismatch"}
       </span>
@@ -234,7 +225,7 @@ export function DeckGalleryCardPresentation({
       />
       <CategorySection title="Main deck categories" categories={mainCategories} />
       <RemainderSection
-        title="Main (uncategorized remainder)"
+        title="Main (functional fallback)"
         sourceRows={entry.main}
         categories={mainCategories}
       />
@@ -245,7 +236,7 @@ export function DeckGalleryCardPresentation({
       />
       <CategorySection title="Sideboard categories" categories={sideboardCategories} />
       <RemainderSection
-        title="Sideboard (uncategorized remainder)"
+        title="Sideboard (functional fallback)"
         sourceRows={entry.sideboard}
         categories={sideboardCategories}
       />
@@ -285,7 +276,7 @@ export function DeckGalleryRoleReading({ entry }: { entry: DeckGalleryEntry }) {
           </button>
         </div>
         <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">
-          Categories include only cards that directly support a clear deck theme or named package. Each card name appears in at most one category; uncategorized cards remain in the main deck or sideboard below. These are editorial groupings, not categories supplied by the Deckbox list’s author. Switch views to see the complete source list in its exact saved order.
+          Categories combine clear deck themes with EDHREC-style functional roles such as lands, ramp, draw, removal, protection, recursion, and tokens. Each card name appears in at most one category within its zone. These are editorial groupings, not categories supplied by the Deckbox list’s author. Switch views to see the complete source list in its exact saved order.
         </p>
       </header>
       <DeckGalleryCardPresentation entry={entry} reading={reading} view={view} />
