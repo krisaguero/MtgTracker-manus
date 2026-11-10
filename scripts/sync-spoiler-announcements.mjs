@@ -10,7 +10,7 @@ const OUTPUT_PATH = resolve(RELEASE_DIR, 'spoiler-announcement-feed.json');
 const CLIENT_OUTPUT_PATH = resolve(CLIENT_DATA_DIR, 'spoilerAnnouncementFeed.json');
 const ARTICLE_OUTPUT_PATH = resolve(CLIENT_DATA_DIR, 'automatedSpoilerArticles.json');
 const USER_AGENT = 'MTGTracker-Official-Announcement-Watch/1.0';
-const ARTICLE_LIMIT = 90;
+const ARTICLE_LIMIT = 24;
 const FEED_LIMIT = 120;
 
 const parseDate = value => /^\d{4}-\d{2}-\d{2}$/.test(String(value || '')) ? String(value) : null;
@@ -118,8 +118,15 @@ async function main() {
     records: [...officialNews, ...precons.map(record => ({ id: `precon-${record.id}`, title: record.name, url: record.officialSourceUrl || NEWS_URL, kind: 'upcoming-precon', source: 'MTGJSON release calendar', releaseDate: record.releaseDate, setCode: record.setCode }))].slice(0, FEED_LIMIT),
     previousRecordCount: Array.isArray(previousFeed.records) ? previousFeed.records.length : 0,
   };
-  const article = buildArticle({ officialNews, precons, asOf: today });
-  const articles = [article, ...(Array.isArray(previousArticles) ? previousArticles : []).filter(item => item?.slug !== article.slug)].slice(0, ARTICLE_LIMIT);
+  const previousRecords = Array.isArray(previousFeed.records) ? previousFeed.records : [];
+  const previousById = new Map(previousRecords.map(record => [record.id, JSON.stringify(record)]));
+  const currentRecords = feed.records;
+  const newRecordCount = currentRecords.filter(record => !previousById.has(record.id)).length;
+  const changedRecordCount = currentRecords.filter(record => previousById.has(record.id) && previousById.get(record.id) !== JSON.stringify(record)).length;
+  const meaningfulChange = newRecordCount > 0 || changedRecordCount > 0 || previousRecords.length === 0;
+  const priorArticles = Array.isArray(previousArticles) ? previousArticles : [];
+  const article = meaningfulChange ? buildArticle({ officialNews, precons, asOf: today }) : null;
+  const articles = (article ? [article, ...priorArticles.filter(item => item?.slug !== article.slug)] : priorArticles).slice(0, ARTICLE_LIMIT);
   await mkdir(RELEASE_DIR, { recursive: true });
   await mkdir(CLIENT_DATA_DIR, { recursive: true });
   await Promise.all([
@@ -127,6 +134,6 @@ async function main() {
     writeFile(CLIENT_OUTPUT_PATH, `${JSON.stringify(feed, null, 2)}\n`, 'utf8'),
     writeFile(ARTICLE_OUTPUT_PATH, `${JSON.stringify(articles, null, 2)}\n`, 'utf8'),
   ]);
-  console.log(JSON.stringify({ asOf: today, officialNews: officialNews.length, upcomingPrecons: precons.length, articleSlug: article.slug, outputs: [OUTPUT_PATH, CLIENT_OUTPUT_PATH, ARTICLE_OUTPUT_PATH] }, null, 2));
+  console.log(JSON.stringify({ asOf: today, officialNews: officialNews.length, upcomingPrecons: precons.length, newRecordCount, changedRecordCount, meaningfulChange, articleSlug: article?.slug || null, outputs: [OUTPUT_PATH, CLIENT_OUTPUT_PATH, ARTICLE_OUTPUT_PATH] }, null, 2));
 }
 main().catch(error => { console.error(error.stack || error); process.exitCode = 1; });
