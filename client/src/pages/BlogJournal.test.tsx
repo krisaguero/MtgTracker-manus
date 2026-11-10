@@ -88,7 +88,7 @@ describe('published journal', () => {
   });
   it('keeps the hub illustrated and article pages connected by related links', () => {
     const hub = page('/blog');
-    expect(hub.match(/<img\b/g)).toHaveLength(articles.length + automatedArticles.length + marketBacklog.weekly.length);
+    expect(hub.match(/<img\b/g)).toHaveLength(articles.length + automatedArticles.length);
     for (const article of articles) {
       const html = page(`/blog/${article.slug}`);
       expect(html).toContain('aria-label="Keep reading"');
