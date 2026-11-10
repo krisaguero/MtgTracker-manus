@@ -35,6 +35,9 @@ const October17MarketBrief = lazy(() => import('@/pages/October17MarketBrief').t
 const November06MarketBrief = lazy(() => import('@/pages/November06MarketBrief').then((module) => ({ default: module.November06MarketBrief })));
 const StarTrekMarketWatchArticle = lazy(() => import('@/pages/StarTrekMarketWatchArticle').then((module) => ({ default: module.StarTrekMarketWatchArticle })));
 const StarTrekMarketUpdateNov08 = lazy(() => import('@/pages/StarTrekMarketUpdateNov08').then((module) => ({ default: module.StarTrekMarketUpdateNov08 })));
+const WeeklyMarketDeskNov10 = lazy(() => import('@/pages/WeeklyMarketDeskNov10').then((module) => ({ default: module.WeeklyMarketDeskNov10 })));
+const StarTrekDeckIdeaNov10 = lazy(() => import('@/pages/StarTrekDeckIdeaNov10').then((module) => ({ default: module.StarTrekDeckIdeaNov10 })));
+const DeckboxArchiveWhyPublicNov10 = lazy(() => import('@/pages/DeckboxArchiveWhyPublicNov10').then((module) => ({ default: module.DeckboxArchiveWhyPublicNov10 })));
 const StarTrekCampaignBox = lazy(() => import('@/pages/StarTrekCampaignBox').then((module) => ({ default: module.StarTrekCampaignBox })));
 const StarTrekBrawlternativeBox = lazy(() => import('@/pages/StarTrekBrawlternativeBox').then((module) => ({ default: module.StarTrekBrawlternativeBox })));
 const MarketSignalAudit = lazy(() => import('@/pages/MarketSignalAudit'));
@@ -145,6 +148,9 @@ function Router() {
         <Route path="/market-report/november-06-30-signal-brief" component={November06MarketBrief} />
         <Route path="/market-report/star-trek-market-watch-2026-11-07" component={StarTrekMarketWatchArticle} />
         <Route path="/market-report/star-trek-potential-movers-2026-11-08" component={StarTrekMarketUpdateNov08} />
+        <Route path="/market-report/weekly-market-desk-2026-11-10" component={WeeklyMarketDeskNov10} />
+        <Route path="/market-report/star-trek-deck-idea-2026-11-10" component={StarTrekDeckIdeaNov10} />
+        <Route path="/market-report/deckbox-archive-why-public-2026-11-10" component={DeckboxArchiveWhyPublicNov10} />
         <Route path="/star-trek-campaign-box" component={StarTrekCampaignBox} />
         <Route path="/star-trek-brawlternative-box" component={StarTrekBrawlternativeBox} />
         <Route path="/market-report/quarterly-trend-comparison-2026-10-22" component={QuarterlyMarketTrendArticle} />
