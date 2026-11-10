@@ -58,6 +58,8 @@ type FeedPost = {
   methodology: string;
   marketStatus: string;
   disclaimer: string;
+  selectionMode?: string;
+  selectionNote?: string | null;
 };
 const feed = rawFeed as {
   posts: FeedPost[];
@@ -106,6 +108,7 @@ function FeedCardView({ card }: { card: FeedCard }) {
           <MarketCardPreview
             name={card.name}
             setCode={card.setCode}
+            collectorNumber={card.collectorNumber}
             size="md"
           />
         </div>
@@ -147,6 +150,10 @@ function FeedCardView({ card }: { card: FeedCard }) {
             <span className="border border-border px-2 py-1 text-muted-foreground">
               {card.category}
             </span>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2 border-y border-border py-2 font-mono text-[10px]">
+            <span>{card.currentUsd === null ? "Current price unverified" : `$${card.currentUsd.toFixed(2)} current`}</span>
+            <span className="text-right text-muted-foreground">{card.previousUsd === null || card.previousUsd === undefined ? "Prior price unavailable" : `$${card.previousUsd.toFixed(2)} prior`}</span>
           </div>
           <p className="mt-3 text-sm leading-6 text-muted-foreground">
             {card.thesis}
@@ -516,8 +523,8 @@ export default function MarketResearchFeed() {
       : null;
   const latest = posts.find(post => post.dateKey === requestedDate) || posts[0];
   const latestWithCards = latest?.cards.length ? latest : posts.find(post => post.cards.length > 0);
-  const visibleCards = latestWithCards?.cards.slice(0, 3) || [];
-  const additionalCards = latestWithCards?.cards.slice(3) || [];
+  const visibleCards = latestWithCards?.cards.slice(0, 8) || [];
+  const additionalCards = latestWithCards?.cards.slice(8) || [];
   const weeklyDigest = backlog.weekly[0];
   const isHistorical = Boolean(
     latest && latest.dateKey < new Date().toISOString().slice(0, 10)
@@ -670,9 +677,19 @@ export default function MarketResearchFeed() {
               </span>
             </div>
             {latest.cards.length === 0 && latestWithCards && (
-              <p className="mt-4 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">The {formatDate(latest.dateKey)} scan established a flat baseline with no non-zero movers. The three cards below are the most recent non-zero comparative cards from {formatDate(latestWithCards.dateKey)} so the daily desk remains useful without inventing movement for the flat day.</p>
+              <p className="mt-4 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">The {formatDate(latest.dateKey)} scan established a flat baseline with no non-zero movers. The comparison cards below are the most recent non-zero cards from {formatDate(latestWithCards.dateKey)} so the daily desk remains useful without inventing movement for the flat day.</p>
+            )}
+            {latest.selectionNote && (
+              <p className="mt-4 border-l-2 border-primary pl-3 text-xs leading-5 text-muted-foreground">{latest.selectionNote}</p>
             )}
             <div className="mt-6 grid gap-4 lg:grid-cols-2">
+              <div className="lg:col-span-2 flex flex-wrap items-center justify-between gap-3 border-b-2 border-border pb-3">
+                <div>
+                  <p className="font-mono text-xs font-black uppercase tracking-widest text-primary">Daily mover board</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{latestWithCards?.cards.length || 0} surfaced exact-printing cards · ranked by absolute observed movement</p>
+                </div>
+                <Link href="/market-desk" className="font-mono text-[10px] font-black uppercase text-primary hover:underline">Weekly synthesis →</Link>
+              </div>
               {visibleCards.map(card => (
                 <FeedCardView
                   key={`${latest.id}-${card.name}-${card.setCode}`}
@@ -683,7 +700,7 @@ export default function MarketResearchFeed() {
             {additionalCards.length > 0 && (
               <details className="mt-4 border border-border bg-background">
                 <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
-                  Show {additionalCards.length} additional watch cards
+                  Show all {additionalCards.length} additional mover cards
                 </summary>
                 <div className="grid gap-4 border-t border-border p-4 lg:grid-cols-2">
                   {additionalCards.map(card => (
