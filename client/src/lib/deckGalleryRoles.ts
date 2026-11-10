@@ -35,7 +35,7 @@ export function getDeckGalleryRoleReading(
   return readings.get(deckId);
 }
 
-/** Keep uncategorized cards in first-seen source order and merge duplicate names. */
+/** Keep any future unmatched cards in first-seen source order and merge duplicate names. */
 export function getDeckGalleryRemainderCards<T extends DeckGalleryCategoryCard>(
   sourceRows: T[],
   categories: DeckGalleryCategory[]
