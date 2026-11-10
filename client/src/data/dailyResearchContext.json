@@ -1,44 +1,151 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T14:47:47.830Z",
-  "pricingDate": "2026-11-07",
-  "dataWindow": "2026-10-15 through 2026-11-07",
+  "generatedAt": "2026-11-10T16:17:40.050Z",
+  "pricingDate": "2026-11-10",
+  "dataWindow": "2026-10-21 through 2026-11-10",
   "marketStatus": [
+    "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 0,
-  "negativeSignals": 0,
+  "positiveSignals": 2018,
+  "negativeSignals": 2068,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 84,
-    "multiSourceSignals": 12427,
+    "singleSourceSignals": 154,
+    "multiSourceSignals": 12357,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
-      "category": "commander-picks",
-      "cards": 12511,
-      "positiveSignals": 0,
+      "category": "penny-risers",
+      "cards": 56,
+      "positiveSignals": 56,
       "negativeSignals": 0,
-      "averagePctChange": 0
+      "averagePctChange": 39.09
+    },
+    {
+      "category": "commander-picks",
+      "cards": 12430,
+      "positiveSignals": 1962,
+      "negativeSignals": 2043,
+      "averagePctChange": 0.03
+    },
+    {
+      "category": "reprint-squashes",
+      "cards": 25,
+      "positiveSignals": 0,
+      "negativeSignals": 25,
+      "averagePctChange": -22.74
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-07; 0 rose and 0 fell in the latest snapshot.",
-    "commander-picks has the strongest latest average movement at +0% across 12511 cards.",
-    "84 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "No reprint-floor observations were present in the latest snapshot.",
+    "12511 exact-printing price observations were screened for 2026-11-10; 2018 rose and 2068 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +39.09% across 56 cards.",
+    "154 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "25 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
-    "topGainers": [],
-    "topDecliners": [],
+    "topGainers": [
+      {
+        "name": "Tainted Wood",
+        "setCode": "pip",
+        "collectorNumber": "301",
+        "currentUsd": 1.16,
+        "percentChange": 213.51,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Dusk // Dawn",
+        "setCode": "drc",
+        "collectorNumber": "65",
+        "currentUsd": 0.61,
+        "percentChange": 125.93,
+        "sourceCount": 1,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Myriad Landscape",
+        "setCode": "who",
+        "collectorNumber": "290",
+        "currentUsd": 0.65,
+        "percentChange": 109.68,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Frostboil Snarl",
+        "setCode": "drc",
+        "collectorNumber": "158",
+        "currentUsd": 0.63,
+        "percentChange": 103.23,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Chaos Warp",
+        "setCode": "fic",
+        "collectorNumber": "291",
+        "currentUsd": 0.65,
+        "percentChange": 96.97,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      }
+    ],
+    "topDecliners": [
+      {
+        "name": "Velomachus Lorehold",
+        "setCode": "tdc",
+        "collectorNumber": "309",
+        "currentUsd": 0.37,
+        "percentChange": -45.59,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Adarkar Wastes",
+        "setCode": "m3c",
+        "collectorNumber": "316",
+        "currentUsd": 0.44,
+        "percentChange": -42.86,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Nucklavee",
+        "setCode": "cmd",
+        "collectorNumber": "214",
+        "currentUsd": 0.42,
+        "percentChange": -40,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Mire in Misery",
+        "setCode": "c19",
+        "collectorNumber": "19",
+        "currentUsd": 0.57,
+        "percentChange": -34.48,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Chaos Warp",
+        "setCode": "moc",
+        "collectorNumber": "273",
+        "currentUsd": 0.65,
+        "percentChange": -32.99,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      }
+    ],
     "snapshotWarnings": []
   },
   "historicalSignalCheck": {
@@ -46,109 +153,109 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Command Tower",
-        "setCode": "cmd",
-        "collectorNumber": "269",
-        "observations": 21,
-        "firstDate": "2026-10-15",
-        "lastDate": "2026-11-07",
-        "totalPctChange": 15.12,
-        "positiveDays": 3,
-        "negativeDays": 1
-      },
-      {
-        "name": "Idol of Oblivion",
-        "setCode": "plst",
-        "collectorNumber": "BLC-277",
-        "observations": 21,
-        "firstDate": "2026-10-15",
-        "lastDate": "2026-11-07",
-        "totalPctChange": 5.69,
-        "positiveDays": 3,
-        "negativeDays": 0
-      },
-      {
         "name": "Island",
         "setCode": "cm2",
         "collectorNumber": "291",
-        "observations": 19,
-        "firstDate": "2026-10-20",
-        "lastDate": "2026-11-07",
+        "observations": 21,
+        "firstDate": "2026-10-21",
+        "lastDate": "2026-11-10",
         "totalPctChange": 390,
         "positiveDays": 1,
         "negativeDays": 0
       },
       {
+        "name": "Temple of Triumph",
+        "setCode": "pip",
+        "collectorNumber": "312",
+        "observations": 21,
+        "firstDate": "2026-10-21",
+        "lastDate": "2026-11-10",
+        "totalPctChange": 345.83,
+        "positiveDays": 7,
+        "negativeDays": 3
+      },
+      {
         "name": "Bronzebeak Foragers",
         "setCode": "lcc",
         "collectorNumber": "69",
-        "observations": 19,
-        "firstDate": "2026-10-20",
-        "lastDate": "2026-11-07",
-        "totalPctChange": 240.21,
-        "positiveDays": 12,
-        "negativeDays": 2
+        "observations": 21,
+        "firstDate": "2026-10-21",
+        "lastDate": "2026-11-10",
+        "totalPctChange": 253.54,
+        "positiveDays": 14,
+        "negativeDays": 3
       },
       {
-        "name": "Swamp",
-        "setCode": "znr",
-        "collectorNumber": "382",
-        "observations": 19,
-        "firstDate": "2026-10-20",
-        "lastDate": "2026-11-07",
-        "totalPctChange": 218.18,
-        "positiveDays": 5,
-        "negativeDays": 9
+        "name": "James, Wandering Dad // Follow Him",
+        "setCode": "pip",
+        "collectorNumber": "31",
+        "observations": 21,
+        "firstDate": "2026-10-21",
+        "lastDate": "2026-11-10",
+        "totalPctChange": 253.33,
+        "positiveDays": 3,
+        "negativeDays": 4
+      },
+      {
+        "name": "Buried Ruin",
+        "setCode": "pip",
+        "collectorNumber": "254",
+        "observations": 21,
+        "firstDate": "2026-10-21",
+        "lastDate": "2026-11-10",
+        "totalPctChange": 224.32,
+        "positiveDays": 6,
+        "negativeDays": 7
       }
     ],
     "predictionsDue": [
       {
-        "name": "Terramorphic Expanse",
-        "setCode": "sos",
-        "collectorNumber": "265",
-        "evaluationDate": "2026-11-07"
+        "name": "Deathgorge Scavenger",
+        "setCode": "lcc",
+        "collectorNumber": "236",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Vile Redeemer",
-        "setCode": "m3c",
-        "collectorNumber": "251",
-        "evaluationDate": "2026-11-07"
+        "name": "Rootbound Crag",
+        "setCode": "drc",
+        "collectorNumber": "168",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Mold Shambler",
-        "setCode": "c13",
-        "collectorNumber": "156",
-        "evaluationDate": "2026-11-07"
+        "name": "Wind-Scarred Crag",
+        "setCode": "c15",
+        "collectorNumber": "321",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Drowner of Hope",
-        "setCode": "m3c",
-        "collectorNumber": "182",
-        "evaluationDate": "2026-11-07"
+        "name": "Fabled Passage",
+        "setCode": "tmc",
+        "collectorNumber": "67",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Mangara, the Diplomat",
-        "setCode": "soc",
-        "collectorNumber": "155",
-        "evaluationDate": "2026-11-07"
+        "name": "Methods of the Mighty",
+        "setCode": "msc",
+        "collectorNumber": "21",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Deepfathom Skulker",
-        "setCode": "m3c",
-        "collectorNumber": "180",
-        "evaluationDate": "2026-11-07"
+        "name": "Dream Pillager",
+        "setCode": "afc",
+        "collectorNumber": "125",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Bismuth Mindrender",
-        "setCode": "m3c",
-        "collectorNumber": "51",
-        "evaluationDate": "2026-11-07"
+        "name": "Shriekwood Devourer",
+        "setCode": "dsc",
+        "collectorNumber": "35",
+        "evaluationDate": "2026-11-10"
       },
       {
-        "name": "Cazur, Ruthless Stalker",
-        "setCode": "otc",
-        "collectorNumber": "188",
-        "evaluationDate": "2026-11-07"
+        "name": "Fervent Charge",
+        "setCode": "pip",
+        "collectorNumber": "215",
+        "evaluationDate": "2026-11-10"
       }
     ],
     "predictionsResolved": [],
