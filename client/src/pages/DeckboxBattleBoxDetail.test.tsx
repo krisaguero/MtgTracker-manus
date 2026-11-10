@@ -84,8 +84,10 @@ describe("Deckbox 60-card Battle Box references", () => {
       const reading = getDeckGalleryRoleReading(source.id);
       expect(reading, source.id).toBeDefined();
       if (!reading) continue;
-      const allCategoryCards = [...reading.main, ...reading.sideboard].flatMap(group => group.cards);
-      expect(new Set(allCategoryCards.map(card => card.name)).size).toBe(allCategoryCards.length);
+      for (const [section, groups] of [["main", reading.main], ["sideboard", reading.sideboard]] as const) {
+        const categoryCards = groups.flatMap(group => group.cards);
+        expect(new Set(categoryCards.map(card => card.name)).size, `${source.id} ${section} categories`).toBe(categoryCards.length);
+      }
       expect([...reading.main, ...reading.sideboard].every(group =>
         !/^(lands|ramp|draw|interaction|engines|combat|threats|support)$/.test(group.id)
       )).toBe(true);
