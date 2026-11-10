@@ -72,6 +72,10 @@ describe("individual public Deck Gallery pages", () => {
       expect(html).toContain(escapeHtml(deck.creditLine));
       expect(html).toContain("Show exact saved-order list");
       expect(html).toContain("Categories");
+      if (deck.helm.commanders.length > 0) {
+        expect(html).toContain('aria-label="Commander focus"');
+        expect(html).toContain("Commander focus");
+      }
       expect(html).toContain('data-count-reconciliation="main"');
       expect(html).toContain('data-count-reconciliation="sideboard"');
       expect(html).not.toContain("uncategorized remainder");
