@@ -1,13 +1,20 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
     {
-      "id": "en-news-announcements-secret-lair-set-phasers-to-superdrop",
-      "title": "Secret Lair: Set Phasers to Superdrop",
-      "url": "https://magic.wizards.com/en/news/announcements/secret-lair-set-phasers-to-superdrop",
+      "id": "en-news-announcements-star-trek-commander-decklists",
+      "title": "Magic: The Gathering® | Star Trek™ Commander Decklists",
+      "url": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
+      "kind": "commander-announcement",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-feature-star-trek-release-notes",
+      "title": "Magic: The Gathering® | Star Trek™ Release Notes",
+      "url": "https://magic.wizards.com/en/news/feature/star-trek-release-notes",
       "kind": "product-release",
       "source": "DailyMTG"
     },
@@ -19,24 +26,10 @@
       "source": "DailyMTG"
     },
     {
-      "id": "en-news-announcements-star-trek-commander-decklists",
-      "title": "Magic: The Gathering® | Star Trek™ Commander Decklists",
-      "url": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
-      "kind": "commander-announcement",
-      "source": "DailyMTG"
-    },
-    {
       "id": "en-news-card-preview-star-trek-tokens-and-art-cards",
       "title": "Magic: The Gathering® | Star Trek™ Tokens and Art Cards",
       "url": "https://magic.wizards.com/en/news/card-preview/star-trek-tokens-and-art-cards",
       "kind": "spoiler",
-      "source": "DailyMTG"
-    },
-    {
-      "id": "en-news-feature-star-trek-release-notes",
-      "title": "Magic: The Gathering® | Star Trek™ Release Notes",
-      "url": "https://magic.wizards.com/en/news/feature/star-trek-release-notes",
-      "kind": "product-release",
       "source": "DailyMTG"
     }
   ],
