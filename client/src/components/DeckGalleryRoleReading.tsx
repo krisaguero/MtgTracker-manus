@@ -247,6 +247,7 @@ export function DeckGalleryCardPresentation({
 export function DeckGalleryRoleReading({ entry }: { entry: DeckGalleryEntry }) {
   const [view, setView] = useState<ViewMode>("categories");
   const reading = getDeckGalleryRoleReading(entry.id);
+  const commanderNames = entry.helm.commanders.map(card => card.name);
 
   return (
     <section
@@ -279,6 +280,22 @@ export function DeckGalleryRoleReading({ entry }: { entry: DeckGalleryEntry }) {
           Categories combine clear deck themes with EDHREC-style functional roles such as lands, ramp, draw, removal, protection, recursion, and tokens. Each card name appears in at most one category within its zone. These are editorial groupings, not categories supplied by the Deckbox list’s author. Switch views to see the complete source list in its exact saved order.
         </p>
       </header>
+      {commanderNames.length > 0 && (
+        <div
+          className="mt-4 border-l-4 border-primary bg-primary/10 px-4 py-3 sm:px-5"
+          aria-label="Commander focus"
+        >
+          <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">
+            Commander focus
+          </p>
+          <p className="mt-1 text-base font-black">
+            {commanderNames.join(" · ")}
+          </p>
+          <p className="mt-1 text-xs leading-5 text-muted-foreground">
+            Named mechanic and commander packages stay primary. Functional roles below explain the supporting shell around this helm rather than replacing the deck’s identity.
+          </p>
+        </div>
+      )}
       <DeckGalleryCardPresentation entry={entry} reading={reading} view={view} />
     </section>
   );
