@@ -1,28 +1,363 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T14:47:48.426Z",
+  "generatedAt": "2026-11-10T13:57:35.601Z",
   "schedule": {
-    "readerFacing": "weekly visual market desk \u00b7 Tuesday 08:00 UTC",
-    "rawDailyArchive": "daily at 08:00 UTC \u00b7 retained for audit and prediction review",
-    "topicExpansion": "folded into the weekly desk unless a product or deck warrants a separate article",
-    "biweeklyTop10": "every other Friday \u00b7 visual shortlist",
-    "daily": "08:00 UTC \u00b7 raw audit archive"
+    "daily": "08:00 UTC",
+    "topicExpansion": "weekday rotation",
+    "biweeklyTop10": "every other Friday"
   },
   "posts": [
+    {
+      "id": "2026-11-10-bulk-collection-triage",
+      "dateKey": "2026-11-10",
+      "slug": "bulk-collection-triage",
+      "title": "Bulk Collection Triage · 2026-11-10",
+      "label": "Bulk Collection Triage",
+      "kind": "topic-expansion",
+      "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+      "selectionMode": "historical-fallback",
+      "selectionNote": "No non-zero movers qualified in the 2026-11-10 snapshot. Showing the most recent non-zero comparison board from 2026-11-06; these cards are not new moves for today.",
+      "generatedAt": "2026-11-10T08:00:00.000Z",
+      "summary": "Bulk Collection Triage · 2026-11-10. No non-zero movers qualified in today’s snapshot, so this page preserves 8 cards from the latest non-zero comparison board (2026-11-06) without labeling them as new movement.",
+      "body": [
+        "Bulk Collection Triage · 2026-11-10. No non-zero movers qualified in today’s snapshot, so this page preserves 8 cards from the latest non-zero comparison board (2026-11-06) without labeling them as new movement.",
+        "Flat-day handling: the comparison board is retained for continuity only. Check the weekly desk for cross-day context and wait for a new exact-printing change before acting.",
+        "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+      ],
+      "cards": [
+        {
+          "rank": 1,
+          "name": "Woe Strider",
+          "setCode": "soc",
+          "setName": "SOC",
+          "collectorNumber": "231",
+          "currentUsd": 0.55,
+          "previousUsd": 0.25,
+          "percentChange": 120,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 120.0% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 2,
+          "name": "Nyx Weaver",
+          "setCode": "dsc",
+          "setName": "DSC",
+          "collectorNumber": "226",
+          "currentUsd": 0.59,
+          "previousUsd": 0.27,
+          "percentChange": 118.52,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 118.5% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 3,
+          "name": "Lord of the Forsaken",
+          "setCode": "tdc",
+          "setName": "TDC",
+          "collectorNumber": "186",
+          "currentUsd": 0.63,
+          "previousUsd": 0.31,
+          "percentChange": 103.23,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 103.2% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 4,
+          "name": "Hinterland Harbor",
+          "setCode": "fic",
+          "setName": "FIC",
+          "collectorNumber": "403",
+          "currentUsd": 0.63,
+          "previousUsd": 0.32,
+          "percentChange": 96.88,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 96.9% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 5,
+          "name": "Into the Pit",
+          "setCode": "dsc",
+          "setName": "DSC",
+          "collectorNumber": "20",
+          "currentUsd": 0.59,
+          "previousUsd": 0.3,
+          "percentChange": 96.67,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 96.7% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 6,
+          "name": "Drownyard Temple",
+          "setCode": "dsc",
+          "setName": "DSC",
+          "collectorNumber": "272",
+          "currentUsd": 0.66,
+          "previousUsd": 0.34,
+          "percentChange": 94.12,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 94.1% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 7,
+          "name": "Elvish Skysweeper",
+          "setCode": "cma",
+          "setName": "CMA",
+          "collectorNumber": "104",
+          "currentUsd": 0.6,
+          "previousUsd": 0.32,
+          "percentChange": 87.5,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 87.5% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        },
+        {
+          "rank": 8,
+          "name": "Necromantic Selection",
+          "setCode": "tdc",
+          "setName": "TDC",
+          "collectorNumber": "189",
+          "currentUsd": 0.7,
+          "previousUsd": 0.38,
+          "percentChange": 84.21,
+          "category": "penny-risers",
+          "sourceCount": 2,
+          "confidence": "Developing",
+          "action": "MONITOR",
+          "thesis": "Commander decklist; rose 84.2% since the prior saved observation across 2 available price sources.",
+          "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+          "verifiedAt": "2026-11-06T15:48:04.873Z"
+        }
+      ],
+      "sources": [
+        "MTGJSON set data",
+        "MTGJSON paper price data",
+        "Scryfall image endpoint"
+      ],
+      "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+      "marketStatus": "Commander-driven",
+      "researchContext": {
+        "pricingDate": "2026-11-07",
+        "dataWindow": "2026-10-15 through 2026-11-07",
+        "executiveSummary": [
+          "12511 exact-printing price observations were screened for 2026-11-07; 0 rose and 0 fell in the latest snapshot.",
+          "commander-picks has the strongest latest average movement at +0% across 12511 cards.",
+          "84 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+          "No reprint-floor observations were present in the latest snapshot.",
+          "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
+        ],
+        "whatChangedSinceYesterday": {
+          "newSignals": [],
+          "topGainers": [],
+          "topDecliners": [],
+          "snapshotWarnings": []
+        },
+        "historicalSignalCheck": {
+          "windowDays": 21,
+          "snapshotsReviewed": 21,
+          "repeatedMovers": [
+            {
+              "name": "Command Tower",
+              "setCode": "cmd",
+              "collectorNumber": "269",
+              "observations": 21,
+              "firstDate": "2026-10-15",
+              "lastDate": "2026-11-07",
+              "totalPctChange": 15.12,
+              "positiveDays": 3,
+              "negativeDays": 1
+            },
+            {
+              "name": "Idol of Oblivion",
+              "setCode": "plst",
+              "collectorNumber": "BLC-277",
+              "observations": 21,
+              "firstDate": "2026-10-15",
+              "lastDate": "2026-11-07",
+              "totalPctChange": 5.69,
+              "positiveDays": 3,
+              "negativeDays": 0
+            },
+            {
+              "name": "Island",
+              "setCode": "cm2",
+              "collectorNumber": "291",
+              "observations": 19,
+              "firstDate": "2026-10-20",
+              "lastDate": "2026-11-07",
+              "totalPctChange": 390,
+              "positiveDays": 1,
+              "negativeDays": 0
+            },
+            {
+              "name": "Bronzebeak Foragers",
+              "setCode": "lcc",
+              "collectorNumber": "69",
+              "observations": 19,
+              "firstDate": "2026-10-20",
+              "lastDate": "2026-11-07",
+              "totalPctChange": 240.21,
+              "positiveDays": 12,
+              "negativeDays": 2
+            },
+            {
+              "name": "Swamp",
+              "setCode": "znr",
+              "collectorNumber": "382",
+              "observations": 19,
+              "firstDate": "2026-10-20",
+              "lastDate": "2026-11-07",
+              "totalPctChange": 218.18,
+              "positiveDays": 5,
+              "negativeDays": 9
+            }
+          ],
+          "predictionsDue": [
+            {
+              "name": "Terramorphic Expanse",
+              "setCode": "sos",
+              "collectorNumber": "265",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Vile Redeemer",
+              "setCode": "m3c",
+              "collectorNumber": "251",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Mold Shambler",
+              "setCode": "c13",
+              "collectorNumber": "156",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Drowner of Hope",
+              "setCode": "m3c",
+              "collectorNumber": "182",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Mangara, the Diplomat",
+              "setCode": "soc",
+              "collectorNumber": "155",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Deepfathom Skulker",
+              "setCode": "m3c",
+              "collectorNumber": "180",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Bismuth Mindrender",
+              "setCode": "m3c",
+              "collectorNumber": "51",
+              "evaluationDate": "2026-11-07"
+            },
+            {
+              "name": "Cazur, Ruthless Stalker",
+              "setCode": "otc",
+              "collectorNumber": "188",
+              "evaluationDate": "2026-11-07"
+            }
+          ],
+          "predictionsResolved": [],
+          "recurringCatalystsToReview": [
+            "spoilers",
+            "precons",
+            "reprints",
+            "tournament results",
+            "rules and policy",
+            "collector demand"
+          ],
+          "patternWarnings": [
+            "thin listings",
+            "spoiler reversal",
+            "post-release supply",
+            "reprint compression",
+            "low-liquidity premium"
+          ]
+        },
+        "externalResearchQueue": {
+          "status": "pending-live-web-review",
+          "requiredBeforeConfirmed": [
+            "Official Wizards, Magic.gg, Arena, and Commander Rules Committee policy/product checks",
+            "Completed sales, market-price tools, buylist, and multiple-marketplace comparison",
+            "Tournament and deck-data review for Constructed adoption",
+            "EDHREC, Moxfield, Archidekt, and upgrade-list review for Commander demand",
+            "Release, spoiler, reprint, restock, preorder, and rotation review"
+          ],
+          "sourceDiversityTarget": "At least 10 distinct domains when reasonably available; no single source family above 25% of material claims.",
+          "unavailableClaims": "No live-web catalyst or completed-sale claim is invented by this deterministic job."
+        },
+        "confidenceRules": {
+          "Confirmed": "Printing-specific price movement corroborated by reliable market or liquidity evidence.",
+          "Developing": "Real catalyst or deck demand with incomplete broad price/liquidity confirmation.",
+          "Speculative": "Spoiler, social, thin-listing, or anticipated-synergy thesis; not confirmed demand.",
+          "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
+        },
+        "actionGuardrails": {
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
+          "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
+          "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
+          "preconDecisions": [
+            "BUY_SEALED",
+            "BUY_SINGLES",
+            "WAIT_FOR_DIP",
+            "SKIP_OR_MONITOR"
+          ]
+        }
+      },
+      "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+    },
     {
       "id": "2026-11-07-collection-buy-list",
       "dateKey": "2026-11-07",
       "slug": "collection-buy-list",
-      "title": "Collection Buy List \u00b7 2026-11-07",
+      "title": "Collection Buy List · 2026-11-07",
       "label": "Collection Buy List",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-11-07T08:00:00.000Z",
-      "summary": "Collection Buy List \u00b7 2026-11-07. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Collection Buy List · 2026-11-07. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Collection Buy List \u00b7 2026-11-07. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Collection Buy List · 2026-11-07. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -196,7 +531,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -213,16 +548,16 @@
       "id": "2026-11-06-penny-watch",
       "dateKey": "2026-11-06",
       "slug": "penny-watch",
-      "title": "Penny Watch & Do Not Chase \u00b7 2026-11-06",
+      "title": "Penny Watch & Do Not Chase · 2026-11-06",
       "label": "Penny Watch & Do Not Chase",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-11-06T08:00:00.000Z",
-      "summary": "Penny Watch & Do Not Chase \u00b7 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today\u2019s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Penny Watch & Do Not Chase · 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Penny Watch & Do Not Chase \u00b7 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today\u2019s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Penny Watch & Do Not Chase · 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -251,7 +586,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -281,7 +616,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -311,7 +646,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -341,7 +676,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -371,7 +706,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -401,7 +736,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -431,7 +766,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -461,7 +796,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-06",
             "evaluationDate": "2026-11-20"
@@ -729,7 +1064,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -746,16 +1081,16 @@
       "id": "2026-11-05-constructed-format-watch",
       "dateKey": "2026-11-05",
       "slug": "constructed-format-watch",
-      "title": "Constructed Format Watch \u00b7 2026-11-05",
+      "title": "Constructed Format Watch · 2026-11-05",
       "label": "Constructed Format Watch",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "fallback-top-movers",
       "selectionNote": "Topic filter returned zero cards; populated from the strongest non-zero movers in the full snapshot.",
       "generatedAt": "2026-11-05T08:00:00.000Z",
-      "summary": "Constructed Format Watch \u00b7 2026-11-05. The generated screen contains 12511 priced signals, with 1953 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Atsushi, the Blazing Sky (SOC) at $0.68 and +94.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Constructed Format Watch · 2026-11-05. The generated screen contains 12511 priced signals, with 1953 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Atsushi, the Blazing Sky (SOC) at $0.68 and +94.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Constructed Format Watch \u00b7 2026-11-05. The generated screen contains 12511 priced signals, with 1953 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Atsushi, the Blazing Sky (SOC) at $0.68 and +94.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Constructed Format Watch · 2026-11-05. The generated screen contains 12511 priced signals, with 1953 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Atsushi, the Blazing Sky (SOC) at $0.68 and +94.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -784,7 +1119,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -814,7 +1149,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -844,7 +1179,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -874,7 +1209,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -904,7 +1239,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -934,7 +1269,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -964,7 +1299,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -994,7 +1329,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-05",
             "evaluationDate": "2026-11-19"
@@ -1262,7 +1597,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -1279,16 +1614,16 @@
       "id": "2026-11-04-commander-demand",
       "dateKey": "2026-11-04",
       "slug": "commander-demand",
-      "title": "Commander Demand Desk \u00b7 2026-11-04",
+      "title": "Commander Demand Desk · 2026-11-04",
       "label": "Commander Demand Desk",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-11-04T08:00:00.000Z",
-      "summary": "Commander Demand Desk \u00b7 2026-11-04. The generated screen contains 12511 priced signals, with 1970 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Stoneshock Giant (C15) at $0.01 and -90.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Commander Demand Desk · 2026-11-04. The generated screen contains 12511 priced signals, with 1970 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Stoneshock Giant (C15) at $0.01 and -90.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Commander Demand Desk \u00b7 2026-11-04. The generated screen contains 12511 priced signals, with 1970 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Stoneshock Giant (C15) at $0.01 and -90.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Commander Demand Desk · 2026-11-04. The generated screen contains 12511 priced signals, with 1970 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Stoneshock Giant (C15) at $0.01 and -90.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -1317,7 +1652,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1347,7 +1682,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1377,7 +1712,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1407,7 +1742,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1437,7 +1772,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1467,7 +1802,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1497,7 +1832,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1527,7 +1862,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-04",
             "evaluationDate": "2026-11-18"
@@ -1795,7 +2130,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -1812,16 +2147,16 @@
       "id": "2026-11-03-bulk-collection-triage",
       "dateKey": "2026-11-03",
       "slug": "bulk-collection-triage",
-      "title": "Bulk Collection Triage \u00b7 2026-11-03",
+      "title": "Bulk Collection Triage · 2026-11-03",
       "label": "Bulk Collection Triage",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-11-03T08:00:00.000Z",
-      "summary": "Bulk Collection Triage \u00b7 2026-11-03. The generated screen contains 12511 priced signals, with 2118 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Plains (CM2) at $0.49 and +133.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Bulk Collection Triage · 2026-11-03. The generated screen contains 12511 priced signals, with 2118 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Plains (CM2) at $0.49 and +133.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Bulk Collection Triage \u00b7 2026-11-03. The generated screen contains 12511 priced signals, with 2118 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Plains (CM2) at $0.49 and +133.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Bulk Collection Triage · 2026-11-03. The generated screen contains 12511 priced signals, with 2118 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Plains (CM2) at $0.49 and +133.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -1850,7 +2185,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -1880,7 +2215,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -1910,7 +2245,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -1940,7 +2275,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -1970,7 +2305,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -2000,7 +2335,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -2030,7 +2365,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -2060,7 +2395,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-03",
             "evaluationDate": "2026-11-17"
@@ -2328,7 +2663,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -2345,16 +2680,16 @@
       "id": "2026-11-02-precon-sealed-economics",
       "dateKey": "2026-11-02",
       "slug": "precon-sealed-economics",
-      "title": "Precon & Sealed Economics \u00b7 2026-11-02",
+      "title": "Precon & Sealed Economics · 2026-11-02",
       "label": "Precon & Sealed Economics",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-11-02T08:00:00.000Z",
-      "summary": "Precon & Sealed Economics \u00b7 2026-11-02. The generated screen contains 12511 priced signals, with 2629 positive moves in the current snapshot. Today\u2019s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Yahenni, Undying Partisan (SOC) at $0.65 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Precon & Sealed Economics · 2026-11-02. The generated screen contains 12511 priced signals, with 2629 positive moves in the current snapshot. Today’s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Yahenni, Undying Partisan (SOC) at $0.65 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Precon & Sealed Economics \u00b7 2026-11-02. The generated screen contains 12511 priced signals, with 2629 positive moves in the current snapshot. Today\u2019s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Yahenni, Undying Partisan (SOC) at $0.65 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Precon & Sealed Economics · 2026-11-02. The generated screen contains 12511 priced signals, with 2629 positive moves in the current snapshot. Today’s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Yahenni, Undying Partisan (SOC) at $0.65 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -2383,7 +2718,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2413,7 +2748,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2443,7 +2778,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2473,7 +2808,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2503,7 +2838,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2533,7 +2868,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2563,7 +2898,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2593,7 +2928,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-11-02",
             "evaluationDate": "2026-11-16"
@@ -2812,7 +3147,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -2829,16 +3164,16 @@
       "id": "2026-11-01-spoiler-supply-watch",
       "dateKey": "2026-11-01",
       "slug": "spoiler-supply-watch",
-      "title": "Spoiler & Supply Watch \u00b7 2026-11-01",
+      "title": "Spoiler & Supply Watch · 2026-11-01",
       "label": "Spoiler & Supply Watch",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "fallback-top-movers",
       "selectionNote": "Topic filter returned zero cards; populated from the strongest non-zero movers in the full snapshot.",
       "generatedAt": "2026-11-01T08:00:00.000Z",
-      "summary": "Spoiler & Supply Watch \u00b7 2026-11-01. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Spoiler & Supply Watch · 2026-11-01. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Spoiler & Supply Watch \u00b7 2026-11-01. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Spoiler & Supply Watch · 2026-11-01. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is no qualifying card after filtering. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -2963,7 +3298,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -2980,16 +3315,16 @@
       "id": "2026-10-31-collection-buy-list",
       "dateKey": "2026-10-31",
       "slug": "collection-buy-list",
-      "title": "Collection Buy List \u00b7 2026-10-31",
+      "title": "Collection Buy List · 2026-10-31",
       "label": "Collection Buy List",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-31T08:00:00.000Z",
-      "summary": "Collection Buy List \u00b7 2026-10-31. The generated screen contains 12511 priced signals, with 1969 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Shrine of the Forsaken Gods (C19) at $0.65 and +91.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Collection Buy List · 2026-10-31. The generated screen contains 12511 priced signals, with 1969 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Shrine of the Forsaken Gods (C19) at $0.65 and +91.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Collection Buy List \u00b7 2026-10-31. The generated screen contains 12511 priced signals, with 1969 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Shrine of the Forsaken Gods (C19) at $0.65 and +91.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Collection Buy List · 2026-10-31. The generated screen contains 12511 priced signals, with 1969 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Shrine of the Forsaken Gods (C19) at $0.65 and +91.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -3018,7 +3353,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3048,7 +3383,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3078,7 +3413,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3108,7 +3443,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3138,7 +3473,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3168,7 +3503,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3198,7 +3533,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3228,7 +3563,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-31",
             "evaluationDate": "2026-11-14"
@@ -3447,7 +3782,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -3464,16 +3799,16 @@
       "id": "2026-10-30-top-10",
       "dateKey": "2026-10-30",
       "slug": "biweekly-top-10",
-      "title": "Biweekly Top 10 Watchlist \u00b7 2026-10-30",
+      "title": "Biweekly Top 10 Watchlist · 2026-10-30",
       "label": "Biweekly Top 10",
       "kind": "biweekly-top-10",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-30T08:00:00.000Z",
-      "summary": "Penny Watch & Do Not Chase \u00b7 2026-10-30. The generated screen contains 12511 priced signals, with 1840 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Treasure Cruise (SOC) at $0.51 and +142.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Penny Watch & Do Not Chase · 2026-10-30. The generated screen contains 12511 priced signals, with 1840 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Treasure Cruise (SOC) at $0.51 and +142.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Penny Watch & Do Not Chase \u00b7 2026-10-30. The generated screen contains 12511 priced signals, with 1840 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Treasure Cruise (SOC) at $0.51 and +142.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Penny Watch & Do Not Chase · 2026-10-30. The generated screen contains 12511 priced signals, with 1840 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Treasure Cruise (SOC) at $0.51 and +142.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -3502,7 +3837,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3532,7 +3867,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3562,7 +3897,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3592,7 +3927,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3622,7 +3957,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3652,7 +3987,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3682,7 +4017,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3712,7 +4047,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3742,7 +4077,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -3772,7 +4107,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-30",
             "evaluationDate": "2026-11-13"
@@ -4052,7 +4387,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -4069,16 +4404,16 @@
       "id": "2026-10-29-constructed-format-watch",
       "dateKey": "2026-10-29",
       "slug": "constructed-format-watch",
-      "title": "Constructed Format Watch \u00b7 2026-10-29",
+      "title": "Constructed Format Watch · 2026-10-29",
       "label": "Constructed Format Watch",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "fallback-top-movers",
       "selectionNote": "Topic filter returned zero cards; populated from the strongest non-zero movers in the full snapshot.",
       "generatedAt": "2026-10-29T08:00:00.000Z",
-      "summary": "Constructed Format Watch \u00b7 2026-10-29. The generated screen contains 12511 priced signals, with 1795 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Mountain (C14) at $0.23 and +228.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Constructed Format Watch · 2026-10-29. The generated screen contains 12511 priced signals, with 1795 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Mountain (C14) at $0.23 and +228.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Constructed Format Watch \u00b7 2026-10-29. The generated screen contains 12511 priced signals, with 1795 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Mountain (C14) at $0.23 and +228.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Constructed Format Watch · 2026-10-29. The generated screen contains 12511 priced signals, with 1795 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Mountain (C14) at $0.23 and +228.6%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -4107,7 +4442,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4137,7 +4472,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4167,7 +4502,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4197,7 +4532,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4227,7 +4562,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4257,7 +4592,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4287,7 +4622,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4317,7 +4652,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-29",
             "evaluationDate": "2026-11-12"
@@ -4536,7 +4871,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -4553,16 +4888,16 @@
       "id": "2026-10-28-commander-demand",
       "dateKey": "2026-10-28",
       "slug": "commander-demand",
-      "title": "Commander Demand Desk \u00b7 2026-10-28",
+      "title": "Commander Demand Desk · 2026-10-28",
       "label": "Commander Demand Desk",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-28T08:00:00.000Z",
-      "summary": "Commander Demand Desk \u00b7 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Commander Demand Desk · 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Commander Demand Desk \u00b7 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Commander Demand Desk · 2026-10-28. The generated screen contains 12511 priced signals, with 2147 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Command Tower (SOC) at $0.60 and +185.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -4591,7 +4926,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4621,7 +4956,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4651,7 +4986,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4681,7 +5016,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4711,7 +5046,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4741,7 +5076,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4771,7 +5106,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -4801,7 +5136,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-28",
             "evaluationDate": "2026-11-11"
@@ -5020,7 +5355,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -5037,16 +5372,16 @@
       "id": "2026-10-27-bulk-collection-triage",
       "dateKey": "2026-10-27",
       "slug": "bulk-collection-triage",
-      "title": "Bulk Collection Triage \u00b7 2026-10-27",
+      "title": "Bulk Collection Triage · 2026-10-27",
       "label": "Bulk Collection Triage",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-27T08:00:00.000Z",
-      "summary": "Bulk Collection Triage \u00b7 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Bulk Collection Triage · 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Bulk Collection Triage \u00b7 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Bulk Collection Triage · 2026-10-27. The generated screen contains 12511 priced signals, with 2028 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Deathgorge Scavenger (LCC) at $0.57 and +119.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -5075,7 +5410,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5105,7 +5440,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5135,7 +5470,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5165,7 +5500,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5195,7 +5530,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5225,7 +5560,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5255,7 +5590,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5285,7 +5620,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-27",
             "evaluationDate": "2026-11-10"
@@ -5535,7 +5870,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -5552,16 +5887,16 @@
       "id": "2026-10-26-precon-sealed-economics",
       "dateKey": "2026-10-26",
       "slug": "precon-sealed-economics",
-      "title": "Precon & Sealed Economics \u00b7 2026-10-26",
+      "title": "Precon & Sealed Economics · 2026-10-26",
       "label": "Precon & Sealed Economics",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-26T08:00:00.000Z",
-      "summary": "Precon & Sealed Economics \u00b7 2026-10-26. The generated screen contains 12511 priced signals, with 2796 positive moves in the current snapshot. Today\u2019s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Temple of Abandon (BLC) at $0.55 and +139.1%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Precon & Sealed Economics · 2026-10-26. The generated screen contains 12511 priced signals, with 2796 positive moves in the current snapshot. Today’s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Temple of Abandon (BLC) at $0.55 and +139.1%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Precon & Sealed Economics \u00b7 2026-10-26. The generated screen contains 12511 priced signals, with 2796 positive moves in the current snapshot. Today\u2019s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Temple of Abandon (BLC) at $0.55 and +139.1%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Precon & Sealed Economics · 2026-10-26. The generated screen contains 12511 priced signals, with 2796 positive moves in the current snapshot. Today’s lens is Commander precon value, portable singles, duplicate overlap, and sealed-versus-singles discipline. The leading screened name is Temple of Abandon (BLC) at $0.55 and +139.1%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -5590,7 +5925,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5620,7 +5955,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5650,7 +5985,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5680,7 +6015,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5710,7 +6045,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5740,7 +6075,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5770,7 +6105,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -5800,7 +6135,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-26",
             "evaluationDate": "2026-11-09"
@@ -6019,7 +6354,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -6036,16 +6371,16 @@
       "id": "2026-10-25-spoiler-supply-watch",
       "dateKey": "2026-10-25",
       "slug": "spoiler-supply-watch",
-      "title": "Spoiler & Supply Watch \u00b7 2026-10-25",
+      "title": "Spoiler & Supply Watch · 2026-10-25",
       "label": "Spoiler & Supply Watch",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-25T08:00:00.000Z",
-      "summary": "Spoiler & Supply Watch \u00b7 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today\u2019s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Spoiler & Supply Watch · 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Spoiler & Supply Watch \u00b7 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today\u2019s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Spoiler & Supply Watch · 2026-10-25. The generated screen contains 12511 priced signals, with 2023 positive moves in the current snapshot. Today’s lens is spoilers, release calendars, reprints, restocks, and low-liquidity supply warnings. The leading screened name is Island (CM2) at $0.49 and +390.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -6074,7 +6409,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6104,7 +6439,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6134,7 +6469,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6164,7 +6499,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6194,7 +6529,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6224,7 +6559,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6254,7 +6589,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6284,7 +6619,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-25",
             "evaluationDate": "2026-11-08"
@@ -6503,7 +6838,7 @@
           "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
         },
         "actionGuardrails": {
-          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50\u2013$60 gift-box purchases.",
+          "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
           "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
           "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
           "preconDecisions": [
@@ -6520,16 +6855,16 @@
       "id": "2026-10-24-collection-buy-list",
       "dateKey": "2026-10-24",
       "slug": "collection-buy-list",
-      "title": "Collection Buy List \u00b7 2026-10-24",
+      "title": "Collection Buy List · 2026-10-24",
       "label": "Collection Buy List",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-24T08:00:00.000Z",
-      "summary": "Collection Buy List \u00b7 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Collection Buy List · 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Collection Buy List \u00b7 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today\u2019s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Collection Buy List · 2026-10-24. The generated screen contains 12511 priced signals, with 2013 positive moves in the current snapshot. Today’s lens is owned-card sellout queues, missing precon cards, and targeted purchases instead of random sealed product. The leading screened name is Terramorphic Expanse (SOS) at $0.26 and +160.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -6558,7 +6893,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6588,7 +6923,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6618,7 +6953,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6648,7 +6983,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6678,7 +7013,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6708,7 +7043,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6738,7 +7073,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6768,7 +7103,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-24",
             "evaluationDate": "2026-11-07"
@@ -6788,16 +7123,16 @@
       "id": "2026-10-23-penny-watch",
       "dateKey": "2026-10-23",
       "slug": "penny-watch",
-      "title": "Penny Watch & Do Not Chase \u00b7 2026-10-23",
+      "title": "Penny Watch & Do Not Chase · 2026-10-23",
       "label": "Penny Watch & Do Not Chase",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "topic-filter",
       "selectionNote": null,
       "generatedAt": "2026-10-23T08:00:00.000Z",
-      "summary": "Penny Watch & Do Not Chase \u00b7 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today\u2019s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Penny Watch & Do Not Chase · 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Penny Watch & Do Not Chase \u00b7 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today\u2019s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Penny Watch & Do Not Chase · 2026-10-23. The generated screen contains 12511 priced signals, with 2097 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Scavenger Grounds (MSC) at $0.58 and +152.2%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -6826,7 +7161,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -6856,7 +7191,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -6886,7 +7221,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -6916,7 +7251,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -6946,7 +7281,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -6976,7 +7311,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -7006,7 +7341,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -7036,7 +7371,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-23",
             "evaluationDate": "2026-11-06"
@@ -7056,16 +7391,16 @@
       "id": "2026-10-22-constructed-format-watch",
       "dateKey": "2026-10-22",
       "slug": "constructed-format-watch",
-      "title": "Constructed Format Watch \u00b7 2026-10-22",
+      "title": "Constructed Format Watch · 2026-10-22",
       "label": "Constructed Format Watch",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "selectionMode": "fallback-top-movers",
       "selectionNote": "Topic filter returned zero cards; populated from the strongest non-zero movers in the full snapshot.",
       "generatedAt": "2026-10-22T08:00:00.000Z",
-      "summary": "Constructed Format Watch \u00b7 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Temple of Triumph (TDC) at $0.49 and +157.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Constructed Format Watch · 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Temple of Triumph (TDC) at $0.49 and +157.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Constructed Format Watch \u00b7 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today\u2019s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Temple of Triumph (TDC) at $0.49 and +157.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Constructed Format Watch · 2026-10-22. The generated screen contains 12511 priced signals, with 2063 positive moves in the current snapshot. Today’s lens is tournament adoption, format legality, archetype repetition, and rotation or metagame risk. The topic filter returned no cards, so this post falls back to the strongest non-zero movers across the full snapshot. The leading screened name is Temple of Triumph (TDC) at $0.49 and +157.9%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -7094,7 +7429,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7124,7 +7459,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7154,7 +7489,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7184,7 +7519,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7214,7 +7549,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7244,7 +7579,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7274,7 +7609,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7304,7 +7639,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-22",
             "evaluationDate": "2026-11-05"
@@ -7324,14 +7659,14 @@
       "id": "2026-10-21-commander-demand",
       "dateKey": "2026-10-21",
       "slug": "commander-demand",
-      "title": "Commander Demand Desk \u00b7 2026-10-21",
+      "title": "Commander Demand Desk · 2026-10-21",
       "label": "Commander Demand Desk",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "generatedAt": "2026-10-21T08:00:00.000Z",
-      "summary": "Commander Demand Desk \u00b7 2026-10-21. The generated screen contains 12511 priced signals, with 1971 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Swamp (ZNR) at $0.75 and +127.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Commander Demand Desk · 2026-10-21. The generated screen contains 12511 priced signals, with 1971 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Swamp (ZNR) at $0.75 and +127.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Commander Demand Desk \u00b7 2026-10-21. The generated screen contains 12511 priced signals, with 1971 positive moves in the current snapshot. Today\u2019s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Swamp (ZNR) at $0.75 and +127.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Commander Demand Desk · 2026-10-21. The generated screen contains 12511 priced signals, with 1971 positive moves in the current snapshot. Today’s lens is Commander adoption, EDHREC-style usage signals, upgrade paths, and narrow versus portable demand. The leading screened name is Swamp (ZNR) at $0.75 and +127.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -7360,7 +7695,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7390,7 +7725,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7420,7 +7755,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7450,7 +7785,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7480,7 +7815,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7510,7 +7845,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7540,7 +7875,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7570,7 +7905,7 @@
               -8
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-21",
             "evaluationDate": "2026-11-04"
@@ -7590,14 +7925,14 @@
       "id": "2026-10-20-bulk-collection-triage",
       "dateKey": "2026-10-20",
       "slug": "bulk-collection-triage",
-      "title": "Bulk Collection Triage \u00b7 2026-10-20",
+      "title": "Bulk Collection Triage · 2026-10-20",
       "label": "Bulk Collection Triage",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "generatedAt": "2026-10-20T08:00:00.000Z",
-      "summary": "Bulk Collection Triage \u00b7 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Bulk Collection Triage · 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Bulk Collection Triage \u00b7 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Bulk Collection Triage · 2026-10-20. The generated screen contains 12511 priced signals, with 0 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Command Tower (CMD) at $0.86 and -15.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -7626,7 +7961,7 @@
               -4
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7656,7 +7991,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7686,7 +8021,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7716,7 +8051,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7746,7 +8081,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7776,7 +8111,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7806,7 +8141,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7836,7 +8171,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-20",
             "evaluationDate": "2026-11-03"
@@ -7856,14 +8191,14 @@
       "id": "2026-10-16-top-10",
       "dateKey": "2026-10-16",
       "slug": "biweekly-top-10",
-      "title": "Biweekly Top 10 Watchlist \u00b7 2026-10-16",
+      "title": "Biweekly Top 10 Watchlist · 2026-10-16",
       "label": "Biweekly Top 10",
       "kind": "biweekly-top-10",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "generatedAt": "2026-10-16T08:00:00.000Z",
-      "summary": "Penny Watch & Do Not Chase \u00b7 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (NCC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (NCC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Penny Watch & Do Not Chase \u00b7 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (NCC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Penny Watch & Do Not Chase · 2026-10-16. The generated screen contains 14 priced signals, with 7 positive moves in the current snapshot. This cycle also publishes the biweekly Top 10 watchlist. The leading screened name is Tivit, Seller of Secrets (NCC) at $15.00 and +233.3%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -7881,7 +8216,7 @@
           "sourceCount": 1,
           "confidence": "Unverified",
           "action": "DO_NOT_CHASE",
-          "thesis": "TCGplayer attributes a move from a long-held $4\u2013$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
+          "thesis": "TCGplayer attributes a move from a long-held $4–$5 range toward $15 to adoption in a popular new EDH build; thin-supply and reprint risks are high.",
           "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
           "verifiedAt": "2026-10-16T19:20:00Z",
           "prediction": {
@@ -7892,7 +8227,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -7922,7 +8257,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -7952,7 +8287,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -7982,7 +8317,7 @@
               24
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Developing",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8012,7 +8347,7 @@
               3
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8042,7 +8377,7 @@
               3
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8072,7 +8407,7 @@
               3
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8102,7 +8437,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8132,7 +8467,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8162,7 +8497,7 @@
               2
             ],
             "model": "granular-v2 momentum bands; not a verified AI forecast",
-            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1\u20133%, 3\u20135%, 5\u20138%, 8\u201312%, 12\u201320%, 20\u201330%, or \u226530%",
+            "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
             "confidence": "Unverified",
             "openedAt": "2026-10-16",
             "evaluationDate": "2026-10-30"
@@ -8184,14 +8519,14 @@
       "id": "2026-10-13-bulk-collection-triage",
       "dateKey": "2026-10-13",
       "slug": "bulk-collection-triage",
-      "title": "Bulk Collection Triage \u00b7 2026-10-13",
+      "title": "Bulk Collection Triage · 2026-10-13",
       "label": "Bulk Collection Triage",
       "kind": "topic-expansion",
       "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
       "generatedAt": "2026-10-13T08:00:00.000Z",
-      "summary": "Bulk Collection Triage \u00b7 2026-10-13. The generated screen contains 9 priced signals, with 3 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Preeminent Captain (M15) at $0.75 and +2.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+      "summary": "Bulk Collection Triage · 2026-10-13. The generated screen contains 9 priced signals, with 3 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Preeminent Captain (M15) at $0.75 and +2.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
       "body": [
-        "Bulk Collection Triage \u00b7 2026-10-13. The generated screen contains 9 priced signals, with 3 positive moves in the current snapshot. Today\u2019s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Preeminent Captain (M15) at $0.75 and +2.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+        "Bulk Collection Triage · 2026-10-13. The generated screen contains 9 priced signals, with 3 positive moves in the current snapshot. Today’s lens is bulk sorting, duplicate utility, buylist floors, and the next best use of collection dollars. The leading screened name is Preeminent Captain (M15) at $0.75 and +2.7%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
         "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
         "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
       ],
@@ -8351,12 +8686,5 @@
       "marketStatus": "Snapshot-derived; live catalyst and completed-sale review required",
       "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
     }
-  ],
-  "publishingPolicy": {
-    "emptyPosts": "do not promote empty daily shells to the reader-facing archive",
-    "weeklyConsolidation": "deduplicate exact printings across the prior seven daily records and explain why each card is highlighted",
-    "separateArticles": "reserve standalone posts for product, deck, collection, or transparency stories with enough substance",
-    "dailyPreconArticles": "publish only when the official or calendar-backed record set has a meaningful new or changed record; otherwise update the living release radar without adding a Journal article",
-    "dailyMarketArticles": "retain daily observations in committed audit data; publish weekly synthesis and standalone articles only when a product, deck, collection, or source event warrants narrative space"
-  }
+  ]
 }
