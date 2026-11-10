@@ -7,6 +7,9 @@ import {
 describe("chronological market hub", () => {
   it("lists every source record newest first without merging report contents", () => {
     expect(chronologicalMarketEntries.map(entry => entry.dateKey)).toEqual([
+      "2026-11-10",
+      "2026-11-10",
+      "2026-11-10",
       "2026-11-07",
       "2026-11-06",
       "2026-10-22",
@@ -62,9 +65,9 @@ describe("chronological market hub", () => {
 
   it("keeps latest watch cards separate from imported price snapshots", () => {
     expect(latestMarketWatchEntries.map(entry => entry.dateKey)).toEqual([
-      "2026-11-07",
-      "2026-10-22",
-      "2026-10-16",
+      "2026-11-10",
+      "2026-11-10",
+      "2026-11-10",
     ]);
     expect(
       latestMarketWatchEntries.every(entry => entry.kind === "market watch")
