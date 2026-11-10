@@ -8355,6 +8355,8 @@
   "publishingPolicy": {
     "emptyPosts": "do not promote empty daily shells to the reader-facing archive",
     "weeklyConsolidation": "deduplicate exact printings across the prior seven daily records and explain why each card is highlighted",
-    "separateArticles": "reserve standalone posts for product, deck, collection, or transparency stories with enough substance"
+    "separateArticles": "reserve standalone posts for product, deck, collection, or transparency stories with enough substance",
+    "dailyPreconArticles": "publish only when the official or calendar-backed record set has a meaningful new or changed record; otherwise update the living release radar without adding a Journal article",
+    "dailyMarketArticles": "retain daily observations in committed audit data; publish weekly synthesis and standalone articles only when a product, deck, collection, or source event warrants narrative space"
   }
 }
