@@ -18,6 +18,15 @@ const reports = [
 ];
 type JournalArticle = { slug: string; category: string; title: string; dateLabel: string; summary: string; body: string; sourceUrl?: string; dataWindow?: string; caveat?: string };
 type WeeklyDesk = { week: string; label: string; posts: number; cards: Array<{ name: string; setCode: string; percentChange: number; currentUsd: number | null; category: string; thesis: string; risk: string; action: string; appearances?: number }> };
+function publishedTime(dateLabel: string) {
+  const match = dateLabel.match(/([A-Z][a-z]+ \d{1,2}, \d{4})/);
+  if (!match) return 0;
+  const timestamp = Date.parse(match[1]);
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+function newestFirst<T extends { dateLabel: string }>(items: T[]) {
+  return [...items].sort((a, b) => publishedTime(b.dateLabel) - publishedTime(a.dateLabel));
+}
 const weeklyDesks: JournalArticle[] = (marketBacklog.weekly as WeeklyDesk[]).map((desk) => {
   const topCards = desk.cards.slice(0, 10);
   const cardEmbeds = topCards.map(card => `\`\`\`mtg-card\n${JSON.stringify({ name: card.name, setCode: card.setCode, sourceDate: desk.week })}\n\`\`\``).join('\n\n');
@@ -41,8 +50,8 @@ const weeklyDesks: JournalArticle[] = (marketBacklog.weekly as WeeklyDesk[]).map
   };
 });
 const marketArchiveArticles: JournalArticle[] = marketReports.map(report => ({ slug: `market-watch-${report.date}`, category: 'Historical Market Watch', title: report.title, dateLabel: `${report.date} original report · published journal copy`, summary: report.summary, body: report.body, sourceUrl: report.sourceUrl, dataWindow: report.dataWindow, caveat: report.caveat }));
-const editorialArticles: JournalArticle[] = [...articles];
-const allArticles: JournalArticle[] = [...editorialArticles, ...automatedArticles, ...weeklyDesks, ...marketArchiveArticles];
+const editorialArticles: JournalArticle[] = newestFirst([...articles]);
+const allArticles: JournalArticle[] = newestFirst([...editorialArticles, ...automatedArticles, ...weeklyDesks, ...marketArchiveArticles]);
 const dashboards = [
   { title: 'Market Movers dashboards', href: '/movers', description: 'Price charts, categories, and signal exploration. Start here for the numbers, not the daily prose.' },
   { title: 'Market research feed', href: '/market-watch', description: 'Source-aware watchlists with exact-printing notes and uncertainty labels.' },
