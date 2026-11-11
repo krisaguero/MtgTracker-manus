@@ -104,6 +104,18 @@ const features = {
     takeaways: ['Federation, Borg, Landing Party, and Klingon Fury keep distinct jobs.', 'Shared bridge cards are allocated after playtesting, not duplicated by default.', 'The market layer helps time a purchase without defining the deck.'],
     action: 'Open the four-mission clinic', target: '/market-report/star-trek-deck-idea-2026-11-10',
   },
+  'precon-swerve-roberts-plague-of-locusts': {
+    label: 'Precon swerve · swarm engine', icon: TrendingUp, card: 'The Locust God',
+    href: '/deck-gallery/deck-locust-s-locusts-robogles-build', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Locust%20God&format=image&version=normal',
+    takeaways: ['Card draw becomes an army of hasty flying Insects.', 'Portable staples keep the theme intact instead of flattening it into generic Izzet value.', 'Open the preserved Robogles list before treating the article as an upgrade guide.'],
+    action: 'Open the Locust’s Locusts decklist', target: '/deck-gallery/deck-locust-s-locusts-robogles-build',
+  },
+  'precon-swerve-breya-scrap-to-lethal': {
+    label: 'Precon swerve · artifact combo', icon: Layers3, card: 'Breya, Etherium Shaper',
+    href: '/deck-gallery/deck-breya-facts-robogles-build', imageUrl: 'https://api.scryfall.com/cards/named?exact=Breya%2C%20Etherium%20Shaper&format=image&version=normal',
+    takeaways: ['The Robogles source remains a 60-card WIP, not an invented Commander list.', 'Altars, recursion, and tutors define the Scrap to Lethal pipeline.', 'Compare the source WIP with the separate Breya Facts archive record.'],
+    action: 'Open the Breya source decklist', target: '/deck-gallery/deck-breya-facts-robogles-build',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -245,6 +257,28 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: "Primevals' Glorious Rebirth", label: 'Play-first upgrade', reason: 'The direct add that converts a stocked legendary graveyard into a large recovery turn.' },
       { name: 'Doctor Doom, King of Latveria', label: 'Marvel anchor', reason: 'The artifact-and-villain control commander in the supplied clinic.' },
       { name: 'Lightning Greaves', label: 'Protection upgrade', reason: 'A useful zero-equip swap whose observed price kept it outside the current buy posture.' },
+    ],
+  },
+  'precon-swerve-roberts-plague-of-locusts': {
+    heading: 'The Locust’s Locusts · swarm package',
+    description: 'Representative cards from Robert’s The Locust God build. Use the decklist link in the article to inspect the complete saved source record.',
+    cards: [
+      { name: 'The Locust God', label: 'Commander engine', reason: 'Turns every card drawn into a hasty flying Insect.' },
+      { name: 'Windfall', label: 'Wheel trigger', reason: 'Refills hands while converting the table-wide draw into a new swarm.' },
+      { name: 'Skullclamp', label: 'Hive mind draw', reason: 'Sacrifices an individual Insect to create more cards and more bodies.' },
+      { name: 'Impact Tremors', label: 'Token-entry finisher', reason: 'Lets the swarm damage opponents without needing every Insect to connect.' },
+      { name: 'Throne of the God-Pharaoh', label: 'End-step drain', reason: 'Turns a tapped-out swarm into inevitable life loss.' },
+    ],
+  },
+  'precon-swerve-breya-scrap-to-lethal': {
+    heading: 'Breya · Scrap to Lethal package',
+    description: 'Representative cards from the artifact-combo pipeline. The source deck remains a separate 60-card WIP; these are the proposed role anchors, not an automatic legality claim.',
+    cards: [
+      { name: 'Breya, Etherium Shaper', label: 'Artifact commander idea', reason: 'Creates the disposable thopters that make the sacrifice loop possible.' },
+      { name: "Ashnod's Altar", label: 'Mana altar', reason: 'Converts thopters and artifacts into the colorless mana that fuels recursion.' },
+      { name: 'Krark-Clan Ironworks', label: 'Artifact altar', reason: 'Adds a second sacrifice-to-mana engine for the lethal pipeline.' },
+      { name: 'Nim Deathmantle', label: 'Recursion engine', reason: 'Pairs with Breya and an altar to repeat the enter-the-battlefield loop.' },
+      { name: 'Fabricate', label: 'Budget tutor', reason: 'Finds an artifact engine without assuming every list needs premium tutors.' },
     ],
   },
 };
