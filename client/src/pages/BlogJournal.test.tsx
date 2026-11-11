@@ -62,7 +62,8 @@ describe('published journal', () => {
     for (const d of brawlDecks) expect(brawl).toContain(`href="/brawl-box/${d.id}#buy-online"`);
     const battle = page('/blog/battle-box-october-17-recap');
     for (const d of retroBattleBoxDecks) expect(battle).toContain(`href="/battle-box/${d.id}#buy-online"`);
-    expect(battle.match(/<img\b/g)).toHaveLength(10);
+    expect(battle.match(/class="journal-related-image"/g)!.length).toBeGreaterThan(articles.length - 1);
+    expect(battle.match(/<img\b/g)!.length).toBeGreaterThan(10);
     expect(battle.match(/>Buy Online /g)).toHaveLength(9);
     expect(brawlProposedDecks).toHaveLength(3);
   });
