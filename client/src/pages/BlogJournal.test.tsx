@@ -31,6 +31,15 @@ describe('published journal', () => {
     expect(html).toContain('<details>');
     expect(html).not.toContain('href="/market-watch?date=');
   });
+  it('shows the newest editorial posts first and uses landscape Star Trek covers', () => {
+    const html = page('/blog');
+    expect(html.indexOf('The Star Trek resource desk: campaign box and Brawlternative builds')).toBeLessThan(html.indexOf('How a restock alert helped me find a Reality Fracture Secret Lair bundle'));
+    for (const slug of ['star-trek-before-launch-market-watch-2026-11-07', 'star-trek-potential-movers-play-first-2026-11-08', 'star-trek-campaign-and-brawlternative-resource-guide-2026-11-10', 'star-trek-four-missions-deck-idea-2026-11-10']) {
+      const article = page(`/blog/${slug}`);
+      expect(article).toContain('journal-cover--art');
+      expect(article).toContain('version=art_crop');
+    }
+  });
 
   it.each(marketBacklog.weekly)('renders weekly desk $week as a journal route', desk => {
     const html = page(`/blog/market-week-${desk.week}`);
