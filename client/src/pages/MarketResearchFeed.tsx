@@ -17,6 +17,7 @@ import { VerifiedHistoricalEvidence } from "@/components/VerifiedHistoricalEvide
 import { MarketMetaWatchDashboard } from "@/components/MarketMetaWatchDashboard";
 import { MarketWatchTerminal } from "@/components/MarketWatchTerminal";
 import { StarTrekMarketPanel } from "@/components/StarTrekMarketPanel";
+import { PreconMarketSignalModule } from "@/components/PreconMarketSignalModule";
 import { TabletopPaperSpotlightTeaser } from "./TabletopPaperSpotlight";
 
 type FeedCard = {
@@ -589,6 +590,7 @@ export default function MarketResearchFeed() {
           </div>
         </section>
         <StarTrekMarketPanel />
+        <PreconMarketSignalModule />
         <details className="border border-border bg-card">
           <summary className="cursor-pointer px-4 py-3 font-mono text-xs font-black uppercase tracking-wider">
             Historical evidence and source snapshot
