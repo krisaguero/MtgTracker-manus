@@ -58,7 +58,7 @@ const features = {
   },
   'typa-restock-alerts-reality-fracture': {
     label: 'Restock desk · FOMO control', icon: MonitorPlay, card: 'TYPA restock alerts',
-    href: 'https://apps.apple.com/app/id6744125469', imageUrl: '/manus-storage/typa-today-restocks_7979f879.png',
+    href: 'https://apps.apple.com/app/id6744125469', imageUrl: 'https://api.scryfall.com/cards/named?exact=Reality%20Fracture&format=image&version=normal',
     takeaways: ['Use a small, budget-approved watchlist instead of tracking every trending product.', 'A restock alert is an availability signal, not proof that the price is good.', 'The Reality Fracture bundle example shows how a focused alert can turn into a real find.'],
     action: 'Open TYPA on the App Store', target: 'https://apps.apple.com/app/id6744125469',
   },
@@ -80,6 +80,30 @@ const features = {
     takeaways: ['Each signal connects a precon, commander, bottleneck, and direct add/cut.', 'Buy for play, wait for supply, watch, and leave-alone postures stay separate.', 'Dated prices are observations, not live quotes or investment advice.'],
     action: 'Open the precon signal module', target: '/market-watch#precon-market-signals-heading',
   },
+  'star-trek-before-launch-market-watch-2026-11-07': {
+    label: 'Star Trek release watch', icon: TrendingUp, card: 'The Borg Queen',
+    href: '/market-report/star-trek-market-watch-2026-11-07', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Borg%20Queen&format=image&version=normal',
+    takeaways: ['A dated pre-release baseline for the Star Trek Commander launch.', 'Reported listing moves remain separate from completed-sale evidence.', 'Wait for release-week supply and depth before buying speculative singles.'],
+    action: 'Open the dated release watch', target: '/market-report/star-trek-market-watch-2026-11-07',
+  },
+  'star-trek-potential-movers-play-first-2026-11-08': {
+    label: 'Star Trek potential movers', icon: TrendingUp, card: "Jhoira's Familiar",
+    href: '/market-report/star-trek-potential-movers-2026-11-08', imageUrl: 'https://api.scryfall.com/cards/named?exact=Jhoira%27s%20Familiar&format=image&version=normal',
+    takeaways: ['Separates deck-fit cards from adjacent research and unverified price narratives.', 'Uses a shared-copy tray instead of assuming four copies are needed.', 'The provisional basket is a play plan, not a buy recommendation.'],
+    action: 'Open the potential-mover radar', target: '/market-report/star-trek-potential-movers-2026-11-08',
+  },
+  'star-trek-campaign-and-brawlternative-resource-guide-2026-11-10': {
+    label: 'Star Trek resource desk', icon: Layers3, card: 'General Chang, Cold Warrior',
+    href: '/star-trek-campaign-box', imageUrl: 'https://api.scryfall.com/cards/named?exact=General%20Chang%2C%20Cold%20Warrior&format=image&version=normal',
+    takeaways: ['Campaign Box and Brawlternative Box remain separate construction layers.', 'Official precon, proxy, sealed, and scanned-card records do not merge.', 'Use the guide as a handoff between the public resource pages.'],
+    action: 'Open the Campaign Box', target: '/star-trek-campaign-box',
+  },
+  'star-trek-four-missions-deck-idea-2026-11-10': {
+    label: 'Star Trek four-mission clinic', icon: Layers3, card: 'Tireless Provisioner',
+    href: '/market-report/star-trek-deck-idea-2026-11-10', imageUrl: 'https://api.scryfall.com/cards/named?exact=Tireless%20Provisioner&format=image&version=normal',
+    takeaways: ['Federation, Borg, Landing Party, and Klingon Fury keep distinct jobs.', 'Shared bridge cards are allocated after playtesting, not duplicated by default.', 'The market layer helps time a purchase without defining the deck.'],
+    action: 'Open the four-mission clinic', target: '/market-report/star-trek-deck-idea-2026-11-10',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -93,7 +117,7 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
   if (!feature) return null;
   const ref = journalCardImage(slug);
   if (!ref?.imageUrl) return null;
-  const artOnly = slug === 'battle-box-october-17-recap';
+  const artOnly = slug === 'battle-box-october-17-recap' || slug.startsWith('star-trek-');
   const external = feature.href.startsWith('https://');
   const image = <img src={artOnly ? ref.artUrl : ref.imageUrl} alt={artOnly ? `Representative artwork for Goblin Cavalcade` : feature.card} width={artOnly ? '626' : '488'} height={artOnly ? '457' : '680'} loading={compact ? 'lazy' : 'eager'} />;
   return <figure className={`journal-cover ${compact ? 'journal-cover--compact' : ''} ${artOnly ? 'journal-cover--art' : 'journal-cover--commander'}`}>
@@ -105,7 +129,7 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
 export function journalCardImage(slug: string) {
   const feature = readingFeature(slug);
   if (!feature) return undefined;
-  if ('imageUrl' in feature && feature.imageUrl) return { imageUrl: feature.imageUrl, artUrl: feature.imageUrl };
+  if ('imageUrl' in feature && feature.imageUrl) return { imageUrl: feature.imageUrl, artUrl: feature.imageUrl.replace(/version=normal/, 'version=art_crop') };
   const brawl = cardReference(feature.card);
   if (brawl) return { imageUrl: brawl.imageUrl ?? undefined, artUrl: brawl.artUrl ?? undefined };
   const battle = battleBoxReferences[feature.card];
