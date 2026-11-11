@@ -1,9 +1,16 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-10",
+  "asOf": "2026-11-11",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
+    {
+      "id": "en-news-announcements-secret-lair-set-phasers-to-superdrop",
+      "title": "Secret Lair: Set Phasers to Superdrop",
+      "url": "https://magic.wizards.com/en/news/announcements/secret-lair-set-phasers-to-superdrop",
+      "kind": "product-release",
+      "source": "DailyMTG"
+    },
     {
       "id": "en-news-announcements-star-trek-commander-decklists",
       "title": "Magic: The Gathering® | Star Trek™ Commander Decklists",
@@ -33,5 +40,5 @@
       "source": "DailyMTG"
     }
   ],
-  "previousRecordCount": 5
+  "previousRecordCount": 4
 }
