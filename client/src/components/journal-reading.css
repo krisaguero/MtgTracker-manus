@@ -58,8 +58,11 @@
 .journal-related { border-top: 2px solid var(--border); margin-top: 4rem; padding-top: 2rem; }
 .journal-related h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; letter-spacing: -.025em; margin-top: .5rem; }
 .journal-related > div { display: grid; gap: 1rem; margin-top: 1.5rem; }
-.journal-related > div > a { padding: 1.5rem; border: 1px solid var(--border); background: var(--card); }
+.journal-related > div > a { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; padding: 0; border: 1px solid var(--border); background: var(--card); overflow: hidden; }
 .journal-related > div > a:hover { border-color: var(--primary); }
+.journal-related-image { display: flex; min-height: 150px; align-items: center; justify-content: center; overflow: hidden; background: var(--muted); }
+.journal-related-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.journal-related-copy { min-width: 0; padding: 1.25rem 1.25rem 1.25rem 0; }
 .journal-related span { font: 700 .65rem ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--primary); }
 .journal-related h3 { font-size: 1.15rem; line-height: 1.5; font-weight: 800; margin-top: .75rem; }
 .journal-related p { font-size: .875rem; line-height: 1.8; color: var(--muted-foreground); margin: .75rem 0; }
@@ -94,6 +97,9 @@
   .journal-inline-deck { grid-template-columns: 56px minmax(0, 1fr); gap: .85rem; padding: 1rem; }
   .journal-inline-deck img { width: 56px; }
   .journal-cover-oracle { font-size: .7rem; }
+  .journal-related > div > a { grid-template-columns: 78px minmax(0, 1fr); }
+  .journal-related-image { min-height: 132px; }
+  .journal-related-copy { padding: 1rem 1rem 1rem 0; }
 }
 
 /* Representative deck artwork and readable commander profiles have separate framing. */
