@@ -314,6 +314,27 @@ export function ReadingMeta({ body }: { body: string }) {
   return <span className="journal-reading-time"><Clock3 size={15} aria-hidden="true" /> {readingMinutes(body)} min read</span>;
 }
 
+const relatedReadingCards: Record<string, string> = {
+  'remote-play-shuffle-tests': 'The Wise Mothman',
+  'brawlternative-shelf-roundup': 'The Wise Mothman',
+  'battle-box-october-17-recap': 'Goblin Rabblemaster',
+  'commanders-100-percent-worth-building-around': 'Sakiko, Mother of Summer',
+  'simple-builds-that-dominate-your-playgroup': 'Jasmine Boreal of the Seven',
+  'eight-simple-commander-deck-blueprints': 'Jasmine Boreal of the Seven',
+  'invisible-woman-build-the-wall': 'Invisible Woman',
+  'typa-restock-alerts-reality-fracture': 'Reality Fracture',
+  'star-trek-adventure-deck-building-2026-11-10': 'The Borg Queen',
+  'deckbox-decks-visual-archive-2026-11-10': 'Delraich',
+  'precon-upgrade-market-radar-2026-11-10': "Primevals' Glorious Rebirth",
+};
+
+function relatedReadingImage(slug: string) {
+  const known = journalCardImage(slug);
+  if (known?.imageUrl) return known.imageUrl;
+  const name = relatedReadingCards[slug] ?? 'Sol Ring';
+  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=small`;
+}
+
 export function RelatedReading({ articles, currentSlug }: { articles: ReadingArticle[]; currentSlug: string }) {
-  return <nav className="journal-related" aria-label="Keep reading"><p className="journal-eyebrow"><BookOpen size={17} aria-hidden="true" /> Keep exploring</p><h2>From the notebook to the table</h2><div>{articles.filter(item => item.slug !== currentSlug).map(item => <Link key={item.slug} href={`/blog/${item.slug}`}><span>{readingFeature(item.slug)?.label ?? 'Play journal'}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Read the story <ArrowRight size={16} aria-hidden="true" /></strong></Link>)}</div></nav>;
+  return <nav className="journal-related" aria-label="Keep reading"><p className="journal-eyebrow"><BookOpen size={17} aria-hidden="true" /> Keep exploring</p><h2>From the notebook to the table</h2><div>{articles.filter(item => item.slug !== currentSlug).map(item => <Link key={item.slug} href={`/blog/${item.slug}`}><div className="journal-related-image"><img src={relatedReadingImage(item.slug)} alt="" loading="lazy" /></div><div className="journal-related-copy"><span>{readingFeature(item.slug)?.label ?? 'Play journal'}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Read the story <ArrowRight size={16} aria-hidden="true" /></strong></div></Link>)}</div></nav>;
 }
