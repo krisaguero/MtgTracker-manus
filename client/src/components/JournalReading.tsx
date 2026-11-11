@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag, TrendingUp } from 'lucide-react';
 import { cardReference } from '@/lib/brawlDecks';
 import { battleBoxReferences } from '@/lib/battleBoxStrategy';
 import { MarketPostMarkdown } from './MarketPostMarkdown';
@@ -61,6 +61,24 @@ const features = {
     href: 'https://apps.apple.com/app/id6744125469', imageUrl: '/manus-storage/typa-today-restocks_7979f879.png',
     takeaways: ['Use a small, budget-approved watchlist instead of tracking every trending product.', 'A restock alert is an availability signal, not proof that the price is good.', 'The Reality Fracture bundle example shows how a focused alert can turn into a real find.'],
     action: 'Open TYPA on the App Store', target: 'https://apps.apple.com/app/id6744125469',
+  },
+  'star-trek-adventure-deck-building-2026-11-10': {
+    label: 'Star Trek adventure deck lab', icon: Layers3, card: 'The Borg Queen',
+    href: '/market-watch#precon-market-signals-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Borg%20Queen&format=image&version=normal',
+    takeaways: ['Four Star Trek missions stay distinct instead of becoming one shared-staple pile.', 'The Campaign Box and Brawlternative Box remain separate construction layers.', 'Wait for release-week supply before buying speculative Star Trek singles.'],
+    action: 'Open the Star Trek market watch', target: '/market-watch',
+  },
+  'deckbox-decks-visual-archive-2026-11-10': {
+    label: 'Deckbox public archive', icon: BookOpen, card: 'Delraich',
+    href: '/battle-box/deckbox/deck-black-grave-delrach-sac', imageUrl: 'https://api.scryfall.com/cards/named?exact=Delraich&format=image&version=normal',
+    takeaways: ['Six saved lists remain inspectable as source records.', 'Public rows and card roles do not expose private ownership or ManaBox data.', 'Open each list to review categories, quantities, and the downloadable source copy.'],
+    action: 'Open the Deckbox archive', target: '/battle-box',
+  },
+  'precon-upgrade-market-radar-2026-11-10': {
+    label: 'Precon market desk', icon: TrendingUp, card: "Primevals' Glorious Rebirth",
+    href: '/market-watch#precon-market-signals-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=Primevals%27%20Glorious%20Rebirth&format=image&version=normal',
+    takeaways: ['Each signal connects a precon, commander, bottleneck, and direct add/cut.', 'Buy for play, wait for supply, watch, and leave-alone postures stay separate.', 'Dated prices are observations, not live quotes or investment advice.'],
+    action: 'Open the precon signal module', target: '/market-watch#precon-market-signals-heading',
   },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
@@ -169,6 +187,42 @@ const editorialSpotlights: Record<string, { heading: string; description: string
     description: 'A representative card image and current Scryfall USD reference for the Battle Box recap’s first featured deck.',
     cards: [{ name: 'Goblin Rabblemaster', label: 'Fast pressure', reason: 'A representative threat for the Goblin Cavalcade matchup and its short combat clock.' }],
   },
+  'star-trek-adventure-deck-building-2026-11-10': {
+    heading: 'Star Trek adventure deck cards',
+    description: 'Representative current printings for the four mission lanes. Use the campaign and radar links to inspect the complete build surfaces.',
+    cards: [
+      { name: 'The Borg Queen', label: 'Assimilation anchor', reason: 'The commander route that makes artifact creatures and opposing graveyards the central question.' },
+      { name: "Jhoira's Familiar", label: 'Historic cost reduction', reason: 'A Federation Fleet bridge for making historic permanents and Spacecraft easier to deploy.' },
+      { name: 'Tatyova, Benthic Druid', label: 'Landfall draw', reason: 'A Landing Party payoff that turns the land plan into cards.' },
+      { name: 'General Chang, Cold Warrior', label: 'Combat support', reason: 'A Klingon Fury direction that keeps attacks and temporary attackers meaningful.' },
+      { name: 'Mindcrank', label: 'Graveyard bridge', reason: 'A low-cost Borg experiment that can fill opposing graveyards through incidental life loss.' },
+      { name: 'Mesmeric Orb', label: 'High-risk mill', reason: 'A stronger but more expensive universal mill test to wait on until supply settles.' },
+    ],
+  },
+  'deckbox-decks-visual-archive-2026-11-10': {
+    heading: 'Deckbox archive card frames',
+    description: 'Representative cards from the six saved public lists. Images identify the cards; they do not certify the original printing or legality.',
+    cards: [
+      { name: 'Delraich', label: 'Sacrifice payoff', reason: 'The anchor for the black graveyard and expendable-creature list.' },
+      { name: 'Dark Ritual', label: 'Early acceleration', reason: 'A visible part of the Delraich source list’s fast-start identity.' },
+      { name: 'The Rack', label: 'Discard clock', reason: 'Turns the Shadow Rack list’s hand pressure into repeatable damage.' },
+      { name: "Emrakul's Hatcher", label: 'Spawn engine', reason: 'The Eldrazi half-list’s bridge from early development to larger threats.' },
+      { name: 'Giant Growth', label: 'Combat pump', reason: 'A simple green-aggro signal that makes the saved list’s combat math legible.' },
+      { name: 'Clot Sliver', label: 'Team protection', reason: 'The modified Slivers list’s explicit defensive role.' },
+    ],
+  },
+  'precon-upgrade-market-radar-2026-11-10': {
+    heading: 'Precon upgrade signal cards',
+    description: 'The Gemini brief’s anchors, bridges, and direct upgrade candidates, shown as framed card references before the decision notes.',
+    cards: [
+      { name: 'The Borg Queen', label: 'Star Trek anchor', reason: 'The release-week commander behind the wait-for-supply posture.' },
+      { name: 'Mindcrank', label: 'Borg bridge', reason: 'A low-cost graveyard-filling experiment with a documented tradeoff.' },
+      { name: 'Dihada, Binder of Wills', label: 'Mardu commander', reason: "The Legends' Legacy engine for filling the graveyard and supporting legendary permanents." },
+      { name: "Primevals' Glorious Rebirth", label: 'Play-first upgrade', reason: 'The direct add that converts a stocked legendary graveyard into a large recovery turn.' },
+      { name: 'Doctor Doom, King of Latveria', label: 'Marvel anchor', reason: 'The artifact-and-villain control commander in the supplied clinic.' },
+      { name: 'Lightning Greaves', label: 'Protection upgrade', reason: 'A useful zero-equip swap whose observed price kept it outside the current buy posture.' },
+    ],
+  },
 };
 
 type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string; usd?: string | null; usdFoil?: string | null };
@@ -235,7 +289,7 @@ function InlineDeck({ name, href, text }: typeof spotlights[number]) {
 }
 
 export function ReadingBody({ article }: { article: ReadingArticle }) {
-  const body = article.body.replace(/^# [^\n]*\n+/, '');
+  const body = article.body.replace(/^# [^\n]*\n+/, '').replace(/```mtg-card\n[\s\S]*?```\n*/g, '');
   if (article.slug.startsWith('market-watch-')) {
     const sourceDate = article.slug.slice('market-watch-'.length);
     return <article className="journal-prose" aria-label="Article text"><MarketPostMarkdown body={marketJournalWithEmbeds(body, sourceDate)} sourceDate={sourceDate} /></article>;
