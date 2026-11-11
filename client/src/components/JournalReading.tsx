@@ -330,8 +330,10 @@ const relatedReadingCards: Record<string, string> = {
 
 function relatedReadingImage(slug: string) {
   const known = journalCardImage(slug);
-  if (known?.artUrl) return known.artUrl;
-  if (known?.imageUrl) return known.imageUrl.replace(/\/normal\//, '/art_crop/').replace(/version=normal/, 'version=art_crop');
+  if (known?.imageUrl && !known.imageUrl.includes('/manus-storage/')) {
+    if (known.artUrl && !known.artUrl.includes('/manus-storage/')) return known.artUrl;
+    return known.imageUrl.replace(/\/normal\//, '/art_crop/').replace(/version=normal/, 'version=art_crop');
+  }
   const name = relatedReadingCards[slug] ?? 'Sol Ring';
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=art_crop`;
 }
