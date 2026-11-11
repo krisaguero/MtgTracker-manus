@@ -1,7 +1,657 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T16:17:40.626Z",
+  "updatedAt": "2026-11-11T15:58:38.748Z",
   "records": [
+    {
+      "id": "2026-11-11-commander-demand:1:pip:274",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Myriad Landscape (PIP 274) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Myriad Landscape",
+      "setCode": "pip",
+      "collectorNumber": "274",
+      "entryUsd": 0.63,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 125.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:2:c13:51",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Opportunity (C13 51) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Opportunity",
+      "setCode": "c13",
+      "collectorNumber": "51",
+      "entryUsd": 0.2,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:3:khc:81",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Abomination of Llanowar (KHC 81) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Abomination of Llanowar",
+      "setCode": "khc",
+      "collectorNumber": "81",
+      "entryUsd": 1.51,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 96.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:4:dmc:192",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Sword of the Chosen (DMC 192) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sword of the Chosen",
+      "setCode": "dmc",
+      "collectorNumber": "192",
+      "entryUsd": 0.76,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 76.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:5:pip:141",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Recon Craft Theta (PIP 141) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Recon Craft Theta",
+      "setCode": "pip",
+      "collectorNumber": "141",
+      "entryUsd": 1.85,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 69.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:6:pip:243",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Talisman of Conviction (PIP 243) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Talisman of Conviction",
+      "setCode": "pip",
+      "collectorNumber": "243",
+      "entryUsd": 0.37,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 67.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:7:dsc:220",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Grist, the Hunger Tide (DSC 220) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Grist, the Hunger Tide",
+      "setCode": "dsc",
+      "collectorNumber": "220",
+      "entryUsd": 0.77,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 67.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:8:pip:254",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Buried Ruin (PIP 254) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Buried Ruin",
+      "setCode": "pip",
+      "collectorNumber": "254",
+      "entryUsd": 0.41,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 65.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:9:fic:375",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Battlefield Forge (FIC 375) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Battlefield Forge",
+      "setCode": "fic",
+      "collectorNumber": "375",
+      "entryUsd": 0.26,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 52.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:10:c14:68",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Celestial Crusader (C14 68) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Celestial Crusader",
+      "setCode": "c14",
+      "collectorNumber": "68",
+      "entryUsd": 0.22,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 46.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:11:fic:411",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Path of Ancestry (FIC 411) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Path of Ancestry",
+      "setCode": "fic",
+      "collectorNumber": "411",
+      "entryUsd": 0.37,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 42.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:12:m3c:397",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Tomb of the Spirit Dragon (M3C 397) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tomb of the Spirit Dragon",
+      "setCode": "m3c",
+      "collectorNumber": "397",
+      "entryUsd": 0.44,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 41.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:13:msc:227",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Canopy Vista (MSC 227) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Canopy Vista",
+      "setCode": "msc",
+      "collectorNumber": "227",
+      "entryUsd": 0.44,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 40.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:14:msc:121",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Austere Command (MSC 121) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Austere Command",
+      "setCode": "msc",
+      "collectorNumber": "121",
+      "entryUsd": 0.72,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 38.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:15:dsk:269",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Terramorphic Expanse (DSK 269) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Terramorphic Expanse",
+      "setCode": "dsk",
+      "collectorNumber": "269",
+      "entryUsd": 0.38,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 35.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:16:c20:280",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Halimar Depths (C20 280) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Halimar Depths",
+      "setCode": "c20",
+      "collectorNumber": "280",
+      "entryUsd": 0.69,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 35.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:17:fic:338",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Colossus Hammer (FIC 338) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Colossus Hammer",
+      "setCode": "fic",
+      "collectorNumber": "338",
+      "entryUsd": 0.98,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 28.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:18:sos:256",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Forum of Amity (SOS 256) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Forum of Amity",
+      "setCode": "sos",
+      "collectorNumber": "256",
+      "entryUsd": 0.19,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 26.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:19:pip:299",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Tainted Isle (PIP 299) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tainted Isle",
+      "setCode": "pip",
+      "collectorNumber": "299",
+      "entryUsd": 3.34,
+      "action": "DO_NOT_CHASE",
+      "thesis": "Commander decklist; rose 26.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:20:znr:201",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Roiling Regrowth (ZNR 201) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Roiling Regrowth",
+      "setCode": "znr",
+      "collectorNumber": "201",
+      "entryUsd": 0.3,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 25.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:21:fic:390",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Exotic Orchard (FIC 390) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Exotic Orchard",
+      "setCode": "fic",
+      "collectorNumber": "390",
+      "entryUsd": 0.36,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 24.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:22:cmd:292",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Tranquil Thicket (CMD 292) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tranquil Thicket",
+      "setCode": "cmd",
+      "collectorNumber": "292",
+      "entryUsd": 0.42,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 23.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:23:blc:130",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Command Tower (BLC 130) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "blc",
+      "collectorNumber": "130",
+      "entryUsd": 0.37,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 23.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:24:pip:235",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Mind Stone (PIP 235) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mind Stone",
+      "setCode": "pip",
+      "collectorNumber": "235",
+      "entryUsd": 0.37,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 23.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:25:fin:305",
+      "dateKey": "2026-11-11",
+      "postId": "2026-11-11-commander-demand",
+      "prompt": "Assess Mountain (FIN 305) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Mountain",
+      "setCode": "fin",
+      "collectorNumber": "305",
+      "entryUsd": 0.23,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 23.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-11",
+        "evaluationDate": "2026-11-25"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-10-bulk-collection-triage:1:pip:301",
       "dateKey": "2026-11-10",
@@ -2938,7 +3588,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -43.33,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:2:blc:298",
@@ -2964,7 +3620,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -47.62,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:3:drc:112",
@@ -2990,7 +3652,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -56.25,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:4:tdc:309",
@@ -3016,7 +3684,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -40.32,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:5:soc:276",
@@ -3042,7 +3716,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -38.81,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:6:drc:82",
@@ -3068,7 +3748,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -55.22,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:7:blc:216",
@@ -3094,7 +3780,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-10-28-commander-demand:8:ltc:296",
@@ -3120,7 +3812,13 @@
         "openedAt": "2026-10-28",
         "evaluationDate": "2026-11-11"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -37.31,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-27-bulk-collection-triage:1:lcc:236",
