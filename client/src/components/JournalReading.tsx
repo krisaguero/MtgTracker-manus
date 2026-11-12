@@ -116,6 +116,18 @@ const features = {
     takeaways: ['The Robogles source remains a 60-card WIP, not an invented Commander list.', 'Altars, recursion, and tutors define the Scrap to Lethal pipeline.', 'Compare the source WIP with the separate Breya Facts archive record.'],
     action: 'Open the Breya source decklist', target: '/deck-gallery/deck-breya-facts-robogles-build',
   },
+  'star-trek-spoiler-season-movers-2026-11-11': {
+    label: 'Star Trek spoiler-season desk', icon: TrendingUp, card: 'Unexpected Windfall',
+    href: '/market-watch#star-trek-upgrade-radar-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=Unexpected%20Windfall&format=image&version=normal',
+    takeaways: ['Separates confirmed historical movers from unverified Star Trek synergy theses.', 'Maps artifact, landfall, combat, and energy questions to all four deck clinics.', 'Keeps the release-week posture at watch until lists and supply are verified.'],
+    action: 'Open the Star Trek spoiler radar', target: '/market-watch#star-trek-upgrade-radar-heading',
+  },
+  'precon-upgrade-radar-2026-11-11': {
+    label: 'Precon upgrade desk · November 11', icon: TrendingUp, card: "Sythis, Harvest's Hand",
+    href: '/precon-upgrades?deck=adaptive-enchantment', imageUrl: 'https://api.scryfall.com/cards/named?exact=Sythis%2C%20Harvest%27s%20Hand&format=image&version=normal',
+    takeaways: ['Estrid gets a strict sub-$50 upgrade path with a $3.08 observed two-card package.', 'Calling All Angels stays on a wait-for-supply posture until Foundations is open.', 'Exact printing, shipping, and completed-sale checks remain required.'],
+    action: 'Open the precon upgrade desk', target: '/precon-upgrades?deck=adaptive-enchantment',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -279,6 +291,30 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'Krark-Clan Ironworks', label: 'Artifact altar', reason: 'Adds a second sacrifice-to-mana engine for the lethal pipeline.' },
       { name: 'Nim Deathmantle', label: 'Recursion engine', reason: 'Pairs with Breya and an altar to repeat the enter-the-battlefield loop.' },
       { name: 'Fabricate', label: 'Budget tutor', reason: 'Finds an artifact engine without assuming every list needs premium tutors.' },
+    ],
+  },
+  'star-trek-spoiler-season-movers-2026-11-11': {
+    heading: 'Star Trek spoiler-season watch cards',
+    description: 'Portable Universes Beyond evidence beside the four Star Trek deck roles. Star Trek synergy remains developing until release-week supply is visible.',
+    cards: [
+      { name: 'Unexpected Windfall', label: 'Portable UB staple', reason: 'A Fallout artifact-and-Treasure card with sustained movement in the supplied brief; verify the exact printing before acting.' },
+      { name: 'Leonardo da Vinci', label: 'Supply compression case', reason: 'A reminder that sealed-product opening can overwhelm narrow Commander demand.' },
+      { name: "Jhoira's Familiar", label: 'Federation Fleet bridge', reason: 'Historic cost reduction is the clearest existing artifact-role test for the Star Trek clinics.' },
+      { name: 'Tatyova, Benthic Druid', label: 'Landing Party bridge', reason: 'Landfall draw gives the deck a durable baseline before speculative energy additions.' },
+      { name: 'General Chang, Cold Warrior', label: 'Klingon Fury bridge', reason: 'Combat support keeps artifact additions subordinate to the deck\'s attack plan.' },
+      { name: 'Borg Cube', label: 'Borg route test', reason: 'Artifact-creature support belongs after choosing The Borg Queen, Locutus, or charge counters.' },
+    ],
+  },
+  'precon-upgrade-radar-2026-11-11': {
+    heading: "Today's precon upgrade anchors",
+    description: "The two commander clinics behind today's decision: buy the small Estrid upgrades for play and wait on Foundations supply for Giada.",
+    cards: [
+      { name: 'Estrid, the Masked', label: 'Adaptive Enchantment anchor', reason: 'Untaps enchanted permanents and rewards a resilient enchantress draw package.' },
+      { name: "Sythis, Harvest's Hand", label: 'Buy-for-play upgrade', reason: 'Replaces symmetrical draw with enchantment-cast triggers and lifegain; supplied observation $2.41.' },
+      { name: 'Jukai Naturalist', label: 'Penny upgrade', reason: "Makes Auras cheaper and stays inside Estrid's existing enchantment identity; supplied observation $0.67." },
+      { name: "Enchantress's Presence", label: 'Draw bridge', reason: 'The durable card-flow layer that keeps the deck functioning after an enchantress is removed.' },
+      { name: 'Giada, Font of Hope', label: 'Calling All Angels anchor', reason: 'Accelerates Angels and adds counters, but the Foundations release still needs a supply check.' },
+      { name: 'Flawless Maneuver', label: 'Wait-for-release protection', reason: 'A logical Giada protection test at the supplied $8.99 observation, with the stock-list cut still unverified.' },
     ],
   },
 };
