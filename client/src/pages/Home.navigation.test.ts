@@ -16,9 +16,9 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(navigation).toContain('aria-controls="mobile-site-navigation"');
     expect(navigation).toContain("aria-expanded={openMobileMenu}");
     expect(navigation).toContain(
-      "{ href: '/movers', label: 'Dated market movers' }"
+      "{ href: '/movers', label: 'Current movers' }"
     );
-    expect(navigation).toContain("id: 'play-collect'");
+    expect(navigation).toContain("id: 'collect'");
     expect(navigation).toContain("{ href: '/limited', label: 'Sealed & draft pool' }");
     expect(navigation).toContain("{ href: '/markets', label: 'All market research & tools' }");
     expect(marketHub).toContain("['/movers/confirmed', 'Imported report · confirmed']");
