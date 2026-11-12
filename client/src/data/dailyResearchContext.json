@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T15:58:38.249Z",
-  "pricingDate": "2026-11-11",
-  "dataWindow": "2026-10-22 through 2026-11-11",
+  "generatedAt": "2026-11-12T16:42:15.986Z",
+  "pricingDate": "2026-11-12",
+  "dataWindow": "2026-10-23 through 2026-11-12",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2200,
-  "negativeSignals": 1921,
+  "positiveSignals": 2029,
+  "negativeSignals": 2040,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 153,
-    "multiSourceSignals": 12358,
+    "singleSourceSignals": 150,
+    "multiSourceSignals": 12361,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 45,
-      "positiveSignals": 45,
+      "cards": 50,
+      "positiveSignals": 50,
       "negativeSignals": 0,
-      "averagePctChange": 31.63
+      "averagePctChange": 34.15
     },
     {
       "category": "commander-picks",
-      "cards": 12441,
-      "positiveSignals": 2155,
-      "negativeSignals": 1896,
-      "averagePctChange": 0.16
+      "cards": 12435,
+      "positiveSignals": 1979,
+      "negativeSignals": 2014,
+      "averagePctChange": 0.06
     },
     {
       "category": "reprint-squashes",
-      "cards": 25,
+      "cards": 26,
       "positiveSignals": 0,
-      "negativeSignals": 25,
-      "averagePctChange": -24.34
+      "negativeSignals": 26,
+      "averagePctChange": -29.57
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-11; 2200 rose and 1921 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +31.63% across 45 cards.",
-    "153 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "25 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-12; 2029 rose and 2040 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +34.15% across 50 cards.",
+    "150 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "26 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Myriad Landscape",
+        "name": "Nomad Outpost",
         "setCode": "pip",
-        "collectorNumber": "274",
-        "currentUsd": 0.63,
-        "percentChange": 125,
+        "collectorNumber": "277",
+        "currentUsd": 1.14,
+        "percentChange": 216.67,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Opportunity",
-        "setCode": "c13",
-        "collectorNumber": "51",
-        "currentUsd": 0.2,
-        "percentChange": 100,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Abomination of Llanowar",
-        "setCode": "khc",
-        "collectorNumber": "81",
-        "currentUsd": 1.51,
-        "percentChange": 96.1,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Sword of the Chosen",
-        "setCode": "dmc",
-        "collectorNumber": "192",
-        "currentUsd": 0.76,
-        "percentChange": 76.74,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Recon Craft Theta",
+        "name": "Endurance Bobblehead",
         "setCode": "pip",
-        "collectorNumber": "141",
-        "currentUsd": 1.85,
-        "percentChange": 69.72,
+        "collectorNumber": "132",
+        "currentUsd": 1.33,
+        "percentChange": 129.31,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Simic Growth Chamber",
+        "setCode": "dsc",
+        "collectorNumber": "298",
+        "currentUsd": 0.64,
+        "percentChange": 113.33,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Dispatch",
+        "setCode": "pip",
+        "collectorNumber": "159",
+        "currentUsd": 0.87,
+        "percentChange": 74,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Mangara, the Diplomat",
+        "setCode": "tdc",
+        "collectorNumber": "124",
+        "currentUsd": 0.68,
+        "percentChange": 70,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Talisman of Conviction",
-        "setCode": "pip",
-        "collectorNumber": "243",
-        "currentUsd": 0.37,
-        "percentChange": -67.83,
+        "name": "Krark, the Thumbless",
+        "setCode": "plst",
+        "collectorNumber": "CMR-189",
+        "currentUsd": 1.47,
+        "percentChange": -54.49,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Buried Ruin",
-        "setCode": "pip",
-        "collectorNumber": "254",
-        "currentUsd": 0.41,
-        "percentChange": -65.83,
+        "name": "Temple of Abandon",
+        "setCode": "blc",
+        "collectorNumber": "338",
+        "currentUsd": 0.29,
+        "percentChange": -51.67,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Tomb of the Spirit Dragon",
-        "setCode": "m3c",
-        "collectorNumber": "397",
-        "currentUsd": 0.44,
-        "percentChange": -41.33,
+        "name": "Hour of Reckoning",
+        "setCode": "tdc",
+        "collectorNumber": "120",
+        "currentUsd": 0.31,
+        "percentChange": -48.33,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Canopy Vista",
-        "setCode": "msc",
-        "collectorNumber": "227",
-        "currentUsd": 0.44,
-        "percentChange": -40.54,
+        "name": "Forgotten Creation",
+        "setCode": "drc",
+        "collectorNumber": "77",
+        "currentUsd": 0.35,
+        "percentChange": -46.15,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Halimar Depths",
-        "setCode": "c20",
-        "collectorNumber": "280",
-        "currentUsd": 0.69,
-        "percentChange": -35.51,
+        "name": "Explore",
+        "setCode": "blc",
+        "collectorNumber": "216",
+        "currentUsd": 0.36,
+        "percentChange": -45.45,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,109 +153,109 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Island",
-        "setCode": "cm2",
-        "collectorNumber": "291",
-        "observations": 21,
-        "firstDate": "2026-10-22",
-        "lastDate": "2026-11-11",
-        "totalPctChange": 390,
-        "positiveDays": 1,
-        "negativeDays": 0
-      },
-      {
         "name": "Temple of Triumph",
         "setCode": "pip",
         "collectorNumber": "312",
         "observations": 21,
-        "firstDate": "2026-10-22",
-        "lastDate": "2026-11-11",
-        "totalPctChange": 382.61,
+        "firstDate": "2026-10-23",
+        "lastDate": "2026-11-12",
+        "totalPctChange": 404.55,
         "positiveDays": 8,
-        "negativeDays": 3
+        "negativeDays": 2
+      },
+      {
+        "name": "Island",
+        "setCode": "cm2",
+        "collectorNumber": "291",
+        "observations": 21,
+        "firstDate": "2026-10-23",
+        "lastDate": "2026-11-12",
+        "totalPctChange": 390,
+        "positiveDays": 1,
+        "negativeDays": 0
       },
       {
         "name": "James, Wandering Dad // Follow Him",
         "setCode": "pip",
         "collectorNumber": "31",
         "observations": 21,
-        "firstDate": "2026-10-22",
-        "lastDate": "2026-11-11",
-        "totalPctChange": 260,
+        "firstDate": "2026-10-23",
+        "lastDate": "2026-11-12",
+        "totalPctChange": 253.33,
         "positiveDays": 4,
-        "negativeDays": 4
-      },
-      {
-        "name": "Bronzebeak Foragers",
-        "setCode": "lcc",
-        "collectorNumber": "69",
-        "observations": 21,
-        "firstDate": "2026-10-22",
-        "lastDate": "2026-11-11",
-        "totalPctChange": 234.65,
-        "positiveDays": 13,
-        "negativeDays": 4
+        "negativeDays": 5
       },
       {
         "name": "Temple of Malice",
         "setCode": "pip",
         "collectorNumber": "307",
         "observations": 21,
-        "firstDate": "2026-10-22",
-        "lastDate": "2026-11-11",
+        "firstDate": "2026-10-23",
+        "lastDate": "2026-11-12",
         "totalPctChange": 228.57,
         "positiveDays": 3,
         "negativeDays": 2
+      },
+      {
+        "name": "Nomad Outpost",
+        "setCode": "pip",
+        "collectorNumber": "277",
+        "observations": 21,
+        "firstDate": "2026-10-23",
+        "lastDate": "2026-11-12",
+        "totalPctChange": 208.11,
+        "positiveDays": 5,
+        "negativeDays": 3
       }
     ],
     "predictionsDue": [
       {
-        "name": "Command Tower",
-        "setCode": "soc",
-        "collectorNumber": "129",
-        "evaluationDate": "2026-11-11"
+        "name": "Mountain",
+        "setCode": "c14",
+        "collectorNumber": "330",
+        "evaluationDate": "2026-11-12"
       },
       {
-        "name": "Castle Ardenvale",
+        "name": "Dismantling Blow",
+        "setCode": "c18",
+        "collectorNumber": "66",
+        "evaluationDate": "2026-11-12"
+      },
+      {
+        "name": "Exotic Orchard",
         "setCode": "blc",
-        "collectorNumber": "298",
-        "evaluationDate": "2026-11-11"
+        "collectorNumber": "131",
+        "evaluationDate": "2026-11-12"
       },
       {
-        "name": "Explosive Vegetation",
-        "setCode": "drc",
-        "collectorNumber": "112",
-        "evaluationDate": "2026-11-11"
-      },
-      {
-        "name": "Velomachus Lorehold",
-        "setCode": "tdc",
-        "collectorNumber": "309",
-        "evaluationDate": "2026-11-11"
-      },
-      {
-        "name": "Mycoloth",
-        "setCode": "soc",
-        "collectorNumber": "276",
-        "evaluationDate": "2026-11-11"
-      },
-      {
-        "name": "Sai, Master Thopterist",
-        "setCode": "drc",
-        "collectorNumber": "82",
-        "evaluationDate": "2026-11-11"
-      },
-      {
-        "name": "Explore",
-        "setCode": "blc",
+        "name": "Absorb",
+        "setCode": "scd",
         "collectorNumber": "216",
-        "evaluationDate": "2026-11-11"
+        "evaluationDate": "2026-11-12"
       },
       {
-        "name": "Battlefield Forge",
-        "setCode": "ltc",
-        "collectorNumber": "296",
-        "evaluationDate": "2026-11-11"
+        "name": "Command Tower",
+        "setCode": "pip",
+        "collectorNumber": "259",
+        "evaluationDate": "2026-11-12"
+      },
+      {
+        "name": "Talisman of Progress",
+        "setCode": "msc",
+        "collectorNumber": "221",
+        "evaluationDate": "2026-11-12"
+      },
+      {
+        "name": "Sphinx of Enlightenment",
+        "setCode": "blc",
+        "collectorNumber": "175",
+        "evaluationDate": "2026-11-12"
+      },
+      {
+        "name": "Yavimaya Coast",
+        "setCode": "c19",
+        "collectorNumber": "287",
+        "evaluationDate": "2026-11-12"
       }
     ],
     "predictionsResolved": [],
