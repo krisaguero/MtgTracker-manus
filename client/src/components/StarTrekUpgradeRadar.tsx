@@ -67,8 +67,11 @@ const radarDecks = [
       { name: "Borg Cube", role: "Artifact creature", reason: "Supports the Queen/Locutus artifact-creature route without assuming the charge-counter package.", status: "Watch", cut: "Stratagem Emulator is an initial cut candidate" },
       { name: "Death is Irrelevant", role: "Recursion", reason: "Adds resilience to the artifact-creature board, but should be checked against the curve.", status: "Watch", cut: "Korok, Liberated Rage is another candidate" },
       { name: "Crystalline Entity", role: "Artifact payoff", reason: "A route-specific threat; do not add it until the commander route is selected.", status: "Route first", cut: "Seven of Nine becomes more questionable if charge counters are abandoned" },
+      { name: "Collation Trimatrix", role: "Token card advantage", reason: "The November 11 guide points to this as the cleanest value conversion for surplus 1/1 Borg tokens; confirm the final rules text and stock list first.", status: "Wait for supply", cut: "Korok, Liberated Rage" },
+      { name: "Skullclamp", role: "Locutus draw engine", reason: "A reprint-aware bridge from the Locutus token plan to repeatable cards; useful for play, but release-week supply may soften the entry cost.", status: "Wait for supply", cut: "A weaker token payoff after the official list review" },
+      { name: "Academy Ruins", role: "Artifact recursion", reason: "A broad artifact-recovery option worth watching after release; it is not a reason to buy before exact printing and supply are verified.", status: "Wait for supply", cut: "A low-impact colorless support slot after list review" },
     ],
-    guideCuts: ["Locutus, the One Who Speaks", "Stratagem Emulator", "Korok, Liberated Rage", "Seven of Nine if abandoning charge counters"],
+    guideCuts: ["Locutus, the One Who Speaks", "Stratagem Emulator", "Korok, Liberated Rage", "Seven of Nine if abandoning charge counters", "Do not lock in charge-counter cards before choosing the commander route"],
   },
 ] as const;
 
