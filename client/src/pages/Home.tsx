@@ -93,7 +93,7 @@ function CatalogPagination({
           type="button"
           onClick={() => changePage(page - 1)}
           disabled={page <= 1}
-          className="border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
+          className="min-h-11 border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
         >
           Previous
         </button>
@@ -107,7 +107,7 @@ function CatalogPagination({
           type="button"
           onClick={() => changePage(page + 1)}
           disabled={page >= pageCount}
-          className="border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
+          className="min-h-11 border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
         >
           Next
         </button>
@@ -542,7 +542,7 @@ export default function Home() {
                 setCatalogView("sets");
                 setSetsPage(1);
               }}
-              className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "sets" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`min-h-11 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "sets" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               Sets
             </button>
@@ -555,7 +555,7 @@ export default function Home() {
                 setCatalogView("precons");
                 setPreconsPage(1);
               }}
-              className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "precons" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`min-h-11 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "precons" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               All precons
               {localDecklists !== null ? (
@@ -579,8 +579,8 @@ export default function Home() {
               <h2 id="featured-battle-box-heading" className="mt-3 text-2xl font-black tracking-tight">2026 Retro Battle Box</h2>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">Nine ready-to-play, non-Commander 60-card lists for a shared table.</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <a href="/battle-box#deck-library" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Explore decks <ArrowRight className="h-4 w-4" /></a>
-                <a href="/battle-box-method" className="inline-flex min-h-10 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Build record</a>
+                <a href="/battle-box#deck-library" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Explore decks <ArrowRight className="h-4 w-4" /></a>
+                <a href="/battle-box-method" className="inline-flex min-h-11 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Build record</a>
               </div>
               <details className="mt-4 border-t border-border pt-3">
                 <summary className="cursor-pointer list-none font-mono text-[10px] font-black uppercase tracking-wider text-primary">How shared builds work</summary>
@@ -595,8 +595,8 @@ export default function Home() {
               <h2 id="featured-brawl-box-heading" className="mt-3 text-2xl font-black tracking-tight">Brawlternatives</h2>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">Precon-themed and custom 60-card Commander-preview decks for casual testing.</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <a href="/brawl-box" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open shelf <ArrowRight className="h-4 w-4" /></a>
-                <a href="/battle-box" className="inline-flex min-h-10 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>
+                <a href="/brawl-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open shelf <ArrowRight className="h-4 w-4" /></a>
+                <a href="/battle-box" className="inline-flex min-h-11 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>
               </div>
             </article>
           </div>
