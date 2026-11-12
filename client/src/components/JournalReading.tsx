@@ -307,7 +307,7 @@ const editorialSpotlights: Record<string, { heading: string; description: string
   },
   'precon-upgrade-radar-2026-11-11': {
     heading: "Today's precon upgrade anchors",
-    description: "The two commander clinics behind today's decision: buy the small Estrid upgrades for play and wait on Foundations supply for Giada.",
+    description: "Three decision lanes in one visual desk: buy the small Estrid package for play, wait on Giada, and watch Borg supply before committing to a route.",
     cards: [
       { name: 'Estrid, the Masked', label: 'Adaptive Enchantment anchor', reason: 'Untaps enchanted permanents and rewards a resilient enchantress draw package.' },
       { name: "Sythis, Harvest's Hand", label: 'Buy-for-play upgrade', reason: 'Replaces symmetrical draw with enchantment-cast triggers and lifegain; supplied observation $2.41.' },
@@ -315,6 +315,10 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: "Enchantress's Presence", label: 'Draw bridge', reason: 'The durable card-flow layer that keeps the deck functioning after an enchantress is removed.' },
       { name: 'Giada, Font of Hope', label: 'Calling All Angels anchor', reason: 'Accelerates Angels and adds counters, but the Foundations release still needs a supply check.' },
       { name: 'Flawless Maneuver', label: 'Wait-for-release protection', reason: 'A logical Giada protection test at the supplied $8.99 observation, with the stock-list cut still unverified.' },
+      { name: 'The Borg Queen', label: 'We Are the Borg anchor', reason: 'The assimilation route is the first commander choice to test before buying into Borg, Locutus, or charge-counter packages.' },
+      { name: 'Collation Trimatrix', label: 'Borg token card advantage', reason: 'The proposed add over Korok, Liberated Rage converts surplus 1/1 Borg tokens into cards; exact price remains unverified.' },
+      { name: 'Skullclamp', label: 'Locutus token bridge', reason: 'A reprint-aware draw engine for the token route; wait for release-week supply rather than chasing a preorder.' },
+      { name: 'Academy Ruins', label: 'Artifact recursion watch', reason: 'A portable artifact role worth checking after the list is released, not a confirmed buy today.' },
     ],
   },
 };
