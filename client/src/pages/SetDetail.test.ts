@@ -36,6 +36,14 @@ describe('SetDetail loading resilience', () => {
     expect(source).toContain('printingPrice.updatedAt.slice(0, 10)');
   });
 
+  it('shows unique-card inventory coverage only when inventory is detected', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain('const setOwnership = useMemo');
+    expect(source).toContain('inventoryDetected: ownedCollection.some((item) => item.quantity > 0)');
+    expect(source).toContain('Inventory coverage:');
+    expect(source).toContain('unique main-set cards matched by name.');
+  });
+
   it('prevents view-scoped filters from becoming silently stale', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
     expect(source).toContain('const changeViewMode =');
