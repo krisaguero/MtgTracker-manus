@@ -165,18 +165,18 @@ export function InternalPageNav({ active: _legacyActive }: { active?: string } =
           {navigation.map((item) => {
             if (item.type === 'link') {
               const selected = routeIsActive(location, item.href);
-              return <Link key={item.href} href={item.href} onClick={closeMenus} aria-current={selected ? 'page' : undefined} className={linkClass(selected, true)}>{item.label}</Link>;
+              return <Link key={item.href} href={item.href} onClick={closeMenus} aria-current={selected ? 'page' : undefined} className={`${linkClass(selected, true)} flex min-h-11 items-center`}>{item.label}</Link>;
             }
             const selected = item.links.some((link) => routeIsActive(location, link.href));
             const isOpen = openMobileGroup === item.id;
             return <section key={item.id} className="border border-border bg-card">
-              <button type="button" onClick={() => setOpenMobileGroup(isOpen ? null : item.id)} aria-expanded={isOpen} aria-controls={`mobile-submenu-${item.id}`} className={`flex w-full items-center justify-between px-3 py-2.5 font-mono text-[10px] font-black uppercase tracking-wider ${selected ? 'text-primary' : 'text-foreground'}`}>
+              <button type="button" onClick={() => setOpenMobileGroup(isOpen ? null : item.id)} aria-expanded={isOpen} aria-controls={`mobile-submenu-${item.id}`} className={`flex min-h-11 w-full items-center justify-between px-3 py-2.5 font-mono text-[10px] font-black uppercase tracking-wider ${selected ? 'text-primary' : 'text-foreground'}`}>
                 {item.label}<ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </button>
               {isOpen && <div id={`mobile-submenu-${item.id}`} className="grid gap-1 border-t border-border p-2 sm:grid-cols-2">
                 {item.links.map((link) => {
                   const linkActive = routeIsActive(location, link.href);
-                  return <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={linkActive ? 'page' : undefined} className={`px-3 py-2 text-xs font-semibold transition-colors ${linkActive ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-primary'}`}>{link.label}</Link>;
+                  return <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={linkActive ? 'page' : undefined} className={`flex min-h-11 items-center px-3 py-2 text-xs font-semibold transition-colors ${linkActive ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-primary'}`}>{link.label}</Link>;
                 })}
               </div>}
             </section>;
