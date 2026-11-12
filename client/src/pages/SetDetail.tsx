@@ -123,6 +123,16 @@ export default function SetDetail() {
       return true;
     });
   }, [data?.cards, verifiedSpoilerCards]);
+  const setOwnership = useMemo(() => {
+    const uniqueCards = new Set(priorityCards.map((card) => card.name.toLowerCase()));
+    const ownedCards = Array.from(uniqueCards).filter((name) => (ownedNamesMap.get(name) || 0) > 0).length;
+    return {
+      inventoryDetected: ownedCollection.some((item) => item.quantity > 0),
+      ownedCards,
+      totalCards: uniqueCards.size,
+      percent: uniqueCards.size > 0 ? Math.round((ownedCards / uniqueCards.size) * 100) : 0,
+    };
+  }, [ownedCollection, ownedNamesMap, priorityCards]);
 
   if (loading) {
     return (
@@ -223,6 +233,15 @@ export default function SetDetail() {
               <p className="text-muted-foreground">Main-set set + name index:</p>
               <p className="font-bold">{setPricingSummary.setNameIndexCount} · Scryfall printing fallback: {setPricingSummary.scryfallFallbackCount}</p>
               <p className="mt-1 text-muted-foreground">Main-set prices unavailable: {setPricingSummary.unavailableCount}</p>
+              {setOwnership.inventoryDetected && (
+                <div className="mt-3 border-t border-border pt-2" aria-label="Set inventory coverage">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <span className="text-muted-foreground">Inventory coverage:</span>
+                    <span className="text-lg font-black text-emerald-600 dark:text-emerald-400">{setOwnership.percent}%</span>
+                  </div>
+                  <p className="mt-1 text-[9px] leading-relaxed text-muted-foreground">{setOwnership.ownedCards} of {setOwnership.totalCards} unique main-set cards matched by name.</p>
+                </div>
+              )}
               <p className="mt-2 max-w-64 text-[9px] leading-relaxed text-muted-foreground">Index matches set + card name, not collector number; fallback uses Scryfall USD for the same returned printing. Estimates, not live sale quotes.</p>
             </div>
           </div>
