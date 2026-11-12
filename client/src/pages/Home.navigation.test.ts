@@ -45,22 +45,16 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(home).toContain('label="Commander precons"');
     expect(home).toContain('label="Recent sets"');
     expect(home).toContain('aria-label="Start by player goal"');
-    expect(home).toContain('"Build / tune Commander"');
-    expect(home).toContain('"Build a sealed / draft deck"');
+    expect(home).toContain('title: "Build / tune Commander"');
+    expect(home).toContain('title: "Build from a pool"');
   });
 
-  it("puts public Commander discovery links on both the Home page and Commander archive", () => {
+  it("keeps Commander discovery represented once in the homepage goal grid", () => {
     const home = read("client/src/pages/Home.tsx");
     const commander = read("client/src/pages/CommanderLibrary.tsx");
-    for (const href of [
-      'href="/commander"',
-      'href="/deck-gallery"',
-      'href="/deck-brewery/reviews"',
-      'href="/deck-brewery/matchups"',
-    ]) {
-      expect(home).toContain(href);
-    }
-    expect(home).toContain('aria-label="Browse public Commander decks"');
+    expect(home).toContain('href: "/deck-gallery"');
+    expect(home).toContain("Explore Commander ideas");
+    expect(home).toContain("Brewery reviews");
     expect(commander).toContain('aria-label="Public Commander deck shelves"');
     expect(commander).toContain('href="/deck-gallery"');
     expect(commander).toContain('href="/deck-brewery/reviews"');
