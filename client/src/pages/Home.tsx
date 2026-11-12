@@ -612,30 +612,21 @@ export default function Home() {
           </div>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/deck-workshop", title: "Build / tune Commander", detail: "Check legality, color identity, owned cards, and budget swaps." },
-              { href: "/collection", title: "Grow my collection", detail: "Import printings, set goals, wishlists, duplicates, and trade piles." },
-              { href: "/dupe-decks", title: "Make a themed 60-card deck", detail: "Build a casual duel list from paired inventories and saved themes." },
-              { href: "/limited", title: "Build a sealed / draft deck", detail: "Track a pool, choose your 40, add basics, and export." },
+              { href: "/precon-studio", title: "Build / tune Commander", detail: "Upgrade a precon, check legality, and plan the next purchase." },
+              { href: "/collection", title: "Manage my collection", detail: "Import printings, track goals, and find cards already in reach." },
+              { href: "/deck-gallery", title: "Explore Commander ideas", detail: "Browse public lists, Brewery reviews, and matchup experiments.", related: true },
+              { href: "/limited", title: "Build from a pool", detail: "Track a sealed or draft pool, choose your 40, and export." },
             ].map((goal) => (
               <a key={goal.href} href={goal.href} className="group min-h-24 border border-border bg-card p-3 transition-colors hover:border-primary hover:bg-primary/5">
                 <span className="font-bold group-hover:text-primary">{goal.title}</span>
                 <span className="mt-1 block text-xs leading-5 text-muted-foreground">{goal.detail}</span>
+                {goal.related && (
+                  <span className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[9px] font-black uppercase tracking-wide text-primary">
+                    <span>Archive</span><span>Brewery reviews</span><span>Showdowns</span>
+                  </span>
+                )}
               </a>
             ))}
-          </div>
-        </section>
-
-        <section className="mb-7 grid gap-4 border-2 border-primary/35 bg-primary/[0.035] p-4 sm:p-5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center" aria-label="Browse public Commander decks">
-          <div>
-            <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Public Commander deck discovery</p>
-            <h2 className="mt-1 text-lg font-black">Browse saved lists and new ideas</h2>
-            <p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">Open unchanged community title-credit lists in the Deck Gallery, separate Brewery proposals, or the Commander release archive. These public shelves do not expose collection scans or ownership.</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <a href="/commander" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Commander archive <ArrowRight className="h-4 w-4" /></a>
-            <a href="/deck-gallery" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Deck Gallery <ArrowRight className="h-4 w-4" /></a>
-            <a href="/deck-brewery/reviews" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary-foreground hover:opacity-90">Brewery reviews <ArrowRight className="h-4 w-4" /></a>
-            <a href="/deck-brewery/matchups" className="inline-flex min-h-10 items-center gap-2 border border-border bg-background px-3 py-2 font-mono text-[10px] font-black uppercase hover:border-primary">Showdowns <ArrowRight className="h-4 w-4" /></a>
           </div>
         </section>
 
