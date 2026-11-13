@@ -40,6 +40,8 @@ describe('SetDetail loading resilience', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
     expect(source).toContain('const setOwnership = useMemo');
     expect(source).toContain('inventoryDetected: ownedCollection.some((item) => item.quantity > 0)');
+    expect(source).toContain("map.set(name, (map.get(name) || 0) + Math.max(0, item.quantity));");
+    expect(source).toContain('Math.round((ownedCards / uniqueCards.size) * 1000) / 10');
     expect(source).toContain('Inventory coverage:');
     expect(source).toContain('unique main-set cards matched by name.');
   });
