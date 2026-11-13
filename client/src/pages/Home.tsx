@@ -656,7 +656,7 @@ export default function Home() {
               className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
             >
               {catalogView === "sets"
-                ? `${sets.length} recent sets · ${localDecklists === null ? (localDecklistError ? "local archive unavailable" : localDecklistsLoading || needsLocalArchive ? "loading local archive" : "local archive loads on demand") : `${localDecklists.length} local decklists`}`
+                ? `${sets.length} released main sets · ${localDecklists === null ? (localDecklistError ? "local archive unavailable" : localDecklistsLoading || needsLocalArchive ? "loading local archive" : "local archive loads on demand") : `${localDecklists.length} local decklists`}`
                 : localDecklists === null
                   ? localDecklistError
                     ? "local archive unavailable"
@@ -834,7 +834,7 @@ export default function Home() {
                         Chronological set &amp; precon hub
                       </h2>
                       <p className="mt-1 text-sm text-muted-foreground">
-                        Browse the 60 most recent main-set releases. Use{" "}
+                        Browse every released expansion, core, and masters set in reverse chronology. Associated Commander products appear inside each set card; use{" "}
                         <strong className="text-foreground">All precons</strong>{" "}
                         above for the local Commander decklist archive.
                       </p>
