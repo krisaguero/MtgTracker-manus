@@ -43,7 +43,23 @@ describe('SetDetail loading resilience', () => {
     expect(source).toContain("map.set(name, (map.get(name) || 0) + Math.max(0, item.quantity));");
     expect(source).toContain('Math.round((ownedCards / uniqueCards.size) * 1000) / 10');
     expect(source).toContain('Inventory coverage:');
-    expect(source).toContain('unique main-set cards matched by name.');
+    expect(source).toContain('unique main-set cards matched by name');
+  });
+
+  it('shows ownership coverage even before a local inventory exists', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain('aria-label="Set inventory coverage"');
+    expect(source).toContain('no local inventory detected.');
+    expect(source).not.toContain('{setOwnership.inventoryDetected && (');
+  });
+
+  it('surfaces indexed upgrade paths and Commander connections on historical set pages', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/pages/SetDetail.tsx'), 'utf8');
+    expect(source).toContain("import { commanderPreconUpgradeGuides } from '@/data/commanderPreconUpgradeGuides';");
+    expect(source).toContain('const indexedUpgradeGuides = useMemo');
+    expect(source).toContain('Indexed Commander connections');
+    expect(source).toContain('<PreconUpgradePaths');
+    expect(source).toContain('ownedCards={ownedCollection}');
   });
 
   it('prevents view-scoped filters from becoming silently stale', () => {
