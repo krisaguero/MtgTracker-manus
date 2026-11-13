@@ -128,6 +128,12 @@ const features = {
     takeaways: ['Estrid gets a strict sub-$50 upgrade path with a $3.08 observed two-card package.', 'Calling All Angels stays on a wait-for-supply posture until Foundations is open.', 'Exact printing, shipping, and completed-sale checks remain required.'],
     action: 'Open the precon upgrade desk', target: '/precon-upgrades?deck=adaptive-enchantment',
   },
+  'fallout-wasteland-battle-box-precon-swerve-2026-11-12': {
+    label: 'Fallout Battle Box swerve', icon: Layers3, card: 'The Master, Transcendent',
+    href: '/pip', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Master%2C%20Transcendent&format=image&version=normal',
+    takeaways: ['Compresses Mutant Menace and Science! into a proposed 60-card closed ecosystem.', 'Keeps Rad-Aggro and Brotherhood Control separate instead of inventing one blended list.', 'Treats thematic playsets as test requirements, not verified market buys.'],
+    action: 'Open the Fallout set index', target: '/pip',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -319,6 +325,19 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'Collation Trimatrix', label: 'Borg token card advantage', reason: 'The proposed add over Korok, Liberated Rage converts surplus 1/1 Borg tokens into cards; exact price remains unverified.' },
       { name: 'Skullclamp', label: 'Locutus token bridge', reason: 'A reprint-aware draw engine for the token route; wait for release-week supply rather than chasing a preorder.' },
       { name: 'Academy Ruins', label: 'Artifact recursion watch', reason: 'A portable artifact role worth checking after the list is released, not a confirmed buy today.' },
+    ],
+  },
+  'fallout-wasteland-battle-box-precon-swerve-2026-11-12': {
+    heading: 'Fallout Wasteland Battle Box · visual anchors',
+    description: 'The proposed 60-card ecosystem keeps the source Commander decks, Battle Box concepts, and personal inventory separate.',
+    cards: [
+      { name: 'The Master, Transcendent', label: 'Rad-Aggro engine', reason: 'The proposed Mutant Menace route’s repeatable mill and reanimation anchor.' },
+      { name: 'Liberty Prime, Recharged', label: 'Brotherhood Control finisher', reason: 'The Science! route’s singular end-game threat after the energy package is compressed.' },
+      { name: 'The Wise Mothman', label: 'Fallout comparison point', reason: 'A separate radiation and counter identity used to compare the box’s narrative lanes.' },
+      { name: 'Nuclear Fallout', label: 'Defining reset', reason: 'A thematic board event to test in the closed economy rather than a generic Commander staple.' },
+      { name: 'Radstorm', label: 'Radiation/proliferate event', reason: 'A radioactive spell that gives the box its own resource language.' },
+      { name: 'Feral Ghoul', label: 'Flavor-first inclusion', reason: 'A low-power thematic card only needs to compete with the other Fallout decks in the box.' },
+      { name: 'Screeching Scorchbeast', label: 'Wasteland threat', reason: 'A story-forward card whose value is judged by the matchup, not a broad Commander ranking.' },
     ],
   },
 };
