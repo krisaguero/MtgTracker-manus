@@ -55,7 +55,8 @@ export default function SetDetail() {
   const ownedNamesMap = useMemo(() => {
     const map = new Map<string, number>();
     for (const item of ownedCollection) {
-      map.set(item.name.toLowerCase(), item.quantity);
+      const name = item.name.trim().toLowerCase();
+      map.set(name, (map.get(name) || 0) + Math.max(0, item.quantity));
     }
     return map;
   }, [ownedCollection]);
@@ -130,7 +131,7 @@ export default function SetDetail() {
       inventoryDetected: ownedCollection.some((item) => item.quantity > 0),
       ownedCards,
       totalCards: uniqueCards.size,
-      percent: uniqueCards.size > 0 ? Math.round((ownedCards / uniqueCards.size) * 100) : 0,
+      percent: uniqueCards.size > 0 ? Math.round((ownedCards / uniqueCards.size) * 1000) / 10 : 0,
     };
   }, [ownedCollection, ownedNamesMap, priorityCards]);
 
