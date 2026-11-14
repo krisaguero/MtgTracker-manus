@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T16:00:19.759Z",
+  "updatedAt": "2026-11-14T14:53:56.635Z",
   "records": [
     {
       "id": "2026-11-13-top-10:1:pip:54",
@@ -3822,7 +3822,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 4.62,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:2:m3c:289",
@@ -3848,7 +3854,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 7.69,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:3:msc:227",
@@ -3874,7 +3886,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -43.08,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:4:soc:214",
@@ -3900,7 +3918,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -39.29,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:5:msc:169",
@@ -3926,7 +3950,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -5.3,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:6:scd:194",
@@ -3952,7 +3982,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 3.57,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:7:fic:302",
@@ -3978,7 +4014,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -32.22,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-10-31-collection-buy-list:8:drc:82",
@@ -4004,7 +4046,13 @@
         "openedAt": "2026-10-31",
         "evaluationDate": "2026-11-14"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 9.09,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-10-30-top-10:1:soc:205",
