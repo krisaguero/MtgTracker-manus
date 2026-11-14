@@ -1,85 +1,10 @@
 {
   "schemaVersion": 1,
   "kind": "upcoming-mtg-sets",
-  "sourceBuildDate": "2026-10-19",
-  "asOf": "2026-10-19",
+  "sourceBuildDate": "2026-11-14",
+  "asOf": "2026-11-14",
   "lookaheadDays": 730,
   "records": [
-    {
-      "id": "MBC",
-      "setCode": "MBC",
-      "name": "Mystery Booster Commander Edition",
-      "setType": "draft_innovation",
-      "releaseDate": "2026-10-19",
-      "status": "released",
-      "confidence": "upstream-structured",
-      "commanderSetCode": "MBC",
-      "commanderProductStatus": "catalog-record",
-      "sources": [
-        {
-          "label": "MTGJSON set record",
-          "url": "https://mtgjson.com/api/v5/MBC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON SetList",
-          "url": "https://mtgjson.com/api/v5/SetList.json",
-          "type": "structured"
-        }
-      ],
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "TRK",
-      "setCode": "TRK",
-      "name": "Star Trek",
-      "setType": "expansion",
-      "releaseDate": "2026-11-13",
-      "status": "upcoming",
-      "confidence": "upstream-structured",
-      "commanderSetCode": null,
-      "commanderProductStatus": "not-specified",
-      "sources": [
-        {
-          "label": "MTGJSON set record",
-          "url": "https://mtgjson.com/api/v5/TRK.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON SetList",
-          "url": "https://mtgjson.com/api/v5/SetList.json",
-          "type": "structured"
-        }
-      ],
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
-    {
-      "id": "TRC",
-      "setCode": "TRC",
-      "name": "Star Trek Commander",
-      "setType": "commander",
-      "releaseDate": "2026-11-13",
-      "status": "upcoming",
-      "confidence": "upstream-structured",
-      "commanderSetCode": "TRC",
-      "commanderProductStatus": "catalog-record",
-      "sources": [
-        {
-          "label": "MTGJSON set record",
-          "url": "https://mtgjson.com/api/v5/TRC.json",
-          "type": "structured"
-        },
-        {
-          "label": "MTGJSON SetList",
-          "url": "https://mtgjson.com/api/v5/SetList.json",
-          "type": "structured"
-        }
-      ],
-      "notes": null,
-      "sourceBuildDate": "2026-10-19"
-    },
     {
       "id": "NAU",
       "setCode": "NAU",
@@ -103,7 +28,32 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-11-14"
+    },
+    {
+      "id": "NAC",
+      "setCode": "NAC",
+      "name": "Nauctis: The Sunken Realm Commander",
+      "setType": "commander",
+      "releaseDate": "2027-02-05",
+      "status": "upcoming",
+      "confidence": "upstream-structured",
+      "commanderSetCode": "NAC",
+      "commanderProductStatus": "catalog-record",
+      "sources": [
+        {
+          "label": "MTGJSON set record",
+          "url": "https://mtgjson.com/api/v5/NAC.json",
+          "type": "structured"
+        },
+        {
+          "label": "MTGJSON SetList",
+          "url": "https://mtgjson.com/api/v5/SetList.json",
+          "type": "structured"
+        }
+      ],
+      "notes": null,
+      "sourceBuildDate": "2026-11-14"
     },
     {
       "id": "MDC",
@@ -128,7 +78,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-11-14"
     },
     {
       "id": "MDD",
@@ -153,7 +103,7 @@
         }
       ],
       "notes": null,
-      "sourceBuildDate": "2026-10-19"
+      "sourceBuildDate": "2026-11-14"
     }
   ]
 }
