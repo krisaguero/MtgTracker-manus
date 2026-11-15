@@ -1,44 +1,151 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T14:53:56.112Z",
-  "pricingDate": "2026-11-14",
-  "dataWindow": "2026-10-25 through 2026-11-14",
+  "generatedAt": "2026-11-15T15:30:04.699Z",
+  "pricingDate": "2026-11-15",
+  "dataWindow": "2026-10-26 through 2026-11-15",
   "marketStatus": [
+    "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 0,
-  "negativeSignals": 0,
+  "positiveSignals": 2796,
+  "negativeSignals": 2772,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 151,
-    "multiSourceSignals": 12360,
+    "singleSourceSignals": 152,
+    "multiSourceSignals": 12359,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
-      "category": "commander-picks",
-      "cards": 12511,
-      "positiveSignals": 0,
+      "category": "penny-risers",
+      "cards": 82,
+      "positiveSignals": 82,
       "negativeSignals": 0,
-      "averagePctChange": 0
+      "averagePctChange": 31.47
+    },
+    {
+      "category": "commander-picks",
+      "cards": 12355,
+      "positiveSignals": 2714,
+      "negativeSignals": 2698,
+      "averagePctChange": 0.1
+    },
+    {
+      "category": "reprint-squashes",
+      "cards": 74,
+      "positiveSignals": 0,
+      "negativeSignals": 74,
+      "averagePctChange": -23.69
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-14; 0 rose and 0 fell in the latest snapshot.",
-    "commander-picks has the strongest latest average movement at +0% across 12511 cards.",
-    "151 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "No reprint-floor observations were present in the latest snapshot.",
+    "12511 exact-printing price observations were screened for 2026-11-15; 2796 rose and 2772 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +31.47% across 82 cards.",
+    "152 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "74 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
-    "topGainers": [],
-    "topDecliners": [],
+    "topGainers": [
+      {
+        "name": "Swamp",
+        "setCode": "pip",
+        "collectorNumber": "321",
+        "currentUsd": 2.49,
+        "percentChange": 378.85,
+        "sourceCount": 2,
+        "category": "commander-picks"
+      },
+      {
+        "name": "Open the Vaults",
+        "setCode": "pip",
+        "collectorNumber": "168",
+        "currentUsd": 1.11,
+        "percentChange": 226.47,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Key to the City",
+        "setCode": "fic",
+        "collectorNumber": "348",
+        "currentUsd": 0.53,
+        "percentChange": 165,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Irrigated Farmland",
+        "setCode": "msc",
+        "collectorNumber": "251",
+        "currentUsd": 0.57,
+        "percentChange": 137.5,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Secluded Steppe",
+        "setCode": "cm2",
+        "collectorNumber": "266",
+        "currentUsd": 0.28,
+        "percentChange": 100,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      }
+    ],
+    "topDecliners": [
+      {
+        "name": "Swamp",
+        "setCode": "fin",
+        "collectorNumber": "300",
+        "currentUsd": 0.27,
+        "percentChange": -57.14,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Overflowing Basin",
+        "setCode": "pip",
+        "collectorNumber": "152",
+        "currentUsd": 0.29,
+        "percentChange": -52.46,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Frostboil Snarl",
+        "setCode": "drc",
+        "collectorNumber": "158",
+        "currentUsd": 0.34,
+        "percentChange": -50,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Terminate",
+        "setCode": "msc",
+        "collectorNumber": "189",
+        "currentUsd": 0.38,
+        "percentChange": -45.71,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Swiftwater Cliffs",
+        "setCode": "c16",
+        "collectorNumber": "330",
+        "currentUsd": 0.09,
+        "percentChange": -43.75,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      }
+    ],
     "snapshotWarnings": []
   },
   "historicalSignalCheck": {
@@ -50,107 +157,58 @@
         "setCode": "pip",
         "collectorNumber": "312",
         "observations": 21,
-        "firstDate": "2026-10-25",
-        "lastDate": "2026-11-14",
-        "totalPctChange": 400,
+        "firstDate": "2026-10-26",
+        "lastDate": "2026-11-15",
+        "totalPctChange": 395.45,
         "positiveDays": 8,
-        "negativeDays": 2
+        "negativeDays": 3
       },
       {
         "name": "Assaultron Dominator",
         "setCode": "pip",
         "collectorNumber": "54",
         "observations": 21,
-        "firstDate": "2026-10-25",
-        "lastDate": "2026-11-14",
-        "totalPctChange": 289.29,
+        "firstDate": "2026-10-26",
+        "lastDate": "2026-11-15",
+        "totalPctChange": 263.33,
         "positiveDays": 5,
-        "negativeDays": 3
-      },
-      {
-        "name": "James, Wandering Dad // Follow Him",
-        "setCode": "pip",
-        "collectorNumber": "31",
-        "observations": 21,
-        "firstDate": "2026-10-25",
-        "lastDate": "2026-11-14",
-        "totalPctChange": 253.33,
-        "positiveDays": 4,
-        "negativeDays": 5
+        "negativeDays": 2
       },
       {
         "name": "Temple of Malice",
         "setCode": "pip",
         "collectorNumber": "307",
         "observations": 21,
-        "firstDate": "2026-10-25",
-        "lastDate": "2026-11-14",
-        "totalPctChange": 248.48,
+        "firstDate": "2026-10-26",
+        "lastDate": "2026-11-15",
+        "totalPctChange": 259.37,
         "positiveDays": 3,
-        "negativeDays": 2
+        "negativeDays": 1
       },
       {
-        "name": "Nomad Outpost",
+        "name": "Swamp",
         "setCode": "pip",
-        "collectorNumber": "277",
+        "collectorNumber": "321",
         "observations": 21,
-        "firstDate": "2026-10-25",
-        "lastDate": "2026-11-14",
-        "totalPctChange": 208.11,
+        "firstDate": "2026-10-26",
+        "lastDate": "2026-11-15",
+        "totalPctChange": 255.71,
+        "positiveDays": 1,
+        "negativeDays": 6
+      },
+      {
+        "name": "James, Wandering Dad // Follow Him",
+        "setCode": "pip",
+        "collectorNumber": "31",
+        "observations": 21,
+        "firstDate": "2026-10-26",
+        "lastDate": "2026-11-15",
+        "totalPctChange": 253.33,
         "positiveDays": 4,
-        "negativeDays": 3
+        "negativeDays": 5
       }
     ],
-    "predictionsDue": [
-      {
-        "name": "Shrine of the Forsaken Gods",
-        "setCode": "c19",
-        "collectorNumber": "273",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Dreamstone Hedron",
-        "setCode": "m3c",
-        "collectorNumber": "289",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Canopy Vista",
-        "setCode": "msc",
-        "collectorNumber": "227",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Ghoulish Impetus",
-        "setCode": "soc",
-        "collectorNumber": "214",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Beast Within",
-        "setCode": "msc",
-        "collectorNumber": "169",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Jaspera Sentinel",
-        "setCode": "scd",
-        "collectorNumber": "194",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Farseek",
-        "setCode": "fic",
-        "collectorNumber": "302",
-        "evaluationDate": "2026-11-14"
-      },
-      {
-        "name": "Sai, Master Thopterist",
-        "setCode": "drc",
-        "collectorNumber": "82",
-        "evaluationDate": "2026-11-14"
-      }
-    ],
+    "predictionsDue": [],
     "predictionsResolved": [],
     "recurringCatalystsToReview": [
       "spoilers",
