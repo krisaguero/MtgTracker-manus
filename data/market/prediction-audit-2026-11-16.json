@@ -1,0 +1,7500 @@
+{
+  "auditDate": "2026-11-16",
+  "historyWindow": {
+    "first": "2026-10-15",
+    "last": "2026-11-16"
+  },
+  "coverage": {
+    "records": 309,
+    "evaluated": 116,
+    "withPostEntryPrices": 274,
+    "unresolved": 193,
+    "duplicateCanonicalKeys": {
+      "Grave Peril|c15|128": 2,
+      "Plains|cm2|285": 2,
+      "Island|cm2|291": 2,
+      "Hour of Reckoning|pip|161": 2,
+      "Woe Strider|soc|231": 2,
+      "Vile Redeemer|m3c|251": 2,
+      "Axebane Guardian|tdc|248": 2,
+      "Morbid Opportunist|soc|219": 2,
+      "Reality Shift|drc|39": 4,
+      "Mangara, the Diplomat|tdc|124": 2,
+      "Gerrard, Weatherlight Hero|c19|41": 2,
+      "Colossus Hammer|fic|338": 2,
+      "Swamp|fin|300": 2,
+      "Mire in Misery|c19|19": 2,
+      "Frostboil Snarl|drc|158": 2,
+      "Terminate|msc|189": 2,
+      "Convert to Slime|dsc|37": 2,
+      "Myriad Landscape|pip|274": 2,
+      "Exotic Orchard|blc|131": 3,
+      "Dispatch|pip|159": 2,
+      "Island|c15|330": 2,
+      "Temple of Abandon|blc|338": 2,
+      "Hour of Reckoning|tdc|120": 2,
+      "Explore|blc|216": 2,
+      "Sulfur Falls|drc|173": 2,
+      "Nightshade Harvester|dsc|150": 2,
+      "Chaos Warp|fic|291": 2,
+      "Exotic Orchard|soc|369": 2,
+      "Talisman of Conviction|pip|243": 2,
+      "Buried Ruin|pip|254": 2,
+      "Tomb of the Spirit Dragon|m3c|397": 2,
+      "Canopy Vista|msc|227": 2,
+      "Velomachus Lorehold|tdc|309": 2,
+      "Adarkar Wastes|m3c|316": 2,
+      "Hinterland Harbor|fic|403": 3,
+      "Gift of Immortality|soc|147": 2,
+      "Yavimaya Coast|c19|287": 2,
+      "Path of Ancestry|lcc|346": 2,
+      "Path of Ancestry|blc|322": 2,
+      "Goblin Electromancer|tdc|99": 2,
+      "Pearl-Ear, Imperial Advisor|soc|160": 2,
+      "Sai, Master Thopterist|drc|82": 2,
+      "Command Tower|cmd|269": 3,
+      "Preeminent Captain|m15|25": 2,
+      "Counterspell|mh2|267": 2
+    }
+  },
+  "accuracy": {
+    "directionalHitRate": 21.55,
+    "rangeContainmentRate": 10.34,
+    "meanAbsoluteErrorPct": 41.37,
+    "evaluatedRecords": 116
+  },
+  "notes": [
+    "Accuracy scores include only matured records with exact set code, collector number, and post-entry prices."
+  ],
+  "records": [
+    {
+      "id": "2026-11-16-precon-sealed-economics:1:who:83",
+      "opened": "2026-11-16",
+      "name": "Ecstatic Beauty",
+      "setCode": "who",
+      "collectorNumber": "83",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:2:c15:128",
+      "opened": "2026-11-16",
+      "name": "Grave Peril",
+      "setCode": "c15",
+      "collectorNumber": "128",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:3:cm2:285",
+      "opened": "2026-11-16",
+      "name": "Plains",
+      "setCode": "cm2",
+      "collectorNumber": "285",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:4:cm2:291",
+      "opened": "2026-11-16",
+      "name": "Island",
+      "setCode": "cm2",
+      "collectorNumber": "291",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:5:cm2:290",
+      "opened": "2026-11-16",
+      "name": "Island",
+      "setCode": "cm2",
+      "collectorNumber": "290",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:6:cma:199",
+      "opened": "2026-11-16",
+      "name": "Boros Guildmage",
+      "setCode": "cma",
+      "collectorNumber": "199",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:7:c15:67",
+      "opened": "2026-11-16",
+      "name": "Dawnglare Invoker",
+      "setCode": "c15",
+      "collectorNumber": "67",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:8:pip:161",
+      "opened": "2026-11-16",
+      "name": "Hour of Reckoning",
+      "setCode": "pip",
+      "collectorNumber": "161",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:9:pip:314",
+      "opened": "2026-11-16",
+      "name": "Treasure Vault",
+      "setCode": "pip",
+      "collectorNumber": "314",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:10:soc:231",
+      "opened": "2026-11-16",
+      "name": "Woe Strider",
+      "setCode": "soc",
+      "collectorNumber": "231",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:11:m3c:251",
+      "opened": "2026-11-16",
+      "name": "Vile Redeemer",
+      "setCode": "m3c",
+      "collectorNumber": "251",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:12:tdc:248",
+      "opened": "2026-11-16",
+      "name": "Axebane Guardian",
+      "setCode": "tdc",
+      "collectorNumber": "248",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:13:otc:240",
+      "opened": "2026-11-16",
+      "name": "Shadowmage Infiltrator",
+      "setCode": "otc",
+      "collectorNumber": "240",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:14:soc:219",
+      "opened": "2026-11-16",
+      "name": "Morbid Opportunist",
+      "setCode": "soc",
+      "collectorNumber": "219",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:15:ltr:267",
+      "opened": "2026-11-16",
+      "name": "Swamp",
+      "setCode": "ltr",
+      "collectorNumber": "267",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:16:drc:39",
+      "opened": "2026-11-16",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:17:msc:132",
+      "opened": "2026-11-16",
+      "name": "Folk Hero",
+      "setCode": "msc",
+      "collectorNumber": "132",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:18:tdc:124",
+      "opened": "2026-11-16",
+      "name": "Mangara, the Diplomat",
+      "setCode": "tdc",
+      "collectorNumber": "124",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:19:c19:41",
+      "opened": "2026-11-16",
+      "name": "Gerrard, Weatherlight Hero",
+      "setCode": "c19",
+      "collectorNumber": "41",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:20:fic:275",
+      "opened": "2026-11-16",
+      "name": "Crux of Fate",
+      "setCode": "fic",
+      "collectorNumber": "275",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:21:cm2:311",
+      "opened": "2026-11-16",
+      "name": "Forest",
+      "setCode": "cm2",
+      "collectorNumber": "311",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:22:drc:19",
+      "opened": "2026-11-16",
+      "name": "Stridehangar Automaton",
+      "setCode": "drc",
+      "collectorNumber": "19",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:23:fic:338",
+      "opened": "2026-11-16",
+      "name": "Colossus Hammer",
+      "setCode": "fic",
+      "collectorNumber": "338",
+      "expectedDirection": "DOWN",
+      "range": [
+        -18,
+        -6
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:24:eoc:62",
+      "opened": "2026-11-16",
+      "name": "Terramorphic Expanse",
+      "setCode": "eoc",
+      "collectorNumber": "62",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-16-precon-sealed-economics:25:c15:122",
+      "opened": "2026-11-16",
+      "name": "Dreadbringer Lampads",
+      "setCode": "c15",
+      "collectorNumber": "122",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:1:pip:321",
+      "opened": "2026-11-15",
+      "name": "Swamp",
+      "setCode": "pip",
+      "collectorNumber": "321",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.48
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": -0.4,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:2:pip:168",
+      "opened": "2026-11-15",
+      "name": "Open the Vaults",
+      "setCode": "pip",
+      "collectorNumber": "168",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.13
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 1.8,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:3:fic:348",
+      "opened": "2026-11-15",
+      "name": "Key to the City",
+      "setCode": "fic",
+      "collectorNumber": "348",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.59
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 11.32,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:4:msc:251",
+      "opened": "2026-11-15",
+      "name": "Irrigated Farmland",
+      "setCode": "msc",
+      "collectorNumber": "251",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.57
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:5:cm2:266",
+      "opened": "2026-11-15",
+      "name": "Secluded Steppe",
+      "setCode": "cm2",
+      "collectorNumber": "266",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.28
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:6:c19:252",
+      "opened": "2026-11-15",
+      "name": "Izzet Boilerworks",
+      "setCode": "c19",
+      "collectorNumber": "252",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": -1.47,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:7:ltc:48",
+      "opened": "2026-11-15",
+      "name": "Bilbo, Birthday Celebrant",
+      "setCode": "ltc",
+      "collectorNumber": "48",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.69
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 1.47,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:8:soc:256",
+      "opened": "2026-11-15",
+      "name": "Surge to Victory",
+      "setCode": "soc",
+      "collectorNumber": "256",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.61
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:9:pip:23",
+      "opened": "2026-11-15",
+      "name": "Securitron Squadron",
+      "setCode": "pip",
+      "collectorNumber": "23",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.05
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": -0.49,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:10:fin:300",
+      "opened": "2026-11-15",
+      "name": "Swamp",
+      "setCode": "fin",
+      "collectorNumber": "300",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 7.41,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:11:c19:19",
+      "opened": "2026-11-15",
+      "name": "Mire in Misery",
+      "setCode": "c19",
+      "collectorNumber": "19",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.92
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 2.22,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:12:fic:244",
+      "opened": "2026-11-15",
+      "name": "Grateful Apparition",
+      "setCode": "fic",
+      "collectorNumber": "244",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.49
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 2.08,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:13:pip:152",
+      "opened": "2026-11-15",
+      "name": "Overflowing Basin",
+      "setCode": "pip",
+      "collectorNumber": "152",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.3
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 3.45,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:14:drc:158",
+      "opened": "2026-11-15",
+      "name": "Frostboil Snarl",
+      "setCode": "drc",
+      "collectorNumber": "158",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": -5.88,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:15:eoe:275",
+      "opened": "2026-11-15",
+      "name": "Forest",
+      "setCode": "eoe",
+      "collectorNumber": "275",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 3.57,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:16:eoe:272",
+      "opened": "2026-11-15",
+      "name": "Swamp",
+      "setCode": "eoe",
+      "collectorNumber": "272",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": -7.14,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:17:cm2:61",
+      "opened": "2026-11-15",
+      "name": "Dark Hatchling",
+      "setCode": "cm2",
+      "collectorNumber": "61",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.19
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:18:msc:189",
+      "opened": "2026-11-15",
+      "name": "Terminate",
+      "setCode": "msc",
+      "collectorNumber": "189",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:19:c19:41",
+      "opened": "2026-11-15",
+      "name": "Gerrard, Weatherlight Hero",
+      "setCode": "c19",
+      "collectorNumber": "41",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.1
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 35.8,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:20:c16:330",
+      "opened": "2026-11-15",
+      "name": "Swiftwater Cliffs",
+      "setCode": "c16",
+      "collectorNumber": "330",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.09
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:21:moc:38",
+      "opened": "2026-11-15",
+      "name": "Path of the Animist",
+      "setCode": "moc",
+      "collectorNumber": "38",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 2.5,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:22:dsc:37",
+      "opened": "2026-11-15",
+      "name": "Convert to Slime",
+      "setCode": "dsc",
+      "collectorNumber": "37",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:23:pip:274",
+      "opened": "2026-11-15",
+      "name": "Myriad Landscape",
+      "setCode": "pip",
+      "collectorNumber": "274",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 10.26,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:24:eoe:271",
+      "opened": "2026-11-15",
+      "name": "Swamp",
+      "setCode": "eoe",
+      "collectorNumber": "271",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.25
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 19.05,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-15-spoiler-supply-watch:25:blc:131",
+      "opened": "2026-11-15",
+      "name": "Exotic Orchard",
+      "setCode": "blc",
+      "collectorNumber": "131",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-29",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 1,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:1:pip:54",
+      "opened": "2026-11-13",
+      "name": "Assaultron Dominator",
+      "setCode": "pip",
+      "collectorNumber": "54",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.1
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 0.92,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:2:blc:131",
+      "opened": "2026-11-13",
+      "name": "Exotic Orchard",
+      "setCode": "blc",
+      "collectorNumber": "131",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -38.03,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:3:fin:300",
+      "opened": "2026-11-13",
+      "name": "Swamp",
+      "setCode": "fin",
+      "collectorNumber": "300",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -53.97,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:4:pip:159",
+      "opened": "2026-11-13",
+      "name": "Dispatch",
+      "setCode": "pip",
+      "collectorNumber": "159",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.72
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 1.18,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:5:tdc:215",
+      "opened": "2026-11-13",
+      "name": "Glorybringer",
+      "setCode": "tdc",
+      "collectorNumber": "215",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": -1.56,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:6:pip:52",
+      "opened": "2026-11-13",
+      "name": "Wasteland Raider",
+      "setCode": "pip",
+      "collectorNumber": "52",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.68
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:7:scd:106",
+      "opened": "2026-11-13",
+      "name": "Sepulchral Primordial",
+      "setCode": "scd",
+      "collectorNumber": "106",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.71
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:8:c15:330",
+      "opened": "2026-11-13",
+      "name": "Island",
+      "setCode": "c15",
+      "collectorNumber": "330",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.18
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:9:who:64",
+      "opened": "2026-11-13",
+      "name": "Dalek Drone",
+      "setCode": "who",
+      "collectorNumber": "64",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.72
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 4.35,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-13-top-10:10:ncc:51",
+      "opened": "2026-11-13",
+      "name": "Rose Room Treasurer",
+      "setCode": "ncc",
+      "collectorNumber": "51",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.75
+      },
+      "postEntryPoints": 3,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:1:pip:277",
+      "opened": "2026-11-12",
+      "name": "Nomad Outpost",
+      "setCode": "pip",
+      "collectorNumber": "277",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.13
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -0.88,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:2:pip:132",
+      "opened": "2026-11-12",
+      "name": "Endurance Bobblehead",
+      "setCode": "pip",
+      "collectorNumber": "132",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.45
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 9.02,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:3:dsc:298",
+      "opened": "2026-11-12",
+      "name": "Simic Growth Chamber",
+      "setCode": "dsc",
+      "collectorNumber": "298",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:4:pip:159",
+      "opened": "2026-11-12",
+      "name": "Dispatch",
+      "setCode": "pip",
+      "collectorNumber": "159",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.72
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 97.7,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:5:tdc:124",
+      "opened": "2026-11-12",
+      "name": "Mangara, the Diplomat",
+      "setCode": "tdc",
+      "collectorNumber": "124",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -42.65,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:6:tdc:216",
+      "opened": "2026-11-12",
+      "name": "Grenzo, Havoc Raiser",
+      "setCode": "tdc",
+      "collectorNumber": "216",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 4.92,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:7:moc:312",
+      "opened": "2026-11-12",
+      "name": "Slurrk, All-Ingesting",
+      "setCode": "moc",
+      "collectorNumber": "312",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 1.52,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:8:pip:55",
+      "opened": "2026-11-12",
+      "name": "Bottle-Cap Blast",
+      "setCode": "pip",
+      "collectorNumber": "55",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.35
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 12.98,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:9:plst:CMR-189",
+      "opened": "2026-11-12",
+      "name": "Krark, the Thumbless",
+      "setCode": "plst",
+      "collectorNumber": "CMR-189",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.47
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:10:blc:338",
+      "opened": "2026-11-12",
+      "name": "Temple of Abandon",
+      "setCode": "blc",
+      "collectorNumber": "338",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.28
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -3.45,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:11:mid:216",
+      "opened": "2026-11-12",
+      "name": "Dawnhart Wardens",
+      "setCode": "mid",
+      "collectorNumber": "216",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.06
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:12:tdc:120",
+      "opened": "2026-11-12",
+      "name": "Hour of Reckoning",
+      "setCode": "tdc",
+      "collectorNumber": "120",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 12.9,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:13:drc:77",
+      "opened": "2026-11-12",
+      "name": "Forgotten Creation",
+      "setCode": "drc",
+      "collectorNumber": "77",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 11.43,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:14:blc:216",
+      "opened": "2026-11-12",
+      "name": "Explore",
+      "setCode": "blc",
+      "collectorNumber": "216",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 8.33,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:15:pip:34",
+      "opened": "2026-11-12",
+      "name": "Nerd Rage",
+      "setCode": "pip",
+      "collectorNumber": "34",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.46
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:16:drc:173",
+      "opened": "2026-11-12",
+      "name": "Sulfur Falls",
+      "setCode": "drc",
+      "collectorNumber": "173",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.31
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -20.51,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:17:pip:239",
+      "opened": "2026-11-12",
+      "name": "Sol Ring",
+      "setCode": "pip",
+      "collectorNumber": "239",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.17
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -19.33,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:18:dsc:150",
+      "opened": "2026-11-12",
+      "name": "Nightshade Harvester",
+      "setCode": "dsc",
+      "collectorNumber": "150",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:19:fic:291",
+      "opened": "2026-11-12",
+      "name": "Chaos Warp",
+      "setCode": "fic",
+      "collectorNumber": "291",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 10.53,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:20:fic:257",
+      "opened": "2026-11-12",
+      "name": "Together Forever",
+      "setCode": "fic",
+      "collectorNumber": "257",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 5.71,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:21:soc:369",
+      "opened": "2026-11-12",
+      "name": "Exotic Orchard",
+      "setCode": "soc",
+      "collectorNumber": "369",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -2.33,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:22:c15:128",
+      "opened": "2026-11-12",
+      "name": "Grave Peril",
+      "setCode": "c15",
+      "collectorNumber": "128",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.1
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 100,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:23:fic:381",
+      "opened": "2026-11-12",
+      "name": "Clifftop Retreat",
+      "setCode": "fic",
+      "collectorNumber": "381",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": -13.33,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:24:cma:311",
+      "opened": "2026-11-12",
+      "name": "Forest",
+      "setCode": "cma",
+      "collectorNumber": "311",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.21
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-12-constructed-format-watch:25:scd:125",
+      "opened": "2026-11-12",
+      "name": "Brash Taunter",
+      "setCode": "scd",
+      "collectorNumber": "125",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-26",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 3.79
+      },
+      "postEntryPoints": 4,
+      "actualChangePct": 0.53,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:1:pip:274",
+      "opened": "2026-11-11",
+      "name": "Myriad Landscape",
+      "setCode": "pip",
+      "collectorNumber": "274",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -31.75,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:2:c13:51",
+      "opened": "2026-11-11",
+      "name": "Opportunity",
+      "setCode": "c13",
+      "collectorNumber": "51",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.2
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:3:khc:81",
+      "opened": "2026-11-11",
+      "name": "Abomination of Llanowar",
+      "setCode": "khc",
+      "collectorNumber": "81",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.56
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 3.31,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:4:dmc:192",
+      "opened": "2026-11-11",
+      "name": "Sword of the Chosen",
+      "setCode": "dmc",
+      "collectorNumber": "192",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.76
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:5:pip:141",
+      "opened": "2026-11-11",
+      "name": "Recon Craft Theta",
+      "setCode": "pip",
+      "collectorNumber": "141",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.96
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 5.95,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:6:pip:243",
+      "opened": "2026-11-11",
+      "name": "Talisman of Conviction",
+      "setCode": "pip",
+      "collectorNumber": "243",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 10.81,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:7:dsc:220",
+      "opened": "2026-11-11",
+      "name": "Grist, the Hunger Tide",
+      "setCode": "dsc",
+      "collectorNumber": "220",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.81
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 5.19,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:8:pip:254",
+      "opened": "2026-11-11",
+      "name": "Buried Ruin",
+      "setCode": "pip",
+      "collectorNumber": "254",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -7.32,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:9:fic:375",
+      "opened": "2026-11-11",
+      "name": "Battlefield Forge",
+      "setCode": "fic",
+      "collectorNumber": "375",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.24
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -7.69,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:10:c14:68",
+      "opened": "2026-11-11",
+      "name": "Celestial Crusader",
+      "setCode": "c14",
+      "collectorNumber": "68",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 18.18,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:11:fic:411",
+      "opened": "2026-11-11",
+      "name": "Path of Ancestry",
+      "setCode": "fic",
+      "collectorNumber": "411",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -21.62,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:12:m3c:397",
+      "opened": "2026-11-11",
+      "name": "Tomb of the Spirit Dragon",
+      "setCode": "m3c",
+      "collectorNumber": "397",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.47
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 6.82,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:13:msc:227",
+      "opened": "2026-11-11",
+      "name": "Canopy Vista",
+      "setCode": "msc",
+      "collectorNumber": "227",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -22.73,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:14:msc:121",
+      "opened": "2026-11-11",
+      "name": "Austere Command",
+      "setCode": "msc",
+      "collectorNumber": "121",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.62
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -13.89,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:15:dsk:269",
+      "opened": "2026-11-11",
+      "name": "Terramorphic Expanse",
+      "setCode": "dsk",
+      "collectorNumber": "269",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.24
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -36.84,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:16:c20:280",
+      "opened": "2026-11-11",
+      "name": "Halimar Depths",
+      "setCode": "c20",
+      "collectorNumber": "280",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.72
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 4.35,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:17:fic:338",
+      "opened": "2026-11-11",
+      "name": "Colossus Hammer",
+      "setCode": "fic",
+      "collectorNumber": "338",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.73
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -25.51,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:18:sos:256",
+      "opened": "2026-11-11",
+      "name": "Forum of Amity",
+      "setCode": "sos",
+      "collectorNumber": "256",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.18
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -5.26,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:19:pip:299",
+      "opened": "2026-11-11",
+      "name": "Tainted Isle",
+      "setCode": "pip",
+      "collectorNumber": "299",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 3.25
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -2.69,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:20:znr:201",
+      "opened": "2026-11-11",
+      "name": "Roiling Regrowth",
+      "setCode": "znr",
+      "collectorNumber": "201",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 10,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:21:fic:390",
+      "opened": "2026-11-11",
+      "name": "Exotic Orchard",
+      "setCode": "fic",
+      "collectorNumber": "390",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -8.33,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:22:cmd:292",
+      "opened": "2026-11-11",
+      "name": "Tranquil Thicket",
+      "setCode": "cmd",
+      "collectorNumber": "292",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:23:blc:130",
+      "opened": "2026-11-11",
+      "name": "Command Tower",
+      "setCode": "blc",
+      "collectorNumber": "130",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": -10.81,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:24:pip:235",
+      "opened": "2026-11-11",
+      "name": "Mind Stone",
+      "setCode": "pip",
+      "collectorNumber": "235",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-11-commander-demand:25:fin:305",
+      "opened": "2026-11-11",
+      "name": "Mountain",
+      "setCode": "fin",
+      "collectorNumber": "305",
+      "expectedDirection": "DOWN",
+      "range": [
+        -18,
+        -6
+      ],
+      "evaluationDate": "2026-11-25",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.23
+      },
+      "postEntryPoints": 5,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:1:pip:301",
+      "opened": "2026-11-10",
+      "name": "Tainted Wood",
+      "setCode": "pip",
+      "collectorNumber": "301",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.17
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0.86,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:2:drc:65",
+      "opened": "2026-11-10",
+      "name": "Dusk // Dawn",
+      "setCode": "drc",
+      "collectorNumber": "65",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.66
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 8.2,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:3:who:290",
+      "opened": "2026-11-10",
+      "name": "Myriad Landscape",
+      "setCode": "who",
+      "collectorNumber": "290",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.65
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:4:drc:158",
+      "opened": "2026-11-10",
+      "name": "Frostboil Snarl",
+      "setCode": "drc",
+      "collectorNumber": "158",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -49.21,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:5:fic:291",
+      "opened": "2026-11-10",
+      "name": "Chaos Warp",
+      "setCode": "fic",
+      "collectorNumber": "291",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -35.38,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:6:drc:173",
+      "opened": "2026-11-10",
+      "name": "Sulfur Falls",
+      "setCode": "drc",
+      "collectorNumber": "173",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.31
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -54.41,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:7:ltc:61",
+      "opened": "2026-11-10",
+      "name": "Merry, Warden of Isengard",
+      "setCode": "ltc",
+      "collectorNumber": "61",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:8:ncc:241",
+      "opened": "2026-11-10",
+      "name": "Aether Snap",
+      "setCode": "ncc",
+      "collectorNumber": "241",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.81
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 1.25,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:9:soc:369",
+      "opened": "2026-11-10",
+      "name": "Exotic Orchard",
+      "setCode": "soc",
+      "collectorNumber": "369",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -38.24,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:10:drc:39",
+      "opened": "2026-11-10",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -36.07,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:11:c13:261",
+      "opened": "2026-11-10",
+      "name": "Sun Droplet",
+      "setCode": "c13",
+      "collectorNumber": "261",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.7
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -1.41,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:12:ltc:264",
+      "opened": "2026-11-10",
+      "name": "Woodfall Primus",
+      "setCode": "ltc",
+      "collectorNumber": "264",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -1.54,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:13:dsc:179",
+      "opened": "2026-11-10",
+      "name": "Giant Adephage",
+      "setCode": "dsc",
+      "collectorNumber": "179",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.86
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 8.86,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:14:tdc:309",
+      "opened": "2026-11-10",
+      "name": "Velomachus Lorehold",
+      "setCode": "tdc",
+      "collectorNumber": "309",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -10.81,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:15:m3c:316",
+      "opened": "2026-11-10",
+      "name": "Adarkar Wastes",
+      "setCode": "m3c",
+      "collectorNumber": "316",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -2.27,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:16:cmd:214",
+      "opened": "2026-11-10",
+      "name": "Nucklavee",
+      "setCode": "cmd",
+      "collectorNumber": "214",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:17:c15:123",
+      "opened": "2026-11-10",
+      "name": "Eater of Hope",
+      "setCode": "c15",
+      "collectorNumber": "123",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:18:c19:19",
+      "opened": "2026-11-10",
+      "name": "Mire in Misery",
+      "setCode": "c19",
+      "collectorNumber": "19",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.92
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 61.4,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:19:moc:273",
+      "opened": "2026-11-10",
+      "name": "Chaos Warp",
+      "setCode": "moc",
+      "collectorNumber": "273",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 3.08,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:20:cma:96",
+      "opened": "2026-11-10",
+      "name": "Cloudthresher",
+      "setCode": "cma",
+      "collectorNumber": "96",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:21:c15:108",
+      "opened": "2026-11-10",
+      "name": "Stroke of Genius",
+      "setCode": "c15",
+      "collectorNumber": "108",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.46
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:22:fic:92",
+      "opened": "2026-11-10",
+      "name": "Sephiroth, Fallen Hero",
+      "setCode": "fic",
+      "collectorNumber": "92",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -27.27,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:23:msc:106",
+      "opened": "2026-11-10",
+      "name": "H.E.R.B.I.E., Lovable Robot",
+      "setCode": "msc",
+      "collectorNumber": "106",
+      "expectedDirection": "UP",
+      "range": [
+        6,
+        18
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -22,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:24:fic:417",
+      "opened": "2026-11-10",
+      "name": "Rugged Prairie",
+      "setCode": "fic",
+      "collectorNumber": "417",
+      "expectedDirection": "DOWN",
+      "range": [
+        -18,
+        -6
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.31
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": 19.23,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-10-bulk-collection-triage:25:c19:87",
+      "opened": "2026-11-10",
+      "name": "Ixidron",
+      "setCode": "c19",
+      "collectorNumber": "87",
+      "expectedDirection": "DOWN",
+      "range": [
+        -18,
+        -6
+      ],
+      "evaluationDate": "2026-11-24",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.8
+      },
+      "postEntryPoints": 6,
+      "actualChangePct": -2.44,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:1:pip:312",
+      "opened": "2026-11-09",
+      "name": "Temple of Triumph",
+      "setCode": "pip",
+      "collectorNumber": "312",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.1
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": 4.76,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:2:pip:31",
+      "opened": "2026-11-09",
+      "name": "James, Wandering Dad // Follow Him",
+      "setCode": "pip",
+      "collectorNumber": "31",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.07
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": -0.93,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:3:pip:254",
+      "opened": "2026-11-09",
+      "name": "Buried Ruin",
+      "setCode": "pip",
+      "collectorNumber": "254",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": -68.07,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:4:pip:307",
+      "opened": "2026-11-09",
+      "name": "Temple of Malice",
+      "setCode": "pip",
+      "collectorNumber": "307",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.16
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": 4.5,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:5:pip:161",
+      "opened": "2026-11-09",
+      "name": "Hour of Reckoning",
+      "setCode": "pip",
+      "collectorNumber": "161",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.4
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": -64.6,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:6:pip:243",
+      "opened": "2026-11-09",
+      "name": "Talisman of Conviction",
+      "setCode": "pip",
+      "collectorNumber": "243",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": -64.66,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:7:pip:172",
+      "opened": "2026-11-09",
+      "name": "Single Combat",
+      "setCode": "pip",
+      "collectorNumber": "172",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.37
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": 11.38,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-09-precon-sealed-economics:8:m3c:357",
+      "opened": "2026-11-09",
+      "name": "Mossfire Valley",
+      "setCode": "m3c",
+      "collectorNumber": "357",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-23",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 7,
+      "actualChangePct": -1.54,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:1:soc:219",
+      "opened": "2026-11-08",
+      "name": "Morbid Opportunist",
+      "setCode": "soc",
+      "collectorNumber": "219",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.36
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": -40,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:2:pip:224",
+      "opened": "2026-11-08",
+      "name": "Arcane Signet",
+      "setCode": "pip",
+      "collectorNumber": "224",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.74
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": -46.38,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:3:dsc:196",
+      "opened": "2026-11-08",
+      "name": "Scavenging Ooze",
+      "setCode": "dsc",
+      "collectorNumber": "196",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.61
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": -1.61,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:4:m3c:316",
+      "opened": "2026-11-08",
+      "name": "Adarkar Wastes",
+      "setCode": "m3c",
+      "collectorNumber": "316",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": -41.89,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:5:cma:63",
+      "opened": "2026-11-08",
+      "name": "Razorjaw Oni",
+      "setCode": "cma",
+      "collectorNumber": "63",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.13
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:6:c15:330",
+      "opened": "2026-11-08",
+      "name": "Island",
+      "setCode": "c15",
+      "collectorNumber": "330",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.18
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": 80,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:7:tdc:107",
+      "opened": "2026-11-08",
+      "name": "Command Tower",
+      "setCode": "tdc",
+      "collectorNumber": "107",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": 30,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-08-spoiler-supply-watch:8:cmm:157",
+      "opened": "2026-11-08",
+      "name": "Extinguish All Hope",
+      "setCode": "cmm",
+      "collectorNumber": "157",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-22",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 8,
+      "actualChangePct": 17.86,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:1:soc:231",
+      "opened": "2026-11-06",
+      "name": "Woe Strider",
+      "setCode": "soc",
+      "collectorNumber": "231",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": -40,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:2:dsc:226",
+      "opened": "2026-11-06",
+      "name": "Nyx Weaver",
+      "setCode": "dsc",
+      "collectorNumber": "226",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": 6.78,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:3:tdc:186",
+      "opened": "2026-11-06",
+      "name": "Lord of the Forsaken",
+      "setCode": "tdc",
+      "collectorNumber": "186",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.62
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": -1.59,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:4:fic:403",
+      "opened": "2026-11-06",
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "collectorNumber": "403",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": -44.44,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:5:dsc:20",
+      "opened": "2026-11-06",
+      "name": "Into the Pit",
+      "setCode": "dsc",
+      "collectorNumber": "20",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.62
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": 5.08,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:6:dsc:272",
+      "opened": "2026-11-06",
+      "name": "Drownyard Temple",
+      "setCode": "dsc",
+      "collectorNumber": "272",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": -4.55,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:7:cma:104",
+      "opened": "2026-11-06",
+      "name": "Elvish Skysweeper",
+      "setCode": "cma",
+      "collectorNumber": "104",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.6
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-06-penny-watch:8:tdc:189",
+      "opened": "2026-11-06",
+      "name": "Necromantic Selection",
+      "setCode": "tdc",
+      "collectorNumber": "189",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-20",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 10,
+      "actualChangePct": -4.29,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:1:soc:236",
+      "opened": "2026-11-05",
+      "name": "Atsushi, the Blazing Sky",
+      "setCode": "soc",
+      "collectorNumber": "236",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.71
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": 4.41,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:2:fic:255",
+      "opened": "2026-11-05",
+      "name": "Sunscorch Regent",
+      "setCode": "fic",
+      "collectorNumber": "255",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": -46.15,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:3:c21:216",
+      "opened": "2026-11-05",
+      "name": "Epic Experiment",
+      "setCode": "c21",
+      "collectorNumber": "216",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.68
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": -1.45,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:4:msc:189",
+      "opened": "2026-11-05",
+      "name": "Terminate",
+      "setCode": "msc",
+      "collectorNumber": "189",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": -43.28,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:5:tdc:408",
+      "opened": "2026-11-05",
+      "name": "Terramorphic Expanse",
+      "setCode": "tdc",
+      "collectorNumber": "408",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.36
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": 5.88,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:6:cm2:278",
+      "opened": "2026-11-05",
+      "name": "Wind-Scarred Crag",
+      "setCode": "cm2",
+      "collectorNumber": "278",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.12
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:7:moc:362",
+      "opened": "2026-11-05",
+      "name": "Izzet Signet",
+      "setCode": "moc",
+      "collectorNumber": "362",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.92
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-05-constructed-format-watch:8:soc:147",
+      "opened": "2026-11-05",
+      "name": "Gift of Immortality",
+      "setCode": "soc",
+      "collectorNumber": "147",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-19",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 11,
+      "actualChangePct": 5.13,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:1:c15:165",
+      "opened": "2026-11-04",
+      "name": "Stoneshock Giant",
+      "setCode": "c15",
+      "collectorNumber": "165",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.01
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:2:tdc:248",
+      "opened": "2026-11-04",
+      "name": "Axebane Guardian",
+      "setCode": "tdc",
+      "collectorNumber": "248",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -46.88,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:3:soc:262",
+      "opened": "2026-11-04",
+      "name": "Awakening Zone",
+      "setCode": "soc",
+      "collectorNumber": "262",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -40.54,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:4:tdc:360",
+      "opened": "2026-11-04",
+      "name": "Exotic Orchard",
+      "setCode": "tdc",
+      "collectorNumber": "360",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.27
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -30.77,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:5:c19:223",
+      "opened": "2026-11-04",
+      "name": "Soul Foundry",
+      "setCode": "c19",
+      "collectorNumber": "223",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.77
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -1.28,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:6:scd:293",
+      "opened": "2026-11-04",
+      "name": "Choked Estuary",
+      "setCode": "scd",
+      "collectorNumber": "293",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.31
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -3.13,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:7:fic:261",
+      "opened": "2026-11-04",
+      "name": "Archmage Emeritus",
+      "setCode": "fic",
+      "collectorNumber": "261",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.69
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": -53.38,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-04-commander-demand:8:c19:287",
+      "opened": "2026-11-04",
+      "name": "Yavimaya Coast",
+      "setCode": "c19",
+      "collectorNumber": "287",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-18",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 12,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:1:cm2:279",
+      "opened": "2026-11-03",
+      "name": "Plains",
+      "setCode": "cm2",
+      "collectorNumber": "279",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.49
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:2:blc:299",
+      "opened": "2026-11-03",
+      "name": "Cinder Glade",
+      "setCode": "blc",
+      "collectorNumber": "299",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": 5,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:3:drc:156",
+      "opened": "2026-11-03",
+      "name": "Fetid Pools",
+      "setCode": "drc",
+      "collectorNumber": "156",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": 4.92,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:4:msc:241",
+      "opened": "2026-11-03",
+      "name": "Exotic Orchard",
+      "setCode": "msc",
+      "collectorNumber": "241",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": -43.28,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:5:m3c:321",
+      "opened": "2026-11-03",
+      "name": "Battlefield Forge",
+      "setCode": "m3c",
+      "collectorNumber": "321",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.7
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": 9.37,
+      "actualDirection": "UP",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:6:tmc:69",
+      "opened": "2026-11-03",
+      "name": "Hinterland Harbor",
+      "setCode": "tmc",
+      "collectorNumber": "69",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.61
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": -1.61,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:7:who:86",
+      "opened": "2026-11-03",
+      "name": "The Flux",
+      "setCode": "who",
+      "collectorNumber": "86",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.4
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": -39.39,
+      "actualDirection": "DOWN",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-03-bulk-collection-triage:8:cma:206",
+      "opened": "2026-11-03",
+      "name": "Selesnya Guildmage",
+      "setCode": "cma",
+      "collectorNumber": "206",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-17",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.4
+      },
+      "postEntryPoints": 13,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": false,
+      "outcome": null
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:1:soc:232",
+      "opened": "2026-11-02",
+      "name": "Yahenni, Undying Partisan",
+      "setCode": "soc",
+      "collectorNumber": "232",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -41.54,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -41.54,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:3:tdc:120",
+      "opened": "2026-11-02",
+      "name": "Hour of Reckoning",
+      "setCode": "tdc",
+      "collectorNumber": "120",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -42.62,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -42.62,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:5:tdc:382",
+      "opened": "2026-11-02",
+      "name": "Path of Ancestry",
+      "setCode": "tdc",
+      "collectorNumber": "382",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.24
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -36.84,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -36.84,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:6:lcc:346",
+      "opened": "2026-11-02",
+      "name": "Path of Ancestry",
+      "setCode": "lcc",
+      "collectorNumber": "346",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.23
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": 53.33,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": 53.33,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:7:ncc:435",
+      "opened": "2026-11-02",
+      "name": "Temple of Silence",
+      "setCode": "ncc",
+      "collectorNumber": "435",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": 4,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": 4,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:1:drc:39",
+      "opened": "2026-11-02",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -35,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -35,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:2:msc:272",
+      "opened": "2026-11-02",
+      "name": "Sunpetal Grove",
+      "setCode": "msc",
+      "collectorNumber": "272",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -43.08,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -43.08,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:3:drc:164",
+      "opened": "2026-11-02",
+      "name": "Orzhov Basilica",
+      "setCode": "drc",
+      "collectorNumber": "164",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.3
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": 3.45,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": 3.45,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:4:msc:134",
+      "opened": "2026-11-02",
+      "name": "Gift of Immortality",
+      "setCode": "msc",
+      "collectorNumber": "134",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.4
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -23.08,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -23.08,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:5:blc:322",
+      "opened": "2026-11-02",
+      "name": "Path of Ancestry",
+      "setCode": "blc",
+      "collectorNumber": "322",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": 11.76,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": 11.76,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:6:tdc:201",
+      "opened": "2026-11-02",
+      "name": "Woe Strider",
+      "setCode": "tdc",
+      "collectorNumber": "201",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": 6.25,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": 6.25,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:7:tdc:99",
+      "opened": "2026-11-02",
+      "name": "Goblin Electromancer",
+      "setCode": "tdc",
+      "collectorNumber": "99",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -14.71,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -14.71,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-11-02-precon-sealed-economics:8:soc:160",
+      "opened": "2026-11-02",
+      "name": "Pearl-Ear, Imperial Advisor",
+      "setCode": "soc",
+      "collectorNumber": "160",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-16",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 14,
+      "actualChangePct": -7.89,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-16",
+        "actualChangePct": -7.89,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:1:c19:273",
+      "opened": "2026-10-31",
+      "name": "Shrine of the Forsaken Gods",
+      "setCode": "c19",
+      "collectorNumber": "273",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.68
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": 4.62,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 4.62,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:2:m3c:289",
+      "opened": "2026-10-31",
+      "name": "Dreamstone Hedron",
+      "setCode": "m3c",
+      "collectorNumber": "289",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.69
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": 6.15,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 7.69,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:3:msc:227",
+      "opened": "2026-10-31",
+      "name": "Canopy Vista",
+      "setCode": "msc",
+      "collectorNumber": "227",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": -47.69,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -43.08,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:4:soc:214",
+      "opened": "2026-10-31",
+      "name": "Ghoulish Impetus",
+      "setCode": "soc",
+      "collectorNumber": "214",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.5
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": -40.48,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -39.29,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:5:msc:169",
+      "opened": "2026-10-31",
+      "name": "Beast Within",
+      "setCode": "msc",
+      "collectorNumber": "169",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": -24.24,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -5.3,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:6:scd:194",
+      "opened": "2026-10-31",
+      "name": "Jaspera Sentinel",
+      "setCode": "scd",
+      "collectorNumber": "194",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": 3.57,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 3.57,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:7:fic:302",
+      "opened": "2026-10-31",
+      "name": "Farseek",
+      "setCode": "fic",
+      "collectorNumber": "302",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.61
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": -32.22,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": -32.22,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-31-collection-buy-list:8:drc:82",
+      "opened": "2026-10-31",
+      "name": "Sai, Master Thopterist",
+      "setCode": "drc",
+      "collectorNumber": "82",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-14",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 16,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-14",
+        "actualChangePct": 9.09,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:1:soc:205",
+      "opened": "2026-10-30",
+      "name": "Treasure Cruise",
+      "setCode": "soc",
+      "collectorNumber": "205",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -35.29,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -39.22,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:2:cm2:285",
+      "opened": "2026-10-30",
+      "name": "Plains",
+      "setCode": "cm2",
+      "collectorNumber": "285",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.05
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -89.8,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:3:c15:117",
+      "opened": "2026-10-30",
+      "name": "Blood Bairn",
+      "setCode": "c15",
+      "collectorNumber": "117",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.19
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:4:soc:208",
+      "opened": "2026-10-30",
+      "name": "Blight Mound",
+      "setCode": "soc",
+      "collectorNumber": "208",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -34.85,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -39.39,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:5:soc:147",
+      "opened": "2026-10-30",
+      "name": "Gift of Immortality",
+      "setCode": "soc",
+      "collectorNumber": "147",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -40.58,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -40.58,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:6:pip:294",
+      "opened": "2026-10-30",
+      "name": "Sulfur Falls",
+      "setCode": "pip",
+      "collectorNumber": "294",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -52.17,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -52.17,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:7:soc:250",
+      "opened": "2026-10-30",
+      "name": "Plargg and Nassari",
+      "setCode": "soc",
+      "collectorNumber": "250",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -28.3,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -41.51,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:8:moc:386",
+      "opened": "2026-10-30",
+      "name": "Thopter Assembly",
+      "setCode": "moc",
+      "collectorNumber": "386",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -41.89,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -40.54,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:9:msc:115",
+      "opened": "2026-10-30",
+      "name": "Tri-Sentinel, Act of Vengeance",
+      "setCode": "msc",
+      "collectorNumber": "115",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.51
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -38.55,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -45.78,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-30-top-10:10:blc:10",
+      "opened": "2026-10-30",
+      "name": "Murmuration",
+      "setCode": "blc",
+      "collectorNumber": "10",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-13",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.36
+      },
+      "postEntryPoints": 17,
+      "actualChangePct": -41.94,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-13",
+        "actualChangePct": -40.32,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:1:c14:330",
+      "opened": "2026-10-29",
+      "name": "Mountain",
+      "setCode": "c14",
+      "collectorNumber": "330",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.23
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:2:c18:66",
+      "opened": "2026-10-29",
+      "name": "Dismantling Blow",
+      "setCode": "c18",
+      "collectorNumber": "66",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.12
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": 20,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": 20,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:3:blc:131",
+      "opened": "2026-10-29",
+      "name": "Exotic Orchard",
+      "setCode": "blc",
+      "collectorNumber": "131",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": -34.33,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": -49.25,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:4:scd:216",
+      "opened": "2026-10-29",
+      "name": "Absorb",
+      "setCode": "scd",
+      "collectorNumber": "216",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.71
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": 5.97,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": 2.99,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:5:pip:259",
+      "opened": "2026-10-29",
+      "name": "Command Tower",
+      "setCode": "pip",
+      "collectorNumber": "259",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": -50,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": -42.42,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:6:msc:221",
+      "opened": "2026-10-29",
+      "name": "Talisman of Progress",
+      "setCode": "msc",
+      "collectorNumber": "221",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": -36.23,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": -44.93,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:7:blc:175",
+      "opened": "2026-10-29",
+      "name": "Sphinx of Enlightenment",
+      "setCode": "blc",
+      "collectorNumber": "175",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": -52.24,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": -50.75,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-29-constructed-format-watch:8:c19:287",
+      "opened": "2026-10-29",
+      "name": "Yavimaya Coast",
+      "setCode": "c19",
+      "collectorNumber": "287",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-12",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 18,
+      "actualChangePct": -44.29,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-12",
+        "actualChangePct": -44.29,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:1:soc:129",
+      "opened": "2026-10-28",
+      "name": "Command Tower",
+      "setCode": "soc",
+      "collectorNumber": "129",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -38.33,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -43.33,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:2:blc:298",
+      "opened": "2026-10-28",
+      "name": "Castle Ardenvale",
+      "setCode": "blc",
+      "collectorNumber": "298",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -46.03,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -47.62,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:3:drc:112",
+      "opened": "2026-10-28",
+      "name": "Explosive Vegetation",
+      "setCode": "drc",
+      "collectorNumber": "112",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -42.19,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -56.25,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:4:tdc:309",
+      "opened": "2026-10-28",
+      "name": "Velomachus Lorehold",
+      "setCode": "tdc",
+      "collectorNumber": "309",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -46.77,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -40.32,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:5:soc:276",
+      "opened": "2026-10-28",
+      "name": "Mycoloth",
+      "setCode": "soc",
+      "collectorNumber": "276",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.44
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -34.33,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -38.81,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:6:drc:82",
+      "opened": "2026-10-28",
+      "name": "Sai, Master Thopterist",
+      "setCode": "drc",
+      "collectorNumber": "82",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -50.75,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -55.22,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:7:blc:216",
+      "opened": "2026-10-28",
+      "name": "Explore",
+      "setCode": "blc",
+      "collectorNumber": "216",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -40.91,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-28-commander-demand:8:ltc:296",
+      "opened": "2026-10-28",
+      "name": "Battlefield Forge",
+      "setCode": "ltc",
+      "collectorNumber": "296",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-11",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.42
+      },
+      "postEntryPoints": 19,
+      "actualChangePct": -37.31,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-11",
+        "actualChangePct": -37.31,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:1:lcc:236",
+      "opened": "2026-10-27",
+      "name": "Deathgorge Scavenger",
+      "setCode": "lcc",
+      "collectorNumber": "236",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": 10.53,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": 7.02,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:2:drc:168",
+      "opened": "2026-10-27",
+      "name": "Rootbound Crag",
+      "setCode": "drc",
+      "collectorNumber": "168",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": -44.26,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": -44.26,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:3:c15:321",
+      "opened": "2026-10-27",
+      "name": "Wind-Scarred Crag",
+      "setCode": "c15",
+      "collectorNumber": "321",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.27
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:4:tmc:67",
+      "opened": "2026-10-27",
+      "name": "Fabled Passage",
+      "setCode": "tmc",
+      "collectorNumber": "67",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.21
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": -31.25,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": -26.14,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:5:msc:21",
+      "opened": "2026-10-27",
+      "name": "Methods of the Mighty",
+      "setCode": "msc",
+      "collectorNumber": "21",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": 20.83,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": 12.5,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:6:afc:125",
+      "opened": "2026-10-27",
+      "name": "Dream Pillager",
+      "setCode": "afc",
+      "collectorNumber": "125",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.34
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": 2.94,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:7:dsc:35",
+      "opened": "2026-10-27",
+      "name": "Shriekwood Devourer",
+      "setCode": "dsc",
+      "collectorNumber": "35",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.4
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": -13.04,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-27-bulk-collection-triage:8:pip:215",
+      "opened": "2026-10-27",
+      "name": "Fervent Charge",
+      "setCode": "pip",
+      "collectorNumber": "215",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-10",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.45
+      },
+      "postEntryPoints": 20,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-10",
+        "actualChangePct": -15.56,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:1:blc:338",
+      "opened": "2026-10-26",
+      "name": "Temple of Abandon",
+      "setCode": "blc",
+      "collectorNumber": "338",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.28
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -49.09,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": 7.27,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:2:blc:322",
+      "opened": "2026-10-26",
+      "name": "Path of Ancestry",
+      "setCode": "blc",
+      "collectorNumber": "322",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -35.59,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -44.07,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:3:fic:403",
+      "opened": "2026-10-26",
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "collectorNumber": "403",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -50,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -51.43,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:4:fic:27",
+      "opened": "2026-10-26",
+      "name": "Summon: Ixion",
+      "setCode": "fic",
+      "collectorNumber": "27",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -50.77,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -49.23,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:5:blc:310",
+      "opened": "2026-10-26",
+      "name": "Gruul Turf",
+      "setCode": "blc",
+      "collectorNumber": "310",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.31
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -50,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -43.55,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:6:drc:139",
+      "opened": "2026-10-26",
+      "name": "Soul-Guide Lantern",
+      "setCode": "drc",
+      "collectorNumber": "139",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.33
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -45.9,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -52.46,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:7:lcc:346",
+      "opened": "2026-10-26",
+      "name": "Path of Ancestry",
+      "setCode": "lcc",
+      "collectorNumber": "346",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.23
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -55.77,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -46.15,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-26-precon-sealed-economics:8:pip:230",
+      "opened": "2026-10-26",
+      "name": "Everflowing Chalice",
+      "setCode": "pip",
+      "collectorNumber": "230",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-09",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 21,
+      "actualChangePct": -44.12,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-09",
+        "actualChangePct": -42.65,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:1:cm2:291",
+      "opened": "2026-10-25",
+      "name": "Island",
+      "setCode": "cm2",
+      "collectorNumber": "291",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.1
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -79.59,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:2:scd:266",
+      "opened": "2026-10-25",
+      "name": "Hedron Archive",
+      "setCode": "scd",
+      "collectorNumber": "266",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.58
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": 3.57,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": 3.57,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:3:scd:288",
+      "opened": "2026-10-25",
+      "name": "Worn Powerstone",
+      "setCode": "scd",
+      "collectorNumber": "288",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.64
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": 8.47,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": 3.39,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:4:soc:160",
+      "opened": "2026-10-25",
+      "name": "Pearl-Ear, Imperial Advisor",
+      "setCode": "soc",
+      "collectorNumber": "160",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -39.66,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": -48.28,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:5:cmd:306",
+      "opened": "2026-10-25",
+      "name": "Island",
+      "setCode": "cmd",
+      "collectorNumber": "306",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.2
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -59.18,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": -59.18,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:6:dsc:37",
+      "opened": "2026-10-25",
+      "name": "Convert to Slime",
+      "setCode": "dsc",
+      "collectorNumber": "37",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -37.7,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": 9.84,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:7:soc:352",
+      "opened": "2026-10-25",
+      "name": "Mind Stone",
+      "setCode": "soc",
+      "collectorNumber": "352",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.36
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -41.94,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": -45.16,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-25-spoiler-supply-watch:8:tdc:166",
+      "opened": "2026-10-25",
+      "name": "River Kelpie",
+      "setCode": "tdc",
+      "collectorNumber": "166",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-08",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.63
+      },
+      "postEntryPoints": 22,
+      "actualChangePct": -7.35,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-08",
+        "actualChangePct": -2.94,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:1:sos:265",
+      "opened": "2026-10-24",
+      "name": "Terramorphic Expanse",
+      "setCode": "sos",
+      "collectorNumber": "265",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": 23.08,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -11.54,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:2:m3c:251",
+      "opened": "2026-10-24",
+      "name": "Vile Redeemer",
+      "setCode": "m3c",
+      "collectorNumber": "251",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": -44.83,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -1.72,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:3:c13:156",
+      "opened": "2026-10-24",
+      "name": "Mold Shambler",
+      "setCode": "c13",
+      "collectorNumber": "156",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": 30,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 30,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:4:m3c:182",
+      "opened": "2026-10-24",
+      "name": "Drowner of Hope",
+      "setCode": "m3c",
+      "collectorNumber": "182",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.68
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": 9.68,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 4.84,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:5:soc:155",
+      "opened": "2026-10-24",
+      "name": "Mangara, the Diplomat",
+      "setCode": "soc",
+      "collectorNumber": "155",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": -42.65,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": -44.12,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:6:m3c:180",
+      "opened": "2026-10-24",
+      "name": "Deepfathom Skulker",
+      "setCode": "m3c",
+      "collectorNumber": "180",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.66
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": 6.45,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 3.23,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:7:m3c:51",
+      "opened": "2026-10-24",
+      "name": "Bismuth Mindrender",
+      "setCode": "m3c",
+      "collectorNumber": "51",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.41
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": -38.81,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 5.97,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-24-collection-buy-list:8:otc:188",
+      "opened": "2026-10-24",
+      "name": "Cazur, Ruthless Stalker",
+      "setCode": "otc",
+      "collectorNumber": "188",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-07",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.71
+      },
+      "postEntryPoints": 23,
+      "actualChangePct": 1.43,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-07",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:1:msc:263",
+      "opened": "2026-10-23",
+      "name": "Scavenger Grounds",
+      "setCode": "msc",
+      "collectorNumber": "263",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": -55.17,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": -44.83,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:2:msc:146",
+      "opened": "2026-10-23",
+      "name": "Vanquish the Horde",
+      "setCode": "msc",
+      "collectorNumber": "146",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.25
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": -55.36,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": -51.79,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:3:fic:403",
+      "opened": "2026-10-23",
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "collectorNumber": "403",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": -38.6,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 10.53,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:4:c19:76",
+      "opened": "2026-10-23",
+      "name": "Sun Titan",
+      "setCode": "c19",
+      "collectorNumber": "76",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.65
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": 1.56,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 1.56,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:5:dsc:150",
+      "opened": "2026-10-23",
+      "name": "Nightshade Harvester",
+      "setCode": "dsc",
+      "collectorNumber": "150",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.43
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": -36.76,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 4.41,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:6:m3c:376",
+      "opened": "2026-10-23",
+      "name": "Shrine of the Forsaken Gods",
+      "setCode": "m3c",
+      "collectorNumber": "376",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.71
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": 5.97,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 2.99,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:7:m3c:397",
+      "opened": "2026-10-23",
+      "name": "Tomb of the Spirit Dragon",
+      "setCode": "m3c",
+      "collectorNumber": "397",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.47
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": -33.8,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 1.41,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-23-penny-watch:8:c15:335",
+      "opened": "2026-10-23",
+      "name": "Mountain",
+      "setCode": "c15",
+      "collectorNumber": "335",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-06",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.2
+      },
+      "postEntryPoints": 24,
+      "actualChangePct": 33.33,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-06",
+        "actualChangePct": 33.33,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:1:tdc:407",
+      "opened": "2026-10-22",
+      "name": "Temple of Triumph",
+      "setCode": "tdc",
+      "collectorNumber": "407",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.32
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -34.69,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": 12.24,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:2:soc:408",
+      "opened": "2026-10-22",
+      "name": "Sulfur Falls",
+      "setCode": "soc",
+      "collectorNumber": "408",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.26
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -56.67,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -53.33,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:3:eoc:88",
+      "opened": "2026-10-22",
+      "name": "Hammer of Purphoros",
+      "setCode": "eoc",
+      "collectorNumber": "88",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -43.55,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -46.77,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:4:drc:39",
+      "opened": "2026-10-22",
+      "name": "Reality Shift",
+      "setCode": "drc",
+      "collectorNumber": "39",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.39
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -36.07,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -40.98,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:5:tdc:99",
+      "opened": "2026-10-22",
+      "name": "Goblin Electromancer",
+      "setCode": "tdc",
+      "collectorNumber": "99",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.29
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -50,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -41.38,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:6:blc:37",
+      "opened": "2026-10-22",
+      "name": "Octomancer",
+      "setCode": "blc",
+      "collectorNumber": "37",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.37
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -39.34,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -34.43,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:7:pip:190",
+      "opened": "2026-10-22",
+      "name": "Loyal Apprentice",
+      "setCode": "pip",
+      "collectorNumber": "190",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.35
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": -41.67,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": -48.33,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-22-constructed-format-watch:8:c19:145",
+      "opened": "2026-10-22",
+      "name": "Guttersnipe",
+      "setCode": "c19",
+      "collectorNumber": "145",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-05",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.67
+      },
+      "postEntryPoints": 25,
+      "actualChangePct": 8.06,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-05",
+        "actualChangePct": 4.84,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:1:znr:382",
+      "opened": "2026-10-21",
+      "name": "Swamp",
+      "setCode": "znr",
+      "collectorNumber": "382",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.08
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 44,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": 45.33,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:2:scd:150",
+      "opened": "2026-10-21",
+      "name": "Magmatic Force",
+      "setCode": "scd",
+      "collectorNumber": "150",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.21
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": -65,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": -66.67,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:3:otc:317",
+      "opened": "2026-10-21",
+      "name": "Shadowblood Ridge",
+      "setCode": "otc",
+      "collectorNumber": "317",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.73
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 5.8,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": 4.35,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:4:pip:182",
+      "opened": "2026-10-21",
+      "name": "Bastion of Remembrance",
+      "setCode": "pip",
+      "collectorNumber": "182",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.38
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": -45.71,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": -41.43,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:5:c13:354",
+      "opened": "2026-10-21",
+      "name": "Forest",
+      "setCode": "c13",
+      "collectorNumber": "354",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.22
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 0,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:6:c15:325",
+      "opened": "2026-10-21",
+      "name": "Plains",
+      "setCode": "c15",
+      "collectorNumber": "325",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.13
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 160,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": 160,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:7:msc:188",
+      "opened": "2026-10-21",
+      "name": "Taunt from the Rampart",
+      "setCode": "msc",
+      "collectorNumber": "188",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.73
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 8.12,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": 14.37,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-21-commander-demand:8:scd:32",
+      "opened": "2026-10-21",
+      "name": "Rootborn Defenses",
+      "setCode": "scd",
+      "collectorNumber": "32",
+      "expectedDirection": "DOWN",
+      "range": [
+        -24,
+        -8
+      ],
+      "evaluationDate": "2026-11-04",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 0.3
+      },
+      "postEntryPoints": 26,
+      "actualChangePct": 11.11,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-04",
+        "actualChangePct": -3.7,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:1:cmd:269",
+      "opened": "2026-10-20",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "expectedDirection": "DOWN",
+      "range": [
+        -14,
+        -4
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.02
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": 18.6,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 15.12,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:2:pip:147",
+      "opened": "2026-10-20",
+      "name": "Diamond City",
+      "setCode": "pip",
+      "collectorNumber": "147",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.92
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": -36,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -31,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:3:ncc:287",
+      "opened": "2026-10-20",
+      "name": "Evolution Sage",
+      "setCode": "ncc",
+      "collectorNumber": "287",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 3.21
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": 7,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 5.67,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:4:c21:19",
+      "opened": "2026-10-20",
+      "name": "Monologue Tax",
+      "setCode": "c21",
+      "collectorNumber": "19",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.66
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": -11.33,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -8,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:5:fic:281",
+      "opened": "2026-10-20",
+      "name": "Pitiless Plunderer",
+      "setCode": "fic",
+      "collectorNumber": "281",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 3.2
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": 6.67,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 7,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:6:c17:50",
+      "opened": "2026-10-20",
+      "name": "Bloodforged Battle-Axe",
+      "setCode": "c17",
+      "collectorNumber": "50",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.96
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": -1,
+      "actualDirection": "FLAT",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 4.68,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:7:cmm:900",
+      "opened": "2026-10-20",
+      "name": "Manaweft Sliver",
+      "setCode": "cmm",
+      "collectorNumber": "900",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.88
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": -3.68,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": 16.05,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-20-bulk-collection-triage:8:c15:48",
+      "opened": "2026-10-20",
+      "name": "Mazirek, Kraul Death Priest",
+      "setCode": "c15",
+      "collectorNumber": "48",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-11-03",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 2.92
+      },
+      "postEntryPoints": 27,
+      "actualChangePct": -2.34,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-11-03",
+        "actualChangePct": -0.67,
+        "actualDirection": "FLAT"
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:1:snc:Tivit, Seller of Secrets",
+      "opened": "2026-10-16",
+      "name": "Tivit, Seller of Secrets",
+      "setCode": "ncc",
+      "collectorNumber": "10",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 11.63
+      },
+      "postEntryPoints": 28,
+      "actualChangePct": -22.47,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -22.07,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:2:eoe:Ripples of Potential",
+      "opened": "2026-10-16",
+      "name": "Ripples of Potential",
+      "setCode": "eoc",
+      "collectorNumber": "77",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 5.52
+      },
+      "postEntryPoints": 28,
+      "actualChangePct": -8,
+      "actualDirection": "DOWN",
+      "matured": true,
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -11,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:4:unverified:The Theorist, Jace Beleren",
+      "opened": "2026-10-16",
+      "name": "The Theorist, Jace Beleren",
+      "setCode": "fra",
+      "collectorNumber": "43",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:5:m15:25",
+      "opened": "2026-10-16",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "collectorNumber": "25",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:6:mh2:267",
+      "opened": "2026-10-16",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:7:ppdsk:202p",
+      "opened": "2026-10-16",
+      "name": "Tyvar, the Pummeler",
+      "setCode": "ppdsk",
+      "collectorNumber": "202p",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:8:cmd:269",
+      "opened": "2026-10-16",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -3,
+        3
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.02
+      },
+      "postEntryPoints": 28,
+      "actualChangePct": 2,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-10-30",
+        "actualChangePct": -13,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:9:eld:161",
+      "opened": "2026-10-16",
+      "name": "The Great Henge",
+      "setCode": "eld",
+      "collectorNumber": "161",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:10:all:28",
+      "opened": "2026-10-16",
+      "name": "Force of Will",
+      "setCode": "all",
+      "collectorNumber": "28",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -2,
+        2
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-16-top-10:1:acr:Abstergo Entertainment",
+      "opened": "2026-10-16",
+      "name": "Abstergo Entertainment",
+      "setCode": "acr",
+      "collectorNumber": "79",
+      "expectedDirection": "UP",
+      "range": [
+        8,
+        24
+      ],
+      "evaluationDate": "2026-10-30",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-30",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:1:m15:25",
+      "opened": "2026-10-13",
+      "name": "Preeminent Captain",
+      "setCode": "m15",
+      "collectorNumber": "25",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-27",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:2:mh2:267",
+      "opened": "2026-10-13",
+      "name": "Counterspell",
+      "setCode": "mh2",
+      "collectorNumber": "267",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-27",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:3:cmd:269",
+      "opened": "2026-10-13",
+      "name": "Command Tower",
+      "setCode": "cmd",
+      "collectorNumber": "269",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 1.02
+      },
+      "postEntryPoints": 30,
+      "actualChangePct": 2,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-10-27",
+        "actualChangePct": -13,
+        "actualDirection": "DOWN"
+      }
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:4:plst:BLC-277",
+      "opened": "2026-10-13",
+      "name": "Idol of Oblivion",
+      "setCode": "plst",
+      "collectorNumber": "BLC-277",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": {
+        "date": "2026-11-16",
+        "usd": 3.04
+      },
+      "postEntryPoints": 30,
+      "actualChangePct": 16.92,
+      "actualDirection": "UP",
+      "matured": true,
+      "outcome": {
+        "status": "OBSERVED",
+        "correct": false,
+        "evaluatedAt": "2026-10-27",
+        "actualChangePct": 14.23,
+        "actualDirection": "UP"
+      }
+    },
+    {
+      "id": "2026-10-13-bulk-collection-triage:5:plst:E01-54",
+      "opened": "2026-10-13",
+      "name": "Lightning Bolt",
+      "setCode": "plst",
+      "collectorNumber": "E01-54",
+      "expectedDirection": "FLAT_OR_UNCERTAIN",
+      "range": [
+        -5,
+        5
+      ],
+      "evaluationDate": "2026-10-27",
+      "latestPostEntry": null,
+      "postEntryPoints": 0,
+      "actualChangePct": null,
+      "actualDirection": null,
+      "matured": false,
+      "outcome": {
+        "status": "UNRESOLVED",
+        "evaluatedAt": "2026-10-27",
+        "reason": "No exact-printing price in the current snapshot."
+      }
+    }
+  ]
+}
