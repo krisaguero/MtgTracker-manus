@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-23",
+  "asOf": "2026-11-16",
   "status": "catalog-seeded-awaiting-retailer-observations",
   "methodology": "Product-level preorder records are kept separate from individual card printings. Prices remain null until a source observation is captured; no zeroes or inferred quotes are used.",
   "products": [
@@ -32,15 +32,14 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 75,
-      "riskBand": "high",
-      "releaseWindowDays": 21,
+      "riskScore": 65,
+      "riskBand": "elevated",
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
         "franchise-launch",
         "preorder-thin-liquidity",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     },
@@ -72,15 +71,14 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 75,
-      "riskBand": "high",
-      "releaseWindowDays": 21,
+      "riskScore": 65,
+      "riskBand": "elevated",
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
         "franchise-launch",
         "preorder-thin-liquidity",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     },
@@ -112,15 +110,14 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 75,
-      "riskBand": "high",
-      "releaseWindowDays": 21,
+      "riskScore": 65,
+      "riskBand": "elevated",
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
         "franchise-launch",
         "preorder-thin-liquidity",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     },
@@ -152,15 +149,14 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 75,
-      "riskBand": "high",
-      "releaseWindowDays": 21,
+      "riskScore": 65,
+      "riskBand": "elevated",
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
         "franchise-launch",
         "preorder-thin-liquidity",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     },
@@ -192,15 +188,14 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 75,
-      "riskBand": "high",
-      "releaseWindowDays": 21,
+      "riskScore": 65,
+      "riskBand": "elevated",
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "regional-delay-risk",
         "collector-supply",
         "preorder-thin-liquidity",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     },
@@ -233,16 +228,15 @@
       },
       "lastObservedAt": null,
       "sourceCount": 0,
-      "riskScore": 85,
+      "riskScore": 75,
       "riskBand": "high",
-      "releaseWindowDays": 21,
+      "releaseWindowDays": -3,
       "marketplaceSpreadPct": null,
       "riskFactors": [
         "limited-supply",
         "event-driven",
         "reprint-pressure",
         "not-a-precon",
-        "release-within-30-days",
         "thin-price-coverage"
       ]
     }
