@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag, TrendingUp } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag, Shuffle, TrendingUp } from 'lucide-react';
 import { cardReference } from '@/lib/brawlDecks';
 import { battleBoxReferences } from '@/lib/battleBoxStrategy';
 import { MarketPostMarkdown } from './MarketPostMarkdown';
@@ -62,6 +62,12 @@ const features = {
     href: '/card/Spock%2C%20Always%20Your%20Friend',
     takeaways: ['Tune Invisible Woman for 1v1 and three-player tempo instead of adding Star Trek cards as a theme layer.', 'Use Anthropological Mission and Spock to turn cheap noncreature spells into selection and Walls.', 'Choose bluffing, historic scaling, or card-flow upgrades based on the pace of your local table.'],
     action: 'Open the Invisible Woman plan', target: '/precon-portfolio/plan/invisible-woman-focused',
+  },
+  'invisible-woman-sideboards-switch-personalities': {
+    label: 'Fantastic Four · sideboard field guide', icon: Shuffle, card: 'High Alert',
+    href: '/precon-portfolio/plan/invisible-woman-focused',
+    takeaways: ['Four pre-game packages let the same 100-card shell become Tempo, Control, Historic, or Wall Breaker.', 'Each package has a matchup, a swap rule, and collection-aware ownership counts.', 'Sideboards are pre-game swaps only; the final deck remains Commander-legal at 100 cards.'],
+    action: 'Open the package selector', target: '/precon-portfolio/plan/invisible-woman-focused',
   },
   'typa-restock-alerts-reality-fracture': {
     label: 'Restock desk · FOMO control', icon: MonitorPlay, card: 'TYPA restock alerts',
@@ -268,6 +274,20 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'The Vision', label: 'Historic bridge', reason: 'Turns each noncreature spell into draw, indestructibility, or double strike once per turn.' },
       { name: 'Captain Jean-Luc Picard', label: 'Second-draw scaling', reason: 'Rewards the draw pattern created by the cantrip lane and grows the attacking threat.' },
       { name: 'U.S.S. Enterprise-D, Galaxy-Class', label: 'Historic finisher', reason: 'Turns surplus Wall mana into a Spacecraft threat and another noncreature trigger.' },
+    ],
+  },
+  'invisible-woman-sideboards-switch-personalities': {
+    heading: 'Four Invisible Woman personalities',
+    description: 'Representative cards from the pre-game packages for switching the Fantastic Four deck between matches.',
+    cards: [
+      { name: 'Anthropological Mission', label: 'Federation Tempo', reason: 'The cantrip engine that makes cheap noncreature spells replace themselves.' },
+      { name: 'Brazen Bluff', label: 'Corbomite Control', reason: 'Creates a difficult stack decision while triggering Invisible Woman.' },
+      { name: 'The Vision', label: 'Historic Away Team', reason: 'Turns noncreature spells into draw, protection, or double strike.' },
+      { name: 'High Alert', label: 'Wall Breaker', reason: 'Changes a defensive high-toughness board into an attacking force.' },
+      { name: 'Caretaker’s Talent', label: 'Package card draw', reason: 'Rewards the token production shared by every personality.' },
+      { name: 'Slip Out the Back', label: 'Package protection', reason: 'Protects the commander or a key payoff without leaving the trigger lane.' },
+      { name: 'U.S.S. Enterprise-D, Galaxy-Class', label: 'Long-game finisher', reason: 'Converts Wall mana into a historic threat for the grindy personality.' },
+      { name: 'Shark Typhoon', label: 'Evasive backup', reason: 'Keeps the Wall Breaker package from depending on ground combat.' },
     ],
   },
   'remote-play-shuffle-tests': {
@@ -517,6 +537,7 @@ const relatedReadingCards: Record<string, string> = {
   'eight-simple-commander-deck-blueprints': 'Jasmine Boreal of the Seven',
   'invisible-woman-build-the-wall': 'Invisible Woman',
   'invisible-woman-post-star-trek-tempo-part-two': 'Spock, Always Your Friend',
+  'invisible-woman-sideboards-switch-personalities': 'High Alert',
   'typa-restock-alerts-reality-fracture': 'Reality Fracture',
   'star-trek-adventure-deck-building-2026-11-10': 'The Borg Queen',
   'deckbox-decks-visual-archive-2026-11-10': 'Delraich',
