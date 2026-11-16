@@ -15,6 +15,9 @@ import { resolveSetPrintingPrice, summarizeSetPricing } from '@/lib/setCatalogPr
 import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
 import { useCommanderArchive } from '@/lib/commanderArchive';
 import { mtgjsonPreconCatalog } from '@/data/mtgjsonPreconCatalog';
+import { commanderPreconUpgradeGuides } from '@/data/commanderPreconUpgradeGuides';
+import { PreconUpgradePaths } from '@/components/PreconUpgradePaths';
+import { slugify } from '@/hooks/useCommanderDeck';
 
 export default function SetDetail() {
   // App.tsx registers set pages at /:setCode, so keep this matcher aligned with every SetCard link.
@@ -55,7 +58,8 @@ export default function SetDetail() {
   const ownedNamesMap = useMemo(() => {
     const map = new Map<string, number>();
     for (const item of ownedCollection) {
-      map.set(item.name.toLowerCase(), item.quantity);
+      const name = item.name.trim().toLowerCase();
+      map.set(name, (map.get(name) || 0) + Math.max(0, item.quantity));
     }
     return map;
   }, [ownedCollection]);
@@ -123,6 +127,24 @@ export default function SetDetail() {
       return true;
     });
   }, [data?.cards, verifiedSpoilerCards]);
+  const setOwnership = useMemo(() => {
+    const uniqueCards = new Set(priorityCards.map((card) => card.name.toLowerCase()));
+    const ownedCards = Array.from(uniqueCards).filter((name) => (ownedNamesMap.get(name) || 0) > 0).length;
+    return {
+      inventoryDetected: ownedCollection.some((item) => item.quantity > 0),
+      ownedCards,
+      totalCards: uniqueCards.size,
+      percent: uniqueCards.size > 0 ? Math.round((ownedCards / uniqueCards.size) * 1000) / 10 : 0,
+    };
+  }, [ownedCollection, ownedNamesMap, priorityCards]);
+  const indexedUpgradeGuides = useMemo(() => {
+    const normalizedCode = resolvedSetCode.toLowerCase();
+    const preconNames = new Set((data?.precons ?? []).map((precon) => precon.name.trim().toLowerCase()));
+    return commanderPreconUpgradeGuides.filter((guide) =>
+      guide.setCode.trim().toLowerCase() === normalizedCode ||
+      preconNames.has(guide.deckName.trim().toLowerCase())
+    );
+  }, [data?.precons, resolvedSetCode]);
 
   if (loading) {
     return (
@@ -223,6 +245,13 @@ export default function SetDetail() {
               <p className="text-muted-foreground">Main-set set + name index:</p>
               <p className="font-bold">{setPricingSummary.setNameIndexCount} · Scryfall printing fallback: {setPricingSummary.scryfallFallbackCount}</p>
               <p className="mt-1 text-muted-foreground">Main-set prices unavailable: {setPricingSummary.unavailableCount}</p>
+              <div className="mt-3 border-t border-border pt-2" aria-label="Set inventory coverage">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-muted-foreground">Inventory coverage:</span>
+                  <span className={`text-lg font-black ${setOwnership.inventoryDetected ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground'}`}>{setOwnership.percent}%</span>
+                </div>
+                <p className="mt-1 text-[9px] leading-relaxed text-muted-foreground">{setOwnership.ownedCards} of {setOwnership.totalCards} unique main-set cards matched by name{setOwnership.inventoryDetected ? '.' : ' · no local inventory detected.'}</p>
+              </div>
               <p className="mt-2 max-w-64 text-[9px] leading-relaxed text-muted-foreground">Index matches set + card name, not collector number; fallback uses Scryfall USD for the same returned printing. Estimates, not live sale quotes.</p>
             </div>
           </div>
@@ -294,6 +323,38 @@ export default function SetDetail() {
             </div>
             <PreconSection precons={precons} setCode={code} />
           </div>
+        )}
+
+        {indexedUpgradeGuides.length > 0 && (
+          <section className="border-2 border-primary/40 bg-primary/5 p-4 sm:p-6" aria-labelledby="set-upgrade-radar-heading">
+            <div className="flex flex-wrap items-end justify-between gap-3 border-b border-primary/20 pb-4">
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-primary">Indexed Commander connections</p>
+                <h2 id="set-upgrade-radar-heading" className="mt-1 text-xl font-black tracking-tight">Precon upgrade radar · {indexedUpgradeGuides.length} path{indexedUpgradeGuides.length === 1 ? '' : 's'}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">Source-backed upgrade highlights tied to this historical set or its indexed Commander products. Expand a deck to see owned-first additions, supported cuts, and bridge connections.</p>
+              </div>
+              <Link href="/precon-studio" className="font-mono text-[10px] font-black uppercase tracking-wider text-primary hover:underline">Open Precon Studio →</Link>
+            </div>
+            <div className="mt-4 space-y-3">
+              {indexedUpgradeGuides.map((guide) => (
+                <details key={guide.id} className="group border border-border bg-background">
+                  <summary className="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 p-4 hover:bg-primary/5">
+                    <span className="min-w-0">
+                      <span className="block font-bold">{guide.deckName}</span>
+                      <span className="mt-1 block text-xs text-muted-foreground">{guide.commanderNames.join(' · ')} · {guide.picks.length} highlights · {guide.swaps.length} supported swaps</span>
+                    </span>
+                    <span className="flex items-center gap-3 font-mono text-[10px] font-black uppercase text-primary">
+                      <Link href={`/deck/${resolvedSetCode.toLowerCase()}/${slugify(guide.deckName)}`} onClick={(event) => event.stopPropagation()} className="hover:underline">Open deck</Link>
+                      <span className="transition group-open:rotate-180">⌄</span>
+                    </span>
+                  </summary>
+                  <div className="border-t border-border p-3 sm:p-4">
+                    <PreconUpgradePaths setCode={guide.setCode} deckName={guide.deckName} commanderNames={guide.commanderNames} ownedCards={ownedCollection} />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* Card Catalog Section */}

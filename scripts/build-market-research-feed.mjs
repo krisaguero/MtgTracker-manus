@@ -218,7 +218,9 @@ export function buildPost({ dateKey, topic, snapshot, history, isBiweekly, resea
   const topicSignals = [...(snapshot.signals || [])].filter(
     signal => isBiweekly || topicMatches(signal, topic)
   );
-  const limit = isBiweekly ? 10 : 8;
+  // Daily posts are the source snapshot the user can inspect; keep the
+  // editorial prose short but preserve a useful 25-card mover board.
+  const limit = isBiweekly ? 10 : 25;
   const usedFallback = !isBiweekly && topicSignals.length === 0;
   const selectionMode = usedFallback ? "fallback-top-movers" : "topic-filter";
   const ranked = rankSignals(
@@ -308,6 +310,16 @@ async function main() {
     isBiweekly,
     researchContext,
   });
+  if (post.cards.length === 0) {
+    const comparison = (previousFeed.posts || []).find(candidate => candidate.cards?.length);
+    if (comparison) {
+      post.cards = comparison.cards.map((card, index) => ({ ...card, rank: index + 1, prediction: undefined }));
+      post.selectionMode = "historical-fallback";
+      post.selectionNote = `No non-zero movers qualified in the ${generatedDate} snapshot. Showing the most recent non-zero comparison board from ${comparison.dateKey}; these cards are not new moves for today.`;
+      post.summary = `${post.title}. No non-zero movers qualified in today’s snapshot, so this page preserves ${post.cards.length} cards from the latest non-zero comparison board (${comparison.dateKey}) without labeling them as new movement.`;
+      post.body = [post.summary, "Flat-day handling: the comparison board is retained for continuity only. Check the weekly desk for cross-day context and wait for a new exact-printing change before acting.", post.body[2]];
+    }
+  }
   const priorRecords = Array.isArray(predictionLedger.records)
     ? predictionLedger.records
     : [];
@@ -317,7 +329,7 @@ async function main() {
         `${record.dateKey}:${record.setCode}:${record.collectorNumber || record.name}`
     )
   );
-  const newRecords = post.cards
+  const newRecords = post.selectionMode === "historical-fallback" ? [] : post.cards
     .map(card => ({
       id: `${post.id}:${card.rank}:${card.setCode}:${card.collectorNumber || card.name}`,
       dateKey: generatedDate,

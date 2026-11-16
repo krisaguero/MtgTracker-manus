@@ -16,6 +16,7 @@ import {
   type MarketWatchlistEntry,
 } from "@/lib/marketWatchlist";
 import { MoverPriceHistoryDialog } from "@/components/MoverPriceHistoryDialog";
+import { MarketMoverCardArt } from "@/components/MarketMoverCardArt";
 
 const OLD_SCHOOL_SET_CODES = new Set([
   "lea",
@@ -680,13 +681,16 @@ export function MarketMoversTable({
                 style={{ minHeight: MOBILE_ROW_HEIGHT }}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h3 className="break-words font-bold leading-snug">
-                      {mover.name}
-                    </h3>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                      {mover.setName} · {mover.setCode}
-                    </p>
+                  <div className="flex min-w-0 items-start gap-3">
+                    <MarketMoverCardArt name={mover.name} setCode={mover.setCode} />
+                    <div className="min-w-0">
+                      <h3 className="break-words font-bold leading-snug">
+                        {mover.name}
+                      </h3>
+                      <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                        {mover.setName} · {mover.setCode}
+                      </p>
+                    </div>
                   </div>
                   <button
                     type="button"
@@ -917,7 +921,8 @@ export function MarketMoversTable({
                         </button>
                       </td>
                       <td className="px-4 py-3">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3">
+                          <MarketMoverCardArt name={mover.name} setCode={mover.setCode} />
                           {oldSchool && (
                             <span className="border border-border bg-muted px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
                               OS

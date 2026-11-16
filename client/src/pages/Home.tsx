@@ -93,7 +93,7 @@ function CatalogPagination({
           type="button"
           onClick={() => changePage(page - 1)}
           disabled={page <= 1}
-          className="border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
+          className="min-h-11 border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
         >
           Previous
         </button>
@@ -107,7 +107,7 @@ function CatalogPagination({
           type="button"
           onClick={() => changePage(page + 1)}
           disabled={page >= pageCount}
-          className="border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
+          className="min-h-11 border border-border bg-card px-3 py-2 font-mono text-xs font-black uppercase disabled:cursor-not-allowed disabled:opacity-40 hover:enabled:border-primary"
         >
           Next
         </button>
@@ -542,7 +542,7 @@ export default function Home() {
                 setCatalogView("sets");
                 setSetsPage(1);
               }}
-              className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "sets" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`min-h-11 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "sets" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               Sets
             </button>
@@ -555,7 +555,7 @@ export default function Home() {
                 setCatalogView("precons");
                 setPreconsPage(1);
               }}
-              className={`px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "precons" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`min-h-11 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider transition-colors ${catalogView === "precons" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
             >
               All precons
               {localDecklists !== null ? (
@@ -579,8 +579,8 @@ export default function Home() {
               <h2 id="featured-battle-box-heading" className="mt-3 text-2xl font-black tracking-tight">2026 Retro Battle Box</h2>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">Nine ready-to-play, non-Commander 60-card lists for a shared table.</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <a href="/battle-box#deck-library" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Explore decks <ArrowRight className="h-4 w-4" /></a>
-                <a href="/battle-box-method" className="inline-flex min-h-10 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Build record</a>
+                <a href="/battle-box#deck-library" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Explore decks <ArrowRight className="h-4 w-4" /></a>
+                <a href="/battle-box-method" className="inline-flex min-h-11 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Build record</a>
               </div>
               <details className="mt-4 border-t border-border pt-3">
                 <summary className="cursor-pointer list-none font-mono text-[10px] font-black uppercase tracking-wider text-primary">How shared builds work</summary>
@@ -595,8 +595,8 @@ export default function Home() {
               <h2 id="featured-brawl-box-heading" className="mt-3 text-2xl font-black tracking-tight">Brawlternatives</h2>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">Precon-themed and custom 60-card Commander-preview decks for casual testing.</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <a href="/brawl-box" className="inline-flex min-h-10 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open shelf <ArrowRight className="h-4 w-4" /></a>
-                <a href="/battle-box" className="inline-flex min-h-10 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>
+                <a href="/brawl-box" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-3 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Open shelf <ArrowRight className="h-4 w-4" /></a>
+                <a href="/battle-box" className="inline-flex min-h-11 items-center border-2 border-border bg-background px-3 py-2 font-mono text-xs font-black uppercase hover:border-primary">Retro Battle Box</a>
               </div>
             </article>
           </div>
@@ -612,14 +612,19 @@ export default function Home() {
           </div>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { href: "/deck-workshop", title: "Build / tune Commander", detail: "Check legality, color identity, owned cards, and budget swaps." },
-              { href: "/collection", title: "Grow my collection", detail: "Import printings, set goals, wishlists, duplicates, and trade piles." },
-              { href: "/dupe-decks", title: "Make a themed 60-card deck", detail: "Build a casual duel list from paired inventories and saved themes." },
-              { href: "/limited", title: "Build a sealed / draft deck", detail: "Track a pool, choose your 40, add basics, and export." },
+              { href: "/precon-studio", title: "Build / tune Commander", detail: "Upgrade a precon, check legality, and plan the next purchase." },
+              { href: "/collection", title: "Manage my collection", detail: "Import printings, track goals, and find cards already in reach." },
+              { href: "/deck-gallery", title: "Explore Commander ideas", detail: "Browse public lists, Brewery reviews, and matchup experiments.", related: true },
+              { href: "/limited", title: "Build from a pool", detail: "Track a sealed or draft pool, choose your 40, and export." },
             ].map((goal) => (
               <a key={goal.href} href={goal.href} className="group min-h-24 border border-border bg-card p-3 transition-colors hover:border-primary hover:bg-primary/5">
                 <span className="font-bold group-hover:text-primary">{goal.title}</span>
                 <span className="mt-1 block text-xs leading-5 text-muted-foreground">{goal.detail}</span>
+                {goal.related && (
+                  <span className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[9px] font-black uppercase tracking-wide text-primary">
+                    <span>Archive</span><span>Brewery reviews</span><span>Showdowns</span>
+                  </span>
+                )}
               </a>
             ))}
           </div>
@@ -651,7 +656,7 @@ export default function Home() {
               className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
             >
               {catalogView === "sets"
-                ? `${sets.length} recent sets · ${localDecklists === null ? (localDecklistError ? "local archive unavailable" : localDecklistsLoading || needsLocalArchive ? "loading local archive" : "local archive loads on demand") : `${localDecklists.length} local decklists`}`
+                ? `${sets.length} released main sets · ${localDecklists === null ? (localDecklistError ? "local archive unavailable" : localDecklistsLoading || needsLocalArchive ? "loading local archive" : "local archive loads on demand") : `${localDecklists.length} local decklists`}`
                 : localDecklists === null
                   ? localDecklistError
                     ? "local archive unavailable"
@@ -829,7 +834,7 @@ export default function Home() {
                         Chronological set &amp; precon hub
                       </h2>
                       <p className="mt-1 text-sm text-muted-foreground">
-                        Browse the 60 most recent main-set releases. Use{" "}
+                        Browse every released expansion, core, and masters set in reverse chronology. Associated Commander products appear inside each set card; use{" "}
                         <strong className="text-foreground">All precons</strong>{" "}
                         above for the local Commander decklist archive.
                       </p>

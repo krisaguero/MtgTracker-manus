@@ -33,6 +33,15 @@ describe('product roadmap page', () => {
     expect(page).toContain('not currently shared with other users');
   });
 
+  it('links the public Deck Matrix from Commander navigation and the shipped roadmap', () => {
+    const navigation = read('client/src/components/InternalPageNav.tsx');
+    const page = read('client/src/pages/Roadmap.tsx');
+    expect(navigation).toContain("{ href: '/deck-matrix', label: 'Deck Matrix' }");
+    expect(page).toContain('title: "Public Deck Matrix"');
+    expect(page).toContain('href: "/deck-matrix"');
+    expect(page).toContain('Open the Deck Matrix');
+  });
+
   it('records the separate Battle Box and Brawlternatives status while keeping shared submissions as future work', () => {
     const page = read('client/src/pages/Roadmap.tsx');
     expect(page).toContain('non-Commander 9-deck Battle Box');

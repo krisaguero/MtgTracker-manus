@@ -186,8 +186,35 @@ export const samplePreconUpgradeGuides: CommanderPreconUpgradeGuide[] = [
     swaps: [], sourceUrls: ['https://edhrec.com/articles/most-wanted-thunder-junction-precon-upgrade-guide', 'https://edhrec.com/precon/most-wanted', 'https://magic.wizards.com/en/news/announcements/outlaws-of-thunder-junction-commander-decklists'], sourceLabel: 'EDHREC budget upgrade guide', preconUrl: 'https://edhrec.com/precon/most-wanted',
     coverage: 'partial', coverageNote: 'The earlier sample verifies budget-minded, in-theme adds and a same-precon alternate; paired Top 25 swaps have not been researched for this page yet.',
   }),
-];
 
+
+sampleGuide({
+  id: 'daily-adaptive-enchantment-2026-11-11', setCode: 'c18', deckName: 'Adaptive Enchantment', commanderNames: ['Estrid, the Masked'],
+  theme: "Strict $50 revisit: keep Estrid's enchantment-and-untap identity, then repair the card-flow bottleneck with efficient enchantress pieces.",
+  picks: [
+    { name: "Sythis, Harvest's Hand", slug: 'sythis-harvests-hand', reason: "Today's buy-for-play upgrade: turns every enchantment cast into a card and life, making the draw engine asymmetrical.", budgetNote: 'Observed $2.41 on November 11, 2026; suggested maximum $3.00 before shipping.' },
+    { name: 'Jukai Naturalist', slug: 'jukai-naturalist', reason: "Reduces Aura costs while staying directly inside Estrid's enchantment plan.", budgetNote: 'Observed $0.67 on November 11, 2026; suggested maximum $1.00 before shipping.' },
+    { name: "Enchantress's Presence", slug: 'enchantresss-presence', reason: 'Keeps the draw layer online after a creature-based enchantress is removed.', budgetNote: 'Bridge card; verify exact printing and current price before purchase.' },
+    { name: 'Destiny Spinner', slug: 'destiny-spinner', reason: 'Protects the creature-and-enchantment plan and remains a penny-watch option.', budgetNote: 'Observed $1.08 on November 11, 2026; no timing edge verified.' },
+  ],
+  alternatePaths: [{ title: 'Estrid control / combo ceiling', description: "The Chain Veil has a powerful Estrid interaction, but today's supplied $18.96 observation exceeds the stated daily and total budget. Leave it alone for this $50 plan.", href: 'https://edhrec.com/commanders/estrid-the-masked', linkLabel: 'Review the Estrid commander page' }],
+  swaps: [{ cardsIn: ["Sythis, Harvest's Hand"], cardsOut: ['Dictate of Kruphix'], rationale: 'Replaces symmetrical draw with an enchantment-cast trigger that rewards the Estrid player directly.', sourceUrls: ['https://edhrec.com/commanders/estrid-the-masked', 'https://edhrec.com/cards/sythis-harvests-hand', 'https://edhrec.com/cards/dictate-of-kruphix'] }, { cardsIn: ['Jukai Naturalist'], cardsOut: ['Slow enchantment-cost slot'], rationale: "Adds a cheap Aura cost reducer without changing the deck's core identity.", sourceUrls: ['https://edhrec.com/commanders/estrid-the-masked', 'https://edhrec.com/cards/jukai-naturalist'] }],
+  sourceUrls: ['https://edhrec.com/commanders/estrid-the-masked'], sourceLabel: 'Daily Gemini upgrade radar · November 11, 2026', preconUrl: 'https://edhrec.com/precon/adaptive-enchantment',
+  coverage: 'partial', coverageNote: "Today's two-card budget action is source-dated and play-oriented. Verify the full stock list, exact printings, shipping, and current sales before buying.",
+}),
+sampleGuide({
+  id: 'daily-calling-all-angels-2026-11-11', setCode: 'fdn', deckName: 'Calling All Angels', commanderNames: ['Giada, Font of Hope'],
+  theme: "Foundations release watch: preserve Giada's mono-white Angel ramp-and-counters plan while waiting for complete stock data and release-week supply.",
+  picks: [
+    { name: 'Flawless Maneuver', slug: 'flawless-maneuver', reason: 'The primary protection test: it can be cast for zero while Giada is on the battlefield, but the cut and full deck context remain unverified.', budgetNote: 'Observed $8.99 on November 11, 2026; wait for Foundations supply and a complete list.' },
+    { name: 'Inspiring Overseer', slug: 'inspiring-overseer', reason: 'Adds card draw and lifegain to help mono-white recover and keep the Angel plan moving.', budgetNote: 'Observed $0.35 on November 11, 2026; verify the exact printing.' },
+  ],
+  alternatePaths: [{ title: 'Do not force Divine Convocation overlap', description: 'Giada rewards Angels entering the battlefield while Kasla rewards convoked spells. Shared white identity is not enough to justify a bridge package today.', href: 'https://edhrec.com/precon/calling-all-angels', linkLabel: 'Review the Calling All Angels precon context' }],
+  swaps: [{ cardsIn: ['Flawless Maneuver'], cardsOut: ['Awaiting complete stock list'], rationale: 'Protection is the correct role, but naming a cut before the Foundations list is verified would invent certainty.', sourceUrls: ['https://edhrec.com/precon/calling-all-angels', 'https://edhrec.com/cards/flawless-maneuver'] }],
+  sourceUrls: ['https://edhrec.com/precon/calling-all-angels'], sourceLabel: 'Daily Gemini upgrade radar · November 11, 2026', preconUrl: 'https://edhrec.com/precon/calling-all-angels',
+  coverage: 'partial', coverageNote: 'Watchlist thesis only until the Foundations product is released, opened, and compared against a complete stock list.',
+}),
+];
 const generatedGuides = (generated.guides ?? []) as CommanderPreconUpgradeGuide[];
 export const commanderPreconUpgradeGuides: CommanderPreconUpgradeGuide[] = [...samplePreconUpgradeGuides, ...generatedGuides];
 export const upgradeResearchComplete = generated.researchComplete === true;

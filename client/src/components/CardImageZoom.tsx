@@ -13,7 +13,7 @@ export function nextImageSourceState(sourceIndex: number, sourceCount: number) {
     : { sourceIndex: sourceCount, isLoading: false };
 }
 
-export function CardImageZoom({ src, fallbackSrc, alt, className = '', priority = false }: { src?: string; fallbackSrc?: ImageFallback; alt: string; className?: string; priority?: boolean }) {
+export function CardImageZoom({ src, srcSet, sizes, fallbackSrc, alt, className = '', priority = false }: { src?: string; srcSet?: string; sizes?: string; fallbackSrc?: ImageFallback; alt: string; className?: string; priority?: boolean }) {
   const [open, setOpen] = useState(false);
   const normalizedSrc = src?.trim() || undefined;
   const fallbackSources = (Array.isArray(fallbackSrc) ? fallbackSrc : [fallbackSrc])
@@ -79,7 +79,7 @@ export function CardImageZoom({ src, fallbackSrc, alt, className = '', priority 
   return <>
     <button type="button" onClick={() => setOpen(true)} className={`group/image relative block h-full w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset ${className}`} aria-label={`Zoom image of ${alt}`} aria-busy={isLoading}>
       {isLoading && <span className="absolute inset-0 z-[1] flex items-center justify-center bg-muted/70" aria-label="Loading image"><Loader2 className="h-5 w-5 animate-spin text-primary" /></span>}
-      <img ref={imageRef} src={resolvedSrc} alt={alt} className="h-full w-full object-contain transition-transform duration-200 group-hover/image:scale-[1.015]" loading={priority ? 'eager' : 'lazy'} decoding="async" fetchPriority={priority ? 'high' : 'auto'} referrerPolicy="no-referrer" onLoad={() => setIsLoading(false)} onError={advanceToNextSource} />
+      <img ref={imageRef} src={resolvedSrc} srcSet={sourceIndex === 0 ? srcSet : undefined} sizes={sourceIndex === 0 ? sizes : undefined} alt={alt} className="h-full w-full object-contain transition-transform duration-200 group-hover/image:scale-[1.015]" loading={priority ? 'eager' : 'lazy'} decoding="async" fetchPriority={priority ? 'high' : 'auto'} referrerPolicy="no-referrer" onLoad={() => setIsLoading(false)} onError={advanceToNextSource} />
       <span className="pointer-events-none absolute bottom-2 right-2 inline-flex items-center gap-1 border border-white/60 bg-black/70 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white opacity-0 transition-opacity group-hover/image:opacity-100 group-focus-visible/image:opacity-100"><Maximize2 className="h-3 w-3" /> Zoom</span>
     </button>
     {open && <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={`${alt} enlarged image`} onClick={() => setOpen(false)}>

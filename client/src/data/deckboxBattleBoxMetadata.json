@@ -1,0 +1,32 @@
+[
+  {
+    "deckId": "deck-black-grave-delrach-sac",
+    "formatStatus": "60-card constructed list supported as non-Commander; the archive saves it as Legacy. Current tournament legality is not assessed.",
+    "strategySummary": "Dark Ritual and Bubbling Muck accelerate the early plays; expendable creatures feed Delraich and sacrifice effects, while Unearth and other recursion help keep the pressure going."
+  },
+  {
+    "deckId": "deck-black-aggro-sinister-zombie",
+    "formatStatus": "60-card constructed list supported as non-Commander; the archive saves it as Legacy. The title's Zombie wording is not a claim of a verified tribal build or current legality.",
+    "strategySummary": "Small black creatures and hand-pressure effects start the attack; Sinister Strength and other pump effects help turn combat into a fast clock."
+  },
+  {
+    "deckId": "deck-black-shadow-rack",
+    "formatStatus": "60-card constructed list supported as non-Commander; the archive saves it as Legacy. Current tournament legality is not assessed.",
+    "strategySummary": "Hymn to Tourach, Mind Rot, Mind Warp, and related discard effects shrink opposing hands; The Rack and Rackling turn that attrition into damage while Dauthi creatures keep attacking."
+  },
+  {
+    "deckId": "deck-duel-decks-eldrazi",
+    "formatStatus": "The saved list matches a 60-card Eldrazi half of Duel Decks: Zendikar vs. Eldrazi; it is non-Commander. The archive saves it as Legacy; current tournament legality is not assessed.",
+    "strategySummary": "Emrakul's Hatcher supplies Eldrazi Spawn, and Mind Stone plus land development help reach the larger Eldrazi. The Spawn also support sacrifice and board-building effects."
+  },
+  {
+    "deckId": "deck-green-aggro-buff",
+    "formatStatus": "60-card constructed list supported as non-Commander; the archive saves it as Legacy. Current tournament legality is not assessed.",
+    "strategySummary": "Efficient green creatures establish pressure; Giant Growth, Wild Might, and related pumps strengthen attacks, while Treetop evasion and Taunting Elf shape combat."
+  },
+  {
+    "deckId": "deck-the-slivers-modified-precon",
+    "formatStatus": "60-card constructed list supported as non-Commander; the archive saves it as Legacy. “Modified PRECON” is part of the source title, not verification of an official product or current legality.",
+    "strategySummary": "Build a Sliver board where Clot Sliver protects the team, Winged Sliver adds evasion, and Mnemonic Sliver supports reuse; counterspells and removal help control the pace."
+  }
+]

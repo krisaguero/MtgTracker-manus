@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { commanderReleaseMatchesColor, mergeLocalOnlyCommanderReleases } from './CommanderLibrary';
+import commanderDeckIndex from '@/data/commanderDeckIndex.json';
 
 describe('Commander release color identity filtering', () => {
   const products = [
@@ -32,5 +33,11 @@ describe('Commander release color identity filtering', () => {
       name: 'Secret Lair Drop',
       products: [{ name: 'Odds and Ends', cardCount: 100 }],
     });
+  });
+
+  it('keeps the complete generated precon index available to the library', () => {
+    const identities = commanderDeckIndex.decks.map((deck) => `${deck.set_code.toLowerCase()}|${deck.name.toLowerCase()}`);
+    expect(identities.length).toBe(206);
+    expect(new Set(identities).size).toBe(206);
   });
 });

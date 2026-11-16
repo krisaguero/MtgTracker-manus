@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { productAssetFor } from '@/data/preconProductAssets';
 import { loadCommanderArchive } from '@/lib/commanderArchive';
+import { getScryfallJson } from '@/lib/scryfallRequest';
 
 function scryfallNamedImage(name: string, version: 'normal' | 'small' = 'normal') {
   return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=${version}`;
@@ -104,9 +105,8 @@ export function isNewCard(card: ScryfallCard) {
 }
 
 async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
-  const response = await fetch(url, { signal });
-  if (!response.ok) throw new Error(`Scryfall returned ${response.status}`);
-  return response.json() as Promise<T>;
+  const result = await getScryfallJson<T>(url, signal);
+  return result.data;
 }
 
 export function useSetDetail(setCode?: string) {

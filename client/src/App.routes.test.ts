@@ -31,11 +31,11 @@ describe('application route map', () => {
     expect(readFileSync(resolve(process.cwd(), 'client/src/pages/TodayMarketBrief.tsx'), 'utf8')).toContain('getChronologicalMarketPosts');
   });
 
-  it('serves the October 5, 11, and 15 historical reports separately from dated price-report routes', () => {
+  it('serves dated market articles separately from the generic date-key report route', () => {
     const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
     const genericReportRoute = source.indexOf('path="/market-report/:dateKey"');
     expect(genericReportRoute).toBeGreaterThan(-1);
-    for (const route of ['/market-report/october-05-daily-market-movers', '/market-report/october-11-daily-market-movers', '/market-report/october-15-30-signal-brief']) {
+    for (const route of ['/market-report/october-05-daily-market-movers', '/market-report/october-11-daily-market-movers', '/market-report/october-15-30-signal-brief', '/market-report/november-06-30-signal-brief', '/market-report/star-trek-market-watch-2026-11-07']) {
       const routeIndex = source.indexOf(`path="${route}"`);
       expect(routeIndex).toBeGreaterThan(-1);
       expect(routeIndex).toBeLessThan(genericReportRoute);
@@ -50,6 +50,61 @@ describe('application route map', () => {
       expect(routeIndex).toBeGreaterThan(-1);
       expect(routeIndex).toBeLessThan(dynamicSetIndex);
     }
+  });
+
+  it('registers the private Deck Brewery route and navigation link', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    const publicBreweryIndex = source.indexOf("path={'/deck-brewery/reviews'}");
+    const publicBreweryDetailIndex = source.indexOf('path="/deck-brewery/reviews/:reviewSlug"');
+    const showdownsIndex = source.indexOf("path={'/deck-brewery/matchups'}");
+    const showdownsDetail = source.indexOf('path="/deck-brewery/matchups/:matchupSlug"');
+    const breweryIndex = source.indexOf("path={'/deck-brewery'}");
+    expect(publicBreweryIndex).toBeGreaterThan(-1);
+    expect(publicBreweryIndex).toBeLessThan(breweryIndex);
+    expect(publicBreweryDetailIndex).toBeGreaterThan(-1);
+    expect(publicBreweryDetailIndex).toBeLessThan(breweryIndex);
+    expect(publicBreweryDetailIndex).toBeLessThan(dynamicSetIndex);
+    expect(showdownsIndex).toBeGreaterThan(-1);
+    expect(showdownsIndex).toBeLessThan(breweryIndex);
+    expect(showdownsDetail).toBeGreaterThan(-1);
+    expect(showdownsDetail).toBeLessThan(breweryIndex);
+    expect(showdownsDetail).toBeLessThan(dynamicSetIndex);
+    expect(breweryIndex).toBeGreaterThan(-1);
+    expect(breweryIndex).toBeLessThan(dynamicSetIndex);
+    const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
+    expect(navigation).toContain("href: '/deck-brewery/reviews', label: 'Public Deck Brewery reviews'");
+    expect(navigation).toContain("href: '/deck-brewery/matchups', label: 'Public Brewery matchups & combo lab'");
+    expect(navigation).toContain("href: '/deck-brewery', label: 'Private local Brewery workspace'");
+  });
+
+  it('registers the public Deck Matrix as a lazy route before the dynamic set route', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    expect(source).toContain("const DeckMatrix = lazy(() => import('@/pages/DeckMatrix'))");
+    const matrixIndex = source.indexOf("path={'/deck-matrix'}");
+    expect(matrixIndex).toBeGreaterThan(-1);
+    expect(matrixIndex).toBeLessThan(dynamicSetIndex);
+  });
+
+  it('registers the public Deck Gallery, WIP, and Robogles routes before the dynamic set route', () => {
+    const source = readFileSync(resolve(process.cwd(), 'client/src/App.tsx'), 'utf8');
+    const dynamicSetIndex = source.indexOf("path={'/:setCode'}");
+    const detailRouteIndex = source.indexOf('path="/deck-gallery/:deckId"');
+    for (const route of ['/deck-gallery', '/deck-gallery/wip', '/deck-gallery/robogles']) {
+      const routeIndex = source.indexOf(`path={'${route}'}`);
+      expect(routeIndex).toBeGreaterThan(-1);
+      expect(routeIndex).toBeLessThan(detailRouteIndex);
+      expect(routeIndex).toBeLessThan(dynamicSetIndex);
+    }
+    expect(detailRouteIndex).toBeGreaterThan(-1);
+    expect(detailRouteIndex).toBeLessThan(dynamicSetIndex);
+    expect(source).toContain("const DeckGallery = lazy(() => import('@/pages/DeckGallery'))");
+    expect(source).toContain("const DeckGalleryDetail = lazy(() => import('@/pages/DeckGalleryDetail'))");
+    const navigation = readFileSync(resolve(process.cwd(), 'client/src/components/InternalPageNav.tsx'), 'utf8');
+    expect(navigation).toContain("href: '/deck-gallery', label: 'Deck Gallery'");
+    expect(navigation).toContain("href: '/deck-gallery/wip', label: 'WIP & Offbeat decks'");
+    expect(navigation).toContain("href: '/deck-gallery/robogles', label: 'Robert “Robogles” showcase'");
   });
 
   it('registers the retro Battle Box output and its separate method article', () => {

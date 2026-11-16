@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T21:40:30.810Z",
+  "generatedAt": "2026-11-13T03:45:54.031Z",
   "decks": [
     {
       "name": "Avengers Assemble",
@@ -2264,6 +2264,110 @@
       ],
       "approxValue": 0,
       "synopsis": "Official MTGJSON Commander decklist with 84 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Federation Fleet",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Jean-Luc Picard, Luminary"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Federation Fleet Collector's Edition",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Jean-Luc Picard, Luminary"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 93 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Klingon Fury",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Worf, Defiant Commander"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Klingon Fury Collector's Edition",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Worf, Defiant Commander"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 91 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Landing Party",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Commander Spock"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 98 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "Landing Party Collector's Edition",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "Commander Spock"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 98 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "We Are the Borg",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "The Borg Queen"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
+    },
+    {
+      "name": "We Are the Borg Collector's Edition",
+      "set_code": "trc",
+      "set_name": "Star Trek Commander",
+      "release_date": "2026-11-13",
+      "commander": [
+        {
+          "name": "The Borg Queen"
+        }
+      ],
+      "approxValue": 0,
+      "synopsis": "Complete MTGJSON Commander decklist with 94 indexed card entries and 100 total cards by quantity."
     },
     {
       "name": "Calling All Angels",

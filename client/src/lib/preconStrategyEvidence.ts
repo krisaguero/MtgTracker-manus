@@ -247,7 +247,7 @@ export function cardExplanation(entry: DeckEntryLike): string {
   const evidence = evidenceForCard(entry.card);
   return evidence.length
     ? evidence[0].role
-    : `Printed effect: ${firstSentence(text(entry.card))}`;
+    : firstSentence(text(entry.card));
 }
 
 export interface StrategyPackage {

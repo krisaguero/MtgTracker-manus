@@ -1,0 +1,533 @@
+{
+  "id": "2026-11-06-penny-watch",
+  "dateKey": "2026-11-06",
+  "slug": "penny-watch",
+  "title": "Penny Watch & Do Not Chase · 2026-11-06",
+  "label": "Penny Watch & Do Not Chase",
+  "kind": "topic-expansion",
+  "dataWindow": "Most recent verified daily snapshot; compare against the prior saved observation.",
+  "selectionMode": "topic-filter",
+  "selectionNote": null,
+  "generatedAt": "2026-11-06T08:00:00.000Z",
+  "summary": "Penny Watch & Do Not Chase · 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+  "body": [
+    "Penny Watch & Do Not Chase · 2026-11-06. The generated screen contains 12511 priced signals, with 2099 positive moves in the current snapshot. Today’s lens is low-cost watch candidates, verified dip windows, thin-listing warnings, and failure cases. The leading screened name is Woe Strider (SOC) at $0.55 and +120.0%. This is a research queue, not confirmed transaction demand; source coverage, completed sales, format adoption, and reprint risk still require review.",
+    "Historical context: the local mover ledger currently retains 21 daily observations. Repeated movement should be checked against exact printing identity and liquidity before being called a streak. The feed labels snapshot-derived ideas as Developing or Unverified rather than financial advice.",
+    "Purchase discipline: compare targeted singles or a verified sealed precon opportunity against random booster or gift-box spending. If a dip, sale volume, or catalyst cannot be verified, the correct action is to watch rather than chase."
+  ],
+  "cards": [
+    {
+      "rank": 1,
+      "name": "Woe Strider",
+      "setCode": "soc",
+      "setName": "SOC",
+      "collectorNumber": "231",
+      "currentUsd": 0.55,
+      "previousUsd": 0.25,
+      "percentChange": 120,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 120.0% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Nyx Weaver",
+      "setCode": "dsc",
+      "setName": "DSC",
+      "collectorNumber": "226",
+      "currentUsd": 0.59,
+      "previousUsd": 0.27,
+      "percentChange": 118.52,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 118.5% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "Lord of the Forsaken",
+      "setCode": "tdc",
+      "setName": "TDC",
+      "collectorNumber": "186",
+      "currentUsd": 0.63,
+      "previousUsd": 0.31,
+      "percentChange": 103.23,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 103.2% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Hinterland Harbor",
+      "setCode": "fic",
+      "setName": "FIC",
+      "collectorNumber": "403",
+      "currentUsd": 0.63,
+      "previousUsd": 0.32,
+      "percentChange": 96.88,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 96.9% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Into the Pit",
+      "setCode": "dsc",
+      "setName": "DSC",
+      "collectorNumber": "20",
+      "currentUsd": 0.59,
+      "previousUsd": 0.3,
+      "percentChange": 96.67,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 96.7% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "Drownyard Temple",
+      "setCode": "dsc",
+      "setName": "DSC",
+      "collectorNumber": "272",
+      "currentUsd": 0.66,
+      "previousUsd": 0.34,
+      "percentChange": 94.12,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 94.1% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Elvish Skysweeper",
+      "setCode": "cma",
+      "setName": "CMA",
+      "collectorNumber": "104",
+      "currentUsd": 0.6,
+      "previousUsd": 0.32,
+      "percentChange": 87.5,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 87.5% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Necromantic Selection",
+      "setCode": "tdc",
+      "setName": "TDC",
+      "collectorNumber": "189",
+      "currentUsd": 0.7,
+      "previousUsd": 0.38,
+      "percentChange": 84.21,
+      "category": "penny-risers",
+      "sourceCount": 2,
+      "confidence": "Developing",
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 84.2% since the prior saved observation across 2 available price sources.",
+      "risk": "Thin-listing or reversal risk; do not treat velocity alone as durable demand.",
+      "verifiedAt": "2026-11-06T15:48:04.873Z",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-06",
+        "evaluationDate": "2026-11-20"
+      }
+    }
+  ],
+  "sources": [
+    "MTGJSON set data",
+    "MTGJSON paper price data",
+    "Scryfall image endpoint"
+  ],
+  "methodology": "Signals compare the current normalized MTGJSON paper price with the prior local daily snapshot. A flat first observation establishes a baseline rather than fabricating movement.",
+  "marketStatus": "Reprint-heavy; Commander-driven",
+  "researchContext": {
+    "pricingDate": "2026-11-06",
+    "dataWindow": "2026-10-14 through 2026-11-06",
+    "executiveSummary": [
+      "12511 exact-printing price observations were screened for 2026-11-06; 2099 rose and 2201 fell in the latest snapshot.",
+      "penny-risers has the strongest latest average movement at +38.77% across 43 cards.",
+      "84 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+      "37 reprint-floor observations require supply and reprint-risk review before buying.",
+      "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
+    ],
+    "whatChangedSinceYesterday": {
+      "newSignals": [],
+      "topGainers": [
+        {
+          "name": "Woe Strider",
+          "setCode": "soc",
+          "collectorNumber": "231",
+          "currentUsd": 0.55,
+          "percentChange": 120,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Nyx Weaver",
+          "setCode": "dsc",
+          "collectorNumber": "226",
+          "currentUsd": 0.59,
+          "percentChange": 118.52,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Lord of the Forsaken",
+          "setCode": "tdc",
+          "collectorNumber": "186",
+          "currentUsd": 0.63,
+          "percentChange": 103.23,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Hinterland Harbor",
+          "setCode": "fic",
+          "collectorNumber": "403",
+          "currentUsd": 0.63,
+          "percentChange": 96.88,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        },
+        {
+          "name": "Into the Pit",
+          "setCode": "dsc",
+          "collectorNumber": "20",
+          "currentUsd": 0.59,
+          "percentChange": 96.67,
+          "sourceCount": 2,
+          "category": "penny-risers"
+        }
+      ],
+      "topDecliners": [
+        {
+          "name": "Temple of Triumph",
+          "setCode": "tdc",
+          "collectorNumber": "407",
+          "currentUsd": 0.24,
+          "percentChange": -56.36,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Treasure Cruise",
+          "setCode": "soc",
+          "collectorNumber": "205",
+          "currentUsd": 0.22,
+          "percentChange": -56,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Ruinous Intrusion",
+          "setCode": "lcc",
+          "collectorNumber": "255",
+          "currentUsd": 0.33,
+          "percentChange": -48.44,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Thundercloud Shaman",
+          "setCode": "c15",
+          "collectorNumber": "168",
+          "currentUsd": 0.15,
+          "percentChange": -44.44,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        },
+        {
+          "name": "Swamp",
+          "setCode": "cma",
+          "collectorNumber": "303",
+          "currentUsd": 0.2,
+          "percentChange": -42.86,
+          "sourceCount": 2,
+          "category": "reprint-squashes"
+        }
+      ],
+      "snapshotWarnings": []
+    },
+    "historicalSignalCheck": {
+      "windowDays": 21,
+      "snapshotsReviewed": 21,
+      "repeatedMovers": [
+        {
+          "name": "Command Tower",
+          "setCode": "cmd",
+          "collectorNumber": "269",
+          "observations": 21,
+          "firstDate": "2026-10-14",
+          "lastDate": "2026-11-06",
+          "totalPctChange": 15.12,
+          "positiveDays": 3,
+          "negativeDays": 1
+        },
+        {
+          "name": "Idol of Oblivion",
+          "setCode": "plst",
+          "collectorNumber": "BLC-277",
+          "observations": 21,
+          "firstDate": "2026-10-14",
+          "lastDate": "2026-11-06",
+          "totalPctChange": 5.69,
+          "positiveDays": 3,
+          "negativeDays": 0
+        },
+        {
+          "name": "Island",
+          "setCode": "cm2",
+          "collectorNumber": "291",
+          "observations": 18,
+          "firstDate": "2026-10-20",
+          "lastDate": "2026-11-06",
+          "totalPctChange": 390,
+          "positiveDays": 1,
+          "negativeDays": 0
+        },
+        {
+          "name": "Bronzebeak Foragers",
+          "setCode": "lcc",
+          "collectorNumber": "69",
+          "observations": 18,
+          "firstDate": "2026-10-20",
+          "lastDate": "2026-11-06",
+          "totalPctChange": 240.21,
+          "positiveDays": 12,
+          "negativeDays": 2
+        },
+        {
+          "name": "Swamp",
+          "setCode": "znr",
+          "collectorNumber": "382",
+          "observations": 18,
+          "firstDate": "2026-10-20",
+          "lastDate": "2026-11-06",
+          "totalPctChange": 218.18,
+          "positiveDays": 5,
+          "negativeDays": 9
+        }
+      ],
+      "predictionsDue": [
+        {
+          "name": "Scavenger Grounds",
+          "setCode": "msc",
+          "collectorNumber": "263",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Vanquish the Horde",
+          "setCode": "msc",
+          "collectorNumber": "146",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Hinterland Harbor",
+          "setCode": "fic",
+          "collectorNumber": "403",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Sun Titan",
+          "setCode": "c19",
+          "collectorNumber": "76",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Nightshade Harvester",
+          "setCode": "dsc",
+          "collectorNumber": "150",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Shrine of the Forsaken Gods",
+          "setCode": "m3c",
+          "collectorNumber": "376",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Tomb of the Spirit Dragon",
+          "setCode": "m3c",
+          "collectorNumber": "397",
+          "evaluationDate": "2026-11-06"
+        },
+        {
+          "name": "Mountain",
+          "setCode": "c15",
+          "collectorNumber": "335",
+          "evaluationDate": "2026-11-06"
+        }
+      ],
+      "predictionsResolved": [],
+      "recurringCatalystsToReview": [
+        "spoilers",
+        "precons",
+        "reprints",
+        "tournament results",
+        "rules and policy",
+        "collector demand"
+      ],
+      "patternWarnings": [
+        "thin listings",
+        "spoiler reversal",
+        "post-release supply",
+        "reprint compression",
+        "low-liquidity premium"
+      ]
+    },
+    "externalResearchQueue": {
+      "status": "pending-live-web-review",
+      "requiredBeforeConfirmed": [
+        "Official Wizards, Magic.gg, Arena, and Commander Rules Committee policy/product checks",
+        "Completed sales, market-price tools, buylist, and multiple-marketplace comparison",
+        "Tournament and deck-data review for Constructed adoption",
+        "EDHREC, Moxfield, Archidekt, and upgrade-list review for Commander demand",
+        "Release, spoiler, reprint, restock, preorder, and rotation review"
+      ],
+      "sourceDiversityTarget": "At least 10 distinct domains when reasonably available; no single source family above 25% of material claims.",
+      "unavailableClaims": "No live-web catalyst or completed-sale claim is invented by this deterministic job."
+    },
+    "confidenceRules": {
+      "Confirmed": "Printing-specific price movement corroborated by reliable market or liquidity evidence.",
+      "Developing": "Real catalyst or deck demand with incomplete broad price/liquidity confirmation.",
+      "Speculative": "Spoiler, social, thin-listing, or anticipated-synergy thesis; not confirmed demand.",
+      "Unverified": "Useful context exists, but live price, volume, or adoption evidence is not confirmed."
+    },
+    "actionGuardrails": {
+      "buyDiscipline": "Prefer targeted singles, portable utility, and verified sealed value over random $50–$60 gift-box purchases.",
+      "dipRule": "Use WAIT_FOR_DIP only when a dip, supply wave, sale volume, or market cooldown is independently visible; otherwise WATCH.",
+      "doNotChase": "Do not promote a thin-listing spike, premium treatment, spoiler premium, or single-source percentage move to a buy call.",
+      "preconDecisions": [
+        "BUY_SEALED",
+        "BUY_SINGLES",
+        "WAIT_FOR_DIP",
+        "SKIP_OR_MONITOR"
+      ]
+    }
+  },
+  "disclaimer": "This is market research and hobby commentary, not financial advice. Verify condition, printing, fees, shipping, and completed sales before transacting."
+}

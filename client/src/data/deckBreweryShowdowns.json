@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "matchups": [
+    {
+      "slug": "undead-rivalries",
+      "headline": "Sibling necromancy vs. the Traitor King's graveyard host",
+      "leftReviewSlug": "gisa-and-geralf-graveyard-mashup",
+      "rightReviewSlug": "sedris-etbers",
+      "leftCards": [
+        { "name": "Gisa and Geralf", "role": "Zombie-recursion anchor", "where": "source main" },
+        { "name": "Rooftop Storm", "role": "Zombie spell engine", "where": "source main" },
+        { "name": "Diregraf Captain", "role": "Zombie payoff", "where": "source main" }
+      ],
+      "rightCards": [
+        { "name": "Sedris, the Traitor King", "role": "Unearth and reanimation anchor", "where": "source main; not a confirmed source commander" },
+        { "name": "Phyrexian Delver", "role": "Graveyard return cue", "where": "source main" }
+      ],
+      "narrativeAngle": "This is a theme pairing, not a canonical duel. Official Magic story frames Gisa and Geralf as rival sibling necromancers with undead armies; Sedris's official card record frames him as a Zombie Warrior who gives creature cards unearth. The contrast is persistent Zombie recursion versus temporary, hasty graveyard returns—not a claim that these characters meet in a published story.",
+      "loreSources": [
+        { "title": "Games — Magic Story", "url": "https://magic.wizards.com/en/news/magic-story/games-2016-04-27", "supports": "Gisa and Geralf's sibling rivalry, necromancy, and undead armies." },
+        { "title": "A Planeswalker's Guide to Innistrad: Gavony and Humans", "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28", "supports": "Official background on the rival necromancers and their undead armies." },
+        { "title": "Gatherer — Sedris, the Traitor King", "url": "https://gatherer.wizards.com/ALA/en-us/193/sedris-the-traitor-king", "supports": "Official card record and unearth-based graveyard framing." }
+      ],
+      "sourceCaveat": "The saved Gisa list is labeled Vintage and has 110 main / 33 sideboard copies against a 100-card contextual target. Sedris is labeled Vintage with 65 main / 0 sideboard; its separate untested proposal projects 98/100 and is still two cards short. Neither source record confirms a commander. These are archive/review counts, not format legality or completed-deck claims."
+    },
+    {
+      "slug": "uprising-vs-coalition",
+      "headline": "Goblin disorder vs. Zendikar's organized coalition",
+      "leftReviewSlug": "krenko-edh",
+      "rightReviewSlug": "tazri-s-allies-robogles",
+      "leftCards": [
+        { "name": "Krenko, Mob Boss", "role": "Goblin-swarm anchor", "where": "source main; not a confirmed source commander" },
+        { "name": "Goblin Ringleader", "role": "Tribal replenishment", "where": "source main" },
+        { "name": "Skirk Prospector", "role": "Token-to-resource support", "where": "source main" }
+      ],
+      "rightCards": [
+        { "name": "General Tazri", "role": "Ally-coalition anchor", "where": "source main; review proposes a command-zone move, not a source confirmation" },
+        { "name": "Harabaz Druid", "role": "Ally-based fixing", "where": "source main" },
+        { "name": "Kazuul Warlord", "role": "Go-wide Ally payoff", "where": "source main" }
+      ],
+      "narrativeAngle": "This is a theme comparison, not a canonical encounter. Krenko's official story emphasizes a goblin organizer who grows a following through engineered disorder; Zendikar stories present Tazri as a leader organizing the plane's diverse forces. The matchup reads as a swelling goblin uprising against a coordinated coalition, not as a published Krenko-versus-Tazri battle.",
+      "loreSources": [
+        { "title": "Krenko, Mob Boss — Magic Story", "url": "https://magic.wizards.com/en/news/magic-story/krenko-mob-boss-2012-07-18", "supports": "Krenko's organizer/schemer characterization and rising goblin following." },
+        { "title": "Hedron Alignment — Magic Story", "url": "https://magic.wizards.com/en/news/magic-story/hedron-alignment-2015-11-18", "supports": "Tazri and Zendikar's combined forces facing the Eldrazi." },
+        { "title": "Zendikar Resurgent — Magic Story", "url": "https://magic.wizards.com/en/news/magic-story/zendikar-resurgent-2016-02-24", "supports": "Tazri as Commander-General organizing Zendikari defenders." }
+      ],
+      "sourceCaveat": "Krenko is labeled Vintage with 100 main / 0 sideboard copies; the record is count-compatible but unverified and does not confirm a commander. Tazri's Allies @robogles is labeled Legacy with 78 main / 0 sideboard; its conditional, untested review adds 22 by count arithmetic and proposes General Tazri for the command zone, but does not establish the source commander. The exact title-level Robogles credit is preserved; no separate author field, playtest, or endorsement is claimed."
+    },
+    {
+      "slug": "landfall-vs-sacrifice",
+      "headline": "Zendikar's elemental surge vs. a Kraul death-priest engine",
+      "leftReviewSlug": "omnath-landdrops",
+      "rightReviewSlug": "maziborn-v2",
+      "leftCards": [
+        { "name": "Omnath, Locus of Rage", "role": "Landfall and Elemental anchor", "where": "source main; not a confirmed source commander" },
+        { "name": "Zendikar's Roil", "role": "Landfall token support", "where": "source main" }
+      ],
+      "rightCards": [
+        { "name": "Mazirek, Kraul Death Priest", "role": "Sacrifice-and-counter anchor", "where": "source main; not a confirmed source commander" },
+        { "name": "Shadowborn Apostle", "role": "Demon-tutor engine", "where": "source main (30 copies)" },
+        { "name": "Thrumming Stone", "role": "Ripple support", "where": "source main" }
+      ],
+      "narrativeAngle": "This is a lore-aware theme pairing, not a canonical duel. Official Wizards material frames Omnath around landfall, 5/5 Elementals, and damage from Elemental deaths; official Kraul story material identifies Mazirek as the Kraul's death priest and leader. The contrast is a growing landfall board against a sacrifice-and-counter engine, without claiming the two appear in the same story.",
+      "loreSources": [
+        { "title": "What Core Can I Say? — Part 2", "url": "https://magic.wizards.com/en/news/making-magic/what-core-can-i-say-part-2-2019-07-08", "supports": "Official Omnath landfall, Elemental, and death-trigger framing." },
+        { "title": "Battle for Zendikar Release Notes", "url": "https://magic.wizards.com/en/news/feature/battle-zendikar-release-notes-2015-09-23", "supports": "Omnath landfall rules text and how landfall triggers." },
+        { "title": "Pride of the Kraul — Magic Story", "url": "https://magic.wizards.com/en/news/magic-story/pride-kraul-2017-05-31", "supports": "Mazirek as Kraul death priest/leader and the Kraul's Golgari context." }
+      ],
+      "sourceCaveat": "Omnath Landdrops is labeled Vintage with 74 main / 0 sideboard; its untested proposal adds 26 by count arithmetic only, and no commander is confirmed. Maziborn v2 is labeled Legacy with 65 main / 0 sideboard; its partial, untested proposal is not a legality audit or playtest, and no source commander is confirmed."
+    }
+  ],
+  "comboSpotlights": [
+    {
+      "slug": "gisa-gravecrawler-loop",
+      "sourceReviewSlug": "gisa-and-geralf-graveyard-mashup",
+      "comboName": "Rooftop Storm + Gravecrawler + Ashnod's Altar + Diregraf Captain",
+      "typeLabel": "Repeatable loop · infinite mana and death triggers",
+      "cards": [
+        { "name": "Rooftop Storm", "role": "Cast Zombie spells for {0}", "where": "source main" },
+        { "name": "Gravecrawler", "role": "Recurs from the graveyard while you control a Zombie", "where": "separate source sideboard; not in source main" },
+        { "name": "Ashnod's Altar", "role": "Sacrifice outlet · {C}{C}", "where": "source main" },
+        { "name": "Diregraf Captain", "role": "Zombie condition and life-loss trigger", "where": "source main" }
+      ],
+      "sequence": "With Rooftop Storm and Diregraf Captain on the battlefield, cast Gravecrawler from the graveyard for {0}; Diregraf Captain is a Zombie, meeting Gravecrawler's condition. Sacrifice Gravecrawler to Ashnod's Altar for {C}{C}; Diregraf Captain triggers when another Zombie dies. Recast Gravecrawler and repeat. This can make arbitrarily large colorless mana and death triggers, subject to the normal game rules and legal targets.",
+      "caveat": "Rules-text checked, not playtested or format-certified. Gravecrawler is in the saved source sideboard, separate from the main list; this line is not evidence that the current main list already contains the complete package. The source itself is a Vintage-labeled over-target candidate pool.",
+      "sources": [
+        { "title": "Rooftop Storm — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Rooftop%20Storm", "supports": "Free Zombie spell-casting permission." },
+        { "title": "Gravecrawler — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Gravecrawler", "supports": "Zombie type and graveyard-casting condition." },
+        { "title": "Ashnod's Altar — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Ashnod%27s%20Altar", "supports": "Sacrifice cost and colorless-mana output." },
+        { "title": "Diregraf Captain — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Diregraf%20Captain", "supports": "Zombie type and death-triggered life loss." },
+        { "title": "Innistrad Remastered Release Notes", "url": "https://magic.wizards.com/en/news/feature/innistrad-remastered-release-notes", "supports": "Rules context for casting Zombies from graveyards." }
+      ]
+    },
+    {
+      "slug": "mazirek-apostle-tutor-engine",
+      "sourceReviewSlug": "maziborn-v2",
+      "comboName": "Thrumming Stone + Shadowborn Apostle + Eater of Hope",
+      "typeLabel": "Repeatable tutor engine · not infinite",
+      "cards": [
+        { "name": "Thrumming Stone", "role": "Ripple 4 on spells cast", "where": "source main" },
+        { "name": "Shadowborn Apostle", "role": "Sacrifice six Apostles to find a Demon", "where": "source main (30 copies)" },
+        { "name": "Eater of Hope", "role": "Demon tutor target", "where": "source main" }
+      ],
+      "sequence": "With Thrumming Stone on the battlefield, cast Shadowborn Apostle. Ripple 4 may reveal and let you cast more Apostles without paying their mana costs. Once six Apostles are on the battlefield, pay {B} and sacrifice them to an Apostle's ability to search for a Demon; Eater of Hope is a listed source-main target. This is a conditional tutor/value engine, not an infinite loop or guaranteed line.",
+      "caveat": "Every named card is in source main, but the archive list and proposal are not playtested or legality-certified. Ripple depends on the top four cards; the line needs six Apostles, black mana, Thrumming Stone, and a Demon target. The public source record does not confirm a commander.",
+      "sources": [
+        { "title": "Shadowborn Apostle — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Shadowborn%20Apostle", "supports": "Unlimited same-name deck copies and the six-Apostle Demon tutor." },
+        { "title": "Thrumming Stone — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Thrumming%20Stone", "supports": "Ripple 4 and casting revealed same-name cards without paying their mana costs." },
+        { "title": "Eater of Hope — Scryfall Oracle record", "url": "https://api.scryfall.com/cards/named?exact=Eater%20of%20Hope", "supports": "Creature — Demon type line for the tutor target." },
+        { "title": "Commander 2015 Release Notes", "url": "https://magic.wizards.com/en/news/feature/commander-2015-edition-release-notes-2015-11-11", "supports": "Official Mazirek sacrifice-trigger context." }
+      ]
+    },
+    {
+      "slug": "zada-twinflame-burst",
+      "sourceReviewSlug": "zadamonored-robogles",
+      "comboName": "Zada + Twinflame go-wide copy burst",
+      "typeLabel": "Finite copy burst · not infinite",
+      "cards": [
+        { "name": "Zada, Hedron Grinder", "role": "Copies a spell that targets only Zada", "where": "source main; not a confirmed source commander" },
+        { "name": "Twinflame", "role": "Temporary hasty creature copies", "where": "source main" }
+      ],
+      "sequence": "Control Zada and at least one other eligible creature. Cast Twinflame with X=1 targeting only Zada. Zada copies it for each other eligible creature and retargets each copy; the original and copies create hasty token copies. Exile those tokens at the beginning of the next end step. This is a finite burst, not an infinite combo.",
+      "caveat": "Both cards are in the saved source main, but the list is Legacy-labeled, has 64 main / 0 sideboard copies, and is below its 100-card contextual target. The review proposes a Zada command-zone move, but the source does not establish a commander; the review remains untested and count arithmetic is not a legality audit. The exact title-level Robogles credit is preserved; no author, playtest, or endorsement is claimed.",
+      "sources": [
+        { "title": "Zada, Hedron Grinder — official Magic release notes", "url": "https://magic.wizards.com/en/news/feature/march-of-the-machine-release-notes", "supports": "Zada's trigger, copies, target changes, and non-cast behavior." },
+        { "title": "Twinflame — Scryfall card record", "url": "https://scryfall.com/card/jou/100/twinflame", "supports": "Targeting, token-copy creation, haste, and delayed exile." }
+      ]
+    }
+  ]
+}

@@ -39,6 +39,13 @@ const shippedItems = [
       "Set goals, exact-variant wishlists, duplicate/trade piles, Commander Passport records, saved precon lists, duel inventories, valuation history, and deck workshop tools are available locally. Continuous account sync is not enabled.",
   },
   {
+    title: "Public Deck Matrix",
+    detail:
+      "A read-only shelf of approved, sanitized deck-route snapshots, with published summaries, lists, and review notes in one place.",
+    href: "/deck-matrix",
+    label: "Open the Deck Matrix",
+  },
+  {
     title: "Retro Battle Box and Brawlternatives",
     detail:
       "The non-Commander 9-deck Battle Box includes local inventory queues and print/CSV export. Brawlternatives are separate, non-tuned Commander-preview concepts—not official Magic Brawl—and keep scan-derived ownership out of public data.",
@@ -294,6 +301,14 @@ export default function Roadmap() {
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {item.detail}
                 </p>
+                {"href" in item && item.href && "label" in item && item.label && (
+                  <Link
+                    href={item.href}
+                    className="mt-4 inline-flex items-center gap-2 border border-primary px-3 py-2 font-mono text-[10px] font-black uppercase text-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    {item.label} <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </article>
             ))}
           </div>

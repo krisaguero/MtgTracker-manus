@@ -1,0 +1,31 @@
+{
+  "imageUris": {
+    "abyssal specter": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1783936661",
+      "normal": "https://cards.scryfall.io/normal/front/6/9/69a41bec-7fb0-4060-918a-38cbbb329543.jpg?1783936661"
+    },
+    "argothian swine": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/a/f/afe5e4ec-9c0e-4b1a-b3c6-e9631cf214eb.jpg?1783946319",
+      "normal": "https://cards.scryfall.io/normal/front/a/f/afe5e4ec-9c0e-4b1a-b3c6-e9631cf214eb.jpg?1783946319"
+    },
+    "artisan of kozilek": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/9/3/9312fada-fc31-46ac-b6a1-cfffd776856f.jpg?1783915459",
+      "normal": "https://cards.scryfall.io/normal/front/9/3/9312fada-fc31-46ac-b6a1-cfffd776856f.jpg?1783915459"
+    },
+    "attrition": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/f/8/f8f29b57-172e-407b-b55e-32fe96198f92.jpg?1783941230",
+      "normal": "https://cards.scryfall.io/normal/front/f/8/f8f29b57-172e-407b-b55e-32fe96198f92.jpg?1783941230"
+    },
+    "clot sliver": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/4/8/486fb777-0cbb-4c04-8b30-f2806366a957.jpg?1783915437",
+      "normal": "https://cards.scryfall.io/normal/front/4/8/486fb777-0cbb-4c04-8b30-f2806366a957.jpg?1783915437"
+    },
+    "maggot carrier": {
+      "art_crop": "https://cards.scryfall.io/art_crop/front/c/d/cd2ee72e-68d3-46b9-abc6-08532ce412b2.jpg?1783944756",
+      "normal": "https://cards.scryfall.io/normal/front/c/d/cd2ee72e-68d3-46b9-abc6-08532ce412b2.jpg?1783944756"
+    }
+  },
+  "schemaVersion": 1,
+  "source": "Scryfall oracle_cards bulk data",
+  "sourceUpdatedAt": "2026-11-07T22:02:07.434+00:00"
+}

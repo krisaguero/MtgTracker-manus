@@ -21,8 +21,8 @@ export function BrawlDeckCard({ deck, detail = false, initialView }: { deck: Bra
   return <article id={deck.id} className="scroll-mt-20 border-2 border-border bg-card">
     <header className="border-b border-border bg-primary/5 p-5 sm:p-7">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="border border-primary/40 bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">Entry {String(deck.rank).padStart(2, '0')}</span>
-        <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">Self-built · not tuned</span>
+        <span className="border border-primary/40 bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">{deck.archiveSource ? 'Public archive child' : `Entry ${String(deck.rank).padStart(2, '0')}`}</span>
+        <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">{deck.archiveSource ? 'Separate experiment · untested' : 'Self-built · not tuned'}</span>
         <span className="border border-border bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">Commander preview</span>
         {deck.deckType === 'custom-non-precon' && <span className="border border-primary/40 bg-background px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider text-primary">Custom · non-precon Brawlternative</span>}
       </div>

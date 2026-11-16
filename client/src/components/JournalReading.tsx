@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, Clock3, Layers3, List, MonitorPlay, ShoppingBag, TrendingUp } from 'lucide-react';
 import { cardReference } from '@/lib/brawlDecks';
 import { battleBoxReferences } from '@/lib/battleBoxStrategy';
 import { MarketPostMarkdown } from './MarketPostMarkdown';
 import { marketJournalWithEmbeds } from '@/lib/marketJournalEmbeds';
+import { getScryfallJson } from '@/lib/scryfallRequest';
 import './journal-reading.css';
 
 export type ReadingArticle = { slug: string; title: string; body: string; summary: string };
@@ -56,11 +57,107 @@ const features = {
     takeaways: ['Build Invisible Woman as defensive spellslinger tokens, not generic four-color value.', 'Start with cheap interaction, token engines, and High Alert before premium doublers.', 'Import the full ManaBox export before treating any card as a confirmed buy.'],
     action: 'Open the Commander Library', target: '/commander',
   },
+  'invisible-woman-post-star-trek-tempo-part-two': {
+    label: 'Fantastic Four · Part Two', icon: Layers3, card: 'Spock, Always Your Friend',
+    href: '/card/Spock%2C%20Always%20Your%20Friend',
+    takeaways: ['Tune Invisible Woman for 1v1 and three-player tempo instead of adding Star Trek cards as a theme layer.', 'Use Anthropological Mission and Spock to turn cheap noncreature spells into selection and Walls.', 'Choose bluffing, historic scaling, or card-flow upgrades based on the pace of your local table.'],
+    action: 'Open the Invisible Woman plan', target: '/precon-portfolio/plan/invisible-woman-focused',
+  },
   'typa-restock-alerts-reality-fracture': {
     label: 'Restock desk · FOMO control', icon: MonitorPlay, card: 'TYPA restock alerts',
-    href: 'https://apps.apple.com/app/id6744125469', imageUrl: '/manus-storage/typa-today-restocks_7979f879.png',
+    href: 'https://apps.apple.com/app/id6744125469', imageUrl: 'https://api.scryfall.com/cards/named?exact=Reality%20Fracture&format=image&version=normal',
     takeaways: ['Use a small, budget-approved watchlist instead of tracking every trending product.', 'A restock alert is an availability signal, not proof that the price is good.', 'The Reality Fracture bundle example shows how a focused alert can turn into a real find.'],
     action: 'Open TYPA on the App Store', target: 'https://apps.apple.com/app/id6744125469',
+  },
+  'star-trek-adventure-deck-building-2026-11-10': {
+    label: 'Star Trek adventure deck lab', icon: Layers3, card: 'The Borg Queen',
+    href: '/market-watch#precon-market-signals-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Borg%20Queen&format=image&version=normal',
+    takeaways: ['Four Star Trek missions stay distinct instead of becoming one shared-staple pile.', 'The Campaign Box and Brawlternative Box remain separate construction layers.', 'Wait for release-week supply before buying speculative Star Trek singles.'],
+    action: 'Open the Star Trek market watch', target: '/market-watch',
+  },
+  'deckbox-decks-visual-archive-2026-11-10': {
+    label: 'Deckbox public archive', icon: BookOpen, card: 'Delraich',
+    href: '/battle-box/deckbox/deck-black-grave-delrach-sac', imageUrl: 'https://api.scryfall.com/cards/named?exact=Delraich&format=image&version=normal',
+    takeaways: ['Six saved lists remain inspectable as source records.', 'Public rows and card roles do not expose private ownership or ManaBox data.', 'Open each list to review categories, quantities, and the downloadable source copy.'],
+    action: 'Open the Deckbox archive', target: '/battle-box',
+  },
+  'precon-upgrade-market-radar-2026-11-10': {
+    label: 'Precon market desk', icon: TrendingUp, card: "Primevals' Glorious Rebirth",
+    href: '/market-watch#precon-market-signals-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=Primevals%27%20Glorious%20Rebirth&format=image&version=normal',
+    takeaways: ['Each signal connects a precon, commander, bottleneck, and direct add/cut.', 'Buy for play, wait for supply, watch, and leave-alone postures stay separate.', 'Dated prices are observations, not live quotes or investment advice.'],
+    action: 'Open the precon signal module', target: '/market-watch#precon-market-signals-heading',
+  },
+  'star-trek-before-launch-market-watch-2026-11-07': {
+    label: 'Star Trek release watch', icon: TrendingUp, card: 'The Borg Queen',
+    href: '/market-report/star-trek-market-watch-2026-11-07', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Borg%20Queen&format=image&version=normal',
+    takeaways: ['A dated pre-release baseline for the Star Trek Commander launch.', 'Reported listing moves remain separate from completed-sale evidence.', 'Wait for release-week supply and depth before buying speculative singles.'],
+    action: 'Open the dated release watch', target: '/market-report/star-trek-market-watch-2026-11-07',
+  },
+  'star-trek-potential-movers-play-first-2026-11-08': {
+    label: 'Star Trek potential movers', icon: TrendingUp, card: "Jhoira's Familiar",
+    href: '/market-report/star-trek-potential-movers-2026-11-08', imageUrl: 'https://api.scryfall.com/cards/named?exact=Jhoira%27s%20Familiar&format=image&version=normal',
+    takeaways: ['Separates deck-fit cards from adjacent research and unverified price narratives.', 'Uses a shared-copy tray instead of assuming four copies are needed.', 'The provisional basket is a play plan, not a buy recommendation.'],
+    action: 'Open the potential-mover radar', target: '/market-report/star-trek-potential-movers-2026-11-08',
+  },
+  'star-trek-campaign-and-brawlternative-resource-guide-2026-11-10': {
+    label: 'Star Trek resource desk', icon: Layers3, card: 'General Chang, Cold Warrior',
+    href: '/star-trek-campaign-box', imageUrl: 'https://api.scryfall.com/cards/named?exact=General%20Chang%2C%20Cold%20Warrior&format=image&version=normal',
+    takeaways: ['Campaign Box and Brawlternative Box remain separate construction layers.', 'Official precon, proxy, sealed, and scanned-card records do not merge.', 'Use the guide as a handoff between the public resource pages.'],
+    action: 'Open the Campaign Box', target: '/star-trek-campaign-box',
+  },
+  'star-trek-four-missions-deck-idea-2026-11-10': {
+    label: 'Star Trek four-mission clinic', icon: Layers3, card: 'Tireless Provisioner',
+    href: '/market-report/star-trek-deck-idea-2026-11-10', imageUrl: 'https://api.scryfall.com/cards/named?exact=Tireless%20Provisioner&format=image&version=normal',
+    takeaways: ['Federation, Borg, Landing Party, and Klingon Fury keep distinct jobs.', 'Shared bridge cards are allocated after playtesting, not duplicated by default.', 'The market layer helps time a purchase without defining the deck.'],
+    action: 'Open the four-mission clinic', target: '/market-report/star-trek-deck-idea-2026-11-10',
+  },
+  'precon-swerve-roberts-plague-of-locusts': {
+    label: 'Precon swerve · swarm engine', icon: TrendingUp, card: 'The Locust God',
+    href: '/deck-gallery/deck-locust-s-locusts-robogles-build', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Locust%20God&format=image&version=normal',
+    takeaways: ['Card draw becomes an army of hasty flying Insects.', 'Portable staples keep the theme intact instead of flattening it into generic Izzet value.', 'Open the preserved Robogles list before treating the article as an upgrade guide.'],
+    action: 'Open the Locust’s Locusts decklist', target: '/deck-gallery/deck-locust-s-locusts-robogles-build',
+  },
+  'precon-swerve-breya-scrap-to-lethal': {
+    label: 'Precon swerve · artifact combo', icon: Layers3, card: 'Breya, Etherium Shaper',
+    href: '/deck-gallery/deck-breya-facts-robogles-build', imageUrl: 'https://api.scryfall.com/cards/named?exact=Breya%2C%20Etherium%20Shaper&format=image&version=normal',
+    takeaways: ['The Robogles source remains a 60-card WIP, not an invented Commander list.', 'Altars, recursion, and tutors define the Scrap to Lethal pipeline.', 'Compare the source WIP with the separate Breya Facts archive record.'],
+    action: 'Open the Breya source decklist', target: '/deck-gallery/deck-breya-facts-robogles-build',
+  },
+  'star-trek-spoiler-season-movers-2026-11-11': {
+    label: 'Star Trek spoiler-season desk', icon: TrendingUp, card: 'Unexpected Windfall',
+    href: '/market-watch#star-trek-upgrade-radar-heading', imageUrl: 'https://api.scryfall.com/cards/named?exact=Unexpected%20Windfall&format=image&version=normal',
+    takeaways: ['Separates confirmed historical movers from unverified Star Trek synergy theses.', 'Maps artifact, landfall, combat, and energy questions to all four deck clinics.', 'Keeps the release-week posture at watch until lists and supply are verified.'],
+    action: 'Open the Star Trek spoiler radar', target: '/market-watch#star-trek-upgrade-radar-heading',
+  },
+  'precon-upgrade-radar-2026-11-11': {
+    label: 'Precon upgrade desk · November 11', icon: TrendingUp, card: "Sythis, Harvest's Hand",
+    href: '/precon-upgrades?deck=adaptive-enchantment', imageUrl: 'https://api.scryfall.com/cards/named?exact=Sythis%2C%20Harvest%27s%20Hand&format=image&version=normal',
+    takeaways: ['Estrid gets a strict sub-$50 upgrade path with a $3.08 observed two-card package.', 'Calling All Angels stays on a wait-for-supply posture until Foundations is open.', 'Exact printing, shipping, and completed-sale checks remain required.'],
+    action: 'Open the precon upgrade desk', target: '/precon-upgrades?deck=adaptive-enchantment',
+  },
+  'fallout-wasteland-battle-box-precon-swerve-2026-11-12': {
+    label: 'Fallout Battle Box swerve', icon: Layers3, card: 'The Master, Transcendent',
+    href: '/pip', imageUrl: 'https://api.scryfall.com/cards/named?exact=The%20Master%2C%20Transcendent&format=image&version=normal',
+    takeaways: ['Compresses Mutant Menace and Science! into a proposed 60-card closed ecosystem.', 'Keeps Rad-Aggro and Brotherhood Control separate instead of inventing one blended list.', 'Treats thematic playsets as test requirements, not verified market buys.'],
+    action: 'Open the Fallout set index', target: '/pip',
+  },
+  'precon-swerve-valgavoth-archenemy-ascension-2026-11-13': {
+    label: 'Precon swerve · Archenemy', icon: Layers3, card: 'Valgavoth, Harrower of Souls',
+    href: '/deck/dsk/endless-punishment', imageUrl: 'https://api.scryfall.com/cards/named?exact=Valgavoth%2C%20Harrower%20of%20Souls&format=image&version=normal',
+    takeaways: ['Reframes Endless Punishment as a 1v3 Archenemy event instead of a conventional four-player group-slug deck.', 'Promotes the boxed scheme cards from novelty to the core of the House experience.', 'Connects the Duskmourn set page, official decklist, Market Watch, and Precon Studio without treating a narrative build as a price guarantee.'],
+    action: 'Open Endless Punishment', target: '/deck/dsk/endless-punishment',
+  },
+  'daily-mtg-market-movers-30-signal-2026-11-13': {
+    label: 'Market Desk · November 13', icon: TrendingUp, card: 'Uthros Research Craft',
+    href: '/market-watch', imageUrl: 'https://api.scryfall.com/cards/named?exact=Uthros%20Research%20Craft&format=image&version=normal',
+    takeaways: ['Separates confirmed movers from developing Star Trek and precon theses.', 'Treats the November 13 launch as a supply event, not permission to chase launch-day singles.', 'Maps Spacecraft, artifact, Ooze, and precon signals back to the tracker’s Market Watch and deck projects.'],
+    action: 'Open Market Watch', target: '/market-watch',
+  },
+  'prediction-highlights-lovers-found-2026-11-14': {
+    label: 'Prediction Review · lovers found', icon: TrendingUp, card: 'Mold Shambler',
+    href: '/market-watch', imageUrl: 'https://api.scryfall.com/cards/named?exact=Mold%20Shambler&format=image&version=normal',
+    takeaways: ['31.11% overall directional accuracy across 45 matured exact-printing records.', '35.48% UP-call precision and 55.00% rise recall make the model useful for review, not automatic buying.', 'Separates true post-publication outcomes from newer posts that are still unresolved because the stored history ends November 7.'],
+    action: 'Open prediction review', target: '/blog/prediction-highlights-lovers-found-2026-11-14',
   },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
@@ -75,7 +172,7 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
   if (!feature) return null;
   const ref = journalCardImage(slug);
   if (!ref?.imageUrl) return null;
-  const artOnly = slug === 'battle-box-october-17-recap';
+  const artOnly = slug === 'battle-box-october-17-recap' || slug.startsWith('star-trek-');
   const external = feature.href.startsWith('https://');
   const image = <img src={artOnly ? ref.artUrl : ref.imageUrl} alt={artOnly ? `Representative artwork for Goblin Cavalcade` : feature.card} width={artOnly ? '626' : '488'} height={artOnly ? '457' : '680'} loading={compact ? 'lazy' : 'eager'} />;
   return <figure className={`journal-cover ${compact ? 'journal-cover--compact' : ''} ${artOnly ? 'journal-cover--art' : 'journal-cover--commander'}`}>
@@ -87,7 +184,7 @@ export function ArticleCover({ slug, compact = false }: { slug: string; compact?
 export function journalCardImage(slug: string) {
   const feature = readingFeature(slug);
   if (!feature) return undefined;
-  if ('imageUrl' in feature && feature.imageUrl) return { imageUrl: feature.imageUrl, artUrl: feature.imageUrl };
+  if ('imageUrl' in feature && feature.imageUrl) return { imageUrl: feature.imageUrl, artUrl: feature.imageUrl.replace(/version=normal/, 'version=art_crop') };
   const brawl = cardReference(feature.card);
   if (brawl) return { imageUrl: brawl.imageUrl ?? undefined, artUrl: brawl.artUrl ?? undefined };
   const battle = battleBoxReferences[feature.card];
@@ -159,6 +256,20 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'Aetherflux Reservoir', label: 'High-power alternate win', reason: 'Converts a protected chain of cheap noncreature spells into a noncombat table finish.' },
     ],
   },
+  'invisible-woman-post-star-trek-tempo-part-two': {
+    heading: 'Invisible Woman · Part Two visual desk',
+    description: 'Star Trek and budget cards that sharpen the Invisible Woman plan for tempo, bluffing, and historic scaling.',
+    cards: [
+      { name: 'Anthropological Mission', label: 'Federation cantrip engine', reason: 'Counts noncreature spells, smooths the first three triggers, and becomes clean draw after the quest is established.' },
+      { name: 'Spock, Always Your Friend', label: 'Four-card selection', reason: 'Finds the noncreature engine, protection spell, or payoff missing from the current hand.' },
+      { name: 'Nyota Uhura, Communications', label: 'Small-pod card flow', reason: 'Rewards choosing the mana value that opponents are most likely to cast.' },
+      { name: 'Brazen Bluff', label: 'Stack bluffing', reason: 'Makes an opposing noncreature spell create a bad choice while also triggering Invisible Woman.' },
+      { name: 'Slip Out the Back', label: 'Budget protection', reason: 'Phases out a key creature and adds a counter for a cheap pre-combat trigger.' },
+      { name: 'The Vision', label: 'Historic bridge', reason: 'Turns each noncreature spell into draw, indestructibility, or double strike once per turn.' },
+      { name: 'Captain Jean-Luc Picard', label: 'Second-draw scaling', reason: 'Rewards the draw pattern created by the cantrip lane and grows the attacking threat.' },
+      { name: 'U.S.S. Enterprise-D, Galaxy-Class', label: 'Historic finisher', reason: 'Turns surplus Wall mana into a Spacecraft threat and another noncreature trigger.' },
+    ],
+  },
   'remote-play-shuffle-tests': {
     heading: 'The Wise Mothman · visual deck desk',
     description: 'A representative commander image and current Scryfall USD reference for the remote-play guide’s featured deck.',
@@ -168,6 +279,145 @@ const editorialSpotlights: Record<string, { heading: string; description: string
     heading: 'Battle Box · featured deck desk',
     description: 'A representative card image and current Scryfall USD reference for the Battle Box recap’s first featured deck.',
     cards: [{ name: 'Goblin Rabblemaster', label: 'Fast pressure', reason: 'A representative threat for the Goblin Cavalcade matchup and its short combat clock.' }],
+  },
+  'star-trek-adventure-deck-building-2026-11-10': {
+    heading: 'Star Trek adventure deck cards',
+    description: 'Representative current printings for the four mission lanes. Use the campaign and radar links to inspect the complete build surfaces.',
+    cards: [
+      { name: 'The Borg Queen', label: 'Assimilation anchor', reason: 'The commander route that makes artifact creatures and opposing graveyards the central question.' },
+      { name: "Jhoira's Familiar", label: 'Historic cost reduction', reason: 'A Federation Fleet bridge for making historic permanents and Spacecraft easier to deploy.' },
+      { name: 'Tatyova, Benthic Druid', label: 'Landfall draw', reason: 'A Landing Party payoff that turns the land plan into cards.' },
+      { name: 'General Chang, Cold Warrior', label: 'Combat support', reason: 'A Klingon Fury direction that keeps attacks and temporary attackers meaningful.' },
+      { name: 'Mindcrank', label: 'Graveyard bridge', reason: 'A low-cost Borg experiment that can fill opposing graveyards through incidental life loss.' },
+      { name: 'Mesmeric Orb', label: 'High-risk mill', reason: 'A stronger but more expensive universal mill test to wait on until supply settles.' },
+    ],
+  },
+  'deckbox-decks-visual-archive-2026-11-10': {
+    heading: 'Deckbox archive card frames',
+    description: 'Representative cards from the six saved public lists. Images identify the cards; they do not certify the original printing or legality.',
+    cards: [
+      { name: 'Delraich', label: 'Sacrifice payoff', reason: 'The anchor for the black graveyard and expendable-creature list.' },
+      { name: 'Dark Ritual', label: 'Early acceleration', reason: 'A visible part of the Delraich source list’s fast-start identity.' },
+      { name: 'The Rack', label: 'Discard clock', reason: 'Turns the Shadow Rack list’s hand pressure into repeatable damage.' },
+      { name: "Emrakul's Hatcher", label: 'Spawn engine', reason: 'The Eldrazi half-list’s bridge from early development to larger threats.' },
+      { name: 'Giant Growth', label: 'Combat pump', reason: 'A simple green-aggro signal that makes the saved list’s combat math legible.' },
+      { name: 'Clot Sliver', label: 'Team protection', reason: 'The modified Slivers list’s explicit defensive role.' },
+    ],
+  },
+  'precon-upgrade-market-radar-2026-11-10': {
+    heading: 'Precon upgrade signal cards',
+    description: 'The Gemini brief’s anchors, bridges, and direct upgrade candidates, shown as framed card references before the decision notes.',
+    cards: [
+      { name: 'The Borg Queen', label: 'Star Trek anchor', reason: 'The release-week commander behind the wait-for-supply posture.' },
+      { name: 'Mindcrank', label: 'Borg bridge', reason: 'A low-cost graveyard-filling experiment with a documented tradeoff.' },
+      { name: 'Dihada, Binder of Wills', label: 'Mardu commander', reason: "The Legends' Legacy engine for filling the graveyard and supporting legendary permanents." },
+      { name: "Primevals' Glorious Rebirth", label: 'Play-first upgrade', reason: 'The direct add that converts a stocked legendary graveyard into a large recovery turn.' },
+      { name: 'Doctor Doom, King of Latveria', label: 'Marvel anchor', reason: 'The artifact-and-villain control commander in the supplied clinic.' },
+      { name: 'Lightning Greaves', label: 'Protection upgrade', reason: 'A useful zero-equip swap whose observed price kept it outside the current buy posture.' },
+    ],
+  },
+  'precon-swerve-roberts-plague-of-locusts': {
+    heading: 'The Locust’s Locusts · swarm package',
+    description: 'Representative cards from Robert’s The Locust God build. Use the decklist link in the article to inspect the complete saved source record.',
+    cards: [
+      { name: 'The Locust God', label: 'Commander engine', reason: 'Turns every card drawn into a hasty flying Insect.' },
+      { name: 'Windfall', label: 'Wheel trigger', reason: 'Refills hands while converting the table-wide draw into a new swarm.' },
+      { name: 'Skullclamp', label: 'Hive mind draw', reason: 'Sacrifices an individual Insect to create more cards and more bodies.' },
+      { name: 'Impact Tremors', label: 'Token-entry finisher', reason: 'Lets the swarm damage opponents without needing every Insect to connect.' },
+      { name: 'Throne of the God-Pharaoh', label: 'End-step drain', reason: 'Turns a tapped-out swarm into inevitable life loss.' },
+    ],
+  },
+  'precon-swerve-breya-scrap-to-lethal': {
+    heading: 'Breya · Scrap to Lethal package',
+    description: 'Representative cards from the artifact-combo pipeline. The source deck remains a separate 60-card WIP; these are the proposed role anchors, not an automatic legality claim.',
+    cards: [
+      { name: 'Breya, Etherium Shaper', label: 'Artifact commander idea', reason: 'Creates the disposable thopters that make the sacrifice loop possible.' },
+      { name: "Ashnod's Altar", label: 'Mana altar', reason: 'Converts thopters and artifacts into the colorless mana that fuels recursion.' },
+      { name: 'Krark-Clan Ironworks', label: 'Artifact altar', reason: 'Adds a second sacrifice-to-mana engine for the lethal pipeline.' },
+      { name: 'Nim Deathmantle', label: 'Recursion engine', reason: 'Pairs with Breya and an altar to repeat the enter-the-battlefield loop.' },
+      { name: 'Fabricate', label: 'Budget tutor', reason: 'Finds an artifact engine without assuming every list needs premium tutors.' },
+    ],
+  },
+  'star-trek-spoiler-season-movers-2026-11-11': {
+    heading: 'Star Trek spoiler-season watch cards',
+    description: 'Portable Universes Beyond evidence beside the four Star Trek deck roles. Star Trek synergy remains developing until release-week supply is visible.',
+    cards: [
+      { name: 'Unexpected Windfall', label: 'Portable UB staple', reason: 'A Fallout artifact-and-Treasure card with sustained movement in the supplied brief; verify the exact printing before acting.' },
+      { name: 'Leonardo da Vinci', label: 'Supply compression case', reason: 'A reminder that sealed-product opening can overwhelm narrow Commander demand.' },
+      { name: "Jhoira's Familiar", label: 'Federation Fleet bridge', reason: 'Historic cost reduction is the clearest existing artifact-role test for the Star Trek clinics.' },
+      { name: 'Tatyova, Benthic Druid', label: 'Landing Party bridge', reason: 'Landfall draw gives the deck a durable baseline before speculative energy additions.' },
+      { name: 'General Chang, Cold Warrior', label: 'Klingon Fury bridge', reason: 'Combat support keeps artifact additions subordinate to the deck\'s attack plan.' },
+      { name: 'Borg Cube', label: 'Borg route test', reason: 'Artifact-creature support belongs after choosing The Borg Queen, Locutus, or charge counters.' },
+    ],
+  },
+  'precon-upgrade-radar-2026-11-11': {
+    heading: "Today's precon upgrade anchors",
+    description: "Three decision lanes in one visual desk: buy the small Estrid package for play, wait on Giada, and watch Borg supply before committing to a route.",
+    cards: [
+      { name: 'Estrid, the Masked', label: 'Adaptive Enchantment anchor', reason: 'Untaps enchanted permanents and rewards a resilient enchantress draw package.' },
+      { name: "Sythis, Harvest's Hand", label: 'Buy-for-play upgrade', reason: 'Replaces symmetrical draw with enchantment-cast triggers and lifegain; supplied observation $2.41.' },
+      { name: 'Jukai Naturalist', label: 'Penny upgrade', reason: "Makes Auras cheaper and stays inside Estrid's existing enchantment identity; supplied observation $0.67." },
+      { name: "Enchantress's Presence", label: 'Draw bridge', reason: 'The durable card-flow layer that keeps the deck functioning after an enchantress is removed.' },
+      { name: 'Giada, Font of Hope', label: 'Calling All Angels anchor', reason: 'Accelerates Angels and adds counters, but the Foundations release still needs a supply check.' },
+      { name: 'Flawless Maneuver', label: 'Wait-for-release protection', reason: 'A logical Giada protection test at the supplied $8.99 observation, with the stock-list cut still unverified.' },
+      { name: 'The Borg Queen', label: 'We Are the Borg anchor', reason: 'The assimilation route is the first commander choice to test before buying into Borg, Locutus, or charge-counter packages.' },
+      { name: 'Collation Trimatrix', label: 'Borg token card advantage', reason: 'The proposed add over Korok, Liberated Rage converts surplus 1/1 Borg tokens into cards; exact price remains unverified.' },
+      { name: 'Skullclamp', label: 'Locutus token bridge', reason: 'A reprint-aware draw engine for the token route; wait for release-week supply rather than chasing a preorder.' },
+      { name: 'Academy Ruins', label: 'Artifact recursion watch', reason: 'A portable artifact role worth checking after the list is released, not a confirmed buy today.' },
+    ],
+  },
+  'fallout-wasteland-battle-box-precon-swerve-2026-11-12': {
+    heading: 'Fallout Wasteland Battle Box · visual anchors',
+    description: 'The proposed 60-card ecosystem keeps the source Commander decks, Battle Box concepts, and personal inventory separate.',
+    cards: [
+      { name: 'The Master, Transcendent', label: 'Rad-Aggro engine', reason: 'The proposed Mutant Menace route’s repeatable mill and reanimation anchor.' },
+      { name: 'Liberty Prime, Recharged', label: 'Brotherhood Control finisher', reason: 'The Science! route’s singular end-game threat after the energy package is compressed.' },
+      { name: 'The Wise Mothman', label: 'Fallout comparison point', reason: 'A separate radiation and counter identity used to compare the box’s narrative lanes.' },
+      { name: 'Nuclear Fallout', label: 'Defining reset', reason: 'A thematic board event to test in the closed economy rather than a generic Commander staple.' },
+      { name: 'Radstorm', label: 'Radiation/proliferate event', reason: 'A radioactive spell that gives the box its own resource language.' },
+      { name: 'Feral Ghoul', label: 'Flavor-first inclusion', reason: 'A low-power thematic card only needs to compete with the other Fallout decks in the box.' },
+      { name: 'Screeching Scorchbeast', label: 'Wasteland threat', reason: 'A story-forward card whose value is judged by the matchup, not a broad Commander ranking.' },
+    ],
+  },
+  'precon-swerve-valgavoth-archenemy-ascension-2026-11-13': {
+    heading: 'Valgavoth’s Archenemy ascension · the bangers',
+    description: 'The cards that turn Endless Punishment from a group-slug precon into a 1v3 House-of-Horror event. Images are representative current printings; verify exact editions before buying.',
+    cards: [
+      { name: 'Valgavoth, Harrower of Souls', label: 'The House made commander', reason: 'The face commander is not just a damage engine here; he is the raid boss that gives the Archenemy table its story and pressure clock.' },
+      { name: 'Dictate of the Twin Gods', label: 'Damage multiplier', reason: 'Turns every scheme, combat hit, and group-slug trigger into a threat the hero team cannot comfortably ignore.' },
+      { name: 'Mogis, God of Slaughter', label: 'The House’s toll', reason: 'Keeps three opponents paying life or sacrificing bodies while the Archenemy player spends turns advancing the lock.' },
+      { name: 'Havoc Festival', label: 'No safe hallway', reason: 'A brutal asymmetrical closer for the version that wants the game to feel like an escalating horror scenario rather than a normal pod.' },
+      { name: 'All in Good Time', label: 'Scarce scheme banger', reason: 'A premium oversized Archenemy-era scheme that makes the format’s collector scarcity visible on the table.' },
+      { name: 'A Display of My Dark Power', label: 'Villain monologue', reason: 'The kind of scheme that makes the 1v3 structure feel intentional: the table is responding to a boss encounter, not a random Commander threat.' },
+      { name: 'My Crushing Masterstroke', label: 'Table panic', reason: 'A signature scheme moment for the House deck: the heroes must coordinate before the next reveal compounds the advantage.' },
+      { name: 'Reality Is Mine to Control', label: 'Endgame authority', reason: 'A story-forward payoff that reinforces the article’s central swerve from sealed-product speculation into a playable event.' },
+    ],
+  },
+  'prediction-highlights-lovers-found-2026-11-14': {
+    heading: 'Prediction review · lovers found and model misses',
+    description: 'Exact-printing cards with matured post-entry observations. Positive movement is not the same as a completed-sale return.',
+    cards: [
+      { name: 'Swamp', label: 'Correct UP call · +40.00%', reason: 'ZNR #382 was the largest positive movement among matured correct UP calls.' },
+      { name: 'Mold Shambler', label: 'Correct UP call · +30.00%', reason: 'C13 #156 delivered a strong directional hit, with low-liquidity caution still attached.' },
+      { name: 'Taunt from the Rampart', label: 'Correct UP call · +21.25%', reason: 'MSC #188 validates a precon-oriented signal without proving a purchase edge.' },
+      { name: 'Hinterland Harbor', label: 'Correct UP call · +10.53%', reason: 'FIC #403 shows a moderate rise in a broad Commander utility lane.' },
+      { name: 'Magmatic Force', label: 'False UP call · -65.00%', reason: 'SCD #150 is the clearest reminder that momentum bands need supply and reprint penalties.' },
+      { name: 'Plains', label: 'Missed rise · +160.00%', reason: 'C15 #325 is treated as an anomaly candidate until another observation confirms the movement.' },
+    ],
+  },
+  'daily-mtg-market-movers-30-signal-2026-11-13': {
+    heading: 'November 13 market movers · visual signal board',
+    description: 'A visual shortlist from the supplied 30-signal brief. Confirmed movement, developing catalysts, and launch-week speculation remain deliberately separated.',
+    cards: [
+      { name: 'Uthros Research Craft', label: 'Confirmed Spacecraft mover', reason: 'The brief reports a rise from under $2 a month ago to a $7.15 TCGplayer Market Price; launch supply is the key risk.' },
+      { name: 'Inspirit, Flagship Vessel', label: 'Ship-demand watch', reason: 'Reported sales volume nearly doubled and the card approached $5, but the exact daily move and liquidity still need verification.' },
+      { name: 'Urza, Chief Artificer', label: 'Artifact bridge', reason: 'The Star Trek artifact-creature thesis makes Urza relevant to We Are the Borg, while near-$10 listings suggest patience rather than chasing.' },
+      { name: 'Dawnsire, Sunstar Dreadnought', label: 'Spacecraft premium', reason: 'A higher-priced ship signal whose upside depends on post-launch deck adoption and surviving fresh sealed supply.' },
+      { name: 'Adagia, Windswept Bastion', label: 'Station thesis', reason: 'A developing artifact and Station connection; the right status is watch until completed sales and deck adoption appear.' },
+      { name: 'One, Borg Evolved', label: 'Launch-week speculation', reason: 'A Star Trek artifact-creature signal with unverified pricing and meaningful spoiler-reversal and supply risk.' },
+      { name: 'Locutus of Borg', label: 'Commander route watch', reason: 'A We Are the Borg commander option that belongs in the deck clinic, not an automatic buy before launch-week listings settle.' },
+      { name: 'Moonshadow', label: 'Confirmed Modern mover', reason: 'The brief cites a rise from $14 to $27 tied to a specific emerging Modern archetype, with early-meta reversal still possible.' },
+    ],
   },
 };
 
@@ -184,9 +434,7 @@ export function CardSpotlightGallery({ slug }: { slug: string }) {
     const load = async () => {
       const results = await Promise.all(spotlightSet.cards.map(async (spotlight) => {
         try {
-          const response = await fetch(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
-          if (!response.ok) return { ...spotlight, imageUrl: cardReference(spotlight.name)?.imageUrl ?? undefined };
-          const card = await response.json() as { image_uris?: { normal?: string }; scryfall_uri?: string; prices?: { usd?: string | null; usd_foil?: string | null } };
+          const { data: card } = await getScryfallJson<{ image_uris?: { normal?: string }; scryfall_uri?: string; prices?: { usd?: string | null; usd_foil?: string | null } }>(`https://api.scryfall.com/cards/named?exact=${encodeURIComponent(spotlight.name)}`);
           return { ...spotlight, imageUrl: card.image_uris?.normal, scryfallUri: card.scryfall_uri, usd: card.prices?.usd, usdFoil: card.prices?.usd_foil };
         } catch {
           return { ...spotlight, imageUrl: cardReference(spotlight.name)?.imageUrl ?? undefined };
@@ -235,7 +483,7 @@ function InlineDeck({ name, href, text }: typeof spotlights[number]) {
 }
 
 export function ReadingBody({ article }: { article: ReadingArticle }) {
-  const body = article.body.replace(/^# [^\n]*\n+/, '');
+  const body = article.body.replace(/^# [^\n]*\n+/, '').replace(/```mtg-card\n[\s\S]*?```\n*/g, '');
   if (article.slug.startsWith('market-watch-')) {
     const sourceDate = article.slug.slice('market-watch-'.length);
     return <article className="journal-prose" aria-label="Article text"><MarketPostMarkdown body={marketJournalWithEmbeds(body, sourceDate)} sourceDate={sourceDate} /></article>;
@@ -260,6 +508,34 @@ export function ReadingMeta({ body }: { body: string }) {
   return <span className="journal-reading-time"><Clock3 size={15} aria-hidden="true" /> {readingMinutes(body)} min read</span>;
 }
 
+const relatedReadingCards: Record<string, string> = {
+  'remote-play-shuffle-tests': 'The Wise Mothman',
+  'brawlternative-shelf-roundup': 'The Wise Mothman',
+  'battle-box-october-17-recap': 'Goblin Rabblemaster',
+  'commanders-100-percent-worth-building-around': 'Sakiko, Mother of Summer',
+  'simple-builds-that-dominate-your-playgroup': 'Jasmine Boreal of the Seven',
+  'eight-simple-commander-deck-blueprints': 'Jasmine Boreal of the Seven',
+  'invisible-woman-build-the-wall': 'Invisible Woman',
+  'invisible-woman-post-star-trek-tempo-part-two': 'Spock, Always Your Friend',
+  'typa-restock-alerts-reality-fracture': 'Reality Fracture',
+  'star-trek-adventure-deck-building-2026-11-10': 'The Borg Queen',
+  'deckbox-decks-visual-archive-2026-11-10': 'Delraich',
+  'precon-upgrade-market-radar-2026-11-10': "Primevals' Glorious Rebirth",
+  'precon-swerve-valgavoth-archenemy-ascension-2026-11-13': 'Valgavoth, Harrower of Souls',
+  'daily-mtg-market-movers-30-signal-2026-11-13': 'Uthros Research Craft',
+  'prediction-highlights-lovers-found-2026-11-14': 'Mold Shambler',
+};
+
+function relatedReadingImage(slug: string) {
+  const known = journalCardImage(slug);
+  if (known?.imageUrl && !known.imageUrl.includes('/manus-storage/')) {
+    if (known.artUrl && !known.artUrl.includes('/manus-storage/')) return known.artUrl;
+    return known.imageUrl.replace(/\/normal\//, '/art_crop/').replace(/version=normal/, 'version=art_crop');
+  }
+  const name = relatedReadingCards[slug] ?? 'Sol Ring';
+  return `https://api.scryfall.com/cards/named?exact=${encodeURIComponent(name)}&format=image&version=art_crop`;
+}
+
 export function RelatedReading({ articles, currentSlug }: { articles: ReadingArticle[]; currentSlug: string }) {
-  return <nav className="journal-related" aria-label="Keep reading"><p className="journal-eyebrow"><BookOpen size={17} aria-hidden="true" /> Keep exploring</p><h2>From the notebook to the table</h2><div>{articles.filter(item => item.slug !== currentSlug).map(item => <Link key={item.slug} href={`/blog/${item.slug}`}><span>{readingFeature(item.slug)?.label ?? 'Play journal'}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Read the story <ArrowRight size={16} aria-hidden="true" /></strong></Link>)}</div></nav>;
+  return <nav className="journal-related" aria-label="Keep reading"><p className="journal-eyebrow"><BookOpen size={17} aria-hidden="true" /> Keep exploring</p><h2>From the notebook to the table</h2><div>{articles.filter(item => item.slug !== currentSlug).map(item => <Link key={item.slug} href={`/blog/${item.slug}`}><div className="journal-related-image"><img src={relatedReadingImage(item.slug)} alt="" loading="lazy" /></div><div className="journal-related-copy"><span>{readingFeature(item.slug)?.label ?? 'Play journal'}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Read the story <ArrowRight size={16} aria-hidden="true" /></strong></div></Link>)}</div></nav>;
 }

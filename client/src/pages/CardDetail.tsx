@@ -8,6 +8,21 @@ import { resolveCardPrice, resolveDeckMarketValue } from '@/lib/marketPriceIndex
 import { useMarketPriceIndex } from '@/lib/marketPriceIndex';
 import { useCommanderArchive } from '@/lib/commanderArchive';
 import { MarketBuyActions } from '@/components/MarketPostCard';
+import journalArticles from '@/data/journalArticles.json';
+
+type JournalCardArticle = { slug: string; title: string; category: string; dateLabel: string; summary: string; body: string };
+const journalCardArticles = journalArticles as JournalCardArticle[];
+
+function articleMentionsCard(article: JournalCardArticle, cardName: string) {
+  const normalized = cardName.trim().toLocaleLowerCase();
+  const linkedName = Array.from(article.body.matchAll(/\]\(\/card\/([^\)]+)\)/g)).some((match) => {
+    try { return decodeURIComponent(match[1]).toLocaleLowerCase() === normalized; } catch { return false; }
+  });
+  if (linkedName) return true;
+  return Array.from(article.body.matchAll(/```mtg-card\s*\n([\s\S]*?)```/g)).some((match) => {
+    try { return String(JSON.parse(match[1]).name ?? '').trim().toLocaleLowerCase() === normalized; } catch { return false; }
+  });
+}
 
 function scryfallFullResolutionImage(card: any): string {
   return card.image_uris?.png || card.image_uris?.large || card.card_faces?.[0]?.image_uris?.png || card.card_faces?.[0]?.image_uris?.large || card.image_uris?.normal || card.card_faces?.[0]?.image_uris?.normal || '';
@@ -202,6 +217,10 @@ export default function CardDetail() {
         : 'Scryfall USD for current printing';
   const marketMovers = useMemo(() => moversForCard(cardNameParam, activeSetCode), [cardNameParam, activeSetCode]);
   const suppliedMarketSignals = useMemo(() => suppliedSignalsForCard(cardNameParam), [cardNameParam]);
+  const relatedArticles = useMemo(() => journalCardArticles
+    .filter((article) => articleMentionsCard(article, cardNameParam))
+    .sort((a, b) => b.dateLabel.localeCompare(a.dateLabel))
+    .slice(0, 8), [cardNameParam]);
 
   const matchingDecks = useMemo(() => {
     const list: Array<{ name: string; setCode: string; setName: string; slug: string; isOwned: boolean; marketValue: number; pricedCards: number; totalCards: number; topValueCard?: { name: string; usd: number } }> = [];
@@ -430,6 +449,19 @@ export default function CardDetail() {
                   ))}
                 </div>
               )}
+            </div>
+
+            <div className="border-2 border-border bg-card p-6 sm:p-8 space-y-4" aria-label="Related articles and deck paths">
+              <div className="border-b border-border pb-3">
+                <h2 className="text-xl font-bold flex items-center gap-2"><Layers className="h-5 w-5 text-primary" /> Related articles &amp; deck paths</h2>
+                <p className="mt-1 text-xs text-muted-foreground">Journal posts link back to this card profile; saved decks containing the card appear below.</p>
+              </div>
+              {relatedArticles.length > 0 ? (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {relatedArticles.map((article) => <Link key={article.slug} href={`/blog/${article.slug}`} className="border border-border bg-background p-4 hover:border-primary"><span className="font-mono text-[9px] font-black uppercase tracking-widest text-primary">{article.category}</span><h3 className="mt-2 text-sm font-black leading-5">{article.title}</h3><p className="mt-2 line-clamp-3 text-xs leading-5 text-muted-foreground">{article.summary}</p><span className="mt-3 inline-block font-mono text-[10px] font-black uppercase text-primary">Read article →</span></Link>)}
+                </div>
+              ) : <p className="text-sm text-muted-foreground">No Journal post currently names this card through a linked card block or card-profile link.</p>}
+              <p className="border-t border-border pt-3 text-[11px] leading-5 text-muted-foreground">Deck inclusion is calculated from the public Commander archive and is separate from private inventory ownership.</p>
             </div>
 
             {/* Precon Inclusions (Inventory Prioritized) */}

@@ -9,49 +9,71 @@ type SiteItem =
 
 const navigation: SiteItem[] = [
   { type: 'link', href: '/', label: 'Sets' },
-  { type: 'link', href: '/battle-box', label: 'Battle Box' },
-  { type: 'link', href: '/brawl-box', label: 'Brawlternatives' },
-  { type: 'link', href: '/blog', label: 'Blog / Journal' },
   {
     type: 'group',
-    id: 'commander',
-    label: 'Commander',
+    id: 'browse',
+    label: 'Browse',
     links: [
       { href: '/commander', label: 'Commander archive' },
-      { href: '/commander-market', label: 'Commander demand index' },
-      { href: '/precon-studio', label: 'Precon Studio' },
-      { href: '/deck-workshop', label: 'Build & check a deck' },
+      { href: '/deck-gallery', label: 'Deck Gallery' },
+      { href: '/deck-matrix', label: 'Deck Matrix' },
+      { href: '/spoiler-calendar', label: 'Release calendar' },
     ],
   },
   {
     type: 'group',
-    id: 'play-collect',
-    label: 'Play & collect',
+    id: 'build',
+    label: 'Build',
+    links: [
+      { href: '/precon-studio', label: 'Precon Studio' },
+      { href: '/deck-workshop', label: 'Build & check a deck' },
+      { href: '/brawl/mazirek', label: 'Brawl lab' },
+      { href: '/limited', label: 'Sealed & draft pool' },
+    ],
+  },
+  {
+    type: 'group',
+    id: 'collect',
+    label: 'Collect',
     links: [
       { href: '/collection', label: 'Collection goals & imports' },
       { href: '/dupe-decks', label: 'Themed 60-card decks' },
-      { href: '/brawl/mazirek', label: 'Mazirek Brawl lab' },
-      { href: '/limited', label: 'Sealed & draft pool' },
-      { href: '/duel-battle-box', label: 'Duel battle box' },
-      { href: '/battle-box-method', label: 'Battle Box build record' },
-      { href: '/battle-box-proxy-print', label: 'Battle Box proxy-print how-to' },
+      { href: '/precon-studio', label: 'Precon portfolio' },
+      { href: '/duel-battle-box', label: 'Duel Battle Box' },
     ],
   },
   {
     type: 'group',
     id: 'markets',
-    label: 'Markets',
+    label: 'Research',
     links: [
       { href: '/market-desk', label: 'Market Desk index' },
-      { href: '/movers', label: 'Dated market movers' },
-      { href: '/market-reports', label: 'Report archive' },
-      { href: '/market-watch', label: 'Market watch feed' },
-      { href: '/markets', label: 'All market research & tools' },
-      { href: '/q4-release-risk', label: 'Q4 preorder risk desk' },
+	      { href: '/movers', label: 'Current movers' },
+	      { href: '/market-lands', label: 'Land Tax · lands only' },
+	      { href: '/commander-market', label: 'Commander demand' },
+      { href: '/market-watch', label: 'Market watch' },
     ],
   },
-  { type: 'link', href: '/roadmap', label: 'Product roadmap' },
-  { type: 'link', href: '/spoiler-calendar', label: 'Releases' },
+  { type: 'link', href: '/blog', label: 'Blog / Journal' },
+  {
+    type: 'group',
+    id: 'more',
+    label: 'More',
+    links: [
+      { href: '/battle-box', label: 'Battle Box' },
+      { href: '/brawl-box', label: 'Brawlternatives' },
+      { href: '/deck-gallery/wip', label: 'WIP & offbeat decks' },
+      { href: '/deck-gallery/robogles', label: 'Robert “Robogles” showcase' },
+      { href: '/deck-brewery/reviews', label: 'Deck Brewery reviews' },
+      { href: '/deck-brewery/matchups', label: 'Brewery matchups & combo lab' },
+      { href: '/markets', label: 'All market research & tools' },
+      { href: '/market-reports', label: 'Report archive' },
+      { href: '/q4-release-risk', label: 'Q4 preorder risk desk' },
+      { href: '/battle-box-method', label: 'Battle Box build record' },
+      { href: '/battle-box-proxy-print', label: 'Battle Box proxy-print how-to' },
+      { href: '/roadmap', label: 'Product roadmap' },
+    ],
+  },
 ];
 
 function routeIsActive(path: string, href: string) {
@@ -144,18 +166,18 @@ export function InternalPageNav({ active: _legacyActive }: { active?: string } =
           {navigation.map((item) => {
             if (item.type === 'link') {
               const selected = routeIsActive(location, item.href);
-              return <Link key={item.href} href={item.href} onClick={closeMenus} aria-current={selected ? 'page' : undefined} className={linkClass(selected, true)}>{item.label}</Link>;
+              return <Link key={item.href} href={item.href} onClick={closeMenus} aria-current={selected ? 'page' : undefined} className={`${linkClass(selected, true)} flex min-h-11 items-center`}>{item.label}</Link>;
             }
             const selected = item.links.some((link) => routeIsActive(location, link.href));
             const isOpen = openMobileGroup === item.id;
             return <section key={item.id} className="border border-border bg-card">
-              <button type="button" onClick={() => setOpenMobileGroup(isOpen ? null : item.id)} aria-expanded={isOpen} aria-controls={`mobile-submenu-${item.id}`} className={`flex w-full items-center justify-between px-3 py-2.5 font-mono text-[10px] font-black uppercase tracking-wider ${selected ? 'text-primary' : 'text-foreground'}`}>
+              <button type="button" onClick={() => setOpenMobileGroup(isOpen ? null : item.id)} aria-expanded={isOpen} aria-controls={`mobile-submenu-${item.id}`} className={`flex min-h-11 w-full items-center justify-between px-3 py-2.5 font-mono text-[10px] font-black uppercase tracking-wider ${selected ? 'text-primary' : 'text-foreground'}`}>
                 {item.label}<ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </button>
               {isOpen && <div id={`mobile-submenu-${item.id}`} className="grid gap-1 border-t border-border p-2 sm:grid-cols-2">
                 {item.links.map((link) => {
                   const linkActive = routeIsActive(location, link.href);
-                  return <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={linkActive ? 'page' : undefined} className={`px-3 py-2 text-xs font-semibold transition-colors ${linkActive ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-primary'}`}>{link.label}</Link>;
+                  return <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={linkActive ? 'page' : undefined} className={`flex min-h-11 items-center px-3 py-2 text-xs font-semibold transition-colors ${linkActive ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-muted hover:text-primary'}`}>{link.label}</Link>;
                 })}
               </div>}
             </section>;

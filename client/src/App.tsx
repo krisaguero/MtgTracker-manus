@@ -32,6 +32,14 @@ const October11MarketReport = lazy(() => import('@/pages/October11MarketReport')
 const October15MarketBrief = lazy(() => import('@/pages/October15MarketBrief').then((module) => ({ default: module.October15MarketBrief })));
 const October16MarketBrief = lazy(() => import('@/pages/October16MarketBrief').then((module) => ({ default: module.October16MarketBrief })));
 const October17MarketBrief = lazy(() => import('@/pages/October17MarketBrief').then((module) => ({ default: module.October17MarketBrief })));
+const November06MarketBrief = lazy(() => import('@/pages/November06MarketBrief').then((module) => ({ default: module.November06MarketBrief })));
+const StarTrekMarketWatchArticle = lazy(() => import('@/pages/StarTrekMarketWatchArticle').then((module) => ({ default: module.StarTrekMarketWatchArticle })));
+const StarTrekMarketUpdateNov08 = lazy(() => import('@/pages/StarTrekMarketUpdateNov08').then((module) => ({ default: module.StarTrekMarketUpdateNov08 })));
+const WeeklyMarketDeskNov10 = lazy(() => import('@/pages/WeeklyMarketDeskNov10').then((module) => ({ default: module.WeeklyMarketDeskNov10 })));
+const StarTrekDeckIdeaNov10 = lazy(() => import('@/pages/StarTrekDeckIdeaNov10').then((module) => ({ default: module.StarTrekDeckIdeaNov10 })));
+const DeckboxArchiveWhyPublicNov10 = lazy(() => import('@/pages/DeckboxArchiveWhyPublicNov10').then((module) => ({ default: module.DeckboxArchiveWhyPublicNov10 })));
+const StarTrekCampaignBox = lazy(() => import('@/pages/StarTrekCampaignBox').then((module) => ({ default: module.StarTrekCampaignBox })));
+const StarTrekBrawlternativeBox = lazy(() => import('@/pages/StarTrekBrawlternativeBox').then((module) => ({ default: module.StarTrekBrawlternativeBox })));
 const MarketSignalAudit = lazy(() => import('@/pages/MarketSignalAudit'));
 const DailyMovers = lazy(() => import('@/pages/DailyMovers').then((module) => ({ default: module.DailyMovers })));
 const MarketWatchArticle = lazy(() => import('@/pages/MarketWatchArticle').then((module) => ({ default: module.MarketWatchArticle })));
@@ -42,6 +50,7 @@ const DupeDecks = lazy(() => import('@/pages/DupeDecks').then((module) => ({ def
 const DuelBattleBoxArticle = lazy(() => import('@/pages/DuelBattleBoxArticle'));
 const RetroBattleBox = lazy(() => import('@/pages/RetroBattleBox'));
 const BattleBoxDeckDetail = lazy(() => import('@/pages/BattleBoxDeckDetail'));
+const DeckboxBattleBoxDetail = lazy(() => import('@/pages/DeckboxBattleBoxDetail'));
 const BrawlBox = lazy(() => import('@/pages/BrawlBox'));
 const BrawlDeckDetail = lazy(() => import('@/pages/BrawlDeckDetail'));
 const BrawlMazirek = lazy(() => import('@/pages/BrawlMazirek'));
@@ -59,9 +68,23 @@ const MarketResearchFeed = lazy(() => import('@/pages/MarketResearchFeed'));
 const QuarterlyMarketTrendArticle = lazy(() => import('@/pages/QuarterlyMarketTrendArticle').then((module) => ({ default: module.QuarterlyMarketTrendArticle })));
 const Roadmap = lazy(() => import('@/pages/Roadmap'));
 const DeckWorkshop = lazy(() => import('@/pages/DeckWorkshop'));
+const DeckBrewery = lazy(() => import('@/pages/DeckBrewery'));
+const DeckBreweryReviews = lazy(() => import('@/pages/DeckBreweryReviews'));
+const DeckBreweryReviewDetail = lazy(() => import('@/pages/DeckBreweryReviews').then((module) => ({ default: module.DeckBreweryReviewDetail })));
+const DeckBreweryShowdowns = lazy(() => import('@/pages/DeckBreweryShowdowns'));
+const DeckBreweryShowdownDetail = lazy(() => import('@/pages/DeckBreweryShowdowns').then((module) => ({ default: module.DeckBreweryShowdownDetail })));
+const PrivateDeckBrewery = lazy(() => import('@/pages/PrivateDeckBrewery'));
+const DeckMatrix = lazy(() => import('@/pages/DeckMatrix'));
+const DeckGallery = lazy(() => import('@/pages/DeckGallery'));
+const DeckGalleryWip = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.DeckGalleryWip })));
+const RoboglesDeckShowcase = lazy(() => import('@/pages/DeckGallery').then((module) => ({ default: module.RoboglesDeckShowcase })));
+const DeckGalleryDetail = lazy(() => import('@/pages/DeckGalleryDetail'));
+const DeckGalleryTunedChildren = lazy(() => import('@/pages/DeckGalleryTunedChildren'));
+const DeckGalleryTunedChildDetail = lazy(() => import('@/pages/DeckGalleryTunedChildDetail'));
 const Limited = lazy(() => import('@/pages/Limited'));
-const MarketHub = lazy(() => import('@/pages/MarketHub'));
-const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
+	const MarketHub = lazy(() => import('@/pages/MarketHub'));
+	const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
+	const LandTax = lazy(() => import('@/pages/LandTax'));
 const TabletopPaperSpotlight = lazy(() => import('@/pages/TabletopPaperSpotlight'));
 const BlogJournal = lazy(() => import('@/pages/BlogJournal'));
 
@@ -82,9 +105,24 @@ function Router() {
         <Route path={'/collection/sets'} component={CollectionSetIndex} />
         <Route path={'/collection/sets/:setCode'} component={CollectionSetDirectory} />
         <Route path={'/deck-workshop'} component={DeckWorkshop} />
+        <Route path={'/deck-brewery/reviews'} component={DeckBreweryReviews} />
+        <Route path="/deck-brewery/reviews/:reviewSlug" component={DeckBreweryReviewDetail} />
+        <Route path={'/deck-brewery/matchups'} component={DeckBreweryShowdowns} />
+        <Route path="/deck-brewery/matchups/:matchupSlug" component={DeckBreweryShowdownDetail} />
+        <Route path={'/deck-brewery'} component={DeckBrewery} />
+        <Route path={'/deck-matrix'} component={DeckMatrix} />
+        <Route path={'/deck-gallery'} component={DeckGallery} />
+        <Route path={'/deck-gallery/wip'} component={DeckGalleryWip} />
+        <Route path={'/deck-gallery/robogles'} component={RoboglesDeckShowcase} />
+        <Route path={'/deck-gallery/children'} component={DeckGalleryTunedChildren} />
+        <Route path="/deck-gallery/child/:childSlug" component={DeckGalleryTunedChildDetail} />
+        <Route path="/deck-gallery/:deckId" component={DeckGalleryDetail} />
+        <Route path="/private-deck-brewery/:deckboxId" component={PrivateDeckBrewery} />
+        <Route path="/private-deck-brewery" component={PrivateDeckBrewery} />
         <Route path={'/limited'} component={Limited} />
         <Route path={'/markets'} component={MarketHub} />
-        <Route path={'/market-desk'} component={MarketDesk} />
+		<Route path={'/market-desk'} component={MarketDesk} />
+		<Route path={'/market-lands'} component={LandTax} />
         <Route path={'/roadmap'} component={Roadmap} />
         <Route path="/market-report" component={MarketReport} />
         <Route path="/blog/:slug" component={BlogJournal} />
@@ -92,6 +130,7 @@ function Router() {
         <Route path="/dupe-decks" component={DupeDecks} />
         <Route path="/duel-battle-box" component={DuelBattleBoxArticle} />
         <Route path="/battle-box" component={RetroBattleBox} />
+        <Route path="/battle-box/deckbox/:deckId" component={DeckboxBattleBoxDetail} />
         <Route path="/battle-box/:deckId" component={BattleBoxDeckDetail} />
         <Route path="/brawl-box" component={BrawlBox} />
         <Route path="/brawl-box/:deckId" component={BrawlDeckDetail} />
@@ -108,6 +147,14 @@ function Router() {
         <Route path="/market-report/october-15-30-signal-brief" component={October15MarketBrief} />
         <Route path="/market-report/october-16-30-signal-brief" component={October16MarketBrief} />
         <Route path="/market-report/october-17-30-signal-brief" component={October17MarketBrief} />
+        <Route path="/market-report/november-06-30-signal-brief" component={November06MarketBrief} />
+        <Route path="/market-report/star-trek-market-watch-2026-11-07" component={StarTrekMarketWatchArticle} />
+        <Route path="/market-report/star-trek-potential-movers-2026-11-08" component={StarTrekMarketUpdateNov08} />
+        <Route path="/market-report/weekly-market-desk-2026-11-10" component={WeeklyMarketDeskNov10} />
+        <Route path="/market-report/star-trek-deck-idea-2026-11-10" component={StarTrekDeckIdeaNov10} />
+        <Route path="/market-report/deckbox-archive-why-public-2026-11-10" component={DeckboxArchiveWhyPublicNov10} />
+        <Route path="/star-trek-campaign-box" component={StarTrekCampaignBox} />
+        <Route path="/star-trek-brawlternative-box" component={StarTrekBrawlternativeBox} />
         <Route path="/market-report/quarterly-trend-comparison-2026-10-22" component={QuarterlyMarketTrendArticle} />
         <Route path="/market-report/tabletop-paper-company-spotlight" component={TabletopPaperSpotlight} />
         <Route path="/market-report/:dateKey" component={MarketReportArchive} />

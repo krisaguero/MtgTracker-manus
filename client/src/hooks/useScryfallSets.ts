@@ -97,7 +97,7 @@ function buildLocalPreconIndex(
 ): Map<string, PreconDeck[]> {
   if (decklists.length === 0 || allSets.length === 0) return new Map();
 
-  const recentMainSets = allSets
+  const mainSets = allSets
     .filter(
       set =>
         set.set_type === "expansion" ||
@@ -109,10 +109,9 @@ function buildLocalPreconIndex(
       (a, b) =>
         new Date(b.released_at).getTime() - new Date(a.released_at).getTime()
     )
-    .slice(0, 60);
   const index = new Map<string, PreconDeck[]>();
 
-  for (const set of recentMainSets) {
+  for (const set of mainSets) {
     const localDecks = localDecksForParentSet(set.code, allSets, decklists);
     if (localDecks.length > 0)
       index.set(set.code, localDecks.map(mapLocalDeck));
@@ -207,8 +206,7 @@ export function useScryfallSets() {
             (a, b) =>
               new Date(b.released_at).getTime() -
               new Date(a.released_at).getTime()
-          )
-          .slice(0, 60);
+          );
 
         if (cancelled) return;
         setAllSets(allSets);

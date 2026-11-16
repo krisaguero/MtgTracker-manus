@@ -294,18 +294,14 @@ export default function BattleBoxDeckDetail({
                           className={
                             view === "visual"
                               ? "min-w-0 border border-border bg-background"
-                              : "grid min-w-0 grid-cols-[48px_minmax(0,1fr)] gap-3 py-4 sm:grid-cols-[64px_minmax(0,1fr)]"
+                              : "min-w-0 border-t border-border py-4"
                           }
                         >
-                          <div
-                            className={
-                              view === "visual"
-                                ? "aspect-[488/680] bg-muted"
-                                : "aspect-[488/680] self-start"
-                            }
-                          >
-                            <CardImageZoom src={image} alt={card.name} />
-                          </div>
+                          {view === "visual" && (
+                            <div className="aspect-[488/680] bg-muted">
+                              <CardImageZoom src={image} alt={card.name} />
+                            </div>
+                          )}
                           <div
                             className={
                               view === "visual" ? "min-w-0 p-3" : "min-w-0"

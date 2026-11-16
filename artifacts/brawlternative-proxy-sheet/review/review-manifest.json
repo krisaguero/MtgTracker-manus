@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "pdf": "/home/ubuntu/mtg-sets-tracker/artifacts/brawlternative-proxy-sheet/main.pdf",
+  "mode": "standard",
+  "page_count": 3,
+  "selected_pages": [
+    1,
+    2,
+    3
+  ],
+  "rendered_pages": [
+    "/home/ubuntu/mtg-sets-tracker/artifacts/brawlternative-proxy-sheet/review/pages/page-0001.png",
+    "/home/ubuntu/mtg-sets-tracker/artifacts/brawlternative-proxy-sheet/review/pages/page-0002.png",
+    "/home/ubuntu/mtg-sets-tracker/artifacts/brawlternative-proxy-sheet/review/pages/page-0003.png"
+  ],
+  "contact_sheets": [
+    "/home/ubuntu/mtg-sets-tracker/artifacts/brawlternative-proxy-sheet/review/sheets/sheet-01.jpg"
+  ],
+  "settings": {
+    "dpi": 110,
+    "columns": 3,
+    "max_sheet_pages": 12,
+    "thumbnail_width": 320
+  }
+}

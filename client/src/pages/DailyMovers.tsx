@@ -27,6 +27,8 @@ import {
   importedReportHref,
 } from "@/data/marketReportArchive";
 
+const BASIC_LAND_NAMES = new Set(["Plains", "Island", "Swamp", "Mountain", "Forest", "Wastes"]);
+
 type RollingPriceSnapshot = {
   date: string;
   prices: Record<string, number | undefined>;
@@ -232,7 +234,7 @@ export function DailyMovers() {
               pricingReportHref: importedReportHref(imported.pricingDate),
             }
           : mover;
-      }),
+      }).filter(mover => !BASIC_LAND_NAMES.has(mover.name)),
     [snapshotMovers]
   );
 
@@ -534,6 +536,12 @@ export function DailyMovers() {
             >
               Market Watch Feed
             </Link>
+            <Link
+              href="/market-lands"
+              className="inline-flex items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider hover:border-primary whitespace-nowrap"
+            >
+              Land Tax
+            </Link>
             <details className="relative max-w-full">
               <summary className="inline-flex max-w-full cursor-pointer list-none items-center gap-1.5 border-2 border-border bg-card px-3 py-1.5 font-mono text-xs font-bold uppercase hover:border-primary sm:whitespace-nowrap">
                 More research
@@ -590,8 +598,9 @@ export function DailyMovers() {
             )}
             <p className="mt-1 text-sm text-muted-foreground">
               Daily movers plus multi-day riders and drops from the rolling
-              snapshot history. Use category and direction filters to narrow the
-              current screen; use Market Watch for deeper methodology.
+              snapshot history. Basic lands are intentionally routed to Land
+              Tax so this screen stays focused on Commander, precon, and
+              major market signals.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-3 border-2 border-primary/40 bg-primary/5 px-3 py-2 text-xs">
               <span className="font-mono font-black uppercase tracking-wider text-primary">

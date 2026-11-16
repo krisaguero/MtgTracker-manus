@@ -39,7 +39,7 @@ export function PreconStrategyPrimer({
       <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
         <strong className="text-foreground">{deckName}</strong> ({setName})
         lists {commanderNames.join(" and ") || "no resolved commander"}. The
-        notes below translate actual printed effects into readable jobs; they
+        notes below translate actual card effects into readable jobs; they
         are not a power rating, upgrade recommendation, or unsupported archetype
         label.
       </p>

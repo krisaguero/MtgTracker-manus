@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-14",
+  "historyWindow": {
+    "first": "2026-10-06",
+    "last": "2026-11-07"
+  },
+  "method": "Exact set code + collector number; latest stored post-entry MTGJSON paper-price snapshot; no look-ahead beyond the audit history window.",
+  "coverage": {
+    "records": 158,
+    "evaluated": 45,
+    "withPostEntryPrices": 148,
+    "unresolved": 113,
+    "duplicateCanonicalKeys": {
+      "Hinterland Harbor|fic|403": 3,
+      "Gift of Immortality|soc|147": 2,
+      "Yavimaya Coast|c19|287": 2,
+      "Path of Ancestry|lcc|346": 2,
+      "Reality Shift|drc|39": 2,
+      "Path of Ancestry|blc|322": 2,
+      "Goblin Electromancer|tdc|99": 2,
+      "Pearl-Ear, Imperial Advisor|soc|160": 2,
+      "Sai, Master Thopterist|drc|82": 2,
+      "Command Tower|cmd|269": 3,
+      "Preeminent Captain|m15|25": 2,
+      "Counterspell|mh2|267": 2
+    }
+  },
+  "metrics": {
+    "evaluatedRecords": 45,
+    "actualRises": 20,
+    "predictedUps": 31,
+    "correctUpCalls": 11,
+    "falseUpCalls": 20,
+    "missedRises": 9,
+    "directionalAccuracyPct": 31.11,
+    "upCallPrecisionPct": 35.48,
+    "upRiseRecallPct": 55.0,
+    "rangeContainmentPct": 11.11,
+    "meanAbsoluteErrorPct": 31.59
+  },
+  "highlights": {
+    "correctRiseCalls": [
+      {
+        "id": "2026-10-21-commander-demand:1:znr:382",
+        "name": "Swamp",
+        "setCode": "znr",
+        "collectorNumber": "382",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 1.05
+        },
+        "actualChangePct": 40,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-24-collection-buy-list:3:c13:156",
+        "name": "Mold Shambler",
+        "setCode": "c13",
+        "collectorNumber": "156",
+        "opened": "2026-10-24",
+        "evaluationDate": "2026-11-07",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.26
+        },
+        "actualChangePct": 30,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-21-commander-demand:7:msc:188",
+        "name": "Taunt from the Rampart",
+        "setCode": "msc",
+        "collectorNumber": "188",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 1.94
+        },
+        "actualChangePct": 21.25,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-23-penny-watch:3:fic:403",
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
+        "opened": "2026-10-23",
+        "evaluationDate": "2026-11-06",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.63
+        },
+        "actualChangePct": 10.53,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-24-collection-buy-list:7:m3c:51",
+        "name": "Bismuth Mindrender",
+        "setCode": "m3c",
+        "collectorNumber": "51",
+        "opened": "2026-10-24",
+        "evaluationDate": "2026-11-07",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.71
+        },
+        "actualChangePct": 5.97,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-21-commander-demand:3:otc:317",
+        "name": "Shadowblood Ridge",
+        "setCode": "otc",
+        "collectorNumber": "317",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.73
+        },
+        "actualChangePct": 5.8,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-24-collection-buy-list:4:m3c:182",
+        "name": "Drowner of Hope",
+        "setCode": "m3c",
+        "collectorNumber": "182",
+        "opened": "2026-10-24",
+        "evaluationDate": "2026-11-07",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.65
+        },
+        "actualChangePct": 4.84,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:8:c19:145",
+        "name": "Guttersnipe",
+        "setCode": "c19",
+        "collectorNumber": "145",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.65
+        },
+        "actualChangePct": 4.84,
+        "actualDirection": "UP",
+        "matured": true
+      }
+    ],
+    "falseUpCalls": [
+      {
+        "id": "2026-10-21-commander-demand:2:scd:150",
+        "name": "Magmatic Force",
+        "setCode": "scd",
+        "collectorNumber": "150",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.21
+        },
+        "actualChangePct": -65,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:2:soc:408",
+        "name": "Sulfur Falls",
+        "setCode": "soc",
+        "collectorNumber": "408",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.27
+        },
+        "actualChangePct": -55,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-23-penny-watch:2:msc:146",
+        "name": "Vanquish the Horde",
+        "setCode": "msc",
+        "collectorNumber": "146",
+        "opened": "2026-10-23",
+        "evaluationDate": "2026-11-06",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.27
+        },
+        "actualChangePct": -51.79,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:1:tdc:407",
+        "name": "Temple of Triumph",
+        "setCode": "tdc",
+        "collectorNumber": "407",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.24
+        },
+        "actualChangePct": -51.02,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:3:eoc:88",
+        "name": "Hammer of Purphoros",
+        "setCode": "eoc",
+        "collectorNumber": "88",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.33
+        },
+        "actualChangePct": -46.77,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:7:pip:190",
+        "name": "Loyal Apprentice",
+        "setCode": "pip",
+        "collectorNumber": "190",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.32
+        },
+        "actualChangePct": -46.67,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-22-constructed-format-watch:4:drc:39",
+        "name": "Reality Shift",
+        "setCode": "drc",
+        "collectorNumber": "39",
+        "opened": "2026-10-22",
+        "evaluationDate": "2026-11-05",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.33
+        },
+        "actualChangePct": -45.9,
+        "actualDirection": "DOWN",
+        "matured": true
+      },
+      {
+        "id": "2026-10-23-penny-watch:1:msc:263",
+        "name": "Scavenger Grounds",
+        "setCode": "msc",
+        "collectorNumber": "263",
+        "opened": "2026-10-23",
+        "evaluationDate": "2026-11-06",
+        "expectedDirection": "UP",
+        "range": [
+          8,
+          24
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.32
+        },
+        "actualChangePct": -44.83,
+        "actualDirection": "DOWN",
+        "matured": true
+      }
+    ],
+    "missedRises": [
+      {
+        "id": "2026-10-21-commander-demand:6:c15:325",
+        "name": "Plains",
+        "setCode": "c15",
+        "collectorNumber": "325",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "DOWN",
+        "range": [
+          -24,
+          -8
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.13
+        },
+        "actualChangePct": 160,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-23-penny-watch:8:c15:335",
+        "name": "Mountain",
+        "setCode": "c15",
+        "collectorNumber": "335",
+        "opened": "2026-10-23",
+        "evaluationDate": "2026-11-06",
+        "expectedDirection": "DOWN",
+        "range": [
+          -24,
+          -8
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.2
+        },
+        "actualChangePct": 33.33,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-20-bulk-collection-triage:1:cmd:269",
+        "name": "Command Tower",
+        "setCode": "cmd",
+        "collectorNumber": "269",
+        "opened": "2026-10-20",
+        "evaluationDate": "2026-11-03",
+        "expectedDirection": "DOWN",
+        "range": [
+          -14,
+          -4
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.99
+        },
+        "actualChangePct": 15.12,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-20-bulk-collection-triage:7:cmm:900",
+        "name": "Manaweft Sliver",
+        "setCode": "cmm",
+        "collectorNumber": "900",
+        "opened": "2026-10-20",
+        "evaluationDate": "2026-11-03",
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "range": [
+          -2,
+          2
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 3.44
+        },
+        "actualChangePct": 15.05,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-13-bulk-collection-triage:4:plst:BLC-277",
+        "name": "Idol of Oblivion",
+        "setCode": "plst",
+        "collectorNumber": "BLC-277",
+        "opened": "2026-10-13",
+        "evaluationDate": "2026-10-27",
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "range": [
+          -5,
+          5
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 2.97
+        },
+        "actualChangePct": 14.23,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-20-bulk-collection-triage:3:ncc:287",
+        "name": "Evolution Sage",
+        "setCode": "ncc",
+        "collectorNumber": "287",
+        "opened": "2026-10-20",
+        "evaluationDate": "2026-11-03",
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "range": [
+          -2,
+          2
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 3.24
+        },
+        "actualChangePct": 8,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-21-commander-demand:8:scd:32",
+        "name": "Rootborn Defenses",
+        "setCode": "scd",
+        "collectorNumber": "32",
+        "opened": "2026-10-21",
+        "evaluationDate": "2026-11-04",
+        "expectedDirection": "DOWN",
+        "range": [
+          -24,
+          -8
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 0.29
+        },
+        "actualChangePct": 7.41,
+        "actualDirection": "UP",
+        "matured": true
+      },
+      {
+        "id": "2026-10-20-bulk-collection-triage:5:fic:281",
+        "name": "Pitiless Plunderer",
+        "setCode": "fic",
+        "collectorNumber": "281",
+        "opened": "2026-10-20",
+        "evaluationDate": "2026-11-03",
+        "expectedDirection": "FLAT_OR_UNCERTAIN",
+        "range": [
+          -2,
+          2
+        ],
+        "latestPostEntry": {
+          "date": "2026-11-07",
+          "usd": 3.19
+        },
+        "actualChangePct": 6.33,
+        "actualDirection": "UP",
+        "matured": true
+      }
+    ]
+  },
+  "unresolvedPostPublicationArticles": [
+    {
+      "slug": "star-trek-adventure-deck-building-2026-11-10",
+      "reason": "last stored price snapshot is 2026-11-07"
+    },
+    {
+      "slug": "precon-upgrade-market-radar-2026-11-10",
+      "reason": "last stored price snapshot is 2026-11-07"
+    },
+    {
+      "slug": "star-trek-spoiler-season-movers-2026-11-11",
+      "reason": "last stored price snapshot is 2026-11-07"
+    },
+    {
+      "slug": "precon-swerve-valgavoth-archenemy-ascension-2026-11-13",
+      "reason": "published after the available snapshot window"
+    },
+    {
+      "slug": "daily-mtg-market-movers-30-signal-2026-11-13",
+      "reason": "published after the available snapshot window"
+    }
+  ],
+  "liveRefreshFile": "data/market/post-publication-price-refresh-2026-11-14.json",
+  "liveRefreshSummary": {
+    "starTrekScored": 2,
+    "starTrekRises": 0,
+    "starTrekNoRise": 2,
+    "starTrekUnresolved": 6,
+    "valgavothScored": 0,
+    "valgavothUnresolved": 7,
+    "note": "Only exact numeric baselines are scored. Approximate language, ranges, unverified prices, and cards introduced without a price baseline remain unresolved."
+  }
+}

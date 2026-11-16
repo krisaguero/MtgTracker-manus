@@ -91,6 +91,15 @@ describe("Commander product parent-set indexing", () => {
     expect(source).not.toContain("enrichingPrecons");
   });
 
+  it("keeps every released main set in chronological order for the homepage hub", () => {
+    const source = hookSource();
+    expect(source).toContain("const mainSets = allSets");
+    expect(source).toContain("set.set_type === \"expansion\"");
+    expect(source).toContain("set.set_type === \"core\"");
+    expect(source).toContain("set.set_type === \"masters\"");
+    expect(source).not.toContain(".slice(0, 60)");
+  });
+
   it("loads the multi-megabyte local decklist archive only through the explicit loader", () => {
     const source = hookSource();
     const loaderIndex = source.indexOf(

@@ -1,14 +1,17 @@
-import { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ExternalLink, TrendingDown, TrendingUp } from "lucide-react";
 import { CardIndexLink, CardMediaFrame } from "@/components/CardIndexLink";
+import { getMarketCardImageUrls } from "@/lib/marketCardArtLookup";
 import {
+  starTrekDailyMovers,
   starTrekMarketSignals,
   starTrekProductWatch,
   type StarTrekMarketSignal,
 } from "@/data/starTrekMarketWatch";
 import starTrekPriceHistory from "@/data/starTrekPriceHistory.json";
+import { StarTrekUpgradeRadar } from "@/components/StarTrekUpgradeRadar";
 
-type StarTrekTab = "watch" | "history";
+type StarTrekTab = "daily" | "watch" | "history" | "radar";
 
 function StarTrekPriceHistoryPanel() {
   const snapshots = [...starTrekPriceHistory.snapshots].reverse();
@@ -76,10 +79,22 @@ const statusLabel: Record<StarTrekMarketSignal["status"], string> = {
 };
 
 function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
-  const [imageSrc, setImageSrc] = useState(
-    `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(signal.name)}&set=${encodeURIComponent(signal.setCode)}&format=image&version=normal`
-  );
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    let active = true;
+    setImageSrc(null);
+    setFailed(false);
+    void getMarketCardImageUrls(signal.name, signal.setCode, signal.collectorNumber).then(urls => {
+      if (!active) return;
+      const nextUrl = urls?.normal || urls?.small || null;
+      if (nextUrl) setImageSrc(nextUrl);
+      else setFailed(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, [signal.collectorNumber, signal.name, signal.setCode]);
   const positive = signal.moveUsd !== undefined && signal.moveUsd > 0;
   const negative = signal.moveUsd !== undefined && signal.moveUsd < 0;
   const tone = positive
@@ -90,25 +105,23 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
 
   return (
     <article className="border border-border bg-card p-3">
-      <CardMediaFrame className="mx-auto max-w-[180px] border-2 border-border bg-[#171a24]">
+      <CardMediaFrame className="relative mx-auto max-w-[180px] border-2 border-border bg-[#171a24]">
         {!failed ? (
-          <img
-            src={imageSrc}
-            alt={`${signal.name} card art`}
-            className="h-full w-full object-contain"
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            onError={() => {
-              if (imageSrc.includes("&set=")) {
-                setImageSrc(
-                  `https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(signal.name)}&format=image&version=normal`
-                );
-              } else {
-                setFailed(true);
-              }
-            }}
-          />
+          <>
+            <img
+              src={imageSrc || "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="}
+              data-card-art-query={signal.name}
+              alt={`${signal.name} card art`}
+              className="h-full w-full object-contain"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              onError={() => {
+                if (imageSrc) setFailed(true);
+              }}
+            />
+            {!imageSrc && <div className="absolute inset-0 flex items-center justify-center bg-muted/80 font-mono text-[9px] font-bold uppercase text-muted-foreground">Loading art</div>}
+          </>
         ) : (
           <div className="flex h-full items-center justify-center p-4 text-center font-mono text-[10px] uppercase text-muted-foreground">
             Art unavailable
@@ -129,7 +142,7 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
       <div className="mt-3 border-t border-border pt-2">
         <div className="flex items-end justify-between gap-3">
           <div>
-            <p className="font-mono text-[9px] uppercase text-muted-foreground">Brief price</p>
+            <p className="font-mono text-[9px] uppercase text-muted-foreground">Source price</p>
             <p className="font-mono text-lg font-black">{signal.priceUsd !== undefined ? `$${signal.priceUsd.toFixed(2)}` : "Unverified"}</p>
           </div>
           <p className={`flex items-center gap-1 text-right font-mono text-[10px] font-black ${tone}`}>
@@ -145,7 +158,7 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
             Source <ExternalLink className="h-3 w-3" />
           </a>
         </div>
-        <p className="mt-2 font-mono text-[9px] uppercase tracking-wide text-muted-foreground">Verified window · {signal.verifiedWindow}</p>
+        <p className="mt-2 font-mono text-[9px] uppercase tracking-wide text-muted-foreground">Source window · {signal.verifiedWindow}</p>
       </div>
     </article>
   );
@@ -153,13 +166,13 @@ function WatchCard({ signal }: { signal: StarTrekMarketSignal }) {
 
 export function StarTrekMarketPanel() {
   const [filter, setFilter] = useState<(typeof filters)[number][0]>("all");
-  const [tab, setTab] = useState<StarTrekTab>("watch");
+  const [tab, setTab] = useState<StarTrekTab>("daily");
   const visible = useMemo(
     () => filter === "all" ? starTrekMarketSignals : starTrekMarketSignals.filter(signal => signal.category === filter),
     [filter]
   );
-  const declines = starTrekMarketSignals.filter(signal => signal.status === "confirmed-decline").length;
-  const confirmed = starTrekMarketSignals.filter(signal => signal.status === "confirmed").length;
+  const dailyGains = starTrekDailyMovers.filter(signal => (signal.moveUsd ?? 0) > 0).length;
+  const dailyDeclines = starTrekDailyMovers.filter(signal => (signal.moveUsd ?? 0) < 0).length;
 
   return (
     <section className="border-y-2 border-primary/40 bg-primary/5 px-4 py-6 sm:px-8" aria-labelledby="star-trek-market-watch-heading">
@@ -169,7 +182,7 @@ export function StarTrekMarketPanel() {
             <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-primary">Editorial overlay · source-dated</p>
             <h2 id="star-trek-market-watch-heading" className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Star Trek release watch</h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-              {starTrekMarketSignals.length} supplied singles and market signals, kept separate from the automated snapshot because the brief uses November 2–5 published windows and several rows are speculative or unverified. Product release: {starTrekProductWatch.releaseDate}.
+              Latest tab: {starTrekDailyMovers.length} MTGGoldfish Daily Change rows read on November 7. Earlier editorial signals from November 2–5 and the Scryfall price-basket history remain available separately. The daily page has no separate as-of timestamp, and the moves are not completed-sale verification. Tabletop release: {starTrekProductWatch.releaseDate}.
             </p>
           </div>
           <a href={starTrekProductWatch.officialSource} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 border-2 border-primary px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">
@@ -177,13 +190,15 @@ export function StarTrekMarketPanel() {
           </a>
         </div>
         <div className="mt-5 grid gap-px border border-border bg-border sm:grid-cols-3">
-          <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Confirmed positive / non-Star Trek</p><p className="mt-1 text-2xl font-black">{confirmed}</p></div>
-          <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Star Trek declines</p><p className="mt-1 text-2xl font-black text-destructive">{declines}</p></div>
+          <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Daily reported gainers · Nov. 7</p><p className="mt-1 text-2xl font-black text-emerald-700 dark:text-emerald-400">{dailyGains}</p></div>
+          <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Daily reported decliners · Nov. 7</p><p className="mt-1 text-2xl font-black text-destructive">{dailyDeclines}</p></div>
           <div className="bg-card p-3"><p className="font-mono text-[9px] uppercase text-muted-foreground">Deck MSRP / Collector's</p><p className="mt-1 font-mono text-lg font-black">${starTrekProductWatch.commanderDeckMsrp} / ${starTrekProductWatch.collectorsEditionMsrp}</p></div>
         </div>
         <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Star Trek market watch filters">
-          <button type="button" onClick={() => setTab("watch")} aria-pressed={tab === "watch"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "watch" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Current watch</button>
+          <button type="button" onClick={() => setTab("daily")} aria-pressed={tab === "daily"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "daily" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Daily movers · Nov. 7</button>
+          <button type="button" onClick={() => setTab("watch")} aria-pressed={tab === "watch"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "watch" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Earlier editorial watch · Nov. 5</button>
           <button type="button" onClick={() => setTab("history")} aria-pressed={tab === "history"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "history" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Historical trends</button>
+          <button type="button" onClick={() => setTab("radar")} aria-pressed={tab === "radar"} className={`border-2 px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider ${tab === "radar" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"}`}>Upgrade radar</button>
         </div>
         {tab === "watch" && <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Star Trek market watch filters">
           {filters.map(([value, label]) => (
@@ -192,11 +207,19 @@ export function StarTrekMarketPanel() {
             </button>
           ))}
         </div>}
-        {tab === "watch" ? <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {tab === "daily" && <>
+          <p className="mt-4 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">Source: MTGGoldfish Star Trek paper Daily Change page, read November 7, 2026. The page has no separate as-of timestamp; these are not independently checked completed sales or buylist prices.</p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {starTrekDailyMovers.map(signal => <WatchCard key={signal.id} signal={signal} />)}
+          </div>
+        </>}
+        {tab === "watch" && <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visible.map(signal => <WatchCard key={signal.id} signal={signal} />)}
-        </div> : <StarTrekPriceHistoryPanel />}
+        </div>}
+        {tab === "history" && <StarTrekPriceHistoryPanel />}
+        {tab === "radar" && <StarTrekUpgradeRadar />}
         <p className="mt-5 border-l-2 border-amber-500 pl-3 text-xs leading-5 text-muted-foreground">
-          Buying posture: do not chase early Star Trek singles before November 13. Recheck completed sales, EDHREC adoption, and listing depth 3–7 days after release. Prices above are the supplied brief’s reference values, not live quotes or financial advice.
+          Buying posture: avoid chasing thin pre-release moves. Recheck completed sales, EDHREC adoption, and listing depth 3–7 days after the November 13 release. The earlier editorial watch keeps its own source dates; the Scryfall basket is not a sealed-deck valuation or financial advice.
         </p>
       </div>
     </section>

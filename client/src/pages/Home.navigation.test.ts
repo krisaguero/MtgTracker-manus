@@ -16,9 +16,9 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(navigation).toContain('aria-controls="mobile-site-navigation"');
     expect(navigation).toContain("aria-expanded={openMobileMenu}");
     expect(navigation).toContain(
-      "{ href: '/movers', label: 'Dated market movers' }"
+      "{ href: '/movers', label: 'Current movers' }"
     );
-    expect(navigation).toContain("id: 'play-collect'");
+    expect(navigation).toContain("id: 'collect'");
     expect(navigation).toContain("{ href: '/limited', label: 'Sealed & draft pool' }");
     expect(navigation).toContain("{ href: '/markets', label: 'All market research & tools' }");
     expect(marketHub).toContain("['/movers/confirmed', 'Imported report · confirmed']");
@@ -45,8 +45,20 @@ describe("site-wide navigation and homepage catalogs", () => {
     expect(home).toContain('label="Commander precons"');
     expect(home).toContain('label="Recent sets"');
     expect(home).toContain('aria-label="Start by player goal"');
-    expect(home).toContain('"Build / tune Commander"');
-    expect(home).toContain('"Build a sealed / draft deck"');
+    expect(home).toContain('title: "Build / tune Commander"');
+    expect(home).toContain('title: "Build from a pool"');
+  });
+
+  it("keeps Commander discovery represented once in the homepage goal grid", () => {
+    const home = read("client/src/pages/Home.tsx");
+    const commander = read("client/src/pages/CommanderLibrary.tsx");
+    expect(home).toContain('href: "/deck-gallery"');
+    expect(home).toContain("Explore Commander ideas");
+    expect(home).toContain("Brewery reviews");
+    expect(commander).toContain('aria-label="Public Commander deck shelves"');
+    expect(commander).toContain('href="/deck-gallery"');
+    expect(commander).toContain('href="/deck-brewery/reviews"');
+    expect(commander).toContain('href="/deck-brewery/matchups"');
   });
 
   it("shares the lazy archive load with an expanded set and distinguishes archive loading, failure, and empty results", () => {

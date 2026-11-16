@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "refreshedAt": "2026-11-14T04:01:47Z",
+  "asOf": "2026-11-14",
+  "source": "Scryfall card JSON endpoints; current USD prices; Scryfall prices are market estimates, not completed-sale proof.",
+  "baselineSource": "Pasted_content_29.txt and the published November 13 Market Desk / Valgavoth article content.",
+  "summary": {
+    "starTrekScored": 2,
+    "starTrekRises": 0,
+    "starTrekNoRise": 2,
+    "starTrekUnresolved": 6,
+    "valgavothScored": 0,
+    "valgavothUnresolved": 7,
+    "note": "Only exact numeric baselines are scored. Approximate language, ranges, unverified prices, and cards introduced without a price baseline remain unresolved."
+  },
+  "cards": [
+    {
+      "name": "Uthros Research Craft",
+      "setCode": "eoc",
+      "collectorNumber": "7",
+      "currentUsd": 7.03,
+      "baselineUsd": 7.15,
+      "baselineDate": "2026-11-12",
+      "changePct": -1.68,
+      "scoreStatus": "SCORED_NO_RISE",
+      "sourceUrl": "https://api.scryfall.com/cards/eoc/7"
+    },
+    {
+      "name": "Inspirit, Flagship Vessel",
+      "setCode": "eoc",
+      "collectorNumber": "2",
+      "currentUsd": 4.54,
+      "baselineUsd": null,
+      "baselineNote": "brief said approaching $5; not exact enough for percentage scoring",
+      "scoreStatus": "UNRESOLVED_APPROXIMATE_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/eoc/2"
+    },
+    {
+      "name": "Urza, Chief Artificer",
+      "setCode": "brc",
+      "collectorNumber": "2",
+      "currentUsd": 6.56,
+      "baselineUsd": null,
+      "baselineNote": "brief gave a $5–$8 range, not an exact entry price",
+      "scoreStatus": "UNRESOLVED_RANGE_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/brc/2"
+    },
+    {
+      "name": "Dawnsire, Sunstar Dreadnought",
+      "setCode": "eoe",
+      "collectorNumber": "238",
+      "currentUsd": 12.51,
+      "baselineUsd": 13.0,
+      "baselineDate": "2026-11-12",
+      "changePct": -3.77,
+      "scoreStatus": "SCORED_NO_RISE",
+      "sourceUrl": "https://api.scryfall.com/cards/eoe/238"
+    },
+    {
+      "name": "Adagia, Windswept Bastion",
+      "setCode": "eoe",
+      "collectorNumber": "250",
+      "currentUsd": 8.23,
+      "baselineUsd": null,
+      "baselineNote": "brief marked price unverified",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/eoe/250"
+    },
+    {
+      "name": "One, Borg Evolved",
+      "setCode": "trc",
+      "collectorNumber": "100",
+      "currentUsd": 1.74,
+      "baselineUsd": null,
+      "baselineNote": "brief marked price unverified",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/trc/100"
+    },
+    {
+      "name": "Jurati, Cordial Queen",
+      "setCode": "trc",
+      "collectorNumber": "95",
+      "currentUsd": 0.83,
+      "baselineUsd": null,
+      "baselineNote": "brief marked price unverified",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/trc/95"
+    },
+    {
+      "name": "Locutus of Borg",
+      "setCode": "trc",
+      "collectorNumber": "97",
+      "currentUsd": 3.47,
+      "baselineUsd": null,
+      "baselineNote": "brief marked price unverified",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/trc/97"
+    },
+    {
+      "name": "Valgavoth, Harrower of Souls",
+      "setCode": "dsc",
+      "collectorNumber": "6",
+      "currentUsd": 25.24,
+      "currentUsdFoil": 27.76,
+      "baselineUsd": null,
+      "baselineNote": "Valgavoth feature named the card but did not publish an entry price",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/dsc/6"
+    },
+    {
+      "name": "Dictate of the Twin Gods",
+      "setCode": "jou",
+      "collectorNumber": "93",
+      "currentUsd": 1.58,
+      "currentUsdFoil": 26.1,
+      "baselineUsd": null,
+      "baselineNote": "feature card spotlight; no entry price",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/jou/93"
+    },
+    {
+      "name": "Mogis, God of Slaughter",
+      "setCode": "dsc",
+      "collectorNumber": "89",
+      "currentUsd": 5.76,
+      "baselineUsd": null,
+      "baselineNote": "feature card spotlight; no entry price",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/dsc/89"
+    },
+    {
+      "name": "All in Good Time",
+      "setCode": "oarc",
+      "collectorNumber": "1★",
+      "currentUsd": 52.65,
+      "baselineUsd": null,
+      "baselineNote": "feature card spotlight; no entry price",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/oarc/1%E2%98%85"
+    },
+    {
+      "name": "A Display of My Dark Power",
+      "setCode": "oarc",
+      "collectorNumber": "8★",
+      "currentUsd": 24.97,
+      "baselineUsd": null,
+      "baselineNote": "feature card spotlight; no entry price",
+      "scoreStatus": "UNRESOLVED_NO_BASELINE",
+      "sourceUrl": "https://api.scryfall.com/cards/oarc/8%E2%98%85"
+    }
+  ],
+  "secondaryContext": [
+    {
+      "card": "Valgavoth, Harrower of Souls",
+      "source": "https://www.mtgstocks.com/prints/116316-valgavoth-harrower-of-souls",
+      "reportedNonfoilMonthlyChangePct": 13,
+      "reportedFoilMonthlyChangePct": 4,
+      "use": "Context only; not a post-publication score because the article had no entry baseline."
+    }
+  ]
+}

@@ -4,6 +4,9 @@ import { Link } from 'wouter';
 import { BrawlCommanderGallery } from '@/components/BrawlCommanderGallery';
 import { brawlDecks as decks } from '@/lib/brawlDecks';
 
+const personalDecks = decks.filter((deck) => !deck.archiveSource);
+const publicArchiveDecks = decks.filter((deck) => Boolean(deck.archiveSource));
+
 export default function BrawlBox() {
   useEffect(() => {
     document.title = 'Brawlternatives · Custom Brawl Alternatives | MTG Sets Tracker';
@@ -23,6 +26,7 @@ export default function BrawlBox() {
           <p className="font-mono text-xs font-black uppercase tracking-[0.22em] text-primary">Kris Aguero’s personal deck shelf · custom alternatives to Brawl</p>
           <h1 className="mt-3 text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl">Brawlternatives</h1>
           <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">Precon-themed and custom non-precon, self-built, non-tuned 60-card Commander-preview decks: casual alternatives to official Brawl, not official Magic Brawl lists. Explore Dr. Madison Li, Araumi, Marchesa and Taigam, alongside clearly labeled public works in progress for The Wise Mothman, Rakdos and Karlov. Drafts keep their unresolved counts, names and identity warnings visible. This custom house concept is not a claim of tuned or tournament-ready lists.</p>
+          <p className="mt-3 max-w-3xl text-xs leading-5 text-muted-foreground">Also on the separate public shelf: the untested Gisa and Geralf graveyard child, built from a public Gallery source without changing its saved list. <a href="#public-archive-children" className="font-bold text-primary underline">Jump to Deck Brewery offshoots</a>.</p>
         </div>
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           <div className="flex gap-3 border border-primary/40 bg-primary/5 p-4"><ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><div><h2 className="font-mono text-xs font-black uppercase tracking-widest">Personal data omitted</h2><p className="mt-1 text-xs leading-5 text-muted-foreground">The source’s Owned counts and proxy annotations are not part of this shared list. Treat any collection or proxy planning as local and provisional while scans are incomplete.</p></div></div>
@@ -33,7 +37,11 @@ export default function BrawlBox() {
       </div>
     </header>
     <main className="mx-auto max-w-7xl space-y-8 px-4 py-7 sm:px-8 sm:py-10">
-      <BrawlCommanderGallery decks={decks} />
+      <BrawlCommanderGallery decks={personalDecks} />
+      {publicArchiveDecks.length > 0 && <section id="public-archive-children" className="space-y-5 border-t-2 border-primary/40 pt-6" aria-label="Public archive-derived Brawlternative children">
+        <div className="max-w-4xl"><p className="font-mono text-xs font-black uppercase tracking-[0.2em] text-primary">Separate public shelf · work in progress</p><h2 className="mt-2 text-2xl font-black">Deck Brewery offshoots</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">These are independent, untested Commander-preview children built from public Deck Gallery lists. They do not edit the source lists or establish an unconfirmed original commander. They are not official Brawl or legally verified decks.</p></div>
+        <BrawlCommanderGallery decks={publicArchiveDecks} />
+      </section>}
       <section className="border-t-2 border-border pt-5">
         <h2 className="text-xl font-black">Keep the boxes distinct</h2>
         <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">Brawlternatives holds personal, precon-themed and custom non-precon Commander-preview experiments as an alternative to official Brawl. The Retro Battle Box is still the separate, shared non-Commander duel set. Use the Battle Box’s local inventory queue for its nine public lists; this page does not publish scan-derived ownership or proxy flags.</p>

@@ -1,0 +1,11 @@
+{
+  "task_kind": "new-document",
+  "output": "pdf",
+  "signals": ["printable reference sheet", "card frames"],
+  "hard_constraints": ["landscape printable proxy sheet", "four Season Two proxy captains", "token cards"],
+  "content_features": {
+    "code_blocks": 1,
+    "defined_terms": 4,
+    "portrait_images": 0
+  }
+}

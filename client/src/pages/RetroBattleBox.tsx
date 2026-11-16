@@ -19,6 +19,7 @@ import {
   type RetroBattleBoxDeck,
 } from '@/lib/retroBattleBox';
 import { battleBoxReferences } from '@/lib/battleBoxStrategy';
+import DeckboxBattleBoxLibrary from '@/components/DeckboxBattleBoxLibrary';
 
 const colorHex: Record<string, string> = { W: '#c8b879', U: '#4e81b6', B: '#52506d', R: '#b95542', G: '#56836b' };
 const colorName: Record<string, string> = { W: 'white', U: 'blue', B: 'black', R: 'red', G: 'green' };
@@ -41,6 +42,10 @@ function colorGradient(colors: string[]) {
   const hex = colors.map((color) => colorHex[color]).filter(Boolean);
   if (hex.length === 1) return `linear-gradient(140deg, ${hex[0]} 0%, #191c24 85%)`;
   return `linear-gradient(135deg, ${hex[0] || '#394254'} 0%, ${hex[1] || '#20242e'} 80%)`;
+}
+
+function QueueField({ label, children }: { label: string; children: React.ReactNode }) {
+  return <div className="min-w-0 border border-border bg-background p-2"><dt className="font-mono text-[9px] font-black uppercase tracking-wider text-muted-foreground">{label}</dt><dd className="mt-1 break-words font-mono text-xs font-semibold">{children}</dd></div>;
 }
 
 export default function RetroBattleBox() {
@@ -174,10 +179,11 @@ export default function RetroBattleBox() {
           <div>
             <p className="font-mono text-xs font-black uppercase tracking-[0.22em] text-primary">Non-Commander · casual 1v1 · nine-deck library</p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl">2026 Retro Battle Box</h1>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">Nine ready-to-sleeve deck concepts spanning swarm, attrition, burn, ramp, control, tempo, and mono-white lifegain. Browse the visual layouts, inspect every card, then use a private local inventory queue to plan what to pull, order, or proxy.</p>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">Nine curated deck concepts span swarm, attrition, burn, ramp, control, tempo, and mono-white lifegain. A separate section adds six reviewed, 60-card non-Commander Deckbox source lists. The archive references keep their saved lists and credit separate from the curated decks and their local inventory queue.</p>
             <p className="mt-3 max-w-3xl border-l-2 border-primary pl-3 text-sm leading-6 text-muted-foreground"><strong className="text-foreground">Site creator &amp; curator: Kris Aguero.</strong> These are static shared lists—the same for every visitor, not tied to a sign-in or local account.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#deck-library" className="inline-flex min-h-11 items-center gap-2 border-2 border-primary bg-primary px-4 py-2 font-mono text-xs font-black uppercase text-primary-foreground hover:opacity-90">Browse decks <ArrowRight className="h-4 w-4" /></a>
+              <a href="#deckbox-60-card-archive" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">Deckbox 60-card lists <ArrowRight className="h-4 w-4" /></a>
               <a href="#inventory-queue" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary"><FolderOpen className="h-4 w-4" /> Order / proxy queue</a>
               <Link href="/battle-box-method" className="inline-flex min-h-11 items-center gap-2 border-2 border-border bg-background px-4 py-2 font-mono text-xs font-black uppercase hover:border-primary">How this was built <ArrowRight className="h-4 w-4" /></Link>
             </div>
@@ -219,6 +225,8 @@ export default function RetroBattleBox() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{visibleDecks.map((deck) => <DeckLayout key={deck.id} deck={deck} deckNumber={retroBattleBoxDecks.indexOf(deck) + 1} onDownload={() => downloadFile(deckListText(deck), `${deck.id}.txt`)} />)}</div>
         {visibleDecks.length === 0 && <p className="mt-4 border border-border bg-card p-5 text-sm text-muted-foreground">No deck or card matches that search.</p>}
       </section>
+
+      <DeckboxBattleBoxLibrary />
 
       <section id="inventory-queue" className="scroll-mt-20 border-2 border-border bg-card p-4 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-4">
@@ -271,7 +279,8 @@ export default function RetroBattleBox() {
             <div><h3 className="font-black">Cards that need attention</h3><p className="mt-1 text-xs text-muted-foreground">{queuedItems.length} unique names{proxyPrintEnabled ? ' · source proxy annotations are preserved' : ' · purchase/order gaps only'}.</p></div>
               <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{inventory.loaded ? proxyPrintEnabled ? 'Order gap = required − real owned · proxy gap excludes held proxies' : 'Order gap = required − real owned' : 'Load inventory to calculate order gaps'}</p>
           </div>
-          {queuedItems.length ? <div className="overflow-x-auto border border-border">
+          {queuedItems.length ? <div className="border border-border">
+            <div className="hidden overflow-x-auto md:block print:block">
             <table className={`w-full ${proxyPrintEnabled ? 'min-w-[1160px]' : 'min-w-[760px]'} border-collapse text-left text-xs`}>
               <thead className="bg-muted/50 font-mono text-[10px] font-black uppercase tracking-wider"><tr>{proxyPrintEnabled && <th className="p-2.5 print:hidden">Select</th>}<th className="p-2.5">Card</th><th className="p-2.5">Needed</th><th className="p-2.5">Real owned</th>{proxyPrintEnabled && <th className="p-2.5">Proxy held</th>}<th className="p-2.5">Order gap</th>{proxyPrintEnabled && <><th className="p-2.5">To proxy-print</th><th className="p-2.5">Source proxy</th></>}<th className="p-2.5">Matched printings</th><th className="p-2.5">Decks</th><th className="p-2.5 print:hidden">Flag</th></tr></thead>
               <tbody className="divide-y divide-border">{queuedItems.map((item) => {
@@ -291,6 +300,45 @@ export default function RetroBattleBox() {
                 </tr>;
               })}</tbody>
             </table>
+            </div>
+            <div className="divide-y divide-border md:hidden print:hidden" aria-label="Stacked mobile order queue">
+              {queuedItems.map((item) => {
+                const printQuantity = proxyPrintQuantity(item, inventory.loaded);
+                const checked = selectedProxyNames.includes(item.name);
+                const matchedPrintings = item.matchedPrintings.filter((printing) => proxyPrintEnabled || !printing.proxy);
+                const matchedPrintingsText = inventory.loaded && matchedPrintings.length
+                  ? matchedPrintings.map((printing) => `${printing.label} ×${printing.quantity}${printing.proxy ? ' (proxy)' : ''}`).join('; ')
+                  : inventory.loaded ? 'No matching physical copies' : '—';
+                const flag = inventory.loaded && item.shortage > 0
+                  ? proxyPrintEnabled ? 'Order / proxy' : 'Order / obtain'
+                  : item.proxyMarked > 0 && proxyPrintEnabled ? 'Proxy in source' : 'Covered';
+                return <article key={item.name} data-mobile-order-row={item.name} className="min-w-0 space-y-3 p-3">
+                  <div className="flex min-w-0 flex-wrap items-start justify-between gap-2">
+                    <a href={cardSearch(item.name)} target="_blank" rel="noreferrer" className="min-w-0 break-words text-sm font-bold hover:text-primary hover:underline">{item.name}</a>
+                    <span className="shrink-0 border border-border bg-muted/40 px-2 py-1 font-mono text-[9px] font-black uppercase tracking-wider">{flag}</span>
+                  </div>
+                  {proxyPrintEnabled && <label className="inline-flex min-h-9 items-center gap-2 border border-border bg-background px-2 py-1 text-xs font-semibold">
+                    {printQuantity > 0 ? <input type="checkbox" checked={checked} onChange={(event) => toggleProxyPrintCard(item.name, event.target.checked)} aria-label={`Select ${printQuantity} ${item.name} for the proxy print list`} className="h-4 w-4 accent-primary" /> : <span aria-label="No proxy print gap">—</span>}
+                    Select to proxy-print
+                  </label>}
+                  <dl className="grid min-w-0 grid-cols-2 gap-2">
+                    <QueueField label="Needed">{item.quantity}</QueueField>
+                    <QueueField label="Real owned">{inventory.loaded ? item.owned : '—'}</QueueField>
+                    {proxyPrintEnabled && <QueueField label="Proxy held">{inventory.loaded ? item.proxyOwned : '—'}</QueueField>}
+                    <QueueField label="Order gap">{inventory.loaded ? item.shortage : '—'}</QueueField>
+                    {proxyPrintEnabled && <>
+                      <QueueField label="To proxy-print">{printQuantity || '—'}</QueueField>
+                      <QueueField label="Source proxy">{item.proxyMarked || '—'}</QueueField>
+                    </>}
+                  </dl>
+                  <div className="min-w-0 text-xs leading-5">
+                    <p className="font-bold">Matched printings</p>
+                    <p className="break-words text-muted-foreground">{matchedPrintingsText}</p>
+                  </div>
+                  <p className="break-words text-xs leading-5 text-muted-foreground"><strong className="text-foreground">Decks:</strong> {item.usedBy.join(', ')}</p>
+                </article>;
+              })}
+            </div>
           </div> : <p className="border border-border bg-muted/20 p-4 text-sm text-muted-foreground">{inventory.loaded ? proxyPrintEnabled ? 'No source proxy-marked cards or additional shortages found for this loaded collection.' : 'No missing cards found for this loaded collection.' : proxyPrintEnabled ? 'No source proxy-marked cards are in the queue.' : 'Load a collection to calculate missing cards. Proxy-specific rows stay hidden while support is disabled.'}</p>}
           <p className="mt-3 text-[10px] leading-5 text-muted-foreground">{proxyPrintEnabled ? 'A proxy marker reflects the supplied build plan, not an ownership fact or recommendation to buy. Confirm local rules and printing before ordering; this queue does not make purchases.' : 'Collection gaps and matched physical printings are still shown. This queue does not make purchases.'}</p>
         </div>

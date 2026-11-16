@@ -37,6 +37,66 @@ const importedEntries: MarketChronologyEntry[] = importedMarketReports.map(
 
 const briefEntries: MarketChronologyEntry[] = [
   {
+    id: "weekly-market-desk-2026-11-10",
+    dateKey: "2026-11-10",
+    title: "Weekly Market Desk · every mover, one useful read",
+    href: "/market-report/weekly-market-desk-2026-11-10",
+    source: "Consolidated daily market research feed",
+    kind: "market watch",
+    verification: "Snapshot-derived weekly consolidation; exact printings preserved",
+    dataWindow: "November 1–7, 2026 daily mover records",
+    caveat: "Daily source records remain available for audit; this desk deduplicates the reader-facing view and does not turn signals into buy calls.",
+  },
+  {
+    id: "star-trek-deck-idea-2026-11-10",
+    dateKey: "2026-11-10",
+    title: "Star Trek deck idea: four different missions",
+    href: "/market-report/star-trek-deck-idea-2026-11-10",
+    source: "Tracker campaign and Brawlternative deck work",
+    kind: "market watch",
+    verification: "Editorial deck-building concept; not a price-movement claim",
+    dataWindow: "Star Trek precon ecosystem and release-week planning",
+    caveat: "Build directions are playtest concepts; proxy shared staples before purchasing duplicates.",
+  },
+  {
+    id: "deckbox-archive-why-public-2026-11-10",
+    dateKey: "2026-11-10",
+    title: "Why the Deckbox lists are public, visible, and careful",
+    href: "/market-report/deckbox-archive-why-public-2026-11-10",
+    source: "Public Deckbox archive and Retro Battle Box source layer",
+    kind: "market watch",
+    verification: "Source-transparency article; no ownership or legality claim",
+    dataWindow: "Current public Deckbox-backed archive",
+    caveat: "Public source visibility is separate from private inventory, account data, ownership, or format certification.",
+  },
+  {
+    id: "star-trek-market-watch-2026-11-07",
+    dateKey: "2026-11-07",
+    title: "Star Trek Before Launch: Early Movers, Wide Swings",
+    href: "/market-report/star-trek-market-watch-2026-11-07",
+    source: "MTGGoldfish Daily Change + Wizards product schedule",
+    kind: "market watch",
+    verification:
+      "Source page checked Nov. 7; no separate as-of timestamp or completed-sale verification",
+    dataWindow:
+      "MTGGoldfish Star Trek paper movers page read November 7, 2026; prerelease Nov. 6–12, tabletop release Nov. 13",
+    caveat:
+      "Daily listing moves are not completed sales; low-dollar and pre-release prices can swing sharply as supply arrives.",
+  },
+  {
+    id: "brief-2026-11-06",
+    dateKey: "2026-11-06",
+    title: "Daily MTG Market Movers — 30-Signal Brief",
+    href: "/market-report/november-06-30-signal-brief",
+    source: "User-supplied source-dated catalyst brief",
+    kind: "catalyst brief",
+    verification:
+      "Brief uses a weekly snapshot; same-day completed sales and card-level daily moves are not independently verified",
+    dataWindow: "November 5, 2026 / most recent verified weekly market snapshot",
+    caveat:
+      "Some figures are weekly rather than 24-hour moves; exact printings, completed sales, and buylist changes are missing for several cards.",
+  },
+  {
     id: "quarterly-comparison-2026-10-22",
     dateKey: "2026-10-22",
     title: "October vs. Historical Quarterly Market Trends",
@@ -148,7 +208,13 @@ export const chronologicalMarketEntries = [
   ...watchEntries,
   ...creatorEntries,
 ].sort(
-  (a, b) => b.dateKey.localeCompare(a.dateKey) || a.id.localeCompare(b.id)
+  (a, b) =>
+    b.dateKey.localeCompare(a.dateKey) ||
+    (a.id.startsWith("weekly-market-desk")
+      ? -1
+      : b.id.startsWith("weekly-market-desk")
+        ? 1
+        : a.id.localeCompare(b.id))
 );
 export const latestMarketWatchEntries = chronologicalMarketEntries
   .filter(entry => entry.kind === "market watch")

@@ -25,6 +25,7 @@ function CommanderCard({ deck }: { deck: BrawlBoxDeck }) {
       />}
       {wip && <span className="absolute right-2 top-2 border-2 border-amber-600 bg-background px-2 py-1 font-mono text-[10px] font-black uppercase text-foreground">WIP</span>}
     </Link>
+    {deck.archiveSource && <div className="mt-3 border border-border bg-card p-3"><p className="font-mono text-[9px] font-black uppercase tracking-widest text-primary">Public child · untested WIP</p><h3 className="mt-1 text-sm font-black leading-5">{deck.title}</h3><p className="mt-1 text-[10px] leading-4 text-muted-foreground">60-card custom Commander preview · separate from source</p></div>}
   </li>;
 }
 
