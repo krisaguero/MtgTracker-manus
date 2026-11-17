@@ -20,7 +20,7 @@ import { StarTrekMarketPanel } from "@/components/StarTrekMarketPanel";
 import { PreconMarketSignalModule } from "@/components/PreconMarketSignalModule";
 import { TabletopPaperSpotlightTeaser } from "./TabletopPaperSpotlight";
 
-type FeedCard = {
+export type FeedCard = {
   rank: number;
   name: string;
   setCode: string;
@@ -198,6 +198,68 @@ function FeedCardView({ card }: { card: FeedCard }) {
         </div>
       </div>
     </article>
+  );
+}
+
+function confidenceTone(confidence: string) {
+  const normalized = confidence.toLowerCase();
+  if (normalized.includes("speculative")) return "border-amber-500/70 bg-amber-500/10 text-amber-800 dark:text-amber-200";
+  if (normalized.includes("unverified")) return "border-slate-400/70 bg-slate-500/10 text-slate-700 dark:text-slate-200";
+  return "border-primary/50 bg-primary/5 text-primary";
+}
+
+export function ResearchWatch({ cards }: { cards: FeedCard[] }) {
+  const watchCards = cards.filter(card => !card.confidence.toLowerCase().includes("confirmed"));
+  if (!watchCards.length) return null;
+  const countByConfidence = watchCards.reduce<Record<string, number>>((counts, card) => {
+    counts[card.confidence] = (counts[card.confidence] || 0) + 1;
+    return counts;
+  }, {});
+
+  return (
+    <details className="border-2 border-amber-500/60 bg-amber-500/5">
+      <summary className="cursor-pointer list-none px-4 py-4 sm:px-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="font-mono text-[10px] font-black uppercase tracking-[0.18em] text-amber-800 dark:text-amber-300">Research watch</p>
+            <h2 className="mt-1 text-xl font-black">Unverified and speculative signals</h2>
+            <p className="mt-1 max-w-3xl text-xs leading-5 text-muted-foreground">Kept out of the confirmed mover stream until exact-printing price evidence, repeat adoption, or completed-sale depth improves.</p>
+          </div>
+          <span className="border border-amber-500/60 px-3 py-2 font-mono text-[10px] font-black uppercase text-amber-800 dark:text-amber-200">{watchCards.length} held for review</span>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2 font-mono text-[10px] font-black uppercase">
+          {Object.entries(countByConfidence).map(([label, count]) => <span key={label} className={`border px-2 py-1 ${confidenceTone(label)}`}>{label} · {count}</span>)}
+          <span className="border border-border bg-background px-2 py-1 text-muted-foreground">Open to inspect</span>
+        </div>
+      </summary>
+      <div className="grid gap-3 border-t border-amber-500/30 p-3 md:grid-cols-2 lg:grid-cols-3">
+        {watchCards.map(card => (
+          <article key={`${card.name}-${card.setCode}-${card.collectorNumber || "unresolved"}`} className="border border-border bg-card p-4">
+            <div className="flex items-start gap-3">
+              <MarketCardPreview name={card.name} setCode={card.setCode} collectorNumber={card.collectorNumber} size="sm" />
+              <div className="min-w-0 flex-1">
+                <span className={`inline-flex border px-2 py-1 font-mono text-[9px] font-black uppercase ${confidenceTone(card.confidence)}`}>{card.confidence}</span>
+                <Link href={cardHref(card.name)} className="mt-2 block font-black leading-tight hover:text-primary">{card.name}</Link>
+                <p className="mt-1 font-mono text-[10px] uppercase text-muted-foreground">{card.setCode.toUpperCase()} · {card.collectorNumber || "printing unresolved"}</p>
+              </div>
+            </div>
+            <p className="mt-3 text-xs leading-5 text-muted-foreground">{card.thesis}</p>
+            <div className="mt-3 grid grid-cols-2 gap-2 border-y border-border py-2 font-mono text-[10px]">
+              <span>{card.currentUsd === null ? "Price unverified" : `$${card.currentUsd.toFixed(2)} current`}</span>
+              <span className="text-right text-muted-foreground">{card.action.replaceAll("_", " ")}</span>
+            </div>
+            <details className="mt-3 border border-border bg-background">
+              <summary className="cursor-pointer px-3 py-2 font-mono text-[10px] font-black uppercase tracking-wider">Evidence and risk</summary>
+              <div className="border-t border-border p-3 text-xs leading-5 text-muted-foreground">
+                <p><strong className="text-foreground">Risk:</strong> {card.risk}</p>
+                <p className="mt-2"><strong className="text-foreground">Sources:</strong> {card.sourceCount}</p>
+                <p className="mt-2"><strong className="text-foreground">Reviewed:</strong> {formatDate(card.verifiedAt.slice(0, 10))}</p>
+              </div>
+            </details>
+          </article>
+        ))}
+      </div>
+    </details>
   );
 }
 
@@ -631,6 +693,7 @@ export default function MarketResearchFeed() {
           </div>
         </section>
         <MarketWatchTerminal fallbackSignals={latest?.cards || []} generatedDate={latest?.dateKey} />
+        <ResearchWatch cards={latestWithCards?.cards || []} />
         {weeklyDigest && (
           <section className="border-2 border-border bg-card p-5 sm:p-6" aria-label="Weekly movers digest">
             <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-4">
