@@ -165,6 +165,12 @@ const features = {
     takeaways: ['31.11% overall directional accuracy across 45 matured exact-printing records.', '35.48% UP-call precision and 55.00% rise recall make the model useful for review, not automatic buying.', 'Separates true post-publication outcomes from newer posts that are still unresolved because the stored history ends November 7.'],
     action: 'Open prediction review', target: '/blog/prediction-highlights-lovers-found-2026-11-14',
   },
+  'daily-precon-upgrade-radar-2026-11-17': {
+    label: 'Precon Desk · November 17', icon: TrendingUp, card: 'Academy Ruins',
+    href: '/market-watch', imageUrl: 'https://api.scryfall.com/cards/named?exact=Academy%20Ruins&format=image&version=normal',
+    takeaways: ['Treats the first post-launch repricing as a floor-formation test, not a reason to chase.', 'Separates portable utility from Star Trek theme speculation and keeps Research Watch signals labeled.', 'Builds cross-deck bridges across We Are the Borg, Keen Engineering, Landing Party, Klingon Fury, and Explorers of the Deep.'],
+    action: 'Open Market Watch', target: '/market-watch',
+  },
 };
 export function readingFeature(slug: string) { return features[slug as keyof typeof features]; }
 export function readingMinutes(body: string) { return Math.max(1, Math.ceil(body.split(/\s+/).length / 220)); }
@@ -439,6 +445,18 @@ const editorialSpotlights: Record<string, { heading: string; description: string
       { name: 'Moonshadow', label: 'Confirmed Modern mover', reason: 'The brief cites a rise from $14 to $27 tied to a specific emerging Modern archetype, with early-meta reversal still possible.' },
     ],
   },
+  'daily-precon-upgrade-radar-2026-11-17': {
+    heading: 'November 17 post-launch floor test',
+    description: 'The cards that best explain the first repricing after Star Trek launch weekend: broad utility, deck-fit upgrades, and future Merfolk speculation kept in separate lanes.',
+    cards: [
+      { name: 'Academy Ruins', label: 'Possible utility floor', reason: 'A broad artifact-recursion card whose new supply should be judged by seller depth and exact-printing stability.' },
+      { name: 'Foundry Inspector', label: 'Cross-deck curve support', reason: 'A low-cost artifact reducer with a real bridge between We Are the Borg, Keen Engineering, and other artifact shells.' },
+      { name: 'World at War', label: 'Klingon Fury watch', reason: 'A playable extra-combat reprint that is more compelling as a deck card than as a short-term speculation target.' },
+      { name: 'Windcrag Siege', label: 'Worf-specific trigger multiplier', reason: 'A developing Klingon Fury upgrade whose market case depends on repeat adoption beyond one precon.' },
+      { name: 'Open the Way', label: 'Landing Party test card', reason: 'A candidate for increasing Commander Spock’s differently named land density, pending an actual mana-base test.' },
+      { name: 'Merrow Commerce', label: 'Nauctis future watch', reason: 'Preserve existing copies for a possible Explorers of the Deep to Merfolk Regiment bridge; do not buy ahead of the full decklist.' },
+    ],
+  },
 };
 
 type SpotlightCard = { name: string; label: string; reason: string; imageUrl?: string; scryfallUri?: string; usd?: string | null; usdFoil?: string | null };
@@ -545,6 +563,7 @@ const relatedReadingCards: Record<string, string> = {
   'precon-swerve-valgavoth-archenemy-ascension-2026-11-13': 'Valgavoth, Harrower of Souls',
   'daily-mtg-market-movers-30-signal-2026-11-13': 'Uthros Research Craft',
   'prediction-highlights-lovers-found-2026-11-14': 'Mold Shambler',
+  'daily-precon-upgrade-radar-2026-11-17': 'Academy Ruins',
 };
 
 function relatedReadingImage(slug: string) {
