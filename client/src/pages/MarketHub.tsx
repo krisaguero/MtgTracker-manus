@@ -9,8 +9,9 @@ const sections = [
     ['/blog', 'Daily prose articles · Blog / Journal (published)'],
     ['/market-report', 'Market report'], ['/market-watch', 'Source-dated Market Watch'], ['/market-reports', 'Report archive'], ['/market-today', 'Historical market brief'], ['/market-movers-manus-report', 'Published mover report'],
   ] },
-	  { title: 'Research tools & articles', intro: 'Explore watchlists, audits, signal explainers, and featured articles.', links: [
-	    ['/market-lands', 'Land Tax · lands only'],
+		  { title: 'Research tools & articles', intro: 'Explore watchlists, audits, signal explainers, and featured articles.', links: [
+		    ['/market-desk/post-launch/star-trek', 'Star Trek post-launch floor desk'],
+		    ['/market-lands', 'Land Tax · lands only'],
 	    ['/market-watch', 'Source-dated Market Watch'], ['/market-articles', 'Market deep dives'], ['/market-signal-audit', 'Signal audit'], ['/market-watch-article', 'Historical Market Watch analysis'], ['/signal-matrix-article', 'Featured signal matrix'], ['/costco-deal-article', 'Historical Costco price note'],
   ] },
 ];
