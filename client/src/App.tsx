@@ -84,8 +84,9 @@ const DeckGalleryTunedChildDetail = lazy(() => import('@/pages/DeckGalleryTunedC
 const Limited = lazy(() => import('@/pages/Limited'));
 		const MarketHub = lazy(() => import('@/pages/MarketHub'));
 		const MarketDesk = lazy(() => import('@/pages/MarketDesk'));
-		const LandTax = lazy(() => import('@/pages/LandTax'));
-		const PostLaunchMarketDesk = lazy(() => import('@/pages/PostLaunchMarketDesk'));
+			const LandTax = lazy(() => import('@/pages/LandTax'));
+			const PostLaunchMarketDesk = lazy(() => import('@/pages/PostLaunchMarketDesk'));
+			const ReportReviewNov17 = lazy(() => import('@/pages/ReportReviewNov17'));
 const TabletopPaperSpotlight = lazy(() => import('@/pages/TabletopPaperSpotlight'));
 const BlogJournal = lazy(() => import('@/pages/BlogJournal'));
 
@@ -124,7 +125,8 @@ function Router() {
         <Route path={'/markets'} component={MarketHub} />
 		<Route path={'/market-desk'} component={MarketDesk} />
 			<Route path={'/market-lands'} component={LandTax} />
-		<Route path={'/market-desk/post-launch/star-trek'} component={PostLaunchMarketDesk} />
+			<Route path={'/market-desk/post-launch/star-trek'} component={PostLaunchMarketDesk} />
+			<Route path={'/market-desk/report-review/2026-11-17'} component={ReportReviewNov17} />
         <Route path={'/roadmap'} component={Roadmap} />
         <Route path="/market-report" component={MarketReport} />
         <Route path="/blog/:slug" component={BlogJournal} />
