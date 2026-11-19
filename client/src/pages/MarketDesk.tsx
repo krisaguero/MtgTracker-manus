@@ -3,6 +3,7 @@ import { BarChart3, CalendarDays, ChevronRight, Clock3, Newspaper, ShieldCheck, 
 import { Link, useLocation } from "wouter";
 import backlogData from "@/data/marketWatchBacklog.json";
 import ledgerData from "@/data/marketPredictionLedger.json";
+import MarketMoverCardArt from "@/components/MarketMoverCardArt";
 
 type CardSignal = {
   name: string;
@@ -38,11 +39,16 @@ function CardLine({ card, rank }: { card: CardSignal; rank?: number }) {
   return (
     <div className="flex min-w-0 items-start justify-between gap-4 border-t border-border py-4">
       <div className="min-w-0">
-        <div className="flex items-center gap-2">
+        <div className="flex items-start gap-3">
+          <MarketMoverCardArt name={card.name} setCode={card.setCode} size="small" />
+          <div className="min-w-0">
+          <div className="flex items-center gap-2">
           {rank !== undefined && <span className="font-mono text-xs font-black text-primary">#{rank}</span>}
           <Link href={`/card/${encodeURIComponent(card.name)}`} className="truncate font-black hover:text-primary">{card.name}</Link>
+          </div>
+          <p className="mt-1 truncate font-mono text-[10px] uppercase text-muted-foreground">{card.setCode} · {card.category} · {actionLabel(card.action)}</p>
+          </div>
         </div>
-        <p className="mt-1 truncate font-mono text-[10px] uppercase text-muted-foreground">{card.setCode} · {card.category} · {actionLabel(card.action)}</p>
       </div>
       <div className="shrink-0 text-right">
         <p className={`font-mono text-sm font-black ${positive ? "text-emerald-600" : "text-destructive"}`}>{positive ? "+" : ""}{card.percentChange.toFixed(1)}%</p>
