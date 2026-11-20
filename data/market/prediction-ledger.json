@@ -1,7 +1,657 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T17:12:32.030Z",
+  "updatedAt": "2026-11-20T16:50:41.475Z",
   "records": [
+    {
+      "id": "2026-11-20-penny-watch:1:pip:268",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Irrigated Farmland (PIP 268) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Irrigated Farmland",
+      "setCode": "pip",
+      "collectorNumber": "268",
+      "entryUsd": 1.04,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 316.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:2:cma:193",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Skyward Eye Prophets (CMA 193) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Skyward Eye Prophets",
+      "setCode": "cma",
+      "collectorNumber": "193",
+      "entryUsd": 0.28,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 300.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:3:plst:NEO-283",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Plains (PLST NEO-283) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Plains",
+      "setCode": "plst",
+      "collectorNumber": "NEO-283",
+      "entryUsd": 0.24,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 100.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:4:cmm:420",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Command Tower (CMM 420) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "cmm",
+      "collectorNumber": "420",
+      "entryUsd": 0.68,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 83.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:5:m3c:372",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Secluded Courtyard (M3C 372) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Secluded Courtyard",
+      "setCode": "m3c",
+      "collectorNumber": "372",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 79.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:6:pip:301",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Tainted Wood (PIP 301) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Tainted Wood",
+      "setCode": "pip",
+      "collectorNumber": "301",
+      "entryUsd": 0.4,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 65.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:7:cm2:158",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Juniper Order Ranger (CM2 158) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Juniper Order Ranger",
+      "setCode": "cm2",
+      "collectorNumber": "158",
+      "entryUsd": 0.07,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 61.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:8:znc:21",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Sun Titan (ZNC 21) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sun Titan",
+      "setCode": "znc",
+      "collectorNumber": "21",
+      "entryUsd": 0.3,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 50.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:9:fic:244",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Grateful Apparition (FIC 244) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Grateful Apparition",
+      "setCode": "fic",
+      "collectorNumber": "244",
+      "entryUsd": 0.29,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 39.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:10:msc:121",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Austere Command (MSC 121) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Austere Command",
+      "setCode": "msc",
+      "collectorNumber": "121",
+      "entryUsd": 0.36,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 37.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:11:cm2:155",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Enduring Scalelord (CM2 155) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Enduring Scalelord",
+      "setCode": "cm2",
+      "collectorNumber": "155",
+      "entryUsd": 0.35,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 30.0% since the prior saved observation across 1 available price source.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Unverified",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:12:soc:115",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Ingenious Prodigy (SOC 115) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ingenious Prodigy",
+      "setCode": "soc",
+      "collectorNumber": "115",
+      "entryUsd": 0.41,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 28.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:13:c21:221",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Kaseto, Orochi Archmage (C21 221) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Kaseto, Orochi Archmage",
+      "setCode": "c21",
+      "collectorNumber": "221",
+      "entryUsd": 0.41,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 26.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:14:msc:209",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Relic of Legends (MSC 209) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Relic of Legends",
+      "setCode": "msc",
+      "collectorNumber": "209",
+      "entryUsd": 0.82,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 26.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:15:otc:144",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Nighthawk Scavenger (OTC 144) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Nighthawk Scavenger",
+      "setCode": "otc",
+      "collectorNumber": "144",
+      "entryUsd": 4.26,
+      "action": "DO_NOT_CHASE",
+      "thesis": "Commander decklist; rose 26.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:16:fic:390",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Exotic Orchard (FIC 390) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Exotic Orchard",
+      "setCode": "fic",
+      "collectorNumber": "390",
+      "entryUsd": 0.21,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 25.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:17:mkc:76",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Organic Extinction (MKC 76) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Organic Extinction",
+      "setCode": "mkc",
+      "collectorNumber": "76",
+      "entryUsd": 1.12,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 24.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:18:clb:821",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Cultivate (CLB 821) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Cultivate",
+      "setCode": "clb",
+      "collectorNumber": "821",
+      "entryUsd": 0.47,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 24.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:19:afc:52",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Midnight Pathlighter (AFC 52) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Midnight Pathlighter",
+      "setCode": "afc",
+      "collectorNumber": "52",
+      "entryUsd": 2.26,
+      "action": "DO_NOT_CHASE",
+      "thesis": "Commander decklist; rose 24.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:20:cmm:970",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Pillar of Origins (CMM 970) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Pillar of Origins",
+      "setCode": "cmm",
+      "collectorNumber": "970",
+      "entryUsd": 0.66,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 22.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:21:plst:C20-173",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Harmonize (PLST C20-173) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Harmonize",
+      "setCode": "plst",
+      "collectorNumber": "C20-173",
+      "entryUsd": 0.33,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 22.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:22:pip:253",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Ash Barrens (PIP 253) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ash Barrens",
+      "setCode": "pip",
+      "collectorNumber": "253",
+      "entryUsd": 0.14,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 22.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:23:fic:432",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Sunpetal Grove (FIC 432) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sunpetal Grove",
+      "setCode": "fic",
+      "collectorNumber": "432",
+      "entryUsd": 0.32,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 21.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:24:scd:52",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Favorable Winds (SCD 52) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Favorable Winds",
+      "setCode": "scd",
+      "collectorNumber": "52",
+      "entryUsd": 0.39,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 21.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-20-penny-watch:25:pip:29",
+      "dateKey": "2026-11-20",
+      "postId": "2026-11-20-penny-watch",
+      "prompt": "Assess Yes Man, Personal Securitron (PIP 29) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Yes Man, Personal Securitron",
+      "setCode": "pip",
+      "collectorNumber": "29",
+      "entryUsd": 1.64,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 21.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-20",
+        "evaluationDate": "2026-12-04"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-19-constructed-format-watch:1:dft:286",
       "dateKey": "2026-11-19",
@@ -5902,7 +6552,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": 16.36,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:2:dsc:226",
@@ -5928,7 +6584,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": 6.78,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:3:tdc:186",
@@ -5954,7 +6616,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": 1.59,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:4:fic:403",
@@ -5980,7 +6648,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": -49.21,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:5:dsc:20",
@@ -6006,7 +6680,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": 3.39,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:6:dsc:272",
@@ -6032,7 +6712,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": -7.58,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:7:cma:104",
@@ -6058,7 +6744,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-06-penny-watch:8:tdc:189",
@@ -6084,7 +6776,13 @@
         "openedAt": "2026-11-06",
         "evaluationDate": "2026-11-20"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-20",
+        "actualChangePct": -4.29,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-05-constructed-format-watch:1:soc:236",

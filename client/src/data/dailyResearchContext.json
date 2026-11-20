@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T17:12:31.336Z",
-  "pricingDate": "2026-11-19",
-  "dataWindow": "2026-10-30 through 2026-11-19",
+  "generatedAt": "2026-11-20T16:50:40.762Z",
+  "pricingDate": "2026-11-20",
+  "dataWindow": "2026-10-31 through 2026-11-20",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2020,
-  "negativeSignals": 2022,
+  "positiveSignals": 2114,
+  "negativeSignals": 1929,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 151,
-    "multiSourceSignals": 12360,
+    "singleSourceSignals": 153,
+    "multiSourceSignals": 12358,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 36,
-      "positiveSignals": 36,
+      "cards": 29,
+      "positiveSignals": 29,
       "negativeSignals": 0,
-      "averagePctChange": 21.96
+      "averagePctChange": 46.36
     },
     {
       "category": "commander-picks",
-      "cards": 12451,
-      "positiveSignals": 1984,
-      "negativeSignals": 1998,
-      "averagePctChange": 0.05
+      "cards": 12455,
+      "positiveSignals": 2085,
+      "negativeSignals": 1902,
+      "averagePctChange": 0.09
     },
     {
       "category": "reprint-squashes",
-      "cards": 24,
+      "cards": 27,
       "positiveSignals": 0,
-      "negativeSignals": 24,
-      "averagePctChange": -27.92
+      "negativeSignals": 27,
+      "averagePctChange": -25.96
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-19; 2020 rose and 2022 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +21.96% across 36 cards.",
-    "151 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "24 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-20; 2114 rose and 1929 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +46.36% across 29 cards.",
+    "153 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "27 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Dawnglare Invoker",
-        "setCode": "c15",
-        "collectorNumber": "67",
-        "currentUsd": 0.15,
-        "percentChange": 50,
+        "name": "Irrigated Farmland",
+        "setCode": "pip",
+        "collectorNumber": "268",
+        "currentUsd": 1.04,
+        "percentChange": 316,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Martial Impetus",
-        "setCode": "c20",
-        "collectorNumber": "28",
-        "currentUsd": 0.1,
-        "percentChange": 42.86,
+        "name": "Skyward Eye Prophets",
+        "setCode": "cma",
+        "collectorNumber": "193",
+        "currentUsd": 0.28,
+        "percentChange": 300,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Walker of the Grove",
-        "setCode": "c13",
-        "collectorNumber": "175",
-        "currentUsd": 0.1,
-        "percentChange": 42.86,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Evolving Wilds",
-        "setCode": "fic",
-        "collectorNumber": "389",
-        "currentUsd": 0.19,
-        "percentChange": 26.67,
+        "name": "Plains",
+        "setCode": "plst",
+        "collectorNumber": "NEO-283",
+        "currentUsd": 0.24,
+        "percentChange": 100,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
         "name": "Command Tower",
+        "setCode": "cmm",
+        "collectorNumber": "420",
+        "currentUsd": 0.68,
+        "percentChange": 83.78,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Secluded Courtyard",
         "setCode": "m3c",
-        "collectorNumber": "331",
-        "currentUsd": 0.43,
-        "percentChange": 26.47,
+        "collectorNumber": "372",
+        "currentUsd": 0.7,
+        "percentChange": 79.49,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Mountain",
-        "setCode": "dft",
-        "collectorNumber": "286",
-        "currentUsd": 0.22,
-        "percentChange": -66.67,
+        "name": "Tainted Wood",
+        "setCode": "pip",
+        "collectorNumber": "301",
+        "currentUsd": 0.4,
+        "percentChange": -65.81,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Fetid Pools",
-        "setCode": "drc",
-        "collectorNumber": "156",
-        "currentUsd": 0.32,
-        "percentChange": -50,
+        "name": "Juniper Order Ranger",
+        "setCode": "cm2",
+        "collectorNumber": "158",
+        "currentUsd": 0.07,
+        "percentChange": -61.11,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Flooded Grove",
+        "name": "Sun Titan",
+        "setCode": "znc",
+        "collectorNumber": "21",
+        "currentUsd": 0.3,
+        "percentChange": -50.82,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Grateful Apparition",
         "setCode": "fic",
-        "collectorNumber": "393",
-        "currentUsd": 0.35,
-        "percentChange": -46.15,
+        "collectorNumber": "244",
+        "currentUsd": 0.29,
+        "percentChange": -39.58,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Panoptic Projektor",
-        "setCode": "mkc",
-        "collectorNumber": "44",
-        "currentUsd": 0.35,
-        "percentChange": -46.15,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Dreamstone Hedron",
-        "setCode": "m3c",
-        "collectorNumber": "289",
-        "currentUsd": 0.38,
-        "percentChange": -44.93,
+        "name": "Austere Command",
+        "setCode": "msc",
+        "collectorNumber": "121",
+        "currentUsd": 0.36,
+        "percentChange": -37.93,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -157,105 +157,105 @@
         "setCode": "pip",
         "collectorNumber": "312",
         "observations": 21,
-        "firstDate": "2026-10-30",
-        "lastDate": "2026-11-19",
+        "firstDate": "2026-10-31",
+        "lastDate": "2026-11-20",
         "totalPctChange": 378.26,
         "positiveDays": 7,
         "negativeDays": 2
+      },
+      {
+        "name": "Irrigated Farmland",
+        "setCode": "pip",
+        "collectorNumber": "268",
+        "observations": 21,
+        "firstDate": "2026-10-31",
+        "lastDate": "2026-11-20",
+        "totalPctChange": 352.17,
+        "positiveDays": 7,
+        "negativeDays": 3
       },
       {
         "name": "Swamp",
         "setCode": "pip",
         "collectorNumber": "321",
         "observations": 21,
-        "firstDate": "2026-10-30",
-        "lastDate": "2026-11-19",
-        "totalPctChange": 323.73,
+        "firstDate": "2026-10-31",
+        "lastDate": "2026-11-20",
+        "totalPctChange": 331.03,
         "positiveDays": 2,
         "negativeDays": 4
+      },
+      {
+        "name": "Skyward Eye Prophets",
+        "setCode": "cma",
+        "collectorNumber": "193",
+        "observations": 21,
+        "firstDate": "2026-10-31",
+        "lastDate": "2026-11-20",
+        "totalPctChange": 300,
+        "positiveDays": 1,
+        "negativeDays": 0
       },
       {
         "name": "James, Wandering Dad // Follow Him",
         "setCode": "pip",
         "collectorNumber": "31",
         "observations": 21,
-        "firstDate": "2026-10-30",
-        "lastDate": "2026-11-19",
+        "firstDate": "2026-10-31",
+        "lastDate": "2026-11-20",
         "totalPctChange": 289.66,
         "positiveDays": 7,
-        "negativeDays": 5
-      },
-      {
-        "name": "Almost Perfect",
-        "setCode": "pip",
-        "collectorNumber": "90",
-        "observations": 21,
-        "firstDate": "2026-10-30",
-        "lastDate": "2026-11-19",
-        "totalPctChange": 280,
-        "positiveDays": 6,
-        "negativeDays": 1
-      },
-      {
-        "name": "Assaultron Dominator",
-        "setCode": "pip",
-        "collectorNumber": "54",
-        "observations": 21,
-        "firstDate": "2026-10-30",
-        "lastDate": "2026-11-19",
-        "totalPctChange": 251.61,
-        "positiveDays": 5,
-        "negativeDays": 3
+        "negativeDays": 4
       }
     ],
     "predictionsDue": [
       {
-        "name": "Atsushi, the Blazing Sky",
+        "name": "Woe Strider",
         "setCode": "soc",
-        "collectorNumber": "236",
-        "evaluationDate": "2026-11-19"
+        "collectorNumber": "231",
+        "evaluationDate": "2026-11-20"
       },
       {
-        "name": "Sunscorch Regent",
-        "setCode": "fic",
-        "collectorNumber": "255",
-        "evaluationDate": "2026-11-19"
+        "name": "Nyx Weaver",
+        "setCode": "dsc",
+        "collectorNumber": "226",
+        "evaluationDate": "2026-11-20"
       },
       {
-        "name": "Epic Experiment",
-        "setCode": "c21",
-        "collectorNumber": "216",
-        "evaluationDate": "2026-11-19"
-      },
-      {
-        "name": "Terminate",
-        "setCode": "msc",
-        "collectorNumber": "189",
-        "evaluationDate": "2026-11-19"
-      },
-      {
-        "name": "Terramorphic Expanse",
+        "name": "Lord of the Forsaken",
         "setCode": "tdc",
-        "collectorNumber": "408",
-        "evaluationDate": "2026-11-19"
+        "collectorNumber": "186",
+        "evaluationDate": "2026-11-20"
       },
       {
-        "name": "Wind-Scarred Crag",
-        "setCode": "cm2",
-        "collectorNumber": "278",
-        "evaluationDate": "2026-11-19"
+        "name": "Hinterland Harbor",
+        "setCode": "fic",
+        "collectorNumber": "403",
+        "evaluationDate": "2026-11-20"
       },
       {
-        "name": "Izzet Signet",
-        "setCode": "moc",
-        "collectorNumber": "362",
-        "evaluationDate": "2026-11-19"
+        "name": "Into the Pit",
+        "setCode": "dsc",
+        "collectorNumber": "20",
+        "evaluationDate": "2026-11-20"
       },
       {
-        "name": "Gift of Immortality",
-        "setCode": "soc",
-        "collectorNumber": "147",
-        "evaluationDate": "2026-11-19"
+        "name": "Drownyard Temple",
+        "setCode": "dsc",
+        "collectorNumber": "272",
+        "evaluationDate": "2026-11-20"
+      },
+      {
+        "name": "Elvish Skysweeper",
+        "setCode": "cma",
+        "collectorNumber": "104",
+        "evaluationDate": "2026-11-20"
+      },
+      {
+        "name": "Necromantic Selection",
+        "setCode": "tdc",
+        "collectorNumber": "189",
+        "evaluationDate": "2026-11-20"
       }
     ],
     "predictionsResolved": [],
