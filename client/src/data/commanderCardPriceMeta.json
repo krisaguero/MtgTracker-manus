@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-20T16:50:25.260Z",
-  "priceDate": "2026-11-20",
+  "generatedAt": "2026-11-21T15:59:43.235Z",
+  "priceDate": "2026-11-21",
   "source": "MTGJSON AllPricesToday",
   "coverage": {
     "total": 14760,
     "resolved": 14055,
     "unresolved": 705,
-    "tcgplayer": 14049,
-    "cardkingdom": 13766,
+    "tcgplayer": 14048,
+    "cardkingdom": 13752,
     "cardmarket": 14044,
     "usdCurrency": "USD",
     "cardmarketCurrency": "EUR"

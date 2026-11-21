@@ -1,147 +1,147 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T16:50:40.762Z",
-  "pricingDate": "2026-11-20",
-  "dataWindow": "2026-10-31 through 2026-11-20",
+  "generatedAt": "2026-11-21T16:00:08.602Z",
+  "pricingDate": "2026-11-21",
+  "dataWindow": "2026-11-01 through 2026-11-21",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2114,
-  "negativeSignals": 1929,
+  "positiveSignals": 2133,
+  "negativeSignals": 2136,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
       "MTGJSON paper price data",
       "Scryfall image endpoint"
     ],
-    "singleSourceSignals": 153,
-    "multiSourceSignals": 12358,
+    "singleSourceSignals": 152,
+    "multiSourceSignals": 12359,
     "limitation": "Price snapshots are not completed-sale or broad-market volume evidence; single-source and thin-listing moves remain unverified."
   },
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 29,
-      "positiveSignals": 29,
+      "cards": 41,
+      "positiveSignals": 41,
       "negativeSignals": 0,
-      "averagePctChange": 46.36
+      "averagePctChange": 38.61
     },
     {
       "category": "commander-picks",
-      "cards": 12455,
-      "positiveSignals": 2085,
-      "negativeSignals": 1902,
-      "averagePctChange": 0.09
+      "cards": 12415,
+      "positiveSignals": 2092,
+      "negativeSignals": 2081,
+      "averagePctChange": 0
     },
     {
       "category": "reprint-squashes",
-      "cards": 27,
+      "cards": 55,
       "positiveSignals": 0,
-      "negativeSignals": 27,
-      "averagePctChange": -25.96
+      "negativeSignals": 55,
+      "averagePctChange": -21.52
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-20; 2114 rose and 1929 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +46.36% across 29 cards.",
-    "153 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "27 reprint-floor observations require supply and reprint-risk review before buying.",
+    "12511 exact-printing price observations were screened for 2026-11-21; 2133 rose and 2136 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +38.61% across 41 cards.",
+    "152 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
+    "55 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Irrigated Farmland",
-        "setCode": "pip",
-        "collectorNumber": "268",
-        "currentUsd": 1.04,
-        "percentChange": 316,
+        "name": "Mountain",
+        "setCode": "dft",
+        "collectorNumber": "286",
+        "currentUsd": 0.66,
+        "percentChange": 200,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Skyward Eye Prophets",
-        "setCode": "cma",
-        "collectorNumber": "193",
-        "currentUsd": 0.28,
-        "percentChange": 300,
+        "name": "Mountain",
+        "setCode": "cm2",
+        "collectorNumber": "305",
+        "currentUsd": 0.49,
+        "percentChange": 133.33,
+        "sourceCount": 1,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Skycat Sovereign",
+        "setCode": "scd",
+        "collectorNumber": "243",
+        "currentUsd": 0.59,
+        "percentChange": 118.52,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Plains",
-        "setCode": "plst",
-        "collectorNumber": "NEO-283",
-        "currentUsd": 0.24,
-        "percentChange": 100,
+        "name": "Stormcatch Mentor",
+        "setCode": "soc",
+        "collectorNumber": "331",
+        "currentUsd": 0.62,
+        "percentChange": 106.67,
         "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Command Tower",
-        "setCode": "cmm",
-        "collectorNumber": "420",
-        "currentUsd": 0.68,
-        "percentChange": 83.78,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Secluded Courtyard",
-        "setCode": "m3c",
-        "collectorNumber": "372",
-        "currentUsd": 0.7,
-        "percentChange": 79.49,
+        "name": "Indulging Patrician",
+        "setCode": "tdc",
+        "collectorNumber": "292",
+        "currentUsd": 0.64,
+        "percentChange": 93.94,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Tainted Wood",
-        "setCode": "pip",
-        "collectorNumber": "301",
-        "currentUsd": 0.4,
-        "percentChange": -65.81,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Juniper Order Ranger",
-        "setCode": "cm2",
-        "collectorNumber": "158",
-        "currentUsd": 0.07,
-        "percentChange": -61.11,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Sun Titan",
-        "setCode": "znc",
-        "collectorNumber": "21",
-        "currentUsd": 0.3,
-        "percentChange": -50.82,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Grateful Apparition",
+        "name": "Kefka, Dancing Mad",
         "setCode": "fic",
-        "collectorNumber": "244",
+        "collectorNumber": "84",
         "currentUsd": 0.29,
-        "percentChange": -39.58,
+        "percentChange": -47.27,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Austere Command",
-        "setCode": "msc",
-        "collectorNumber": "121",
-        "currentUsd": 0.36,
-        "percentChange": -37.93,
+        "name": "Prairie Stream",
+        "setCode": "who",
+        "collectorNumber": "295",
+        "currentUsd": 0.35,
+        "percentChange": -46.97,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Merry, Warden of Isengard",
+        "setCode": "ltc",
+        "collectorNumber": "61",
+        "currentUsd": 0.38,
+        "percentChange": -45.71,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Battlefield Forge",
+        "setCode": "m3c",
+        "collectorNumber": "321",
+        "currentUsd": 0.39,
+        "percentChange": -44.29,
+        "sourceCount": 2,
+        "category": "reprint-squashes"
+      },
+      {
+        "name": "Pendant of Prosperity",
+        "setCode": "c19",
+        "collectorNumber": "56",
+        "currentUsd": 0.63,
+        "percentChange": -32.26,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -157,41 +157,41 @@
         "setCode": "pip",
         "collectorNumber": "312",
         "observations": 21,
-        "firstDate": "2026-10-31",
-        "lastDate": "2026-11-20",
-        "totalPctChange": 378.26,
+        "firstDate": "2026-11-01",
+        "lastDate": "2026-11-21",
+        "totalPctChange": 373.91,
         "positiveDays": 7,
-        "negativeDays": 2
+        "negativeDays": 3
       },
       {
         "name": "Irrigated Farmland",
         "setCode": "pip",
         "collectorNumber": "268",
         "observations": 21,
-        "firstDate": "2026-10-31",
-        "lastDate": "2026-11-20",
-        "totalPctChange": 352.17,
-        "positiveDays": 7,
-        "negativeDays": 3
+        "firstDate": "2026-11-01",
+        "lastDate": "2026-11-21",
+        "totalPctChange": 347.83,
+        "positiveDays": 6,
+        "negativeDays": 4
       },
       {
         "name": "Swamp",
         "setCode": "pip",
         "collectorNumber": "321",
         "observations": 21,
-        "firstDate": "2026-10-31",
-        "lastDate": "2026-11-20",
+        "firstDate": "2026-11-01",
+        "lastDate": "2026-11-21",
         "totalPctChange": 331.03,
         "positiveDays": 2,
-        "negativeDays": 4
+        "negativeDays": 3
       },
       {
         "name": "Skyward Eye Prophets",
         "setCode": "cma",
         "collectorNumber": "193",
         "observations": 21,
-        "firstDate": "2026-10-31",
-        "lastDate": "2026-11-20",
+        "firstDate": "2026-11-01",
+        "lastDate": "2026-11-21",
         "totalPctChange": 300,
         "positiveDays": 1,
         "negativeDays": 0
@@ -201,63 +201,14 @@
         "setCode": "pip",
         "collectorNumber": "31",
         "observations": 21,
-        "firstDate": "2026-10-31",
-        "lastDate": "2026-11-20",
-        "totalPctChange": 289.66,
-        "positiveDays": 7,
+        "firstDate": "2026-11-01",
+        "lastDate": "2026-11-21",
+        "totalPctChange": 293.1,
+        "positiveDays": 8,
         "negativeDays": 4
       }
     ],
-    "predictionsDue": [
-      {
-        "name": "Woe Strider",
-        "setCode": "soc",
-        "collectorNumber": "231",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Nyx Weaver",
-        "setCode": "dsc",
-        "collectorNumber": "226",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Lord of the Forsaken",
-        "setCode": "tdc",
-        "collectorNumber": "186",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Hinterland Harbor",
-        "setCode": "fic",
-        "collectorNumber": "403",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Into the Pit",
-        "setCode": "dsc",
-        "collectorNumber": "20",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Drownyard Temple",
-        "setCode": "dsc",
-        "collectorNumber": "272",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Elvish Skysweeper",
-        "setCode": "cma",
-        "collectorNumber": "104",
-        "evaluationDate": "2026-11-20"
-      },
-      {
-        "name": "Necromantic Selection",
-        "setCode": "tdc",
-        "collectorNumber": "189",
-        "evaluationDate": "2026-11-20"
-      }
-    ],
+    "predictionsDue": [],
     "predictionsResolved": [],
     "recurringCatalystsToReview": [
       "spoilers",
