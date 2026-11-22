@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T16:00:08.602Z",
-  "pricingDate": "2026-11-21",
-  "dataWindow": "2026-11-01 through 2026-11-21",
+  "generatedAt": "2026-11-22T16:04:59.561Z",
+  "pricingDate": "2026-11-22",
+  "dataWindow": "2026-11-02 through 2026-11-22",
   "marketStatus": [
     "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 2133,
-  "negativeSignals": 2136,
+  "positiveSignals": 2220,
+  "negativeSignals": 2106,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
@@ -23,125 +23,125 @@
   "categoryStats": [
     {
       "category": "penny-risers",
-      "cards": 41,
-      "positiveSignals": 41,
+      "cards": 58,
+      "positiveSignals": 58,
       "negativeSignals": 0,
-      "averagePctChange": 38.61
+      "averagePctChange": 33.98
     },
     {
       "category": "commander-picks",
-      "cards": 12415,
-      "positiveSignals": 2092,
-      "negativeSignals": 2081,
-      "averagePctChange": 0
+      "cards": 12402,
+      "positiveSignals": 2162,
+      "negativeSignals": 2055,
+      "averagePctChange": 0.06
     },
     {
       "category": "reprint-squashes",
-      "cards": 55,
+      "cards": 51,
       "positiveSignals": 0,
-      "negativeSignals": 55,
-      "averagePctChange": -21.52
+      "negativeSignals": 51,
+      "averagePctChange": -27.3
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-21; 2133 rose and 2136 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +38.61% across 41 cards.",
+    "12511 exact-printing price observations were screened for 2026-11-22; 2220 rose and 2106 fell in the latest snapshot.",
+    "penny-risers has the strongest latest average movement at +33.98% across 58 cards.",
     "152 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "55 reprint-floor observations require supply and reprint-risk review before buying.",
+    "51 reprint-floor observations require supply and reprint-risk review before buying.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
     "topGainers": [
       {
-        "name": "Mountain",
-        "setCode": "dft",
-        "collectorNumber": "286",
-        "currentUsd": 0.66,
-        "percentChange": 200,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Mountain",
-        "setCode": "cm2",
-        "collectorNumber": "305",
+        "name": "Island",
+        "setCode": "cma",
+        "collectorNumber": "293",
         "currentUsd": 0.49,
-        "percentChange": 133.33,
-        "sourceCount": 1,
+        "percentChange": 145,
+        "sourceCount": 2,
         "category": "penny-risers"
       },
       {
-        "name": "Skycat Sovereign",
+        "name": "Island",
+        "setCode": "cm2",
+        "collectorNumber": "291",
+        "currentUsd": 0.24,
+        "percentChange": 140,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Verdant Force",
         "setCode": "scd",
-        "collectorNumber": "243",
-        "currentUsd": 0.59,
-        "percentChange": 118.52,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Stormcatch Mentor",
-        "setCode": "soc",
-        "collectorNumber": "331",
-        "currentUsd": 0.62,
-        "percentChange": 106.67,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Indulging Patrician",
-        "setCode": "tdc",
-        "collectorNumber": "292",
+        "collectorNumber": "214",
         "currentUsd": 0.64,
-        "percentChange": 93.94,
+        "percentChange": 100,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Swamp",
+        "setCode": "cma",
+        "collectorNumber": "303",
+        "currentUsd": 0.4,
+        "percentChange": 100,
+        "sourceCount": 2,
+        "category": "penny-risers"
+      },
+      {
+        "name": "Exotic Orchard",
+        "setCode": "fic",
+        "collectorNumber": "390",
+        "currentUsd": 0.36,
+        "percentChange": 80,
         "sourceCount": 2,
         "category": "penny-risers"
       }
     ],
     "topDecliners": [
       {
-        "name": "Kefka, Dancing Mad",
-        "setCode": "fic",
-        "collectorNumber": "84",
-        "currentUsd": 0.29,
-        "percentChange": -47.27,
+        "name": "Mountain",
+        "setCode": "dft",
+        "collectorNumber": "286",
+        "currentUsd": 0.22,
+        "percentChange": -66.67,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Prairie Stream",
-        "setCode": "who",
-        "collectorNumber": "295",
-        "currentUsd": 0.35,
-        "percentChange": -46.97,
+        "name": "Mountain",
+        "setCode": "cm2",
+        "collectorNumber": "305",
+        "currentUsd": 0.19,
+        "percentChange": -61.22,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Merry, Warden of Isengard",
-        "setCode": "ltc",
-        "collectorNumber": "61",
-        "currentUsd": 0.38,
-        "percentChange": -45.71,
+        "name": "Plains",
+        "setCode": "cm2",
+        "collectorNumber": "279",
+        "currentUsd": 0.2,
+        "percentChange": -59.18,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Battlefield Forge",
-        "setCode": "m3c",
-        "collectorNumber": "321",
-        "currentUsd": 0.39,
-        "percentChange": -44.29,
+        "name": "Surtland Elementalist",
+        "setCode": "khm",
+        "collectorNumber": "375",
+        "currentUsd": 0.26,
+        "percentChange": -54.39,
         "sourceCount": 2,
         "category": "reprint-squashes"
       },
       {
-        "name": "Pendant of Prosperity",
-        "setCode": "c19",
-        "collectorNumber": "56",
-        "currentUsd": 0.63,
-        "percentChange": -32.26,
+        "name": "Mountain",
+        "setCode": "cm2",
+        "collectorNumber": "303",
+        "currentUsd": 0.24,
+        "percentChange": -51.02,
         "sourceCount": 2,
         "category": "reprint-squashes"
       }
@@ -153,34 +153,34 @@
     "snapshotsReviewed": 21,
     "repeatedMovers": [
       {
-        "name": "Temple of Triumph",
-        "setCode": "pip",
-        "collectorNumber": "312",
-        "observations": 21,
-        "firstDate": "2026-11-01",
-        "lastDate": "2026-11-21",
-        "totalPctChange": 373.91,
-        "positiveDays": 7,
-        "negativeDays": 3
-      },
-      {
         "name": "Irrigated Farmland",
         "setCode": "pip",
         "collectorNumber": "268",
         "observations": 21,
-        "firstDate": "2026-11-01",
-        "lastDate": "2026-11-21",
-        "totalPctChange": 347.83,
-        "positiveDays": 6,
+        "firstDate": "2026-11-02",
+        "lastDate": "2026-11-22",
+        "totalPctChange": 337.5,
+        "positiveDays": 7,
         "negativeDays": 4
+      },
+      {
+        "name": "Temple of Triumph",
+        "setCode": "pip",
+        "collectorNumber": "312",
+        "observations": 21,
+        "firstDate": "2026-11-02",
+        "lastDate": "2026-11-22",
+        "totalPctChange": 336,
+        "positiveDays": 7,
+        "negativeDays": 3
       },
       {
         "name": "Swamp",
         "setCode": "pip",
         "collectorNumber": "321",
         "observations": 21,
-        "firstDate": "2026-11-01",
-        "lastDate": "2026-11-21",
+        "firstDate": "2026-11-02",
+        "lastDate": "2026-11-22",
         "totalPctChange": 331.03,
         "positiveDays": 2,
         "negativeDays": 3
@@ -190,25 +190,74 @@
         "setCode": "cma",
         "collectorNumber": "193",
         "observations": 21,
-        "firstDate": "2026-11-01",
-        "lastDate": "2026-11-21",
+        "firstDate": "2026-11-02",
+        "lastDate": "2026-11-22",
         "totalPctChange": 300,
         "positiveDays": 1,
         "negativeDays": 0
       },
       {
-        "name": "James, Wandering Dad // Follow Him",
+        "name": "Almost Perfect",
         "setCode": "pip",
-        "collectorNumber": "31",
+        "collectorNumber": "90",
         "observations": 21,
-        "firstDate": "2026-11-01",
-        "lastDate": "2026-11-21",
-        "totalPctChange": 293.1,
-        "positiveDays": 8,
-        "negativeDays": 4
+        "firstDate": "2026-11-02",
+        "lastDate": "2026-11-22",
+        "totalPctChange": 290.32,
+        "positiveDays": 7,
+        "negativeDays": 1
       }
     ],
-    "predictionsDue": [],
+    "predictionsDue": [
+      {
+        "name": "Morbid Opportunist",
+        "setCode": "soc",
+        "collectorNumber": "219",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Arcane Signet",
+        "setCode": "pip",
+        "collectorNumber": "224",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Scavenging Ooze",
+        "setCode": "dsc",
+        "collectorNumber": "196",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Adarkar Wastes",
+        "setCode": "m3c",
+        "collectorNumber": "316",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Razorjaw Oni",
+        "setCode": "cma",
+        "collectorNumber": "63",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Island",
+        "setCode": "c15",
+        "collectorNumber": "330",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Command Tower",
+        "setCode": "tdc",
+        "collectorNumber": "107",
+        "evaluationDate": "2026-11-22"
+      },
+      {
+        "name": "Extinguish All Hope",
+        "setCode": "cmm",
+        "collectorNumber": "157",
+        "evaluationDate": "2026-11-22"
+      }
+    ],
     "predictionsResolved": [],
     "recurringCatalystsToReview": [
       "spoilers",
