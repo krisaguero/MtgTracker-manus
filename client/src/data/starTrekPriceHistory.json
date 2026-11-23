@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T18:33:28.677Z",
+  "generatedAt": "2026-11-23T20:14:13.990Z",
   "source": "Weekly Scryfall refresh for Star Trek Commander signal baskets; sealed product quotes remain separate and null until sourced.",
   "snapshots": [
     {
@@ -103,6 +103,34 @@
         "Miles O'Brien, Transporter Ops": 0.26,
         "The Holodeck": 0.51,
         "Quark, Humble Proprietor": 5.13
+      },
+      "resolution": {
+        "cardsRequested": 9,
+        "cardsResolved": 9,
+        "unresolvedCards": []
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "source": "Scryfall card prices; sealed product quotes intentionally not inferred",
+      "sealedPricesUsd": {},
+      "collectorSealedPricesUsd": {},
+      "signalBasketUsd": {
+        "federation-fleet": 18.19,
+        "landing-party": 7.7299999999999995,
+        "klingon-fury": 3.15,
+        "we-are-the-borg": 6.7
+      },
+      "cardPricesUsd": {
+        "Captain Jean-Luc Picard": 8.65,
+        "Sarek, Federation Ambassador": 0.23,
+        "Dr. Beverly Crusher": 9.31,
+        "Starfleet Academy": 1.42,
+        "Hallowed Fountain": 6.31,
+        "Khan, Vengeful Heart": 2.42,
+        "Miles O'Brien, Transporter Ops": 0.17,
+        "The Holodeck": 0.56,
+        "Quark, Humble Proprietor": 6.7
       },
       "resolution": {
         "cardsRequested": 9,
