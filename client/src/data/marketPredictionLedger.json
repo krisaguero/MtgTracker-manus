@@ -1,7 +1,657 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-23T19:59:27.707Z",
+  "updatedAt": "2026-11-24T19:26:32.737Z",
   "records": [
+    {
+      "id": "2026-11-24-bulk-collection-triage:1:pip:258",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Clifftop Retreat (PIP 258) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Clifftop Retreat",
+      "setCode": "pip",
+      "collectorNumber": "258",
+      "entryUsd": 1.14,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 307.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:2:c16:76",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Sanctum Gargoyle (C16 76) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Sanctum Gargoyle",
+      "setCode": "c16",
+      "collectorNumber": "76",
+      "entryUsd": 0.23,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 283.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:3:pip:240",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Solemn Simulacrum (PIP 240) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Solemn Simulacrum",
+      "setCode": "pip",
+      "collectorNumber": "240",
+      "entryUsd": 0.7,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 89.2% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:4:dsc:152",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Ob Nixilis Reignited (DSC 152) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ob Nixilis Reignited",
+      "setCode": "dsc",
+      "collectorNumber": "152",
+      "entryUsd": 0.69,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 86.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:5:blc:119",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Farseek (BLC 119) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Farseek",
+      "setCode": "blc",
+      "collectorNumber": "119",
+      "entryUsd": 0.4,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 74.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:6:pip:54",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Assaultron Dominator (PIP 54) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Assaultron Dominator",
+      "setCode": "pip",
+      "collectorNumber": "54",
+      "entryUsd": 0.37,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 67.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:7:msc:221",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Talisman of Progress (MSC 221) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Talisman of Progress",
+      "setCode": "msc",
+      "collectorNumber": "221",
+      "entryUsd": 0.71,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 57.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:8:eoc:70",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Deepglow Skate (EOC 70) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Deepglow Skate",
+      "setCode": "eoc",
+      "collectorNumber": "70",
+      "entryUsd": 0.58,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 56.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:9:blc:189",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Woe Strider (BLC 189) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Woe Strider",
+      "setCode": "blc",
+      "collectorNumber": "189",
+      "entryUsd": 0.36,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 47.1% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:10:cmm:420",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Command Tower (CMM 420) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Command Tower",
+      "setCode": "cmm",
+      "collectorNumber": "420",
+      "entryUsd": 0.37,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 45.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:11:c15:154",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Fall of the Hammer (C15 154) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Fall of the Hammer",
+      "setCode": "c15",
+      "collectorNumber": "154",
+      "entryUsd": 0.13,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 44.4% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:12:dsc:252",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Simic Signet (DSC 252) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Simic Signet",
+      "setCode": "dsc",
+      "collectorNumber": "252",
+      "entryUsd": 0.4,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 43.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:13:ltc:48",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Bilbo, Birthday Celebrant (LTC 48) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Bilbo, Birthday Celebrant",
+      "setCode": "ltc",
+      "collectorNumber": "48",
+      "entryUsd": 0.42,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 42.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:14:otc:188",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Cazur, Ruthless Stalker (OTC 188) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Cazur, Ruthless Stalker",
+      "setCode": "otc",
+      "collectorNumber": "188",
+      "entryUsd": 0.43,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 41.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:15:fic:390",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Exotic Orchard (FIC 390) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Exotic Orchard",
+      "setCode": "fic",
+      "collectorNumber": "390",
+      "entryUsd": 0.38,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 40.7% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:16:otc:317",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Shadowblood Ridge (OTC 317) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Shadowblood Ridge",
+      "setCode": "otc",
+      "collectorNumber": "317",
+      "entryUsd": 0.46,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 37.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:17:pip:253",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Ash Barrens (PIP 253) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ash Barrens",
+      "setCode": "pip",
+      "collectorNumber": "253",
+      "entryUsd": 0.23,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 35.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:18:msc:3",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Human Torch (MSC 3) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Human Torch",
+      "setCode": "msc",
+      "collectorNumber": "3",
+      "entryUsd": 0.58,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 34.9% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:19:dsk:269",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Terramorphic Expanse (DSK 269) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Terramorphic Expanse",
+      "setCode": "dsk",
+      "collectorNumber": "269",
+      "entryUsd": 0.32,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 33.3% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          8,
+          24
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:20:scd:50",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Ever-Watching Threshold (SCD 50) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Ever-Watching Threshold",
+      "setCode": "scd",
+      "collectorNumber": "50",
+      "entryUsd": 0.27,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 32.5% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:21:blc:294",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Bojuka Bog (BLC 294) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Bojuka Bog",
+      "setCode": "blc",
+      "collectorNumber": "294",
+      "entryUsd": 1.35,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 31.8% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:22:plst:RNA-249",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Gruul Guildgate (PLST RNA-249) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Gruul Guildgate",
+      "setCode": "plst",
+      "collectorNumber": "RNA-249",
+      "entryUsd": 0.14,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 30.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -24,
+          -8
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:23:fic:400",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Glacial Fortress (FIC 400) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Glacial Fortress",
+      "setCode": "fic",
+      "collectorNumber": "400",
+      "entryUsd": 0.35,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 29.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:24:c16:82",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Aeon Chronicler (C16 82) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Aeon Chronicler",
+      "setCode": "c16",
+      "collectorNumber": "82",
+      "entryUsd": 0.27,
+      "action": "MONITOR",
+      "thesis": "Commander decklist; rose 28.6% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "UP",
+        "projectedPctRange": [
+          6,
+          18
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
+    {
+      "id": "2026-11-24-bulk-collection-triage:25:khc:19",
+      "dateKey": "2026-11-24",
+      "postId": "2026-11-24-bulk-collection-triage",
+      "prompt": "Assess Banishing Light (KHC 19) for a 14-day market direction and precon/third-party demand risk.",
+      "name": "Banishing Light",
+      "setCode": "khc",
+      "collectorNumber": "19",
+      "entryUsd": 0.18,
+      "action": "WAIT_FOR_DIP",
+      "thesis": "Commander decklist; fell 28.0% since the prior saved observation across 2 available price sources.",
+      "prediction": {
+        "horizonDays": 14,
+        "expectedDirection": "DOWN",
+        "projectedPctRange": [
+          -18,
+          -6
+        ],
+        "model": "granular-v2 momentum bands; not a verified AI forecast",
+        "rangeFormula": "14-day range selected by direction and absolute observed momentum: <1%, 1–3%, 3–5%, 5–8%, 8–12%, 12–20%, 20–30%, or ≥30%",
+        "confidence": "Developing",
+        "openedAt": "2026-11-24",
+        "evaluationDate": "2026-12-08"
+      },
+      "outcome": null
+    },
     {
       "id": "2026-11-23-precon-sealed-economics:1:blc:185",
       "dateKey": "2026-11-23",
@@ -7436,7 +8086,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -62.93,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:2:drc:65",
@@ -7462,7 +8118,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -42.62,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:3:who:290",
@@ -7488,7 +8150,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 7.69,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:4:drc:158",
@@ -7514,7 +8182,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -58.73,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:5:fic:291",
@@ -7540,7 +8214,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -41.54,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:6:drc:173",
@@ -7566,7 +8246,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -48.53,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:7:ltc:61",
@@ -7592,7 +8278,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -41.79,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:8:ncc:241",
@@ -7618,7 +8310,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 1.25,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:9:soc:369",
@@ -7644,7 +8342,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -51.47,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:10:drc:39",
@@ -7670,7 +8374,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -57.38,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:11:c13:261",
@@ -7696,7 +8406,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 4.23,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:12:ltc:264",
@@ -7722,7 +8438,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -36.92,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:13:dsc:179",
@@ -7748,7 +8470,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 7.59,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:14:tdc:309",
@@ -7774,7 +8502,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -2.7,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:15:m3c:316",
@@ -7800,7 +8534,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -9.09,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:16:cmd:214",
@@ -7826,7 +8566,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:17:c15:123",
@@ -7852,7 +8598,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:18:c19:19",
@@ -7878,7 +8630,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 64.91,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:19:moc:273",
@@ -7904,7 +8662,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -33.85,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:20:cma:96",
@@ -7930,7 +8694,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 3.45,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:21:c15:108",
@@ -7956,7 +8726,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 2.17,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:22:fic:92",
@@ -7982,7 +8758,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -18.18,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:23:msc:106",
@@ -8008,7 +8790,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": -24,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:24:fic:417",
@@ -8034,7 +8822,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 15.38,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-10-bulk-collection-triage:25:c19:87",
@@ -8060,7 +8854,13 @@
         "openedAt": "2026-11-10",
         "evaluationDate": "2026-11-24"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-24",
+        "actualChangePct": 1.22,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-09-precon-sealed-economics:1:pip:312",
