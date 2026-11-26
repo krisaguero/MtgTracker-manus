@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "official-spoiler-announcement-feed",
-  "asOf": "2026-11-25",
+  "asOf": "2026-11-26",
   "sourceUrl": "https://magic.wizards.com/en/news",
   "records": [
     {
@@ -9,13 +9,6 @@
       "title": "Magic: The Gathering® | Star Trek™ Commander Decklists",
       "url": "https://magic.wizards.com/en/news/announcements/star-trek-commander-decklists",
       "kind": "commander-announcement",
-      "source": "DailyMTG"
-    },
-    {
-      "id": "en-news-announcements-secret-lair-my-arrakis-my-superdrop",
-      "title": "Secret Lair: My Arrakis, My Superdrop",
-      "url": "https://magic.wizards.com/en/news/announcements/secret-lair-my-arrakis-my-superdrop",
-      "kind": "product-release",
       "source": "DailyMTG"
     },
     {
@@ -36,6 +29,13 @@
       "id": "en-news-feature-star-trek-release-notes",
       "title": "Magic: The Gathering® | Star Trek™ Release Notes",
       "url": "https://magic.wizards.com/en/news/feature/star-trek-release-notes",
+      "kind": "product-release",
+      "source": "DailyMTG"
+    },
+    {
+      "id": "en-news-announcements-secret-lair-my-arrakis-my-superdrop",
+      "title": "Secret Lair: My Arrakis, My Superdrop",
+      "url": "https://magic.wizards.com/en/news/announcements/secret-lair-my-arrakis-my-superdrop",
       "kind": "product-release",
       "source": "DailyMTG"
     }
