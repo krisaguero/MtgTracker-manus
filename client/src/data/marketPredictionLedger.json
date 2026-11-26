@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-25T18:32:40.647Z",
+  "updatedAt": "2026-11-26T18:16:13.562Z",
   "records": [
     {
       "id": "2026-11-25-commander-demand:1:cm2:279",
@@ -7436,7 +7436,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 7.02,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:2:pip:132",
@@ -7462,7 +7468,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -61.65,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:3:dsc:298",
@@ -7488,7 +7500,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -50,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:4:pip:159",
@@ -7514,7 +7532,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 121.84,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:5:tdc:124",
@@ -7540,7 +7564,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -39.71,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:6:tdc:216",
@@ -7566,7 +7596,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -39.34,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:7:moc:312",
@@ -7592,7 +7628,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -3.03,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:8:pip:55",
@@ -7618,7 +7660,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -22.6,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:9:plst:CMR-189",
@@ -7644,7 +7692,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -8.16,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:10:blc:338",
@@ -7670,7 +7724,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 10.34,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:11:mid:216",
@@ -7696,7 +7756,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 0,
+        "actualDirection": "FLAT"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:12:tdc:120",
@@ -7722,7 +7788,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 32.26,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:13:drc:77",
@@ -7748,7 +7820,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -5.71,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:14:blc:216",
@@ -7774,7 +7852,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 2.78,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:15:pip:34",
@@ -7800,7 +7884,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -31.71,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:16:drc:173",
@@ -7826,7 +7916,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -10.26,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:17:pip:239",
@@ -7852,7 +7948,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -20.45,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:18:dsc:150",
@@ -7878,7 +7980,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -6.98,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:19:fic:291",
@@ -7904,7 +8012,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 7.89,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:20:fic:257",
@@ -7930,7 +8044,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -20,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:21:soc:369",
@@ -7956,7 +8076,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -23.26,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:22:c15:128",
@@ -7982,7 +8108,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": false,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 100,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:23:fic:381",
@@ -8008,7 +8140,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 3.33,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:24:cma:311",
@@ -8034,7 +8172,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": -14.29,
+        "actualDirection": "DOWN"
+      }
     },
     {
       "id": "2026-11-12-constructed-format-watch:25:scd:125",
@@ -8060,7 +8204,13 @@
         "openedAt": "2026-11-12",
         "evaluationDate": "2026-11-26"
       },
-      "outcome": null
+      "outcome": {
+        "status": "EVALUATED",
+        "correct": true,
+        "evaluatedAt": "2026-11-26",
+        "actualChangePct": 9.55,
+        "actualDirection": "UP"
+      }
     },
     {
       "id": "2026-11-11-commander-demand:1:pip:274",

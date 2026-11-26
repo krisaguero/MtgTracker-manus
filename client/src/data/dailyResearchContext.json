@@ -1,15 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T18:32:40.061Z",
-  "pricingDate": "2026-11-25",
-  "dataWindow": "2026-11-05 through 2026-11-25",
+  "generatedAt": "2026-11-26T18:16:13.114Z",
+  "pricingDate": "2026-11-26",
+  "dataWindow": "2026-11-06 through 2026-11-26",
   "marketStatus": [
-    "Reprint-heavy",
     "Commander-driven"
   ],
   "signalCount": 12511,
-  "positiveSignals": 1922,
-  "negativeSignals": 2384,
+  "positiveSignals": 0,
+  "negativeSignals": 0,
   "sourceCoverage": {
     "declaredSources": [
       "MTGJSON set data",
@@ -22,130 +21,24 @@
   },
   "categoryStats": [
     {
-      "category": "penny-risers",
-      "cards": 54,
-      "positiveSignals": 54,
-      "negativeSignals": 0,
-      "averagePctChange": 30.58
-    },
-    {
       "category": "commander-picks",
-      "cards": 12417,
-      "positiveSignals": 1868,
-      "negativeSignals": 2344,
-      "averagePctChange": -0.11
-    },
-    {
-      "category": "reprint-squashes",
-      "cards": 40,
+      "cards": 12511,
       "positiveSignals": 0,
-      "negativeSignals": 40,
-      "averagePctChange": -26.87
+      "negativeSignals": 0,
+      "averagePctChange": 0
     }
   ],
   "executiveSummary": [
-    "12511 exact-printing price observations were screened for 2026-11-25; 1922 rose and 2384 fell in the latest snapshot.",
-    "penny-risers has the strongest latest average movement at +30.58% across 54 cards.",
+    "12511 exact-printing price observations were screened for 2026-11-26; 0 rose and 0 fell in the latest snapshot.",
+    "commander-picks has the strongest latest average movement at +0% across 12511 cards.",
     "156 signals have fewer than two price sources; treat large percentage changes as a research queue, not confirmed demand.",
-    "40 reprint-floor observations require supply and reprint-risk review before buying.",
+    "No reprint-floor observations were present in the latest snapshot.",
     "Live catalyst, policy, tournament, EDHREC, completed-sale, and retailer evidence must be reviewed separately before a signal is promoted to Confirmed."
   ],
   "whatChangedSinceYesterday": {
     "newSignals": [],
-    "topGainers": [
-      {
-        "name": "Plains",
-        "setCode": "cm2",
-        "collectorNumber": "279",
-        "currentUsd": 0.49,
-        "percentChange": 145,
-        "sourceCount": 1,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Frostboil Snarl",
-        "setCode": "ltc",
-        "collectorNumber": "312",
-        "currentUsd": 0.67,
-        "percentChange": 97.06,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Mountain",
-        "setCode": "cma",
-        "collectorNumber": "307",
-        "currentUsd": 0.47,
-        "percentChange": 88,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Chaos Warp",
-        "setCode": "moc",
-        "collectorNumber": "273",
-        "currentUsd": 0.77,
-        "percentChange": 79.07,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      },
-      {
-        "name": "Rampant Growth",
-        "setCode": "afc",
-        "collectorNumber": "166",
-        "currentUsd": 0.73,
-        "percentChange": 73.81,
-        "sourceCount": 2,
-        "category": "penny-risers"
-      }
-    ],
-    "topDecliners": [
-      {
-        "name": "Swamp",
-        "setCode": "pip",
-        "collectorNumber": "321",
-        "currentUsd": 0.6,
-        "percentChange": -76.74,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Karazikar, the Eye Tyrant",
-        "setCode": "afc",
-        "collectorNumber": "49",
-        "currentUsd": 4,
-        "percentChange": -64.22,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Island",
-        "setCode": "cma",
-        "collectorNumber": "293",
-        "currentUsd": 0.2,
-        "percentChange": -59.18,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Simic Growth Chamber",
-        "setCode": "dsc",
-        "collectorNumber": "298",
-        "currentUsd": 0.32,
-        "percentChange": -47.54,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      },
-      {
-        "name": "Stormcatch Mentor",
-        "setCode": "soc",
-        "collectorNumber": "331",
-        "currentUsd": 0.35,
-        "percentChange": -46.97,
-        "sourceCount": 2,
-        "category": "reprint-squashes"
-      }
-    ],
+    "topGainers": [],
+    "topDecliners": [],
     "snapshotWarnings": []
   },
   "historicalSignalCheck": {
@@ -157,8 +50,8 @@
         "setCode": "pip",
         "collectorNumber": "268",
         "observations": 21,
-        "firstDate": "2026-11-05",
-        "lastDate": "2026-11-25",
+        "firstDate": "2026-11-06",
+        "lastDate": "2026-11-26",
         "totalPctChange": 345.83,
         "positiveDays": 8,
         "negativeDays": 4
@@ -168,8 +61,8 @@
         "setCode": "pip",
         "collectorNumber": "312",
         "observations": 21,
-        "firstDate": "2026-11-05",
-        "lastDate": "2026-11-25",
+        "firstDate": "2026-11-06",
+        "lastDate": "2026-11-26",
         "totalPctChange": 323.08,
         "positiveDays": 6,
         "negativeDays": 4
@@ -179,8 +72,8 @@
         "setCode": "cma",
         "collectorNumber": "193",
         "observations": 21,
-        "firstDate": "2026-11-05",
-        "lastDate": "2026-11-25",
+        "firstDate": "2026-11-06",
+        "lastDate": "2026-11-26",
         "totalPctChange": 300,
         "positiveDays": 1,
         "negativeDays": 0
@@ -190,19 +83,19 @@
         "setCode": "pip",
         "collectorNumber": "258",
         "observations": 21,
-        "firstDate": "2026-11-05",
-        "lastDate": "2026-11-25",
+        "firstDate": "2026-11-06",
+        "lastDate": "2026-11-26",
         "totalPctChange": 290,
         "positiveDays": 7,
-        "negativeDays": 5
+        "negativeDays": 4
       },
       {
         "name": "Almost Perfect",
         "setCode": "pip",
         "collectorNumber": "90",
         "observations": 21,
-        "firstDate": "2026-11-05",
-        "lastDate": "2026-11-25",
+        "firstDate": "2026-11-06",
+        "lastDate": "2026-11-26",
         "totalPctChange": 287.1,
         "positiveDays": 8,
         "negativeDays": 3
@@ -210,64 +103,64 @@
     ],
     "predictionsDue": [
       {
-        "name": "Myriad Landscape",
+        "name": "Nomad Outpost",
         "setCode": "pip",
-        "collectorNumber": "274",
-        "evaluationDate": "2026-11-25"
+        "collectorNumber": "277",
+        "evaluationDate": "2026-11-26"
       },
       {
-        "name": "Opportunity",
-        "setCode": "c13",
-        "collectorNumber": "51",
-        "evaluationDate": "2026-11-25"
-      },
-      {
-        "name": "Abomination of Llanowar",
-        "setCode": "khc",
-        "collectorNumber": "81",
-        "evaluationDate": "2026-11-25"
-      },
-      {
-        "name": "Sword of the Chosen",
-        "setCode": "dmc",
-        "collectorNumber": "192",
-        "evaluationDate": "2026-11-25"
-      },
-      {
-        "name": "Recon Craft Theta",
+        "name": "Endurance Bobblehead",
         "setCode": "pip",
-        "collectorNumber": "141",
-        "evaluationDate": "2026-11-25"
+        "collectorNumber": "132",
+        "evaluationDate": "2026-11-26"
       },
       {
-        "name": "Talisman of Conviction",
-        "setCode": "pip",
-        "collectorNumber": "243",
-        "evaluationDate": "2026-11-25"
-      },
-      {
-        "name": "Grist, the Hunger Tide",
+        "name": "Simic Growth Chamber",
         "setCode": "dsc",
-        "collectorNumber": "220",
-        "evaluationDate": "2026-11-25"
+        "collectorNumber": "298",
+        "evaluationDate": "2026-11-26"
       },
       {
-        "name": "Buried Ruin",
+        "name": "Dispatch",
         "setCode": "pip",
-        "collectorNumber": "254",
-        "evaluationDate": "2026-11-25"
+        "collectorNumber": "159",
+        "evaluationDate": "2026-11-26"
       },
       {
-        "name": "Battlefield Forge",
-        "setCode": "fic",
-        "collectorNumber": "375",
-        "evaluationDate": "2026-11-25"
+        "name": "Mangara, the Diplomat",
+        "setCode": "tdc",
+        "collectorNumber": "124",
+        "evaluationDate": "2026-11-26"
       },
       {
-        "name": "Celestial Crusader",
-        "setCode": "c14",
-        "collectorNumber": "68",
-        "evaluationDate": "2026-11-25"
+        "name": "Grenzo, Havoc Raiser",
+        "setCode": "tdc",
+        "collectorNumber": "216",
+        "evaluationDate": "2026-11-26"
+      },
+      {
+        "name": "Slurrk, All-Ingesting",
+        "setCode": "moc",
+        "collectorNumber": "312",
+        "evaluationDate": "2026-11-26"
+      },
+      {
+        "name": "Bottle-Cap Blast",
+        "setCode": "pip",
+        "collectorNumber": "55",
+        "evaluationDate": "2026-11-26"
+      },
+      {
+        "name": "Krark, the Thumbless",
+        "setCode": "plst",
+        "collectorNumber": "CMR-189",
+        "evaluationDate": "2026-11-26"
+      },
+      {
+        "name": "Temple of Abandon",
+        "setCode": "blc",
+        "collectorNumber": "338",
+        "evaluationDate": "2026-11-26"
       }
     ],
     "predictionsResolved": [],
